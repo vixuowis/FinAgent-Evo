@@ -1,0 +1,27 @@
+{
+  "name": "finagent",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "FinAgent-Evo ACP Server",
+  "dependencies": {
+    "deepagents": "^1.8.5",
+    "deepagents-acp": "^0.1.4",
+    "langchain": "^1.2.37",
+    "zod": "^4.3.6",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
