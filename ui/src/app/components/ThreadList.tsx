@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, useRef, useCallback } from "react";
 import { format } from "date-fns";
-import { Loader2, MessageSquare, X } from "lucide-react";
+import { Loader2, MessageSquare, X, Trash2 } from "lucide-react";
 import { useQueryState } from "nuqs";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -20,6 +20,7 @@ import {
 import { cn } from "@/lib/utils";
 import type { ThreadItem } from "@/app/hooks/useThreads";
 import { useThreads } from "@/app/hooks/useThreads";
+import { DeleteThreadDialog } from "./DeleteThreadDialog";
 
 type StatusFilter = "all" | "idle" | "busy" | "interrupted" | "error";
 
@@ -82,7 +83,7 @@ function StatusFilterItem({
 function ErrorState({ message }: { message: string }) {
   return (
     <div className="flex flex-col items-center justify-center p-8 text-center">
-      <p className="text-sm text-red-600">Failed to load threads</p>
+      <p className="text-sm text-destructive font-medium">Failed to load threads</p>
       <p className="mt-1 text-xs text-muted-foreground">{message}</p>
     </div>
   );
@@ -125,11 +126,33 @@ export function ThreadList({
 }: ThreadListProps) {
   const [currentThreadId] = useQueryState("threadId");
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
+  const [isDeleting, setIsDeleting] = useState<string | null>(null);
+  const [threadToDelete, setThreadToDelete] = useState<ThreadItem | null>(null);
 
   const threads = useThreads({
     status: statusFilter === "all" ? undefined : statusFilter,
     limit: 20,
   });
+
+  const handleDelete = async () => {
+    if (!threadToDelete) return;
+    const id = threadToDelete.id;
+    setIsDeleting(id);
+    try {
+      await threads.deleteThread(id);
+      if (currentThreadId === id) {
+        onThreadSelect("");
+      }
+      setThreadToDelete(null);
+    } finally {
+      setIsDeleting(null);
+    }
+  };
+
+  const openDeleteDialog = (e: React.MouseEvent, thread: ThreadItem) => {
+    e.stopPropagation();
+    setThreadToDelete(thread);
+  };
 
   const flattened = useMemo(() => {
     return threads.data?.flat() ?? [];
@@ -297,13 +320,20 @@ export function ThreadList({
                   </h4>
                   <div className="flex flex-col gap-1">
                     {groupThreads.map((thread) => (
-                      <button
+                      <div
                         key={thread.id}
-                        type="button"
+                        role="button"
+                        tabIndex={0}
                         onClick={() => onThreadSelect(thread.id)}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            onThreadSelect(thread.id);
+                          }
+                        }}
                         className={cn(
-                          "grid w-full cursor-pointer items-center gap-3 rounded-lg px-3 py-3 text-left transition-colors duration-200",
-                          "hover:bg-accent",
+                          "group grid w-full cursor-pointer items-center gap-3 rounded-lg px-3 py-3 text-left transition-colors duration-200",
+                          "hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                           currentThreadId === thread.id
                             ? "border border-primary bg-accent hover:bg-accent"
                             : "border border-transparent bg-transparent"
@@ -316,9 +346,24 @@ export function ThreadList({
                             <h3 className="truncate text-sm font-semibold">
                               {thread.title}
                             </h3>
-                            <span className="ml-2 flex-shrink-0 text-xs text-muted-foreground">
-                              {formatTime(thread.updatedAt)}
-                            </span>
+                            <div className="flex items-center gap-2">
+                              <span className="flex-shrink-0 text-xs text-muted-foreground group-hover:hidden">
+                                {formatTime(thread.updatedAt)}
+                              </span>
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                onClick={(e) => openDeleteDialog(e, thread)}
+                                disabled={isDeleting === thread.id}
+                                className="hidden h-6 w-6 text-muted-foreground hover:text-destructive group-hover:flex"
+                              >
+                                {isDeleting === thread.id ? (
+                                  <Loader2 className="h-3 w-3 animate-spin" />
+                                ) : (
+                                  <Trash2 className="h-3 w-3" />
+                                )}
+                              </Button>
+                            </div>
                           </div>
                           {/* Description + Status Row */}
                           <div className="flex items-center justify-between">
@@ -335,7 +380,7 @@ export function ThreadList({
                             </div>
                           </div>
                         </div>
-                      </button>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -364,6 +409,14 @@ export function ThreadList({
           </div>
         )}
       </ScrollArea>
+
+      <DeleteThreadDialog
+        open={!!threadToDelete}
+        onOpenChange={(open) => !open && setThreadToDelete(null)}
+        onConfirm={handleDelete}
+        isDeleting={!!isDeleting}
+        threadTitle={threadToDelete?.title}
+      />
     </div>
   );
 }

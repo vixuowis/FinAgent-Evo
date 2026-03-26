@@ -2,6 +2,7 @@ import useSWRInfinite from "swr/infinite";
 import type { Thread } from "@langchain/langgraph-sdk";
 import { Client } from "@langchain/langgraph-sdk";
 import { getConfig } from "@/lib/config";
+import { useCallback } from "react";
 
 export interface ThreadItem {
   id: string;
@@ -20,7 +21,7 @@ export function useThreads(props: {
 }) {
   const pageSize = props.limit || DEFAULT_PAGE_SIZE;
 
-  return useSWRInfinite(
+  const swr = useSWRInfinite(
     (pageIndex: number, previousPageData: ThreadItem[] | null) => {
       const config = getConfig();
       const apiKey =
@@ -133,4 +134,26 @@ export function useThreads(props: {
       revalidateOnFocus: true,
     }
   );
+
+  const deleteThread = useCallback(
+    async (threadId: string) => {
+      const config = getConfig();
+      if (!config) return;
+
+      const apiKey =
+        config.langsmithApiKey || process.env.NEXT_PUBLIC_LANGSMITH_API_KEY || "";
+
+      const client = new Client({
+        apiUrl: config.deploymentUrl,
+        defaultHeaders: apiKey ? { "X-Api-Key": apiKey } : {},
+      });
+
+      await client.threads.delete(threadId);
+      await swr.mutate();
+    },
+    [swr]
+  );
+
+  return { ...swr, deleteThread };
 }
+

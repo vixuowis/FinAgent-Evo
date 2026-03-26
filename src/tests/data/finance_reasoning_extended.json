@@ -1,0 +1,74 @@
+[
+    {
+        "question_id": "test-2000",
+        "question": "what would the 2012 shares outstanding in millions have been without the acquisition of smith international? Answer to the nearest integer.",
+        "context": "schlumberger limited and subsidiaries shares of common stock ( stated in millions ) issued in treasury shares outstanding .\n\n|  | Issued | In Treasury | Shares Outstanding |\n| :--- | :--- | :--- | :--- |\n| Balance, January 1, 2010 | 1,334 | (139) | 1,195 |\n| Acquisition of Smith International, Inc. | 100 | 76 | 176 |\n| Shares sold to optionees less shares exchanged | \u2013 | 6 | 6 |\n| Shares issued under employee stock purchase plan | \u2013 | 3 | 3 |\n| Stock repurchase program | \u2013 | (27) | (27) |\n| Issued on conversions of debentures | \u2013 | 8 | 8 |\n| Balance, December 31, 2010 | 1,434 | (73) | 1,361 |\n| Shares sold to optionees less shares exchanged | \u2013 | 6 | 6 |\n| Vesting of restricted stock | \u2013 | 1 | 1 |\n| Shares issued under employee stock purchase plan | \u2013 | 3 | 3 |\n| Stock repurchase program | \u2013 | (37) | (37) |\n| Balance, December 31, 2011 | 1,434 | (100) | 1,334 |\n| Shares sold to optionees less shares exchanged | \u2013 | 4 | 4 |\n| Shares issued under employee stock purchase plan | \u2013 | 4 | 4 |\n| Stock repurchase program | \u2013 | (14) | (14) |\n| Balance, December 31, 2012 | 1,434 | (106) | 1,328 |\n\nsee the notes to consolidated financial statements .\n",
+        "ground_truth": 1152
+    },
+    {
+        "question_id": "test-2001",
+        "question": "what is the anualized return for cme group from 2012 to 2017? Answer to the nearest integer.",
+        "context": "performance graph the following graph and table compares the cumulative five-year total return provided to shareholders on our class a common stock relative to the cumulative total returns of the s&p 500 index and our customized peer group . the peer group includes cboe holdings , inc. , intercontinentalexchange group , inc . and nasdaq , inc . an investment of $ 100 ( with reinvestment of all dividends ) is assumed to have been made in our class a common stock , in the peer group and the s&p 500 index on december 31 , 2012 , and its relative performance is tracked through december 31 , 2017 . comparison of 5 year cumulative total return* among cme group inc. , the s&p 500 index , and a peer group 12/12 12/13 12/14 12/15 12/16 cme group inc . s&p 500 peer group * $ 100 invested on 12/31/12 in stock or index , including reinvestment of dividends . fiscal year ending december 31 . copyright a9 2018 standard & poor 2019s , a division of s&p global . all rights reserved . the stock price performance included in this graph is not necessarily indicative of future stock price performance. .\n\n|  | 2013 | 2014 | 2015 | 2016 | 2017 |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| CME Group Inc. | $164.01 | $194.06 | $208.95 | $279.85 | $370.32 |\n| S&P 500 | 132.39 | 150.51 | 152.59 | 170.84 | 208.14 |\n| Peer Group | 176.61 | 187.48 | 219.99 | 249.31 | 323.23 |\n\nunregistered sales of equity securities during the past three years there have not been any unregistered sales by the company of equity securities. .\n",
+        "ground_truth": 22
+    },
+    {
+        "question_id": "test-2002",
+        "question": "What is the company's Weighted Average Cost of Capital (WACC)? Answer as a percentage to two decimal places.",
+        "context": "A manufacturing company is evaluating its financing strategy and needs to calculate its Weighted Average Cost of Capital (WACC) to optimally structure its capital resources. The company's current market value of equity is 150 million, and the market value of its debt is 100 million. The cost of equity is estimated at 9%, while the cost of debt stands at 5%. Considering the corporate tax rate is 25%, the company wants to determine its WACC to make informed investment decisions.",
+        "ground_truth": 6.9
+    },
+    {
+        "question_id": "test-2003",
+        "question": "How much unearned interest should be rebated to Jane when she pays off her loan early after making 10 payments? Answer to the nearest dollar.",
+        "context": "Jane has taken out an auto loan for purchasing a car with an amount of $15,000. The loan is set up as a precomputed loan with a total of 24 monthly payments of $700 each. After making 10 payments, Jane plans to pay off the loan early. The financial institution uses the Rule of 78 method to calculate the rebate on unearned interest that Jane is entitled to receive due to her early repayment.",
+        "ground_truth": 630
+    },
+    {
+        "question_id": "test-2004",
+        "question": "What is the after-tax real rate of return on Lisa's investment? Answer as a percentage to two decimal places.",
+        "context": "Lisa has invested in a bond with a nominal return rate of 8% per year. The country's current tax rate on investment income is 20%, and the inflation rate is running at 2.5% annually. She wants to calculate the actual growth of her investment by taking into account the tax and the inflation rate to understand her true gains over the year.",
+        "ground_truth": 3.8
+    },
+    {
+        "question_id": "test-2005",
+        "question": "If a security has a yearly adjusted period of 7.020 and an annual convexity of 65.180 and its return to maturity falls by 25 basis points, what is the anticipated percentage change in price (expressed as a percentage)? Answer to three decimal places.",
+        "context": "[]",
+        "ground_truth": 1.775
+    },
+    {
+        "question_id": "test-2006",
+        "question": "The unit contribution margin for an item is $20. A business's fixed production costs up to 300,000 units amounts to $500,000. At which production levels (in units) is the degree of operating leverage (DOL) likely to be the least? Answer to a single decimal place.",
+        "context": "[]",
+        "ground_truth": 300000.0
+    },
+    {
+        "question_id": "test-2007",
+        "question": "What is the 5-day moving average of the tech company's stock price on the 10th trading day? Answer to two decimal places.",
+        "context": "A financial analyst wants to evaluate a tech company's stock price movements over the past few weeks to identify any emerging trends. They have collected the closing prices for the last 10 trading days as follows: [205, 210, 215, 220, 222, 225, 230, 235, 236, 240]. The analyst decides to calculate the 5-day moving average of the stock prices to smooth out volatility and better understand the price trend.",
+        "ground_truth": 233.2
+    },
+    {
+        "question_id": "test-2008",
+        "question": "What is the profit or loss that the investor makes on the expiration of the option? Provide the answer to the nearest integer.",
+        "context": "An investor purchases a call option on a 5-year treasury bond with a strike price of 3.0% yield. The option premium paid by the investor is 1.5%. At the expiration date, the yield on the bond is observed to be 3.5%. The option uses a standard multiplier of 100 to calculate the profit or loss from changes in the yield.",
+        "ground_truth": -100
+    },
+    {
+        "question_id": "test-2009",
+        "question": "What is the profit from this carry trade in Brazilian Reals? Answer to the nearest integer.",
+        "context": "A global investor is exploring a currency carry trade strategy. The investor plans to borrow funds in Japan, where the interest rate is extremely low at 0.5% per annum, and invest these funds in Brazil, where the interest rate is much higher at 5% per annum. The investor borrows 1,000,000 Japanese Yen and converts this amount into Brazilian Reals using an exchange rate of 0.05. The investor holds the investment for one year, assuming that the exchange rate remains stable during this period.",
+        "ground_truth": 2250
+    },
+    {
+        "question_id": "test-2010",
+        "question": "What is the updated Accumulation/Distribution line value for the current period? Answer to the nearest integer.",
+        "context": "An investment analyst is evaluating the Accumulation/Distribution line for a stock to determine market sentiment. Over the past period, the stock had a closing price of $115, a high of $120, and a low of $110. During this period, the traded volume was 100,000 shares. The previous day's Accumulation/Distribution line value was 1,500,000. The analyst wants to calculate the updated Accumulation/Distribution line value for the current period.",
+        "ground_truth": 1500000
+    },
+    {
+        "question_id": "test-2011",
+        "question": "What is the median annual return rate for the mutual fund over the past 10 years? Answer as a percentage to two decimal places.",
+        "context": "An investment bank is analyzing the median annual return rates of a portfolio consisting of different asset classes over the past 10 years. They have collected the following annual return rates (in percentage) for a particular mutual fund: 5.2, 7.1, 2.8, 6.5, 3.9, 9.0, 4.6, 8.3, 5.7, and 7.4. The bank wants to determine the median annual return rate for this mutual fund to assess its performance stability over time.",
+        "ground_truth": 6.1
+    }
+]

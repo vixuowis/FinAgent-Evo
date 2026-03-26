@@ -113,7 +113,7 @@ function HomePageInner({
       <div className="flex h-screen flex-col">
         <header className="flex h-16 items-center justify-between border-b border-border px-6">
           <div className="flex items-center gap-4">
-            <h1 className="text-xl font-semibold">Deep Agent UI</h1>
+            <h1 className="text-xl font-semibold text-primary">FinAgent-Evo</h1>
             {!sidebar && (
               <Button
                 variant="ghost"
@@ -247,7 +247,7 @@ function HomePageContent() {
         />
         <div className="flex h-screen items-center justify-center">
           <div className="text-center">
-            <h1 className="text-2xl font-bold">Welcome to Standalone Chat</h1>
+            <h1 className="text-2xl font-bold">Welcome to FinAgent-Evo</h1>
             <p className="mt-2 text-muted-foreground">
               Configure your deployment to get started
             </p>
