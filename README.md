@@ -52,4 +52,4 @@ Add the following to your Zed `settings.json`:
 ```
 
 ## Proposal Reference
-Based on the research proposal: `workspace/writing_space/drafts/FinAgent-Evo-Proposal.md`.
+Based on the research proposal: `docs/proposal.md`.
