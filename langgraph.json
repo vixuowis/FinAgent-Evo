@@ -1,0 +1,7 @@
+{
+  "graphs": {
+    "finagent": "./src/agent.py:agent"
+  },
+  "env": ".env",
+  "dependencies": ["."]
+}
