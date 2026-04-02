@@ -7,3 +7,4 @@ dist
 *.log
 __pycache__
 .langgraph_api
+docs/research/PIXIU
