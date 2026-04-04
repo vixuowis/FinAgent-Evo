@@ -1,0 +1,1668 @@
+[
+    {
+        "question_id": "test-2000",
+        "success": true,
+        "agent_answer": 1152.0,
+        "ground_truth": 1152,
+        "response": "**Analysis:**\n\nLooking at the table, I need to trace the effect of the Smith International acquisition on the 2012 shares outstanding balance.\n\n1. The Smith International acquisition in 2010 added **176 million shares** to shares outstanding (100 million issued + 76 million from treasury)\n2. The final balance on December 31, 2012 shows **1,328 million shares outstanding**\n\nTo find what the shares outstanding would have been without this acquisition, I subtract the acquisition shares from the final total:\n\n1,328 - 176 = 1,152 million shares\n\nFinal Answer: 1152"
+    },
+    {
+        "question_id": "test-2002",
+        "success": true,
+        "agent_answer": 6.9,
+        "ground_truth": 6.9,
+        "response": "The Weighted Average Cost of Capital (WACC) is calculated as follows:\n\n**WACC Formula:**\n$$WACC = \\frac{E}{V} \\times R_e + \\frac{D}{V} \\times R_d \\times (1 - T)$$\n\n**Given:**\n- Market Value of Equity (E) = 150 million\n- Market Value of Debt (D) = 100 million\n- Total Value (V) = 250 million\n- Cost of Equity (Re) = 9%\n- Cost of Debt (Rd) = 5%\n- Tax Rate (T) = 25%\n\n**Calculations:**\n- Weight of Equity = 150/250 = 0.60\n- Weight of Debt = 100/250 = 0.40\n- After-tax Cost of Debt = 5% \u00d7 (1 - 0.25) = 3.75%\n\n**WACC:**\n- WACC = (0.60 \u00d7 9%) + (0.40 \u00d7 3.75%)\n- WACC = 5.40% + 1.50%\n- WACC = **6.90%**\n\nFinal Answer: 6.90"
+    },
+    {
+        "question_id": "test-2003",
+        "success": true,
+        "agent_answer": 630.0,
+        "ground_truth": 630,
+        "response": "**Summary:**\n\nUsing the Rule of 78 method:\n\n1. **Total Interest**: $16,800 (total payments) - $15,000 (loan) = $1,800\n\n2. **Sum of Digits Calculation**:\n   - Sum of digits for 24 periods: (24 \u00d7 25) \u00f7 2 = 300\n   - Sum of digits for remaining 14 periods: (14 \u00d7 15) \u00f7 2 = 105\n\n3. **Unearned Interest Rebate**:\n   - $1,800 \u00d7 (105 \u00f7 300) = $1,800 \u00d7 0.35 = **$630**\n\nThe Rule of 78 allocates more interest to the earlier payments, so after 10 of 24 payments, the lender has already \"earned\" $1,170 of interest (65%), leaving $630 (35%) as unearned interest to be rebated.\n\nFinal Answer: 630"
+    },
+    {
+        "question_id": "test-2004",
+        "success": true,
+        "agent_answer": 3.8,
+        "ground_truth": 3.8,
+        "response": "Let me verify the calculation:\n\n**Step 1: Calculate the after-tax nominal return**\n- Nominal return: 8%\n- Tax rate: 20%\n- After-tax nominal return = 8% \u00d7 (1 - 0.20) = 8% \u00d7 0.80 = 6.4%\n\n**Step 2: Calculate the after-tax real return using the Fisher equation**\n- Real return = (1 + after-tax nominal) / (1 + inflation) - 1\n- Real return = (1 + 0.064) / (1 + 0.025) - 1 = 1.064 / 1.025 - 1 = 3.80%\n\nFinal Answer: 3.80"
+    },
+    {
+        "question_id": "test-2005",
+        "success": true,
+        "agent_answer": 1.775,
+        "ground_truth": 1.775,
+        "response": "Using the standard bond price change formula with duration and convexity:\n\n**Formula:**\n$$\\%\\Delta P \\approx -Duration \\times \\Delta y + \\frac{1}{2} \\times Convexity \\times (\\Delta y)^2$$\n\n**Calculation:**\n- Duration effect: $-7.020 \\times (-0.0025) = 0.01755$ (1.755%)\n- Convexity effect: $0.5 \\times 65.180 \\times (-0.0025)^2 = 0.0002037$ (0.020%)\n- Total price change: $1.755\\% + 0.020\\% = 1.775\\%$\n\nWhen yields fall by 25 basis points, the convexity adjustment adds to the positive price movement predicted by duration alone.\n\nFinal Answer: 1.775"
+    },
+    {
+        "question_id": "test-2006",
+        "success": true,
+        "agent_answer": 300000.0,
+        "ground_truth": 300000.0,
+        "response": "**Analysis:**\n\nThe Degree of Operating Leverage (DOL) is calculated as:\n\n**DOL = Contribution Margin / Operating Income = (Q \u00d7 Unit CM) / (Q \u00d7 Unit CM - Fixed Costs)**\n\nKey observations:\n1. **Breakeven point** = Fixed Costs / Unit CM = $500,000 / $20 = **25,000 units**\n2. **Above breakeven**, DOL decreases as production increases because:\n   - As Q increases, operating income grows\n   - DOL approaches 1 (the minimum possible) as production scales up\n\nThe DOL is minimized at the **maximum feasible production level** within the given constraint of 300,000 units.\n\nFinal Answer: 300000.0"
+    },
+    {
+        "question_id": "test-2007",
+        "success": true,
+        "agent_answer": 233.2,
+        "ground_truth": 233.2,
+        "response": "The 5-day moving average on the 10th trading day is calculated using the last 5 closing prices:\n\n- Day 6: $225\n- Day 7: $230\n- Day 8: $235\n- Day 9: $236\n- Day 10: $240\n\nSum = $1,166\n\n5-day moving average = $1,166 \u00f7 5 = $233.20\n\nFinal Answer: 233.20"
+    },
+    {
+        "question_id": "test-2008",
+        "success": true,
+        "agent_answer": -100.0,
+        "ground_truth": -100,
+        "response": "## Analysis\n\nFor a **call option on treasury bond yield**:\n\n1. **Option Type**: A call option on yield means the buyer profits when yields **rise** above the strike price.\n\n2. **Payoff Calculation**:\n   - Strike Yield = 3.0%\n   - Expiration Yield = 3.5%\n   - Yield Difference = 3.5% - 3.0% = 0.5%\n   - Since expiration yield > strike yield, the option is **in-the-money**\n   - Payoff = 0.5 \u00d7 100 = **50**\n\n3. **Premium Cost**:\n   - Premium = 1.5%\n   - Total Premium Paid = 1.5 \u00d7 100 = **150**\n\n4. **Profit/Loss**:\n   - Profit/Loss = Payoff - Premium Cost\n   - Profit/Loss = 50 - 150 = **-100**\n\nThe investor paid 150 in premium but only recovered 50 in intrinsic value at expiration, resulting in a net loss of 100.\n\nFinal Answer: -100"
+    },
+    {
+        "question_id": "test-2009",
+        "success": true,
+        "agent_answer": 2250.0,
+        "ground_truth": 2250,
+        "response": "The profit from this carry trade is calculated as follows:\n\n**Step 1: Convert borrowed JPY to BRL**\n- 1,000,000 JPY \u00d7 0.05 = 50,000 BRL (initial investment)\n\n**Step 2: Investment proceeds in Brazil after 1 year**\n- 50,000 BRL \u00d7 1.05 = 52,500 BRL\n\n**Step 3: Loan repayment in JPY**\n- 1,000,000 JPY \u00d7 1.005 = 1,005,000 JPY\n\n**Step 4: Convert loan repayment to BRL (stable exchange rate)**\n- 1,005,000 JPY \u00d7 0.05 = 50,250 BRL\n\n**Step 5: Profit**\n- 52,500 BRL - 50,250 BRL = 2,250 BRL\n\nFinal Answer: 2250"
+    },
+    {
+        "question_id": "test-2010",
+        "success": true,
+        "agent_answer": 1500000.0,
+        "ground_truth": 1500000,
+        "response": "## Calculation Explanation\n\nThe Accumulation/Distribution (A/D) line is calculated in three steps:\n\n**Step 1: Calculate the Money Flow Multiplier**\n$$\\text{Money Flow Multiplier} = \\frac{(\\text{Close} - \\text{Low}) - (\\text{High} - \\text{Close})}{\\text{High} - \\text{Low}}$$\n\nUsing the given values:\n- Close = $115\n- High = $120\n- Low = $110\n\n$$\\text{Money Flow Multiplier} = \\frac{(115 - 110) - (120 - 115)}{120 - 110} = \\frac{5 - 5}{10} = 0$$\n\n**Step 2: Calculate Money Flow Volume**\n$$\\text{Money Flow Volume} = \\text{Money Flow Multiplier} \\times \\text{Volume} = 0 \\times 100,000 = 0$$\n\n**Step 3: Update the A/D Line**\n$$\\text{New A/D Line} = \\text{Previous A/D Line} + \\text{Money Flow Volume} = 1,500,000 + 0 = 1,500,000$$\n\n**Interpretation**: The closing price ($115) was exactly at the midpoint of the trading range ($110-$120), resulting in a Money Flow Multiplier of 0. This indicates neutral price action for this period\u2014neither accumulation nor distribution occurred, so the A/D line remained unchanged.\n\nFinal Answer: 1500000"
+    },
+    {
+        "question_id": "test-2011",
+        "success": true,
+        "agent_answer": 6.1,
+        "ground_truth": 6.1,
+        "response": "To find the median annual return rate, I sorted the 10 return values and calculated the average of the two middle values (since there's an even number of observations).\n\n**Sorted returns:** 2.8, 3.9, 4.6, 5.2, 5.7, 6.5, 7.1, 7.4, 8.3, 9.0\n\n**Calculation:**\n- 5th value: 5.7\n- 6th value: 6.5\n- Median = (5.7 + 6.5) / 2 = 6.1%\n\nFinal Answer: 6.10"
+    },
+    {
+        "question_id": "test-2012",
+        "success": true,
+        "agent_answer": 12.6,
+        "ground_truth": 12.6,
+        "response": "## Analysis: LIFO to FIFO Conversion Impact on Net Income\n\n### Key Data:\n- LIFO Reserve 2014: $82 thousand\n- LIFO Reserve 2013: $64 thousand\n- Tax Rate: 30%\n\n### Calculation Logic:\n\n**Step 1: Change in LIFO Reserve**\nThe LIFO reserve represents the cumulative difference between FIFO and LIFO inventory values. The change in LIFO reserve from one year to the next equals the difference in Cost of Goods Sold (COGS) between LIFO and FIFO for that year.\n\n**Step 2: Pre-Tax Income Impact**\nWhen switching from LIFO to FIFO:\n- LIFO COGS is typically higher during periods of rising prices\n- FIFO pre-tax income would be higher by the change in LIFO reserve\n- Pre-tax income increase = $82 - $64 = $18 thousand\n\n**Step 3: After-Tax Net Income Impact**\nThe tax savings from lower LIFO income would be reversed:\n- Net Income Increase = Pre-tax increase \u00d7 (1 - Tax rate)\n- Net Income Increase = $18 \u00d7 (1 - 0.30) = $12.6 thousand\n\nFinal Answer: 12.6"
+    },
+    {
+        "question_id": "test-2013",
+        "success": true,
+        "agent_answer": 0.035,
+        "ground_truth": 0.035,
+        "response": "Based on the Exhibit 1 data:\n\n**Calculations:**\n\n| Trade | Trade Price | Bid | Offer | Midpoint | Effective Spread |\n|-------|-------------|-----|-------|----------|------------------|\n| 1 | 41.50 | 41.45 | 41.50 | 41.475 | 2 \u00d7 \\|41.50 - 41.475\\| = 0.050 |\n| 2 | 41.75 | 41.73 | 41.75 | 41.740 | 2 \u00d7 \\|41.75 - 41.740\\| = 0.020 |\n\n**Average Effective Spread** = (0.050 + 0.020) / 2 = **0.035**\n\nFinal Answer: 0.035"
+    },
+    {
+        "question_id": "test-2014",
+        "success": true,
+        "agent_answer": 30000.0,
+        "ground_truth": 30000,
+        "response": "**Analysis:**\n- John's mortgage date (January 10, 2020) falls after the TCJA effective date of December 15, 2017\n- This means the $750,000 debt limit applies (not the pre-TCJA $1,000,000 limit)\n- Since his actual debt ($900,000) exceeds the limit, only a proportional amount of the interest is deductible\n- Deductible ratio: $750,000 \u00f7 $900,000 = 5/6 \u2248 83.33%\n- Deductible interest: $36,000 \u00d7 (5/6) = $30,000\n\nFinal Answer: 30000"
+    },
+    {
+        "question_id": "test-2015",
+        "success": true,
+        "agent_answer": 62.5,
+        "ground_truth": 62.5,
+        "response": "**Pareto Analysis for Customer Complaints**\n\n| Cause | Occurrences | Percentage | Cumulative % |\n|-------|-------------|------------|--------------|\n| Delayed Transactions | 120 | 37.50% | 37.50% |\n| Incorrect Statements | 80 | 25.00% | 62.50% |\n| Customer Support Delays | 50 | 15.63% | 78.13% |\n| High Brokerage Fees | 40 | 12.50% | 90.63% |\n| Platform Downtime | 30 | 9.38% | 100.00% |\n| **Total** | **320** | **100%** | |\n\n**Calculation:**\n- Total complaints: 120 + 80 + 50 + 40 + 30 = 320\n- Top two causes (Delayed Transactions + Incorrect Statements): 120 + 80 = 200\n- Percentage: (200 / 320) \u00d7 100 = 62.50%\n\nFinal Answer: 62.50"
+    },
+    {
+        "question_id": "test-2016",
+        "success": true,
+        "agent_answer": 17.9,
+        "ground_truth": 17.9,
+        "response": "## Portfolio Standard Deviation Calculation\n\nI calculated the overall annual standard deviation of the portfolio using the portfolio variance formula:\n\n**Portfolio Variance Formula:**\n$$\\sigma_p^2 = \\sum_{i=1}^{n} w_i^2 \\sigma_i^2 + \\sum_{i \\neq j} 2w_i w_j \\text{Cov}_{ij}$$\n\n**Step-by-Step Calculation:**\n\n1. **Variance contributions from individual assets:**\n   - Asset A: (0.40)\u00b2 \u00d7 (0.15)\u00b2 = 0.0036\n   - Asset B: (0.30)\u00b2 \u00d7 (0.20)\u00b2 = 0.0036\n   - Asset C: (0.30)\u00b2 \u00d7 (0.25)\u00b2 = 0.005625\n\n2. **Covariance contributions (cross-terms):**\n   - A-B: 2 \u00d7 0.40 \u00d7 0.30 \u00d7 0.02 = 0.0048\n   - A-C: 2 \u00d7 0.40 \u00d7 0.30 \u00d7 0.03 = 0.0072\n   - B-C: 2 \u00d7 0.30 \u00d7 0.30 \u00d7 0.04 = 0.0072\n\n3. **Total portfolio variance:**\n   0.0036 + 0.0036 + 0.005625 + 0.0048 + 0.0072 + 0.0072 = **0.032025**\n\n4. **Portfolio standard deviation:**\n   \u221a0.032025 = 0.17896 = **17.90%**\n\nFinal Answer: 17.90"
+    },
+    {
+        "question_id": "test-2017",
+        "success": true,
+        "agent_answer": 4200.0,
+        "ground_truth": 4200,
+        "response": "## Calculation Summary\n\n**Step 1: Determine Jane's Actual Cost**\n- The stated \"purchase price\" of $40 is the Fair Market Value (FMV) at purchase\n- With 15% discount: Actual Cost = $40 \u00d7 (1 - 0.15) = **$34.00 per share**\n- Total actual cost: $34.00 \u00d7 200 shares = **$6,800**\n\n**Step 2: Calculate Sale Proceeds**\n- Sale proceeds: $55 \u00d7 200 shares = **$11,000**\n\n**Step 3: Determine Tax Treatment**\n- Holding period: 18 months (less than 2 years)\n- Per IRS rules for non-qualified ESPP dispositions: **Entire gain is taxed as ordinary income**\n\n**Step 4: Calculate Taxable Income**\n- Total gain = $11,000 - $6,800 = **$4,200**\n\nFinal Answer: 4200"
+    },
+    {
+        "question_id": "test-2018",
+        "success": true,
+        "agent_answer": 159.06,
+        "ground_truth": 159.06,
+        "response": "The 10-day Exponential Moving Average (EMA) is calculated as follows:\n\n**Step 1: Calculate the initial SMA (Simple Moving Average) of the first 10 days:**\n- SMA = (150 + 152 + 153 + 151 + 154 + 155 + 158 + 160 + 162 + 164) / 10 = 155.9\n\n**Step 2: Apply the EMA formula for subsequent days:**\n- Multiplier = 2 / (10 + 1) = 2/11 \u2248 0.1818\n\n**Day 11 EMA:**\n- EMA = (166 - 155.9) \u00d7 0.1818 + 155.9 = 157.7364\n\n**Day 12 EMA (Latest):**\n- EMA = (165 - 157.7364) \u00d7 0.1818 + 157.7364 = 159.0570\n\nFinal Answer: 159.06"
+    },
+    {
+        "question_id": "test-2019",
+        "success": true,
+        "agent_answer": 143.0,
+        "ground_truth": 143.0,
+        "response": "The Volume Price Trend (VPT) is calculated using the formula:\n**VPT[n] = VPT[n-1] + Volume[n] \u00d7 ((Price[n] - Price[n-1]) / Price[n-1])**\n\n**Calculation breakdown:**\n- **Day 1:** VPT = 0 (starting point)\n- **Day 2:** Price change = (123-120)/120 = 2.5%, VPT = 0 + 1600 \u00d7 0.025 = 40.00\n- **Day 3:** Price change = (121-123)/123 = -1.63%, VPT = 40 + 1550 \u00d7 (-0.0163) = 14.80\n- **Day 4:** Price change = (125-121)/121 = 3.31%, VPT = 14.80 + 1700 \u00d7 0.0331 = 71.00\n- **Day 5:** Price change = (130-125)/125 = 4.0%, VPT = 71 + 1800 \u00d7 0.04 = 143.00\n\nThe positive VPT value of 143.00 indicates a bullish trend where price increases are supported by strong volume.\n\nFinal Answer: 143.00"
+    },
+    {
+        "question_id": "test-2020",
+        "success": true,
+        "agent_answer": 0.7038,
+        "ground_truth": 0.7038,
+        "response": "The delta of a European call option is calculated as N(d\u2081), where N is the cumulative standard normal distribution function.\n\nUsing the Black-Scholes formula:\n- **d\u2081** = (ln(S/K) + (r + \u03c3\u00b2/2) \u00d7 T) / (\u03c3 \u00d7 \u221aT)\n- **Delta** = N(d\u2081)\n\nWith the given parameters:\n- S = $150 (stock price)\n- K = $140 (strike price)\n- T = 0.5 years\n- \u03c3 = 25% (volatility)\n- r = 2% (risk-free rate)\n\nThe calculation yields:\n- d\u2081 = 0.535239508398885\n- N(d\u2081) = 0.7037578751096305\n\nThe delta of 0.7038 indicates that for every $1 increase in the stock price, the call option price is expected to increase by approximately $0.7038. This is consistent with an in-the-money call option (since S > K), where delta typically ranges between 0.5 and 1.0.\n\nFinal Answer: 0.7038"
+    },
+    {
+        "question_id": "test-2021",
+        "success": true,
+        "agent_answer": 6.33,
+        "ground_truth": 6.33,
+        "response": "The Weighted Average Cost of Capital (WACC) is calculated as follows:\n\n**Given:**\n- Cost of Equity (Re) = 8%\n- Cost of Debt (Rd) = 4%\n- Equity Value (E) = $2,000,000\n- Debt Value (D) = $1,000,000\n- Tax Rate = 25%\n\n**Calculations:**\n- Total Value (V) = $2,000,000 + $1,000,000 = $3,000,000\n- Equity Weight (E/V) = 2/3\n- Debt Weight (D/V) = 1/3\n- After-tax Cost of Debt = Rd \u00d7 (1 - Tax Rate) = 4% \u00d7 (1 - 0.25) = 3%\n\n**WACC Formula:**\nWACC = (E/V \u00d7 Re) + (D/V \u00d7 Rd \u00d7 (1 - T))\n\nWACC = (2/3 \u00d7 8%) + (1/3 \u00d7 3%) = 6.33%\n\nFinal Answer: 6.33"
+    },
+    {
+        "question_id": "test-2022",
+        "success": true,
+        "agent_answer": 9.94,
+        "ground_truth": 9.94,
+        "response": "To calculate the Weighted Average Cost of Capital (WACC), I need to use the formula:\n\n**WACC = (E/V) \u00d7 Re + (D/V) \u00d7 Rd \u00d7 (1 - T)**\n\nWhere:\n- E = Market value of equity = $15,000,000\n- D = Market value of debt = $5,000,000\n- V = Total market value = E + D = $20,000,000\n- Re = Cost of equity = 12%\n- Rd = Cost of debt = 5%\n- T = Corporate tax rate = 25%\n\n**Step-by-step calculation:**\n1. Equity weight: E/V = 15,000,000 / 20,000,000 = 0.75\n2. Debt weight: D/V = 5,000,000 / 20,000,000 = 0.25\n3. After-tax cost of debt: Rd \u00d7 (1 - T) = 5% \u00d7 (1 - 0.25) = 3.75%\n4. WACC = (0.75 \u00d7 12%) + (0.25 \u00d7 3.75%) = 9% + 0.9375% = 9.9375%\n\nRounded to two decimal places: **9.94%**\n\nFinal Answer: 9.94"
+    },
+    {
+        "question_id": "test-2023",
+        "success": true,
+        "agent_answer": 875.0,
+        "ground_truth": 875,
+        "response": "## Calculation Breakdown\n\n**Step 1: Total Shares**\n- 5 contracts \u00d7 100 shares per contract = **500 shares**\n\n**Step 2: Total Premium Paid (Cost)**\n- $3.25 per share \u00d7 500 shares = **$1,625**\n\n**Step 3: Intrinsic Value at Expiration**\n- The put option is in-the-money since stock price ($140) < strike price ($145)\n- Intrinsic value per share = $145 - $140 = **$5 per share**\n- Total payoff = $5 \u00d7 500 shares = **$2,500**\n\n**Step 4: Net Profit**\n- Net Profit = Total Payoff - Total Premium Paid\n- Net Profit = $2,500 - $1,625 = **$875**\n\nThe investor profited from this trade because the stock dropped below the strike price by more than the premium paid.\n\nFinal Answer: 875"
+    },
+    {
+        "question_id": "test-2024",
+        "success": true,
+        "agent_answer": 11.9,
+        "ground_truth": 11.9,
+        "response": "**Calculation Breakdown:**\n\nThe multi-factor model formula is:\n$$E(R) = \\alpha + \\beta_1 R_1 + \\beta_2 R_2 + \\beta_3 R_3 + \\epsilon$$\n\nWhere:\n- **\u03b1 (Intercept)** = 0.02\n- **Market contribution**: \u03b2\u2081 \u00d7 R\u2081 = 1.2 \u00d7 0.05 = 0.06\n- **Technology index contribution**: \u03b2\u2082 \u00d7 R\u2082 = 0.8 \u00d7 0.03 = 0.024\n- **Interest rate contribution**: \u03b2\u2083 \u00d7 R\u2083 = -0.5 \u00d7 (-0.01) = 0.005\n- **Error term (\u03b5)** = 0.01\n\n**Total Expected Return** = 0.02 + 0.06 + 0.024 + 0.005 + 0.01 = 0.119 = **11.90%**\n\nFinal Answer: 11.90"
+    },
+    {
+        "question_id": "test-2025",
+        "success": true,
+        "agent_answer": 2309.85,
+        "ground_truth": 2309.85,
+        "response": "Final Answer: 2309.85"
+    },
+    {
+        "question_id": "test-2026",
+        "success": true,
+        "agent_answer": 371.23,
+        "ground_truth": 371.23,
+        "response": "Using the standard amortization formula for a fixed-rate loan:\n\n**Given:**\n- Principal (P) = $35,000\n- Annual interest rate = 5% (monthly rate r = 0.05/12 \u2248 0.004167)\n- Term = 10 years (n = 120 monthly payments)\n\n**Calculation:**\nThe monthly payment is calculated using the formula:\n$$M = P \\times \\frac{r(1+r)^n}{(1+r)^n - 1}$$\n\nSubstituting the values:\n$$M = 35,000 \\times \\frac{0.004167(1.004167)^{120}}{(1.004167)^{120} - 1} = 371.2293...$$\n\nRounded to the nearest cent, the monthly payment is $371.23.\n\nFinal Answer: 371.23"
+    },
+    {
+        "question_id": "test-2027",
+        "success": true,
+        "agent_answer": 10250.0,
+        "ground_truth": 10250,
+        "response": "Based on the progressive tax brackets:\n\n1. **First $10,000**: 0% tax = $0\n2. **Next $20,000** ($10,001 - $30,000): 10% tax = $2,000\n3. **Next $30,000** ($30,001 - $60,000): 15% tax = $4,500\n4. **Income over $60,000** ($15,000): 25% tax = $3,750\n\n**Total Tax** = $0 + $2,000 + $4,500 + $3,750 = **$10,250**\n\nFinal Answer: 10250"
+    },
+    {
+        "question_id": "test-2028",
+        "success": true,
+        "agent_answer": 17280.0,
+        "ground_truth": 17280,
+        "response": "## Solution: Double-Declining Balance Depreciation - Year 3\n\n### Method Overview\nThe **Double-Declining Balance (DDB)** method applies a depreciation rate that is twice the straight-line rate to the book value at the beginning of each period.\n\n### Step-by-Step Calculation\n\n**Given:**\n- Initial Cost: $120,000\n- Useful Life: 5 years\n- Salvage Value: $20,000\n- DDB Rate = 2/5 = **40%**\n\n**Year-by-Year Schedule:**\n\n| Year | Beginning Book Value | Depreciation (40% \u00d7 BV) | Ending Book Value |\n|------|---------------------|------------------------|-------------------|\n| 1 | $120,000 | $48,000 | $72,000 |\n| 2 | $72,000 | $28,800 | $43,200 |\n| **3** | **$43,200** | **$17,280** | **$25,920** |\n| 4 | $25,920 | $5,920* | $20,000 |\n| 5 | $20,000 | $0 | $20,000 |\n\n*Note: Year 4 depreciation is limited to $5,920 to avoid depreciating below the salvage value of $20,000.*\n\n### Third Year Calculation\n$$\\text{Year 3 Depreciation} = \\$43,200 \\times 40\\% = \\$17,280$$\n\nFinal Answer: 17280"
+    },
+    {
+        "question_id": "test-2029",
+        "success": true,
+        "agent_answer": 21750.0,
+        "ground_truth": 21750,
+        "response": "To calculate Alice's total tax liability, I need to apply the progressive tax rates to each portion of her income:\n\n**Tax Breakdown:**\n- **Bracket 1:** $10,000 \u00d7 10% = $1,000\n- **Bracket 2:** ($40,000 - $10,000) = $30,000 \u00d7 15% = $4,500\n- **Bracket 3:** ($90,000 - $40,000) = $50,000 \u00d7 20% = $10,000\n- **Bracket 4:** ($115,000 - $90,000) = $25,000 \u00d7 25% = $6,250\n\n**Total Tax Liability:** $1,000 + $4,500 + $10,000 + $6,250 = $21,750\n\nFinal Answer: 21750"
+    },
+    {
+        "question_id": "test-2030",
+        "success": true,
+        "agent_answer": 0.53,
+        "ground_truth": 0.53,
+        "response": "To calculate the beta of Portfolio A relative to the market, I need to compute:\n\n**Beta = Covariance(Portfolio A, Market) / Variance(Market)**\n\nUsing the provided monthly returns:\n- Portfolio A: [0.02, 0.03, 0.01, -0.01, 0.02, 0.01, 0.03, 0.02, 0.01, 0.02, 0.01, 0.04]\n- Market: [0.01, 0.02, 0.02, -0.02, 0.03, 0.02, 0.01, 0.02, 0.03, 0.01, 0.02, 0.03]\n\n**Results from calculation:**\n- Covariance(Portfolio A, Market) = 0.0001\n- Variance(Market) = 0.000188\n- Beta = 0.0001 / 0.000188 = 0.532\n\n**Interpretation:** A beta of 0.53 indicates that Portfolio A has lower systematic risk than the market. For every 1% move in the market, Portfolio A is expected to move approximately 0.53% in the same direction, suggesting the portfolio is less volatile than the market benchmark.\n\nFinal Answer: 0.53"
+    },
+    {
+        "question_id": "test-2031",
+        "success": true,
+        "agent_answer": 11.818,
+        "ground_truth": 11.818,
+        "response": "**Calculation Summary:**\n\nThis is a two-stage Dividend Discount Model valuation:\n\n1. **Stage 1:** Present value of dividends for years 1-2\n   - PV(D1) = $0.5 / 1.10 = $0.455\n   - PV(D2) = $0.5 / (1.10)\u00b2 = $0.413\n\n2. **Stage 2:** Terminal value at Year 2 (perpetuity with growth)\n   - D3 = $0.5 \u00d7 (1 + 0.06) = $0.53\n   - Terminal Value at Year 2 = $0.53 / (0.10 - 0.06) = $13.25\n   - PV of Terminal Value = $13.25 / (1.10)\u00b2 = $10.950\n\n3. **Total Value** = $0.455 + $0.413 + $10.950 = **$11.818**\n\nFinal Answer: 11.818"
+    },
+    {
+        "question_id": "test-2032",
+        "success": true,
+        "agent_answer": 5.368,
+        "ground_truth": 5.368,
+        "response": "Using the bond price approximation formula with modified duration and convexity:\n\n**Formula:**\n% Price Change \u2248 -Duration \u00d7 \u0394y + 0.5 \u00d7 Convexity \u00d7 (\u0394y)\u00b2\n\n**Calculation:**\n- Duration effect: -10.3829 \u00d7 (-0.005) = **+5.191%**\n- Convexity effect: 0.5 \u00d7 141.217 \u00d7 (0.005)\u00b2 = **+0.177%**\n- Total: **5.368%**\n\nWhen yields fall, bond prices rise. The duration effect captures the first-order (linear) price sensitivity, while convexity adds the second-order (curvature) adjustment, further increasing the price gain.\n\nFinal Answer: 5.368"
+    },
+    {
+        "question_id": "test-2033",
+        "success": true,
+        "agent_answer": 115.942,
+        "ground_truth": 115.942,
+        "response": "**Calculation:**\n\n**Numerator** (December prices \u00d7 December quantities):\n- Sugar: \u20ac1.00/kg \u00d7 120 kg = \u20ac120\n- Cotton: \u20ac0.80/kg \u00d7 50 kg = \u20ac40\n- Total = \u20ac160\n\n**Denominator** (November prices \u00d7 December quantities):\n- Sugar: \u20ac0.90/kg \u00d7 120 kg = \u20ac108\n- Cotton: \u20ac0.60/kg \u00d7 50 kg = \u20ac30\n- Total = \u20ac138\n\n**Paasche Index** = (160 / 138) \u00d7 100 = 115.942\n\nFinal Answer: 115.942"
+    },
+    {
+        "question_id": "test-2034",
+        "success": true,
+        "agent_answer": 6.252,
+        "ground_truth": 6.252,
+        "response": "Using the **Grinold-Kroner model**, the expected annual equity return is calculated as:\n\n**E(R) = Income Return + Inflation + Real Earnings Growth + P/E Change**\n\n**Components:**\n- **Income Return** (expected dividend yield): 2.4%\n- **Expected Inflation**: 2.3%\n- **Expected Real Earnings Growth**: 5.0%\n- **P/E Change**: (14.0 / 14.5) - 1 = -3.448%\n\nSince the number of outstanding shares is presumed unchanged, there's no adjustment for share repurchases (\u0394S = 0).\n\n**Calculation:**\n- Expected Return = 2.4% + 2.3% + 5.0% + (-3.448%)\n- Expected Return = **6.252%**\n\nThe negative P/E change reflects an expected contraction in the valuation multiple from 14.5x to 14.0x, which reduces the total expected return.\n\nFinal Answer: 6.252"
+    },
+    {
+        "question_id": "test-2035",
+        "success": true,
+        "agent_answer": -1.15,
+        "ground_truth": -1.15,
+        "response": "The geometric mean return is calculated as follows:\n\n1. **Convert returns to growth factors**:\n   - 2009: 1 + 0.20 = 1.20\n   - 2010: 1 + (-0.30) = 0.70\n   - 2011: 1 + 0.15 = 1.15\n\n2. **Calculate product of growth factors**: 1.20 \u00d7 0.70 \u00d7 1.15 = 0.966\n\n3. **Apply geometric mean formula**: (0.966)^(1/3) - 1 = -0.01146...\n\n4. **Convert to percentage**: -1.15%\n\nFinal Answer: -1.15"
+    },
+    {
+        "question_id": "test-2036",
+        "success": true,
+        "agent_answer": 4000.0,
+        "ground_truth": 4000,
+        "response": "**Solution:**\n\n**Step 1: Initial Purchase**\n- 2,000 shares \u00d7 $10.50 = **$21,000 total basis**\n\n**Step 2: 5% Non-Taxable Stock Dividend (Year 4)**\n- New shares added: 2,000 \u00d7 5% = 100 shares\n- Total shares: 2,100 shares\n- Total basis remains $21,000 (non-taxable dividends don't increase basis)\n- Per-share basis: $21,000 \u00f7 2,100 = **$10.00 per share**\n\n**Step 3: 2-for-1 Stock Split (Year 5)**\n- Total shares: 2,100 \u00d7 2 = **4,200 shares**\n- Total basis remains $21,000\n- Per-share basis: $21,000 \u00f7 4,200 = **$5.00 per share**\n\n**Step 4: Sale of 800 Shares**\n- Basis: 800 shares \u00d7 $5.00 = **$4,000**\n\nFinal Answer: 4000"
+    },
+    {
+        "question_id": "test-2037",
+        "success": true,
+        "agent_answer": 5.16,
+        "ground_truth": 5.16,
+        "response": "The Weighted Average Cost of Capital (WACC) is calculated as:\n\n**WACC = (Weight of Equity \u00d7 Cost of Equity) + (Weight of Debt \u00d7 Cost of Debt \u00d7 (1 - Tax Rate))**\n\n- Weight of Equity = 20%, Cost of Equity = 10%\n- Weight of Debt = 80%, Pre-tax Cost of Debt = 5%\n- Tax Rate = 21%\n\n**Calculation:**\n- Equity portion: 0.20 \u00d7 10% = 2.00%\n- Debt portion: 0.80 \u00d7 5% \u00d7 (1 - 0.21) = 0.80 \u00d7 5% \u00d7 0.79 = 3.16%\n- WACC = 2.00% + 3.16% = 5.16%\n\nFinal Answer: 5.16"
+    },
+    {
+        "question_id": "test-2038",
+        "success": true,
+        "agent_answer": 20.0,
+        "ground_truth": 20,
+        "response": "**Step-by-step solution:**\n\n1. **Calculate the GDP gap:**\n   - GDP Gap = Full-employment GDP - Actual GDP\n   - GDP Gap = $1.3 trillion - $1.2 trillion = $0.1 trillion = **$100 billion**\n\n2. **Calculate the spending multiplier:**\n   - Spending Multiplier = 1 / (1 - MPC)\n   - Spending Multiplier = 1 / (1 - 0.8) = 1 / 0.2 = **5**\n\n3. **Calculate the required increase in government spending:**\n   - Required Increase = GDP Gap / Spending Multiplier\n   - Required Increase = $100 billion / 5 = **$20 billion**\n\nFinal Answer: 20"
+    },
+    {
+        "question_id": "test-2039",
+        "success": true,
+        "agent_answer": 20.532,
+        "ground_truth": 20.532,
+        "response": "Based on the context provided:\n\n- Specific reserves in the ALLL at December 31, 2012: $587 million\n- Total TDRs at December 31, 2012: $2,859 million\n\nCalculating the percentage:\n(587 / 2859) \u00d7 100 = 20.532%\n\nFinal Answer: 20.532"
+    },
+    {
+        "question_id": "test-2040",
+        "success": true,
+        "agent_answer": 0.442,
+        "ground_truth": 44.176,
+        "response": "Interest rate derivatives were $26,363 million out of a total net derivative receivables of $59,677 million for 2015.\n\nFinal Answer: 0.442"
+    },
+    {
+        "question_id": "test-2041",
+        "success": true,
+        "agent_answer": 40.0,
+        "ground_truth": 40.0,
+        "response": "**Calculation:**\n\n1. **Gross Profit** = Revenue - Cost of Goods Sold (COGS)\n   - Gross Profit = $750,000 - $450,000 = $300,000\n\n2. **Gross Profit Margin** = (Gross Profit / Revenue) \u00d7 100\n   - Gross Profit Margin = ($300,000 / $750,000) \u00d7 100 = 40.00%\n\nFinal Answer: 40.00"
+    },
+    {
+        "question_id": "test-2042",
+        "success": true,
+        "agent_answer": 159.33,
+        "ground_truth": 159.33,
+        "response": "The 5-day Exponential Moving Average (EMA) is calculated as follows:\n\n**Methodology:**\n1. **Multiplier** = 2/(n+1) = 2/6 = 0.3333\n2. **Initial SMA** (first 5 days) = (150 + 152 + 153 + 150 + 155)/5 = 152.00\n3. **EMA for each subsequent day** = (Current Price \u00d7 Multiplier) + (Previous EMA \u00d7 (1 - Multiplier))\n\n**Calculation:**\n| Day | Price | EMA |\n|-----|-------|--------|\n| 5 | 155 | 152.00 (Initial SMA) |\n| 6 | 157 | 153.67 |\n| 7 | 158 | 155.11 |\n| 8 | 160 | 156.74 |\n| 9 | 162 | 158.49 |\n| 10 | 161 | 159.33 |\n\nFinal Answer: 159.33"
+    },
+    {
+        "question_id": "test-2043",
+        "success": true,
+        "agent_answer": 80.667,
+        "ground_truth": 80.667,
+        "response": "The average rental expense is calculated by combining both operating lease expenses and sale/leaseback rental expenses for each year:\n\n- **2002**: $31M (operating leases) + $54M (sale/leaseback) = $85M\n- **2001**: $32M (operating leases) + $58M (sale/leaseback) = $90M  \n- **2000**: $13M (operating leases) + $54M (sale/leaseback) = $67M\n\nAverage = ($85M + $90M + $67M) / 3 = $80.667 million\n\nFinal Answer: 80.667"
+    },
+    {
+        "question_id": "test-2044",
+        "success": true,
+        "agent_answer": 50136.0,
+        "ground_truth": 50136,
+        "response": "**Analysis:**\n\nThe present value calculation involves two components:\n\n1. **Present Value of Annuity (5 annual payments of $10,000):**\n   - Using the formula: PV = PMT \u00d7 [1 - (1 + r)^(-n)] / r\n   - PV = $10,000 \u00d7 [1 - (1.08)^(-5)] / 0.08\n   - PV = **$39,927.10**\n\n2. **Present Value of Residual Value ($15,000 at end of Year 5):**\n   - Using the formula: PV = FV / (1 + r)^n\n   - PV = $15,000 / (1.08)^5\n   - PV = **$10,208.75**\n\n3. **Total Present Value:**\n   - $39,927.10 + $10,208.75 = **$50,135.85**\n\nFinal Answer: 50136"
+    },
+    {
+        "question_id": "test-2045",
+        "success": true,
+        "agent_answer": 1159.92,
+        "ground_truth": 1159.92,
+        "response": "**Calculation Summary:**\n\nUsing the standard mortgage amortization formula:\n- **Principal (P):** $200,000\n- **New Annual Interest Rate:** 3.5%\n- **Monthly Interest Rate (r):** 0.035 / 12 = 0.00291667\n- **Number of Payments (n):** 20 years \u00d7 12 months = 240 payments\n\n**Formula:** M = P \u00d7 [r(1+r)^n] / [(1+r)^n - 1]\n\nThe new monthly payment is **$1,159.92**.\n\nFinal Answer: 1159.92"
+    },
+    {
+        "question_id": "test-2046",
+        "success": true,
+        "agent_answer": 657.29,
+        "ground_truth": 657.29,
+        "response": "Using the standard amortization formula for a fixed-rate loan:\n\n**Loan Details:**\n- Principal: $35,000\n- Annual Interest Rate: 4.8%\n- Loan Term: 5 years (60 months)\n\n**Calculation:**\nThe monthly payment is calculated using the formula:\n$$M = P \\times \\frac{r(1+r)^n}{(1+r)^n - 1}$$\n\nWhere:\n- M = Monthly payment\n- P = Principal ($35,000)\n- r = Monthly interest rate (4.8% / 12 = 0.4% = 0.004)\n- n = Total number of payments (60)\n\n**Monthly Payment: $657.29**\n\nFinal Answer: 657.29"
+    },
+    {
+        "question_id": "test-2047",
+        "success": true,
+        "agent_answer": 460.59,
+        "ground_truth": 460.59,
+        "response": "**Calculation Breakdown:**\n\n1. **Loan Amount**: $25,000 - $5,000 (down payment) = **$20,000**\n\n2. **Monthly Interest Rate**: 5% \u00f7 12 = **0.4167%** per month\n\n3. **Number of Payments**: 4 years \u00d7 12 months = **48 payments**\n\n4. **Monthly Installment Formula** (standard amortizing loan):\n   $$PMT = P \\times \\frac{r(1+r)^n}{(1+r)^n - 1}$$\n   \n   Where:\n   - P = $20,000 (principal)\n   - r = 0.05/12 (monthly rate)\n   - n = 48 (number of payments)\n\n5. **Result**: $460.59\n\nFinal Answer: 460.59"
+    },
+    {
+        "question_id": "test-2048",
+        "success": true,
+        "agent_answer": 1216.0,
+        "ground_truth": 1216,
+        "response": "**Calculation Summary:**\n\nUsing the standard mortgage payment formula: **M = P \u00d7 [r(1+r)\u207f] / [(1+r)\u207f - 1]**\n\nWhere:\n- P (Principal) = $240,000\n- r (Monthly interest rate) = 4.5% \u00f7 12 = 0.375% = 0.00375\n- n (Number of payments) = 30 \u00d7 12 = 360 months\n\nThe calculation yields a monthly payment of **$1,216**.\n\nFinal Answer: 1216"
+    },
+    {
+        "question_id": "test-2049",
+        "success": true,
+        "agent_answer": 0.154,
+        "ground_truth": 0.154,
+        "response": "Using Smith's regression model, I calculate the anticipated initial return as follows:\n\n**Regression Equation:**\nInitial Return = Intercept + (b\u2081 \u00d7 Underwriter rank) + (b\u2082 \u00d7 Pre-offer price adjustment) + (b\u2083 \u00d7 Offer size) + (b\u2084 \u00d7 Fraction retained)\n\n**Calculation:**\n- Intercept: 0.0477\n- Underwriter rank: 0.0150 \u00d7 6 = 0.0900\n- Pre-offer price adjustment: 0.4350 \u00d7 0.04 = 0.0174\n- Offer size: -0.0009 \u00d7 40 = -0.0360\n- Fraction retained: 0.0500 \u00d7 0.70 = 0.0350\n\n**Total:** 0.0477 + 0.0900 + 0.0174 - 0.0360 + 0.0350 = 0.1541\n\nFinal Answer: 0.154"
+    },
+    {
+        "question_id": "test-2050",
+        "success": true,
+        "agent_answer": 1055.206,
+        "ground_truth": 1055.206,
+        "response": "**Calculation Summary:**\n\n**Given rates:**\n- 1-year spot rate: 6%\n- 1-year forward rate (1 year from now): 8%\n- 1-year forward rate (2 years from now): 10%\n\n**Bond cash flows:**\n- Year 1: $100 coupon\n- Year 2: $100 coupon\n- Year 3: $100 coupon + $1000 par = $1,100\n\n**Present value calculation:**\n- PV(Year 1) = $100 / (1.06) = $94.340\n- PV(Year 2) = $100 / (1.06 \u00d7 1.08) = $87.352\n- PV(Year 3) = $1,100 / (1.06 \u00d7 1.08 \u00d7 1.10) = $873.515\n\n**Total Bond Value** = $94.340 + $87.352 + $873.515 = **$1,055.206**\n\nFinal Answer: 1055.206"
+    },
+    {
+        "question_id": "test-2051",
+        "success": true,
+        "agent_answer": 9.808,
+        "ground_truth": 9.808,
+        "response": "**Calculation Steps:**\n\n1. **Expected Value (Mean)**: \n   - E[X] = 0.05(70) + 0.70(40) + 0.25(25) = 3.5 + 28 + 6.25 = **37.75**\n\n2. **Expected Value of X\u00b2**:\n   - E[X\u00b2] = 0.05(70\u00b2) + 0.70(40\u00b2) + 0.25(25\u00b2) = 245 + 1120 + 156.25 = **1521.25**\n\n3. **Variance**:\n   - Var(X) = E[X\u00b2] - (E[X])\u00b2 = 1521.25 - (37.75)\u00b2 = 1521.25 - 1425.0625 = **96.1875**\n\n4. **Standard Deviation**:\n   - \u03c3 = \u221a96.1875 = **9.808** (rounded to 3 decimal places)\n\nFinal Answer: 9.808"
+    },
+    {
+        "question_id": "test-2052",
+        "success": true,
+        "agent_answer": 1208.0,
+        "ground_truth": 1208,
+        "response": "**Calculation:**\n- Present Value (PV) = $200,000\n- Monthly interest rate (r) = 0.33% = 0.0033\n- Number of periods (n) = 20 years \u00d7 12 = 240 months\n\nUsing the present value of an ordinary annuity formula:\n**PMT = PV \u00d7 [r \u00d7 (1 + r)^n] / [(1 + r)^n - 1]**\n\nPMT = $200,000 \u00d7 [0.0033 \u00d7 (1.0033)^240] / [(1.0033)^240 - 1]\n\nPMT = $200,000 \u00d7 [0.0033 \u00d7 2.2089] / [2.2089 - 1]\n\nPMT = $200,000 \u00d7 0.007289 / 1.2089\n\n**PMT = $1,207.75**\n\nRounded to the nearest dollar, the monthly payout is **$1,208**.\n\nFinal Answer: 1208"
+    },
+    {
+        "question_id": "test-2053",
+        "success": true,
+        "agent_answer": 4.17,
+        "ground_truth": 4.17,
+        "response": "Based on the spot rates provided:\n\n**Calculation:**\n- 2-year spot rate (r\u2082) = 2.5%\n- 5-year spot rate (r\u2085) = 3.5%\n\nUsing the forward rate formula:\n$$f = \\left[\\frac{(1 + r_5)^5}{(1 + r_2)^2}\\right]^{1/3} - 1$$\n\n**Result:**\nThe expected annualized forward rate for the 3-year period starting two years from now is **4.17%**.\n\nFinal Answer: 4.17"
+    },
+    {
+        "question_id": "test-2054",
+        "success": true,
+        "agent_answer": 471.78,
+        "ground_truth": 471.78,
+        "response": "Using the standard amortizing loan payment formula:\n\n**PMT = P \u00d7 [r(1+r)^n] / [(1+r)^n - 1]**\n\nWhere:\n- **P** = Principal = $25,000\n- **r** = Monthly interest rate = 5% / 12 = 0.004167\n- **n** = Number of payments = 5 years \u00d7 12 = 60 months\n\n**Calculation:**\n- Monthly Payment = 25,000 \u00d7 [0.004167 \u00d7 (1.004167)^60] / [(1.004167)^60 - 1]\n- Monthly Payment = $471.78\n\nFinal Answer: 471.78"
+    },
+    {
+        "question_id": "test-2055",
+        "success": true,
+        "agent_answer": 95238.0,
+        "ground_truth": 95238,
+        "response": "Based on my analysis:\n\n**Calculation Summary:**\n1. **Gross claims**: $150,000\n2. **Settlement expenses**: $30,000\n3. **Reinsurance coverage**: \n   - Claims: $70,000\n   - Expenses: $10,000\n\n4. **Net liability (company's responsibility)**:\n   - Net claims: $150,000 - $70,000 = $80,000\n   - Net expenses: $30,000 - $10,000 = $20,000\n   - **Total net liability**: $100,000\n\n5. **Present value at 5% discount rate**:\n   - PV = $100,000 \u00f7 (1 + 0.05)\u00b9 = $95,238.10\n\nFinal Answer: 95238"
+    },
+    {
+        "question_id": "test-2057",
+        "success": true,
+        "agent_answer": 20000.0,
+        "ground_truth": 20000,
+        "response": "The sum-of-years digits (SYD) depreciation method calculates depreciation as follows:\n\n**Step-by-step calculation:**\n\n1. **Depreciable base** = Cost - Salvage Value = $120,000 - $20,000 = **$100,000**\n\n2. **Sum of years** = 1 + 2 + 3 + 4 + 5 = **15**\n\n3. **Year 3 depreciation fraction** = 3/15 (the third year has 3 years remaining from its perspective, counting down)\n\n4. **Year 3 depreciation expense** = $100,000 \u00d7 (3/15) = **$20,000**\n\nFinal Answer: 20000"
+    },
+    {
+        "question_id": "test-2058",
+        "success": true,
+        "agent_answer": 17280.0,
+        "ground_truth": 17280,
+        "response": "Using the Double-Declining Balance (DDB) method:\n\n**Key Parameters:**\n- Initial Cost: $120,000\n- Salvage Value: $10,000\n- Useful Life: 5 years\n- DDB Rate: 2/5 = 40%\n\n**Depreciation Schedule:**\n\n| Year | Beginning Book Value | Depreciation Rate | Depreciation Expense | Ending Book Value |\n|------|---------------------|-------------------|---------------------|-------------------|\n| 1 | $120,000 | 40% | $48,000 | $72,000 |\n| 2 | $72,000 | 40% | $28,800 | $43,200 |\n| **3** | **$43,200** | **40%** | **$17,280** | **$25,920** |\n| 4 | $25,920 | 40% | $10,368 | $15,552 |\n| 5 | $15,552 | Limited* | $5,552 | $10,000 |\n\n*In Year 5, depreciation is limited to prevent book value from falling below salvage value.\n\nThe third-year depreciation expense is **$17,280** (computed as $43,200 \u00d7 40%).\n\nFinal Answer: 17280"
+    },
+    {
+        "question_id": "test-2059",
+        "success": true,
+        "agent_answer": "False",
+        "ground_truth": false,
+        "response": "The Luhn algorithm validation shows:\n\n**Calculation Steps:**\n1. Original digits: 4 5 3 2 0 1 5 1 1 2 8 3 0 3 6 5\n2. Double every second digit from the right: 8 5 6 2 0 1 1 1 2 2 7 3 0 3 3 5\n3. Sum of all digits: 49\n4. Remainder when divided by 10: 9\n\nSince the sum (49) is **not** divisible by 10, the credit card number fails the Luhn algorithm check.\n\nFinal Answer: False"
+    },
+    {
+        "question_id": "test-2060",
+        "success": true,
+        "agent_answer": 365000.0,
+        "ground_truth": 365000.0,
+        "response": "## Economic Balance Sheet for Smith Family\n\n### ASSETS\n| Category | Amount |\n|----------|--------|\n| **Financial Assets** | |\n| Stocks | $500,000 |\n| Fixed Income | $330,000 |\n| Total Financial Assets | $830,000 |\n| **Real Assets** | |\n| House | $350,000 |\n| **Human Capital** | |\n| PV of Future Earnings | $980,000 |\n| **TOTAL ASSETS** | **$2,160,000** |\n\n### LIABILITIES\n| Category | Amount |\n|----------|--------|\n| **Financial Liabilities** | |\n| Mortgage | $175,000 |\n| **Human Liabilities** | |\n| Future Consumption | $870,000 |\n| College Tuition | $150,000 |\n| Family Foundation | $600,000 |\n| Total Human Liabilities | $1,620,000 |\n| **TOTAL LIABILITIES** | **$1,795,000** |\n\n### ECONOMIC NET WORTH\n$$\\text{Economic Net Worth} = \\text{Total Assets} - \\text{Total Liabilities}$$\n$$\\text{Economic Net Worth} = \\$2,160,000 - \\$1,795,000 = \\$365,000$$\n\nFinal Answer: 365000.0"
+    },
+    {
+        "question_id": "test-2061",
+        "success": true,
+        "agent_answer": 12.231,
+        "ground_truth": 12.231,
+        "response": "The terminal value is calculated as follows:\n\n**Step 1: Calculate D\u2084 (dividend at end of high-growth period)**\n$$D_4 = D_0 \\times (1 + g_1)^4 = 0.22 \\times (1.12)^4 = 0.346$$\n\n**Step 2: Calculate D\u2085 (first dividend of normal growth period)**\n$$D_5 = D_4 \\times (1 + g_2) = 0.346 \\times 1.06 = 0.367$$\n\n**Step 3: Calculate Terminal Value at Year 4**\n$$TV_4 = \\frac{D_5}{r - g_2} = \\frac{0.367}{0.09 - 0.06} = \\frac{0.367}{0.03} = 12.231$$\n\nThe terminal value represents the present value at Year 4 of all future dividends from Year 5 onwards, assuming a perpetual growth rate of 6%.\n\nFinal Answer: 12.231"
+    },
+    {
+        "question_id": "test-2062",
+        "success": true,
+        "agent_answer": 2.871,
+        "ground_truth": 2.871,
+        "response": "**Solution:**\n\nUsing the **normalized EPS approach** with average ROE over the business cycle:\n\n**Step 1: Calculate Average ROE**\n- ROE values: 12.00%, 13.10%, 10.55%, 11.20%, 12.05%\n- Average ROE = 11.78%\n\n**Step 2: Calculate Book Value of Common Equity**\n- Total Equity = Total Assets \u2212 Total Liabilities = 2100 \u2212 1200 = 900 million\n- Book Value of Common Equity = Total Equity \u2212 Preferred Equity = 900 \u2212 120 = **780 million**\n\n**Step 3: Calculate Book Value per Share**\n- Book Value per Share = 780 million \u00f7 32 million shares = **$24.375**\n\n**Step 4: Calculate Normalized EPS**\n- Normalized EPS = Average ROE \u00d7 Book Value per Share\n- Normalized EPS = 11.78% \u00d7 $24.375 = **$2.871**\n\nFinal Answer: 2.871"
+    },
+    {
+        "question_id": "test-2063",
+        "success": true,
+        "agent_answer": 830000.0,
+        "ground_truth": 830000,
+        "response": "Under LIFO (Last-In, First-Out), the most recently purchased inventory is sold first.\n\n**LIFO COGS Calculation:**\n- **1/23 Purchase**: 40,000 units \u00d7 $17 = $680,000 (sold first)\n- **1/20 Purchase**: 10,000 units \u00d7 $15 = $150,000 (remaining needed)\n- **Beginning Inventory**: 0 units (not needed)\n\nTotal units sold = 40,000 + 10,000 = 50,000 units \u2713\n\n**Total COGS = $680,000 + $150,000 = $830,000**\n\nFinal Answer: 830000"
+    },
+    {
+        "question_id": "test-2064",
+        "success": true,
+        "agent_answer": 8.06,
+        "ground_truth": 8.06,
+        "response": "**Calculation Summary:**\n\nUsing the treasury stock method:\n- Options exercised: 30,000 \u00d7 \u20ac20 = \u20ac600,000 proceeds\n- Shares repurchased at market price: \u20ac600,000 \u00f7 \u20ac30 = 20,000 shares\n- Net incremental shares: 30,000 - 20,000 = 10,000 shares\n- Total diluted shares: 300,000 + 10,000 = 310,000 shares\n- Diluted EPS: \u20ac2,500,000 \u00f7 310,000 = \u20ac8.06\n\nFinal Answer: 8.06"
+    },
+    {
+        "question_id": "test-2065",
+        "success": true,
+        "agent_answer": 82349.0,
+        "ground_truth": 82349,
+        "response": "The future value of Sarah's annuity due is calculated using the formula:\n\n**FV = PMT \u00d7 [(1 + r)^n - 1] / r \u00d7 (1 + r)**\n\nWhere:\n- PMT = $500 (monthly contribution)\n- r = 0.06/12 = 0.005 (monthly interest rate)\n- n = 10 \u00d7 12 = 120 (number of periods)\n- The (1 + r) factor accounts for annuity due (beginning-of-period payments)\n\nCalculation:\n- FV = 500 \u00d7 [(1.005)^120 - 1] / 0.005 \u00d7 1.005\n- FV = $82,349.37\n- Rounded to nearest dollar: $82,349\n\nFinal Answer: 82349"
+    },
+    {
+        "question_id": "test-2067",
+        "success": true,
+        "agent_answer": 181.0,
+        "ground_truth": 181,
+        "response": "The commercial paper was issued on March 15, 2023, with a maturity date of September 12, 2023. Calculating the number of days between these two dates:\n\n- From March 15, 2023 to September 12, 2023 = 181 days\n\nFinal Answer: 181"
+    },
+    {
+        "question_id": "test-2068",
+        "success": true,
+        "agent_answer": 1388.969,
+        "ground_truth": 1388.969,
+        "response": "Final Answer: 1388.969"
+    },
+    {
+        "question_id": "test-2069",
+        "success": true,
+        "agent_answer": 13714.668,
+        "ground_truth": 13714.668,
+        "response": "## Solution\n\n**Step 1: Determine Delta for Each Position**\n\n- **Deep ITM calls**: Delta \u2248 1 (nearly certain to be exercised, behaves like owning stock)\n- **Deep OTM calls**: Delta \u2248 0 (nearly worthless, minimal sensitivity)\n- **Futures**: Delta = 1 (linear payoff)\n\n**Step 2: Calculate Portfolio Delta**\n\nPortfolio Delta = (5,000 \u00d7 1) + (20,000 \u00d7 0) + (10,000 \u00d7 1) = **15,000 equivalent shares**\n\n**Step 3: Calculate Portfolio Position Value**\n\nPosition Value = 15,000 \u00d7 $52 = **$780,000**\n\n**Step 4: Compute Daily Volatility**\n\nDaily Volatility = Annual Volatility / \u221aTrading Days = 12% / \u221a252 = **0.756%**\n\n**Step 5: Calculate 1-Day 99% VaR**\n\nVaR = Position Value \u00d7 Daily Volatility \u00d7 Z-score\nVaR = $780,000 \u00d7 0.00756 \u00d7 2.326 = **$13,714.668**\n\nFinal Answer: 13714.668"
+    },
+    {
+        "question_id": "test-2071",
+        "success": true,
+        "agent_answer": 9.0,
+        "ground_truth": 9.0,
+        "response": "## TechInnovate's WACC Calculation\n\n**Step 1: Calculate Total Capital**\n- Equity: $150 million\n- Debt: $100 million\n- Preferred Stock: $50 million\n- **Total Capital: $300 million**\n\n**Step 2: Calculate Weights**\n- Weight of Equity: $150M / $300M = 50.00%\n- Weight of Debt: $100M / $300M = 33.33%\n- Weight of Preferred Stock: $50M / $300M = 16.67%\n\n**Step 3: Calculate WACC**\nSince no corporate tax rate is provided, the WACC is calculated as:\n\nWACC = (w_E \u00d7 r_E) + (w_D \u00d7 r_D) + (w_P \u00d7 r_P)\n\nWhere:\n- w_E = weight of equity, r_E = cost of equity (12%)\n- w_D = weight of debt, r_D = cost of debt (5%)\n- w_P = weight of preferred, r_P = cost of preferred (8%)\n\nWACC = (0.50 \u00d7 12%) + (0.3333 \u00d7 5%) + (0.1667 \u00d7 8%)\n     = 6.00% + 1.67% + 1.33%\n     = **9.00%**\n\nFinal Answer: 9.00"
+    },
+    {
+        "question_id": "test-2072",
+        "success": true,
+        "agent_answer": 11500.0,
+        "ground_truth": 11500,
+        "response": "Using the progressive tax system, John's total tax liability is calculated by applying each tax rate to the corresponding portion of his income:\n\n- **Bracket 1** (10% on $0-$20,000): $20,000 \u00d7 10% = $2,000\n- **Bracket 2** (15% on $20,001-$50,000): $30,000 \u00d7 15% = $4,500\n- **Bracket 3** (20% on $50,001-$75,000): $25,000 \u00d7 20% = $5,000\n\n**Total Tax Liability**: $2,000 + $4,500 + $5,000 = $11,500\n\nFinal Answer: 11500"
+    },
+    {
+        "question_id": "test-2073",
+        "success": true,
+        "agent_answer": -1.29,
+        "ground_truth": -1.29,
+        "response": "**Calculation:**\n\nUsing the arc elasticity (midpoint) formula:\n\n$$E_d = \\frac{\\frac{Q_2 - Q_1}{(Q_1 + Q_2)/2}}{\\frac{P_2 - P_1}{(P_1 + P_2)/2}}$$\n\nWhere:\n- $Q_1 = 150$ bags, $Q_2 = 200$ bags\n- $P_1 = \\$5$, $P_2 = \\$4$\n\n**Step 1:** Calculate percentage change in quantity (midpoint method)\n$$\\% \\Delta Q = \\frac{200 - 150}{(150 + 200)/2} = \\frac{50}{175} = 0.2857$$\n\n**Step 2:** Calculate percentage change in price (midpoint method)\n$$\\% \\Delta P = \\frac{4 - 5}{(5 + 4)/2} = \\frac{-1}{4.5} = -0.2222$$\n\n**Step 3:** Calculate arc elasticity\n$$E_d = \\frac{0.2857}{-0.2222} = -1.29$$\n\nThe arc elasticity of demand is **-1.29**, indicating that demand is elastic (absolute value greater than 1). This means a 1% decrease in price leads to approximately a 1.29% increase in quantity demanded.\n\nFinal Answer: -1.29"
+    },
+    {
+        "question_id": "test-2074",
+        "success": true,
+        "agent_answer": 817.84,
+        "ground_truth": 817.84,
+        "response": "**Calculation Summary:**\n\nSince the market yield (7%) exceeds the coupon rate (5%), the bond trades at a discount to par.\n\n- **Annual coupon payment**: $1,000 \u00d7 5% = $50\n- **Present value of coupons**: $50 \u00d7 [(1 - 1.07\u207b\u00b9\u2075) / 0.07] = $455.40\n- **Present value of face value**: $1,000 / 1.07\u00b9\u2075 = $362.45\n- **Bond price**: $455.40 + $362.45 = **$817.84**\n\nThe bond now trades at a discount of approximately $182 below its face value due to the rise in market interest rates.\n\nFinal Answer: 817.84"
+    },
+    {
+        "question_id": "test-2075",
+        "success": true,
+        "agent_answer": -0.8,
+        "ground_truth": -0.8,
+        "response": "**Calculation Breakdown:**\n\n1. **EMA Multipliers:**\n   - 19-day EMA multiplier = 2/(19+1) = 0.10\n   - 39-day EMA multiplier = 2/(39+1) = 0.05\n\n2. **Today's EMAs (using EMA formula: EMA_today = Value_today \u00d7 multiplier + EMA_yesterday \u00d7 (1 \u2212 multiplier)):**\n   - 19-day EMA = (550 \u00d7 0.10) + (528 \u00d7 0.90) = 530.2\n   - 39-day EMA = (550 \u00d7 0.05) + (530 \u00d7 0.95) = 531.0\n\n3. **Adjusted McClellan Oscillator:**\n   - Oscillator = 19-day EMA \u2212 39-day EMA = 530.2 \u2212 531.0 = **\u22120.80**\n\nThe negative value indicates slightly bearish momentum, as the shorter-term EMA is below the longer-term EMA.\n\nFinal Answer: -0.80"
+    },
+    {
+        "question_id": "test-2076",
+        "success": true,
+        "agent_answer": 471.78,
+        "ground_truth": 471.78,
+        "response": "**Calculation Summary:**\n\nUsing the standard amortizing loan formula:\n- **Principal (P):** $25,000\n- **Annual Interest Rate:** 5% (0.05)\n- **Monthly Interest Rate (r):** 5% / 12 = 0.4167%\n- **Number of Payments (n):** 5 years \u00d7 12 = 60 payments\n\n**Formula:** PMT = P \u00d7 [r(1+r)^n] / [(1+r)^n - 1]\n\n- Monthly Payment = $25,000 \u00d7 [0.004167(1.004167)^60] / [(1.004167)^60 - 1]\n- Monthly Payment = $471.7808411...\n- Rounded to nearest cent: **$471.78**\n\nFinal Answer: 471.78"
+    },
+    {
+        "question_id": "test-2077",
+        "success": true,
+        "agent_answer": 1211.96,
+        "ground_truth": 1211.96,
+        "response": "The monthly payment is calculated using the present value of an ordinary annuity formula:\n\n**PMT = PV \u00d7 r / [1 - (1 + r)^(-n)]**\n\nWhere:\n- PV (Present Value) = $200,000\n- r (monthly interest rate) = 4% / 12 = 0.3333%\n- n (total payments) = 20 years \u00d7 12 months = 240 payments\n\n**Calculation:**\n- PMT = $200,000 \u00d7 0.003333 / [1 - (1.003333)^(-240)]\n- PMT = $1,211.96\n\nFinal Answer: 1211.96"
+    },
+    {
+        "question_id": "test-2078",
+        "success": true,
+        "agent_answer": 466.08,
+        "ground_truth": 466.08,
+        "response": "The fixed monthly payment for John's car loan is calculated using the standard amortization formula:\n\n**Loan Details:**\n- Principal: $25,000\n- Annual Interest Rate: 4.5%\n- Loan Term: 5 years (60 monthly payments)\n\n**Calculation:**\nUsing the amortization formula: M = P \u00d7 [r(1+r)\u207f] / [(1+r)\u207f - 1]\n\nWhere:\n- P = $25,000\n- r = 4.5% / 12 = 0.375% per month\n- n = 60 months\n\nFinal Answer: 466.08"
+    },
+    {
+        "question_id": "test-2079",
+        "success": true,
+        "agent_answer": 4245.0,
+        "ground_truth": 4245,
+        "response": "## Calculation Breakdown\n\n**1. FICA Taxes (Social Security + Medicare):**\n- Both Sarah (employer) and the nanny (employee) each pay 7.65%\n- On $25,000 wages:\n  - Employer share: $25,000 \u00d7 7.65% = $1,912.50\n  - Employee share (Sarah must withhold and remit): $25,000 \u00d7 7.65% = $1,912.50\n  - **Total FICA: $3,825.00**\n\n**2. Federal Unemployment Tax (FUTA):**\n- 6% on the first $7,000 of wages\n- FUTA = $7,000 \u00d7 6% = **$420.00**\n\n**3. Total Nanny Tax:**\n- Total FICA + FUTA = $3,825.00 + $420.00 = **$4,245**\n\nFinal Answer: 4245"
+    },
+    {
+        "question_id": "test-2080",
+        "success": true,
+        "agent_answer": 150.03,
+        "ground_truth": 150.03,
+        "response": "**Calculation Summary:**\n\n| Session | Typical Price | Volume | Price \u00d7 Volume |\n|---------|--------------|--------|----------------|\n| 1 | ($150 + $145 + $148) / 3 = $147.67 | 2,000 | $295,333.33 |\n| 2 | ($152 + $148 + $150) / 3 = $150.00 | 3,500 | $525,000.00 |\n| 3 | ($153 + $149 + $151) / 3 = $151.00 | 5,000 | $755,000.00 |\n\n**VWAP Calculation:**\n- Total Price \u00d7 Volume = $1,575,333.33\n- Total Volume = 10,500 shares\n- VWAP = $1,575,333.33 / 10,500 = **$150.03**\n\nFinal Answer: 150.03"
+    },
+    {
+        "question_id": "test-2081",
+        "success": true,
+        "agent_answer": 16200.0,
+        "ground_truth": 16200,
+        "response": "**Calculation Breakdown:**\n\nEmily's wealth tax is calculated using progressive brackets:\n\n| Bracket | Range | Taxable Amount | Rate | Tax |\n|---------|-------|----------------|------|-----|\n| 1 | $0 - $500,000 | $500,000 | 0% | $0 |\n| 2 | $500,000 - $1,000,000 | $500,000 | 2% | $10,000 |\n| 3 | Over $1,000,000 | $200,000 | 4% | $8,000 |\n\n**Total tax before adjustment:** $18,000\n\n**After residency adjustment (\u00d70.9):** $16,200\n\nFinal Answer: 16200"
+    },
+    {
+        "question_id": "test-2082",
+        "success": true,
+        "agent_answer": 71.76,
+        "ground_truth": 71.76,
+        "response": "The RSI calculation is complete. Here's the breakdown:\n\n**RSI Calculation Steps:**\n1. **Separate Gains and Losses:**\n   - Gains: [+1.2, +0.5, +2.3, +1.8, +0.6, +3.0, +2.1, +0.7] = **Total: 12.20**\n   - Losses: [0.8, 1.0, 0.4, 1.5, 0.2, 0.9] = **Total: 4.80**\n\n2. **Calculate Averages (14-day period):**\n   - Average Gain = 12.20 / 14 = **0.8714**\n   - Average Loss = 4.80 / 14 = **0.3429**\n\n3. **Calculate Relative Strength (RS):**\n   - RS = Average Gain / Average Loss = 0.8714 / 0.3429 = **2.5417**\n\n4. **Calculate RSI:**\n   - RSI = 100 - (100 / (1 + RS)) = 100 - (100 / 3.5417) = **71.76%**\n\n**Interpretation:** An RSI of 71.76% indicates that TechCorp Inc.'s stock is in **overbought** territory (RSI > 70 is typically considered overbought).\n\nFinal Answer: 71.76"
+    },
+    {
+        "question_id": "test-2083",
+        "success": true,
+        "agent_answer": 2.54,
+        "ground_truth": 2.54,
+        "response": "## Z-Score Calculation for XYZ Manufacturing Inc.\n\nUsing the **Altman Z-score model** for public companies:\n\n**Formula:** Z = 1.2\u00b7X\u2081 + 1.4\u00b7X\u2082 + 3.3\u00b7X\u2083 + 0.6\u00b7X\u2084 + 1.0\u00b7X\u2085\n\n### Component Calculations:\n\n| Variable | Formula | Calculation | Value |\n|----------|---------|-------------|-------|\n| X\u2081 | Working Capital / Total Assets | $240,000 / $1,200,000 | 0.20 |\n| X\u2082 | Retained Earnings / Total Assets | $350,000 / $1,200,000 | 0.29 |\n| X\u2083 | EBIT / Total Assets | $150,000 / $1,200,000 | 0.125 |\n| X\u2084 | Market Value of Equity / Total Liabilities | $850,000 / $600,000 | 1.42 |\n| X\u2085 | Sales / Total Assets | $750,000 / $1,200,000 | 0.625 |\n\n### Z-Score Computation:\nZ = 1.2(0.20) + 1.4(0.29) + 3.3(0.125) + 0.6(1.42) + 1.0(0.625) = **2.54**\n\n### Interpretation:\n- Z > 2.99: \"Safe\" zone (low bankruptcy risk)\n- 1.81 < Z < 2.99: \"Grey\" zone (moderate risk)\n- Z < 1.81: \"Distress\" zone (high bankruptcy risk)\n\nWith a Z-score of **2.54**, XYZ Manufacturing Inc. falls in the \"grey\" zone, indicating moderate bankruptcy risk.\n\nFinal Answer: 2.54"
+    },
+    {
+        "question_id": "test-2084",
+        "success": true,
+        "agent_answer": 80579.5,
+        "ground_truth": 80579.5,
+        "response": "To calculate the **Price Value of a Basis Point (PVBP)** for the bond portfolio, I need to:\n\n1. Calculate the market value of each bond (Par Value \u00d7 Price/100)\n2. Calculate each bond's PVBP = Market Value \u00d7 Modified Duration \u00d7 0.0001\n3. Sum all individual PVBPs\n\n**Calculation Results:**\n\n| Bond | Par Value | Price | Market Value ($M) | Modified Duration | PVBP ($M) |\n|------|-----------|-------|-------------------|-------------------|-----------|\n| 1 | $25M | 105 | $26.25M | 7.9 | $0.020738M |\n| 2 | $25M | 100 | $25.00M | 8.5 | $0.021250M |\n| 3 | $20M | 95 | $19.00M | 6.3 | $0.011970M |\n| 4 | $30M | 87 | $26.10M | 10.2 | $0.026622M |\n\n**Total PVBP = $0.080579 million = $80,579.5**\n\nThis means for every 1 basis point (0.01%) change in yield, the portfolio's value will change by approximately $80,579.5.\n\nFinal Answer: 80579.5"
+    },
+    {
+        "question_id": "test-2085",
+        "success": true,
+        "agent_answer": 84.211,
+        "ground_truth": 84.211,
+        "response": "**Analysis:**\n\nTo change the equity allocation from 80% to 60%, we need to **reduce** equity exposure, which requires **selling** stock index futures (not purchasing them).\n\n**Step-by-step calculation:**\n\n1. **Current effective beta exposure:** $100M \u00d7 0.80 \u00d7 1.2 = $96 million\n2. **Target effective beta exposure:** $100M \u00d7 0.60 \u00d7 1.2 = $72 million\n3. **Exposure reduction needed:** $96M - $72M = $24 million\n4. **Value of one futures contract:** 1,200 \u00d7 $250 = $300,000\n5. **Beta-adjusted futures value:** $300,000 \u00d7 0.95 = $285,000\n6. **Number of contracts:** $24,000,000 \u00f7 $285,000 = 84.211\n\n**Standard formula:**\n$$N = \\frac{(Target_{\\beta} - Current_{\\beta}) \\times Portfolio_{Value}}{Futures_{Price} \\times Multiplier \\times Futures_{\\beta}}$$\n\n$$N = \\frac{(0.72 - 0.96) \\times \\$100,000,000}{1200 \\times 250 \\times 0.95} = -84.211$$\n\nThe negative sign indicates a **sell/short** position. Since the question asks about \"purchasing\" but reducing equity requires **selling** futures, the transaction would actually be to **sell 84.211 contracts** (or zero purchased, with 84.211 sold).\n\nFinal Answer: 84.211"
+    },
+    {
+        "question_id": "test-2086",
+        "success": true,
+        "agent_answer": 39.0,
+        "ground_truth": 39.0,
+        "response": "To calculate Business B's operating cash flow for 2017, I'll use the indirect method:\n\n**Step 1: Calculate Net Income**\nFrom the retained earnings relationship:\n- Retained Earnings (2017) = Retained Earnings (2016) + Net Income - Dividends\n- $125 = $110 + Net Income - $8\n- Net Income = $23 million\n\n**Step 2: Adjust for non-cash items**\n- Add back impairment expense: +$12 million (non-cash expense)\n\n**Step 3: Adjust for working capital changes**\n- Accounts Receivable increased by $3 million \u2192 Cash outflow: -$3 million\n- Inventory decreased by $4 million \u2192 Cash inflow: +$4 million\n- Accounts Payable increased by $3 million \u2192 Cash inflow: +$3 million\n\n**Operating Cash Flow Calculation:**\n- Net Income: $23 million\n- Add: Impairment Expense: $12 million\n- Subtract: Increase in AR: -$3 million\n- Add: Decrease in Inventory: +$4 million\n- Add: Increase in AP: +$3 million\n- **Total Operating Cash Flow: $39 million**\n\nFinal Answer: 39"
+    },
+    {
+        "question_id": "test-2087",
+        "success": true,
+        "agent_answer": 0.05,
+        "ground_truth": 0.04,
+        "response": "Based on my analysis, I calculated the effective spread for each trade:\n\n**Methodology:**\n- **Midpoint** = (Bid + Ask) / 2\n- **Effective Spread** = 2 \u00d7 (Trade Price - Midpoint) [for a buy order]\n\n**Calculations:**\n- Trade 1: Midpoint = ($25.17 + $25.20)/2 = $25.185; Effective Spread = 2 \u00d7 ($25.20 - $25.185) = $0.03\n- Trade 2: Midpoint = ($25.19 + $25.22)/2 = $25.205; Effective Spread = 2 \u00d7 ($25.22 - $25.205) = $0.03\n- Trade 3: Midpoint = ($25.22 + $25.26)/2 = $25.24; Effective Spread = 2 \u00d7 ($25.27 - $25.24) = $0.06\n\n**Average Effective Spread** (weighted by trade size, since total = 5,000 shares matching the order size):\n- Weighted Average = (1,200 \u00d7 $0.03 + 1,300 \u00d7 $0.03 + 2,500 \u00d7 $0.06) / 5,000 = $0.045\n\nFinal Answer: 0.05"
+    },
+    {
+        "question_id": "test-2088",
+        "success": true,
+        "agent_answer": 0.1264,
+        "ground_truth": 0.1264,
+        "response": "The portfolio standard deviation is calculated using the formula:\n\n$$\\sigma_p = \\sqrt{\\sum_{i}\\sum_{j} w_i w_j \\sigma_i \\sigma_j \\rho_{ij}}$$\n\n**Step-by-step calculation:**\n\n1. **Convert variances to standard deviations:**\n   - \u03c3_A = \u221a0.0225 = 0.15\n   - \u03c3_B = \u221a0.0156 \u2248 0.1249\n   - \u03c3_C = \u221a0.0304 \u2248 0.1744\n\n2. **Calculate variance terms (diagonal):**\n   - w_A\u00b2 \u00d7 \u03c3_A\u00b2 + w_B\u00b2 \u00d7 \u03c3_B\u00b2 + w_C\u00b2 \u00d7 \u03c3_C\u00b2 = 0.007411\n\n3. **Calculate covariance terms (off-diagonal):**\n   - 2w_Aw_B\u03c3_A\u03c3_B\u03c1_AB + 2w_Aw_C\u03c3_A\u03c3_C\u03c1_AC + 2w_Bw_C\u03c3_B\u03c3_C\u03c1_BC = 0.008576\n\n4. **Portfolio variance:** 0.007411 + 0.008576 = 0.015987\n\n5. **Portfolio standard deviation:** \u221a0.015987 \u2248 0.1264\n\nFinal Answer: 0.1264"
+    },
+    {
+        "question_id": "test-2089",
+        "success": true,
+        "agent_answer": 10445.0,
+        "ground_truth": 10445,
+        "response": "The bond's present value is calculated by discounting all future cash flows (5 annual coupon payments of $500 each, plus the $10,000 face value at maturity) at the yield to maturity of 4%.\n\n**Breakdown:**\n- Present Value of Coupon Payments (5-year annuity): $500 \u00d7 [(1 - 1.04\u207b\u2075) / 0.04] = $2,225.91\n- Present Value of Face Value: $10,000 / 1.04\u2075 = $8,219.27\n- **Total Present Value:** $10,445.18\n\nSince the coupon rate (5%) exceeds the YTM (4%), the bond trades at a premium above its face value.\n\nFinal Answer: 10445"
+    },
+    {
+        "question_id": "test-2090",
+        "success": true,
+        "agent_answer": 69.66,
+        "ground_truth": 69.66,
+        "response": "**RSI Calculation Summary:**\n\n| Component | Value |\n|-----------|-------|\n| Total Gains | $15.50 (from positive days) |\n| Total Losses | $7.10 (from negative days) |\n| Average Gain | $15.50 \u00f7 14 = $1.116 |\n| Average Loss | $7.10 \u00f7 14 = $0.507 |\n| Relative Strength (RS) | $1.116 \u00f7 $0.507 = 2.296 |\n| **RSI** | 100 - (100 \u00f7 (1 + 2.296)) = **69.66%** |\n\n**Interpretation:** An RSI of 69.66% is approaching overbought territory (typically RSI > 70 indicates overbought conditions), but the stock is not yet technically overbought.\n\nFinal Answer: 69.66"
+    },
+    {
+        "question_id": "test-2091",
+        "success": true,
+        "agent_answer": "True",
+        "ground_truth": true,
+        "response": "Based on the analysis:\n\n**5-Day Rolling Highs:** [156, 158, 160, 162, 163, 165, 166, 168, 170, 172, 173]\n**5-Day Rolling Lows:** [150, 152, 153, 155, 156, 158, 160, 162, 163, 165, 166]\n\nEach rolling high (156 \u2192 158 \u2192 160 \u2192 162 \u2192 163 \u2192 165 \u2192 166 \u2192 168 \u2192 170 \u2192 172 \u2192 173) is strictly greater than the previous one, confirming **higher highs**.\n\nEach rolling low (150 \u2192 152 \u2192 153 \u2192 155 \u2192 156 \u2192 158 \u2192 160 \u2192 162 \u2192 163 \u2192 165 \u2192 166) is strictly greater than the previous one, confirming **higher lows**.\n\nSince the 5-day rolling window shows both higher highs AND higher lows, the series exhibits an uptrend.\n\nFinal Answer: True"
+    },
+    {
+        "question_id": "test-2092",
+        "success": true,
+        "agent_answer": 4.56,
+        "ground_truth": 4.56,
+        "response": "The Macaulay Duration is calculated as the weighted average time to receive the bond's cash flows, weighted by the present value of each cash flow.\n\n**Calculation Summary:**\n\n| Year | Cash Flow | Present Value | Weighted Time (t \u00d7 PV) |\n|------|-----------|---------------|------------------------|\n| 1 | $50 | $48.08 | $48.08 |\n| 2 | $50 | $46.23 | $92.46 |\n| 3 | $50 | $44.45 | $133.35 |\n| 4 | $50 | $42.74 | $170.96 |\n| 5 | $1,050 | $863.02 | $4,315.12 |\n\n- **Bond Price** = $1,044.52\n- **Sum of Weighted Times** = $4,759.96\n- **Macaulay Duration** = $4,759.96 / $1,044.52 = 4.56 years\n\nFinal Answer: 4.56"
+    },
+    {
+        "question_id": "test-2093",
+        "success": true,
+        "agent_answer": 480.0,
+        "ground_truth": 480,
+        "response": "The On-Balance Volume (OBV) is calculated as follows:\n\n**OBV Formula:**\n- Day 1: OBV starts at 0\n- For subsequent days:\n  - If today's close > yesterday's close: OBV = previous OBV + today's volume\n  - If today's close < yesterday's close: OBV = previous OBV - today's volume\n  - If unchanged: OBV = previous OBV\n\n**Step-by-step calculation:**\n\n| Day | Close | Volume | Price Change | OBV Calculation | OBV |\n|-----|-------|--------|--------------|-----------------|-----|\n| 1 | 150 | 200 | - | Start | 0 |\n| 2 | 152 | 220 | Up (+2) | 0 + 220 | 220 |\n| 3 | 151 | 210 | Down (-1) | 220 - 210 | 10 |\n| 4 | 153 | 230 | Up (+2) | 10 + 230 | 240 |\n| 5 | 154 | 240 | Up (+1) | 240 + 240 | 480 |\n\nThe OBV shows positive momentum overall, reaching 480 thousand shares by Day 5, which aligns with the stock's upward price trend from 150 to 154.\n\nFinal Answer: 480"
+    },
+    {
+        "question_id": "test-2094",
+        "success": true,
+        "agent_answer": 4100.0,
+        "ground_truth": 4100,
+        "response": "**Calculation Summary:**\n\n| Day | Price | Volume | Price Change | OBV Calculation | OBV |\n|-----|-------|--------|--------------|-----------------|-----|\n| 1 | 150 | 1000 | - | Starting point | 0 |\n| 2 | 155 | 1500 | Up (+) | 0 + 1500 | 1500 |\n| 3 | 153 | 1200 | Down (-) | 1500 - 1200 | 300 |\n| 4 | 157 | 1800 | Up (+) | 300 + 1800 | 2100 |\n| 5 | 160 | 2000 | Up (+) | 2100 + 2000 | 4100 |\n\nThe OBV shows a generally positive trend, with 3 up days and only 1 down day over the period, resulting in a final OBV of 4100.\n\nFinal Answer: 4100"
+    },
+    {
+        "question_id": "test-2095",
+        "success": true,
+        "agent_answer": 0.001,
+        "ground_truth": 0.001,
+        "response": "Final Answer: 0.001"
+    },
+    {
+        "question_id": "test-2096",
+        "success": true,
+        "agent_answer": 2.08,
+        "ground_truth": 2.08,
+        "response": "Based on the calculation:\n\n**Components of the Altman Z-score:**\n- X\u2081 (Working Capital/Total Assets) = 0.1667\n- X\u2082 (Retained Earnings/Total Assets) = 0.08\n- X\u2083 (EBIT/Total Assets) = 0.06\n- X\u2084 (Market Value Equity/Total Liabilities) = 1.5\n- X\u2085 (Sales/Total Assets) = 0.6667\n\n**Z = 1.2(0.1667) + 1.4(0.08) + 3.3(0.06) + 0.6(1.5) + 1.0(0.6667) = 2.08**\n\nWith a Z-score of 2.08, the company falls in the \"Grey Zone\" (1.81 < Z < 2.99), indicating moderate risk of bankruptcy.\n\nFinal Answer: 2.08"
+    },
+    {
+        "question_id": "test-2098",
+        "success": true,
+        "agent_answer": 818184.0,
+        "ground_truth": 818184,
+        "response": "## Solution\n\n**Adjusted Present Value (APV) Approach:**\n\nThe APV method separates the value of an unlevered firm from the value of financing side effects (primarily the tax shield from debt).\n\n### Step 1: Identify the Base-Case Value\n- Unlevered firm value (all-equity): **$800,000**\n\n### Step 2: Calculate the Annual Tax Shield\n| Component | Calculation | Value |\n|-----------|-------------|-------|\n| Annual Interest | $300,000 \u00d7 5% | $15,000 |\n| Annual Tax Shield | $15,000 \u00d7 28% | $4,200 |\n\n### Step 3: Calculate Present Value of Tax Shield\nThe tax shield forms a 5-year annuity discounted at the cost of debt (5%):\n\n$$PV_{Tax\\ Shield} = \\$4,200 \\times \\frac{1 - (1.05)^{-5}}{0.05} = \\$4,200 \\times 4.3295 = \\$18,183.80$$\n\n### Step 4: Calculate APV\n$$APV = \\text{Unlevered Value} + PV_{Tax\\ Shield}$$\n$$APV = \\$800,000 + \\$18,183.80 = \\$818,183.80$$\n\n### Summary\n| Component | Value |\n|-----------|-------|\n| Unlevered Firm Value | $800,000 |\n| PV of Tax Shield | $18,184 |\n| **APV** | **$818,184** |\n\nFinal Answer: 818184"
+    },
+    {
+        "question_id": "test-2101",
+        "success": true,
+        "agent_answer": 147.889,
+        "ground_truth": 147.889,
+        "response": "The equal-weighted index calculation is complete:\n\n**Individual Stock Returns:**\n- Stock X: (20 - 15) / 15 = 33.333%\n- Stock Y: (30 - 20) / 20 = 50.000%\n- Stock Z: (25 - 30) / 30 = -16.667%\n\n**Equal-Weighted Average Return:**\n(33.333% + 50.000% - 16.667%) / 3 = 22.222%\n\n**New Index Value:**\n121 \u00d7 (1 + 0.222222) = 147.889\n\nFinal Answer: 147.889"
+    },
+    {
+        "question_id": "test-2102",
+        "success": true,
+        "agent_answer": 100.0,
+        "ground_truth": 100,
+        "response": "## Analysis\n\nThe order matching follows FIFO with price-time priority:\n\n**Matching Process:**\n\n1. **Match 1**: Buy Order #1 (100 shares @ $50) \u00d7 Sell Order #1 (50 shares @ $48)\n   - Price condition: $50 \u2265 $48 \u2713\n   - **Executed: 50 shares**\n   - Buy #1 has 50 shares remaining; Sell #1 fully filled\n\n2. **Match 2**: Buy Order #1 (50 shares @ $50) \u00d7 Sell Order #2 (200 shares @ $50)\n   - Price condition: $50 \u2265 $50 \u2713\n   - **Executed: 50 shares**\n   - Buy #1 fully filled; Sell #2 has 150 shares remaining\n\n3. **No Further Match**: Buy Order #2 (150 shares @ $48) cannot match Sell Order #2 (150 shares @ $50)\n   - Price condition: $48 < $50 \u2717\n   - No match possible\n\n**Total Executed Quantity**: 50 + 50 = **100 shares**\n\nFinal Answer: 100"
+    },
+    {
+        "question_id": "test-2103",
+        "success": true,
+        "agent_answer": 1665.31,
+        "ground_truth": 1665.31,
+        "response": "The Equated Monthly Installment (EMI) is calculated using the standard reducing balance formula:\n\n**EMI = P \u00d7 r \u00d7 (1 + r)^n / ((1 + r)^n - 1)**\n\nWhere:\n- **P** = $150,000 (Principal)\n- **r** = 0.06/12 = 0.005 (Monthly interest rate)\n- **n** = 10 \u00d7 12 = 120 (Number of monthly payments)\n\nThe calculation yields an EMI of **$1,665.31**.\n\nFinal Answer: 1665.31"
+    },
+    {
+        "question_id": "test-2104",
+        "success": true,
+        "agent_answer": 215609.0,
+        "ground_truth": 215609,
+        "response": "The calculation shows:\n\n- **Monthly Payment**: $1,432.25\n- **Total Amount Paid Over 30 Years**: $515,608.52\n- **Total Interest Paid**: $215,608.52\n\nThe homeowner will pay $215,609 in interest over the 30-year term of the mortgage.\n\nFinal Answer: 215609"
+    },
+    {
+        "question_id": "test-2105",
+        "success": true,
+        "agent_answer": -100.0,
+        "ground_truth": -1,
+        "response": "## Bull Put Spread Analysis\n\n**Strategy Setup:**\n- **Short Put (sold):** Strike $110, Premium received = $6\n- **Long Put (bought):** Strike $100, Premium paid = $2\n- **Net Premium Received:** $6 - $2 = **$4 per share**\n\n**At Expiration (Stock Price = $105):**\n\n| Component | Calculation | Payoff |\n|-----------|-------------|--------|\n| Short Put ($110 strike) | -$5 per share (obligated to buy at $110 when market is $105) | -$5 |\n| Long Put ($100 strike) | Expires worthless (stock price $105 > strike $100) | $0 |\n| Net Premium | Received upfront | +$4 |\n\n**Total Profit/Loss per share:** $4 + (-$5) + $0 = **-$$1**\n\n**Per contract (100 shares):** -$1 \u00d7 100 = **-$100**\n\nThe bull put spread strategy resulted in a loss because the stock price ($105) fell between the two strike prices, causing the short put to be in-the-money while the long put expired worthless. The loss was partially offset by the net premium received.\n\nFinal Answer: -100"
+    },
+    {
+        "question_id": "test-2106",
+        "success": true,
+        "agent_answer": 2.37,
+        "ground_truth": 2.37,
+        "response": "The Durbin-Watson statistic is calculated as:\n\n$$DW = \\frac{\\sum_{t=2}^{n}(e_t - e_{t-1})^2}{\\sum_{t=1}^{n}e_t^2}$$\n\nWhere $e_t$ are the residuals (actual - predicted).\n\n**Calculation Summary:**\n1. **Residuals**: [0.2, -0.3, 0.2, 0.1, 0.1, 0.2, -0.1, -0.1, -0.2, 0.1]\n2. **Numerator** (sum of squared differences between consecutive residuals): 0.71\n3. **Denominator** (sum of squared residuals): 0.30\n4. **Durbin-Watson statistic**: 2.37\n\nA DW value of approximately 2 indicates no autocorrelation. The calculated value of 2.37 suggests minimal positive autocorrelation in the residuals.\n\nFinal Answer: 2.37"
+    },
+    {
+        "question_id": "test-2107",
+        "success": true,
+        "agent_answer": 3.61,
+        "ground_truth": 3.6,
+        "response": "The calculation is complete. Here's the step-by-step process:\n\n1. **Sort the data**: The 20 stock returns were sorted in ascending order.\n\n2. **Determine winsorization bounds**: For 10% winsorization with n=20:\n   - Number of observations to replace on each end: k = 20 \u00d7 0.10 = 2\n   - Lower replacement value (index k=2): **-13.7**\n   - Upper replacement value (index n-k-1=17): **21.2**\n\n3. **Apply winsorization**:\n   - Bottom 2 values (-19.4, -14.3) replaced with -13.7\n   - Top 2 values (25.7, 29.8) replaced with 21.2\n\n4. **Calculate mean** of the winsorized dataset.\n\nFinal Answer: 3.61"
+    },
+    {
+        "question_id": "test-2108",
+        "success": true,
+        "agent_answer": 27000.0,
+        "ground_truth": 27000,
+        "response": "## Step-by-Step Calculation\n\n### Step 1: Calculate Net Ordinary Income\n- Ordinary Income: $150,000\n- Ordinary Expenses: $120,000\n- **Net Ordinary Income = $30,000**\n\n### Step 2: Calculate Net Capital Gains/Losses\n| Type | Gains | Losses | Net |\n|------|-------|--------|-----|\n| Short-term | $12,000 | $18,000 | -$6,000 |\n| Long-term | $5,000 | $9,000 | -$4,000 |\n| **Total Net Capital Loss** | | | **-$10,000** |\n\n### Step 3: Apply Capital Loss Deduction Rules\nUnder US tax law (IRC Section 1211-1212), individuals may deduct **up to $3,000** of net capital losses against ordinary income per year.\n\n- Total Net Capital Loss: $10,000\n- Allowable Deduction (current year): $3,000\n- Capital Loss Carryforward (future years): $7,000\n\n### Step 4: Calculate Overall Net Gain/Loss\n$$\\text{Overall Net} = \\text{Net Ordinary Income} - \\text{Allowable Capital Loss Deduction}$$\n$$\\text{Overall Net} = \\$30,000 - \\$3,000 = \\$27,000$$\n\n---\n\nFinal Answer: 27000"
+    },
+    {
+        "question_id": "test-2110",
+        "success": true,
+        "agent_answer": -17500.0,
+        "ground_truth": -17500,
+        "response": "## Summary\n\n**Interest Rate Swap Analysis for Corporate Client:**\n\n| Year | SOFR | Variable Rate (SOFR + 0.35%) | Fixed Rate | Net Rate | Net Cash Flow |\n|------|------|------------------------------|------------|----------|---------------|\n| 1 | 1.40% | 1.75% | 2.50% | -0.75% | -$7,500 |\n| 2 | 1.60% | 1.95% | 2.50% | -0.55% | -$5,500 |\n| 3 | 1.80% | 2.15% | 2.50% | -0.35% | -$3,500 |\n| 4 | 2.00% | 2.35% | 2.50% | -0.15% | -$1,500 |\n| 5 | 2.20% | 2.55% | 2.50% | +0.05% | +$500 |\n\n**Explanation:** The corporate client pays fixed (2.5%) and receives variable (SOFR + 0.35%). For the first 4 years, the variable rate received was lower than the fixed rate paid, resulting in net losses. Only in Year 5 did the variable rate (2.55%) exceed the fixed rate (2.5%), providing a small gain of $500.\n\nFinal Answer: -17500"
+    },
+    {
+        "question_id": "test-2111",
+        "success": true,
+        "agent_answer": 18.33,
+        "ground_truth": 18.33,
+        "response": "**Breakdown of Alex's Tax Calculation:**\n\n| Bracket | Income Range | Amount Taxed | Tax Rate | Tax Paid |\n|---------|--------------|--------------|----------|----------|\n| 1 | $0 - $10,000 | $10,000 | 0% | $0 |\n| 2 | $10,001 - $40,000 | $30,000 | 10% | $3,000 |\n| 3 | $40,001 - $90,000 | $50,000 | 20% | $10,000 |\n| 4 | $90,001+ | $30,000 | 30% | $9,000 |\n\n**Total Tax:** $22,000\n\n**Effective Tax Rate:** ($22,000 \u00f7 $120,000) \u00d7 100 = 18.33%\n\nFinal Answer: 18.33"
+    },
+    {
+        "question_id": "test-2112",
+        "success": true,
+        "agent_answer": 700.0,
+        "ground_truth": 700,
+        "response": "Let me verify this calculation step by step:\n\n**Bear Put Spread Setup:**\n- Long Put (Strike $155): Pay $5 premium\n- Short Put (Strike $145): Receive $2 premium\n- Net Premium Paid: $5 - $2 = **$3 per share**\n\n**At Expiration (Stock Price = $140):**\n\n1. **Long Put (Strike $155):**\n   - In-the-money since $140 < $155\n   - Payoff = $155 - $140 = **$15 per share**\n\n2. **Short Put (Strike $145):**\n   - In-the-money since $140 < $145\n   - Counterparty exercises, investor obligated to buy at $145 when market is $140\n   - Payoff = -($145 - $140) = **-$5 per share**\n\n3. **Total Payoff:** $15 - $5 = **$10 per share**\n\n4. **Net Profit:** $10 - $3 = **$7 per share**\n\n5. **Total Profit for 100 shares:** $7 \u00d7 100 = **$700**\n\nThe bear put spread achieves its maximum profit when the stock price falls below the lower strike price ($145), which happened in this case.\n\nFinal Answer: 700"
+    },
+    {
+        "question_id": "test-2113",
+        "success": true,
+        "agent_answer": 103628.0,
+        "ground_truth": 103628,
+        "response": "**Calculation Summary:**\n\n| Year | Cash Flow | Discount Factor | Present Value |\n|------|-----------|-----------------|---------------|\n| 1 | 5,000 | 1/(1.037)\u00b9 | 4,821.60 |\n| 2 | 5,000 | 1/(1.037)\u00b2 | 4,649.57 |\n| 3 | 105,000 | 1/(1.037)\u00b3 | 94,157.09 |\n\n**Total Make-Whole Call Price = 103,628.26**\n\nRounded to the nearest whole number: **103,628**\n\nFinal Answer: 103628"
+    },
+    {
+        "question_id": "test-2114",
+        "success": true,
+        "agent_answer": 36791.0,
+        "ground_truth": 36791,
+        "response": "Based on the annuity calculation:\n\n**Given:**\n- Present Value (PV) = $500,000\n- Interest Rate (r) = 4% per year\n- Number of periods (n) = 20 years\n\n**Formula for Ordinary Annuity Payment:**\nPMT = PV \u00d7 [r / (1 - (1 + r)^(-n))]\n\n**Calculation:**\n- Annuity Factor = (1 - (1.04)^(-20)) / 0.04 = 13.590326\n- Annual Payment = $500,000 \u00f7 13.590326 = $36,790.88\n\nJane will receive **$36,791** each year for 20 years from her annuity investment.\n\nFinal Answer: 36791"
+    },
+    {
+        "question_id": "test-2115",
+        "success": true,
+        "agent_answer": 6.02,
+        "ground_truth": 6.02,
+        "response": "Based on the **Expectations Theory**, the forecasted interest rate for a one-year bond next year is calculated as follows:\n\n**Formula:**\n(1 + r\u2082)\u00b2 = (1 + r\u2081_current) \u00d7 (1 + r\u2081_next)\n\n**Where:**\n- r\u2082 = two-year bond rate = 4.5% = 0.045\n- r\u2081_current = current one-year rate = 3.0% = 0.030\n- r\u2081_next = forecasted one-year rate for next year (unknown)\n\n**Calculation:**\n- (1 + 0.045)\u00b2 = 1.092025\n- 1.092025 \u00f7 (1 + 0.030) = 1.092025 \u00f7 1.030 = 1.060218\n- r\u2081_next = 1.060218 - 1 = 0.060218\n- r\u2081_next = 6.0218%\n\n**Interpretation:** The upward-sloping yield curve (2-year rate at 4.5% vs. 1-year rate at 3.0%) implies that investors expect interest rates to rise. Specifically, the market anticipates the one-year rate next year to be approximately 6.02%.\n\nFinal Answer: 6.02"
+    },
+    {
+        "question_id": "test-2116",
+        "success": true,
+        "agent_answer": 8.588,
+        "ground_truth": 8.588,
+        "response": "Using the forward rate formula:\n\n\\[\n(1 + f_{2,2})^2 = \\frac{(1 + r_4)^4}{(1 + r_2)^2}\n\\]\n\n\\[\nf_{2,2} = \\sqrt{\\frac{(1.055)^4}{(1.025)^2}} - 1\n\\]\n\n\\[\nf_{2,2} = \\sqrt{\\frac{1.238825}{1.050625}} - 1 = \\sqrt{1.17910} - 1 = 0.08588\n\\]\n\nThe forward rate for two years starting from two years from now is **8.588%**.\n\nFinal Answer: 8.588"
+    },
+    {
+        "question_id": "test-2117",
+        "success": true,
+        "agent_answer": 2.568,
+        "ground_truth": 2.568,
+        "response": "Using the Black-Scholes-Merton put option formula:\n\n**Put = X \u00d7 e^(-rT) \u00d7 N(-d2) - S \u00d7 N(-d1)**\n\nWhere:\n- N(-d1) = 1 - 0.6352 = 0.3648\n- N(-d2) = 1 - 0.5486 = 0.4514\n- e^(-rT) = e^(-0.003 \u00d7 0.25) \u2248 0.99925\n\n**Calculation:**\n- Put = 45 \u00d7 0.99925 \u00d7 0.4514 - 48.6 \u00d7 0.3648\n- Put = 20.30 - 17.73 = **2.568**\n\nFinal Answer: 2.568"
+    },
+    {
+        "question_id": "test-2118",
+        "success": true,
+        "agent_answer": 60.0,
+        "ground_truth": 60.0,
+        "response": "## Calculation Summary\n\n**Given Data:**\n- Advances: 1,200\n- Declines: 800\n- Previous 19-day EMA: 150\n- Previous 39-day EMA: 100\n\n**Step-by-Step Calculation:**\n\n1. **Net Advances** = 1,200 - 800 = 400\n\n2. **EMA Multipliers:**\n   - 19-day multiplier: 2/(19+1) = 0.10\n   - 39-day multiplier: 2/(39+1) = 0.05\n\n3. **Today's EMAs (using EMA formula: EMA_today = (Value - EMA_prev) \u00d7 Multiplier + EMA_prev):**\n   - 19-day EMA: (400 - 150) \u00d7 0.10 + 150 = **175.00**\n   - 39-day EMA: (400 - 100) \u00d7 0.05 + 100 = **115.00**\n\n4. **McClellan Oscillator** = 19-day EMA - 39-day EMA = 175.00 - 115.00 = **60.00**\n\nFinal Answer: 60.00"
+    },
+    {
+        "question_id": "test-2119",
+        "success": true,
+        "agent_answer": 0.483941,
+        "ground_truth": 48.394145,
+        "response": "The probability density of the stock returning exactly 0.5% on a given day is calculated using the normal distribution probability density function:\n\n$$f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}$$\n\nWhere:\n- \u03bc (mean) = 1%\n- \u03c3 (standard deviation) = 0.5%\n- x = 0.5%\n\nThe value 0.5% is exactly one standard deviation below the mean (1% - 0.5% = 0.5%). Plugging these values into the formula yields a probability density of approximately 0.483941.\n\nFinal Answer: 0.483941"
+    },
+    {
+        "question_id": "test-2121",
+        "success": true,
+        "agent_answer": 547220.0,
+        "ground_truth": 547220,
+        "response": "Based on the mortgage calculation:\n\n**Given:**\n- Principal: $300,000\n- Annual interest rate: 4.5%\n- Loan term: 30 years (360 monthly payments)\n\n**Calculation:**\nUsing the standard mortgage payment formula:\n- Monthly Payment = $1,520.06\n- Total payments over 30 years = 360 \u00d7 $1,520.06 = $547,220.13\n\nThe total cost includes:\n- Principal repayment: $300,000\n- Total interest paid: $247,220.13\n\nFinal Answer: 547220"
+    },
+    {
+        "question_id": "test-2123",
+        "success": true,
+        "agent_answer": 101.458,
+        "ground_truth": 101.458,
+        "response": "The bond price is calculated by discounting each cash flow using the corresponding spot rate:\n\n- **Year 1**: Coupon = 10, PV = 10 / (1.08)\u00b9 = 9.259\n- **Year 2**: Coupon = 10, PV = 10 / (1.09)\u00b2 = 8.417\n- **Year 3**: Coupon + Face = 110, PV = 110 / (1.095)\u00b3 = 83.782\n\n**Total Bond Price** = 9.259 + 8.417 + 83.782 = 101.458\n\nFinal Answer: 101.458"
+    },
+    {
+        "question_id": "test-2124",
+        "success": true,
+        "agent_answer": 6.507,
+        "ground_truth": 6.507,
+        "response": "Based on the table provided, I need to calculate the percentage of leased locations in Texas.\n\n**Total leased locations:**\n- US locations: 57 + 26 + 22 + 19 + 9 + 8 + 7 + 63 = 211\n- International locations: 81\n- **Total: 292**\n\n**Texas locations:** 19\n\n**Calculation:** (19 \u00f7 292) \u00d7 100 = 6.507%\n\nFinal Answer: 6.507"
+    },
+    {
+        "question_id": "test-2125",
+        "success": true,
+        "agent_answer": "True",
+        "ground_truth": true,
+        "response": "Based on my analysis:\n\n**ISO Holding Period Requirements for Favorable Tax Treatment:**\n1. Must hold stocks for **more than 1 year** from the exercise date\n2. Must hold stocks for **more than 2 years** from the grant date\n\n**Jessica's Timeline:**\n- Grant Date: January 15, 2021\n- Exercise Date: February 20, 2022\n- Sale Date: May 5, 2023\n\n**Results:**\n- Holding period from exercise: 439 days \u2713 (exceeds 365 days)\n- Holding period from grant: 840 days \u2713 (exceeds 730 days)\n\nBoth holding period requirements are satisfied. Jessica's sale qualifies for favorable long-term capital gains tax treatment.\n\nFinal Answer: True"
+    },
+    {
+        "question_id": "test-2126",
+        "success": true,
+        "agent_answer": -0.721,
+        "ground_truth": -0.7105,
+        "response": "## Analysis\n\nThe first-order autocorrelation measures the linear relationship between consecutive quarterly returns. I calculated this by:\n\n1. **Creating paired observations**: For 12 quarters of returns, there are 11 pairs of consecutive quarters\n   - Current returns (t): [3, 8, 2, 7, 3, 6, 4, 5, 7, 6, 4]\n   - Previous returns (t-1): [5, 3, 8, 2, 7, 3, 6, 4, 5, 7, 6]\n\n2. **Computing the Pearson correlation** between these two series\n\nThe result shows a **strong negative autocorrelation of -0.721**, which indicates that:\n- When a quarter has a high return, the following quarter tends to have a lower return\n- This suggests **mean-reverting behavior** rather than momentum\n- The stock does not exhibit persistence in its quarterly performance\n\nFinal Answer: -0.721"
+    },
+    {
+        "question_id": "test-2127",
+        "success": true,
+        "agent_answer": 6.44,
+        "ground_truth": 6.44,
+        "response": "**JIBAR Calculation Summary:**\n\n| Bank | Bid Rate | Offer Rate | Mid-Rate |\n|------|----------|------------|----------|\n| 1 | 6.2% | 6.6% | 6.40% |\n| 2 | 6.4% | 6.7% | 6.55% |\n| 3 | 6.1% | 6.5% | 6.30% |\n| 4 | 6.5% | 6.8% | 6.65% |\n| 5 | 6.3% | 6.7% | 6.50% |\n| 6 | 6.4% | 6.8% | 6.60% |\n| 7 | 6.0% | 6.4% | 6.20% |\n| 8 | 6.1% | 6.5% | 6.30% |\n\n**Steps:**\n1. Calculated 8 mid-rates: [6.4%, 6.55%, 6.3%, 6.65%, 6.5%, 6.6%, 6.2%, 6.3%]\n2. Sorted mid-rates: [6.2%, 6.3%, 6.3%, 6.4%, 6.5%, 6.55%, 6.6%, 6.65%]\n3. Removed 2 lowest (6.2%, 6.3%) and 2 highest (6.6%, 6.65%)\n4. Remaining rates: [6.3%, 6.4%, 6.5%, 6.55%]\n5. Averaged remaining rates: (6.3 + 6.4 + 6.5 + 6.55) / 4 = 6.4375%\n\nFinal Answer: 6.44"
+    },
+    {
+        "question_id": "test-2128",
+        "success": true,
+        "agent_answer": 1.262,
+        "ground_truth": 1.262,
+        "response": "## Diluted EPS Calculation\n\n**Step 1: Calculate Preferred Dividends**\n- Preferred Stock Dividends = $2,000,000 \u00d7 7% = $140,000\n\n**Step 2: Income Available to Common Shareholders**\n- Net Income - Preferred Dividends = $1,500,000 - $140,000 = $1,360,000\n\n**Step 3: Apply If-Converted Method for Convertible Bonds**\n- Interest Expense = $10,000,000 \u00d7 4% = $400,000\n- Tax Savings = $400,000 \u00d7 30% = $120,000\n- After-tax Interest Savings = $400,000 - $120,000 = $280,000\n\n**Step 4: Calculate Diluted EPS**\n- Diluted Income = $1,360,000 + $280,000 = $1,640,000\n- Diluted Shares = 1,000,000 + 300,000 = 1,300,000\n- Diluted EPS = $1,640,000 \u00f7 1,300,000 = $1.261538...\n\n**Dilution Check:** The per-share impact ($280,000 \u00f7 300,000 = $0.933) is less than Basic EPS ($1.36), confirming the bonds are dilutive.\n\nFinal Answer: 1.262"
+    },
+    {
+        "question_id": "test-2129",
+        "success": true,
+        "agent_answer": 60.2,
+        "ground_truth": 60.2,
+        "response": "Under the **periodic inventory method** with weighted average costing, the cost per unit is calculated at the end of the period based on all goods available for sale.\n\n**Step 1: Calculate total units and total cost available for sale**\n\n| Description | Units | Total Cost |\n|-------------|-------|------------|\n| Beginning Inventory (May 1) | 200 | $1,250.00 |\n| Purchase (May 4) | 20 | $116.00 |\n| Purchase (May 17) | 80 | $440.00 |\n| **Total** | **300** | **$1,806.00** |\n\n**Step 2: Calculate weighted average cost per unit**\n- Weighted average cost = $1,806.00 \u00f7 300 units = **$6.02 per unit**\n\n**Step 3: Calculate cost of goods sold**\n- Units sold: 10\n- Cost of Goods Sold = 10 units \u00d7 $6.02 = **$60.20**\n\nFinal Answer: 60.20"
+    },
+    {
+        "question_id": "test-2130",
+        "success": true,
+        "agent_answer": 2960.0,
+        "ground_truth": 2960,
+        "response": "## Calculation Breakdown\n\n**Step 1: Pay the Deductible**\n- Anna pays the full deductible: $1,200\n- Remaining bill: $10,000 - $1,200 = $8,800\n\n**Step 2: Pay Coinsurance on Remaining Amount**\n- Anna's coinsurance responsibility (20%): $8,800 \u00d7 0.20 = $1,760\n\n**Step 3: Calculate Total Out-of-Pocket**\n- Total before maximum: $1,200 + $1,760 = $2,960\n\n**Step 4: Check Against Out-of-Pocket Maximum**\n- The total ($2,960) is less than the maximum ($3,000), so the cap does not apply\n\n**Final Out-of-Pocket Cost:** $2,960\n\nFinal Answer: 2960"
+    },
+    {
+        "question_id": "test-2131",
+        "success": true,
+        "agent_answer": 0.0484,
+        "ground_truth": 0.0484,
+        "response": "Using the two-asset portfolio variance formula:\n\n**Portfolio Variance = w_A\u00b2 \u00d7 \u03c3_A\u00b2 + w_B\u00b2 \u00d7 \u03c3_B\u00b2 + 2 \u00d7 w_A \u00d7 w_B \u00d7 Cov(A,B)**\n\nWhere:\n- w_A = 0.40, w_B = 0.60 (weights)\n- \u03c3_A\u00b2 = 0.04 (variance of Stock A)\n- \u03c3_B\u00b2 = 0.09 (variance of Stock B)\n- Cov(A,B) = 0.02 (covariance)\n\n**Calculation:**\n- w_A\u00b2 \u00d7 \u03c3_A\u00b2 = 0.16 \u00d7 0.04 = 0.0064\n- w_B\u00b2 \u00d7 \u03c3_B\u00b2 = 0.36 \u00d7 0.09 = 0.0324\n- 2 \u00d7 w_A \u00d7 w_B \u00d7 Cov(A,B) = 2 \u00d7 0.4 \u00d7 0.6 \u00d7 0.02 = 0.0096\n\n**Total Portfolio Variance = 0.0064 + 0.0324 + 0.0096 = 0.0484**\n\nFinal Answer: 0.0484"
+    },
+    {
+        "question_id": "test-2132",
+        "success": true,
+        "agent_answer": 51.503,
+        "ground_truth": 51.503,
+        "response": "**Solution:**\n\nUsing the forward price formula with annual compounding and the cost-of-carry model:\n\n$$F = (S_0 - \\text{PV(Benefits)} + \\text{PV(Costs)}) \\times (1 + r)^T$$\n\nWhere:\n- $S_0 = \\$50$ (current spot price)\n- $\\text{PV(Benefits)} = \\$5$ (present value of advantages)\n- $\\text{PV(Costs)} = \\$6$ (present value of disadvantages)\n- $r = 4\\%$ (risk-free rate)\n- $T = 0.25$ years (3 months)\n\nCalculation:\n- Adjusted spot price = $50 - 5 + 6 = \\$51$\n- Compounding factor = $(1 + 0.04)^{0.25} = 1.009853$\n- Forward price = $51 \\times 1.009853 = \\$51.5025$\n\nRounded to three decimal places: **51.503**\n\nFinal Answer: 51.503"
+    },
+    {
+        "question_id": "test-2133",
+        "success": true,
+        "agent_answer": 6.59,
+        "ground_truth": 6.59,
+        "response": "The bond equivalent yield (BEY) converts the money market rate from a 360-day basis to a 365-day basis.\n\n**Calculation:**\n- Add-on Rate = 6.50% (360-day basis)\n- BEY = 6.50% \u00d7 (365/360)\n- BEY = 6.590278%\n- BEY = **6.59%** (rounded to two decimal places)\n\nFinal Answer: 6.59"
+    },
+    {
+        "question_id": "test-2135",
+        "success": true,
+        "agent_answer": 13.76,
+        "ground_truth": 13.76,
+        "response": "Using the two-asset portfolio standard deviation formula:\n\n**\u03c3p = \u221a(wX\u00b2 \u00d7 \u03c3X\u00b2 + wY\u00b2 \u00d7 \u03c3Y\u00b2 + 2 \u00d7 wX \u00d7 wY \u00d7 \u03c3X \u00d7 \u03c3Y \u00d7 \u03c1)**\n\nWhere:\n- wX = 0.30, wY = 0.70\n- \u03c3X = 0.25, \u03c3Y = 0.10\n- \u03c1 = 0.8\n\n**Calculation:**\n- wX\u00b2 \u00d7 \u03c3X\u00b2 = 0.09 \u00d7 0.0625 = 0.005625\n- wY\u00b2 \u00d7 \u03c3Y\u00b2 = 0.49 \u00d7 0.01 = 0.0049\n- 2 \u00d7 wX \u00d7 wY \u00d7 \u03c3X \u00d7 \u03c3Y \u00d7 \u03c1 = 2 \u00d7 0.30 \u00d7 0.70 \u00d7 0.25 \u00d7 0.10 \u00d7 0.8 = 0.0084\n- Portfolio Variance = 0.005625 + 0.0049 + 0.0084 = 0.018925\n- Portfolio Std Dev = \u221a0.018925 = 0.1376 = **13.76%**\n\nFinal Answer: 13.76"
+    },
+    {
+        "question_id": "test-2136",
+        "success": true,
+        "agent_answer": 2.75,
+        "ground_truth": 2.75,
+        "response": "The linear interpolation calculation is straightforward:\n\n**Method:**\n- Q2 end yield: 2.5%\n- Q3 end yield: 3.0%\n- Midpoint of Q3 = 50% of the way through Q3\n\n**Linear Interpolation Formula:**\n$$Y_{mid} = Y_{Q2} + (Y_{Q3} - Y_{Q2}) \\times t$$\n\nWhere $t = 0.5$ (midpoint)\n\n$$Y_{mid} = 2.5 + (3.0 - 2.5) \\times 0.5 = 2.5 + 0.25 = 2.75\\%$$\n\nFinal Answer: 2.75"
+    },
+    {
+        "question_id": "test-2137",
+        "success": true,
+        "agent_answer": 3479.0,
+        "ground_truth": 3479,
+        "response": "Based on the amortizing loan calculation:\n\n- **Loan amount**: $20,000\n- **Annual interest rate**: 6.5%\n- **Loan term**: 5 years (60 months)\n- **Monthly payment**: $391.32\n- **Total amount paid**: $23,479.38\n- **Total interest**: $3,479.38\n\nUsing the standard amortization formula for a fixed-rate loan, John will pay a monthly payment of $391.32. Over 60 months, he pays a total of $23,479.38, which means the total interest is $3,479 (rounded to the nearest integer).\n\nFinal Answer: 3479"
+    },
+    {
+        "question_id": "test-2138",
+        "success": true,
+        "agent_answer": 13.181,
+        "ground_truth": 13.181,
+        "response": "The sample standard deviation for these 10 measurements is calculated using the formula with (n-1) degrees of freedom.\n\n**Calculation steps:**\n- Values: [-3, -11, 3, -18, 18, 20, -6, 9, 2, -16]\n- Count (n): 10\n- Mean: -0.2\n- Sample Standard Deviation: 13.180794108601095\n\nFinal Answer: 13.181"
+    },
+    {
+        "question_id": "test-2139",
+        "success": true,
+        "agent_answer": 559.29,
+        "ground_truth": 559.29,
+        "response": "The monthly payment is calculated using the standard loan amortization formula:\n\n**Given:**\n- Principal (P) = $30,000\n- Annual interest rate = 4.5% (monthly rate r = 0.045/12 = 0.00375)\n- Loan term = 5 years (n = 60 monthly payments)\n\n**Formula:**\nMonthly Payment = P \u00d7 [r(1+r)^n] / [(1+r)^n - 1]\n\n**Calculation:**\n- Monthly Payment = 30,000 \u00d7 [0.00375(1.00375)^60] / [(1.00375)^60 - 1]\n- Monthly Payment = 30,000 \u00d7 [0.004866] / [0.2706]\n- Monthly Payment = $559.29\n\nFinal Answer: 559.29"
+    },
+    {
+        "question_id": "test-2141",
+        "success": true,
+        "agent_answer": 341.0,
+        "ground_truth": 341,
+        "response": "**Calculation Breakdown:**\n\n| Tier | Income Range | Amount | Tax Rate | Tax |\n|------|-------------|--------|----------|-----|\n| 1 | $0 - $1,250 | $1,250 | 0% | $0 |\n| 2 | $1,251 - $2,500 | $1,250 | 10% | $125 |\n| 3 | Above $2,500 | $900 | 24% | $216 |\n| **Total** | | **$3,400** | | **$341** |\n\n**Summary:**\n- The first $1,250 of Alex's unearned income is tax-free.\n- The next $1,250 (from $1,251 to $2,500) is taxed at Alex's rate of 10%, resulting in $125 of tax.\n- The remaining $900 (above $2,500) is taxed at the parent's rate of 24%, resulting in $216 of tax.\n- Total kiddie tax liability: $125 + $216 = $341.\n\nFinal Answer: 341"
+    },
+    {
+        "question_id": "test-2142",
+        "success": true,
+        "agent_answer": 12.84,
+        "ground_truth": 12.84,
+        "response": "The probability that exactly 10 out of the 200 interested recipients will apply for the card is **12.84%**.\n\nThis is a binomial probability calculation where:\n- n = 200 (interested recipients)\n- p = 0.05 (probability of applying)\n- k = 10 (exact number of applicants we're interested in)\n\nThe calculation uses the binomial probability formula: P(X = k) = C(n,k) \u00d7 p^k \u00d7 (1-p)^(n-k)\n\nInterestingly, 10 is the expected value (200 \u00d7 0.05 = 10), so this is the probability of getting exactly the expected number of applicants.\n\nFinal Answer: 12.84"
+    },
+    {
+        "question_id": "test-2143",
+        "success": true,
+        "agent_answer": 183781.0,
+        "ground_truth": 183781,
+        "response": "## Calculation Summary\n\n**Present Value of Assets:**\n- Year 1: $500,000 \u00f7 (1.05)\u00b9 = $476,190.48\n- Year 2: $300,000 \u00f7 (1.05)\u00b2 = $272,108.84\n- Year 3: $200,000 \u00f7 (1.05)\u00b3 = $172,767.52\n- **Total PV of Assets: $921,066.84**\n\n**Present Value of Liabilities:**\n- Year 1: $400,000 \u00f7 (1.05)\u00b9 = $380,952.38\n- Year 2: $250,000 \u00f7 (1.05)\u00b2 = $226,757.37\n- Year 3: $150,000 \u00f7 (1.05)\u00b3 = $129,575.64\n- **Total PV of Liabilities: $737,285.39**\n\n**Economic Value of Equity (EVE):**\nEVE = PV of Assets \u2212 PV of Liabilities = $921,066.84 \u2212 $737,285.39 = $183,781.45\n\nFinal Answer: 183781"
+    },
+    {
+        "question_id": "test-2146",
+        "success": true,
+        "agent_answer": 1572.0,
+        "ground_truth": 1572,
+        "response": "To calculate John's monthly mortgage payment, I used the standard mortgage payment formula:\n\n**Given:**\n- Principal (P) = $350,000\n- Annual interest rate = 3.5%\n- Loan term = 30 years\n\n**Calculation:**\n- Monthly interest rate (r) = 3.5% / 12 = 0.2917%\n- Number of payments (n) = 30 \u00d7 12 = 360 months\n\nUsing the mortgage formula: M = P \u00d7 [r(1+r)^n] / [(1+r)^n - 1]\n\nThe monthly payment calculates to $1,571.66, which rounds to **$1,572**.\n\nFinal Answer: 1572"
+    },
+    {
+        "question_id": "test-2147",
+        "success": true,
+        "agent_answer": 26424.8,
+        "ground_truth": 26424.8,
+        "response": "Based on the calculation, here's the breakdown of John's SECA tax for 2023:\n\n**1. Social Security Tax:**\n- Applied to earnings up to $160,200\n- $160,200 \u00d7 12.4% = **$19,864.80**\n\n**2. Medicare Tax:**\n- Applied to all net earnings of $220,000\n- $220,000 \u00d7 2.9% = **$6,380.00**\n\n**3. Additional Medicare Tax:**\n- Applied to earnings above $200,000 threshold\n- ($220,000 - $200,000) \u00d7 0.9% = $20,000 \u00d7 0.9% = **$180.00**\n\n**Total SECA Tax:** $19,864.80 + $6,380.00 + $180.00 = **$26,424.80**\n\nFinal Answer: 26424.80"
+    },
+    {
+        "question_id": "test-2148",
+        "success": true,
+        "agent_answer": 161.72,
+        "ground_truth": 161.72,
+        "response": "Let me verify this calculation step by step:\n\n**Step 1: Calculate the smoothing factor (\u03b1)**\n- \u03b1 = 2/(N+1) = 2/(20+1) = 2/21 \u2248 0.095238\n\n**Step 2: Calculate the initial Simple Moving Average (SMA)**\n- SMA for days 1-20 = (150+152+151+153+155+154+156+158+157+160+162+161+163+162+164+165+167+168+166+169)/20 = 159.65\n\n**Step 3: Calculate EMA for subsequent days**\n- EMA\u208d\u2082\u2080\u208e = 159.65 (initial EMA equals SMA)\n- EMA\u208d\u2082\u2081\u208e = (170 \u00d7 0.095238) + (159.65 \u00d7 0.904762) = 160.6357\n- EMA\u208d\u2082\u2082\u208e = (172 \u00d7 0.095238) + (160.6357 \u00d7 0.904762) = 161.7180\n\n**Step 4: Round to two decimal places**\n- EMA for Day 22 = 161.72\n\nFinal Answer: 161.72"
+    },
+    {
+        "question_id": "test-2149",
+        "success": true,
+        "agent_answer": 1070.0,
+        "ground_truth": 1070.0,
+        "response": "**Calculation Summary:**\n\n| Day | Price | Volume | Volume Change | NVI Calculation | NVI |\n|-----|-------|--------|---------------|-----------------|-----|\n| 0 | 102 | 1500 | \u2014 | Initial | 1000.00 |\n| 1 | 100 | 1600 | \u2191 Increased | No change | 1000.00 |\n| 2 | 105 | 1400 | \u2193 Decreased | 1000 \u00d7 (105/100) | 1050.00 |\n| 3 | 107 | 1300 | \u2193 Decreased | 1050 \u00d7 (107/105) | 1070.00 |\n| 4 | 103 | 1350 | \u2191 Increased | No change | 1070.00 |\n\nThe NVI only updates on Days 2 and 3 (when volume decreased). The final NVI after five days is **1070.00**.\n\nFinal Answer: 1070.00"
+    },
+    {
+        "question_id": "test-2150",
+        "success": true,
+        "agent_answer": 4929284.716,
+        "ground_truth": 4929284.716,
+        "response": "## Analysis\n\nThis is a bond valuation problem where I need to calculate the present value of the bonds at issuance.\n\n**Key Parameters:**\n- Face Value: $5,000,000\n- Coupon Rate (Stated Rate): 2.5% annually\n- Market Rate (Yield): 3% annually\n- Term: 3 years\n- Coupon Payment: $5,000,000 \u00d7 2.5% = $125,000 per year\n\n**Bond Pricing Principle:**\nSince the coupon rate (2.5%) is **lower** than the market rate (3%), the bonds will be issued at a **discount** (below face value).\n\n**Present Value Calculation:**\n\n1. **PV of Coupon Payments (Annuity):**\n   - PV = $125,000 \u00d7 [(1 - (1.03)^(-3)) / 0.03] = $353,576.42\n\n2. **PV of Face Value (Lump Sum):**\n   - PV = $5,000,000 / (1.03)\u00b3 = $4,575,708.30\n\n3. **Total Issue Price (Bonds Payable):**\n   - $353,576.42 + $4,575,708.30 = **$4,929,284.716**\n\nThe bonds are reported at their present value of approximately $4.929 million, representing a discount of $70,715.28 from face value.\n\nFinal Answer: 4929284.716"
+    },
+    {
+        "question_id": "test-2151",
+        "success": true,
+        "agent_answer": 1483.29,
+        "ground_truth": 1483.29,
+        "response": "**Calculation Summary:**\n- Remaining Principal: $150,000\n- New Annual Interest Rate: 3.5% (2% index + 1.5% margin)\n- Monthly Interest Rate: 0.2917%\n- Remaining Term: 120 months\n\nUsing the standard mortgage amortization formula:\n$$M = P \\times \\frac{r(1+r)^n}{(1+r)^n - 1}$$\n\nWhere:\n- P = $150,000\n- r = 0.035/12 \u2248 0.002917\n- n = 120\n\nFinal Answer: 1483.29"
+    },
+    {
+        "question_id": "test-2152",
+        "success": true,
+        "agent_answer": 97.731,
+        "ground_truth": 97.731,
+        "response": "The bond price is calculated by discounting each cash flow using the appropriate spot rate:\n\n**Year 1:** $8 \u00f7 (1.07)\u00b9 = $7.477  \n**Year 2:** $8 \u00f7 (1.08)\u00b2 = $6.859  \n**Year 3:** $108 \u00f7 (1.09)\u00b3 = $83.396  \n\n**Total Price = $97.731**\n\nFinal Answer: 97.731"
+    },
+    {
+        "question_id": "test-2154",
+        "success": true,
+        "agent_answer": -489849.626,
+        "ground_truth": -489849.626,
+        "response": "**Analysis Summary:**\n\n1. **Position**: Bradley sold EUR 18,000,000 forward (short EUR position)\n2. **Contract Rate**: 6-month forward bid at initiation = 1.3935 + (-0.0019) = **1.3916 USD/EUR**\n3. **Valuation Rate**: After 3 months, the 3-month forward ask (to close a short EUR) = 1.4210 + (-0.0021) = **1.4189 USD/EUR**\n4. **MTM Logic**: Short EUR forward loses value when EUR appreciates (market rate > contract rate)\n5. **Present Value Calculation**:\n   - MTM at maturity = (1.3916 - 1.4189) \u00d7 18,000,000 = -$491,400\n   - Discount factor = 1 + 1.266% \u00d7 90/360 = 1.003165\n   - PV of MTM = -$491,400 / 1.003165 = **-$489,849.626**\n\nThe negative value indicates a loss on the hedge (EUR appreciated against USD from 1.3935 to 1.4210, hurting the short EUR forward position). However, this hedge loss would be offset by gains on the EUR-denominated shares.\n\nFinal Answer: -489849.626"
+    },
+    {
+        "question_id": "test-2155",
+        "success": true,
+        "agent_answer": 55009.405,
+        "ground_truth": 55009.405,
+        "response": "**Calculation Details:**\n- Principal: \u00a55,000,000\n- Monthly interest rate: 5.8% \u00f7 12 = 0.4833%\n- Number of monthly payments: 10 \u00d7 12 = 120\n\nUsing the standard mortgage payment formula:\nM = P \u00d7 [r(1+r)^n] / [(1+r)^n - 1]\n\nWhere:\n- P = \u00a55,000,000\n- r = 0.058/12 = 0.004833...\n- n = 120\n\nThe initial monthly mortgage repayment at the end of this month will be:\n\nFinal Answer: 55009.405"
+    },
+    {
+        "question_id": "test-2156",
+        "success": true,
+        "agent_answer": 313.6,
+        "ground_truth": 313.6,
+        "response": "This is a hedge fund fee calculation problem with a high water mark provision.\n\n**Step-by-step analysis:**\n\n1. **Calculate last year's ending capital (High Water Mark):**\n   - Initial AUM: $350 million\n   - Return: 20%\n   - Ending capital = $350M \u00d7 (1 + 0.20) = $420 million (this is the high water mark)\n\n2. **Analyze this year's situation:**\n   - Fund value before fees: $320 million\n   - This is **below** the high water mark of $420 million\n\n3. **Calculate Management Fee:**\n   - Management fee = 2% \u00d7 $320M = $6.4 million\n   - (Management fees are always charged regardless of performance)\n\n4. **Calculate Incentive Fee:**\n   - Profit above high water mark = $320M - $420M = -$100M (negative)\n   - Since there's no profit above the HWM, incentive fee = $0\n   - (The high water mark protects investors from paying incentive fees on recovered losses)\n\n5. **Calculate Ending Capital Position:**\n   - Ending capital = $320M - $6.4M - $0 = $313.6 million\n\nFinal Answer: 313.6"
+    },
+    {
+        "question_id": "test-2157",
+        "success": true,
+        "agent_answer": 175.343,
+        "ground_truth": 175.343,
+        "response": "Using covered interest rate parity, I calculated the 180-day forward points:\n\n**Given:**\n- Spot rate: 2.0979 NZD/GBP\n- GBP Libor (base currency): 1.6025%\n- NZD Libor (quote currency): 3.2875%\n- Time: 180 days (T = 0.5)\n\n**Calculation:**\nForward Rate = Spot \u00d7 (1 + r_NZD \u00d7 T) / (1 + r_GBP \u00d7 T)\nForward Rate = 2.0979 \u00d7 (1 + 0.032875 \u00d7 0.5) / (1 + 0.016025 \u00d7 0.5)\nForward Rate = 2.115434 NZD/GBP\n\nForward Points = Forward Rate - Spot Rate = 0.017534\nForward Points in bps = 0.017534 \u00d7 10,000 = 175.343\n\nThe NZD trades at a forward discount (higher interest rate = weaker forward currency), resulting in positive forward points.\n\nFinal Answer: 175.343"
+    },
+    {
+        "question_id": "test-2158",
+        "success": true,
+        "agent_answer": 5.337,
+        "ground_truth": 5.337,
+        "response": "Using put-call parity with continuous dividend yield:\n\n**Calculation:**\n1. K \u00d7 e^(-rT) = 90 \u00d7 e^(-0.05 \u00d7 5) = 70.092070\n2. c + K \u00d7 e^(-rT) - p = 10 + 70.092070 - 15 = 65.092070\n3. e^(-qT) = 65.092070 / 85 = 0.765789\n4. q = -ln(0.765789) / 5 = 0.05337\n\nThe implied dividend yield is **5.337%**.\n\nFinal Answer: 5.337"
+    },
+    {
+        "question_id": "test-2159",
+        "success": true,
+        "agent_answer": 22800.0,
+        "ground_truth": 22800,
+        "response": "**Tax Calculation Breakdown:**\n\n| Bracket | Amount | Rate | Tax |\n|---------|--------|------|-----|\n| $0 - $10,000 | $10,000 | 10% | $1,000 |\n| $10,001 - $30,000 | $20,000 | 20% | $4,000 |\n| $30,001 - $60,000 | $30,000 | 30% | $9,000 |\n| $60,001 - $82,000 | $22,000 | 40% | $8,800 |\n| **Total** | | | **$22,800** |\n\nFinal Answer: 22800"
+    },
+    {
+        "question_id": "test-2160",
+        "success": true,
+        "agent_answer": -1.07,
+        "ground_truth": -1.07,
+        "response": "The kurtosis calculation for the tech company's daily stock returns has been completed.\n\n**Calculation Summary:**\n- Daily returns: [1.5%, -0.5%, 3.2%, -2.0%, 0.8%]\n- Mean return: 0.6%\n- The excess kurtosis (Fisher's definition, which subtracts 3 from the raw kurtosis) measures how the tails of the distribution compare to a normal distribution.\n\n**Result:**\nThe excess kurtosis is -1.07, indicating a **platykurtic** distribution (thinner tails than a normal distribution) for this week of returns. However, this result should be interpreted cautiously as it's based on only 5 data points.\n\nFinal Answer: -1.07"
+    },
+    {
+        "question_id": "test-2161",
+        "success": true,
+        "agent_answer": 400000.0,
+        "ground_truth": 400000,
+        "response": "The tiered Lehman fee calculation is as follows:\n\n| Tier | Amount | Rate | Fee |\n|------|--------|------|-----|\n| 1 | First $1,000,000 | 5% | $50,000 |\n| 2 | Next $4,000,000 | 4% | $160,000 |\n| 3 | Next $5,000,000 | 3% | $150,000 |\n| 4 | Remaining $2,000,000 | 2% | $40,000 |\n| **Total** | **$12,000,000** | | **$400,000** |\n\nFinal Answer: 400000"
+    },
+    {
+        "question_id": "test-2162",
+        "success": true,
+        "agent_answer": 0.853,
+        "ground_truth": 0.853,
+        "response": "The total return calculation involves three components:\n\n1. **Price Return**: The gain from the initial futures price (865.0) to the nearby contract price at roll (877.0)\n   - Price Return = (877.0 - 865.0) / 865.0 = 1.387%\n\n2. **Roll Return**: The cost of rolling from the short-term contract to the long-term contract (contango)\n   - Roll Return = (877.0 - 883.0) / 877.0 = -0.684%\n\n3. **Collateral Return**: Interest earned on the fully collateralized position\n   - Collateral Return = 0.60% \u00d7 (3/12) = 0.150%\n\n**Total Return** = 1.387% - 0.684% + 0.150% = 0.853%\n\nFinal Answer: 0.853"
+    },
+    {
+        "question_id": "test-2163",
+        "success": true,
+        "agent_answer": 6250.0,
+        "ground_truth": 6250,
+        "response": "## Calculation Breakdown\n\n**Given Information:**\n- 5 call option contracts = 500 shares (5 \u00d7 100 shares per contract)\n- Premium received: $2.50 per share\n- Strike price: $150 per share\n- Market price at expiration: $158 per share\n- Original share purchase price: $140 per share\n- Position: Covered call (Linda owns the underlying shares)\n\n**Analysis:**\nSince the market price ($158) exceeds the strike price ($150) at expiration, the call options will be exercised by the buyer. Linda must sell her shares at the strike price of $150.\n\n**Profit Components:**\n\n1. **Premium Income:** $2.50 \u00d7 500 shares = $1,250\n\n2. **Stock Profit:** (Strike price - Purchase price) \u00d7 Shares\n   = ($150 - $140) \u00d7 500 = $5,000\n\n3. **Opportunity Cost Note:** While the stock is worth $158 at expiration, Linda is obligated to sell at $150. However, this opportunity cost is offset by the premium received.\n\n**Total Profit:** $1,250 + $5,000 = **$6,250**\n\nFinal Answer: 6250"
+    },
+    {
+        "question_id": "test-2165",
+        "success": true,
+        "agent_answer": 16.703,
+        "ground_truth": 16.703,
+        "response": "**Calculation:**\n\nPortfolio Variance = w\u2081\u00b2\u03c3\u2081\u00b2 + w\u2082\u00b2\u03c3\u2082\u00b2 + 2w\u2081w\u2082\u03c3\u2081\u03c3\u2082\u03c1\n\nBreaking down each component:\n- w\u2081\u00b2\u03c3\u2081\u00b2 = (0.40)\u00b2 \u00d7 (0.30)\u00b2 = 0.0144\n- w\u2082\u00b2\u03c3\u2082\u00b2 = (0.60)\u00b2 \u00d7 (0.15)\u00b2 = 0.0081\n- 2w\u2081w\u2082\u03c3\u2081\u03c3\u2082\u03c1 = 2 \u00d7 0.40 \u00d7 0.60 \u00d7 0.30 \u00d7 0.15 \u00d7 0.25 = 0.0054\n\n**Total Variance** = 0.0144 + 0.0081 + 0.0054 = 0.0279\n\n**Portfolio Standard Deviation** = \u221a0.0279 = 0.16703... = **16.703%**\n\nFinal Answer: 16.703"
+    },
+    {
+        "question_id": "test-2166",
+        "success": true,
+        "agent_answer": 97.78,
+        "ground_truth": 97.78,
+        "response": "## Calculation Summary\n\n**Step 1: Present Value of Projected Cash Flows (Years 1-5)**\n| Year | Cash Flow (M) | Discount Factor | Present Value (M) |\n|------|---------------|-----------------|-------------------|\n| 1 | 8 | 1.08\u207b\u00b9 | 7.41 |\n| 2 | 10 | 1.08\u207b\u00b2 | 8.57 |\n| 3 | 12 | 1.08\u207b\u00b3 | 9.53 |\n| 4 | 15 | 1.08\u207b\u2074 | 11.03 |\n| 5 | 18 | 1.08\u207b\u2075 | 12.25 |\n\n**Total PV of Cash Flows:** 48.78 million\n\n**Step 2: Terminal Value Calculation**\n- Terminal Value = Year 5 Cash Flow \u00d7 Terminal Multiple\n- Terminal Value = 18 \u00d7 4 = 72 million (at end of Year 5)\n\n**Step 3: Present Value of Terminal Value**\n- PV of Terminal Value = 72 \u00f7 1.08\u2075 = 49.00 million\n\n**Step 4: Total Intrinsic Value**\n- Intrinsic Value = 48.78 + 49.00 = 97.78 million\n\nFinal Answer: 97.78"
+    },
+    {
+        "question_id": "test-2167",
+        "success": true,
+        "agent_answer": 25.0,
+        "ground_truth": 25.0,
+        "response": "## Calculation Breakdown\n\n**Step 1: Identify the 5-day lookback period for the last trading day**\n- Last 5 closing prices: [158, 160, 162, 161, 159]\n\n**Step 2: Determine the key values**\n- Current Close (Day 12): **159**\n- Highest High (5-day): **162**\n- Lowest Low (5-day): **158**\n\n**Step 3: Apply the Worden Stochastic formula**\n$$\\%K = \\frac{\\text{Close} - \\text{Lowest Low}}{\\text{Highest High} - \\text{Lowest Low}} \\times 100$$\n\n$$\\%K = \\frac{159 - 158}{162 - 158} \\times 100 = \\frac{1}{4} \\times 100 = 25.00\\%$$\n\n**Interpretation**: A Worden Stochastic value of 25.00% indicates the stock is trading in the lower portion of its 5-day price range, suggesting weakening momentum but not yet in oversold territory (typically below 20%).\n\nFinal Answer: 25.00"
+    },
+    {
+        "question_id": "test-2168",
+        "success": true,
+        "agent_answer": 0.0,
+        "ground_truth": 0.0,
+        "response": "## Calculation Steps\n\n**Step 1: Identify the 5-day lookback window for Day 15**\n- Days 11-15 RSI values: [42.1, 39.5, 37.2, 36.4, 35.0]\n\n**Step 2: Identify key values**\n- Current RSI (Day 15): 35.0\n- Minimum RSI (5-day period): 35.0\n- Maximum RSI (5-day period): 42.1\n\n**Step 3: Apply the StochRSI formula**\n$$\\text{StochRSI} = \\frac{\\text{RSI}_{\\text{current}} - \\text{RSI}_{\\text{min}}}{\\text{RSI}_{\\text{max}} - \\text{RSI}_{\\text{min}}}$$\n\n$$\\text{StochRSI} = \\frac{35.0 - 35.0}{42.1 - 35.0} = \\frac{0}{7.1} = 0.0$$\n\n**Interpretation**: A StochRSI value of 0.0 indicates an extremely oversold condition, as the current RSI is at the lowest point of the 5-day lookback period.\n\nFinal Answer: 0.0"
+    },
+    {
+        "question_id": "test-2169",
+        "success": true,
+        "agent_answer": -35.71,
+        "ground_truth": -35.71,
+        "response": "## Calculation Summary\n\nTo calculate the Williams %R for the 20th day using a 14-day period:\n\n**Step 1: Identify the 14-day lookback period (Days 7-20)**\n- High Prices (Days 7-20): [126, 127, 126, 124, 123, 122, 121, 120, 119, 118, 120, 121, 122, 123]\n- Low Prices (Days 7-20): [120, 121, 122, 120, 119, 118, 116, 115, 114, 113, 114, 115, 116, 118]\n- Close on Day 20: 122\n\n**Step 2: Find Highest High and Lowest Low**\n- Highest High = 127\n- Lowest Low = 113\n\n**Step 3: Apply Williams %R Formula**\n$$\\text{Williams \\%R} = \\frac{\\text{Highest High} - \\text{Close}}{\\text{Highest High} - \\text{Lowest Low}} \\times (-100)$$\n\n$$\\text{Williams \\%R} = \\frac{127 - 122}{127 - 113} \\times (-100) = \\frac{5}{14} \\times (-100) = -35.714...$$\n\n**Interpretation:** The Williams %R value of -35.71 indicates the stock is in the neutral zone (neither overbought which would be above -20, nor oversold which would be below -80).\n\nFinal Answer: -35.71"
+    },
+    {
+        "question_id": "test-2170",
+        "success": true,
+        "agent_answer": 13.7,
+        "ground_truth": 13.7,
+        "response": "**Calculation Summary:**\n\n1. **Contribution Margin per Unit** = Price - Variable Cost = $250 - $65 = **$185**\n\n2. **Operating Income at 200,000 units:**\n   - Total Contribution = $185 \u00d7 200,000 = $37,000,000\n   - Operating Income = $37,000,000 - $10,000,000 = **$27,000,000**\n\n3. **Operating Income at 220,000 units:**\n   - Total Contribution = $185 \u00d7 220,000 = $40,700,000\n   - Operating Income = $40,700,000 - $10,000,000 = **$30,700,000**\n\n4. **Change in Operating Income:**\n   - Absolute change = $30,700,000 - $27,000,000 = $3,700,000\n   - Percentage change = ($3,700,000 / $27,000,000) \u00d7 100 = **13.70%**\n\nFinal Answer: 13.70"
+    },
+    {
+        "question_id": "test-2171",
+        "success": true,
+        "agent_answer": 108176.0,
+        "ground_truth": 108176,
+        "response": "The present value of the bond is calculated by discounting all future cash flows (coupon payments and face value) at the market interest rate.\n\n**Key calculations:**\n- Semi-annual coupon payment: $100,000 \u00d7 2.5% = $2,500\n- Semi-annual market rate: 4% \u00f7 2 = 2%\n- Number of periods: 10 years \u00d7 2 = 20 periods\n\nThe bond trades at a **premium** above its face value because its 5% coupon rate exceeds the 4% market rate for comparable bonds.\n\n**Present Value Breakdown:**\n- PV of coupon payments (annuity): $40,878.58\n- PV of face value (lump sum): $67,297.13\n- **Total Present Value: $108,175.72**\n\nFinal Answer: 108176"
+    },
+    {
+        "question_id": "test-2172",
+        "success": true,
+        "agent_answer": 1.49,
+        "ground_truth": 1.49,
+        "response": "To calculate TechCo's stock beta, I need to compute the ratio of the covariance between TechCo's returns and S&P 500 returns to the variance of the S&P 500 returns.\n\n**Beta Formula:**\n$$\\beta = \\frac{\\text{Cov}(R_{stock}, R_{market})}{\\text{Var}(R_{market})}$$\n\n**Calculations:**\n\nUsing the provided return data:\n- TechCo's returns: [0.05, -0.02, 0.04, 0.03, -0.01]\n- S&P 500 returns: [0.04, -0.01, 0.03, 0.02, 0.00]\n\n**Results:**\n- Covariance (TechCo, S&P 500): 0.00064\n- Variance (S&P 500): 0.00043\n- Beta = 0.00064 / 0.00043 = 1.488...\n\n**Interpretation:** A beta of 1.49 indicates that TechCo's stock is approximately 49% more volatile than the market. When the S&P 500 moves 1%, TechCo's stock tends to move approximately 1.49% in the same direction.\n\nFinal Answer: 1.49"
+    },
+    {
+        "question_id": "test-2173",
+        "success": true,
+        "agent_answer": 625.0,
+        "ground_truth": 625.0,
+        "response": "**FCFE Calculation Summary:**\n\n| Component | Value ($ millions) |\n|-----------|-------------------|\n| Net Income | 875 |\n| + Depreciation | 400 |\n| - Capital Expenditures (5,000 - 4,250) | (750) |\n| - Change in Working Capital | (50) |\n| + Net Borrowing (Notes Payable + LT Debt) | 150 |\n| **= FCFE** | **625** |\n\n**Working Capital Details:**\n- 2018 Working Capital: (800 + 850) - (400 + 120) = 1,130\n- 2017 Working Capital: (750 + 720) - (300 + 90) = 1,080\n- Change: 1,130 - 1,080 = 50 (increase, so it's a cash outflow)\n\n**Net Borrowing:**\n- Notes Payable: 550 - 500 = 50\n- Long-term Debt: 1,500 - 1,400 = 100\n- Total: 150 (cash inflow)\n\nFinal Answer: 625.0"
+    },
+    {
+        "question_id": "test-2174",
+        "success": true,
+        "agent_answer": 7.903,
+        "ground_truth": 7.903,
+        "response": "Using the two-asset portfolio standard deviation formula:\n\n\u03c3p = \u221a(w\u2081\u00b2\u03c3\u2081\u00b2 + w\u2082\u00b2\u03c3\u2082\u00b2 + 2w\u2081w\u2082\u03c3\u2081\u03c3\u2082\u03c1)\n\nWhere:\n- w\u2081 = 0.25 (weight of Component X)\n- w\u2082 = 0.75 (weight of Component Y)\n- \u03c3\u2081 = 0.179 (standard deviation of X)\n- \u03c3\u2082 = 0.062 (standard deviation of Y)\n- \u03c1 = 0.5 (correlation)\n\nThe portfolio variance is calculated as:\n\u03c3\u00b2p = (0.25)\u00b2(0.179)\u00b2 + (0.75)\u00b2(0.062)\u00b2 + 2(0.25)(0.75)(0.179)(0.062)(0.5)\n\nTaking the square root of the variance and converting to a percentage:\n\nFinal Answer: 7.903"
+    },
+    {
+        "question_id": "test-2175",
+        "success": true,
+        "agent_answer": 4.453,
+        "ground_truth": 4.453,
+        "response": "Using the bootstrapping method to calculate the 5-year spot rate:\n\n**Methodology:**\nFor a par bond (priced at 100), the present value of all cash flows equals the par value.\n\nThe 5-year par bond has a coupon rate of 4.37%, so it pays:\n- Coupons of $4.37 at years 1, 2, 3, 4\n- Final payment of $104.37 (coupon + principal) at year 5\n\n**Calculation:**\n\n1. Present value of first 4 coupons (using known spot rates):\n   - Year 1: $4.37 / 1.025 = $4.263\n   - Year 2: $4.37 / 1.03\u00b2 = $4.119\n   - Year 3: $4.37 / 1.035\u00b3 = $3.941\n   - Year 4: $4.37 / 1.04\u2074 = $3.735\n   - **Total PV = $16.060**\n\n2. Solve for the 5-year spot rate (r\u2085):\n   - $100 = $16.060 + $104.37 / (1 + r\u2085)\u2075\n   - (1 + r\u2085)\u2075 = $104.37 / $83.940 = 1.24338\n   - r\u2085 = 1.24338^(1/5) - 1 = **0.04453** or **4.453%**\n\n**Verification:** The reconstructed bond price equals 100, confirming the calculation is correct.\n\nFinal Answer: 4.453"
+    },
+    {
+        "question_id": "test-2176",
+        "success": true,
+        "agent_answer": 12.119,
+        "ground_truth": 12.119,
+        "response": "The portfolio standard deviation is calculated using the two-asset formula:\n\n\u03c3p = \u221a(w\u2081\u00b2\u03c3\u2081\u00b2 + w\u2082\u00b2\u03c3\u2082\u00b2 + 2w\u2081w\u2082\u03c3\u2081\u03c3\u2082\u03c1)\n\nWhere:\n- w\u2081 = 0.30, \u03c3\u2081 = 0.20\n- w\u2082 = 0.70, \u03c3\u2082 = 0.12\n- \u03c1 = 0.40\n\nPortfolio variance = (0.30)\u00b2(0.20)\u00b2 + (0.70)\u00b2(0.12)\u00b2 + 2(0.30)(0.70)(0.20)(0.12)(0.40) = 0.014688\n\nPortfolio standard deviation = \u221a0.014688 = 0.121194... = 12.119%\n\nFinal Answer: 12.119"
+    },
+    {
+        "question_id": "test-2177",
+        "success": true,
+        "agent_answer": 4250.0,
+        "ground_truth": 4250,
+        "response": "## Solution Summary\n\n**Step 1: Calculate Revenue**\n- 350 units sold at $40 per unit = **$14,000**\n\n**Step 2: Calculate COGS under LIFO**\nUnder LIFO, the most recently purchased inventory is sold first:\n- 200 units from newest batch @ $30 = $6,000\n- 150 units from second batch @ $25 = $3,750\n- **Total COGS = $9,750**\n\n**Step 3: Calculate Gross Profit**\n- Gross Profit = Revenue - COGS\n- Gross Profit = $14,000 - $9,750 = **$4,250**\n\nFinal Answer: 4250"
+    },
+    {
+        "question_id": "test-2178",
+        "success": true,
+        "agent_answer": 6.77,
+        "ground_truth": 6.77,
+        "response": "## WACC Calculation for Rector Incorporated\n\n### Step 1: Cost of Equity (CAPM)\n- **Cost of Equity** = Risk-free rate + Beta \u00d7 Equity Risk Premium\n- Cost of Equity = 2% + 1.2 \u00d7 4% = **6.80%**\n\n### Step 2: Market Value of Debt (Bond Pricing)\nThe bonds have:\n- Face value: $4,000,000\n- Semi-annual coupon: $160,000 (8% \u00f7 2 \u00d7 $4M)\n- Semi-annual YTM: 4.5% (9% \u00f7 2)\n- Periods: 10 (5 years \u00d7 2)\n\nDiscounting all cash flows at the semi-annual YTM:\n- **Market Value of Debt = $3,841,745.64**\n\n### Step 3: Capital Structure Weights\n- Total Firm Value = $2,000,000 + $3,841,745.64 = $5,841,745.64\n- **Weight of Equity** = 34.24%\n- **Weight of Debt** = 65.76%\n\n### Step 4: WACC Calculation\n- After-tax Cost of Debt = 9% \u00d7 (1 - 0.25) = 6.75%\n- **WACC** = (34.24% \u00d7 6.80%) + (65.76% \u00d7 6.75%)\n- WACC = 2.33% + 4.44% = **6.77%**\n\nFinal Answer: 6.77"
+    },
+    {
+        "question_id": "test-2180",
+        "success": true,
+        "agent_answer": 94.492,
+        "ground_truth": 94.492,
+        "response": "The bond price is calculated using the present value formula:\n\n**Given:**\n- Coupon rate: 3% \u2192 Semiannual coupon payment = $1.50\n- Required rate: 5% \u2192 Semiannual rate = 2.5%\n- Maturity: 3 years \u2192 6 periods\n- Par value: $100\n\n**Calculation:**\n- Present value of coupon payments = $1.50 \u00d7 [1 - (1.025)^(-6)] / 0.025 = $8.262\n- Present value of par value = $100 / (1.025)^6 = $86.230\n- Bond price = $8.262 + $86.230 = $94.492\n\nThe bond sells at a discount because the required rate of return (5%) exceeds the coupon rate (3%).\n\nFinal Answer: 94.492"
+    },
+    {
+        "question_id": "test-2181",
+        "success": true,
+        "agent_answer": 150.38,
+        "ground_truth": 150.38,
+        "response": "The pivot point is calculated using the standard formula:\n\n**Pivot Point = (High + Low + Close) / 3**\n\nGiven:\n- High = $152.75\n- Low = $148.30\n- Close = $150.10\n\nPivot Point = (152.75 + 148.30 + 150.10) / 3 = 451.15 / 3 = 150.38\n\nFinal Answer: 150.38"
+    },
+    {
+        "question_id": "test-2184",
+        "success": true,
+        "agent_answer": 5.18,
+        "ground_truth": 5.18,
+        "response": "The Black-Scholes calculation is now complete and verified. Let me provide a summary of the calculation:\n\n## Black-Scholes European Call Option Pricing Summary\n\n**Given Parameters:**\n- Stock Price (S) = $120\n- Strike Price (K) = $130\n- Time to Expiration (T) = 0.5 years (6 months)\n- Risk-free Rate (r) = 2.5% annually\n- Volatility (\u03c3) = 25% annually\n\n**Step-by-Step Calculations:**\n\n1. **ln(S/K)** = ln(120/130) = -0.080043\n\n2. **d\u2081** = [ln(S/K) + (r + \u03c3\u00b2/2)T] / (\u03c3\u221aT)\n   = [-0.080043 + (0.025 + 0.03125) \u00d7 0.5] / (0.25 \u00d7 0.7071)\n   = -0.293691\n\n3. **d\u2082** = d\u2081 - \u03c3\u221aT = -0.293691 - 0.1768 = -0.470468\n\n4. **N(d\u2081)** = 0.384497\n   **N(d\u2082)** = 0.319010\n\n5. **Call Price** = S \u00d7 N(d\u2081) - K \u00d7 e^(-rT) \u00d7 N(d\u2082)\n   = 120 \u00d7 0.384497 - 130 \u00d7 0.987578 \u00d7 0.319010\n   = 46.1396 - 40.9562\n   = 5.1835\n\n**Note:** Both d\u2081 and d\u2082 are negative because the option is out-of-the-money (stock price < strike price), which is reflected in N(d\u2081) and N(d\u2082) being less than 0.5.\n\nFinal Answer: 5.18"
+    },
+    {
+        "question_id": "test-2185",
+        "success": true,
+        "agent_answer": 64.83,
+        "ground_truth": 64.83,
+        "response": "The Merton model treats equity as a call option on the company's assets, where the strike price equals the face value of debt. The formula is:\n\n**E = V \u00d7 N(d\u2081) - D \u00d7 e^(-rT) \u00d7 N(d\u2082)**\n\nUsing the given parameters:\n- Asset value (V) = $150 million\n- Debt face value (D) = $100 million  \n- Time to maturity (T) = 3 years\n- Risk-free rate (r) = 5%\n- Asset volatility (\u03c3) = 20%\n\nThe calculation yields:\n\n| Parameter | Value |\n|-----------|-------|\n| d\u2081 | 1.7767 |\n| d\u2082 | 1.4303 |\n| N(d\u2081) | 0.9622 |\n| N(d\u2082) | 0.9237 |\n| e^(-rT) | 0.8607 |\n\n**E = 150 \u00d7 0.9622 - 100 \u00d7 0.8607 \u00d7 0.9237 = 144.33 - 79.50 = 64.83 million**\n\nFinal Answer: 64.83"
+    },
+    {
+        "question_id": "test-2186",
+        "success": true,
+        "agent_answer": 1920.0,
+        "ground_truth": 1920,
+        "response": "**Calculation Summary:**\n\n| Component | Monthly Amount |\n|-----------|----------------|\n| Principal & Interest (PI) | $1,520.06 |\n| Property Tax (T) | $300.00 |\n| Insurance (I) | $100.00 |\n| **Total PITI** | **$1,920.06** |\n\n**Breakdown:**\n- **Mortgage Payment (PI)**: Using the standard amortization formula with a 4.5% annual rate over 30 years, the monthly payment is $1,520.06\n- **Taxes**: $3,600 \u00f7 12 = $300/month\n- **Insurance**: $1,200 \u00f7 12 = $100/month\n\nFinal Answer: 1920"
+    },
+    {
+        "question_id": "test-2187",
+        "success": true,
+        "agent_answer": 85.0,
+        "ground_truth": 85.0,
+        "response": "**Stochastic Oscillator Calculation:**\n\n- **Current Close (Day 14):** 164\n- **Lowest Low (14-day period):** 147\n- **Highest High (14-day period):** 167\n\n**%K = ((164 - 147) / (167 - 147)) \u00d7 100 = (17 / 20) \u00d7 100 = 85.00%**\n\nThe stochastic oscillator value of **85.00%** indicates the stock is in **overbought territory** (above the 80% threshold), which could signal a potential sell opportunity or price reversal.\n\nFinal Answer: 85.00"
+    },
+    {
+        "question_id": "test-2188",
+        "success": true,
+        "agent_answer": 6.69,
+        "ground_truth": 6.69,
+        "response": "**Calculation Summary:**\n\nUsing the bond pricing formula and bisection method to solve for YTM:\n\n**Given:**\n- Price: $950\n- Face Value: $1,000\n- Semi-annual Coupon: $30 (6% \u00f7 2 \u00d7 $1,000)\n- Periods: 20 (10 years \u00d7 2)\n\n**Solution:**\nThe YTM was found iteratively by solving:\n\n$$P = \\sum_{t=1}^{n} \\frac{C}{(1+r)^t} + \\frac{F}{(1+r)^n}$$\n\nWhere:\n- P = $950 (market price)\n- C = $30 (coupon payment)\n- F = $1,000 (face value)\n- n = 20 (periods)\n- r = semi-annual yield\n\n**Results:**\n- Semi-annual YTM: 3.346951%\n- Annual YTM: 3.346951% \u00d7 2 = **6.69%**\n\nThe YTM exceeds the coupon rate (6.69% > 6%) as expected for a bond trading at a discount to par value.\n\nFinal Answer: 6.69"
+    },
+    {
+        "question_id": "test-2189",
+        "success": true,
+        "agent_answer": 1.2,
+        "ground_truth": 1.2,
+        "response": "Using the linear regression slope formula:\n\n**Slope (b) = (n \u00d7 \u03a3XY - \u03a3X \u00d7 \u03a3Y) / (n \u00d7 \u03a3X\u00b2 - (\u03a3X)\u00b2)**\n\nWhere:\n- n = 5 (number of observations)\n- \u03a3X = 20 (sum of Market Index values)\n- \u03a3Y = 31 (sum of NAV Changes)\n- \u03a3XY = 136 (sum of products)\n- \u03a3X\u00b2 = 90 (sum of squared X values)\n\n**Calculation:**\n- Numerator: (5 \u00d7 136) - (20 \u00d7 31) = 680 - 620 = 60\n- Denominator: (5 \u00d7 90) - 400 = 450 - 400 = 50\n- Slope = 60 / 50 = **1.20**\n\nThis means that for every 1-unit increase in the market index value, the fund's NAV is expected to increase by approximately 1.20 units.\n\nFinal Answer: 1.20"
+    },
+    {
+        "question_id": "test-2190",
+        "success": true,
+        "agent_answer": 0.133,
+        "ground_truth": 13.272,
+        "response": "Based on my analysis, I used the **hard hurdle** interpretation, which is the standard in hedge fund fee calculations. With a hard hurdle, only the gains **in excess** of the hurdle rate are subject to the incentive fee.\n\n**Calculation Summary:**\n\n1. **Management Fee** = 2% \u00d7 $602.5 = **$12.05**\n\n2. **Incentive Fee Calculation (Hard Hurdle):**\n   - Gain above High-Water Mark = $602.5 - $540 = $62.50\n   - Hurdle Amount = 5% \u00d7 $540 = $27.00\n   - Profit subject to incentive fee = $62.50 - $27.00 = $35.50\n   - Incentive Fee = 20% \u00d7 $35.50 = **$7.10**\n\n3. **Total Fees** = $12.05 + $7.10 = **$19.15**\n\n4. **Net Value to Investor** = $602.5 - $19.15 = **$583.35**\n\n5. **Net Return** = ($583.35 - $515) / $515 = **0.1327**\n\nThe investor's net return is **13.3%** (or 0.133 in decimal form).\n\nFinal Answer: 0.133"
+    },
+    {
+        "question_id": "test-2191",
+        "success": true,
+        "agent_answer": 1.26,
+        "ground_truth": 1.26,
+        "response": "The beta is calculated as the covariance between the stock and market returns divided by the variance of the market returns.\n\n**Results:**\n- Covariance (TechInnovate, Nasdaq): 0.00054\n- Variance (Nasdaq): 0.00043\n- Beta = 0.00054 / 0.00043 = 1.2558...\n\nThis beta of approximately 1.26 indicates that TechInnovate Inc.'s stock is moderately more volatile than the market. For every 1% movement in the Nasdaq Composite Index, TechInnovate's stock is expected to move approximately 1.26% in the same direction on average.\n\nFinal Answer: 1.26"
+    },
+    {
+        "question_id": "test-2192",
+        "success": true,
+        "agent_answer": 147.948,
+        "ground_truth": 147.939,
+        "response": "Using the carry arbitrage model for Treasury note futures:\n\n**Given Parameters:**\n- Dirty price: 104.17\n- Days since last coupon: 30\n- Days to futures expiration: 90\n- Risk-free rate: 1.65% annually\n- Conversion factor: 0.7025\n- Coupon rate: 2% semi-annual\n\n**Calculation Steps:**\n\n1. **Semi-annual coupon payment**: $1.00 per $100 face value\n\n2. **Accrued interest at futures expiration** (120 days from last coupon):\n   - AI = (120/182.5) \u00d7 $1.00 = 0.6575\n\n3. **Time to futures**: T = 90/365 = 0.2466 years\n\n4. **Future value of dirty price**:\n   - FV = 104.17 \u00d7 (1.0165)^0.2466 = 104.5912\n\n5. **Clean futures price**:\n   - Clean = FV - AI_futures = 104.5912 - 0.6575 = 103.9337\n\n6. **Quoted equilibrium futures price**:\n   - F_quoted = Clean / Conversion Factor = 103.9337 / 0.7025 = 147.948\n\nFinal Answer: 147.948"
+    },
+    {
+        "question_id": "test-2193",
+        "success": true,
+        "agent_answer": 5.6,
+        "ground_truth": 5.6,
+        "response": "The security selection effect measures the value added from choosing securities that perform differently than the benchmark within each asset class.\n\n**Formula:** Selection Effect = \u03a3 [Portfolio Weight \u00d7 (Portfolio Return - Benchmark Return)]\n\n**Calculations:**\n- Domestic: 50% \u00d7 (25% - 15%) = 50% \u00d7 10% = **5.0%**\n- Bond: 30% \u00d7 (9% - 5%) = 30% \u00d7 4% = **1.2%**\n- International: 20% \u00d7 (15% - 18%) = 20% \u00d7 (-3%) = **-0.6%**\n\n**Total Security Selection Effect:** 5.0% + 1.2% - 0.6% = **5.6%**\n\nThe positive selection effect was driven by strong security selection in Domestic (5.0%) and Bond (1.2%) portfolios, partially offset by underperformance in International (-0.6%).\n\nFinal Answer: 5.6"
+    },
+    {
+        "question_id": "test-2194",
+        "success": true,
+        "agent_answer": 850.0,
+        "ground_truth": 850.0,
+        "response": "**Calculation Summary:**\n\n1. **Base Credit Calculation:**\n   - Qualified expenses: $8,500\n   - Credit rate: 20%\n   - Base credit = $8,500 \u00d7 20% = **$1,700.00**\n\n2. **Phase-Out Calculation:**\n   - Maria's MAGI: $85,000\n   - Phase-out range for single filers: $80,000 - $90,000\n   - Excess income over $80,000: $5,000\n   - Phase-out percentage: $5,000 \u00f7 $10,000 = **50%**\n\n3. **Final Credit:**\n   - Reduction amount: $1,700 \u00d7 50% = $850\n   - Final credit: $1,700 - $850 = **$850.00**\n\nFinal Answer: 850.00"
+    },
+    {
+        "question_id": "test-2195",
+        "success": true,
+        "agent_answer": 6.418,
+        "ground_truth": 6.418,
+        "response": "**Calculation Summary:**\n\n1. **Compound After-Tax Returns (Pre-Liquidation Value):**\n   - Year 1: $100 \u00d7 1.09 = $109.00\n   - Year 2: $109.00 \u00d7 1.05 = $114.45\n   - Year 3: $114.45 \u00d7 1.08 = $123.606\n\n2. **Calculate Embedded Gain Tax at Liquidation:**\n   - Embedded gain: 10% \u00d7 $123.606 = $12.3606\n   - Tax on embedded gain: 25% \u00d7 $12.3606 = $3.0902\n\n3. **Post-Liquidation After-Tax Value:**\n   - $123.606 - $3.0902 = $120.5159\n\n4. **Annualized After-Tax Post-Liquidation Return:**\n   - ($120.5159 / $100)^(1/3) - 1 = 0.06418 = 6.418%\n\nFinal Answer: 6.418"
+    },
+    {
+        "question_id": "test-2196",
+        "success": true,
+        "agent_answer": 33.168,
+        "ground_truth": 33.168,
+        "response": "Using the two-step dividend discount model:\n\n**Step 1: Calculate Required Rate of Return (CAPM)**\n- r = Risk-free rate + Beta \u00d7 Market Risk Premium\n- r = 3.00% + 1.1 \u00d7 5.00% = **8.50%**\n\n**Step 2: Calculate Present Values**\n\n| Component | Calculation | Present Value |\n|-----------|-------------|---------------|\n| D\u2081 (Year 1) | $1.13 / 1.085 | $1.041 |\n| D\u2082 (Year 2) | $1.22 / (1.085)\u00b2 | $1.036 |\n| Terminal Value | D\u2083 = $1.22 \u00d7 1.05 = $1.281 | |\n| | TV = $1.281 / (0.085 - 0.05) = $36.60 | |\n| PV of TV | $36.60 / (1.085)\u00b2 | $31.090 |\n\n**Total Inherent Worth** = $1.041 + $1.036 + $31.090 = **$33.168**\n\nFinal Answer: 33.168"
+    },
+    {
+        "question_id": "test-2197",
+        "success": true,
+        "agent_answer": 13.72,
+        "ground_truth": 13.72,
+        "response": "The Black-Scholes calculation is complete. Let me provide a summary of the computation:\n\n**Black-Scholes Parameters:**\n- Current stock price (S): $120\n- Strike price (K): $130\n- Time to maturity (T): 1 year\n- Risk-free rate (r): 2%\n- Volatility (\u03c3): 35%\n\n**Calculation Steps:**\n1. d\u2081 = [ln(120/130) + (0.02 + 0.5\u00d70.35\u00b2)\u00d71] / (0.35\u00d7\u221a1) = 0.003449\n2. d\u2082 = d\u2081 - 0.35\u00d71 = -0.346551\n3. N(d\u2081) = 0.501376\n4. N(d\u2082) = 0.364465\n5. Call Price = 120 \u00d7 0.501376 - 130 \u00d7 e^(-0.02) \u00d7 0.364465 = 13.72\n\n**Interpretation:** The call option is out-of-the-money (S < K), but has value due to volatility and time value. The high volatility (35%) contributes significantly to the option premium.\n\nFinal Answer: 13.72"
+    },
+    {
+        "question_id": "test-2198",
+        "success": true,
+        "agent_answer": 60.0,
+        "ground_truth": 60.0,
+        "response": "**Analysis:**\n\nThe range within one standard deviation of the mean is **7% to 11%** (mean of 9% \u00b1 standard deviation of 2%).\n\nFrom the data points [5, 8, 13, 12, 7, 9, 10, 6, 11, 7]:\n- **Within range (7% to 11%):** 8, 7, 9, 10, 11, 7 \u2192 **6 values**\n- **Outside range:** 5, 13, 12, 6 \u2192 4 values\n\nPercentage within one standard deviation: (6/10) \u00d7 100 = **60.00%**\n\nFinal Answer: 60.00"
+    },
+    {
+        "question_id": "test-2199",
+        "success": true,
+        "agent_answer": 1.9,
+        "ground_truth": 1.9,
+        "response": "The least squares regression line has the form: **Y = a + bX**, where **b** is the slope.\n\nUsing the formula: **b = \u03a3(xi - x\u0304)(yi - \u0233) / \u03a3(xi - x\u0304)\u00b2**\n\n**Calculation:**\n- Mean of X (x\u0304) = $5,000\n- Mean of Y (\u0233) = $24,400\n- Numerator \u03a3(xi - x\u0304)(yi - \u0233) = 19,000,000\n- Denominator \u03a3(xi - x\u0304)\u00b2 = 10,000,000\n- **Slope = 19,000,000 / 10,000,000 = 1.9**\n\nFinal Answer: 1.90"
+    },
+    {
+        "question_id": "test-2201",
+        "success": true,
+        "agent_answer": 0.99,
+        "ground_truth": 0.99,
+        "response": "The correlation coefficient between the stock prices of Company A and Company B is **0.99**.\n\nThis indicates a very strong positive linear relationship between the two stock price series over the twelve-month period. As Company A's stock price increases, Company B's stock price tends to increase in a highly predictable linear fashion.\n\nFinal Answer: 0.99"
+    },
+    {
+        "question_id": "test-2202",
+        "success": true,
+        "agent_answer": 92.383,
+        "ground_truth": 92.383,
+        "response": "The bond's value is calculated by discounting each cash flow using the appropriate spot rate plus the Z-spread:\n\n**Calculation Summary:**\n- Year 1: $5 coupon discounted at 7.20% (4.86% + 2.34%) = $4.664\n- Year 2: $5 coupon discounted at 7.29% (4.95% + 2.34%) = $4.344\n- Year 3: $105 (coupon + face) discounted at 7.99% (5.65% + 2.34%) = $83.376\n\n**Total Bond Value = $92.383**\n\nThe bond trades at a discount to par because the Z-spread of 234 basis points reflects additional credit risk or liquidity premium above the benchmark spot curve.\n\nFinal Answer: 92.383"
+    },
+    {
+        "question_id": "test-2203",
+        "success": true,
+        "agent_answer": 1.1,
+        "ground_truth": 1.1,
+        "response": "Using linear regression analysis, I calculated the slope of the relationship between advertising expenditure (X) and monthly sales revenue (Y).\n\n**Calculation:**\n- Applied the ordinary least squares method to find the best-fit line\n- Slope formula: \u03b2 = [n\u2211(XY) - \u2211X\u2211Y] / [n\u2211(X\u00b2) - (\u2211X)\u00b2]\n\n**Results:**\n- Slope = 1.10 (rounded to two decimal places)\n- Intercept = 7.00\n\nThis means for every additional $1,000 spent on advertising, the monthly sales revenue increases by approximately $1,100.\n\nFinal Answer: 1.10"
+    },
+    {
+        "question_id": "test-2204",
+        "success": true,
+        "agent_answer": 3.7,
+        "ground_truth": 3.7,
+        "response": "Using the least squares method, I calculated the slope of the trend line:\n\n**Calculations:**\n- n = 5 (number of data points)\n- \u03a3x = 15, \u03a3y = 778\n- \u03a3xy = 2371, \u03a3x\u00b2 = 55\n\n**Slope formula:**\n$$slope = \\frac{n \\cdot \\Sigma xy - \\Sigma x \\cdot \\Sigma y}{n \\cdot \\Sigma x^2 - (\\Sigma x)^2}$$\n\n$$slope = \\frac{5 \\cdot 2371 - 15 \\cdot 778}{5 \\cdot 55 - 15^2} = \\frac{11855 - 11670}{275 - 225} = \\frac{185}{50} = 3.70$$\n\nThe slope of **3.70** indicates the stock is appreciating at an average of **$3.70 per month** over the five-month period.\n\nFinal Answer: 3.70"
+    },
+    {
+        "question_id": "test-2205",
+        "success": true,
+        "agent_answer": 56.52,
+        "ground_truth": 56.52,
+        "response": "Based on my calculation:\n\n**Calculation Summary:**\n- For the 14-day period (Days 2-15), I compared each day's closing price to its opening price\n- **Sum of Gains** = 13 (days where Close > Open)\n- **Sum of Losses** = 10 (days where Open > Close)\n\n**IMI Formula:**\n$$\\text{IMI} = \\frac{\\text{Sum of Gains}}{\\text{Sum of Gains} + \\text{Sum of Losses}} \\times 100$$\n\n$$\\text{IMI} = \\frac{13}{13 + 10} \\times 100 = \\frac{13}{23} \\times 100 = 56.52\\%$$\n\nThe IMI value of 56.52% indicates the stock is in neutral territory (neither overbought above 70 nor oversold below 30).\n\nFinal Answer: 56.52"
+    },
+    {
+        "question_id": "test-2206",
+        "success": true,
+        "agent_answer": 1.69,
+        "ground_truth": 1.69,
+        "response": "The t-value for the equal variance t-test is calculated as follows:\n\n**Given:**\n- Fund A: Mean = 8%, Variance = 4, n = 5\n- Fund B: Mean = 6%, Variance = 3, n = 5\n\n**Step 1: Calculate Pooled Variance**\n$$S_p^2 = \\frac{(n_A-1)s_A^2 + (n_B-1)s_B^2}{n_A + n_B - 2} = \\frac{(4)(4) + (4)(3)}{8} = 3.5$$\n\n**Step 2: Calculate Standard Error**\n$$SE = S_p \\sqrt{\\frac{1}{n_A} + \\frac{1}{n_B}} = \\sqrt{3.5} \\times \\sqrt{0.4} = 1.183$$\n\n**Step 3: Calculate t-value**\n$$t = \\frac{\\bar{x}_A - \\bar{x}_B}{SE} = \\frac{8 - 6}{1.183} = 1.69$$\n\nFinal Answer: 1.69"
+    },
+    {
+        "question_id": "test-2207",
+        "success": true,
+        "agent_answer": 18.56,
+        "ground_truth": 18.56,
+        "response": "The portfolio standard deviation is calculated using the formula:\n\n\u03c3p = \u221a(w\u2081\u00b2 \u00d7 \u03c3\u2081\u00b2 + w\u2082\u00b2 \u00d7 \u03c3\u2082\u00b2 + 2 \u00d7 w\u2081 \u00d7 w\u2082 \u00d7 \u03c3\u2081 \u00d7 \u03c3\u2082 \u00d7 \u03c1)\n\nWhere:\n- w\u2081 = 0.30, w\u2082 = 0.70 (portfolio weights)\n- \u03c3\u2081 = 12%, \u03c3\u2082 = 25% (standard deviations)\n- \u03c1 = 0.20 (correlation)\n\nCalculation:\n- w\u2081\u00b2 \u00d7 \u03c3\u2081\u00b2 = 0.09 \u00d7 0.0144 = 0.001296\n- w\u2082\u00b2 \u00d7 \u03c3\u2082\u00b2 = 0.49 \u00d7 0.0625 = 0.030625\n- 2 \u00d7 w\u2081 \u00d7 w\u2082 \u00d7 \u03c3\u2081 \u00d7 \u03c3\u2082 \u00d7 \u03c1 = 0.00252\n\nTotal variance = 0.034441\n\nStandard deviation = \u221a0.034441 = 18.56%\n\nFinal Answer: 18.56"
+    },
+    {
+        "question_id": "test-2208",
+        "success": true,
+        "agent_answer": 5.46,
+        "ground_truth": 5.46,
+        "response": "Based on the Black-Scholes option pricing model, I have calculated the fair price of the European put option.\n\n## Calculation Summary\n\n**Given Parameters:**\n- Current stock price (S): $150\n- Strike price (K): $140\n- Time to maturity (T): 0.5 years\n- Risk-free rate (r): 2% per annum\n- Volatility (\u03c3): 25% per annum\n\n**Black-Scholes Formula for European Put:**\n$$P = K \\cdot e^{-rT} \\cdot N(-d_2) - S \\cdot N(-d_1)$$\n\nWhere:\n- $d_1 = \\frac{\\ln(S/K) + (r + 0.5\\sigma^2)T}{\\sigma\\sqrt{T}} = 0.535240$\n- $d_2 = d_1 - \\sigma\\sqrt{T} = 0.358463$\n- $N(-d_1) = 0.296242$\n- $N(-d_2) = 0.359999$\n- Discount factor $e^{-rT} = 0.990050$\n\n**Put Price Calculation:**\n$$P = 140 \\times 0.990050 \\times 0.359999 - 150 \\times 0.296242 = 5.46$$\n\nFinal Answer: 5.46"
+    },
+    {
+        "question_id": "test-2209",
+        "success": true,
+        "agent_answer": 290.36,
+        "ground_truth": 290.36,
+        "response": "**Calculation Summary:**\n\n1. **Loan Parameters:**\n   - Principal: $20,000\n   - Annual interest rate: 5.5%\n   - Monthly interest rate: 5.5% \u00f7 12 = 0.4583%\n   - Loan term: 5 years (60 monthly payments)\n\n2. **Monthly Payment Calculation:**\n   - Using the amortization formula: PMT = P \u00d7 [r(1+r)\u207f] / [(1+r)\u207f - 1]\n   - Monthly payment: $382.02\n\n3. **First Payment Breakdown:**\n   - Interest portion = $20,000 \u00d7 0.0045833 = $91.67\n   - Principal portion = $382.02 - $91.67 = $290.36\n\nFinal Answer: 290.36"
+    },
+    {
+        "question_id": "test-2211",
+        "success": true,
+        "agent_answer": 1.38,
+        "ground_truth": 1.38,
+        "response": "Final Answer: 1.38"
+    },
+    {
+        "question_id": "test-2212",
+        "success": true,
+        "agent_answer": 1347.0,
+        "ground_truth": 1347,
+        "response": "Using the standard mortgage amortization formula, I've calculated the monthly payment for the first year.\n\n**Calculation Details:**\n- Principal: $300,000\n- Annual Interest Rate (Year 1): 3.5%\n- Monthly Interest Rate: 0.2917%\n- Loan Term: 30 years (360 monthly payments)\n\nThe standard mortgage payment formula is:\n\n**M = P \u00d7 [r(1+r)\u207f] / [(1+r)\u207f - 1]**\n\nWhere:\n- M = Monthly payment\n- P = Principal ($300,000)\n- r = Monthly interest rate (0.035/12 = 0.002917)\n- n = Total number of payments (360)\n\nThe calculation yields a monthly payment of **$1,347.13**, which rounds to **$1,347**.\n\nFinal Answer: 1347"
+    },
+    {
+        "question_id": "test-2213",
+        "success": true,
+        "agent_answer": 0.9261,
+        "ground_truth": 0.9261,
+        "response": "Based on the monthly return data provided:\n\n**Tech Stock Returns (%):** [5.2, 3.8, 4.9, 2.7, 6.5, 3.3]  \n**Market Index Returns (%):** [4.1, 3.9, 5.0, 2.5, 6.0, 3.7]\n\nThe Pearson correlation coefficient quantifies the linear relationship between these two variables, ranging from -1 (perfect negative correlation) to +1 (perfect positive correlation).\n\nThe computed correlation coefficient of **0.9261** indicates a very strong positive correlation between the tech stock's monthly returns and the market index returns. This suggests that the stock's performance closely tracks the broader market movements.\n\nFinal Answer: 0.9261"
+    },
+    {
+        "question_id": "test-2214",
+        "success": true,
+        "agent_answer": 1.0,
+        "ground_truth": 1.0,
+        "response": "The Pearson correlation coefficient between Stock A and Stock B is calculated using the formula:\n\nr = \u03a3[(xi - x\u0304)(yi - \u0233)] / \u221a[\u03a3(xi - x\u0304)\u00b2 \u00d7 \u03a3(yi - \u0233)\u00b2]\n\nBoth stocks move in perfect synchronization - they rise and fall together in the same proportional pattern across all five trading days. This results in a correlation coefficient of essentially 1.0.\n\nFinal Answer: 1.0000"
+    },
+    {
+        "question_id": "test-2215",
+        "success": true,
+        "agent_answer": 0.97,
+        "ground_truth": 0.97,
+        "response": "The Pearson correlation coefficient is calculated using the formula:\n\n$$r = \\frac{\\sum(x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum(x_i - \\bar{x})^2 \\times \\sum(y_i - \\bar{y})^2}}$$\n\n**Calculation Summary:**\n- Mean of sales changes: 3.017\n- Mean of stock price changes: 3.267\n- Numerator (sum of products of deviations): 25.883\n- Sum of squared deviations (X): 25.388\n- Sum of squared deviations (Y): 28.033\n- Denominator: 26.678\n\nThe Pearson correlation coefficient of 0.97 indicates a very strong positive linear relationship between quarterly percentage changes in sales and stock prices for XYZ Corporation over the observed six quarters.\n\nFinal Answer: 0.97"
+    },
+    {
+        "question_id": "test-2216",
+        "success": true,
+        "agent_answer": 100.0,
+        "ground_truth": 100.0,
+        "response": "The calculation shows that all price changes are positive (2, 3, 1, 2, 3), meaning the stock price increased every day in the dataset. When all momentum values are positive, the Double Smoothed PC equals the Double Smoothed Absolute PC, resulting in TSI = 100%.\n\nLet me verify the calculation steps:\n\n**Step 1: Calculate Price Changes (PC)**\n- PC = Current Prices - Prior Prices = [2, 3, 1, 2, 3]\n\n**Step 2: Calculate Absolute Price Changes**\n- Abs PC = [2, 3, 1, 2, 3] (all positive values, so unchanged)\n\n**Step 3: Apply Double EMA Smoothing**\n- First EMA (25-period) smooths the data with \u03b1 = 2/26 \u2248 0.077\n- Second EMA (13-period) smooths again with \u03b1 = 2/14 \u2248 0.143\n\n**Step 4: Calculate TSI**\n- TSI = 100 \u00d7 (Double Smoothed PC / Double Smoothed Abs PC)\n- Since all PC values are positive, both numerator and denominator are equal\n- TSI = 100 \u00d7 1 = 100%\n\nThe TSI of 100% indicates extremely strong bullish momentum - the stock closed higher every single day in the observation period.\n\nFinal Answer: 100.00"
+    },
+    {
+        "question_id": "test-2218",
+        "success": true,
+        "agent_answer": 625.0,
+        "ground_truth": 625.0,
+        "response": "The interest paid during the first month of the mortgage is calculated by multiplying the principal balance by the monthly interest rate.\n\n**Calculation:**\n- Principal: $200,000\n- Annual interest rate: 3.75%\n- Monthly interest rate: 3.75% \u00f7 12 = 0.3125%\n- First month interest: $200,000 \u00d7 0.003125 = $625.00\n\nThis represents the interest portion of the first monthly payment. In the first month, the entire principal balance is outstanding, so the interest is calculated on the full $200,000.\n\nFinal Answer: 625.00"
+    },
+    {
+        "question_id": "test-2219",
+        "success": true,
+        "agent_answer": 15.52,
+        "ground_truth": 15.52,
+        "response": "I've calculated the WACC step by step. Let me verify the key calculations:\n\n**Summary:**\n1. **Market Value of Equity**: 1,200,000 shares \u00d7 $10 = $12,000,000\n\n2. **Market Value of Existing Debt**: Using bond pricing formula with 8% semiannual coupon, 5 years to maturity, 13.65% YTM = $7,999,687.64\n\n3. **Current D/E Ratio**: $7,999,687.64 / $12,000,000 = 0.6666\n\n4. **Current Weights**: Debt \u2248 40%, Equity \u2248 60%\n\n5. **New Funding Split** (maintaining D/E ratio):\n   - New Debt: $2,999,929.72\n   - New Equity: $4,500,070.28\n\n6. **Cost of New Debt**: Since new debt ($3M) > $2.5M threshold \u2192 16% yield\n   - After-tax: 16% \u00d7 (1 - 0.30) = 11.20%\n\n7. **Cost of Equity (CAPM)**: 3% + 2.2 \u00d7 (10% - 3%) = 18.40%\n\n8. **New WACC**:\n   - Weight of Debt: 40%\n   - Weight of Equity: 60%\n   - WACC = (0.40 \u00d7 11.20%) + (0.60 \u00d7 18.40%) = 15.52%\n\nFinal Answer: 15.52"
+    },
+    {
+        "question_id": "test-2220",
+        "success": true,
+        "agent_answer": 3.3,
+        "ground_truth": 3.3,
+        "response": "The zero-coupon bond yield is calculated using the formula:\n\n**Yield = (Par Value / Current Price)^(1/Years) - 1**\n\nSubstituting the values:\n- Yield = ($1,000 / $850)^(1/5) - 1\n- Yield = (1.1765)^(0.2) - 1\n- Yield = 0.0330... or **3.30%**\n\nFinal Answer: 3.30"
+    },
+    {
+        "question_id": "test-2222",
+        "success": true,
+        "agent_answer": 17.95,
+        "ground_truth": 17.95,
+        "response": "I've calculated the money-weighted rate of return (MWRR) for the project's cash flows using the Newton-Raphson method.\n\n**Cash Flow Structure:**\n- Time 0: -$100,000 (initial investment)\n- Year 1: +$20,000\n- Year 2: +$30,000\n- Year 3: +$50,000\n- Year 4: +$60,000\n\nThe MWRR (also known as IRR) is the discount rate that makes the net present value (NPV) of all cash flows equal to zero.\n\nUsing the Newton-Raphson method with an initial guess of 10%, the calculation converges to a rate of approximately 17.9458%.\n\nFinal Answer: 17.95"
+    },
+    {
+        "question_id": "test-2223",
+        "success": true,
+        "agent_answer": 30412.0,
+        "ground_truth": 30412,
+        "response": "## Analysis\n\n**Mortgage Details:**\n- Loan amount: $300,000\n- Term: 30 years (360 months)\n- Original locked rate: 4.5%\n- Float down rate: 4.0%\n- Float down fee: 0.4% \u00d7 $300,000 = $1,200\n\n**Monthly Payment Comparison:**\n| Rate | Monthly Payment |\n|------|-----------------|\n| 4.5% | $1,520.06 |\n| 4.0% | $1,432.25 |\n| **Monthly Savings** | **$87.81** |\n\n**Total Cost Over 30 Years:**\n- Total payments at 4.5%: $547,220.13\n- Total payments at 4.0%: $515,608.52\n- **Gross savings**: $31,611.62\n\n**Net Savings Calculation:**\n- Gross savings: $31,611.62\n- Less float down fee: -$1,200.00\n- **Net savings**: $30,411.62\n\nThe float down option provides substantial savings. After paying the $1,200 fee, John would save approximately $30,412 over the life of the loan by exercising the float down option.\n\nFinal Answer: 30412"
+    },
+    {
+        "question_id": "test-2224",
+        "success": true,
+        "agent_answer": 4597.0,
+        "ground_truth": 4597,
+        "response": "The mortgage amortization calculation is complete. Here's the breakdown:\n\n**Mortgage Details:**\n- Loan Amount: $250,000\n- Annual Interest Rate: 3.75%\n- Monthly Interest Rate: 0.3125%\n- Loan Term: 30 years (360 months)\n- Monthly Payment: $1,157.79\n\n**First Year Summary (Months 1-12):**\n\n| Month | Payment | Interest | Principal | Balance |\n|-------|---------|----------|-----------|---------|\n| 1 | $1,157.79 | $781.25 | $376.54 | $249,623.46 |\n| 2 | $1,157.79 | $780.07 | $377.72 | $249,245.75 |\n| 3 | $1,157.79 | $778.89 | $378.90 | $248,866.85 |\n| 4 | $1,157.79 | $777.71 | $380.08 | $248,486.77 |\n| 5 | $1,157.79 | $776.52 | $381.27 | $248,105.50 |\n| 6 | $1,157.79 | $775.33 | $382.46 | $247,723.04 |\n| 7 | $1,157.79 | $774.13 | $383.65 | $247,339.39 |\n| 8 | $1,157.79 | $772.94 | $384.85 | $246,954.53 |\n| 9 | $1,157.79 | $771.73 | $386.06 | $246,568.48 |\n| 10 | $1,157.79 | $770.53 | $387.26 | $246,181.22 |\n| 11 | $1,157.79 | $769.32 | $388.47 | $245,792.74 |\n| 12 | $1,157.79 | $768.10 | $389.69 | $245,403.06 |\n\nThe total principal paid over the first 12 months is **$4,596.94**, which rounds to **$4,597**.\n\nNote: In the first year of a mortgage, most of each payment goes toward interest rather than principal. John will pay approximately $9,297 in interest during the first year, while only about $4,597 goes toward reducing the loan balance.\n\nFinal Answer: 4597"
+    },
+    {
+        "question_id": "test-2225",
+        "success": true,
+        "agent_answer": 42.99,
+        "ground_truth": 42.99,
+        "response": "The Ultimate Oscillator has been calculated using the standard formula with weightings of 4, 2, and 1 for the 7, 14, and 28-period timeframes respectively.\n\n**Calculation Summary:**\n- **Buying Pressure (BP)** measures the close relative to the \"true low\" (minimum of current low and prior close)\n- **True Range (TR)** measures the full price range using prior close as reference\n- **Average values** computed as the ratio of summed BP to summed TR for each timeframe\n- **Ultimate Oscillator formula:** UO = 100 \u00d7 [(4 \u00d7 Avg7) + (2 \u00d7 Avg14) + Avg28] / 7\n\nThe calculation yielded:\n- Avg7 = 0.4375\n- Avg14 \u2248 0.4286\n- Avg28 \u2248 0.4020\n\nFinal Answer: 42.99"
+    },
+    {
+        "question_id": "test-2227",
+        "success": true,
+        "agent_answer": -7.36,
+        "ground_truth": -7.36,
+        "response": "**Analysis:**\n\n1. **Bond Price at 5% Market Rate:**\n   - When the market rate equals the coupon rate, the bond trades at par value\n   - Price = $100,000.00\n\n2. **Bond Price at 6% Market Rate:**\n   - Using the bond pricing formula:\n   - PV of Coupons = $5,000 \u00d7 [1 - (1.06)^(-10)] / 0.06 = $36,800.44\n   - PV of Face Value = $100,000 / (1.06)^10 = $55,839.48\n   - Price = $92,639.91\n\n3. **Percentage Change:**\n   - Change = ($92,639.91 - $100,000) / $100,000 = -7.36%\n\nThe bond price decreased because market rates rose above the bond's coupon rate, making the bond less attractive compared to new bonds offering 6% yields.\n\nFinal Answer: -7.36"
+    },
+    {
+        "question_id": "test-2229",
+        "success": true,
+        "agent_answer": 8.73,
+        "ground_truth": 8.71,
+        "response": "The calculation is verified. The NPV at 8.73% is essentially zero, confirming the result.\n\n**Summary of the calculation:**\n\n1. **Purchase Price:** 89.4535 (discount bond)\n\n2. **Coupon Payments:** 6% \u00d7 100 = $6 per year for 4 years\n\n3. **Sale Price at Year 4:** The bond has 1 year remaining when sold. With market rates at 8.5%:\n   - Sale Price = (100 + 6) / 1.085 = 97.6959\n\n4. **Cash Flows:**\n   - t=0: -89.4535 (purchase)\n   - t=1, 2, 3: +6.00 (coupons)\n   - t=4: +103.6959 (coupon + sale price)\n\n5. **IRR (Realized Yield):** The internal rate of return that makes NPV = 0 is **8.73%**\n\nFinal Answer: 8.73"
+    },
+    {
+        "question_id": "test-2230",
+        "success": true,
+        "agent_answer": 0.065,
+        "ground_truth": 0.065,
+        "response": "The calculation confirms:\n\n1. **Verified the bond price**: At 5% YTM, the bond price equals 85.784357 (matching the given value)\n2. **Calculated prices at shifted yields**:\n   - At YTM = 4.99% (5% - 1bp): Price = 85.849134\n   - At YTM = 5.01% (5% + 1bp): Price = 85.719638\n3. **Computed PVBP**: The average price change per basis point = (85.849134 - 85.719638) / 2 = 0.064748\n\nFinal Answer: 0.065"
+    },
+    {
+        "question_id": "test-2231",
+        "success": true,
+        "agent_answer": 5.94,
+        "ground_truth": 5.94,
+        "response": "## Black-Scholes Option Pricing Analysis\n\nUsing the Black-Scholes model for European call options:\n\n**Parameters:**\n- Stock Price (S): $150\n- Strike Price (K): $160\n- Time to Expiration (T): 0.5 years (6 months)\n- Risk-Free Rate (r): 5% (0.05)\n- Volatility (\u03c3): 20% (0.20)\n\n**Black-Scholes Formula:**\nC = S \u00d7 N(d\u2081) - K \u00d7 e^(-rT) \u00d7 N(d\u2082)\n\n**Intermediate Calculations:**\n- ln(S/K) = -0.064539\n- d\u2081 = (ln(S/K) + (r + \u00bd\u03c3\u00b2)T) / (\u03c3\u221aT) = **-0.208869**\n- d\u2082 = d\u2081 - \u03c3\u221aT = **-0.350290**\n- N(d\u2081) = **0.417275**\n- N(d\u2082) = **0.363061**\n- e^(-rT) = 0.975310\n\n**Final Calculation:**\nC = 150 \u00d7 0.417275 - 160 \u00d7 0.975310 \u00d7 0.363061\nC = 62.5913 - 56.6554\nC = 5.9359\n\nThe theoretical price of the European call option is **$5.94**.\n\nFinal Answer: 5.94"
+    },
+    {
+        "question_id": "test-2232",
+        "success": true,
+        "agent_answer": 1.2128,
+        "ground_truth": 1.2128,
+        "response": "The Vortex Indicator (VI+) calculation is complete. Here's the summary:\n\n**Vortex Indicator Components:**\n- **VM+ (Positive Vortex Movement)**: Measures upward price movement (|Current High - Previous Low|)\n- **VM- (Negative Vortex Movement)**: Measures downward price movement (|Current Low - Previous High|)\n- **True Range (TR)**: Maximum of (High-Low, |High-PrevClose|, |Low-PrevClose|)\n\n**Calculation Process:**\n1. Computed VM+, VM-, and TR for days 2-18 (17 values)\n2. Summed the last 14 VM+ values: **57**\n3. Summed the last 14 TR values: **47**\n4. **VI+ = Sum(VM+ last 14) / Sum(TR last 14) = 57/47**\n\nFinal Answer: 1.2128"
+    },
+    {
+        "question_id": "test-2233",
+        "success": true,
+        "agent_answer": 750000.0,
+        "ground_truth": 750000,
+        "response": "Based on the Tax Cuts and Jobs Act of 2017 rules:\n\n1. **Emily's mortgage date**: January 10, 2018 - This is **after December 15, 2017**, so the new TCJA limits apply.\n\n2. **TCJA Mortgage Interest Deduction Limit**: For mortgages incurred after December 15, 2017, the deduction is limited to interest on the first **$750,000** of mortgage debt (for married filing jointly).\n\n3. **Emily's situation**: Her mortgage of **$850,000** exceeds the $750,000 limit.\n\n4. **Result**: Emily can only deduct mortgage interest on **$750,000** of her mortgage principal. The interest on the remaining $100,000 is not deductible.\n\nFinal Answer: 750000"
+    },
+    {
+        "question_id": "test-2234",
+        "success": true,
+        "agent_answer": 2218.0,
+        "ground_truth": 2218,
+        "response": "The 80-10-10 mortgage structure breaks down as follows:\n\n**First Mortgage (80%):**\n- Principal: $400,000\n- Interest Rate: 3.5% annual\n- Term: 30 years\n- Monthly Payment: $1,796.18\n\n**Second Mortgage (10%):**\n- Principal: $50,000\n- Interest Rate: 6.0% annual\n- Term: 15 years\n- Monthly Payment: $421.93\n\n**Total Monthly Payment:**\n- $1,796.18 + $421.93 = $2,218.11\n\nFinal Answer: 2218"
+    },
+    {
+        "question_id": "test-2235",
+        "success": true,
+        "agent_answer": 7057.53,
+        "ground_truth": 7057.53,
+        "response": "The accrued interest calculation using the actual/365 day-count convention is:\n\n**Calculation:**\n- Principal: $200,000\n- Nominal Annual Interest Rate: 7%\n- Day-Count Convention: actual/365\n- Period: March 1, 2023 to September 1, 2023\n\n**Step-by-step:**\n1. Count actual days: March (31) + April (30) + May (31) + June (30) + July (31) + August (31) = **184 days**\n2. Apply the formula: Accrued Interest = Principal \u00d7 Rate \u00d7 (Days/365)\n3. Accrued Interest = $200,000 \u00d7 0.07 \u00d7 (184/365) = $7,057.53\n\nFinal Answer: 7057.53"
+    },
+    {
+        "question_id": "test-2237",
+        "success": true,
+        "agent_answer": 76.19,
+        "ground_truth": 76.19,
+        "response": "The RSI calculation is complete. Here's a summary:\n\n**Calculation Steps:**\n1. **Price Changes (14 periods):** [1, 2, -1, 2, 2, 1, -1, -1, -1, -1, 3, 1, 2, 2]\n2. **Gains:** [1, 2, 0, 2, 2, 1, 0, 0, 0, 0, 3, 1, 2, 2] \u2192 **Total = 16**\n3. **Losses:** [0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0] \u2192 **Total = 5**\n4. **Average Gain:** 16 \u00f7 14 = 1.1429\n5. **Average Loss:** 5 \u00f7 14 = 0.3571\n6. **RS (Relative Strength):** 1.1429 \u00f7 0.3571 = 3.20\n7. **RSI:** 100 - (100 \u00f7 (1 + 3.20)) = 100 - 23.81 = **76.19%**\n\nAn RSI of 76.19% indicates the stock is in **overbought territory** (above the typical threshold of 70), suggesting a potential price correction may be due.\n\nFinal Answer: 76.19"
+    },
+    {
+        "question_id": "test-2066",
+        "success": true,
+        "agent_answer": 162.46,
+        "ground_truth": 162.46,
+        "response": "## Calculation Summary\n\n**Step 1: Calculate the smoothing multiplier**\n- Multiplier = 2/(n+1) = 2/(5+1) = 1/3 \u2248 0.333\n\n**Step 2: Calculate initial EMA (Simple Moving Average of first 5 days)**\n- SMA = (150 + 152 + 149 + 153 + 155) / 5 = **151.8**\n\n**Step 3: Calculate EMA for days 6-10 using formula:**\nEMA_today = (Price_today \u00d7 multiplier) + (EMA_yesterday \u00d7 (1 - multiplier))\n\n| Day | Price | EMA Calculation | EMA Value |\n|-----|-------|----------------|-----------|\n| 6   | 157   | 157\u00d7(1/3) + 151.8\u00d7(2/3) | 153.5333 |\n| 7   | 160   | 160\u00d7(1/3) + 153.533\u00d7(2/3) | 155.6889 |\n| 8   | 162   | 162\u00d7(1/3) + 155.689\u00d7(2/3) | 157.7926 |\n| 9   | 165   | 165\u00d7(1/3) + 157.793\u00d7(2/3) | 160.1951 |\n| 10  | 167   | 167\u00d7(1/3) + 160.195\u00d7(2/3) | **162.4634** |\n\nFinal Answer: 162.46"
+    },
+    {
+        "question_id": "test-2070",
+        "success": true,
+        "agent_answer": 19.5,
+        "ground_truth": 19.5,
+        "response": "**Calculation Summary:**\n\n| Component | Amount |\n|-----------|--------|\n| Initial Investment | $250,000 |\n| Ending Value (gross) | $320,000 |\n| Gross Profit | $70,000 |\n| Management Fee (4% of ending assets) | $12,800 |\n| Incentive Fee (12% of gross profit) | $8,400 |\n| Total Fees | $21,200 |\n| Net Ending Value | $298,800 |\n| Annual Return | **19.5%** |\n\nFinal Answer: 19.5"
+    },
+    {
+        "question_id": "test-2097",
+        "success": true,
+        "agent_answer": 360.0,
+        "ground_truth": 360.0,
+        "response": "Based on the analysis:\n\n**Over-contributions by Year:**\n- **2015**: $6,000 - $5,500 = **$500** over-contribution\n- **2016**: $7,500 - $5,500 = **$2,000** over-contribution\n- **2017**: $6,000 - $5,500 = **$500** over-contribution\n\n**Penalty Calculation (1% monthly \u00d7 12 months):**\n- **2015**: $500 \u00d7 1% \u00d7 12 = **$60.00**\n- **2016**: $2,000 \u00d7 1% \u00d7 12 = **$240.00**\n- **2017**: $500 \u00d7 1% \u00d7 12 = **$60.00**\n\n**Total Tax Penalty**: $60.00 + $240.00 + $60.00 = **$360.00**\n\nFinal Answer: 360.00"
+    },
+    {
+        "question_id": "test-2134",
+        "success": true,
+        "agent_answer": 4.92,
+        "ground_truth": 4.92,
+        "response": "The z-spread is the constant spread that must be added to each Treasury spot rate to make the present value of the bond's cash flows equal to its market price.\n\n**Calculation:**\n\nThe z-spread (z) solves:\n\n$$P = \\sum_{t=1}^{n} \\frac{CF_t}{(1 + r_t + z)^t}$$\n\nWhere:\n- P = Market price = $950\n- CF\u2081 = $50 (Year 1 coupon)\n- CF\u2082 = $50 (Year 2 coupon)  \n- CF\u2083 = $1,050 (Year 3 coupon + principal)\n- r\u2081 = 1.5%, r\u2082 = 1.8%, r\u2083 = 2.0%\n\nUsing numerical root-finding (bisection method):\n\n| Year | Cash Flow | Spot Rate + Z-Spread | Discount Factor | Present Value |\n|------|-----------|---------------------|-----------------|---------------|\n| 1 | $50 | 1.5% + 4.92% = 6.42% | 0.9397 | $46.98 |\n| 2 | $50 | 1.8% + 4.92% = 6.72% | 0.8781 | $43.90 |\n| 3 | $1,050 | 2.0% + 4.92% = 6.92% | 0.8182 | $859.11 |\n| **Total** | | | | **$950.00** |\n\nThe z-spread that equates the present value to the market price is **4.92%**.\n\nFinal Answer: 4.92"
+    },
+    {
+        "question_id": "test-2144",
+        "success": true,
+        "agent_answer": 74.0,
+        "ground_truth": 74,
+        "response": "To calculate the approximate FICO score, I apply the given weights to each credit factor:\n\n- **Payment history**: 90% \u00d7 35% = 31.5\n- **Accounts owed**: 65% \u00d7 30% = 19.5\n- **Length of credit history**: 70% \u00d7 15% = 10.5\n- **Credit mix**: 80% \u00d7 10% = 8.0\n- **New credit**: 50% \u00d7 10% = 5.0\n\n**Weighted sum**: 31.5 + 19.5 + 10.5 + 8.0 + 5.0 = **74.5**\n\nRounded to the nearest integer: **74**\n\nFinal Answer: 74"
+    },
+    {
+        "question_id": "test-2001",
+        "success": false,
+        "agent_answer": 30.0,
+        "ground_truth": 22,
+        "response": "Final Answer: 30"
+    },
+    {
+        "question_id": "test-2056",
+        "success": true,
+        "agent_answer": 3062.0,
+        "ground_truth": 3062,
+        "response": "Using the effective interest rate method, I calculated the amortization step-by-step for each of the 4 years:\n\n**Year 1:**\n- Beginning Book Value: $95,000\n- Interest Expense (6%): $5,700\n- Cash Coupon: $5,000\n- Amortization: $700\n- Ending Book Value: $95,700\n\n**Year 2:**\n- Beginning Book Value: $95,700\n- Interest Expense (6%): $5,742\n- Cash Coupon: $5,000\n- Amortization: $742\n- Ending Book Value: $96,442\n\n**Year 3:**\n- Beginning Book Value: $96,442\n- Interest Expense (6%): $5,786.52\n- Cash Coupon: $5,000\n- Amortization: $786.52\n- Ending Book Value: $97,228.52\n\n**Year 4:**\n- Beginning Book Value: $97,228.52\n- Interest Expense (6%): $5,833.71\n- Cash Coupon: $5,000\n- Amortization: $833.71\n- Ending Book Value: $98,062.23\n\n**Total Amortization:** $700 + $742 + $786.52 + $833.71 = $3,062.23\n\nRounded to the nearest integer dollar: $3,062\n\nFinal Answer: 3062"
+    },
+    {
+        "question_id": "test-2099",
+        "success": false,
+        "agent_answer": 474.08,
+        "ground_truth": 474.48,
+        "response": "## FCFF Calculation Summary\n\nUsing the standard FCFF formula:\n\n**FCFF = EBIT(1 - t) + Depreciation - FCInv - \u0394NWC**\n\n| Component | Value |\n|-----------|-------|\n| EBIT (Operating Income) | $1,106 million |\n| Tax Rate | 32% |\n| **NOPAT** = EBIT \u00d7 (1 - t) | $752.08 million |\n| Depreciation | $243 million |\n| Fixed Capital Investment | $535 million |\n| | |\n| **Net Working Capital 2012** = 1,290 - 2,783 | -$1,493 million |\n| **Net Working Capital 2011** = 1,199 - 2,678 | -$1,479 million |\n| **\u0394NWC** = -1,493 - (-1,479) | -$14 million |\n\n**Calculation:**\n- FCFF = 752.08 + 243 - 535 - (-14)\n- FCFF = 752.08 + 243 - 535 + 14\n- FCFF = **474.080**\n\nThe negative NWC change of $14 million represents a source of cash (NWC deficit decreased), so we add it back to FCFF.\n\nFinal Answer: 474.080"
+    },
+    {
+        "question_id": "test-2100",
+        "success": false,
+        "agent_answer": 102.265,
+        "ground_truth": 100.754,
+        "response": "**Analysis:**\n\nThe receive-fixed, pay-equity swap requires calculating when the present value of the fixed leg equals the present value of the equity leg.\n\n**Fixed Leg Calculation:**\n- Quarterly fixed payment: $100,000,000 \u00d7 0.75% = $750,000\n- Remaining payments at 3, 6, and 9 months from now\n- PV of fixed leg = $750,000 \u00d7 (0.997506 + 0.992556 + 0.985222) = **$2,231,463**\n\n**Equity Leg Calculation:**\n- The equity return payment occurs at the swap expiry (9 months from now)\n- Payment = $100,000,000 \u00d7 (S - 100) / 100, where S is the final index level\n- This payment is discounted at the 9-month PVF of 0.985222\n\n**Setting PV(fixed) = PV(equity):**\n- $2,231,463 = $100,000,000 \u00d7 (S - 100) / 100 \u00d7 0.985222\n- Solving for S: **102.265**\n\nFinal Answer: 102.265"
+    },
+    {
+        "question_id": "test-2109",
+        "success": false,
+        "agent_answer": 84.211,
+        "ground_truth": -84.211,
+        "response": "**Analysis:**\n\nTo shift the portfolio from 80% shares to 60% shares (reducing stock exposure by $20 million), the fund would need to sell 84.211 stock index futures contracts to hedge the excess stock exposure.\n\nThe question asks for the number of futures, so the answer is:\n\n**Final Answer: 84.211**"
+    },
+    {
+        "question_id": "test-2120",
+        "success": true,
+        "agent_answer": 0.121,
+        "ground_truth": 12.0985,
+        "response": "For a normally distributed variable, the probability of observing an **exact** value is technically 0 (since continuous distributions have probability 0 at any single point). However, when asked for the probability of an exact value in this context, the standard interpretation is to calculate the **Probability Density Function (PDF)** value at that point.\n\nUsing the normal distribution PDF formula:\n\n$$f(x) = \\frac{1}{\\sigma \\sqrt{2\\pi}} \\exp\\left(-\\frac{(x - \\mu)^2}{2\\sigma^2}\\right)$$\n\nWith:\n- Mean (\u03bc) = 5%\n- Standard deviation (\u03c3) = 2%\n- x = 7%\n\nThe PDF value at x = 7% is **0.1210**.\n\nFinal Answer: 0.1210"
+    },
+    {
+        "question_id": "test-2122",
+        "success": false,
+        "agent_answer": 489849.6,
+        "ground_truth": 489849.0,
+        "response": "**Analysis:**\n\n1. **Original Hedge Position:**\n   - Martinez bought EUR 18,000,000 worth of shares (200,000 \u00d7 \u20ac90)\n   - To hedge, he sold EUR forward (bought USD forward)\n   - When selling EUR forward, he receives the dealer's **bid rate**\n   - Original 6-month forward bid = 1.3935 + (-19.0/10,000) = **1.39160 USD/EUR**\n\n2. **Closing Out After 3 Months:**\n   - To close the short EUR forward position, Martinez must BUY EUR forward\n   - When buying EUR forward, he pays the dealer's **ask rate**\n   - Current 3-month forward ask = 1.4210 + (-21.0/10,000) = **1.41890 USD/EUR**\n\n3. **Loss Calculation:**\n   - Original rate: 1.39160 USD/EUR (sell EUR)\n   - Closeout rate: 1.41890 USD/EUR (buy EUR)\n   - Rate differential: 0.02730 USD/EUR\n   - EUR amount: 18,000,000\n   - Undiscounted loss: $491,400\n\n4. **Present Value:**\n   - Discount using USD LIBOR (1.266%) for 3 months\n   - PV = $491,400 / (1 + 0.01266 \u00d7 90/360) = **$489,849.6**\n\nFinal Answer: 489849.6"
+    },
+    {
+        "question_id": "test-2140",
+        "success": false,
+        "agent_answer": 250.0,
+        "ground_truth": 208,
+        "response": "## FCFE Calculation Summary\n\nUsing the FCFE formula: **FCFE = NI + Dep - FCInv - WCInv + Net Borrowing**\n\n### Components:\n\n| Component | Amount ($ millions) | Calculation |\n|-----------|-------------------|-------------|\n| **Net Income** | 485 | From income statement |\n| **Depreciation** | 270 | From income statement |\n| **FCInv** | 523 | 3,099 - 2,846 + 270 |\n| **WCInv** | 57 | \u0394(AR + Inv - AP - Accrued) |\n| **Net Borrowing** | 75 | \u0394Notes Payable + \u0394LT Debt |\n\n### Working Capital Details:\n- **Current Operating Assets 2008:** 770 + 846 = 1,616\n- **Current Operating Assets 2007:** 711 + 780 = 1,491\n- **Current Operating Liabilities 2008:** 476 + 149 = 625\n- **Current Operating Liabilities 2007:** 443 + 114 = 557\n- **WC 2008:** 1,616 - 625 = 991\n- **WC 2007:** 1,491 - 557 = 934\n- **WCInv:** 991 - 934 = **57**\n\n### Net Borrowing Details:\n- Change in Notes Payable: 465 - 450 = 15\n- Change in Long-term Debt: 1,575 - 1,515 = 60\n- Net Borrowing: 15 + 60 = **75**\n\n### FCFE Calculation:\n$$\\text{FCFE} = 485 + 270 - 523 - 57 + 75 = 250$$\n\nFinal Answer: 250.0"
+    },
+    {
+        "question_id": "test-2145",
+        "success": false,
+        "agent_answer": 21968.146,
+        "ground_truth": 20470.382,
+        "response": "## Analysis\n\n**Understanding the Position:**\n- 6 months ago, the firm entered a 9-month forward contract to sell EUR 5,000,000 for GBP at rate 0.7400 GBP/EUR\n- Time remaining until settlement: 3 months\n- To mark-to-market, we calculate the value of this forward position using current market rates\n\n**Step 1: Determine Current Forward Rate**\n- Spot GBP/EUR Bid: 0.7342\n- 3-Month Forward Points (bid): 14 pips = 0.0014\n- **Forward Bid Rate**: 0.7342 + 0.0014 = **0.7356**\n\n**Step 2: Calculate Values**\n- **Locked-in GBP (at contract rate)**: EUR 5,000,000 \u00d7 0.7400 = **GBP 3,700,000**\n- **Current GBP value (at forward bid)**: EUR 5,000,000 \u00d7 0.7356 = **GBP 3,678,000**\n\n**Step 3: Calculate Gain**\n- Undiscounted Gain: 3,700,000 - 3,678,000 = **GBP 22,000**\n\n**Step 4: Discount to Present Value**\n- Using GBP 90-day LIBOR = 0.5800%\n- Discount Factor: 1/(1 + 0.0058 \u00d7 90/360) = 0.998552\n- **Present Value**: 22,000 \u00d7 0.998552 = **GBP 21,968.146**\n\nFinal Answer: 21968.146"
+    },
+    {
+        "question_id": "test-2153",
+        "success": false,
+        "agent_answer": 0.0,
+        "ground_truth": 0.798,
+        "response": "**Calculation Steps:**\n\n1. **Average Inventory** = (Beginning + Ending) / 2 = (1,500 + 2,000) / 2 = 1,750 million\n\n2. **Days Sales Outstanding (DSO)** = (Accounts Receivable / Credit Sales) \u00d7 365\n   = (3,000 / 40,000) \u00d7 365 = **27.375 days**\n\n3. **Days Inventory Outstanding (DIO)** = (Average Inventory / COGS) \u00d7 365\n   = (1,750 / 30,000) \u00d7 365 = **21.292 days**\n\n4. **Days Payable Outstanding (DPO)** = (Accounts Payable / COGS) \u00d7 365\n   = (4,000 / 30,000) \u00d7 365 = **48.667 days**\n\n5. **Cash Conversion Cycle** = DSO + DIO - DPO\n   = 27.375 + 21.292 - 48.667 = **0.000 days**\n\nThis business has a perfectly balanced cash conversion cycle, meaning the time to collect receivables and sell inventory exactly matches the time to pay suppliers, requiring no additional working capital financing.\n\nFinal Answer: 0.000"
+    },
+    {
+        "question_id": "test-2164",
+        "success": false,
+        "agent_answer": 854.175,
+        "ground_truth": 854.466,
+        "response": "**Analysis Summary:**\n\n1. **Expected 1-year forward rate (Year 2):**\n   - 50% \u00d7 10.0% + 50% \u00d7 6.0% = 8.0%\n\n2. **Risk-adjusted forward rate:**\n   - 8.0% + 0.40% (duration risk premium) = 8.4%\n\n3. **Bond Valuation:**\n   - Price = Face Value / (1 + r\u2081) / (1 + r\u2082)\n   - Price = \u20ac1,000 / (1.08) / (1.084) = \u20ac854.175\n\nThe zero-coupon bond's valuation reflects the current spot rate for the first year and the risk-adjusted expected forward rate for the second year.\n\n**Final Answer: 854.175**"
+    },
+    {
+        "question_id": "test-2179",
+        "success": false,
+        "agent_answer": 0.832,
+        "ground_truth": 0.674,
+        "response": "The Human Development Index (HDI) is calculated using the standard UN methodology:\n\n**Step 1: Life Expectancy Index (Health)**\n- Formula: (LE - 20) / (85 - 20)\n- Calculation: (75 - 20) / 65 = 0.8462\n\n**Step 2: Education Index**\n- Mean Years of Schooling Index: 10/15 = 0.6667\n- Expected Years of Schooling Index: 16/18 = 0.8889\n- Education Index = \u221a(0.6667 \u00d7 0.8889) = 0.7698\n\n**Step 3: Income Index**\n- Formula: (ln(GNIpc) - ln(100)) / (ln(75000) - ln(100))\n- Calculation: (ln(35000) - ln(100)) / (ln(75000) - ln(100)) = 0.8849\n\n**Step 4: HDI (Geometric Mean of Three Indices)**\n- HDI = (0.8462 \u00d7 0.7698 \u00d7 0.8849)^(1/3) = 0.832\n\nWith an HDI of 0.832, Country Z falls into the **\"Very High Human Development\"** category (HDI \u2265 0.800), indicating strong performance across health, education, and income dimensions relative to global standards.\n\nFinal Answer: 0.832"
+    },
+    {
+        "question_id": "test-2182",
+        "success": true,
+        "agent_answer": 4.0,
+        "ground_truth": 4.0,
+        "response": "Based on my analysis:\n\n**Step-by-step Calculation:**\n\n1. **End-of-year gross value**: $160M \u00d7 1.25 = $200 million\n\n2. **Management fee** (2% of ending assets): $200M \u00d7 2% = $4.0 million\n\n3. **Value after management fee**: $200M - $4M = $196 million\n\n4. **Return net of management fee**: ($196M - $160M) / $160M = 22.5%\n   - Hurdle rate (10%) is met \u2713\n\n5. **High-water mark check**: $196M < $198M\n   - High-water mark NOT exceeded \u2717\n\n6. **Incentive fee**: $0 (no incentive fee since value after management fee is below the high-water mark of $198M)\n\n7. **Total fees**: $4.0M + $0 = $4.0 million\n\nEven though the soft hurdle rate of 10% is met (22.5% return net of management fee), no incentive fee is charged because the value after management fee ($196M) is still below the prior high-water mark ($198M).\n\nFinal Answer: 4.0"
+    },
+    {
+        "question_id": "test-2183",
+        "success": true,
+        "agent_answer": 9.0,
+        "ground_truth": 9,
+        "response": "## Piotroski F-Score Analysis for XYZ Corporation (2023)\n\nThe Piotroski F-Score evaluates 9 criteria across three categories:\n\n### Profitability (4 points)\n| Criterion | Data | Score |\n|-----------|------|-------|\n| 1. Net Income > 0 | $1,200,000 | **1** |\n| 2. ROA > 0 | 4.5% | **1** |\n| 3. Operating Cash Flow > 0 | $1,500,000 | **1** |\n| 4. OCF > Net Income | $1,500,000 > $1,200,000 | **1** |\n\n### Leverage, Liquidity & Source of Funds (3 points)\n| Criterion | Data | Score |\n|-----------|------|-------|\n| 5. Long-term Debt Decreased | $5M \u2192 $4.8M | **1** |\n| 6. Current Ratio Improved | 1.3 \u2192 1.5 | **1** |\n| 7. No New Shares Issued | No new shares | **1** |\n\n### Operating Efficiency (2 points)\n| Criterion | Data | Score |\n|-----------|------|-------|\n| 8. Gross Margin Improved | 35% \u2192 38% | **1** |\n| 9. Asset Turnover Improved | 1.1 \u2192 1.2 | **1** |\n\n### Total Piotroski F-Score: **9**\n\nXYZ Corporation achieves a perfect Piotroski score, indicating exceptional financial health with strong profitability, improving leverage and liquidity, and growing operational efficiency.\n\nFinal Answer: 9"
+    },
+    {
+        "question_id": "test-2200",
+        "success": true,
+        "agent_answer": 32.21,
+        "ground_truth": 32.21,
+        "response": "## Calculation Breakdown\n\n**Given:**\n- Initial investment: $120 million\n- Fee structure: 2% management fee, 20% incentive fee\n- Hurdle rate: 5%\n- Gross return: 35%\n\n**Step-by-step calculation:**\n\n| Step | Calculation | Amount |\n|------|-------------|--------|\n| 1. Ending assets (before fees) | $120M \u00d7 1.35 | $162.00M |\n| 2. Management fee | $162.00M \u00d7 2% | $3.24M |\n| 3. Assets after management fee | $162.00M - $3.24M | $158.76M |\n| 4. Profit after management fee | $158.76M - $120M | $38.76M |\n| 5. Hurdle amount | $120M \u00d7 5% | $6.00M |\n| 6. Excess return over hurdle | $38.76M - $6.00M | $32.76M |\n| 7. Incentive fee | $32.76M \u00d7 20% | $6.55M |\n| 8. Net ending assets | $162.00M - $3.24M - $6.55M | $152.21M |\n| 9. **Investor's net return** | $152.21M - $120M | **$32.21M** |\n\n**Verification:**\n- Total fees paid: $3.24M (management) + $6.55M (incentive) = $9.79M\n- Gross profit: $162M - $120M = $42M\n- Net return to investor: $42M - $9.79M = $32.21M \u2713\n\nFinal Answer: 32.21"
+    },
+    {
+        "question_id": "test-2210",
+        "success": false,
+        "agent_answer": 33978.0,
+        "ground_truth": 33999,
+        "response": "The calculation shows that with the additional $100 monthly payment:\n\n- **Standard monthly payment**: $579.98\n- **Total monthly payment with extra $100**: $679.98\n- **Loan term reduced**: From 60 months to 50 months\n- **Total interest paid**: $3,978.17\n- **Total cost of the loan**: $33,978 (rounded to the nearest dollar)\n\nFor comparison, without the additional payment, the total cost would have been $34,799, meaning John saves approximately $821 in interest by making the extra $100 monthly payment.\n\nFinal Answer: 33978"
+    },
+    {
+        "question_id": "test-2217",
+        "success": false,
+        "agent_answer": 18.776,
+        "ground_truth": 4.762,
+        "response": "The holding period return is calculated by compounding the three annual returns:\n\n**Calculation:**\n- HPR = (1 + 0.12) \u00d7 (1 + 0.05) \u00d7 (1 + 0.01) - 1\n- HPR = 1.12 \u00d7 1.05 \u00d7 1.01 - 1\n- HPR = 1.18776 - 1 = 0.18776\n- HPR = 18.776%\n\nThe investments shown ($500, $600, $1000) are the fund sizes each year, not additional contributions\u2014they represent the growing fund value reflecting the compounding returns.\n\nFinal Answer: 18.776"
+    },
+    {
+        "question_id": "test-2221",
+        "success": false,
+        "agent_answer": 11.611,
+        "ground_truth": 12.736,
+        "response": "Based on the standard RAROC (Risk-Adjusted Return on Capital) definition:\n\n**Calculation:**\n- Interest Income: $1.3B \u00d7 7% = $91 million\n- Cost of Funds: $1.3B \u00d7 5% = $65 million\n- Operating Costs: $6 million\n- Expected Loss: $1.3B \u00d7 0.3% = $3.9 million\n- Pre-Tax Income: $91M - $65M - $6M - $3.9M = $16.1 million\n- After-Tax Income: $16.1M \u00d7 (1 - 0.25) = $12.075 million\n- Economic Capital: $1.3B \u00d7 8% = $104 million\n\n**RAROC = After-Tax Net Income / Economic Capital**\n**RAROC = $12.075M / $104M = 11.611%**\n\nFinal Answer: 11.611"
+    },
+    {
+        "question_id": "test-2226",
+        "success": false,
+        "agent_answer": 4.79,
+        "ground_truth": 0.48,
+        "response": "The Welch's t-test (unequal variance t-test) is calculated using the formula:\n\n$$t = \\frac{\\bar{x}_1 - \\bar{x}_2}{\\sqrt{\\frac{s_1^2}{n_1} + \\frac{s_2^2}{n_2}}}$$\n\nWhere:\n- $\\bar{x}_1 = 8\\%$, $s_1^2 = 1.5$, $n_1 = 18$ (Portfolio 1)\n- $\\bar{x}_2 = 6\\%$, $s_2^2 = 2.0$, $n_2 = 22$ (Portfolio 2)\n\nThe calculation yields a t-value of 4.79, indicating a statistically significant difference between the two portfolio return rates.\n\nFinal Answer: 4.79"
+    },
+    {
+        "question_id": "test-2228",
+        "success": false,
+        "agent_answer": 75.72,
+        "ground_truth": 75.65,
+        "response": "The calculation is verified. Here's the breakdown:\n\n**Investment Details:**\n- Total purchase cost: $5,005 (100 shares \u00d7 $50 + $5 commission)\n- With 2.0 leverage: Equity invested = $2,502.50, Borrowed = $2,502.50\n- Interest on borrowed funds: $2,502.50 \u00d7 6% = $150.15\n\n**Year-End Proceeds:**\n- Stock appreciation: $2,000 (100 shares \u00d7 $20 gain)\n- Dividends: $50 (100 shares \u00d7 $0.50)\n- Less: Commission cost: $5\n- Less: Interest expense: $150.15\n- Total profit: $1,894.85\n\n**Return:** $1,894.85 \u00f7 $2,502.50 = 75.72%\n\nFinal Answer: 75.72"
+    },
+    {
+        "question_id": "test-2236",
+        "success": true,
+        "agent_answer": 143.66,
+        "ground_truth": 143.66,
+        "response": "Based on my calculations, here are the results:\n\n**Calculation Summary:**\n\n1. **10-day EMA (Day 25)**: 141.3583\n   - First EMA = SMA of days 1-10 = 125.20\n   - Subsequent values use smoothing factor = 2/11\n\n2. **True Range** (using closing prices only):\n   - TR = |Current Close - Previous Close|\n   - Last TR (Day 25) = |145 - 146| = 1.00\n\n3. **10-day ATR (Day 25)**: 1.5340\n   - First ATR = Average of first 10 TR values = 1.90\n   - Subsequent values use Wilder's smoothing: ATR = (Previous ATR \u00d7 9 + Current TR) / 10\n\n4. **Keltner Channel Upper Band**:\n   - Upper Band = EMA + (Multiplier \u00d7 ATR)\n   - Upper Band = 141.3583 + (1.5 \u00d7 1.5340)\n   - Upper Band = 141.3583 + 2.3010\n   - Upper Band = **143.66**\n\nFinal Answer: 143.66"
+    }
+]

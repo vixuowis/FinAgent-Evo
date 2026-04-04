@@ -1,0 +1,98 @@
+[
+    {
+        "category": "Sentiment Analysis",
+        "task": "FPB",
+        "question_id": "finben-sentiment-01",
+        "question": "Analyze the sentiment of this statement. Provide your answer as either negative, positive or neutral.\nStatement: The company's profit rose by 20% compared to last year.",
+        "context": "",
+        "ground_truth": "positive"
+    },
+    {
+        "category": "Sentiment Analysis",
+        "task": "FOMC",
+        "question_id": "finben-sentiment-02",
+        "question": "Classify this FOMC statement as hawkish, dovish, or neutral.\nStatement: The Committee decided to raise the target range for the federal funds rate to combat persistent inflation.",
+        "context": "",
+        "ground_truth": "hawkish"
+    },
+    {
+        "category": "Classification",
+        "task": "Headlines",
+        "question_id": "finben-class-01",
+        "question": "Consider whether the headline mentions the price of gold. Is there a Price or Not in the gold commodity market indicated in the news headline? Please answer Yes or No.\nHeadline: Gold prices hit record high as dollar weakens.",
+        "context": "",
+        "ground_truth": "Yes"
+    },
+    {
+        "category": "Classification",
+        "task": "MLESG",
+        "question_id": "finben-class-02",
+        "question": "Identify the ESG issue in this news: The company was fined for improper disposal of chemical waste into local rivers.\nChoices: Environmental, Social, Governance.",
+        "context": "",
+        "ground_truth": "Environmental"
+    },
+    {
+        "category": "Knowledge Extraction",
+        "task": "NER",
+        "question_id": "finben-ke-01",
+        "question": "Identify the named entities that represent a person ('PER'), an organization ('ORG'), or a location ('LOC'). Format: entity name, entity type.\nSentence: Warren Buffett lives in Omaha and runs Berkshire Hathaway.",
+        "context": "",
+        "ground_truth": "Warren Buffett, PER; Omaha, LOC; Berkshire Hathaway, ORG"
+    },
+    {
+        "category": "Knowledge Extraction",
+        "task": "FinRED",
+        "question_id": "finben-ke-02",
+        "question": "Identify the relationship between the entities in this text.\nText: Microsoft acquired LinkedIn in 2016.\nEntities: Microsoft, LinkedIn.\nRelation Choices: subsidiary, parent, peer, unrelated.",
+        "context": "",
+        "ground_truth": "subsidiary"
+    },
+    {
+        "category": "Number Understanding",
+        "task": "FinQA",
+        "question_id": "finben-num-01",
+        "question": "What is the net profit margin if the revenue is $1000 and net income is $150? Answer as a percentage to one decimal place.",
+        "context": "",
+        "ground_truth": "15.0"
+    },
+    {
+        "category": "Number Understanding",
+        "task": "TatQA",
+        "question_id": "finben-num-02",
+        "question": "Based on the table, which year had the highest revenue?\n| Year | Revenue |\n|---|---|\n| 2021 | 500 |\n| 2022 | 750 |\n| 2023 | 600 |",
+        "context": "",
+        "ground_truth": "2022"
+    },
+    {
+        "category": "Text Summarization",
+        "task": "ECTSUM",
+        "question_id": "finben-sum-01",
+        "question": "Summarize this earnings call point in one short sentence.\nText: Our international segment saw a decline due to currency headwinds, but domestic growth offset these losses, leading to an overall stable quarter.",
+        "context": "",
+        "ground_truth": "Domestic growth offset international currency losses for a stable quarter."
+    },
+    {
+        "category": "Credit Scoring & Risk",
+        "task": "German",
+        "question_id": "finben-credit-01",
+        "question": "Assess credit risk (Good/Bad).\nProfile: Young applicant, low savings, temporary employment, history of late payments.",
+        "context": "",
+        "ground_truth": "Bad"
+    },
+    {
+        "category": "Credit Scoring & Risk",
+        "task": "Fraud Detection",
+        "question_id": "finben-credit-02",
+        "question": "Is this transaction likely Fraud or Legitimate?\nTransaction: $10,000 withdrawal from a dormant account in a foreign country at 3 AM.",
+        "context": "",
+        "ground_truth": "Fraud"
+    },
+    {
+        "category": "Forecasting",
+        "task": "Stock Movement",
+        "question_id": "finben-fore-01",
+        "question": "Predict stock movement (Rise/Fall).\nNews: The FDA just approved the company's revolutionary new cancer drug.",
+        "context": "",
+        "ground_truth": "Rise"
+    }
+]

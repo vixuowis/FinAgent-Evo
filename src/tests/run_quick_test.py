@@ -93,7 +93,7 @@ async def run_and_capture_response(prompt: str):
 
 async def main():
     import sys
-    test_file = sys.argv[1] if len(sys.argv) > 1 else "src/tests/data/finance_reasoning_quick.json"
+    test_file = sys.argv[1] if len(sys.argv) > 1 else "benchmarks/financereasoning/quick.json"
     
     with open(test_file, "r") as f:
         test_cases = json.load(f)

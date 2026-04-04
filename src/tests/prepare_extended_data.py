@@ -1,7 +1,7 @@
 import json
 
 def create_extended_testset():
-    with open("src/tests/data/hard.json", "r") as f:
+    with open("benchmarks/financereasoning/hard.json", "r") as f:
         full_data = json.load(f)
     
     # Select 12 cases (the first 12 unique question_ids to ensure diversity and include the original 2)
@@ -26,7 +26,7 @@ def create_extended_testset():
         if len(test_cases) >= 12:
             break
             
-    with open("src/tests/data/finance_reasoning_extended.json", "w") as f:
+    with open("benchmarks/financereasoning/extended.json", "w") as f:
         json.dump(test_cases, f, indent=4)
     
     print(f"Created extended testset with {len(test_cases)} cases.")

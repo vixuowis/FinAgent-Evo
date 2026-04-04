@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_tavily import TavilySearch
+from langchain_experimental.utilities import PythonREPL
 from langchain_core.tools import tool
 from deepagents import create_deep_agent
 from langgraph.checkpoint.memory import MemorySaver
@@ -43,6 +44,19 @@ def think_tool(reflection: str) -> str:
     identify gaps, and plan next steps.
     """
     return f"Reflection recorded: {reflection}"
+
+@tool
+def python_interpreter(code: str) -> str:
+    """
+    A Python REPL to execute code for complex calculations, data analysis, or simulations.
+    Use this for any mathematical modeling, precision rounding, or multi-step numerical problems.
+    Input should be valid Python code. The tool returns the stdout of the execution.
+    """
+    try:
+        repl = PythonREPL()
+        return repl.run(code)
+    except Exception as e:
+        return f"Error executing code: {str(e)}"
 
 @tool
 async def extract_experience(task: str, outcome: str, importance: float):
@@ -132,6 +146,7 @@ agent = create_deep_agent(
     tools=[
         tavily_search,
         think_tool,
+        python_interpreter,
         extract_experience,
         optimize_skill_topology,
         *skill_tools
