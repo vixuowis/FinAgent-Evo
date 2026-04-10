@@ -10,7 +10,7 @@
 ### 🚀 Key Innovations (vs. Standard Deep Agents)
 1. **Intelligent Skill Evolution Engine**:
    - Unlike static prompts, FinAgent-Evo defines skills as **"Genotypes"**.
-   - Using **GLM-5 as a Meta-Model**, the agent intelligently rewrites (Mutates) its analysis logic based on performance feedback.
+   - Using **LLM as a Meta-Model**, the agent intelligently rewrites (Mutates) its analysis logic based on performance feedback.
    - Includes `evolve_skill` and `invoke_skill` tools for dynamic logic adaptation.
 2. **Hierarchical Memory Abstraction**:
    - **Working Memory**: Current session context.
@@ -62,7 +62,7 @@ uv run python -m src.server
 ### 🚀 核心改进 (相比于传统 Deep Agents)
 1. **智能技能进化引擎 (Skill Evolution Engine)**:
    - 不同于静态的 Prompt，FinAgent-Evo 将技能定义为**“基因型” (Genotypes)**。
-   - 使用 **GLM-5 作为元模型 (Meta-Model)**，Agent 能够根据任务反馈智能重写（变异）分析逻辑。
+   - 使用 **LLM 作为元模型 (Meta-Model)**，Agent 能够根据任务反馈智能重写（变异）分析逻辑。
    - 引入 `evolve_skill` 和 `invoke_skill` 工具，实现分析逻辑的动态适配。
 2. **分层记忆抽象 (Hierarchical Memory)**:
    - **工作记忆**: 处理当前任务流。
