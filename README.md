@@ -10,6 +10,12 @@
 - **ACP Server Enhancement**: Full support for **Agent Client Protocol**, enabling seamless integration with AI-native IDEs like **Trae** and **Zed**.
 - **Interactive Verification**: Added specialized test suites (`src/test_evolution_flow.py`, `src/test_memory_flow.py`) to demonstrate the live evolution and abstraction chains.
 
+### **智能进化与记忆升级 (中文)**
+- **LLM 驱动的进化**: 从静态的交叉逻辑转型为以 **LLM 作为元模型 (Meta-Model)** 的变异机制。Agent 现在能够根据任务反馈智能重写自身的“基因型”（Prompt）。
+- **分层记忆抽象**: 实现了**知识抽象引擎**，自动将零散的情节经验（Episodic Memory）提炼为持久的**程序性规则 (Procedural Rules)**。
+- **ACP 服务增强**: 全面支持 **Agent Client Protocol**，实现与 **Trae**、**Zed** 等 AI 原生 IDE 的无缝集成。
+- **交互式验证**: 新增专项测试套件（`src/test_evolution_flow.py`, `src/test_memory_flow.py`），直观展示实时进化与抽象链路。
+
 ---
 
 ## English Introduction
