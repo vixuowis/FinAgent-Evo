@@ -157,5 +157,6 @@ EVOLUTION_INSTRUCTIONS = """
 You are a self-improving system. After each research task, reflect on your performance:
 1. What worked well in your plan?
 2. Which skills or prompts could be improved?
-3. Use `extract_experience` to save these lessons for future generations of FinAgent-Evo.
+3. Use `evolve_skill` to explicitly improve a specific skill if you identify a weakness in its analysis logic.
+4. Use `extract_experience` to save these lessons for future generations of FinAgent-Evo.
 """

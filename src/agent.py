@@ -1,4 +1,6 @@
 import os
+from datetime import datetime
+from typing import Optional, Dict, Any
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_tavily import TavilySearch
@@ -21,10 +23,20 @@ from src.core.prompts import (
 # Load environment variables
 load_dotenv()
 
+# --- Agent Creation ---
+
+model = ChatOpenAI(
+    model="glm-5",
+    api_key=os.getenv("DASHSCOPE_API_KEY"),
+    base_url="https://coding.dashscope.aliyuncs.com/v1",
+    timeout=600,  # Increase timeout to 10 minutes for deep research
+    max_retries=5, # Increase retries for unstable network
+)
+
 # --- Initialize Core Components ---
 skill_library = SkillLibrary()
-memory = HierarchicalMemory()
-evolution_engine = EvolutionEngine()
+memory = HierarchicalMemory(meta_model=model)
+evolution_engine = EvolutionEngine(meta_model=model)
 
 # --- Specialized Tools ---
 
@@ -64,7 +76,7 @@ async def extract_experience(task: str, outcome: str, importance: float):
     Store task outcomes and lessons in the agent's memory system.
     """
     await memory.write(Experience(
-        id=f"exp_123", # Fixed ID for simple example
+        id=f"exp_{int(datetime.now().timestamp())}",
         task=task,
         context={},
         outcome=outcome,
@@ -72,6 +84,65 @@ async def extract_experience(task: str, outcome: str, importance: float):
         importance=importance,
     ))
     return "Experience successfully extracted and stored in Hierarchical Memory."
+
+@tool
+async def evolve_skill(skill_id: str, feedback: str) -> str:
+    """
+    Explicitly trigger the evolution of a specific skill based on performance feedback.
+    This will mutate the skill's prompt chromosome using the evolution engine.
+    """
+    skill = skill_library.get_skill(skill_id)
+    if not skill:
+        return f"Skill {skill_id} not found."
+    
+    mutated_genotype = await evolution_engine.mutate(skill.genotype, feedback)
+    new_skill = Skill(mutated_genotype)
+    skill_library.add_skill(new_skill)
+    
+    # Also update the fitness score of the original skill based on negative feedback
+    skill.update_fitness(0.1) 
+    
+    return f"Skill {skill_id} evolved into {mutated_genotype.skill_id}. New Prompt: {mutated_genotype.prompt_chromosome[:100]}... Use 'invoke_skill' with the new ID to test it."
+
+@tool
+async def invoke_skill(skill_id: str, input: str, params: Optional[Dict[str, Any]] = None) -> str:
+    """
+    Invokes a specialized skill from the library by its ID.
+    Use this to execute evolved skills or any specialized analysis logic.
+    """
+    skill = skill_library.get_skill(skill_id)
+    if not skill:
+        return f"Skill {skill_id} not found in the library."
+    
+    # In a real implementation, this would call another LLM chain using the prompt_chromosome
+    # For this demo, we simulate the execution and show the evolution effect
+    return f"[Skill {skill_id} Execution Result]\nInput: {input}\nPrompt Context: {skill.genotype.prompt_chromosome}\nResult: Simulated high-quality financial analysis based on the mutated prompt."
+
+@tool
+def list_skills() -> str:
+    """
+    List all available skills in the library with their descriptions and current fitness scores.
+    """
+    skills = skill_library.get_all_skills()
+    info = []
+    for s in skills:
+        info.append(f"- {s.genotype.skill_id} ({s.genotype.category}): {s.genotype.prompt_chromosome[:50]}... [Fitness: {s.genotype.fitness_score:.2f}]")
+    return "Available Skills:\n" + "\n".join(info)
+
+@tool
+def list_memory_rules() -> str:
+    """
+    List all abstracted procedural rules and guidelines stored in the agent's hierarchical memory.
+    These rules are extracted from past experiences to guide future tasks.
+    """
+    rules = memory.get_procedural_rules()
+    if not rules:
+        return "No procedural rules abstracted yet. Need more episodic experiences."
+    
+    info = []
+    for r in rules:
+        info.append(f"- [Rule {r.id}]: {r.content}")
+    return "Abstracted Procedural Memory (Rules):\n" + "\n".join(info)
 
 @tool
 def optimize_skill_topology(current_task: str) -> str:
@@ -120,16 +191,6 @@ def register_initial_skills():
 
 register_initial_skills()
 
-# --- Agent Creation ---
-
-model = ChatOpenAI(
-    model="glm-5",
-    api_key=os.getenv("DASHSCOPE_API_KEY"),
-    base_url="https://coding.dashscope.aliyuncs.com/v1",
-    timeout=600,  # Increase timeout to 10 minutes for deep research
-    max_retries=5, # Increase retries for unstable network
-)
-
 # Convert library skills to tools
 skill_tools = [s.to_tool() for s in skill_library.get_all_skills()]
 
@@ -148,6 +209,10 @@ agent = create_deep_agent(
         think_tool,
         python_interpreter,
         extract_experience,
+        evolve_skill,
+        invoke_skill,
+        list_skills,
+        list_memory_rules,
         optimize_skill_topology,
         *skill_tools
     ],
