@@ -108,15 +108,84 @@ async def evolve_skill(skill_id: str, feedback: str) -> str:
 async def invoke_skill(skill_id: str, input: str, params: Optional[Dict[str, Any]] = None) -> str:
     """
     Invokes a specialized skill from the library by its ID.
-    Use this to execute evolved skills or any specialized analysis logic.
+    This will execute the skill's specific analysis logic using the LLM.
     """
     skill = skill_library.get_skill(skill_id)
     if not skill:
         return f"Skill {skill_id} not found in the library."
     
-    # In a real implementation, this would call another LLM chain using the prompt_chromosome
-    # For this demo, we simulate the execution and show the evolution effect
-    return f"[Skill {skill_id} Execution Result]\nInput: {input}\nPrompt Context: {skill.genotype.prompt_chromosome}\nResult: Simulated high-quality financial analysis based on the mutated prompt."
+    # Execute the skill using the meta_model and the prompt_chromosome
+    from langchain_core.messages import SystemMessage, HumanMessage
+    
+    system_msg = SystemMessage(content=skill.genotype.prompt_chromosome)
+    user_content = f"Input: {input}"
+    if params:
+        user_content += f"\nParameters: {json.dumps(params)}"
+        
+    try:
+        response = await model.ainvoke([system_msg, HumanMessage(content=user_content)])
+        return f"[Skill {skill_id} Execution Result]\n{response.content}"
+    except Exception as e:
+        return f"Error executing skill {skill_id}: {str(e)}"
+
+@tool
+async def multi_skill_orchestrator(complex_task: str) -> str:
+    """
+    A high-level orchestrator that plans and executes a sequence of skills to solve a hard task.
+    It will automatically determine which skills to call, in what order, and synthesize the results.
+    """
+    from langchain_core.messages import SystemMessage, HumanMessage
+    
+    # 1. Get all available skills
+    skills_info = list_skills.invoke({})
+    
+    # 2. Ask the model to create a plan
+    plan_prompt = f"""
+    You are the Orchestration Engine for FinAgent-Evo.
+    Given the complex task and the available skills below, create a step-by-step execution plan.
+    For each step, specify the skill_id to use and the input to provide.
+    
+    Available Skills:
+    {skills_info}
+    
+    Complex Task: {complex_task}
+    
+    Output your plan as a JSON list of steps. 
+    Format example: [{{"step": 1, "skill_id": "fetch_market_data", "input": "NVDA"}}]
+    """
+    
+    try:
+        plan_response = await model.ainvoke([SystemMessage(content="You are a strategic planner."), HumanMessage(content=plan_prompt)])
+        # Simple extraction of JSON from response
+        import re
+        json_match = re.search(r"\[.*\]", plan_response.content, re.DOTALL)
+        if not json_match:
+            return f"Failed to generate a structured plan. Response: {plan_response.content}"
+            
+        plan = json.loads(json_match.group(0))
+        
+        # 3. Execute the plan
+        results = []
+        for step in plan:
+            skill_id = step.get("skill_id")
+            step_input = step.get("input")
+            print(f"Orchestrator: Executing step {step.get('step')} using {skill_id}...")
+            res = await invoke_skill.ainvoke({"skill_id": skill_id, "input": step_input})
+            results.append(f"Step {step.get('step')} ({skill_id}): {res}")
+            
+        # 4. Final synthesis
+        results_str = "\n".join(results)
+        synthesis_prompt = f"""
+        Synthesize the following results into a final answer for the complex task: {complex_task}
+        
+        Results:
+        {results_str}
+        """
+        final_res = await model.ainvoke([SystemMessage(content="You are a financial analyst."), HumanMessage(content=synthesis_prompt)])
+        return final_res.content
+        
+    except Exception as e:
+        return f"Error during orchestration: {str(e)}"
 
 @tool
 def list_skills() -> str:
@@ -189,6 +258,21 @@ def register_initial_skills():
     )
     skill_library.add_skill(Skill(tech_analysis_genotype))
 
+    decision_making_genotype = SkillGenotype(
+        skill_id="strategic_decision_making",
+        category=SkillCategory.ANALYSIS,
+        llm_config={"model_tier": ModelTier.HEAVY, "temperature": 0.0, "max_tokens": 2000},
+        prompt_chromosome="""You are a Senior Investment Committee Member. Your role is to synthesize multi-dimensional data (technical, fundamental, sentiment, macro) to provide high-conviction investment decisions.
+        1. Evaluate risk-reward ratios.
+        2. Consider downside protection.
+        3. Align with specific investment horizons (e.g., 6 months).
+        4. Output a clear BUY/HOLD/SELL recommendation with a target price and stop-loss.""",
+        tool_deps=["technical_analysis", "analyze_sentiment"],
+        input_schema={"context": "string", "analysis_results": "string"},
+        output_schema={"recommendation": "string", "target_price": "number", "stop_loss": "number"}
+    )
+    skill_library.add_skill(Skill(decision_making_genotype))
+
 register_initial_skills()
 
 # Convert library skills to tools
@@ -211,6 +295,7 @@ agent = create_deep_agent(
         extract_experience,
         evolve_skill,
         invoke_skill,
+        multi_skill_orchestrator,
         list_skills,
         list_memory_rules,
         optimize_skill_topology,

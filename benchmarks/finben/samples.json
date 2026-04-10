@@ -94,5 +94,29 @@
         "question": "Predict stock movement (Rise/Fall).\nNews: The FDA just approved the company's revolutionary new cancer drug.",
         "context": "",
         "ground_truth": "Rise"
+    },
+    {
+        "category": "Decision Making",
+        "task": "Portfolio Allocation",
+        "question_id": "finben-dm-01",
+        "question": "Should the investor rebalance their portfolio from 60% equities / 40% bonds to 70% equities / 30% bonds based on the latest market conditions? Provide a Final Answer as either Yes or No.",
+        "context": "Market is showing strong bullish sentiment with falling inflation. Equity volatility is low, and bond yields are stable but low.",
+        "ground_truth": "Yes"
+    },
+    {
+        "category": "Decision Making",
+        "task": "Investment Recommendation",
+        "question_id": "finben-dm-02",
+        "question": "Given the following metrics, provide an investment recommendation (Buy/Hold/Sell) for NVIDIA (NVDA). Final Answer: [Recommendation]",
+        "context": "P/E Ratio: 90, Forward P/E: 35, Revenue Growth: 200%, Gross Margin: 75%. AI demand is surging and market share is dominant.",
+        "ground_truth": "Buy"
+    },
+    {
+        "category": "Decision Making",
+        "task": "Risk Management",
+        "question_id": "finben-dm-03",
+        "question": "Is it advisable to hedge the portfolio's oil exposure using futures contracts given the geopolitical tensions in the Middle East? Final Answer: Yes/No.",
+        "context": "The portfolio is heavily exposed to energy stocks. Geopolitical risks are high, and oil prices are extremely volatile.",
+        "ground_truth": "Yes"
     }
 ]

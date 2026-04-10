@@ -74,7 +74,7 @@ async def evaluate_finben(test_case):
                         is_correct = False
                 except:
                     is_correct = False
-            elif category == "Sentiment Analysis" or category == "Classification" or category == "Forecasting" or category == "Credit Scoring & Risk":
+            elif category == "Sentiment Analysis" or category == "Classification" or category == "Forecasting" or category == "Credit Scoring & Risk" or category == "Decision Making":
                 is_correct = ground_truth_clean in agent_answer_clean or agent_answer_clean in ground_truth_clean
             elif category == "Number Understanding":
                 # Try to extract number from agent answer

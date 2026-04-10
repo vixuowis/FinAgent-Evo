@@ -4,17 +4,21 @@
 
 ## 🚀 Latest Updates (2026-04-10)
 
-### **Intelligent Evolution & Memory Upgrade**
+### **Intelligent Evolution & Memory Upgrade (2026-04-10)**
 - **LLM-Driven Evolution**: Transitioned from static crossover logic to **LLM-as-a-Meta-Model** mutation. The agent now intelligently rewrites its own "Genotype" (prompts) based on performance feedback.
 - **Hierarchical Memory Abstraction**: Implemented a **Knowledge Abstraction Engine** that automatically distills episodic experiences into persistent **Procedural Rules**.
+- **Dynamic Multi-Skill Orchestration**: Introduced the **`multi_skill_orchestrator`**, which uses the LLM to plan and execute a Directed Acyclic Graph (DAG) of specialized skills for complex, multi-step financial tasks.
+- **Decision-Making Benchmark**: Added a dedicated **Hard-Task Benchmark** (Decision Making) and expanded **FinBen** coverage to evaluate strategic reasoning across long-chain tool calls.
 - **ACP Server Enhancement**: Full support for **Agent Client Protocol**, enabling seamless integration with AI-native IDEs like **Trae** and **Zed**.
-- **Interactive Verification**: Added specialized test suites (`src/test_evolution_flow.py`, `src/test_memory_flow.py`) to demonstrate the live evolution and abstraction chains.
+- **Interactive Verification**: Added specialized test suites (`src/test_evolution_flow.py`, `src/test_memory_flow.py`, `src/tests/run_multi_skill_benchmark.py`) to demonstrate the live evolution, abstraction, and orchestration chains.
 
-### **智能进化与记忆升级 (中文)**
+### **智能进化、记忆与编排升级 (2026-04-10)**
 - **LLM 驱动的进化**: 从静态的交叉逻辑转型为以 **LLM 作为元模型 (Meta-Model)** 的变异机制。Agent 现在能够根据任务反馈智能重写自身的“基因型”（Prompt）。
 - **分层记忆抽象**: 实现了**知识抽象引擎**，自动将零散的情节经验（Episodic Memory）提炼为持久的**程序性规则 (Procedural Rules)**。
+- **多技能动态编排**: 引入 **`multi_skill_orchestrator`**，通过 LLM 规划并执行由多个专业技能组成的有向无环图 (DAG)，专门解决长链路、多维度的复杂金融决策任务。
+- **决策能力评估**: 新增 **Hard-Task 决策评估基准**，并扩展了 **FinBen** 测试集，针对长链路多技能调用和高阶策略分析（如投资组合再平衡、风险对冲决策）进行深度评测。
 - **ACP 服务增强**: 全面支持 **Agent Client Protocol**，实现与 **Trae**、**Zed** 等 AI 原生 IDE 的无缝集成。
-- **交互式验证**: 新增专项测试套件（`src/test_evolution_flow.py`, `src/test_memory_flow.py`），直观展示实时进化与抽象链路。
+- **交互式验证**: 新增专项测试套件（`src/test_evolution_flow.py`, `src/test_memory_flow.py`, `src/tests/run_multi_skill_benchmark.py`），直观展示实时进化、抽象与编排链路。
 
 ---
 
