@@ -1,0 +1,23 @@
+[
+    {
+        "id": "complex-01",
+        "name": "NVIDIA Earnings Drift Analysis",
+        "task": "Perform a comprehensive analysis of NVIDIA (NVDA) following its latest earnings report. 1) Fetch current price and volume data. 2) Analyze sentiment from news headlines post-earnings. 3) Perform technical analysis to identify new support levels. 4) Use the strategic_decision_making skill to recommend whether to enter a 'Buy the Dip' position or 'Wait for Consolidation'.",
+        "required_skills": ["fetch_market_data", "analyze_sentiment", "technical_analysis", "strategic_decision_making"],
+        "evaluation_criteria": ["All 4 skills called", "Consistent logic between sentiment and decision", "Specific price levels identified"]
+    },
+    {
+        "id": "complex-02",
+        "name": "Multi-Asset Tech Correlation & Hedging",
+        "task": "Analyze the correlation and risk for a mini-portfolio of Apple (AAPL) and Microsoft (MSFT). 1) Fetch market data for both. 2) Analyze sentiment for the 'Tech Sector' in general. 3) Perform technical analysis for both to see if they are at resistance. 4) Calculate the potential drawdown if the sector turns bearish using python_interpreter. 5) Recommend a hedging strategy.",
+        "required_skills": ["fetch_market_data", "analyze_sentiment", "technical_analysis", "python_interpreter", "strategic_decision_making"],
+        "evaluation_criteria": ["Comparison between assets included", "Python used for calculation", "Hedging recommendation provided"]
+    },
+    {
+        "id": "complex-03",
+        "name": "Geopolitical Oil Risk Assessment",
+        "task": "Assess the impact of Middle East tensions on Oil prices and Energy stocks (e.g., XOM). 1) Fetch market data for WTI Oil and XOM. 2) Analyze sentiment regarding 'Middle East Geopolitics'. 3) Use technical analysis to identify Oil price targets. 4) Synthesize a risk report using strategic_decision_making to decide on energy exposure.",
+        "required_skills": ["fetch_market_data", "analyze_sentiment", "technical_analysis", "strategic_decision_making"],
+        "evaluation_criteria": ["Geopolitical context linked to price targets", "XOM specific analysis included", "Clear exposure decision"]
+    }
+]

@@ -132,31 +132,53 @@ async def invoke_skill(skill_id: str, input: str, params: Optional[Dict[str, Any
 async def multi_skill_orchestrator(complex_task: str) -> str:
     """
     A high-level orchestrator that plans and executes a sequence of skills to solve a hard task.
-    It will automatically determine which skills to call, in what order, and synthesize the results.
+    It uses procedural memory (Rules of Thumb) to guide the planning process.
     """
     from langchain_core.messages import SystemMessage, HumanMessage
     
-    # 1. Get all available skills
-    skills_info = list_skills.invoke({})
+    # 1. Get all available skills and their dependencies
+    skills = skill_library.get_all_skills()
+    skills_info = []
+    for s in skills:
+        deps = f" (Depends on: {', '.join(s.genotype.tool_deps)})" if s.genotype.tool_deps else ""
+        skills_info.append(f"- {s.genotype.skill_id}: {s.genotype.prompt_chromosome[:200]}...{deps}")
+    skills_str = "\n".join(skills_info)
     
-    # 2. Ask the model to create a plan
+    # 2. Get procedural memory (Rules of Thumb)
+    rules = memory.get_procedural_rules()
+    rules_str = "\n".join([f"- {r.content}" for r in rules]) if rules else "No specific rules yet."
+    
+    # 3. Ask the model to create a strategic plan
     plan_prompt = f"""
-    You are the Orchestration Engine for FinAgent-Evo.
-    Given the complex task and the available skills below, create a step-by-step execution plan.
-    For each step, specify the skill_id to use and the input to provide.
+    You are the Strategic Orchestration Engine for FinAgent-Evo.
+    Your goal is to solve the complex financial task below by orchestrating specialized skills.
     
-    Available Skills:
-    {skills_info}
+    ### Task:
+    {complex_task}
     
-    Complex Task: {complex_task}
+    ### Available Skills:
+    {skills_str}
+    
+    ### Procedural Memory (Best Practices):
+    {rules_str}
+    
+    ### MANDATORY EXECUTION RULES:
+    - **NO SIMULATION**: You MUST actually call the skills. Do not just describe what you would do.
+    - **DATA VERIFICATION**: Every claim must be backed by the output of a skill (e.g., fetch_market_data for prices).
+    - **PYTHON FOR MATH**: Use 'python_interpreter' for ANY calculation (drawdown, correlation, etc.). Do not do math in your head.
+    - **DEPENDENCY ORDER**: Order skills logically (e.g., fetch data before analysis).
+    - **SYNTHESIS RIGOR**: The final step MUST use 'strategic_decision_making' to unify all findings.
     
     Output your plan as a JSON list of steps. 
-    Format example: [{{"step": 1, "skill_id": "fetch_market_data", "input": "NVDA"}}]
+    Format: [{{"step": 1, "skill_id": "...", "reasoning": "...", "input": "..."}}]
     """
     
     try:
-        plan_response = await model.ainvoke([SystemMessage(content="You are a strategic planner."), HumanMessage(content=plan_prompt)])
-        # Simple extraction of JSON from response
+        plan_response = await model.ainvoke([
+            SystemMessage(content="You are an expert financial strategist and orchestration engine. You NEVER simulate tool calls; you ALWAYS execute them."), 
+            HumanMessage(content=plan_prompt)
+        ])
+        
         import re
         json_match = re.search(r"\[.*\]", plan_response.content, re.DOTALL)
         if not json_match:
@@ -164,25 +186,63 @@ async def multi_skill_orchestrator(complex_task: str) -> str:
             
         plan = json.loads(json_match.group(0))
         
-        # 3. Execute the plan
+        # 4. Execute the plan with strict context passing and output logging
         results = []
+        context_accumulator = ""
+        execution_logs = []
         for step in plan:
             skill_id = step.get("skill_id")
             step_input = step.get("input")
-            print(f"Orchestrator: Executing step {step.get('step')} using {skill_id}...")
-            res = await invoke_skill.ainvoke({"skill_id": skill_id, "input": step_input})
-            results.append(f"Step {step.get('step')} ({skill_id}): {res}")
+            reasoning = step.get("reasoning", "")
             
-        # 4. Final synthesis
-        results_str = "\n".join(results)
+            print(f"Orchestrator: Step {step.get('step')} - {reasoning} (Using {skill_id})")
+            
+            # Enrich input with previous context
+            enriched_input = f"Task: {step_input}\nPrevious Context: {context_accumulator[:2000]}"
+            
+            # Execute skill
+            res = await invoke_skill.ainvoke({"skill_id": skill_id, "input": enriched_input})
+            
+            # Record result with metadata
+            step_record = f"--- STEP {step.get('step')} ({skill_id}) ---\nReasoning: {reasoning}\nOutput: {res}"
+            results.append(step_record)
+            execution_logs.append({
+                "step": step.get("step"),
+                "skill_id": skill_id,
+                "input": step_input,
+                "output": res
+            })
+            
+            # Update context for next steps
+            context_accumulator += f"\n[Result from Step {step.get('step')} ({skill_id})]: {res[:1000]}"
+            
+        # 5. Final Synthesis with Self-Correction
+        logs_str = "\n\n".join(results)
         synthesis_prompt = f"""
-        Synthesize the following results into a final answer for the complex task: {complex_task}
+        You are the Senior Financial Analyst for FinAgent-Evo.
+        Task: {complex_task}
         
-        Results:
-        {results_str}
+        Detailed Execution Logs (VERIFIED):
+        {logs_str}
+        
+        ### Final Instructions:
+        1. Review all execution logs above. 
+        2. Ensure every required skill was used correctly.
+        3. Identify any contradictions (e.g., technicals vs sentiment).
+        4. Synthesize a high-conviction final answer. Include actual data points from the logs.
+        5. If 'python_interpreter' was used, YOU MUST SHOW THE PYTHON CODE AND THE OUTPUT in your response.
         """
-        final_res = await model.ainvoke([SystemMessage(content="You are a financial analyst."), HumanMessage(content=synthesis_prompt)])
-        return final_res.content
+        final_res = await model.ainvoke([
+            SystemMessage(content="You are a senior financial analyst providing a final recommendation based on verified execution logs. You provide PROOF of work."), 
+            HumanMessage(content=synthesis_prompt)
+        ])
+        
+        # Append Appendix for transparency
+        appendix = "\n\n---\n### 🛠 Execution Appendix (Transparency Logs)\n"
+        for log in execution_logs:
+            appendix += f"- **Step {log['step']} ({log['skill_id']})**: Executed with input '{log['input'][:50]}...'\n"
+            
+        return final_res.content + appendix
         
     except Exception as e:
         return f"Error during orchestration: {str(e)}"

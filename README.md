@@ -7,18 +7,18 @@
 ### **Intelligent Evolution & Memory Upgrade (2026-04-10)**
 - **LLM-Driven Evolution**: Transitioned from static crossover logic to **LLM-as-a-Meta-Model** mutation. The agent now intelligently rewrites its own "Genotype" (prompts) based on performance feedback.
 - **Hierarchical Memory Abstraction**: Implemented a **Knowledge Abstraction Engine** that automatically distills episodic experiences into persistent **Procedural Rules**.
-- **Dynamic Multi-Skill Orchestration**: Introduced the **`multi_skill_orchestrator`**, which uses the LLM to plan and execute a Directed Acyclic Graph (DAG) of specialized skills for complex, multi-step financial tasks.
-- **Decision-Making Benchmark**: Added a dedicated **Hard-Task Benchmark** (Decision Making) and expanded **FinBen** coverage to evaluate strategic reasoning across long-chain tool calls.
-- **ACP Server Enhancement**: Full support for **Agent Client Protocol**, enabling seamless integration with AI-native IDEs like **Trae** and **Zed**.
-- **Interactive Verification**: Added specialized test suites (`src/test_evolution_flow.py`, `src/test_memory_flow.py`, `src/tests/run_multi_skill_benchmark.py`) to demonstrate the live evolution, abstraction, and orchestration chains.
+- **Dynamic Multi-Skill Orchestration**: Introduced the **`multi_skill_orchestrator`**, which uses the LLM to plan and execute a Directed Acyclic Graph (DAG) of specialized skills for complex, multi-step financial tasks. Enhanced with **Proof-of-Work (PoW)** logging to ensure tool calls are executed, not simulated.
+- **Decision-Making & Hard-Task Benchmarks**: Added a dedicated **Hard-Task Benchmark** (`benchmarks/complex_tasks.json`) that evaluates the agent's ability to handle long-chain, multi-skill dependencies (e.g., Correlation Analysis, Geopolitical Risk).
+- **LLM-as-a-Judge Evaluation**: Implemented a rigorous scoring system using an LLM judge to evaluate **Orchestration Accuracy**, **Analytical Depth**, and **Decision Soundness**.
+- **Interactive Verification**: Added specialized test suites (`src/test_evolution_flow.py`, `src/test_memory_flow.py`, `src/tests/evaluate_complex_orchestration.py`) to demonstrate the live evolution, abstraction, and orchestration chains.
 
 ### **智能进化、记忆与编排升级 (2026-04-10)**
 - **LLM 驱动的进化**: 从静态的交叉逻辑转型为以 **LLM 作为元模型 (Meta-Model)** 的变异机制。Agent 现在能够根据任务反馈智能重写自身的“基因型”（Prompt）。
 - **分层记忆抽象**: 实现了**知识抽象引擎**，自动将零散的情节经验（Episodic Memory）提炼为持久的**程序性规则 (Procedural Rules)**。
-- **多技能动态编排**: 引入 **`multi_skill_orchestrator`**，通过 LLM 规划并执行由多个专业技能组成的有向无环图 (DAG)，专门解决长链路、多维度的复杂金融决策任务。
-- **决策能力评估**: 新增 **Hard-Task 决策评估基准**，并扩展了 **FinBen** 测试集，针对长链路多技能调用和高阶策略分析（如投资组合再平衡、风险对冲决策）进行深度评测。
-- **ACP 服务增强**: 全面支持 **Agent Client Protocol**，实现与 **Trae**、**Zed** 等 AI 原生 IDE 的无缝集成。
-- **交互式验证**: 新增专项测试套件（`src/test_evolution_flow.py`, `src/test_memory_flow.py`, `src/tests/run_multi_skill_benchmark.py`），直观展示实时进化、抽象与编排链路。
+- **多技能动态编排**: 引入 **`multi_skill_orchestrator`**，通过 LLM 规划并执行由多个专业技能组成的有向无环图 (DAG)。新增 **Proof-of-Work (PoW)** 验证日志，确保所有工具调用真实执行而非模拟生成。
+- **Hard-Task 决策评估**: 建立了专门的 **Hard-Task 评测集** (`benchmarks/complex_tasks.json`)，针对长链路多技能调用（如跨资产相关性分析、地缘政治风险对冲）进行深度评测。
+- **LLM-as-a-Judge 评估体系**: 引入 LLM 裁判机制，从**编排准确度**、**分析深度**和**决策稳健性**三个维度对复杂任务输出进行量化评分。
+- **交互式验证**: 新增专项测试套件（`src/test_evolution_flow.py`, `src/test_memory_flow.py`, `src/tests/evaluate_complex_orchestration.py`），直观展示实时进化、抽象与编排链路。
 
 ---
 

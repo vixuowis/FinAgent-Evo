@@ -28,9 +28,10 @@ TASKS = {
         "TheFinAI/flare-cra_ccf", "TheFinAI/flare-cra_ccfraud", "TheFinAI/flare-cra_polish",
         "TheFinAI/flare-cra_taiwan", "TheFinAI/flare-cra_portoseguro", "TheFinAI/flare-cra_travelinsurance"
     ],
-    "Forecasting": [
+    "Decision Making": [
         "TheFinAI/flare-sm_bigdata", "TheFinAI/flare-sm_acl", "TheFinAI/flare-sm_cikm"
-    ]
+    ],
+    "Forecasting": []
 }
 
 def fetch_samples(task_name, num_samples=3):
@@ -74,7 +75,8 @@ def main():
     for category, task_list in TASKS.items():
         print(f"\nCategory: {category}")
         for task_name in task_list:
-            samples = fetch_samples(task_name, num_samples=6)
+            num = 20 if category == "Decision Making" else 6
+            samples = fetch_samples(task_name, num_samples=num)
             for s in samples:
                 s["category"] = category
             all_samples.extend(samples)
