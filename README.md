@@ -2,6 +2,16 @@
 
 ---
 
+## 🚀 Latest Updates (2026-04-10)
+
+### **Intelligent Evolution & Memory Upgrade**
+- **LLM-Driven Evolution**: Transitioned from static crossover logic to **LLM-as-a-Meta-Model** mutation. The agent now intelligently rewrites its own "Genotype" (prompts) based on performance feedback.
+- **Hierarchical Memory Abstraction**: Implemented a **Knowledge Abstraction Engine** that automatically distills episodic experiences into persistent **Procedural Rules**.
+- **ACP Server Enhancement**: Full support for **Agent Client Protocol**, enabling seamless integration with AI-native IDEs like **Trae** and **Zed**.
+- **Interactive Verification**: Added specialized test suites (`src/test_evolution_flow.py`, `src/test_memory_flow.py`) to demonstrate the live evolution and abstraction chains.
+
+---
+
 ## English Introduction
 
 ### 🌟 Project Overview
