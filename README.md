@@ -20,6 +20,8 @@
    - Real-time adjustment of skill execution paths (DAG) based on task complexity.
 4. **Self-Improvement Loop**:
    - Automatically triggers experience extraction and skill mutation after task completion to convert execution logs into long-term knowledge.
+5. **LLM Agent Server (ACP)**:
+   - Implements the Agent Client Protocol for seamless integration with AI-native IDEs (e.g., Zed, Trae).
 
 ### 🧪 Verification & Testing
 You can verify the evolution and memory chains using the following scripts:
@@ -70,6 +72,8 @@ uv run python -m src.server
    - 实时调整技能执行路径（DAG），实现“按需调度”。
 4. **自改进闭环**:
    - 任务结束后自动触发经验提取和技能演进，将执行结果转化为长期知识。
+5. **LLM Agent 服务 (ACP)**:
+   - 支持 Agent Client Protocol，可无缝集成到 Zed、Trae 等 AI 原生编辑器中。
 
 ### 🧪 验证与测试
 你可以通过以下脚本验证进化与记忆链路：
