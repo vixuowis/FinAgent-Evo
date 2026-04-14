@@ -29,9 +29,9 @@ load_dotenv()
 # --- Agent Creation ---
 
 model = ChatOpenAI(
-    model="glm-5",
-    api_key=os.getenv("DASHSCOPE_API_KEY"),
-    base_url="https://coding.dashscope.aliyuncs.com/v1",
+    model="qwen3.6-plus",
+    api_key=os.getenv("DASHSCOPE_API_KEY", "dummy"),
+    base_url=os.getenv("DASHSCOPE_BASE_URL", "https://coding.dashscope.aliyuncs.com/v1"),
     timeout=600,  # Increase timeout to 10 minutes for deep research
     max_retries=5, # Increase retries for unstable network
 )
