@@ -65,11 +65,11 @@ async def main():
     
     try:
         result = await chain.ainvoke({
-            "num_tasks": 10,
+            "num_tasks": 20,
             "format_instructions": parser.get_format_instructions()
         })
         
-        output_path = "benchmarks/multi_skill_tasks_sample.json"
+        output_path = "benchmarks/complex_tasks_real_api.json"
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(result, f, indent=2, ensure_ascii=False)
             

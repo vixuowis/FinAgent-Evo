@@ -1,0 +1,569 @@
+{
+  "tasks": [
+    {
+      "task_id": "T01",
+      "query": "评估丰田汽车(TM)美股ADR的内在价值。首先获取其最新财报中的美元计价自由现金流，结合当前日元对美元的实时汇率进行本币折算还原，然后使用5%的折现率和3%的永续增长率进行DCF计算，最后对比其当前美股市场价格，判断是否存在显著的安全边际。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "DCF估值建模",
+        "跨币种财务换算",
+        "财报数据提取",
+        "安全边际分析"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "还原后的日元口径自由现金流",
+          "DCF理论估值结果",
+          "TM当前市价",
+          "折溢价百分比及安全边际判断"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_exchange_rate",
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T02",
+      "query": "分析当前美联储货币政策对高估值科技股的影响。获取最新的美国联邦基金利率与10年期国债收益率，计算期限利差。接着获取英伟达(NVDA)和微软(MSFT)的当前市盈率，将期限利差作为无风险利率基准，利用计算器估算在风险溢价补偿下的理论合理P/E区间，并给出调仓建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "宏观利率分析",
+        "估值比率计算",
+        "利差建模",
+        "权益资产配置"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "联邦基金利率与10年期收益率",
+          "期限利差数值",
+          "NVDA与MSFT当前P/E",
+          "理论合理P/E区间",
+          "调仓建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T03",
+      "query": "评估加密货币监管动态与Coinbase(COIN)股价的联动效应。搜索近一周关于SEC对数字资产监管态度的核心新闻并提取情绪倾向。同时获取比特币(BTC)当前价格及近30日价格数据，计算COIN当前股价与BTC价格的交叉比率。结合BTC技术位与新闻情绪，判断COIN短期交易方向。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "新闻舆情挖掘",
+        "加密资产定价",
+        "跨资产比价",
+        "事件驱动交易"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "监管新闻核心摘要与情绪",
+          "BTC近期价格数据",
+          "COIN/BTC交叉比率",
+          "短期交易方向判断逻辑"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_crypto_price",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T04",
+      "query": "量化汇率波动对苹果公司(AAPL)海外利润的汇兑冲击。获取当前EUR/USD和GBP/USD实时汇率。查阅AAPL最新季报国际分部收入及毛利率，假设欧元与英镑同步对美元贬值5%，使用计算器估算换算为美元后的潜在汇兑损失金额，并结合财报对冲披露定性评估其对EPS的拖累。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "外汇对冲分析",
+        "汇兑损益测算",
+        "国际业务拆解",
+        "财务风险预警"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "EUR/USD与GBP/USD实时汇率",
+          "国际收入规模与毛利率",
+          "贬值5%假设下的汇兑损失额",
+          "对冲有效性及EPS影响评估"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T05",
+      "query": "基于最新宏观指标进行行业轮动判断。获取美国最新CPI同比与GDP环比增速，判定当前所处经济周期阶段。获取金融ETF(XLF)与能源ETF(XLE)的最新收盘价及年初至今涨跌幅，计算两者的相对强弱比率(XLE/XLF)，结合宏观周期结论给出超配/低配建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "宏观经济周期定位",
+        "行业ETF数据获取",
+        "相对强弱计算",
+        "资产配置策略"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新CPI与GDP增速",
+          "经济周期阶段判断",
+          "XLF与XLE价格及YTD涨跌幅",
+          "相对强弱比率",
+          "板块轮动建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T06",
+      "query": "模拟一项大型科技公司的现金收购案对资产负债表的影响。获取特斯拉(TSLA)与通用汽车(GM)的当前市值，假设TSLA以20%控制权溢价发起全现金收购。查阅TSLA最新财报的现金及短期投资余额，计算收购所需资金总额及自有现金缺口，评估融资压力与财务健康度。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "并购溢价建模",
+        "市值计算",
+        "资产负债表压力测试",
+        "流动性评估"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "TSLA与GM当前市值",
+          "20%溢价收购总价",
+          "TSLA现金储备",
+          "资金缺口金额",
+          "财务健康度评级"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T07",
+      "query": "分析利率环境对房地产信托基金(REITs)的估值压制。获取当前10年期美债收益率及5年期固定抵押贷款利率。获取VNQ REIT ETF的最新股息收益率与股价。计算VNQ股息率与房贷利率的利差，评估在利率高位维持背景下该利差对REIT估值的压缩程度并给出评级调整意见。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "宏观利率追踪",
+        "REIT收益率拆解",
+        "利差分析模型",
+        "估值评级调整"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "10年期美债与5年期房贷利率",
+          "VNQ股息率与当前股价",
+          "风险利差数值",
+          "利率环境对估值影响评估",
+          "投资评级调整"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T08",
+      "query": "验证半导体产业链景气度信号的交叉匹配。搜索近两周关于台积电先进封装(CoWoS)产能瓶颈的权威新闻，提取关键扩产或订单指引。获取ASML最新财报的订单积压量(Bookings)。结合TSM当前股价，计算台积电产能利用率与光刻机交付周期的匹配度，推断短期上行催化强度。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "产业链交叉验证",
+        "产能与订单匹配分析",
+        "股价催化评估",
+        "行业周期跟踪"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "CoWoS产能相关新闻摘要",
+          "ASML最新订单积压量",
+          "TSM当前股价与估值分位",
+          "产能交付匹配度推算",
+          "短期催化强度结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T09",
+      "query": "进行比特币减半周期下的矿企盈利压力测试。获取BTC实时价格。获取矿企MARA最新财报中的单币开采成本与持币储备。搜索近期全网算力难度变化趋势。使用计算器测算若BTC价格短期回调10%且算力难度不变，MARA的毛利润将受何种冲击，并给出风险敞口提示。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "加密资产定价",
+        "矿企成本结构拆解",
+        "压力测试建模",
+        "风险预警提示"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC实时价格",
+          "MARA开采成本与持币量",
+          "算力难度趋势摘要",
+          "价格下跌10%后的利润冲击额",
+          "风险敞口评估"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T10",
+      "query": "构建外汇套息交易的收益测算模型。获取USD/JPY和AUD/USD即期汇率，以及美、日、澳三国央行最新基准利率。计算两组货币对的理论年化套息收益（扣除2%交易摩擦与滑点）。使用计算器对比风险调整后收益，确定当前最具优势的套息交易货币方向及持仓逻辑。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "外汇定价",
+        "基准利率套利建模",
+        "摩擦成本扣除",
+        "风险收益比评估"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "两组货币对即期汇率",
+          "三国基准利率",
+          "扣除摩擦后的理论年化套息收益",
+          "风险调整后收益对比",
+          "推荐交易方向"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T11",
+      "query": "量化中国EV价格战对车企毛利率的挤压效应。获取比亚迪(BYDDY)与蔚来(NIO)最新季报毛利率。搜索近一个月国内新能源汽车降价潮的新闻报道，提取平均降价幅度。测算若终端售价统一下调8%且BOM成本刚性，两家公司毛利率将降至何水平，结合当前股价评估盈利预期下修风险。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "行业降价舆情提取",
+        "毛利率敏感性分析",
+        "盈利预期差建模",
+        "股价联动评估"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BYDDY与NIO最新毛利率",
+          "新闻提取的平均降价幅度",
+          "售价下调8%后的预测毛利率",
+          "盈利下修幅度",
+          "当前股价风险评估"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator",
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T12",
+      "query": "验证传统能源巨头高股息政策的财务可持续性。获取XOM与CVX最新季度FCF及每股派息金额。查阅OPEC+最新减产协议新闻及对WTI油价预期的影响。计算两家公司的FCF派息覆盖率(FCF/总派息)，结合当前油价中枢判断分红政策是否具备长期现金流支撑。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "自由现金流分析",
+        "股息覆盖率测算",
+        "大宗商品政策追踪",
+        "现金流可持续性评估"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "XOM与CVX季度FCF与派息",
+          "OPEC政策及油价预期新闻",
+          "FCF派息覆盖率数值",
+          "油价中枢与分红支撑度结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T13",
+      "query": "测算大型云厂商AI资本支出的投资回收期。获取MSFT与GOOG最新财报CapEx总额及AI业务收入指引。搜索近期大模型商业化落地进展研报摘要，提取预期年化增速。测算若CapEx维持25%复合增长，结合收入兑现速度推算投资回收期，对比两者P/E给出AI投资性价比排序。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "资本支出拆解",
+        "AI商业化增速预估",
+        "投资回收期计算",
+        "估值性价比对比"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "MSFT与GOOG最新CapEx及AI收入指引",
+          "商业化增速预期",
+          "投资回收期估算",
+          "当前P/E对比",
+          "AI投资性价比排名"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T14",
+      "query": "评估高通胀环境下的黄金资产对冲效能。获取美、印最新CPI数据。获取现货黄金美元报价及SPDR黄金ETF(GLD)最新净值。测算若实际利率因通胀粘性持续下行，基于历史相关性对金价的理论提振幅度。结合新兴市场汇率波动，给出跨境资金配置黄金的避险比例。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "通胀数据追踪",
+        "实际利率与金价逻辑",
+        "黄金ETF定价",
+        "宏观对冲比例建模"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美印最新CPI数据",
+          "黄金报价与GLD净值",
+          "通胀>3%假设下的金价提振测算",
+          "汇率波动考量",
+          "最佳避险配置比例"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T15",
+      "query": "捕捉FDA审批催化下的生物医药预期差。搜索近两周关于核心创新药获批或三期临床达标的行业新闻。获取礼来(LLY)与诺和诺德(NVO)最新营收增速与研发费用率。对比管线推进带来的收入弹性与当前股价隐含增长预期，使用计算器量化预期差幅度并判断套利窗口。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "医药审批事件追踪",
+        "研发营收结构分析",
+        "增长预期差量化",
+        "事件驱动套利"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "核心审批新闻摘要",
+          "LLY与NVO营收增速与研发占比",
+          "股价隐含增长预期",
+          "预期差计算结果",
+          "套利窗口期判断"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T16",
+      "query": "剖析消费疲软周期下零售巨头的库存去化效率。获取WMT与TGT最新财报中的期末库存总额与季度营业成本，计算存货周转天数。搜索近期消费者支出放缓及假日销售指引的新闻。结合当前股价与估值水平，评估谁的去库存能力更强并给出防御性配置权重。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "库存周转率测算",
+        "消费舆情分析",
+        "运营效率对比",
+        "防御策略制定"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "WMT与TGT库存与营业成本",
+          "存货周转天数",
+          "消费放缓新闻摘要",
+          "股价与估值匹配度",
+          "防御性配置建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "calculator",
+            "search_financial_news",
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T17",
+      "query": "定位全球半导体周期拐点。获取费城半导体指数(SOX)近一年价格区间，及台积电(TSM)与三星最新财报的产能利用率。搜索行业库存去化与成熟制程价格战的报道。计算产能利用率与行业平均库存偏离度，结合SOX技术位置预测未来6个月景气度方向。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "半导体周期跟踪",
+        "指数技术面分析",
+        "产能利用率建模",
+        "景气度拐点预测"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "SOX近一年波动区间",
+          "TSM与三星产能利用率",
+          "库存去化新闻要点",
+          "利用率与库存偏离度",
+          "6个月景气度预测方向"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T18",
+      "query": "量化IRA税收抵免延期对新能源企业财务模型的增益。搜索近一周关于IRA补贴延期传闻的政策摘要。获取FSLR与VWS最新自由现金流及资本结构。测算若ITC/PTC补贴税率上调3%，对未来三年项目NPV的增量贡献。结合负债率对比，推荐财务稳健性最优标的。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "清洁能源政策解读",
+        "现金流贴现建模",
+        "补贴敏感性分析",
+        "财务稳健性对比"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "IRA延期政策新闻摘要",
+          "FSLR与VWS现金流及负债率",
+          "税率上调3%的NPV增量测算",
+          "财务稳健性评估结论",
+          "最优标的推荐"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T19",
+      "query": "压力测试油价飙升对航空公司利润表的侵蚀。获取DAL与LHA最新财报的燃油成本占比及对冲覆盖比例。获取当前布伦特原油参考价。测算若油价单季上涨15%且无新增对冲，两家公司营业利润率将缩水多少百分点。结合当前股价表现给出航空股交易策略。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "燃油成本拆解",
+        "对冲合约覆盖评估",
+        "大宗商品压力测试",
+        "利润率敏感性建模"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "DAL与LHA燃油成本占比与对冲比例",
+          "布伦特原油参考价",
+          "油价上涨15%后的利润率缩水估算",
+          "对冲有效性评价",
+          "交易策略建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T20",
+      "query": "评估数字支付渗透对传统银行净息差(NIM)的长期冲击。搜索数字钱包与BNPL市场最新份额扩张数据。获取JPM与BAC最新净利息收入及生息资产规模，计算实际NIM。测算若数字支付分流导致生息资产增速下降1.5%，对年度NII的绝对影响，结合估值判断传统银行是否被错杀。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "金融科技趋势追踪",
+        "净息差测算",
+        "资产分流模型",
+        "错杀价值判断"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "数字支付/BNPL份额数据摘要",
+          "JPM与BAC净利息收入与生息资产",
+          "实际NIM数值",
+          "增速下降1.5%的NII影响额",
+          "错杀价值评估结论"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      }
+    }
+  ]
+}

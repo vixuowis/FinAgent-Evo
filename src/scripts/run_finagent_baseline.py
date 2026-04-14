@@ -9,13 +9,13 @@ from src.agent import agent
 load_dotenv()
 
 async def run_finagent():
-    input_path = "benchmarks/multi_skill_tasks_sample.json"
-    output_path = "benchmarks/finagent_results.json"
+    input_path = "benchmarks/complex_tasks_real_api.json"
+    output_path = "benchmarks/finagent_real_api_results.json"
     
     with open(input_path, "r", encoding="utf-8") as f:
         data = json.load(f)
         
-    tasks = data.get("tasks", [])
+    tasks = data.get("tasks", [])[:3]
     results = []
     
     print(f"Starting FinAgent-Evo evaluation on {len(tasks)} tasks...")

@@ -35,13 +35,13 @@ tools = [search_tool, calculator]
 agent_executor = create_deep_agent(model=llm, tools=tools, system_prompt="You are a helpful AI assistant. Use the tools provided to solve the user's tasks. If you don't know the answer, use the search tool.")
 
 async def run_baseline():
-    input_path = "benchmarks/multi_skill_tasks_sample.json"
-    output_path = "benchmarks/react_baseline_results.json"
+    input_path = "benchmarks/complex_tasks_real_api.json"
+    output_path = "benchmarks/react_real_api_results.json"
     
     with open(input_path, "r", encoding="utf-8") as f:
         data = json.load(f)
         
-    tasks = data.get("tasks", [])
+    tasks = data.get("tasks", [])[:3]
     results = []
     
     print(f"Starting ReAct baseline evaluation on {len(tasks)} tasks...")
