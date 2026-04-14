@@ -41,7 +41,7 @@ async def run_baseline():
     with open(input_path, "r", encoding="utf-8") as f:
         data = json.load(f)
         
-    tasks = data.get("tasks", [])[:3]
+    tasks = data.get("tasks", [])[3:]
     results = []
     
     print(f"Starting ReAct baseline evaluation on {len(tasks)} tasks...")
@@ -95,7 +95,7 @@ async def run_baseline():
                 "error": str(e)
             })
             
-    with open(output_path, "w", encoding="utf-8") as f:
+    with open(output_path, "a", encoding="utf-8") as f:
         json.dump({"results": results}, f, indent=2, ensure_ascii=False)
         
     print(f"\nBaseline evaluation completed. Results saved to {output_path}")

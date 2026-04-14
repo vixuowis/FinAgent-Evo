@@ -15,7 +15,7 @@ async def run_finagent():
     with open(input_path, "r", encoding="utf-8") as f:
         data = json.load(f)
         
-    tasks = data.get("tasks", [])[:3]
+    tasks = data.get("tasks", [])[3:]
     results = []
     
     print(f"Starting FinAgent-Evo evaluation on {len(tasks)} tasks...")
@@ -72,7 +72,7 @@ async def run_finagent():
                 "error": str(e)
             })
             
-    with open(output_path, "w", encoding="utf-8") as f:
+    with open(output_path, "a", encoding="utf-8") as f:
         json.dump({"results": results}, f, indent=2, ensure_ascii=False)
         
     print(f"\nFinAgent evaluation completed. Results saved to {output_path}")
