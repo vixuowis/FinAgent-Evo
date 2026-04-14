@@ -55,11 +55,11 @@ Agent Trajectory:
 ])
 
 async def main():
-    with open("benchmarks/multi_skill_tasks_sample.json", "r", encoding="utf-8") as f:
+    with open("benchmarks/complex_tasks_real_api.json", "r", encoding="utf-8") as f:
         tasks = json.load(f)["tasks"]
         
     try:
-        with open("benchmarks/finagent_results.json", "r", encoding="utf-8") as f:
+        with open("benchmarks/finagent_real_api_results_merged.json", "r", encoding="utf-8") as f:
             results = json.load(f)["results"]
     except FileNotFoundError:
         print("Results file not found. Run the baseline first.")
@@ -98,7 +98,7 @@ async def main():
     avg_score = total_score / len(evaluations) if evaluations else 0
     print(f"\\nAverage Score: {avg_score:.2f}/100")
     
-    with open("benchmarks/finagent_eval.json", "w", encoding="utf-8") as f:
+    with open("benchmarks/finagent_real_api_eval.json", "w", encoding="utf-8") as f:
         json.dump({
             "average_score": avg_score,
             "evaluations": evaluations
