@@ -1,0 +1,419 @@
+{
+  "tasks": [
+    {
+      "task_id": "T001",
+      "query": "请评估苹果公司（AAPL）当前的股票估值是否相对于无风险利率具有吸引力。首先获取AAPL的最新股价和最近年报的净利润及总股本，计算其市盈率（P/E）。然后查询当前美国10年期国债收益率。最后计算AAPL的盈利收益率（1/P/E）与10年期美债收益率的利差（以基点为单位），并判断当前是否具备超额收益潜力。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "估值分析",
+        "宏观数据对比",
+        "财务计算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新股价",
+          "净利润",
+          "总股本",
+          "市盈率",
+          "10年期美债收益率",
+          "盈利收益率",
+          "利差(基点)",
+          "投资判断结论"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T002",
+      "query": "针对特斯拉（TSLA），请先检索其过去30天的财经新闻，判断其核心产能指引是扩张还是收缩。随后获取其最近年度自由现金流（FCF）和资产负债数据。结合当前美国联邦基金利率作为贴现率假设，运行DCF模型计算内在价值。最后获取TSLA当前股价，计算内在价值相对当前股价的溢价或折价百分比。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "新闻情绪提取",
+        "现金流建模",
+        "DCF估值",
+        "跨数据验证"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "新闻核心基调",
+          "最新年度FCF",
+          "贴现率假设",
+          "DCF内在价值",
+          "当前股价",
+          "溢价/折价比例"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T003",
+      "query": "作为欧洲基金的投资组合经理，我需要比较比特币（BTC）和英伟达（NVDA）的当前市值规模。请先获取BTC价格和NVDA股价及总股本，计算两者当前市值。接着获取当前美元兑欧元（USD/EUR）的即期汇率，将两者市值换算为欧元。最后计算NVDA市值相对于BTC市值的倍数，并基于该比例评估科技股与加密资产的相对资金拥挤度。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "跨资产估值",
+        "汇率换算",
+        "市值计算",
+        "资产配置分析"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC价格",
+          "NVDA股价",
+          "NVDA总股本",
+          "BTC市值",
+          "NVDA市值",
+          "USD/EUR汇率",
+          "欧元计价市值",
+          "NVDA/BTC市值倍数",
+          "资金拥挤度评估"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_stock_price"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T004",
+      "query": "请分析美国通胀对新兴市场资产的影响。首先获取最新的美国CPI同比数据。基于该数据，查询当前美元兑巴西雷亚尔（USD/BRL）的即期汇率。同时获取巴西石油公司（PBR）的当前股价及其最近季度以雷亚尔计价的净利润。最后，将PBR的净利润按当前汇率折算为美元，计算其美元口径的市盈率（P/E），并评估若CPI超预期可能对其美元估值产生的压力。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观传导分析",
+        "跨境财务折算",
+        "估值建模",
+        "风险压力测试"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国CPI同比数据",
+          "USD/BRL汇率",
+          "PBR最新季度净利润",
+          "PBR当前股价",
+          "美元计价净利润",
+          "美元P/E",
+          "宏观压力评估"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T005",
+      "query": "针对房地产投资信托基金（REITs）板块，请以Prologis（PLD）为例进行利差分析。首先获取PLD的最新股价及最近年度分红总额与总股本，计算其当前股息率。随后，查询当前美国30年期固定抵押贷款利率。最后计算股息率与30年期房贷利率的利差。结合近期地产行业新闻，判断该资产是否面临资金成本倒挂风险，并给出定性结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "股息率计算",
+        "宏观利差分析",
+        "新闻风险研判"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "PLD股价",
+          "年度每股分红",
+          "股息率",
+          "30年期房贷利率",
+          "利差",
+          "行业新闻摘要",
+          "资金成本倒挂风险评估"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T006",
+      "query": "评估美国航空（AAL）在高利率与油价波动环境下的盈利韧性。请获取AAL当前股价及最新年度财务报表，提取其总营收、航空燃油成本及稀释后EPS，计算其当前营业利润率。接着查询当前联邦基金目标利率，并检索近30天关于航空票价调整或燃油对冲的新闻。假设燃油价格导致燃油成本上升15%，且票价无法同步转嫁，请测算其对EPS的潜在冲击幅度，并给出评级建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "财务比率分析",
+        "宏观利率环境",
+        "敏感性测算",
+        "事件驱动分析"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "AAL股价",
+          "总营收",
+          "燃油成本",
+          "营业利润率",
+          "联邦基金利率",
+          "新闻要点",
+          "成本冲击后EPS变动",
+          "投资评级建议"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T007",
+      "query": "请对英伟达（NVDA）和博通（AVGO）进行相对估值与潜在并购套利空间分析。首先获取两家公司的最新股价。通过财务报表获取AVGO的最新净利润，计算其当前市盈率。检索近30天关于NVDA与AVGO战略合作或并购的财经新闻，提取市场预期的潜在收购溢价率（若无明确数字，默认使用30%行业基准）。计算NVDA若以该溢价收购AVGO的理论目标价。最后查询当前SOFR利率，计算年化持有成本与套利利差。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "相对估值",
+        "并购溢价测算",
+        "资金成本计算",
+        "套利策略"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "NVDA股价",
+          "AVGO股价",
+          "AVGO市盈率",
+          "新闻提及溢价率",
+          "理论目标价",
+          "SOFR利率",
+          "年化套利收益率"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T008",
+      "query": "分析微软（MSFT）云业务增长与宏观利率的关联性。请获取MSFT最新财报中的云计算分部收入及总营收，计算该业务占比。查询当前美国10年期国债收益率和CPI数据。搜索近期关于AI数据中心资本支出或云定价策略的新闻。基于获取的数据，构建简单的营收弹性模型：假设云业务增速与10年期美债收益率呈负相关，结合新闻情绪调整预期增速，并折算为对整体EPS的贡献增量（以美元计）。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "分部财务拆解",
+        "宏观相关性建模",
+        "新闻催化分析",
+        "收益预测"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "云业务收入及占比",
+          "10年期美债收益率",
+          "CPI",
+          "新闻核心观点",
+          "预测云收入增速",
+          "EPS贡献增量"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T009",
+      "query": "计算辉瑞（PFE）未来一年的预期总回报。获取当前股价、最新年度每股股息及股息支付率。获取当前美国10年期国债收益率作为无风险基准。搜索关于FDA新药审批或仿制药专利到期的最新新闻，调整预期资本利得。使用计算器计算预期股息收益率，叠加资本利得预期得到总回报率。最后对比无风险利率，计算超额收益并评估当前估值修复空间。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "总回报测算",
+        "风险溢价评估",
+        "事件驱动调整",
+        "估值修复分析"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "PFE当前股价",
+          "每股股息",
+          "10年期美债收益率",
+          "新闻倾向及资本利得假设",
+          "预期股息率",
+          "预期总回报率",
+          "超额收益"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T010",
+      "query": "作为宏观对冲基金经理，请对比以太坊（ETH）质押收益与美国短期国债的性价比。首先获取ETH当前美元价格。检索近两周关于ETH质押率或网络APY的财经新闻，提取当前市场平均质押年化收益率。查询当前美国2年期国债收益率。计算两者利差。假设ETH历史年化波动率为国债的40倍，使用计算器计算经波动率惩罚后的风险调整后收益。最后结合近期美联储政策声明或新闻，判断当前是否适合增持加密固收资产。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "跨资产收益对比",
+        "风险调整测算",
+        "监管政策评估",
+        "资产配置建议"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "ETH价格",
+          "新闻提取的质押APY",
+          "2年期美债收益率",
+          "名义利差",
+          "风险调整后收益",
+          "政策新闻摘要",
+          "配置建议"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_crypto_price"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    }
+  ]
+}
