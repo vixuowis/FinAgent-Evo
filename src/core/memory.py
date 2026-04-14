@@ -1,4 +1,5 @@
 from typing import List, Optional
+from loguru import logger
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.messages import HumanMessage, SystemMessage
 from src.core.types import Experience, MemoryEntry
@@ -28,10 +29,10 @@ class HierarchicalMemory:
     async def _abstract_procedural_memory(self):
         """Uses the meta-model to extract general rules from episodic memories."""
         if not self.meta_model:
-            print("No meta-model provided for memory abstraction.")
+            logger.warning("No meta-model provided for memory abstraction.")
             return
 
-        print("Abstracting episodic memory into procedural rules...")
+        logger.info("Abstracting episodic memory into procedural rules...")
         
         recent_episodes = [f"Task: {e.task}\nOutcome: {e.outcome}\nLessons: {e.lessons}" for e in self.episodic_memory[-5:]]
         episodes_str = "\n---\n".join(recent_episodes)

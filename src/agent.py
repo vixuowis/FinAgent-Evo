@@ -1,13 +1,39 @@
 import os
+import json
 from datetime import datetime
 from typing import Optional, Dict, Any
 from dotenv import load_dotenv
+from loguru import logger
 from langchain_openai import ChatOpenAI
 from langchain_tavily import TavilySearch
 from langchain_experimental.utilities import PythonREPL
 from langchain_core.tools import tool
 from deepagents import create_deep_agent
 from langgraph.checkpoint.memory import MemorySaver
+
+# --- QVeris Shell Tools for Orchestration ---
+@tool
+async def qveris_discover(query: str) -> str:
+    """
+    Discover available remote tools in the QVeris marketplace based on a natural language query.
+    Use this to find financial data APIs, technical indicators, or alternative data sources.
+    """
+    return "QVeris Discover called. (This tool will be intercepted by the Orchestrator for remote call)"
+
+@tool
+async def qveris_inspect(tool_ids: list) -> str:
+    """
+    Inspect specific remote tools in QVeris to see their parameters, description, and usage examples.
+    """
+    return "QVeris Inspect called. (This tool will be intercepted by the Orchestrator for remote call)"
+
+@tool
+async def qveris_call(tool_id: str, search_id: str, params: dict) -> str:
+    """
+    Execute a remote tool from QVeris with the provided parameters.
+    Requires a tool_id and search_id from a previous discover call.
+    """
+    return "QVeris Call executed. (This tool will be intercepted by the Orchestrator for remote call)"
 
 from src.core.types import SkillGenotype, SkillCategory, ModelTier, Experience
 from src.core.skill import Skill, SkillLibrary
@@ -19,19 +45,38 @@ from src.core.prompts import (
     REPRODUCIBILITY_INSTRUCTIONS,
     EVOLUTION_INSTRUCTIONS
 )
+from src.core.lean_prompts import (
+    LEAN_RESEARCH_WORKFLOW_INSTRUCTIONS,
+    LEAN_EVOLUTION_INSTRUCTIONS
+)
 
 # Load environment variables
 load_dotenv()
 
 # --- Agent Creation ---
 
-model = ChatOpenAI(
-    model="glm-5",
-    api_key=os.getenv("DASHSCOPE_API_KEY"),
-    base_url="https://coding.dashscope.aliyuncs.com/v1",
-    timeout=600,  # Increase timeout to 10 minutes for deep research
-    max_retries=5, # Increase retries for unstable network
-)
+llm_provider = os.getenv("LLM_PROVIDER", "dashscope").strip().lower()
+
+if llm_provider == "maas":
+    maas_api_key = os.getenv("MAAS_API_KEY")
+    maas_base_url = os.getenv("MAAS_BASE_URL", "https://api.modelarts-maas.com/openai/v1")
+    model = ChatOpenAI(
+        model=os.getenv("MAAS_MODEL", "glm-5.1"),
+        api_key=maas_api_key,
+        base_url=maas_base_url,
+        timeout=600,
+        max_retries=5,
+        temperature=0.6,
+    )
+else:
+    model = ChatOpenAI(
+        model=os.getenv("DASHSCOPE_MODEL", "qwen3.6-plus"),
+        api_key=os.getenv("DASHSCOPE_API_KEY"),
+        base_url=os.getenv("DASHSCOPE_BASE_URL", "https://coding.dashscope.aliyuncs.com/v1"),
+        timeout=600,
+        max_retries=5,
+        temperature=0.6,
+    )
 
 # --- Initialize Core Components ---
 skill_library = SkillLibrary()
@@ -107,12 +152,30 @@ async def evolve_skill(skill_id: str, feedback: str) -> str:
 @tool
 async def invoke_skill(skill_id: str, input: str, params: Optional[Dict[str, Any]] = None) -> str:
     """
-    Invokes a specialized skill from the library by its ID.
+    Invokes a specialized skill from the library or a built-in tool by its ID.
     This will execute the skill's specific analysis logic using the LLM.
     """
+    # 1. Check if it's a built-in tool first
+    if skill_id == "python_interpreter":
+        return python_interpreter.run(input)
+    if skill_id == "tavily_search":
+        return tavily_search.run(input)
+    if skill_id == "qveris_discover":
+        return await qveris_discover.ainvoke({"query": input})
+    if skill_id == "qveris_inspect":
+        return await qveris_inspect.ainvoke({"tool_ids": [input]})
+    if skill_id == "qveris_call":
+        # In this context, we assume the orchestrator passed a JSON string as input
+        try:
+            call_params = json.loads(input)
+            return await qveris_call.ainvoke(call_params)
+        except:
+            return "Error: qveris_call requires a JSON string as input with 'tool_id', 'search_id', and 'params'."
+    
+    # 2. Check if it's a skill in the library
     skill = skill_library.get_skill(skill_id)
     if not skill:
-        return f"Skill {skill_id} not found in the library."
+        return f"Skill or Tool {skill_id} not found."
     
     # Execute the skill using the meta_model and the prompt_chromosome
     from langchain_core.messages import SystemMessage, HumanMessage
@@ -129,7 +192,54 @@ async def invoke_skill(skill_id: str, input: str, params: Optional[Dict[str, Any
         return f"Error executing skill {skill_id}: {str(e)}"
 
 @tool
-async def multi_skill_orchestrator(complex_task: str) -> str:
+async def meta_evolution_orchestrator(analysis_logs: str, performance_delta: float) -> str:
+    """
+    Orchestrate the co-evolution of analysis and evolution skill chains.
+    - analysis_logs: Detailed execution trace of the analysis chain.
+    - performance_delta: Change in Alpha/SR after the last iteration.
+    """
+    logger.info(f"Starting Meta-Evolutionary Reflection (Delta: {performance_delta:.4f})")
+    
+    evo_chain = []
+    
+    # 1. Self-Reflection Step
+    reflection_task = f"Evaluate previous evolution effectiveness. Delta: {performance_delta}"
+    evo_chain.append({"step": 1, "skill_id": "meta_reflection", "action": "Analyzing Delta"})
+    
+    # 2. Trigger mutation if needed
+    if performance_delta < 0:
+        feedback = "The previous evolution made the agent too conservative. Aggressiveness must be increased."
+        res = await evolve_skill.ainvoke({
+            "skill_id": "strategic_decision_making", 
+            "feedback": feedback
+        })
+        evo_chain.append({"step": 2, "skill_id": "evolve_skill", "action": "Mutating Strategy", "result": res})
+    else:
+        evo_chain.append({"step": 2, "skill_id": "none", "action": "Maintain Strategy", "result": "Performance stable or positive."})
+
+    # 3. Extract Experience
+    exp_res = await extract_experience.ainvoke({
+        "task": "Daily Trading Meta-Evolution",
+        "outcome": f"Delta {performance_delta:.4f}",
+        "importance": abs(performance_delta) * 10
+    })
+    evo_chain.append({"step": 3, "skill_id": "extract_experience", "action": "Archiving Lessons", "result": exp_res})
+
+    # Format the chain for display
+    chain_str = " -> ".join([f"{item['skill_id']}({item['action']})" for item in evo_chain])
+    
+    summary = f"""
+    ## Evolution Skill Call Chain
+    ⛓️ {chain_str}
+    
+    ### Details:
+    - Delta: {performance_delta:.4f}
+    - Status: {'Mutation Triggered' if performance_delta < 0 else 'Stability Maintained'}
+    """
+    return summary
+
+@tool
+async def multi_skill_orchestrator(task: str) -> str:
     """
     A high-level orchestrator that plans and executes a sequence of skills to solve a hard task.
     It uses procedural memory (Rules of Thumb) to guide the planning process.
@@ -154,7 +264,7 @@ async def multi_skill_orchestrator(complex_task: str) -> str:
     Your goal is to solve the complex financial task below by orchestrating specialized skills.
     
     ### Task:
-    {complex_task}
+    {task}
     
     ### Available Skills:
     {skills_str}
@@ -167,7 +277,8 @@ async def multi_skill_orchestrator(complex_task: str) -> str:
     - **DATA VERIFICATION**: Every claim must be backed by the output of a skill (e.g., fetch_market_data for prices).
     - **PYTHON FOR MATH**: Use 'python_interpreter' for ANY calculation (drawdown, correlation, etc.). Do not do math in your head.
     - **DEPENDENCY ORDER**: Order skills logically (e.g., fetch data before analysis).
-    - **SYNTHESIS RIGOR**: The final step MUST use 'strategic_decision_making' to unify all findings.
+211→    - **SYNTHESIS RIGOR**: The final step MUST use 'strategic_decision_making' to unify all findings.
+212→    - **REMOTE TOOLS**: If internal tools/skills are insufficient, use 'qveris_discover' to find specialized remote tools for specific tasks.
     
     Output your plan as a JSON list of steps. 
     Format: [{{"step": 1, "skill_id": "...", "reasoning": "...", "input": "..."}}]
@@ -195,7 +306,7 @@ async def multi_skill_orchestrator(complex_task: str) -> str:
             step_input = step.get("input")
             reasoning = step.get("reasoning", "")
             
-            print(f"Orchestrator: Step {step.get('step')} - {reasoning} (Using {skill_id})")
+            logger.info(f"Orchestrator: Step {step.get('step')} - {reasoning} (Using {skill_id})")
             
             # Enrich input with previous context
             enriched_input = f"Task: {step_input}\nPrevious Context: {context_accumulator[:2000]}"
@@ -220,7 +331,7 @@ async def multi_skill_orchestrator(complex_task: str) -> str:
         logs_str = "\n\n".join(results)
         synthesis_prompt = f"""
         You are the Senior Financial Analyst for FinAgent-Evo.
-        Task: {complex_task}
+        Task: {task}
         
         Detailed Execution Logs (VERIFIED):
         {logs_str}
@@ -238,9 +349,10 @@ async def multi_skill_orchestrator(complex_task: str) -> str:
         ])
         
         # Append Appendix for transparency
-        appendix = "\n\n---\n### 🛠 Execution Appendix (Transparency Logs)\n"
+        chain_str = " -> ".join([f"{log['skill_id']}" for log in execution_logs])
+        appendix = f"\n\n---\n## Execution Skill Call Chain\n⛓️ {chain_str}\n\n### 🛠 Execution Logs\n"
         for log in execution_logs:
-            appendix += f"- **Step {log['step']} ({log['skill_id']})**: Executed with input '{log['input'][:50]}...'\n"
+            appendix += f"- **Step {log['step']} ({log['skill_id']})**: {log['input'][:100]}...\n"
             
         return final_res.content + appendix
         
@@ -254,9 +366,16 @@ def list_skills() -> str:
     """
     skills = skill_library.get_all_skills()
     info = []
+    
+    # Built-in Tools
+    info.append("- python_interpreter (TOOL): Execute code for calculations. [Built-in]")
+    info.append("- tavily_search (TOOL): Search for real-time news and data. [Built-in]")
+    
+    # Library Skills
     for s in skills:
-        info.append(f"- {s.genotype.skill_id} ({s.genotype.category}): {s.genotype.prompt_chromosome[:50]}... [Fitness: {s.genotype.fitness_score:.2f}]")
-    return "Available Skills:\n" + "\n".join(info)
+        info.append(f"- {s.genotype.skill_id} ({s.genotype.category}): {s.genotype.prompt_chromosome[:100]}... [Fitness: {s.genotype.fitness_score:.2f}]")
+    
+    return "Available Skills and Tools:\n" + "\n".join(info)
 
 @tool
 def list_memory_rules() -> str:
@@ -311,38 +430,87 @@ def register_initial_skills():
         skill_id="technical_analysis",
         category=SkillCategory.ANALYSIS,
         llm_config={"model_tier": ModelTier.STANDARD, "temperature": 0.1, "max_tokens": 1000},
-        prompt_chromosome="You are a quantitative technical analyst. Use price and volume data to identify key support/resistance levels and trend indicators (RSI, MACD).",
+        prompt_chromosome="""You are a quantitative technical analyst. 
+        Analyze the provided price and volume data.
+        1. Calculate SMA-5 (5-day Simple Moving Average) and compare it to the current price.
+        2. Calculate RSI-5 (5-day Relative Strength Index).
+        3. Identify trend strength: Strong Bullish, Bullish, Neutral, Bearish, Strong Bearish.
+        4. Provide clear Support and Resistance levels based on recent price action.
+        """,
         tool_deps=["fetch_market_data"],
-        input_schema={"asset": "string", "data": "string"},
-        output_schema={"signal": "string", "levels": "dict"}
+        input_schema={"price_history": "list", "volume_history": "list"},
+        output_schema={"sma_5": "number", "rsi_5": "number", "trend": "string", "levels": "dict"}
     )
     skill_library.add_skill(Skill(tech_analysis_genotype))
+
+    python_genotype = SkillGenotype(
+        skill_id="python_interpreter",
+        category=SkillCategory.EXECUTION,
+        llm_config={"model_tier": ModelTier.STANDARD, "temperature": 0.0, "max_tokens": 1000},
+        prompt_chromosome="""You are a Python Interpreter. Execute the provided code and return the output. 
+        Use this for complex calculations or data transformations that the LLM cannot do reliably.
+        Output ONLY the result of the code execution.
+        """,
+        tool_deps=[],
+        input_schema={"code": "string"},
+        output_schema={"output": "string"}
+    )
+    skill_library.add_skill(Skill(python_genotype))
 
     decision_making_genotype = SkillGenotype(
         skill_id="strategic_decision_making",
         category=SkillCategory.ANALYSIS,
         llm_config={"model_tier": ModelTier.HEAVY, "temperature": 0.0, "max_tokens": 2000},
-        prompt_chromosome="""You are a Senior Investment Committee Member. Your role is to synthesize multi-dimensional data (technical, fundamental, sentiment, macro) to provide high-conviction investment decisions.
-        1. Evaluate risk-reward ratios.
-        2. Consider downside protection.
-        3. Align with specific investment horizons (e.g., 6 months).
-        4. Output a clear BUY/HOLD/SELL recommendation with a target price and stop-loss.""",
+        prompt_chromosome="""You are an Expert Alpha-Seeking Quant Trader. Your goal is to MAXIMIZE Alpha while maintaining a high Sharpe Ratio.
+        
+        ### STRATEGY CORE:
+        1. **Trend is Friend**: If price is above SMA-5 and RSI-5 < 70, MAINTAIN 100% exposure. Only sell if trend breaks.
+        2. **Volatility Scaling**: In high volatility, scale exposure to 50-70% if unsure, but stay at 100% if the trend is strong.
+        3. **Sentiment as Lead**: If News Sentiment is strongly positive (>0.7), anticipate a breakout and increase exposure BEFORE it happens.
+        4. **Drawdown Protection**: If price drops >3% from recent peak AND RSI < 30, it might be a crash. Exit immediately (0% exposure).
+        
+        ### ANALYSIS PILLARS:
+        - **Momentum & Trend**: Analyze SMA distance and RSI slope.
+        - **Sentiment Divergence**: Is news positive while price is flat? (Bullish divergence).
+        - **Volume Confirmation**: (If available) Use volume to confirm trend strength.
+        
+        ### OUTPUT FORMAT (MANDATORY):
+        - Reasoning: <analysis_of_trend_and_sentiment>
+        - Target Exposure: <X>% (0-100)
+        - Final Recommendation: <BUY/SELL/HOLD>
+        """,
         tool_deps=["technical_analysis", "analyze_sentiment"],
         input_schema={"context": "string", "analysis_results": "string"},
-        output_schema={"recommendation": "string", "target_price": "number", "stop_loss": "number"}
+        output_schema={"reasoning": "string", "target_exposure": "number", "recommendation": "string"}
     )
     skill_library.add_skill(Skill(decision_making_genotype))
+
+    # --- QVeris Skills ---
+    qveris_genotype = SkillGenotype(
+        skill_id="qveris_remote_execution",
+        category=SkillCategory.EXECUTION,
+        llm_config={"model_tier": ModelTier.STANDARD, "temperature": 0.1, "max_tokens": 1000},
+        prompt_chromosome="""You are a QVeris Bridge. You can discover, inspect, and call remote financial tools.
+        1. Use 'qveris_discover' to find new tools for a query.
+        2. Use 'qveris_inspect' to understand how to use a tool.
+        3. Use 'qveris_call' to execute the tool.
+        
+        Always provide the tool_id and search_id for execution.
+        """,
+        tool_deps=[],
+        input_schema={"query": "string", "tool_id": "string", "params": "dict"},
+        output_schema={"result": "string"}
+    )
+    skill_library.add_skill(Skill(qveris_genotype))
 
 register_initial_skills()
 
 # Convert library skills to tools
-skill_tools = [s.to_tool() for s in skill_library.get_all_skills()]
+skill_tools = [s.to_tool(model=model) for s in skill_library.get_all_skills()]
 
 system_prompt = "\n".join([
-    RESEARCH_WORKFLOW_INSTRUCTIONS,
-    SUBAGENT_DELEGATION_INSTRUCTIONS,
-    REPRODUCIBILITY_INSTRUCTIONS,
-    EVOLUTION_INSTRUCTIONS
+    LEAN_RESEARCH_WORKFLOW_INSTRUCTIONS,
+    LEAN_EVOLUTION_INSTRUCTIONS
 ])
 
 # Create the deep agent
@@ -355,10 +523,14 @@ agent = create_deep_agent(
         extract_experience,
         evolve_skill,
         invoke_skill,
+        meta_evolution_orchestrator,
         multi_skill_orchestrator,
         list_skills,
         list_memory_rules,
         optimize_skill_topology,
+        qveris_discover,
+        qveris_inspect,
+        qveris_call,
         *skill_tools
     ],
     system_prompt=system_prompt,
