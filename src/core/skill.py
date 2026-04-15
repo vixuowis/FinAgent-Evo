@@ -6,20 +6,35 @@ class Skill:
     def __init__(self, genotype: SkillGenotype):
         self.genotype = genotype
 
-    def to_tool(self):
+    def to_tool(self, model=None):
         skill_id = self.genotype.skill_id
         prompt_chromosome = self.genotype.prompt_chromosome
         category = self.genotype.category
 
         @tool
-        def skill_tool(input: str, params: Optional[Dict[str, Any]] = None) -> str:
+        async def skill_tool(input: str, params: Optional[Dict[str, Any]] = None) -> str:
             """
             Executes a specialized skill.
             """
-            return f"Executing skill {skill_id} with input: {input}. Prompt context: {prompt_chromosome[:50]}..."
+            if model is None:
+                return f"[MOCK] Executing skill {skill_id} with input: {input}."
+            
+            from langchain_core.messages import SystemMessage, HumanMessage
+            import json
+            
+            system_msg = SystemMessage(content=prompt_chromosome)
+            user_content = f"Input: {input}"
+            if params:
+                user_content += f"\nParameters: {json.dumps(params)}"
+                
+            try:
+                response = await model.ainvoke([system_msg, HumanMessage(content=user_content)])
+                return f"[Skill {skill_id} Result]\n{response.content}"
+            except Exception as e:
+                return f"Error executing skill {skill_id}: {str(e)}"
         
         skill_tool.name = skill_id
-        skill_tool.description = f"Executes a specialized skill of category {category}. Description: {prompt_chromosome[:100]}..."
+        skill_tool.description = f"Executes a specialized skill of category {category}. Use this for: {prompt_chromosome[:150]}..."
         
         return skill_tool
 

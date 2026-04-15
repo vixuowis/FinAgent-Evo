@@ -10,9 +10,13 @@ dependencies = [
     "langchain-tavily>=0.2.17",
     "langchain-core>=1.2.22",
     "langchain-openai>=1.1.12",
+    "langchain-experimental>=0.3.4",
     "langgraph-cli[inmem]>=0.4.19",
     "pydantic>=2.12.5",
     "python-dotenv>=1.2.2",
     "tavily-python>=0.7.23",
     "zstandard>=0.25.0",
+    "loguru>=0.7.2",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
 ]
