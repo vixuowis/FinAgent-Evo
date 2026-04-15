@@ -44,7 +44,7 @@ Based on our multi-skill evaluation with real-time data fetching, the proposed d
 | Framework | Average Score (/100) | Success Rate | Failure Modes |
 |-----------|----------------------|--------------|----------------|
 | **ReAct Baseline** | 0.0 | 0% | Infinite loops, Max recursion limit (15) reached, hallucinated intermediate math. |
-| **FinAgent-Evo** | **90.5** | **100%** | Minor points lost on verbosity or missing a sub-metric, but sequence and math were robust. |
+| **FinAgent-Evo** | **71.25** | **85% (17/20)** | 3 tasks failed due to Python format-string generation errors; partial metric omissions in some answers. |
 
 ### 3.2 Qualitative Analysis
 **ReAct Baseline Failure Modes:**
