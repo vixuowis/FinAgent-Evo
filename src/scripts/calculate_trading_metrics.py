@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 def calculate_cumulative_return(returns):
     """Calculate the cumulative return of a series of returns."""
@@ -40,3 +41,7 @@ def calculate_all_metrics(returns, risk_free_rate=0.02, trading_days=252):
         "av": calculate_annualized_volatility(rets, trading_days),
         "mdd": calculate_drawdown(rets)
     }
+
+# Example usage in PythonREPL:
+# from src.scripts.calculate_trading_metrics import calculate_drawdown
+# drawdown = calculate_drawdown(np.random.normal(0.001, 0.02, 252))

@@ -1,5 +1,7 @@
 import os
 import json
+import urllib.parse
+import requests
 from datetime import datetime
 from typing import Optional, Dict, Any
 from dotenv import load_dotenv
@@ -34,7 +36,6 @@ async def qveris_call(tool_id: str, search_id: str, params: dict) -> str:
     Requires a tool_id and search_id from a previous discover call.
     """
     return "QVeris Call executed. (This tool will be intercepted by the Orchestrator for remote call)"
-
 from src.core.types import SkillGenotype, SkillCategory, ModelTier, Experience
 from src.core.skill import Skill, SkillLibrary
 from src.core.memory import HierarchicalMemory
@@ -71,7 +72,7 @@ if llm_provider == "maas":
 else:
     model = ChatOpenAI(
         model=os.getenv("DASHSCOPE_MODEL", "qwen3.6-plus"),
-        api_key=os.getenv("DASHSCOPE_API_KEY"),
+        api_key=os.getenv("DASHSCOPE_API_KEY", "dummy"),
         base_url=os.getenv("DASHSCOPE_BASE_URL", "https://coding.dashscope.aliyuncs.com/v1"),
         timeout=600,
         max_retries=5,
@@ -83,6 +84,62 @@ skill_library = SkillLibrary()
 memory = HierarchicalMemory(meta_model=model)
 evolution_engine = EvolutionEngine(meta_model=model)
 
+QVERIS_API_KEY = os.getenv("QVERIS_API_KEY")
+QVERIS_BASE_URL = "https://qveris.ai/api/v1"
+
+def execute_qveris_tool(tool_id: str, parameters: Dict[str, Any]) -> str:
+    url = f"{QVERIS_BASE_URL}/tools/execute?tool_id={urllib.parse.quote(tool_id)}"
+    headers = {
+        "Authorization": f"Bearer {QVERIS_API_KEY}",
+        "Content-Type": "application/json"
+    }
+    payload = {"parameters": parameters, "max_response_size": 20480}
+    try:
+        response = requests.post(url, headers=headers, json=payload, timeout=20)
+        if response.status_code == 200:
+            res_json = response.json()
+            if res_json.get("success"):
+                data = res_json.get("result", {}).get("data", res_json.get("result", {}))
+                return json.dumps(data, ensure_ascii=False)[:2000]
+            else:
+                return f"QVeris Execution failed: {res_json.get('error_message')}"
+        return f"HTTP {response.status_code}: {response.text}"
+    except Exception as e:
+        return f"Request failed: {str(e)}"
+
+# --- Specialized QVeris Tools ---
+
+@tool
+def get_stock_price(symbol: str) -> str:
+    """Get real-time stock price and basic quote for a specific ticker symbol (e.g., 'AAPL')."""
+    return execute_qveris_tool("finnhub_io_api.stock.quote", {"symbol": symbol})
+
+@tool
+def get_financial_statements(symbol: str) -> str:
+    """Get the latest annual income statement data for a specific ticker symbol (e.g., 'AAPL')."""
+    return execute_qveris_tool("financialmodelingprep.stable.incomestatement.retrieve.v1.dd6d583f", {"symbol": symbol})
+
+@tool
+def get_exchange_rate(pair: str) -> str:
+    """Get real-time forex exchange rate for a specific currency pair (e.g., 'EUR/USD')."""
+    return execute_qveris_tool("twelvedata.exchangerate.retrieve.v1.9eeb3b0d", {"symbol": pair})
+
+@tool
+def get_macro_data(indicator: str) -> str:
+    """Get US macroeconomic data. Valid indicators: 'CPI', 'FEDERAL_FUNDS_RATE', 'TREASURY_YIELD_10Y'."""
+    indicator = indicator.upper()
+    if indicator == "CPI":
+        return execute_qveris_tool("alphavantage.economic.cpi.retrieve.v1.7aca3c4a", {"interval": "monthly"})
+    elif indicator == "FEDERAL_FUNDS_RATE":
+        return execute_qveris_tool("alphavantage.economic.federal_funds_rate.retrieve.v1.7aca3c4a", {"interval": "daily"})
+    elif indicator == "TREASURY_YIELD_10Y":
+        return execute_qveris_tool("alphavantage.economic.treasury_yield.retrieve.v1.7aca3c4a", {"interval": "daily", "maturity": "10year"})
+    return "Unsupported indicator. Use CPI, FEDERAL_FUNDS_RATE, or TREASURY_YIELD_10Y."
+
+@tool
+def get_crypto_price(symbol: str) -> str:
+    """Get real-time cryptocurrency price in USD (e.g., 'BTC', 'ETH')."""
+    return execute_qveris_tool("twelvedata.exchangerate.retrieve.v1.9eeb3b0d", {"symbol": f"{symbol}/USD"})
 # --- Specialized Tools ---
 
 @tool
@@ -152,7 +209,7 @@ async def evolve_skill(skill_id: str, feedback: str) -> str:
 @tool
 async def invoke_skill(skill_id: str, input: str, params: Optional[Dict[str, Any]] = None) -> str:
     """
-    Invokes a specialized skill from the library or a built-in tool by its ID.
+    Invokes a specialized skill from the library by its ID.
     This will execute the skill's specific analysis logic using the LLM.
     """
     # 1. Check if it's a built-in tool first
@@ -171,11 +228,39 @@ async def invoke_skill(skill_id: str, input: str, params: Optional[Dict[str, Any
             return await qveris_call.ainvoke(call_params)
         except:
             return "Error: qveris_call requires a JSON string as input with 'tool_id', 'search_id', and 'params'."
+
+    # Direct mappings for QVeris tools to bypass LLM overhead
+    qveris_map = {
+        "get_stock_price": get_stock_price,
+        "get_financial_statements": get_financial_statements,
+        "get_exchange_rate": get_exchange_rate,
+        "get_macro_data": get_macro_data,
+        "get_crypto_price": get_crypto_price
+    }
     
-    # 2. Check if it's a skill in the library
+    if skill_id in qveris_map:
+        # Extract the core parameter from input string if LLM passed it weirdly
+        import re
+        # Simple heuristic to extract symbol/indicator
+        param_val = input.split(":")[-1].strip() if ":" in input else input.strip()
+        # For safety, if params are passed correctly, use them
+        if params and len(params) > 0:
+            param_val = list(params.values())[0]
+        else:
+            # try to find uppercase letters
+            words = re.findall(r'[A-Z/_]+', input)
+            if words:
+                param_val = words[0]
+                
+        try:
+            res = qveris_map[skill_id].invoke(param_val)
+            return f"[QVeris Tool {skill_id} Executed]\n{res}"
+        except Exception as e:
+            return f"Error executing QVeris tool {skill_id}: {str(e)}"
+            
     skill = skill_library.get_skill(skill_id)
     if not skill:
-        return f"Skill or Tool {skill_id} not found."
+        return f"Skill {skill_id} not found in the library."
     
     # Execute the skill using the meta_model and the prompt_chromosome
     from langchain_core.messages import SystemMessage, HumanMessage
@@ -239,7 +324,7 @@ async def meta_evolution_orchestrator(analysis_logs: str, performance_delta: flo
     return summary
 
 @tool
-async def multi_skill_orchestrator(task: str) -> str:
+async def multi_skill_orchestrator(complex_task: str) -> str:
     """
     A high-level orchestrator that plans and executes a sequence of skills to solve a hard task.
     It uses procedural memory (Rules of Thumb) to guide the planning process.
@@ -252,6 +337,16 @@ async def multi_skill_orchestrator(task: str) -> str:
     for s in skills:
         deps = f" (Depends on: {', '.join(s.genotype.tool_deps)})" if s.genotype.tool_deps else ""
         skills_info.append(f"- {s.genotype.skill_id}: {s.genotype.prompt_chromosome[:200]}...{deps}")
+        
+    # Add built-in data fetching tools
+    built_in_tools = [
+        "- get_stock_price: Get real-time stock price (e.g. 'AAPL')",
+        "- get_financial_statements: Get latest annual income statement data",
+        "- get_exchange_rate: Get forex exchange rate (e.g. 'EUR/USD')",
+        "- get_macro_data: Get US macroeconomic data (CPI, FEDERAL_FUNDS_RATE, TREASURY_YIELD_10Y)",
+        "- get_crypto_price: Get real-time cryptocurrency price (e.g. 'BTC')"
+    ]
+    skills_info.extend(built_in_tools)
     skills_str = "\n".join(skills_info)
     
     # 2. Get procedural memory (Rules of Thumb)
@@ -264,7 +359,7 @@ async def multi_skill_orchestrator(task: str) -> str:
     Your goal is to solve the complex financial task below by orchestrating specialized skills.
     
     ### Task:
-    {task}
+    {complex_task}
     
     ### Available Skills:
     {skills_str}
@@ -277,11 +372,11 @@ async def multi_skill_orchestrator(task: str) -> str:
     - **DATA VERIFICATION**: Every claim must be backed by the output of a skill (e.g., fetch_market_data for prices).
     - **PYTHON FOR MATH**: Use 'python_interpreter' for ANY calculation (drawdown, correlation, etc.). Do not do math in your head.
     - **DEPENDENCY ORDER**: Order skills logically (e.g., fetch data before analysis).
-211→    - **SYNTHESIS RIGOR**: The final step MUST use 'strategic_decision_making' to unify all findings.
-212→    - **REMOTE TOOLS**: If internal tools/skills are insufficient, use 'qveris_discover' to find specialized remote tools for specific tasks.
+    - **SYNTHESIS RIGOR**: The final step MUST use 'strategic_decision_making' to unify all findings.
+    - **REMOTE TOOLS**: If internal tools/skills are insufficient, use 'qveris_discover' to find specialized remote tools for specific tasks.
     
     Output your plan as a JSON list of steps. 
-    Format: [{{"step": 1, "skill_id": "...", "reasoning": "...", "input": "..."}}]
+    Format: [{"step": 1, "skill_id": "...", "reasoning": "...", "input": "...", "params": {"symbol": "AAPL"}}]
     """
     
     try:
@@ -305,6 +400,7 @@ async def multi_skill_orchestrator(task: str) -> str:
             skill_id = step.get("skill_id")
             step_input = step.get("input")
             reasoning = step.get("reasoning", "")
+            params = step.get("params", None)
             
             logger.info(f"Orchestrator: Step {step.get('step')} - {reasoning} (Using {skill_id})")
             
@@ -312,7 +408,7 @@ async def multi_skill_orchestrator(task: str) -> str:
             enriched_input = f"Task: {step_input}\nPrevious Context: {context_accumulator[:2000]}"
             
             # Execute skill
-            res = await invoke_skill.ainvoke({"skill_id": skill_id, "input": enriched_input})
+            res = await invoke_skill.ainvoke({"skill_id": skill_id, "input": enriched_input, "params": params})
             
             # Record result with metadata
             step_record = f"--- STEP {step.get('step')} ({skill_id}) ---\nReasoning: {reasoning}\nOutput: {res}"
@@ -331,7 +427,7 @@ async def multi_skill_orchestrator(task: str) -> str:
         logs_str = "\n\n".join(results)
         synthesis_prompt = f"""
         You are the Senior Financial Analyst for FinAgent-Evo.
-        Task: {task}
+        Task: {complex_task}
         
         Detailed Execution Logs (VERIFIED):
         {logs_str}
@@ -366,7 +462,6 @@ def list_skills() -> str:
     """
     skills = skill_library.get_all_skills()
     info = []
-    
     # Built-in Tools
     info.append("- python_interpreter (TOOL): Execute code for calculations. [Built-in]")
     info.append("- tavily_search (TOOL): Search for real-time news and data. [Built-in]")
@@ -456,7 +551,6 @@ def register_initial_skills():
         output_schema={"output": "string"}
     )
     skill_library.add_skill(Skill(python_genotype))
-
     decision_making_genotype = SkillGenotype(
         skill_id="strategic_decision_making",
         category=SkillCategory.ANALYSIS,
@@ -518,6 +612,11 @@ agent = create_deep_agent(
     model=model,
     tools=[
         tavily_search,
+        get_stock_price,
+        get_financial_statements,
+        get_exchange_rate,
+        get_macro_data,
+        get_crypto_price,
         think_tool,
         python_interpreter,
         extract_experience,
