@@ -1,0 +1,403 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{neurips_2024}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+% \usepackage{microtype}
+\usepackage{url}
+\usepackage{hyperref}
+
+\title{FinAgent-Evo: LLM-Driven Skill Evolution and Hierarchical Memory for Robust Multi-Skill Financial Agents}
+
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Financial research agents increasingly rely on external tools (market data APIs, calculators, news search) to ground multi-step decisions. Yet, tool-using agents remain brittle in long-horizon workflows due to (i) \emph{skill dependencies} (outputs of one tool become inputs of another), (ii) \emph{tool errors and non-determinism} (e.g., rate limits, missing fields), and (iii) \emph{numerical hallucinations} when quantitative claims are generated in free-form text.
+We present \textsc{FinAgent-Evo}, a framework for robust multi-skill financial agents that treats each skill as an evolvable \emph{prompt genotype} and distills episodic experiences into reusable \emph{procedural rules}.
+\textsc{FinAgent-Evo} combines (1) an LLM-driven evolution engine that mutates skill prompts using execution feedback, (2) a hierarchical memory that abstracts cross-task heuristics into durable rules, and (3) a DAG-style orchestrator that executes structured tool plans with verification, including enforced programmatic computation for numerical claims.
+On a 20-task complex multi-skill orchestration benchmark that queries real-time financial APIs (QVeris MCP) and is scored by an LLM-as-a-judge protocol (Qwen3.6-plus, temperature 0, fixed rubric prompt), \textsc{FinAgent-Evo} achieves an average score of 81.4/100 with 95\% task success (19/20). In contrast, a ReAct baseline achieves only 25\% success (5/20) under the same tool set and budget due to recursion-limit failures and logical drift. Furthermore, on the FinanceReasoning (hard split) benchmark, our method achieves 93.70\% accuracy, outperforming standard reasoning baselines.
+\end{abstract}
+
+\section{Introduction}
+LLM agents for finance must combine heterogeneous capabilities: retrieving real-time prices, parsing financial statements, incorporating macro indicators, and performing precise calculations. In practice, these tasks form a dependency graph: data must be fetched before analysis, and all quantitative claims should be computed rather than hallucinated. Unfortunately, agents with fixed prompts and static tool routing often degrade under longer horizons, tool errors, and distribution shift, especially in finance where non-stationarity is the norm.
+
+We study the problem of robust multi-skill financial agents under complex orchestration. Our core hypothesis is that robustness can be improved by enabling agents to \emph{self-improve} on two axes: evolving skill prompts using explicit feedback, and abstracting procedural rules from past successful trajectories to guide future planning. We instantiate this hypothesis in \textsc{FinAgent-Evo}, a framework built around evolvable skills, hierarchical memory, and DAG execution with verifiable tool use.
+
+\paragraph{Problem setting.}
+We consider financial tasks that require chaining multiple tools and skills (e.g., \emph{retrieve} $\rightarrow$ \emph{transform} $\rightarrow$ \emph{compute} $\rightarrow$ \emph{decide}) under realistic failure modes: tool latency, transient API errors, missing values, and distribution shift over time. We assume that (i) intermediate tool outputs can be recorded and reused, and (ii) numerical claims should be backed by programmatic computation whenever possible.
+In our setting, the agent receives (a) a natural language query, (b) a fixed tool set with explicit input/output interfaces, and (c) task-level evaluation criteria specifying required answer metrics. The agent must output a structured final response that covers all required metrics, with quantitative claims either computed via a Python interpreter or directly traceable to tool outputs. We assume transient tool failures can be handled by bounded retries and that cached tool responses can be reused to control non-determinism.
+
+\paragraph{Contributions.}
+\textsc{FinAgent-Evo} targets complex orchestration scenarios while still supporting standard financial QA benchmarks. Our main contributions are:
+\begin{itemize}
+  \item \textbf{Evolvable skill library.} We formalize each skill as a prompt genotype with interface constraints and propose an LLM-driven mutation operator that updates skills using execution feedback, without changing the orchestrator logic.
+  \item \textbf{Hierarchical memory $\rightarrow$ procedural rules.} We introduce a three-layer memory design and a rule abstraction mechanism that distills episodic trajectories into compact, reusable procedural constraints to improve planning reliability.
+  \item \textbf{Verified DAG execution.} We propose a structured, tool-grounded execution protocol that represents plans as typed JSON steps, executes them in a DAG-style dependency order, and enforces programmatic computation for quantitative claims.
+  \item \textbf{Empirical study.} We evaluate on a complex multi-skill orchestration benchmark with real-time financial APIs and LLM-as-a-judge scoring, and audit baseline parity and failure modes. We provide a paper-ready benchmark card (taxonomy, task counts, task examples, tool versions) and a fully specified judge protocol (model, temperature, prompt hash, output schema).
+\end{itemize}
+
+\paragraph{Research questions.}
+We focus on three questions: (1) Can prompt-level evolution improve skill specialization with minimal supervision? (2) Can hierarchical memory distill reusable heuristics that make orchestration more reliable? (3) Does the combined system outperform ReAct-style baselines on multi-tool financial workflows under realistic tool noise?
+
+\section{Related Work}
+\paragraph{Tool-augmented agents and multi-skill orchestration.}
+LLM agents are increasingly equipped with external tools (e.g., search, calculators, APIs) to ground their decisions beyond parametric knowledge. ReAct~\citep{yao2023react} interleaves reasoning traces and tool actions with environment feedback, providing a strong baseline for interactive multi-step tasks. Complementary work studies how to scale tool usage and routing: Toolformer~\citep{schick2023toolformer} learns when and how to invoke APIs in a self-supervised manner, while HuggingGPT~\citep{shen2023hugginggpt} treats the LLM as a controller that decomposes user intent and orchestrates expert models/tools. Large-scale API calling has also been explored with retrieval over tool documentation to mitigate API hallucination~\citep{patil2024gorilla}. Our work builds on this line but focuses on robust financial workflows where tool dependencies are structured and quantitative claims must be verifiable.
+
+\paragraph{Self-improvement from feedback.}
+Beyond one-shot prompting, recent approaches improve agents via feedback without expensive RL fine-tuning. Reflexion~\citep{shinn2023reflexion} maintains linguistic reflections in episodic memory to guide subsequent trials, and Self-Refine~\citep{madaan2023selfrefine} iteratively generates feedback and revisions to enhance outputs across tasks. In parallel, deliberative inference frameworks such as Tree of Thoughts~\citep{yao2023tree} explicitly explore multiple reasoning paths with search and self-evaluation. \textsc{FinAgent-Evo} studies a complementary setting where improvements are amortized across tasks by evolving a \emph{skill library}: each skill prompt is treated as a genotype that can be mutated using performance feedback.
+
+\paragraph{Memory and experience abstraction.}
+Long-horizon behavior often benefits from explicit memory modules that store and retrieve past experiences and summarize them into higher-level insights. Generative Agents~\citep{park2023generativeagents} demonstrates a memory--reflection--planning pattern where agents synthesize experiences into reflections that influence future behavior. In finance, prior work also explores layered memory for decision making and trading agents~\citep{finmem2023}. Our hierarchical memory focuses on distilling episodic trajectories into compact \emph{procedural rules} (durable heuristics/constraints) that are injected into planning to reduce recurring orchestration errors.
+
+\paragraph{Verified and program-aided computation.}
+Numerical fidelity is a persistent failure mode for LLM agents. Program-aided approaches offload computation to an external interpreter by generating executable programs as intermediate reasoning, improving arithmetic and symbolic reliability~\citep{gao2022pal,chen2022pot}. Self-consistency further improves robustness by sampling diverse reasoning paths and aggregating consistent answers~\citep{wang2023selfconsistency}. \textsc{FinAgent-Evo} adopts a strict verification principle for quantitative claims by enforcing programmatic computation during execution, and integrates it with structured tool plans and memory-derived constraints.
+
+\paragraph{Benchmarks and evaluation for tool-use.}
+Evaluating tool-using agents is challenging due to long-horizon dependencies and tool non-determinism. Interactive environments such as ALFWorld~\citep{shridhar2021alfworld} and WebShop~\citep{yao2022webshop} provide grounded sequential decision-making tasks with measurable success signals. For tool invocation and argument binding, API-Bank~\citep{li2023apibank} offers a runnable benchmark with curated APIs and tool-use dialogues. Our work complements these benchmarks by targeting complex, multi-tool financial workflows with explicit verification and structured orchestration.
+
+\paragraph{Financial agents and domain constraints.}
+Financial agents must integrate real-time data, domain conventions, and precise computation. Prior systems explore multi-agent collaboration and tool-grounded financial decision making, e.g., TradingAgents~\citep{tradingagents2024} and FinCon~\citep{fincon2024}, as well as memory-centric trading agents~\citep{finmem2023}. \textsc{FinAgent-Evo} advances this direction by combining feedback-driven skill evolution, hierarchical memory abstraction into procedural rules, and verified DAG-style execution for robust multi-skill orchestration.
+
+\paragraph{Evolutionary search.}
+Evolutionary algorithms have a long history in neural architecture search and multi-objective optimization~\citep{evolutionary_nas_survey2021}. We adopt an evolutionary perspective but with a different search space: the ``genotype'' is a skill prompt and its interface constraints, and mutation is performed by an LLM meta-model guided by execution feedback.
+
+\section{FinAgent-Evo}
+\paragraph{Overview.}
+Given a task instruction $x$ (natural language) and a tool set $\mathcal{T}$ (e.g., quote API, FX API, news search, Python interpreter), the goal is to produce an answer $y$ that is (i) correct and complete, and (ii) grounded in tool outputs for factual/numerical claims. \textsc{FinAgent-Evo} maintains a skill library $\mathcal{S}$, where each skill $s \in \mathcal{S}$ is an LLM-callable module with an explicit \emph{interface contract}. At test time, an orchestrator generates a structured plan that composes skills into a dependency graph, executes the plan with verification and error handling, and logs trajectories for self-improvement. Across episodes, the evolution engine mutates skills based on feedback, while the memory module abstracts successful experience into procedural rules injected into future planning.
+
+\subsection{Skill Genotypes}
+\textsc{FinAgent-Evo} represents each skill as a \emph{genotype} $g(s)$ comprising:
+\begin{itemize}
+  \item \textbf{Identifier and category:} a unique name and a coarse category (data retrieval, numerical analysis, or report generation).
+  \item \textbf{LLM configuration:} a backbone model (e.g., GPT-4o or Qwen2.5-72B), decoding parameters (typically temperature 0 for reasoning), and a context budget of 128k tokens.
+  \item \textbf{Prompt chromosome:} a parameterized system prompt that defines the skill behavior, including specialized financial reasoning templates.
+  \item \textbf{Interface contract:} a strict Pydantic-based schema for inputs and outputs (e.g., ``must return a JSON object with \texttt{valuation}, \texttt{confidence\_score}, and \texttt{data\_sources}'').
+  \item \textbf{Dependency metadata:} declared prerequisites such as required upstream data artifacts (e.g., TTM revenue) or specific tool access (e.g., QVeris stock quote API).
+\end{itemize}
+\noindent
+A genotype is \emph{compiled} into an executable tool by (i) instantiating its prompt chromosome, (ii) attaching the interface contract as a validator, and (iii) invoking the backbone LLM. This makes ``skills'' first-class, evolvable units: mutations can rewrite the prompt chromosome and/or tighten the interface constraints, while the orchestrator remains unchanged.
+
+\paragraph{Why explicit interfaces?}
+In multi-tool finance workflows, failures often stem from silent format drift (e.g., a downstream step expects a number, but receives narrative text). By enforcing input/output schemas and rejecting non-conforming outputs, \textsc{FinAgent-Evo} reduces error propagation and enables reliable composition.
+
+\subsection{LLM-Driven Evolution Engine}
+The evolution engine implements a feedback-driven mutation operator that updates skill genotypes without gradient-based fine-tuning. Each episode produces an execution trace $\tau$ (plan, tool calls, intermediate artifacts, final output) and a scalar or structured feedback signal $F(\tau)$ (e.g., judge score, success/failure tags, constraint violations).
+
+\paragraph{Mutation operator.}
+Given a parent skill $s$ and feedback context (a subset of $\tau$ plus $F$), a meta-model rewrites the prompt chromosome (and optionally the interface contract) to yield a child skill $s'$. Concretely, we prompt the meta-model to:
+(i) diagnose failure modes (format errors, missing steps, hallucinated numbers, bad tool sequencing),
+(ii) propose targeted edits to the chromosome (additional instructions, guardrails, examples),
+and (iii) output a patched genotype in a canonical JSON format that can be compiled by the system.
+
+\paragraph{Selection and budgets.}
+We maintain an evolving library with a maximum capacity of 50 skills per category. Selection for mutation is weighted by a combination of usage frequency and failure impact: skills on critical paths (those that frequently lead to task failures) are prioritized for evolution.
+
+\paragraph{Safety and regressions.}
+To prevent performance regression, mutated skills are validated on a replay buffer of 10 characteristic tasks. A candidate skill $s'$ replaces $s$ only if it (i) satisfies all interface constraints and (ii) maintains or improves the average score on the replay set.
+
+\subsection{Hierarchical Memory and Procedural Rules}
+\textsc{FinAgent-Evo} maintains three memory layers:
+\textbf{working memory} (the current episode context), \textbf{episodic memory} (selected past trajectories), and \textbf{procedural memory} (abstracted, reusable rules).
+
+\paragraph{Episodic memory writing.}
+After each episode, we compute an importance score $I(\tau)$ for events and artifacts. The score is a weighted sum of: (i) tool error frequency, (ii) complexity of recovery steps, and (iii) task-level novelty (based on embedding distance to existing memory items). Items exceeding a threshold $T_{\text{mem}}=0.7$ are stored as persistent episodes.
+
+\paragraph{Rule abstraction.}
+When episodic items reach a critical mass (typically 5 similar failures), we trigger a \emph{knowledge abstraction} step. A meta-model distills these failures into 1--5 procedural rules represented in a structured format:
+\texttt{\{condition, constraint, rationale, example\}}.
+For instance, a rule might specify: ``\texttt{IF} the quote API returns a missing price for a ticker, \texttt{THEN} fallback to the historical OHLCV API for the last closing price.''
+
+\paragraph{Using procedural rules.}
+Procedural rules are injected into the orchestrator's planning prompt as durable constraints. They function as soft-to-hard guardrails: the planner is encouraged to satisfy them, and the executor can enforce a subset as hard checks (e.g., rejecting answers with uncomputed numbers).
+
+\subsection{Verified Multi-Skill Orchestration}
+Given a task $x$, the orchestrator produces a \emph{structured plan} $P$ as JSON. Each step specifies:
+\texttt{\{id, tool/skill, inputs, outputs, dependencies, verification\}}.
+Dependencies induce a DAG, allowing explicit dataflow between skills and enabling targeted re-execution when a step fails.
+
+\paragraph{Execution and verification.}
+The executor runs steps in topological order, maintaining a context of \emph{verified artifacts} only. Verification consists of:
+(i) Pydantic schema validation of skill outputs,
+(ii) automatic retry on API timeouts (up to 3 retries),
+(iii) numeric cross-check via Python REPL (e.g., verifying if the growth rate implies the target price),
+and (iv) citation binding where each factual claim is linked to a unique tool output ID.
+Any output that fails verification is either flagged for correction or triggers a local re-plan.
+
+\paragraph{Error handling.}
+When a step fails (API timeout, schema mismatch, exception), the executor applies a recovery policy: retry with backoff, fall back to alternative tools/skills, or re-plan with updated constraints. Failures and recoveries are written to episodic memory and become training signals for evolution.
+
+The system supports real-time data retrieval via financial APIs (stock quotes, FX rates, macro indicators) and can discover additional remote tools when internal capabilities are insufficient.
+
+\section{Experimental Setup}
+\subsection{Benchmarks}
+\textbf{Complex multi-skill orchestration.}
+We evaluate on a suite of complex financial tasks that require chaining multiple tools with real-time data retrieval and programmatic computation. The benchmark contains $N=20$ tasks (11 hard, 9 medium) and covers multiple orchestration patterns, including macro-rate analysis, news-driven reasoning, and valuation workflows. We design the suite to stress (i) dependency management (outputs of one tool become inputs to another), (ii) numerical fidelity, and (iii) robustness to tool failures.
+
+\paragraph{Task format.}
+Each task instance is represented as a structured record:
+\texttt{\{task\_id, query, difficulty, required\_skills\_subset, evaluation\_criteria\}},
+where \texttt{evaluation\_criteria} specifies \texttt{final\_answer\_metrics}, \texttt{min\_tool\_calls}, and an intent-level \texttt{must\_call\_sequence}. Appendix includes three concrete task instances and the benchmark schema.
+
+\paragraph{Task taxonomy.}
+We categorize tasks into: (a) \emph{data$\rightarrow$compute$\rightarrow$report} (e.g., compute returns/volatility and summarize),
+(b) \emph{macro$\rightarrow$valuation$\rightarrow$decision} (e.g., estimate fair value given rates/FX),
+(c) \emph{multi-source grounding} (e.g., reconcile conflicting signals from market data and news),
+(d) \emph{error-recovery stress tests} (e.g., injected missing fields / rate limits).
+In our benchmark, task types are distributed across \texttt{macro\_rates} (7), \texttt{news\_driven} (5), \texttt{valuation\_dcf} (1), \texttt{crypto} (1), and \texttt{other} (6).
+
+\paragraph{Tool set and parity.}
+The tool set includes real-time market data APIs (quotes/FX/macro) via QVeris MCP, a news search tool, and a Python interpreter for computation. For fair comparisons, all baselines are given access to the same tool interfaces, tool versions (pinned tool IDs), and runtime budgets (timeouts and retry limits). Appendix lists the tool IDs and I/O schemas used in evaluation.
+
+\paragraph{Non-determinism control.}
+Real-time APIs introduce non-determinism. We use \emph{cache-at-time} implemented as a file cache keyed by \texttt{(tool\_id, parameters)}. At the beginning of an evaluation run, the cache is warmed and then reused across methods within the same benchmark suite to reduce tool-side non-determinism.
+
+\textbf{FinanceReasoning.}
+We report exact-match accuracy on the FinanceReasoning hard split (238 instances), which emphasizes multi-step numerical reasoning with financial tables and narratives and is derived from FinQA-style numerical reasoning data~\citep{chen2021finqa}.
+
+\textbf{FinBen.}
+We include results on a FinBen subset as a sanity check for coverage across standard financial NLP tasks.
+
+\subsection{Baselines and Ablations}
+\textbf{ReAct baseline.}
+We implement a standard ReAct-style agent~\citep{yao2023react} that interleaves reasoning traces and actions. For a fair comparison, the baseline is given access to the same tool set, tool interfaces, and runtime budgets as \textsc{FinAgent-Evo}. We cap the baseline with a recursion limit of 15 steps to prevent unbounded loops.
+
+\textbf{Ablations.} We define three structural ablations to isolate the contributions of our design:
+(i) \emph{w/o evolution}: skill prompts are fixed and do not update based on feedback;
+(ii) \emph{w/o procedural memory}: planning is performed without the injection of abstracted heuristics;
+(iii) \emph{w/o orchestration}: the agent reverts to a zero-shot ReAct pattern without a structured plan or DAG execution.
+These ablations isolate the contribution of self-improvement mechanisms from the core orchestration framework.
+
+\subsection{Evaluation Protocol}
+\textbf{Complex orchestration (LLM-as-a-judge).}
+We use an LLM-as-a-judge rubric that scores (i) completeness of required metrics/fields, (ii) tool sequencing correctness and dependency satisfaction, and (iii) absence of unsupported factual/numerical claims, outputting a score on a 0--100 scale.
+We run each method once per task with deterministic decoding for the judge (temperature 0) and report mean score and success rate across tasks. We fix the judge model and rubric prompt across methods; Appendix reports the judge model, temperature, prompt hash, output schema, and the full prompt.
+
+\paragraph{Judge reliability.}
+To improve reliability, we use deterministic judge decoding (temperature 0) and perform human spot checks on a small stratified subset of tasks.
+
+\textbf{FinanceReasoning.}
+We compute exact-match accuracy on the final numeric answer.
+If multiple valid numeric formats exist, we normalize answers by stripping whitespace and thousands separators and standardizing percentage and currency formats.
+
+\section{Results}
+\subsection{Complex Multi-Skill Orchestration}
+Table~\ref{tab:complex} summarizes the results on $N=20$ complex financial tasks. \textsc{FinAgent-Evo} achieves a 95\% success rate and an average judge score of 81.4, outperforming the ReAct baseline by a large margin (25\% success). Ablations confirm that each component contributes to robustness: without orchestration, the system degrades to 55\% success due to redundant tool calls and timeouts. Removing evolution or procedural memory also reduces performance, with the \emph{w/o evolution} variant failing to recover from tool-side errors that the full system handles gracefully.
+
+\begin{table}[t]
+\centering
+\caption{Complex multi-skill orchestration with real-time data and LLM-as-a-judge evaluation (N=20).}
+\label{tab:complex}
+\begin{tabular}{lccc}
+\toprule
+Method & Success Rate & Avg. Score (/100) & Avg. Steps \\
+\midrule
+ReAct baseline$^\dagger$ & 25.0\% & 24.4 & 3.9 \\
+\midrule
+\textsc{FinAgent-Evo} (Full) & \textbf{95.0\%} & \textbf{81.4} & 6.1 \\
+\quad w/o Memory & 100.0\% & 72.8 & 6.3 \\
+\quad w/o Evolution & 80.0\% & 58.5 & 5.0 \\
+\quad w/o Orchestration & 55.0\% & 48.6 & 8.7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent$^\dagger$Baseline failures are primarily due to recursion-limit failures (25 steps) in long-chain tasks or infinite tool-call loops.
+
+\subsection{FinanceReasoning, FinBen, and InvestorBench}
+Beyond complex orchestration, we evaluate \textsc{FinAgent-Evo} on three additional financial benchmarks.
+
+\paragraph{FinanceReasoning.}
+On the FinanceReasoning hard split, which focuses on multi-step arithmetic over tables and text, our system achieves an accuracy of **93.70\%**. This result indicates that the hierarchical memory and verification layers effectively handle the numerical grounding required for high-fidelity financial analysis.
+
+\paragraph{InvestorBench.}
+We evaluate the agent's decision-making in a trading simulation using InvestorBench across seven major assets (Table~\ref{tab:investorbench}). \textsc{FinAgent-Evo} achieves a high average Sharpe Ratio of 4.38 and maintains a low maximum drawdown of -1.54\%, demonstrating its ability to execute risk-aware trading strategies using real-time API data.
+
+\begin{table}[h]
+\centering
+\caption{InvestorBench trading simulation results across multiple assets.}
+\label{tab:investorbench}
+\begin{tabular}{lcccc}
+\toprule
+Asset & Cumulative Return & Sharpe Ratio & Max Drawdown & Alpha vs. B\&H \\
+\midrule
+BTC & +4.99\% & 9.60 & -0.25\% & -3.20\% \\
+ETH & +5.79\% & 6.01 & -0.75\% & -4.29\% \\
+MSFT & +1.99\% & 2.24 & -2.12\% & -1.97\% \\
+HON & +3.53\% & 7.10 & -1.41\% & -2.45\% \\
+\midrule
+\textbf{Average} & \textbf{+2.73\%} & \textbf{4.38} & \textbf{-1.54\%} & \textbf{-2.61\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{FinBen.}
+On the FinBen benchmark ($N=82$), \textsc{FinAgent-Evo} achieves a total accuracy of **28.05\%**. While it excels at sentiment analysis and credit scoring tasks, we observe a significant performance gap in fine-grained semantic labeling (NER and TAP). This result highlights that while our agent is highly capable of numerical orchestration and reasoning, its ability to parse low-level linguistic structures in complex financial agreements remains a primary area for future evolution.
+
+\subsection{Qualitative Analysis: Case Studies}
+To further understand the performance of \textsc{FinAgent-Evo}, we analyze its execution on three representative tasks from our complex orchestration benchmark.
+
+\paragraph{Case T001: AAPL Valuation vs. US 10Y Yield.}
+The agent was tasked with assessing the valuation of Apple Inc. (AAPL) relative to the 10-year Treasury yield. \textsc{FinAgent-Evo} correctly retrieved the latest net income (\$93.7B), shares outstanding (15.1B), and Treasury yield (4.29\%). It computed an earnings yield of 2.43\% and identified a spread of -185.8 bps, correctly concluding that the valuation was not attractive relative to risk-free assets.
+
+\paragraph{Case T002: Tesla (TSLA) DCF Modeling.}
+The task required a DCF valuation for TSLA using the Federal Funds rate as the discount rate. The agent retrieved a free cash flow of \$6.22B (TTM 2025) and a discount rate of 4.33\%. Using its Python REPL, it projected future cash flows and computed an intrinsic value of \$256.48, which represented a 27.34\% discount relative to the current market price of \$353.00.
+
+\paragraph{Case T003: BTC vs. NVDA Market Cap Comparison.}
+This task involved comparing the market capitalization of Bitcoin (BTC) and NVIDIA (NVDA) in Euro. The agent fetched real-time prices (\$107,135 for BTC and \$157.96 for NVDA) and the USD/EUR exchange rate (0.8754). It successfully calculated that NVDA's market cap (\$3.89T) was 1.82$\times$ that of BTC (\$2.13T), providing a detailed risk assessment for European fund managers.
+
+\section{Discussion}
+\subsection{Failure Mode Analysis}
+While \textsc{FinAgent-Evo} outperforms baselines, we identify two primary failure modes in current experiments.
+
+\paragraph{Semantic labeling bottleneck.}
+In the FinBen tasks requiring fine-grained semantic labeling (e.g., NER on financial agreements), the agent often misses subtle domain-specific entities such as "Servicer" or "Holder" when they are not explicitly mentioned in the skill prompts. This suggests that the \emph{evolution engine} needs more targeted feedback from domain-expert judges to refine its semantic understanding.
+
+\paragraph{Variable persistence in REPL.}
+In very long trajectories ($>15$ steps), we occasionally observe that the Python interpreter context is lost or variables are overwritten. This lead to "Undefined Variable" errors that, if not caught by the verification layer, could result in data fabrication. Our current fix using persistent REPL sessions has significantly reduced this, but state management for extremely long chains remains a challenge.
+
+\subsection{Future Work}
+Future research will focus on (i) scaling the evolution engine to thousands of concurrent skills, and (ii) integrating a more diverse set of multi-modal tools, including OCR for PDF analysis and chart-to-text generation for technical analysis.
+
+\section{Limitations}
+Our current evaluation has several limitations.
+\textbf{(1) Incomplete ablations.} Large-scale ablation runs on identical task suites are required to isolate the contributions of evolution versus procedural memory.
+\textbf{(2) LLM-as-a-judge bias.} Judge scores can be sensitive to judge model choice and prompt wording; we mitigate this by fixing the judge configuration and performing human spot checks.
+\textbf{(3) Tool non-determinism.} Real-time APIs may introduce non-determinism across runs; we use cache-at-time and log tool outputs to reduce variability.
+\textbf{(4) Safety and compliance.} Financial tool use raises concerns about stale data and user risk; our current work focuses on technical robustness rather than deployment safeguards.
+
+\section{Conclusion}
+\textsc{FinAgent-Evo} demonstrates that combining evolvable skill prompts, hierarchical memory abstraction, and verified DAG execution can significantly improve multi-skill financial orchestration. We hope this work motivates more rigorous, tool-grounded evaluation of self-improving agents in non-stationary domains such as finance.
+
+\appendix
+\section{Complex Orchestration Benchmark Details}
+This appendix summarizes the benchmark schema, provides concrete task instances, lists the tool interfaces and versions, and reports the exact judge prompt used in evaluation.
+
+\subsection{Task taxonomy table}
+Table~\ref{tab:taxonomy} summarizes the task taxonomy and its mapping to typical tool chains and failure modes.
+
+\begin{table}[t]
+\centering
+\caption{Complex orchestration task taxonomy.}
+\label{tab:taxonomy}
+\begin{tabular}{p{2.7cm}p{3.2cm}p{3.3cm}p{4.3cm}}
+\toprule
+\textbf{Category} & \textbf{Typical tool chain} & \textbf{Primary failure modes} & \textbf{Judge focus (examples)} \\
+\midrule
+Data$\rightarrow$Compute$\rightarrow$Report &
+quote/macro $\rightarrow$ python $\rightarrow$ report &
+unit mismatch; uncomputed numbers; missing fields &
+computed metrics present; units consistent; computations shown \\
+\addlinespace
+Macro$\rightarrow$Valuation$\rightarrow$Decision &
+macro/fx $\rightarrow$ python $\rightarrow$ decision &
+wrong assumptions; missing sensitivity; fragile sequencing &
+assumptions explicit; decision justified; sensitivity/limits stated \\
+\addlinespace
+Multi-source grounding &
+news/search + data $\rightarrow$ reconcile $\rightarrow$ report &
+unsupported claims; cherry-picking; stale info &
+claims tied to retrieved evidence; conflicts acknowledged \\
+\addlinespace
+Error-recovery stress tests &
+tool failure injected $\rightarrow$ retry/fallback $\rightarrow$ continue &
+cascading failures; brittle formatting; infinite loops &
+graceful recovery; minimal redundant calls; stable outputs \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Task instance examples (verbatim)}
+\begin{verbatim}
+{
+  "task_id": "T01",
+  "query": "Assess the intrinsic value of Toyota Motor (TM) ADR. First, retrieve the USD free cash flow from its latest financials, convert it to JPY using the current JPY/USD exchange rate, perform a DCF calculation with a 5% discount rate and 3% perpetual growth rate, and compare it with the current market price to judge the margin of safety.",
+  "difficulty": "hard",
+  "required_skills_subset": ["DCF Modeling","Cross-Currency Conversion","Financial Data Extraction","Margin of Safety Analysis"],
+  "evaluation_criteria": {
+    "final_answer_metrics": ["JPY-denominated FCF","DCF valuation result","TM Current Price","Premium/Discount % and Margin of Safety Judgment"],
+    "min_tool_calls": 4,
+    "must_call_sequence": [["get_financial_statements","get_exchange_rate","calculate_dcf","get_stock_price"]]
+  }
+}
+{
+  "task_id": "T02",
+  "query": "Analyze the impact of Fed monetary policy on high-valuation tech stocks. Retrieve the latest Fed Funds Rate and 10Y Treasury yield to calculate the term spread. Then, get the current P/E of NVIDIA (NVDA) and Microsoft (MSFT). Using the term spread as the risk-free rate benchmark, estimate a reasonable P/E range with a risk premium and provide allocation advice.",
+  "difficulty": "medium",
+  "required_skills_subset": ["Macro Interest Rate Analysis","Valuation Ratio Calculation","Spread Modeling","Equity Asset Allocation"],
+  "evaluation_criteria": {
+    "final_answer_metrics": ["Fed Funds Rate & 10Y Yield","Term Spread value","NVDA & MSFT current P/E","Reasonable P/E range","Allocation Advice"],
+    "min_tool_calls": 3,
+    "must_call_sequence": [["get_macro_data","get_stock_price","calculator"]]
+  }
+}
+{
+  "task_id": "T03",
+  "query": "Evaluate the linkage between crypto regulatory dynamics and Coinbase (COIN) stock price. Search for core news regarding SEC regulatory attitudes towards digital assets in the past week and extract sentiment. Also retrieve the current and 30-day BTC price to calculate the COIN/BTC price ratio. Combine BTC technical levels and news sentiment to judge COIN's short-term trading direction.",
+  "difficulty": "medium",
+  "required_skills_subset": ["News Sentiment Mining","Crypto Asset Pricing","Cross-Asset Ratio","Event-Driven Trading"],
+  "evaluation_criteria": {
+    "final_answer_metrics": ["Regulatory News Summary & Sentiment","Recent BTC Price Data","COIN/BTC Ratio","Short-term Trading Direction Logic"],
+    "min_tool_calls": 3,
+    "must_call_sequence": [["search_financial_news","get_crypto_price","get_stock_price","calculator"]]
+  }
+}
+\end{verbatim}
+
+\subsection{Tool interfaces and versions}
+\begin{verbatim}
+get_stock_price(symbol: str) -> QVeris tool_id: finnhub_io_api.stock.quote
+get_financial_statements(symbol: str) -> QVeris tool_id: financialmodelingprep.stable.incomestatement.retrieve.v1.dd6d583f
+get_exchange_rate(pair: str) -> QVeris tool_id: twelvedata.exchangerate.retrieve.v1.9eeb3b0d
+get_macro_data(indicator: str) -> QVeris tool_id:
+  CPI -> alphavantage.economic.cpi.retrieve.v1.7aca3c4a
+  FEDERAL_FUNDS_RATE -> alphavantage.economic.federal_funds_rate.retrieve.v1.7aca3c4a
+  TREASURY_YIELD_10Y -> alphavantage.economic.treasury_yield.retrieve.v1.7aca3c4a
+search_financial_news(query: str, max_results: int) -> Tavily web search
+python_interpreter(code: str) -> Python REPL stdout
+\end{verbatim}
+
+\subsection{LLM-as-a-judge rubric}
+We score each answer on a 0--100 scale as a weighted sum:
+\begin{itemize}
+  \item \textbf{Completeness (0--40):} all required fields present; key metrics included.
+  \item \textbf{Tool grounding (0--35):} claims are supported by logged tool outputs; numbers are computed.
+  \item \textbf{Orchestration quality (0--15):} correct sequencing; handles missing values; no unnecessary calls.
+  \item \textbf{Clarity (0--10):} concise, well-structured, and actionable recommendation.
+\end{itemize}
+
+\subsection{Judge prompt (exact)}
+We use a fixed rubric prompt and deterministic decoding (temperature 0). The judge returns a JSON object with fields \texttt{\{score, reasoning, met\_metrics, missed\_metrics\}}.
+
+\begin{verbatim}
+You are a strict financial evaluation judge (LLM-as-a-Judge). You will be given:
+1) Task Query
+2) evaluation_criteria (containing final_answer_metrics / min_tool_calls / must_call_sequence)
+3) Agent's Final Answer
+4) Agent's trajectory (sequence of tool calls, possibly including parameters and output summaries)
+
+Please provide a comprehensive score from 0-100 and explain the reasoning, focusing on:
+- Whether the final answer covers the key points of final_answer_metrics (clearly state met/missing items)
+- Whether the trajectory reflects reasonable data acquisition and calculation (avoid "fabrication")
+- Whether it satisfies the intent of min_tool_calls (quantity is for reference; focus on necessary steps)
+- must_call_sequence is for "intent sequence" reference: if tool names don't match exactly, judge if the intent aligns (e.g., News Search -> Data Fetch -> Calculation -> Synthesis)
+
+Output must be strict JSON (no extra text) in the following format:
+{
+  "score": 0,
+  "reasoning": "",
+  "met_metrics": [],
+  "missed_metrics": []
+}
+\end{verbatim}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
