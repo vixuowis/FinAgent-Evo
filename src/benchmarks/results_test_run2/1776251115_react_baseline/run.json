@@ -1,0 +1,94 @@
+{
+  "schema_version": "neurips_eval.v1",
+  "run_id": "1776251115_react_baseline",
+  "started_at": "2026-04-15T11:05:15.758803+00:00",
+  "ended_at": "2026-04-15T11:08:38.592498+00:00",
+  "benchmark": {
+    "path": "src/benchmarks/complex_tasks_real_api.json",
+    "task_count": 1,
+    "limit": 1
+  },
+  "variant": {
+    "name": "react_baseline",
+    "disable_evolution": true,
+    "disable_memory": true,
+    "disable_orchestration": true,
+    "react_baseline": true
+  },
+  "judge": {
+    "enabled": false,
+    "model": "qwen3.6-plus",
+    "base_url": "https://coding.dashscope.aliyuncs.com/v1",
+    "temperature": 0.0,
+    "prompt_sha256": "b98067de233a70adeb65f24061cd1268fdfc321ddefda1231d01db2a1330f54e",
+    "judge_logs_path": "src/benchmarks/results_test_run2/1776251115_react_baseline/judge_logs.jsonl"
+  },
+  "qveris_cache": {
+    "enabled": false,
+    "ttl_seconds": 0
+  },
+  "summary": {
+    "task_count": 1,
+    "success_count": 0,
+    "success_rate": 0.0,
+    "elapsed_s_avg": 202.8332600593567,
+    "elapsed_s_p50": 202.8332600593567,
+    "elapsed_s_p90": 202.8332600593567,
+    "tool_calls_avg": 0.0,
+    "llm_cost_estimate_usd_total": null,
+    "failure_modes": {
+      "execution": 1
+    }
+  },
+  "results": [
+    {
+      "task_id": "T01",
+      "query": "评估丰田汽车(TM)美股ADR的内在价值。首先获取其最新财报中的美元计价自由现金流，结合当前日元对美元的实时汇率进行本币折算还原，然后使用5%的折现率和3%的永续增长率进行DCF计算，最后对比其当前美股市场价格，判断是否存在显著的安全边际。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "还原后的日元口径自由现金流",
+          "DCF理论估值结果",
+          "TM当前市价",
+          "折溢价百分比及安全边际判断"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_exchange_rate",
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      },
+      "run": {
+        "started_at": "2026-04-15T11:05:15.758814+00:00",
+        "ended_at": "2026-04-15T11:08:38.592088+00:00",
+        "elapsed_s": 202.8332600593567,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      }
+    }
+  ]
+}

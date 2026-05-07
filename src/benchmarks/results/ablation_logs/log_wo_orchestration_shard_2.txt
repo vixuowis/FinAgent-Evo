@@ -1,0 +1,527 @@
+🔁 Resume enabled. Loaded 0 existing judged trials from: benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl
+
+🚀 Starting variant: wo_orchestration (repeat=1, disable_evo=False, disable_mem=False, disable_orch=True, react=False)
+  [Variant: wo_orchestration] [Progress: 1/75] [Task 1/75] [Trial 1/1] Running Task: T076 (ETC: N/A)
+Python REPL can execute arbitrary code. Use with caution.
+2026-04-29 01:00:29.781 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Sector rotation analysis: US Tech (QQQ) to EU Rene... Importance: 9.0
+2026-04-29 01:00:29.783 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 01:00:52.595 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 22.81s.
+  [Variant: wo_orchestration] [Task 1/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 23.0, JudgeScores: [gpt-5.4=46.0, claude-opus-4-6=0.0], Time: 695.6s
+  [Variant: wo_orchestration] [Progress: 2/75] [Task 2/75] [Trial 1/1] Running Task: T077 (ETC: 14h 17m 57s)
+2026-04-29 01:10:18.897 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Tech-to-Industrial sector rotation analysis (MSFT→... Importance: 9.0
+2026-04-29 01:10:18.898 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 01:10:46.784 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 27.89s.
+  [Variant: wo_orchestration] [Task 2/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 56.5, JudgeScores: [gpt-5.4=34.0, claude-opus-4-6=79.0], Time: 541.9s
+  [Variant: wo_orchestration] [Progress: 3/75] [Task 3/75] [Trial 1/1] Running Task: T078 (ETC: 12h 32m 50s)
+2026-04-29 01:23:31.513 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: NVDA→SO macro hedge rotation analysis under tighte... Importance: 9.0
+2026-04-29 01:23:31.513 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 01:24:06.067 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 34.55s.
+  [Variant: wo_orchestration] [Task 3/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 23.0, JudgeScores: [gpt-5.4=46.0, claude-opus-4-6=0.0], Time: 759.9s
+  [Variant: wo_orchestration] [Progress: 4/75] [Task 4/75] [Trial 1/1] Running Task: T079 (ETC: 13h 18m 58s)
+2026-04-29 01:54:15.019 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Macro regime sector rotation analysis: Tech→Financ... Importance: 9.0
+2026-04-29 01:54:15.021 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 01:54:44.812 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 29.79s.
+  [Variant: wo_orchestration] [Task 4/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 39.0, JudgeScores: [gpt-5.4=16.0, claude-opus-4-6=62.0], Time: 1786.1s
+  [Variant: wo_orchestration] [Progress: 5/75] [Task 5/75] [Trial 1/1] Running Task: T080 (ETC: 18h 39m 18s)
+2026-04-29 02:14:20.807 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Tech-to-Defense sector rotation strategy analysis ... Importance: 9.0
+2026-04-29 02:14:20.808 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 02:14:57.281 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 36.47s.
+  [Variant: wo_orchestration] [Task 5/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 9.0, JudgeScores: [gpt-5.4=18.0, claude-opus-4-6=0.0], Time: 1166.9s
+  [Variant: wo_orchestration] [Progress: 6/75] [Task 6/75] [Trial 1/1] Running Task: T081 (ETC: 19h 15m 6s)
+  [Variant: wo_orchestration] [Task 6/75] Trial 1 Completed. Hard: ❌, Judge: 💀, Score(agg): 0.0, JudgeScores: [gpt-5.4=0.0, claude-opus-4-6=0.0], Time: 1800.0s
+  [Variant: wo_orchestration] [Progress: 7/75] [Task 7/75] [Trial 1/1] Running Task: T082 (ETC: 21h 33m 50s)
+2026-04-29 02:56:01.844 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: US-EU cross-market sector rotation: reduce NVDA, a... Importance: 9.0
+2026-04-29 02:56:01.844 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 02:56:52.784 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 50.94s.
+  [Variant: wo_orchestration] [Task 7/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 18.0, JudgeScores: [gpt-5.4=36.0, claude-opus-4-6=0.0], Time: 647.7s
+  [Variant: wo_orchestration] [Progress: 8/75] [Task 8/75] [Trial 1/1] Running Task: T083 (ETC: 19h 57m 48s)
+2026-04-29 03:22:22.161 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Sector rotation analysis: Utilities (SO) to Semico... Importance: 9.0
+2026-04-29 03:22:22.163 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 03:22:57.678 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 35.52s.
+Request attempt 1 failed for judge_1: 
+  [Variant: wo_orchestration] [Task 8/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 54.0, JudgeScores: [gpt-5.4=36.0, claude-opus-4-6=72.0], Time: 1542.3s
+  [Variant: wo_orchestration] [Progress: 9/75] [Task 9/75] [Trial 1/1] Running Task: T084 (ETC: 20h 47m 56s)
+  [Variant: wo_orchestration] [Task 9/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 100.0, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=100.0], Time: 201.4s
+  [Variant: wo_orchestration] [Progress: 10/75] [Task 10/75] [Trial 1/1] Running Task: T085 (ETC: 18h 37m 20s)
+  [Variant: wo_orchestration] [Task 10/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 50.0, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=0.0], Time: 21.1s
+  [Variant: wo_orchestration] [Progress: 11/75] [Task 11/75] [Trial 1/1] Running Task: T086 (ETC: 16h 32m 39s)
+  [Variant: wo_orchestration] [Task 11/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=97.0], Time: 20.9s
+  [Variant: wo_orchestration] [Progress: 12/75] [Task 12/75] [Trial 1/1] Running Task: T087 (ETC: 14h 50m 33s)
+Request attempt 1 failed for judge_2: 
+  [Variant: wo_orchestration] [Task 12/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 50.0, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=0.0], Time: 22.8s
+  [Variant: wo_orchestration] [Progress: 13/75] [Task 13/75] [Trial 1/1] Running Task: T088 (ETC: 13h 25m 34s)
+  [Variant: wo_orchestration] [Task 13/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 50.0, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=0.0], Time: 20.8s
+  [Variant: wo_orchestration] [Progress: 14/75] [Task 14/75] [Trial 1/1] Running Task: T089 (ETC: 12h 13m 27s)
+  [Variant: wo_orchestration] [Task 14/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=97.0], Time: 27.0s
+  [Variant: wo_orchestration] [Progress: 15/75] [Task 15/75] [Trial 1/1] Running Task: T090 (ETC: 11h 12m 2s)
+  [Variant: wo_orchestration] [Task 15/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=97.0], Time: 26.3s
+  [Variant: wo_orchestration] [Progress: 16/75] [Task 16/75] [Trial 1/1] Running Task: T091 (ETC: 10h 18m 43s)
+  [Variant: wo_orchestration] [Task 16/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 96.5, JudgeScores: [gpt-5.4=96.0, claude-opus-4-6=97.0], Time: 28.3s
+  [Variant: wo_orchestration] [Progress: 17/75] [Task 17/75] [Trial 1/1] Running Task: T092 (ETC: 9h 32m 7s)
+  [Variant: wo_orchestration] [Task 17/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=97.0], Time: 20.5s
+  [Variant: wo_orchestration] [Progress: 18/75] [Task 18/75] [Trial 1/1] Running Task: T093 (ETC: 8h 50m 30s)
+  [Variant: wo_orchestration] [Task 18/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 100.0, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=100.0], Time: 19.4s
+  [Variant: wo_orchestration] [Progress: 19/75] [Task 19/75] [Trial 1/1] Running Task: T094 (ETC: 8h 13m 25s)
+  [Variant: wo_orchestration] [Task 19/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=97.0], Time: 94.2s
+  [Variant: wo_orchestration] [Progress: 20/75] [Task 20/75] [Trial 1/1] Running Task: T095 (ETC: 7h 43m 52s)
+  [Variant: wo_orchestration] [Task 20/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 77.0, JudgeScores: [gpt-5.4=76.0, claude-opus-4-6=78.0], Time: 179.2s
+  [Variant: wo_orchestration] [Progress: 21/75] [Task 21/75] [Trial 1/1] Running Task: T096 (ETC: 7h 21m 1s)
+2026-04-29 03:47:44.412 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: 评估BTC对美元通胀的对冲效果：获取BTC现货价、CPI同比、USD/CNY汇率，计算10,000美... Importance: 8.0
+2026-04-29 03:47:44.414 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 03:48:18.487 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 34.07s.
+  [Variant: wo_orchestration] [Task 21/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 50.0, JudgeScores: [gpt-5.4=28.0, claude-opus-4-6=72.0], Time: 301.2s
+  [Variant: wo_orchestration] [Progress: 22/75] [Task 22/75] [Trial 1/1] Running Task: T097 (ETC: 7h 5m 18s)
+  [Variant: wo_orchestration] [Task 22/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 24.0, JudgeScores: [gpt-5.4=48.0, claude-opus-4-6=0.0], Time: 322.3s
+  [Variant: wo_orchestration] [Progress: 23/75] [Task 23/75] [Trial 1/1] Running Task: T098 (ETC: 6h 51m 23s)
+  [Variant: wo_orchestration] [Task 23/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 70.5, JudgeScores: [gpt-5.4=54.0, claude-opus-4-6=87.0], Time: 130.1s
+  [Variant: wo_orchestration] [Progress: 24/75] [Task 24/75] [Trial 1/1] Running Task: T099 (ETC: 6h 30m 58s)
+  [Variant: wo_orchestration] [Task 24/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 70.0, JudgeScores: [gpt-5.4=58.0, claude-opus-4-6=82.0], Time: 148.9s
+  [Variant: wo_orchestration] [Progress: 25/75] [Task 25/75] [Trial 1/1] Running Task: T100 (ETC: 6h 12m 45s)
+2026-04-29 04:08:01.351 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: 评估加密资产(BTC/ETH)与传统替代资产(黄金)近期表现与宏观环境(联邦基金利率)的关联，计算3... Importance: 8.0
+2026-04-29 04:08:01.351 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 04:08:34.791 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 33.44s.
+  [Variant: wo_orchestration] [Task 25/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 10.5, JudgeScores: [gpt-5.4=21.0, claude-opus-4-6=0.0], Time: 464.3s
+  [Variant: wo_orchestration] [Progress: 26/75] [Task 26/75] [Trial 1/1] Running Task: T101 (ETC: 6h 6m 18s)
+  [Variant: wo_orchestration] [Task 26/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 74.5, JudgeScores: [gpt-5.4=62.0, claude-opus-4-6=87.0], Time: 106.7s
+  [Variant: wo_orchestration] [Progress: 27/75] [Task 27/75] [Trial 1/1] Running Task: T102 (ETC: 5h 48m 31s)
+  [Variant: wo_orchestration] [Task 27/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 61.5, JudgeScores: [gpt-5.4=51.0, claude-opus-4-6=72.0], Time: 64.5s
+  [Variant: wo_orchestration] [Progress: 28/75] [Task 28/75] [Trial 1/1] Running Task: T103 (ETC: 5h 30m 40s)
+2026-04-29 04:18:58.308 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Cross-currency crypto portfolio evaluation: BTC+ET... Importance: 8.0
+2026-04-29 04:18:58.308 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 04:19:33.414 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 35.11s.
+  [Variant: wo_orchestration] [Task 28/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 5.0, JudgeScores: [gpt-5.4=10.0, claude-opus-4-6=0.0], Time: 379.3s
+  [Variant: wo_orchestration] [Progress: 29/75] [Task 29/75] [Trial 1/1] Running Task: T104 (ETC: 5h 22m 50s)
+2026-04-29 04:23:25.110 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: 构建加密货币宏观相对估值模型：结合CPI、联邦基金利率、市场情绪、USD/JPY汇率，计算ETH/B... Importance: 8.0
+2026-04-29 04:23:25.111 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 04:24:03.438 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 38.33s.
+  [Variant: wo_orchestration] [Task 29/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 65.0, JudgeScores: [gpt-5.4=48.0, claude-opus-4-6=82.0], Time: 235.7s
+  [Variant: wo_orchestration] [Progress: 30/75] [Task 30/75] [Trial 1/1] Running Task: T105 (ETC: 5h 11m 18s)
+2026-04-29 04:28:13.760 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: BTC macro-factor cross-valuation with network cash... Importance: 8.0
+2026-04-29 04:28:13.760 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 04:28:54.680 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 40.92s.
+  [Variant: wo_orchestration] [Task 30/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 72.5, JudgeScores: [gpt-5.4=58.0, claude-opus-4-6=87.0], Time: 321.1s
+  [Variant: wo_orchestration] [Progress: 31/75] [Task 31/75] [Trial 1/1] Running Task: T106 (ETC: 5h 2m 24s)
+  [Variant: wo_orchestration] [Task 31/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 62.5, JudgeScores: [gpt-5.4=46.0, claude-opus-4-6=79.0], Time: 466.5s
+  [Variant: wo_orchestration] [Progress: 32/75] [Task 32/75] [Trial 1/1] Running Task: T107 (ETC: 4h 57m 11s)
+2026-04-29 04:47:04.697 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Cross-asset valuation (BTC+COIN) with DCF, macro s... Importance: 8.0
+2026-04-29 04:47:04.698 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 04:47:51.295 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 46.60s.
+  [Variant: wo_orchestration] [Task 32/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 58.0, JudgeScores: [gpt-5.4=34.0, claude-opus-4-6=82.0], Time: 519.7s
+  [Variant: wo_orchestration] [Progress: 33/75] [Task 33/75] [Trial 1/1] Running Task: T108 (ETC: 4h 53m 0s)
+  [Variant: wo_orchestration] [Task 33/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 87.0, JudgeScores: [gpt-5.4=74.0, claude-opus-4-6=100.0], Time: 906.0s
+  [Variant: wo_orchestration] [Progress: 34/75] [Task 34/75] [Trial 1/1] Running Task: T109 (ETC: 4h 56m 43s)
+  [Variant: wo_orchestration] [Task 34/75] Trial 1 Completed. Hard: ❌, Judge: 💀, Score(agg): 0.0, JudgeScores: [gpt-5.4=0.0, claude-opus-4-6=0.0], Time: 1800.0s
+  [Variant: wo_orchestration] [Progress: 35/75] [Task 35/75] [Trial 1/1] Running Task: T110 (ETC: 5h 17m 19s)
+2026-04-29 06:00:20.942 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Multi-asset (BTC/ETH/GLD) macro传导分析 + MVP portfoli... Importance: 8.0
+2026-04-29 06:00:20.945 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 06:01:08.548 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 47.60s.
+Request attempt 1 failed for judge_2: 
+  [Variant: wo_orchestration] [Task 35/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 62.0, JudgeScores: [gpt-5.4=46.0, claude-opus-4-6=78.0], Time: 1591.8s
+  [Variant: wo_orchestration] [Progress: 36/75] [Task 36/75] [Trial 1/1] Running Task: T111 (ETC: 5h 31m 3s)
+2026-04-29 06:18:43.689 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: BTC vs Gold digital safe-haven premium assessment ... Importance: 8.0
+2026-04-29 06:18:43.689 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 06:19:27.603 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 43.91s.
+Request attempt 1 failed for judge_1: 
+  [Variant: wo_orchestration] [Task 36/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 57.5, JudgeScores: [gpt-5.4=43.0, claude-opus-4-6=72.0], Time: 1057.4s
+  [Variant: wo_orchestration] [Progress: 37/75] [Task 37/75] [Trial 1/1] Running Task: T112 (ETC: 5h 32m 54s)
+2026-04-29 06:37:47.441 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: BTC cross-asset macro stress test & intrinsic valu... Importance: 8.0
+2026-04-29 06:37:47.443 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 06:38:30.066 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 42.62s.
+  [Variant: wo_orchestration] [Task 37/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 24.0, JudgeScores: [gpt-5.4=48.0, claude-opus-4-6=0.0], Time: 1079.6s
+  [Variant: wo_orchestration] [Progress: 38/75] [Task 38/75] [Trial 1/1] Running Task: T113 (ETC: 5h 34m 5s)
+  [Variant: wo_orchestration] [Task 38/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 17.0, JudgeScores: [gpt-5.4=34.0, claude-opus-4-6=0.0], Time: 612.8s
+  [Variant: wo_orchestration] [Progress: 39/75] [Task 39/75] [Trial 1/1] Running Task: T114 (ETC: 5h 26m 40s)
+  [Variant: wo_orchestration] [Task 39/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 30.0, JudgeScores: [gpt-5.4=60.0, claude-opus-4-6=0.0], Time: 95.8s
+  [Variant: wo_orchestration] [Progress: 40/75] [Task 40/75] [Trial 1/1] Running Task: T115 (ETC: 5h 11m 10s)
+  [Variant: wo_orchestration] [Task 40/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=97.0], Time: 32.2s
+  [Variant: wo_orchestration] [Progress: 41/75] [Task 41/75] [Trial 1/1] Running Task: T116 (ETC: 4h 55m 26s)
+  [Variant: wo_orchestration] [Task 41/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=97.0], Time: 18.4s
+  [Variant: wo_orchestration] [Progress: 42/75] [Task 42/75] [Trial 1/1] Running Task: T117 (ETC: 4h 40m 14s)
+  [Variant: wo_orchestration] [Task 42/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=97.0], Time: 26.0s
+  [Variant: wo_orchestration] [Progress: 43/75] [Task 43/75] [Trial 1/1] Running Task: T118 (ETC: 4h 25m 52s)
+  [Variant: wo_orchestration] [Task 43/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=97.0], Time: 22.2s
+  [Variant: wo_orchestration] [Progress: 44/75] [Task 44/75] [Trial 1/1] Running Task: T119 (ETC: 4h 12m 5s)
+  [Variant: wo_orchestration] [Task 44/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 50.0, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=0.0], Time: 54.6s
+  [Variant: wo_orchestration] [Progress: 45/75] [Task 45/75] [Trial 1/1] Running Task: T120 (ETC: 3h 59m 18s)
+  [Variant: wo_orchestration] [Task 45/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 96.0, JudgeScores: [gpt-5.4=95.0, claude-opus-4-6=97.0], Time: 20.0s
+  [Variant: wo_orchestration] [Progress: 46/75] [Task 46/75] [Trial 1/1] Running Task: T121 (ETC: 3h 46m 39s)
+  [Variant: wo_orchestration] [Task 46/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 91.0, JudgeScores: [gpt-5.4=90.0, claude-opus-4-6=92.0], Time: 44.5s
+  [Variant: wo_orchestration] [Progress: 47/75] [Task 47/75] [Trial 1/1] Running Task: T122 (ETC: 3h 34m 48s)
+  [Variant: wo_orchestration] [Task 47/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 96.0, JudgeScores: [gpt-5.4=95.0, claude-opus-4-6=97.0], Time: 49.1s
+  [Variant: wo_orchestration] [Progress: 48/75] [Task 48/75] [Trial 1/1] Running Task: T123 (ETC: 3h 23m 28s)
+  [Variant: wo_orchestration] [Task 48/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 72.0, JudgeScores: [gpt-5.4=72.0, claude-opus-4-6=72.0], Time: 103.7s
+  [Variant: wo_orchestration] [Progress: 49/75] [Task 49/75] [Trial 1/1] Running Task: T124 (ETC: 3h 13m 5s)
+  [Variant: wo_orchestration] [Task 49/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 23.0, JudgeScores: [gpt-5.4=46.0, claude-opus-4-6=0.0], Time: 197.7s
+  [Variant: wo_orchestration] [Progress: 50/75] [Task 50/75] [Trial 1/1] Running Task: T125 (ETC: 3h 3m 53s)
+  [Variant: wo_orchestration] [Task 50/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 78.0, JudgeScores: [gpt-5.4=78.0, claude-opus-4-6=78.0], Time: 171.8s
+  [Variant: wo_orchestration] [Progress: 51/75] [Task 51/75] [Trial 1/1] Running Task: T126 (ETC: 2h 54m 43s)
+  [Variant: wo_orchestration] [Task 51/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=97.0], Time: 30.7s
+  [Variant: wo_orchestration] [Progress: 52/75] [Task 52/75] [Trial 1/1] Running Task: T127 (ETC: 2h 44m 41s)
+  [Variant: wo_orchestration] [Task 52/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 60.0, JudgeScores: [gpt-5.4=48.0, claude-opus-4-6=72.0], Time: 70.3s
+  [Variant: wo_orchestration] [Progress: 53/75] [Task 53/75] [Trial 1/1] Running Task: T128 (ETC: 2h 35m 18s)
+  [Variant: wo_orchestration] [Task 53/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 63.0, JudgeScores: [gpt-5.4=48.0, claude-opus-4-6=78.0], Time: 122.1s
+  [Variant: wo_orchestration] [Progress: 54/75] [Task 54/75] [Trial 1/1] Running Task: T129 (ETC: 2h 26m 35s)
+  [Variant: wo_orchestration] [Task 54/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 71.5, JudgeScores: [gpt-5.4=61.0, claude-opus-4-6=82.0], Time: 54.2s
+  [Variant: wo_orchestration] [Progress: 55/75] [Task 55/75] [Trial 1/1] Running Task: T130 (ETC: 2h 17m 41s)
+Request attempt 1 failed for judge_1: 
+  [Variant: wo_orchestration] [Task 55/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 26.0, JudgeScores: [gpt-5.4=52.0, claude-opus-4-6=0.0], Time: 209.4s
+  [Variant: wo_orchestration] [Progress: 56/75] [Task 56/75] [Trial 1/1] Running Task: T131 (ETC: 2h 10m 1s)
+  [Variant: wo_orchestration] [Task 56/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 26.5, JudgeScores: [gpt-5.4=53.0, claude-opus-4-6=0.0], Time: 210.1s
+  [Variant: wo_orchestration] [Progress: 57/75] [Task 57/75] [Trial 1/1] Running Task: T132 (ETC: 2h 2m 30s)
+  [Variant: wo_orchestration] [Task 57/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 77.0, JudgeScores: [gpt-5.4=66.0, claude-opus-4-6=88.0], Time: 222.4s
+  [Variant: wo_orchestration] [Progress: 58/75] [Task 58/75] [Trial 1/1] Running Task: T133 (ETC: 1h 55m 11s)
+2026-04-29 07:33:14.375 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: 央行降准50BP对招商银行(600036.SH)资产负债表与盈利影响量化评估... Importance: 8.0
+2026-04-29 07:33:14.375 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 07:34:00.020 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 45.64s.
+  [Variant: wo_orchestration] [Task 58/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 72.0, JudgeScores: [gpt-5.4=62.0, claude-opus-4-6=82.0], Time: 236.6s
+  [Variant: wo_orchestration] [Progress: 59/75] [Task 59/75] [Trial 1/1] Running Task: T134 (ETC: 1h 48m 4s)
+  [Variant: wo_orchestration] [Task 59/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 58.0, JudgeScores: [gpt-5.4=34.0, claude-opus-4-6=82.0], Time: 384.9s
+  [Variant: wo_orchestration] [Progress: 60/75] [Task 60/75] [Trial 1/1] Running Task: T135 (ETC: 1h 41m 43s)
+2026-04-29 07:46:44.133 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: 评估央行降准0.5个百分点对招商银行财务影响，包含敏感性测试（NIM收窄15bp）... Importance: 8.0
+2026-04-29 07:46:44.135 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 07:47:28.441 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 44.31s.
+  [Variant: wo_orchestration] [Task 60/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 20.5, JudgeScores: [gpt-5.4=41.0, claude-opus-4-6=0.0], Time: 351.8s
+  [Variant: wo_orchestration] [Progress: 61/75] [Task 61/75] [Trial 1/1] Running Task: T136 (ETC: 1h 35m 14s)
+2026-04-29 07:51:22.513 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: 分析欧盟反补贴关税对比亚迪净利润的量化影响... Importance: 8.0
+2026-04-29 07:51:22.515 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 07:51:56.326 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 33.81s.
+  [Variant: wo_orchestration] [Task 61/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 11.0, JudgeScores: [gpt-5.4=22.0, claude-opus-4-6=0.0], Time: 219.2s
+  [Variant: wo_orchestration] [Progress: 62/75] [Task 62/75] [Trial 1/1] Running Task: T137 (ETC: 1h 28m 16s)
+2026-04-29 07:57:29.609 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Fed rate decision impact on DCF valuation - Dec 20... Importance: 8.0
+2026-04-29 07:57:29.610 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 07:58:03.779 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 34.17s.
+  [Variant: wo_orchestration] [Task 62/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 59.5, JudgeScores: [gpt-5.4=47.0, claude-opus-4-6=72.0], Time: 329.4s
+  [Variant: wo_orchestration] [Progress: 63/75] [Task 63/75] [Trial 1/1] Running Task: T138 (ETC: 1h 21m 48s)
+2026-04-29 08:04:44.562 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: 评估欧盟反补贴关税对比亚迪基本面的财务冲击，完成压力测试量化分析... Importance: 8.0
+2026-04-29 08:04:44.563 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 08:05:18.896 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 34.33s.
+  [Variant: wo_orchestration] [Task 63/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 50.0, JudgeScores: [gpt-5.4=22.0, claude-opus-4-6=78.0], Time: 407.4s
+  [Variant: wo_orchestration] [Progress: 64/75] [Task 64/75] [Trial 1/1] Running Task: T139 (ETC: 1h 15m 36s)
+  [Variant: wo_orchestration] [Task 64/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 64.0, JudgeScores: [gpt-5.4=46.0, claude-opus-4-6=82.0], Time: 602.6s
+  [Variant: wo_orchestration] [Progress: 65/75] [Task 65/75] [Trial 1/1] Running Task: T140 (ETC: 1h 9m 56s)
+2026-04-29 08:24:05.069 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: 分析美联储维持利率+欧盟反补贴关税双重政策对TSLA的财务影响，计算毛利率-2pp冲击下调整净利润与... Importance: 9.0
+2026-04-29 08:24:05.070 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 08:24:42.856 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 37.79s.
+  [Variant: wo_orchestration] [Task 65/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 73.0, JudgeScores: [gpt-5.4=58.0, claude-opus-4-6=88.0], Time: 463.2s
+  [Variant: wo_orchestration] [Progress: 66/75] [Task 66/75] [Trial 1/1] Running Task: T141 (ETC: 1h 3m 47s)
+2026-04-29 08:30:29.063 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: 宁德时代(300750.SZ)中美政策组合估值分析：FOMC降息不确定+中国NEV购置税减免延续... Importance: 8.0
+2026-04-29 08:30:29.064 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 08:31:04.488 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 35.42s.
+  [Variant: wo_orchestration] [Task 66/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 30.5, JudgeScores: [gpt-5.4=61.0, claude-opus-4-6=0.0], Time: 378.5s
+  [Variant: wo_orchestration] [Progress: 67/75] [Task 67/75] [Trial 1/1] Running Task: T142 (ETC: 57m 24s)
+2026-04-29 08:48:59.919 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Volkswagen AG (VOW3.DE) comprehensive DCF valuatio... Importance: 9.0
+2026-04-29 08:48:59.921 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 08:49:41.988 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 42.07s.
+  [Variant: wo_orchestration] [Task 67/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 57.0, JudgeScores: [gpt-5.4=42.0, claude-opus-4-6=72.0], Time: 1109.3s
+  [Variant: wo_orchestration] [Progress: 68/75] [Task 68/75] [Trial 1/1] Running Task: T143 (ETC: 52m 28s)
+2026-04-29 09:01:19.503 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: AAPL Greater China macro transmission analysis: Fe... Importance: 9.0
+2026-04-29 09:01:19.504 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 09:02:02.525 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 43.02s.
+  [Variant: wo_orchestration] [Task 68/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 56.0, JudgeScores: [gpt-5.4=34.0, claude-opus-4-6=78.0], Time: 623.2s
+  [Variant: wo_orchestration] [Progress: 69/75] [Task 69/75] [Trial 1/1] Running Task: T144 (ETC: 46m 18s)
+  [Variant: wo_orchestration] [Task 69/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 68.0, JudgeScores: [gpt-5.4=54.0, claude-opus-4-6=82.0], Time: 674.0s
+  [Variant: wo_orchestration] [Progress: 70/75] [Task 70/75] [Trial 1/1] Running Task: T145 (ETC: 40m 5s)
+  [Variant: wo_orchestration] [Task 70/75] Trial 1 Completed. Hard: ❌, Judge: 💀, Score(agg): 0.0, JudgeScores: [gpt-5.4=0.0, claude-opus-4-6=0.0], Time: 1800.0s
+  [Variant: wo_orchestration] [Progress: 71/75] [Task 71/75] [Trial 1/1] Running Task: T146 (ETC: 35m 4s)
+2026-04-29 09:51:51.199 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: ECB rate cut impact on ASML DCF valuation — full t... Importance: 9.0
+2026-04-29 09:51:51.201 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 09:52:23.176 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 31.98s.
+  [Variant: wo_orchestration] [Task 71/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 81.5, JudgeScores: [gpt-5.4=72.0, claude-opus-4-6=91.0], Time: 500.5s
+  [Variant: wo_orchestration] [Progress: 72/75] [Task 72/75] [Trial 1/1] Running Task: T147 (ETC: 28m 8s)
+  [Variant: wo_orchestration] [Task 72/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 59.5, JudgeScores: [gpt-5.4=37.0, claude-opus-4-6=82.0], Time: 1988.5s
+  [Variant: wo_orchestration] [Progress: 73/75] [Task 73/75] [Trial 1/1] Running Task: T148 (ETC: 22m 11s)
+2026-04-29 10:33:06.778 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: AMD valuation under US export controls + Fed rate ... Importance: 9.0
+2026-04-29 10:33:06.781 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 10:33:41.816 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 35.04s.
+  [Variant: wo_orchestration] [Task 73/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 33.0, JudgeScores: [gpt-5.4=66.0, claude-opus-4-6=0.0], Time: 378.5s
+  [Variant: wo_orchestration] [Progress: 74/75] [Task 74/75] [Trial 1/1] Running Task: T149 (ETC: 14m 45s)
+  [Variant: wo_orchestration] [Task 74/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 61.0, JudgeScores: [gpt-5.4=44.0, claude-opus-4-6=78.0], Time: 711.6s
+  [Variant: wo_orchestration] [Progress: 75/75] [Task 75/75] [Trial 1/1] Running Task: T150 (ETC: 7m 26s)
+2026-04-29 10:56:49.013 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: TSLA comprehensive valuation under IRA subsidy pha... Importance: 9.0
+2026-04-29 10:56:49.015 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-04-29 10:57:39.075 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 50.06s.
+  [Variant: wo_orchestration] [Task 75/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 66.5, JudgeScores: [gpt-5.4=61.0, claude-opus-4-6=72.0], Time: 589.7s
+🏁 Finished variant: wo_orchestration. Hard Success: 72/75, Judge Success: 20/75, Avg Score: 58.4
+🔁 Resume enabled. Loaded 0 existing judged trials from: benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl
+
+🚀 Starting variant: wo_orchestration (repeat=1, disable_evo=False, disable_mem=False, disable_orch=True, react=False)
+  [Variant: wo_orchestration] [Progress: 1/75] [Task 1/75] [Trial 1/1] Running Task: T076 (ETC: N/A)
+🔁 Resume enabled. Loaded 0 existing judged trials from: benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl
+
+🚀 Starting variant: wo_orchestration (repeat=1, disable_evo=False, disable_mem=False, disable_orch=True, react=False)
+  [Variant: wo_orchestration] [Progress: 1/75] [Task 1/75] [Trial 1/1] Running Task: T076 (ETC: N/A)
+Python REPL can execute arbitrary code. Use with caution.
+Python REPL can execute arbitrary code. Use with caution.
+2026-05-01 13:07:16.103 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Sector rotation evaluation: US Tech (QQQ) 60% → Eu... Importance: 9.0
+2026-05-01 13:07:16.105 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 13:07:33.822 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 17.72s.
+  [Variant: wo_orchestration] [Task 1/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 20.5, JudgeScores: [gpt-5.4=41.0, claude-opus-4-6=0.0], Time: 1298.2s
+  [Variant: wo_orchestration] [Progress: 2/75] [Task 2/75] [Trial 1/1] Running Task: T077 (ETC: 26h 41m 5s)
+🔁 Resume enabled. Loaded 1 existing judged trials from: benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl
+
+🚀 Starting variant: wo_orchestration (repeat=1, disable_evo=False, disable_mem=False, disable_orch=True, react=False)
+  [Variant: wo_orchestration] [Task 1/75] [Trial 1/1] Skipping (already done): T076
+  [Variant: wo_orchestration] [Progress: 1/74] [Task 2/75] [Trial 1/1] Running Task: T077 (ETC: N/A)
+Python REPL can execute arbitrary code. Use with caution.
+2026-05-01 13:26:08.480 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Sector rotation analysis: 20% MSFT → CAT in macro ... Importance: 9.0
+2026-05-01 13:26:08.481 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 13:26:36.246 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 27.76s.
+  [Variant: wo_orchestration] [Task 2/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 51.5, JudgeScores: [gpt-5.4=21.0, claude-opus-4-6=82.0], Time: 603.9s
+  [Variant: wo_orchestration] [Progress: 2/74] [Task 3/75] [Trial 1/1] Running Task: T078 (ETC: 12h 14m 42s)
+  [Variant: wo_orchestration] [Task 3/75] Trial 1 Completed. Hard: ❌, Judge: 💀, Score(agg): 2.0, JudgeScores: [gpt-5.4=0.0, claude-opus-4-6=4.0], Time: 1800.0s
+  [Variant: wo_orchestration] [Progress: 3/74] [Task 4/75] [Trial 1/1] Running Task: T079 (ETC: 24h 2m 20s)
+  [Variant: wo_orchestration] [Task 4/75] Trial 1 Completed. Hard: ❌, Judge: 💀, Score(agg): 1.0, JudgeScores: [gpt-5.4=0.0, claude-opus-4-6=2.0], Time: 1800.0s
+  [Variant: wo_orchestration] [Progress: 4/74] [Task 5/75] [Trial 1/1] Running Task: T080 (ETC: 27h 38m 12s)
+  [Variant: wo_orchestration] [Task 5/75] Trial 1 Completed. Hard: ❌, Judge: 💀, Score(agg): 0.0, JudgeScores: [gpt-5.4=0.0, claude-opus-4-6=0.0], Time: 1800.0s
+  [Variant: wo_orchestration] [Progress: 5/74] [Task 6/75] [Trial 1/1] Running Task: T081 (ETC: 29h 11m 9s)
+HTTP 403 from judge_2 (Attempt 1): {"error":{"message":"预扣费额度失败, 用户剩余额度: 💧0.179776, 需要预扣费额度: 💧0.250000 (request id: 202605010728521866327628268d9d6ARANnEjF)","type":"new_api_error","param":"","code":"insufficient_user_quota"}}
+Request attempt 1 failed for judge_2: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.179776, 需要预扣费额度: 💧0.250000 (request id: 202605010728528273602368268d9d68lveRyP6)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+LangChain fallback attempt 1 also failed: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.179776, 需要预扣费额度: 💧0.250000 (request id: 20260501072853366421808268d9d63wzi0ZJ1)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+HTTP 403 from judge_2 (Attempt 2): {"error":{"message":"预扣费额度失败, 用户剩余额度: 💧0.176322, 需要预扣费额度: 💧0.250000 (request id: 202605010728588608744888268d9d6kJhkPtyz)","type":"new_api_error","param":"","code":"insufficient_user_quota"}}
+Request attempt 2 failed for judge_2: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.176322, 需要预扣费额度: 💧0.250000 (request id: 202605010728595158355398268d9d6TjNKsCjg)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+LangChain fallback attempt 2 also failed: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.176322, 需要预扣费额度: 💧0.250000 (request id: 202605010728597262993588268d9d6cvt0dX23)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+HTTP 403 from judge_2 (Attempt 3): {"error":{"message":"预扣费额度失败, 用户剩余额度: 💧0.176322, 需要预扣费额度: 💧0.250000 (request id: 202605010729103246244638268d9d6ba1lUElz)","type":"new_api_error","param":"","code":"insufficient_user_quota"}}
+Request attempt 3 failed for judge_2: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.176322, 需要预扣费额度: 💧0.250000 (request id: 20260501072911178015198268d9d6d8OZXtBm)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+LangChain fallback attempt 3 also failed: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.176322, 需要预扣费额度: 💧0.250000 (request id: 202605010729112343762168268d9d6eqxlPzhy)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+  [Variant: wo_orchestration] [Task 6/75] Trial 1 Completed. Hard: ❌, Judge: 💀, Score(agg): 0.0, JudgeScores: [gpt-5.4=0.0, claude-opus-4-6=0.0], Time: 1800.0s
+  [Variant: wo_orchestration] [Progress: 6/74] [Task 7/75] [Trial 1/1] Running Task: T082 (ETC: 29h 54m 54s)
+HTTP 403 from judge_1 (Attempt 1): {"error":{"message":"预扣费额度失败, 用户剩余额度: 💧0.057058, 需要预扣费额度: 💧0.061046 (request id: 202605010739515314365838268d9d6ETIhBVZt)","type":"new_api_error","param":"","code":"insufficient_user_quota"}}
+Request attempt 1 failed for judge_1: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.057058, 需要预扣费额度: 💧0.061046 (request id: 202605010739529208081848268d9d63T2Vos2H)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+LangChain fallback attempt 1 also failed: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.057058, 需要预扣费额度: 💧0.061046 (request id: 202605010739533200997918268d9d6KgavnuK4)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+HTTP 403 from judge_1 (Attempt 2): {"error":{"message":"预扣费额度失败, 用户剩余额度: 💧0.048918, 需要预扣费额度: 💧0.061046 (request id: 202605010739594313251548268d9d6NGnoWCDL)","type":"new_api_error","param":"","code":"insufficient_user_quota"}}
+Request attempt 2 failed for judge_1: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.048918, 需要预扣费额度: 💧0.061046 (request id: 202605010740006347515518268d9d6RPV55nkP)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+LangChain fallback attempt 2 also failed: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.048918, 需要预扣费额度: 💧0.061046 (request id: 202605010740012757132598268d9d6ZuBVQPjb)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+HTTP 403 from judge_1 (Attempt 3): {"error":{"message":"预扣费额度失败, 用户剩余额度: 💧0.039070, 需要预扣费额度: 💧0.061046 (request id: 202605010740124324998348268d9d6oMCud2wc)","type":"new_api_error","param":"","code":"insufficient_user_quota"}}
+Request attempt 3 failed for judge_1: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.039070, 需要预扣费额度: 💧0.061046 (request id: 202605010740137494971528268d9d6LHPSrlS2)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+LangChain fallback attempt 3 also failed: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.039070, 需要预扣费额度: 💧0.061046 (request id: 202605010740142916831758268d9d6iWQmkNVf)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+HTTP 403 from judge_2 (Attempt 1): {"error":{"message":"预扣费额度失败, 用户剩余额度: 💧0.039070, 需要预扣费额度: 💧0.250000 (request id: 202605010740159991198928268d9d62g3iPxBs)","type":"new_api_error","param":"","code":"insufficient_user_quota"}}
+Request attempt 1 failed for judge_2: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.039070, 需要预扣费额度: 💧0.250000 (request id: 202605010740163572658858268d9d6vpcLHcAO)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+LangChain fallback attempt 1 also failed: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.039070, 需要预扣费额度: 💧0.250000 (request id: 202605010740167195419528268d9d60TVgzW83)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+HTTP 403 from judge_2 (Attempt 2): {"error":{"message":"预扣费额度失败, 用户剩余额度: 💧0.039070, 需要预扣费额度: 💧0.250000 (request id: 20260501074023945489448268d9d64D9HGIKd)","type":"new_api_error","param":"","code":"insufficient_user_quota"}}
+Request attempt 2 failed for judge_2: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.036642, 需要预扣费额度: 💧0.250000 (request id: 202605010740241989285178268d9d6xyKK7FMn)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+LangChain fallback attempt 2 also failed: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.036642, 需要预扣费额度: 💧0.250000 (request id: 202605010740246132102278268d9d6AgU4JyS7)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+HTTP 403 from judge_2 (Attempt 3): {"error":{"message":"预扣费额度失败, 用户剩余额度: 💧0.030054, 需要预扣费额度: 💧0.250000 (request id: 202605010740357010586498268d9d6kdW0hkS9)","type":"new_api_error","param":"","code":"insufficient_user_quota"}}
+Request attempt 3 failed for judge_2: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.030054, 需要预扣费额度: 💧0.250000 (request id: 202605010740368103095268268d9d6eWMEZsgd)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+LangChain fallback attempt 3 also failed: Error code: 403 - {'error': {'message': '预扣费额度失败, 用户剩余额度: 💧0.030054, 需要预扣费额度: 💧0.250000 (request id: 202605010740372352191148268d9d62Wl2Vyg3)', 'type': 'new_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+  [Variant: wo_orchestration] [Task 7/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 0.0, JudgeScores: [gpt-5.4=0.0, claude-opus-4-6=0.0], Time: 635.2s
+  [Variant: wo_orchestration] [Progress: 7/74] [Task 8/75] [Trial 1/1] Running Task: T083 (ETC: 26h 34m 3s)
+  [Variant: wo_orchestration] [Task 8/75] Trial 1 Completed. Hard: ❌, Judge: 💀, Score(agg): 1.0, JudgeScores: [gpt-5.4=0.0, claude-opus-4-6=2.0], Time: 1800.0s
+  [Variant: wo_orchestration] [Progress: 8/74] [Task 9/75] [Trial 1/1] Running Task: T084 (ETC: 27h 13m 23s)
+  [Variant: wo_orchestration] [Task 9/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=97.0], Time: 18.6s
+  [Variant: wo_orchestration] [Progress: 9/74] [Task 10/75] [Trial 1/1] Running Task: T085 (ETC: 23h 30m 26s)
+  [Variant: wo_orchestration] [Task 10/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 97.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=95.0], Time: 25.3s
+  [Variant: wo_orchestration] [Progress: 10/74] [Task 11/75] [Trial 1/1] Running Task: T086 (ETC: 20h 37m 46s)
+  [Variant: wo_orchestration] [Task 11/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=97.0], Time: 22.8s
+  [Variant: wo_orchestration] [Progress: 11/74] [Task 12/75] [Trial 1/1] Running Task: T087 (ETC: 18h 19m 17s)
+  [Variant: wo_orchestration] [Task 12/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 50.0, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=0.0], Time: 23.9s
+  [Variant: wo_orchestration] [Progress: 12/74] [Task 13/75] [Trial 1/1] Running Task: T088 (ETC: 16h 26m 0s)
+  [Variant: wo_orchestration] [Task 13/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=97.0], Time: 22.6s
+  [Variant: wo_orchestration] [Progress: 13/74] [Task 14/75] [Trial 1/1] Running Task: T089 (ETC: 14h 51m 26s)
+  [Variant: wo_orchestration] [Task 14/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 97.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=95.0], Time: 18.4s
+  [Variant: wo_orchestration] [Progress: 14/74] [Task 15/75] [Trial 1/1] Running Task: T090 (ETC: 13h 31m 2s)
+  [Variant: wo_orchestration] [Task 15/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 100.0, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=100.0], Time: 18.6s
+  [Variant: wo_orchestration] [Progress: 15/74] [Task 16/75] [Trial 1/1] Running Task: T091 (ETC: 12h 22m 5s)
+  [Variant: wo_orchestration] [Task 16/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 92.5, JudgeScores: [gpt-5.4=90.0, claude-opus-4-6=95.0], Time: 40.0s
+  [Variant: wo_orchestration] [Progress: 16/74] [Task 17/75] [Trial 1/1] Running Task: T092 (ETC: 11h 23m 41s)
+  [Variant: wo_orchestration] [Task 17/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 50.0, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=0.0], Time: 25.2s
+  [Variant: wo_orchestration] [Progress: 17/74] [Task 18/75] [Trial 1/1] Running Task: T093 (ETC: 10h 31m 37s)
+  [Variant: wo_orchestration] [Task 18/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=97.0], Time: 24.6s
+  [Variant: wo_orchestration] [Progress: 18/74] [Task 19/75] [Trial 1/1] Running Task: T094 (ETC: 9h 45m 35s)
+  [Variant: wo_orchestration] [Task 19/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.0, JudgeScores: [gpt-5.4=99.0, claude-opus-4-6=97.0], Time: 127.5s
+  [Variant: wo_orchestration] [Progress: 19/74] [Task 20/75] [Trial 1/1] Running Task: T095 (ETC: 9h 9m 58s)
+  [Variant: wo_orchestration] [Task 20/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 59.0, JudgeScores: [gpt-5.4=54.0, claude-opus-4-6=64.0], Time: 289.5s
+  [Variant: wo_orchestration] [Progress: 20/74] [Task 21/75] [Trial 1/1] Running Task: T096 (ETC: 8h 45m 41s)
+  [Variant: wo_orchestration] [Task 21/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 59.0, JudgeScores: [gpt-5.4=46.0, claude-opus-4-6=72.0], Time: 234.0s
+  [Variant: wo_orchestration] [Progress: 21/74] [Task 22/75] [Trial 1/1] Running Task: T097 (ETC: 8h 20m 51s)
+  [Variant: wo_orchestration] [Task 22/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 72.0, JudgeScores: [gpt-5.4=62.0, claude-opus-4-6=82.0], Time: 386.2s
+  [Variant: wo_orchestration] [Progress: 22/74] [Task 23/75] [Trial 1/1] Running Task: T098 (ETC: 8h 4m 24s)
+  [Variant: wo_orchestration] [Task 23/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 31.0, JudgeScores: [gpt-5.4=62.0, claude-opus-4-6=0.0], Time: 118.0s
+  [Variant: wo_orchestration] [Progress: 23/74] [Task 24/75] [Trial 1/1] Running Task: T099 (ETC: 7h 38m 19s)
+  [Variant: wo_orchestration] [Task 24/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 80.0, JudgeScores: [gpt-5.4=72.0, claude-opus-4-6=88.0], Time: 169.3s
+  [Variant: wo_orchestration] [Progress: 24/74] [Task 25/75] [Trial 1/1] Running Task: T100 (ETC: 7h 16m 13s)
+2026-05-01 16:50:10.598 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: 加密资产vs传统替代资产宏观关联评估：BTC+13.64%, ETH+11.44%, XAU-0.3... Importance: 8.0
+2026-05-01 16:50:10.600 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 16:50:35.845 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 25.24s.
+  [Variant: wo_orchestration] [Task 25/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 61.0, JudgeScores: [gpt-5.4=60.0, claude-opus-4-6=62.0], Time: 403.9s
+  [Variant: wo_orchestration] [Progress: 25/74] [Task 26/75] [Trial 1/1] Running Task: T101 (ETC: 7h 3m 52s)
+  [Variant: wo_orchestration] [Task 26/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 72.5, JudgeScores: [gpt-5.4=58.0, claude-opus-4-6=87.0], Time: 185.0s
+  [Variant: wo_orchestration] [Progress: 26/74] [Task 27/75] [Trial 1/1] Running Task: T102 (ETC: 6h 44m 49s)
+  [Variant: wo_orchestration] [Task 27/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 70.0, JudgeScores: [gpt-5.4=58.0, claude-opus-4-6=82.0], Time: 56.0s
+  [Variant: wo_orchestration] [Progress: 27/74] [Task 28/75] [Trial 1/1] Running Task: T103 (ETC: 6h 23m 1s)
+2026-05-01 17:02:08.356 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Cross-currency crypto portfolio evaluation: BTC+ET... Importance: 8.0
+2026-05-01 17:02:08.358 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 17:02:43.094 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 34.74s.
+  [Variant: wo_orchestration] [Task 28/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 47.5, JudgeScores: [gpt-5.4=23.0, claude-opus-4-6=72.0], Time: 378.8s
+  [Variant: wo_orchestration] [Progress: 28/74] [Task 29/75] [Trial 1/1] Running Task: T104 (ETC: 6h 12m 8s)
+  [Variant: wo_orchestration] [Task 29/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 31.5, JudgeScores: [gpt-5.4=63.0, claude-opus-4-6=0.0], Time: 188.2s
+  [Variant: wo_orchestration] [Progress: 29/74] [Task 30/75] [Trial 1/1] Running Task: T105 (ETC: 5h 56m 22s)
+  [Variant: wo_orchestration] [Task 30/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 73.5, JudgeScores: [gpt-5.4=60.0, claude-opus-4-6=87.0], Time: 417.5s
+  [Variant: wo_orchestration] [Progress: 30/74] [Task 31/75] [Trial 1/1] Running Task: T106 (ETC: 5h 47m 24s)
+2026-05-01 17:27:55.935 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: MSTR vs BTC cross-asset premium analysis with macr... Importance: 8.0
+2026-05-01 17:27:55.936 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 17:28:33.877 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 37.94s.
+  [Variant: wo_orchestration] [Task 31/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 85.0, JudgeScores: [gpt-5.4=72.0, claude-opus-4-6=98.0], Time: 864.4s
+  [Variant: wo_orchestration] [Progress: 31/74] [Task 32/75] [Trial 1/1] Running Task: T107 (ETC: 5h 49m 29s)
+2026-05-01 17:39:36.459 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Cross-asset crypto valuation: BTC + COIN DCF analy... Importance: 9.0
+2026-05-01 17:39:36.461 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 17:40:17.468 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 41.01s.
+  [Variant: wo_orchestration] [Task 32/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 23.0, JudgeScores: [gpt-5.4=46.0, claude-opus-4-6=0.0], Time: 637.3s
+  [Variant: wo_orchestration] [Progress: 32/74] [Task 33/75] [Trial 1/1] Running Task: T108 (ETC: 5h 45m 15s)
+2026-05-01 17:54:22.406 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Crypto vs Gold safe-haven allocation switch analys... Importance: 9.0
+2026-05-01 17:54:22.408 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 17:55:05.072 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 42.66s.
+  [Variant: wo_orchestration] [Task 33/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 59.0, JudgeScores: [gpt-5.4=39.0, claude-opus-4-6=79.0], Time: 810.0s
+  [Variant: wo_orchestration] [Progress: 33/74] [Task 34/75] [Trial 1/1] Running Task: T109 (ETC: 5h 44m 24s)
+2026-05-01 18:14:05.882 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: MARA crypto miner comprehensive macro-hedge analys... Importance: 9.0
+2026-05-01 18:14:05.884 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 18:14:41.872 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 35.99s.
+  [Variant: wo_orchestration] [Task 34/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 57.0, JudgeScores: [gpt-5.4=52.0, claude-opus-4-6=62.0], Time: 1154.8s
+  [Variant: wo_orchestration] [Progress: 34/74] [Task 35/75] [Trial 1/1] Running Task: T110 (ETC: 5h 49m 56s)
+  [Variant: wo_orchestration] [Task 35/75] Trial 1 Completed. Hard: ❌, Judge: 💀, Score(agg): 0.0, JudgeScores: [gpt-5.4=0.0, claude-opus-4-6=0.0], Time: 1800.0s
+  [Variant: wo_orchestration] [Progress: 35/74] [Task 36/75] [Trial 1/1] Running Task: T111 (ETC: 6h 6m 39s)
+  [Variant: wo_orchestration] [Task 36/75] Trial 1 Completed. Hard: ❌, Judge: 💀, Score(agg): 0.0, JudgeScores: [gpt-5.4=0.0, claude-opus-4-6=0.0], Time: 1800.0s
+  [Variant: wo_orchestration] [Progress: 36/74] [Task 37/75] [Trial 1/1] Running Task: T112 (ETC: 6h 20m 42s)
+  [Variant: wo_orchestration] [Task 37/75] Trial 1 Completed. Hard: ❌, Judge: 💀, Score(agg): 0.0, JudgeScores: [gpt-5.4=0.0, claude-opus-4-6=0.0], Time: 1800.0s
+  [Variant: wo_orchestration] [Progress: 37/74] [Task 38/75] [Trial 1/1] Running Task: T113 (ETC: 6h 32m 18s)
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+[*********************100%***********************]  1 of 1 completed
+  [Variant: wo_orchestration] [Task 38/75] Trial 1 Completed. Hard: ❌, Judge: 💀, Score(agg): 1.0, JudgeScores: [gpt-5.4=0.0, claude-opus-4-6=2.0], Time: 1800.0s
+  [Variant: wo_orchestration] [Progress: 38/74] [Task 39/75] [Trial 1/1] Running Task: T114 (ETC: 6h 41m 39s)
+  [Variant: wo_orchestration] [Task 39/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 75.5, JudgeScores: [gpt-5.4=66.0, claude-opus-4-6=85.0], Time: 114.0s
+  [Variant: wo_orchestration] [Progress: 39/74] [Task 40/75] [Trial 1/1] Running Task: T115 (ETC: 6h 22m 19s)
+  [Variant: wo_orchestration] [Task 40/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 100.0, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=100.0], Time: 27.6s
+  [Variant: wo_orchestration] [Progress: 40/74] [Task 41/75] [Trial 1/1] Running Task: T116 (ETC: 6h 2m 34s)
+  [Variant: wo_orchestration] [Task 41/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 96.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=93.0], Time: 23.3s
+  [Variant: wo_orchestration] [Progress: 41/74] [Task 42/75] [Trial 1/1] Running Task: T117 (ETC: 5h 43m 44s)
+  [Variant: wo_orchestration] [Task 42/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 97.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=95.0], Time: 27.3s
+  [Variant: wo_orchestration] [Progress: 42/74] [Task 43/75] [Trial 1/1] Running Task: T118 (ETC: 5h 25m 51s)
+  [Variant: wo_orchestration] [Task 43/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 100.0, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=100.0], Time: 19.9s
+  [Variant: wo_orchestration] [Progress: 43/74] [Task 44/75] [Trial 1/1] Running Task: T119 (ETC: 5h 8m 43s)
+  [Variant: wo_orchestration] [Task 44/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 97.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=95.0], Time: 20.8s
+  [Variant: wo_orchestration] [Progress: 44/74] [Task 45/75] [Trial 1/1] Running Task: T120 (ETC: 4h 52m 21s)
+  [Variant: wo_orchestration] [Task 45/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 97.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=95.0], Time: 28.4s
+  [Variant: wo_orchestration] [Progress: 45/74] [Task 46/75] [Trial 1/1] Running Task: T121 (ETC: 4h 36m 49s)
+  [Variant: wo_orchestration] [Task 46/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 85.0, JudgeScores: [gpt-5.4=88.0, claude-opus-4-6=82.0], Time: 49.9s
+  [Variant: wo_orchestration] [Progress: 46/74] [Task 47/75] [Trial 1/1] Running Task: T122 (ETC: 4h 22m 11s)
+  [Variant: wo_orchestration] [Task 47/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 93.5, JudgeScores: [gpt-5.4=95.0, claude-opus-4-6=92.0], Time: 46.8s
+  [Variant: wo_orchestration] [Progress: 47/74] [Task 48/75] [Trial 1/1] Running Task: T123 (ETC: 4h 8m 7s)
+  [Variant: wo_orchestration] [Task 48/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 84.0, JudgeScores: [gpt-5.4=86.0, claude-opus-4-6=82.0], Time: 45.5s
+  [Variant: wo_orchestration] [Progress: 48/74] [Task 49/75] [Trial 1/1] Running Task: T124 (ETC: 3h 54m 36s)
+  [Variant: wo_orchestration] [Task 49/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 21.5, JudgeScores: [gpt-5.4=43.0, claude-opus-4-6=0.0], Time: 172.2s
+  [Variant: wo_orchestration] [Progress: 49/74] [Task 50/75] [Trial 1/1] Running Task: T125 (ETC: 3h 42m 45s)
+  [Variant: wo_orchestration] [Task 50/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 60.0, JudgeScores: [gpt-5.4=48.0, claude-opus-4-6=72.0], Time: 270.5s
+  [Variant: wo_orchestration] [Progress: 50/74] [Task 51/75] [Trial 1/1] Running Task: T126 (ETC: 3h 32m 7s)
+  [Variant: wo_orchestration] [Task 51/75] Trial 1 Completed. Hard: ✅, Judge: ⭐, Score(agg): 98.5, JudgeScores: [gpt-5.4=100.0, claude-opus-4-6=97.0], Time: 29.4s
+  [Variant: wo_orchestration] [Progress: 51/74] [Task 52/75] [Trial 1/1] Running Task: T127 (ETC: 3h 19m 48s)
+  [Variant: wo_orchestration] [Task 52/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 66.0, JudgeScores: [gpt-5.4=50.0, claude-opus-4-6=82.0], Time: 48.0s
+  [Variant: wo_orchestration] [Progress: 52/74] [Task 53/75] [Trial 1/1] Running Task: T128 (ETC: 3h 8m 4s)
+2026-05-01 20:41:15.439 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Event-driven macro: FOMC March 2026 rate hold impa... Importance: 7.0
+2026-05-01 20:41:15.440 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 20:41:51.693 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 36.25s.
+  [Variant: wo_orchestration] [Task 53/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 68.0, JudgeScores: [gpt-5.4=68.0, claude-opus-4-6=68.0], Time: 176.3s
+  [Variant: wo_orchestration] [Progress: 53/74] [Task 54/75] [Trial 1/1] Running Task: T129 (ETC: 2h 57m 41s)
+  [Variant: wo_orchestration] [Task 54/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 75.0, JudgeScores: [gpt-5.4=68.0, claude-opus-4-6=82.0], Time: 74.8s
+  [Variant: wo_orchestration] [Progress: 54/74] [Task 55/75] [Trial 1/1] Running Task: T130 (ETC: 2h 46m 54s)
+  [Variant: wo_orchestration] [Task 55/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 50.0, JudgeScores: [gpt-5.4=38.0, claude-opus-4-6=62.0], Time: 159.6s
+  [Variant: wo_orchestration] [Progress: 55/74] [Task 56/75] [Trial 1/1] Running Task: T131 (ETC: 2h 36m 59s)
+2026-05-01 20:52:10.248 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: NVIDIA出口管制影响综合评估：检索新闻+财务数据+宏观利率+机会成本计算+利润率影响评估... Importance: 8.0
+2026-05-01 20:52:10.249 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 20:52:52.792 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 42.54s.
+  [Variant: wo_orchestration] [Task 56/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 40.0, JudgeScores: [gpt-5.4=18.0, claude-opus-4-6=62.0], Time: 291.5s
+  [Variant: wo_orchestration] [Progress: 56/74] [Task 57/75] [Trial 1/1] Running Task: T132 (ETC: 2h 28m 6s)
+  [Variant: wo_orchestration] [Task 57/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 24.0, JudgeScores: [gpt-5.4=48.0, claude-opus-4-6=0.0], Time: 172.5s
+  [Variant: wo_orchestration] [Progress: 57/74] [Task 58/75] [Trial 1/1] Running Task: T133 (ETC: 2h 18m 44s)
+2026-05-01 21:00:40.443 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: 央行降准50bp对招商银行(600036.SH)资产负债表与盈利影响的量化评估... Importance: 8.0
+2026-05-01 21:00:40.444 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 21:01:11.499 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 31.05s.
+  [Variant: wo_orchestration] [Task 58/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 44.0, JudgeScores: [gpt-5.4=26.0, claude-opus-4-6=62.0], Time: 232.6s
+  [Variant: wo_orchestration] [Progress: 58/74] [Task 59/75] [Trial 1/1] Running Task: T134 (ETC: 2h 9m 53s)
+  [Variant: wo_orchestration] [Task 59/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 50.0, JudgeScores: [gpt-5.4=38.0, claude-opus-4-6=62.0], Time: 330.7s
+  [Variant: wo_orchestration] [Progress: 59/74] [Task 60/75] [Trial 1/1] Running Task: T135 (ETC: 2h 1m 39s)
+2026-05-01 21:13:34.244 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: 评估中国央行降准50bp（2025.5.15生效）对招商银行财务影响：降准释放466亿资金（微正+4... Importance: 8.0
+2026-05-01 21:13:34.246 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 21:14:14.723 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 40.48s.
+  [Variant: wo_orchestration] [Task 60/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 58.0, JudgeScores: [gpt-5.4=44.0, claude-opus-4-6=72.0], Time: 330.4s
+  [Variant: wo_orchestration] [Progress: 60/74] [Task 61/75] [Trial 1/1] Running Task: T136 (ETC: 1h 53m 31s)
+  [Variant: wo_orchestration] [Task 61/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 29.0, JudgeScores: [gpt-5.4=58.0, claude-opus-4-6=0.0], Time: 150.8s
+  [Variant: wo_orchestration] [Progress: 61/74] [Task 62/75] [Trial 1/1] Running Task: T137 (ETC: 1h 44m 46s)
+  [Variant: wo_orchestration] [Task 62/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 50.0, JudgeScores: [gpt-5.4=38.0, claude-opus-4-6=62.0], Time: 493.5s
+  [Variant: wo_orchestration] [Progress: 62/74] [Task 63/75] [Trial 1/1] Running Task: T138 (ETC: 1h 37m 27s)
+2026-05-01 21:36:53.207 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: 评估欧盟反补贴关税对比亚迪(002594.SZ)基本面的财务冲击... Importance: 8.0
+2026-05-01 21:36:53.209 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 21:37:31.124 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 37.91s.
+  [Variant: wo_orchestration] [Task 63/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 54.0, JudgeScores: [gpt-5.4=36.0, claude-opus-4-6=72.0], Time: 596.6s
+  [Variant: wo_orchestration] [Progress: 63/74] [Task 64/75] [Trial 1/1] Running Task: T139 (ETC: 1h 30m 25s)
+  [Variant: wo_orchestration] [Task 64/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 68.0, JudgeScores: [gpt-5.4=54.0, claude-opus-4-6=82.0], Time: 373.2s
+  [Variant: wo_orchestration] [Progress: 64/74] [Task 65/75] [Trial 1/1] Running Task: T140 (ETC: 1h 22m 39s)
+2026-05-01 21:52:02.546 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Macro policy impact analysis on TSLA: Fed hold + E... Importance: 9.0
+2026-05-01 21:52:02.548 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 21:52:36.881 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 34.33s.
+  [Variant: wo_orchestration] [Task 65/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 11.0, JudgeScores: [gpt-5.4=22.0, claude-opus-4-6=0.0], Time: 404.7s
+  [Variant: wo_orchestration] [Progress: 65/74] [Task 66/75] [Trial 1/1] Running Task: T141 (ETC: 1h 15m 1s)
+2026-05-01 21:58:18.730 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: 宁德时代(300750.SZ)中美政策组合估值评估：美联储降息不确定+中国NEV购置税减免延续... Importance: 9.0
+2026-05-01 21:58:18.732 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 21:58:54.702 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 35.97s.
+  [Variant: wo_orchestration] [Task 66/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 49.0, JudgeScores: [gpt-5.4=26.0, claude-opus-4-6=72.0], Time: 351.0s
+  [Variant: wo_orchestration] [Progress: 66/74] [Task 67/75] [Trial 1/1] Running Task: T142 (ETC: 1h 7m 17s)
+2026-05-01 22:14:07.431 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Volkswagen AG (VOW3.DE) policy-adjusted DCF valuat... Importance: 9.0
+2026-05-01 22:14:07.432 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 22:14:51.014 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 43.58s.
+  [Variant: wo_orchestration] [Task 67/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 52.5, JudgeScores: [gpt-5.4=43.0, claude-opus-4-6=62.0], Time: 949.3s
+  [Variant: wo_orchestration] [Progress: 67/74] [Task 68/75] [Trial 1/1] Running Task: T143 (ETC: 1h 0m 49s)
+  [Variant: wo_orchestration] [Task 68/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 57.0, JudgeScores: [gpt-5.4=46.0, claude-opus-4-6=68.0], Time: 628.2s
+  [Variant: wo_orchestration] [Progress: 68/74] [Task 69/75] [Trial 1/1] Running Task: T144 (ETC: 53m 31s)
+2026-05-01 22:39:08.057 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: TSMC macro-hedge DCF valuation under Fed monetary ... Importance: 9.0
+2026-05-01 22:39:08.057 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 22:39:43.973 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 35.92s.
+  [Variant: wo_orchestration] [Task 69/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 55.0, JudgeScores: [gpt-5.4=38.0, claude-opus-4-6=72.0], Time: 749.7s
+  [Variant: wo_orchestration] [Progress: 69/74] [Task 70/75] [Trial 1/1] Running Task: T145 (ETC: 46m 18s)
+  [Variant: wo_orchestration] [Task 70/75] Trial 1 Completed. Hard: ❌, Judge: 💀, Score(agg): 0.0, JudgeScores: [gpt-5.4=0.0, claude-opus-4-6=0.0], Time: 1349.5s
+  [Variant: wo_orchestration] [Progress: 70/74] [Task 71/75] [Trial 1/1] Running Task: T146 (ETC: 39m 39s)
+2026-05-01 23:11:39.115 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: ECB超预期降息对ASML DCF估值影响评估... Importance: 0.85
+2026-05-01 23:11:39.116 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 23:12:17.520 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 38.40s.
+  [Variant: wo_orchestration] [Task 71/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 55.5, JudgeScores: [gpt-5.4=39.0, claude-opus-4-6=72.0], Time: 408.8s
+  [Variant: wo_orchestration] [Progress: 71/74] [Task 72/75] [Trial 1/1] Running Task: T147 (ETC: 31m 39s)
+2026-05-01 23:22:23.806 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Macro event-driven valuation of LVMH (MC.PA) post ... Importance: 9.0
+2026-05-01 23:22:23.807 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 23:23:04.346 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 40.54s.
+  [Variant: wo_orchestration] [Task 72/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 47.5, JudgeScores: [gpt-5.4=33.0, claude-opus-4-6=62.0], Time: 596.9s
+  [Variant: wo_orchestration] [Progress: 72/74] [Task 73/75] [Trial 1/1] Running Task: T148 (ETC: 23m 50s)
+2026-05-01 23:31:20.107 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: AMD valuation under Fed rate adjustment + semicond... Importance: 8.0
+2026-05-01 23:31:20.108 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 23:31:58.573 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 38.46s.
+  [Variant: wo_orchestration] [Task 73/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 66.5, JudgeScores: [gpt-5.4=58.0, claude-opus-4-6=75.0], Time: 528.6s
+  [Variant: wo_orchestration] [Progress: 73/74] [Task 74/75] [Trial 1/1] Running Task: T149 (ETC: 15m 54s)
+2026-05-01 23:52:30.442 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: Apple AAPL event-driven DCF valuation under Fed ra... Importance: 9.0
+2026-05-01 23:52:30.445 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-01 23:53:06.731 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 36.29s.
+  [Variant: wo_orchestration] [Task 74/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 55.5, JudgeScores: [gpt-5.4=43.0, claude-opus-4-6=68.0], Time: 1165.7s
+  [Variant: wo_orchestration] [Progress: 74/74] [Task 75/75] [Trial 1/1] Running Task: T150 (ETC: 8m 6s)
+2026-05-02 00:04:21.881 | INFO     | src.agent:extract_experience:372 - Memory: Extracting experience for task: TSLA valuation under IRA subsidy phase-out and Fed... Importance: 9.0
+2026-05-02 00:04:21.882 | INFO     | src.core.memory:_abstract_procedural_memory:40 - Abstracting episodic memory into procedural rules...
+2026-05-02 00:04:55.533 | INFO     | src.agent:extract_experience:387 - Memory: Experience stored in 33.65s.
+  [Variant: wo_orchestration] [Task 75/75] Trial 1 Completed. Hard: ✅, Judge: 💀, Score(agg): 17.0, JudgeScores: [gpt-5.4=34.0, claude-opus-4-6=0.0], Time: 644.7s
+🏁 Finished variant: wo_orchestration. Hard Success: 65/75, Judge Success: 22/75, Avg Score: 55.8

@@ -1,0 +1,2466 @@
+{
+  "tasks": [
+    {
+      "task_id": "T226",
+      "query": "作为ESG主题基金经理，请对光伏组件制造商First Solar (FSLR)进行可持续转型估值评估。请执行以下分析：1. 获取FSLR当前股价及最新财报中的扣非净利润；2. 检索近期关于该公司海外供应链碳足迹审查或绿色补贴政策的财经新闻；3. 获取当前美国10年期国债收益率；4. 使用计算工具计算当前静态市盈率，并假设ESG供应链审查导致合规成本上升，使长期增长率预期下调至4%，股权风险溢价设定为6%，基于公式（合理市盈率 = 1 / (无风险利率 + 风险溢价 - 长期增长率)）测算理论市盈率。最后对比实际与理论估值，结合ESG新闻影响给出明确的配置建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "search_financial_news",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "First Solar (FSLR) 当前股价",
+          "最新年度扣非净利润",
+          "ESG/绿色补贴相关新闻核心要点",
+          "当前美国10年期国债收益率",
+          "计算得出的当前静态市盈率",
+          "基于调整参数的理论合理市盈率",
+          "综合ESG风险与估值对比的投资建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T227",
+      "query": "作为新能源板块的ESG投资分析师，请评估隆基绿能（601012.SH）当前的估值与ESG风险溢价。请执行以下步骤：1. 获取该公司最近一个完整财年的净利润（Net Income）与自由现金流（Free Cash Flow）；2. 获取中国当前的10年期国债收益率作为无风险利率基准；3. 检索过去3个月内关于该公司ESG评级调整、碳关税合规或海外供应链绿色认证的重大新闻；4. 基于新闻舆情定性（若存在显著ESG负面则风险溢价上调1.5%，正面则下调0.5%），结合宏观利率环境，使用无风险利率、基准股权风险溢价（假设5.5%）及ESG调整系数计算隐含WACC，并推导其合理市盈率（P/E）区间。最终请输出完整的计算逻辑、风险调整依据与明确的投资建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最近财年净利润与自由现金流的具体数值",
+          "中国10年期国债收益率最新数据",
+          "过去3个月ESG相关新闻核心摘要及舆情方向判定（正面/负面/中性）",
+          "WACC计算过程与ESG风险调整系数的具体应用逻辑",
+          "调整后的合理市盈率（P/E）区间数值",
+          "基于估值与ESG风险的综合投资建议（买入/持有/卖出）"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T228",
+      "query": "作为ESG投资研究员，我需要量化分析比亚迪（港股代码：1211）在可持续制造领域的资本配置效率。请获取比亚迪最新的年度现金流量表并提取资本支出（Capital Expenditures）总额，同时搜索其最近半年内关于‘新能源电池回收’或‘零碳工厂’的权威财经新闻以评估ESG战略落地进展。基于其当前实时股价，假设其年度资本支出中有40%明确用于绿色可持续技术升级，请计算每股绿色资本支出（Green CAPEX per share），假设公司总股本约为29亿股。请提供完整的数据提取过程、计算步骤、最终每股绿色投入比率，并整合关键ESG新闻摘要。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "财务报表数据提取",
+        "ESG动态与财经新闻检索",
+        "实时行情获取",
+        "定量金融计算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提取的最新年度资本支出（CAPEX）总额",
+          "绿色资本支出（40% CAPEX）的计算过程与具体金额",
+          "每股绿色资本支出比率（元/股）",
+          "比亚迪当前实时股价",
+          "近期ESG战略落地相关新闻的核心摘要"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T229",
+      "query": "作为ESG投资组合分析师，请对清洁能源企业NextEra Energy (NEE) 进行财务与可持续性交叉评估。请按以下步骤执行：1. 获取该公司最新两个完整财年的营业收入（Total Revenue）与资本支出（Capital Expenditures），并计算资本支出的年增长率。2. 检索近三个月内与该公司ESG评级调整、可再生能源补贴变动或碳关税影响相关的权威财经新闻。3. 获取最新的美国联邦基金利率（Federal Funds Rate）宏观数据。4. 结合资本支出扩张趋势、宏观利率环境及ESG新闻情绪，逻辑推演该公司未来发行绿色债券（Green Bonds）的合理票息区间（以基准利率+风险溢价为框架），并给出明确的短期投资配置建议。最终输出需包含具体提取数据、计算过程及定性分析结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "search_financial_news",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新两个财年营业收入与资本支出具体数值",
+          "资本支出年增长率计算结果（百分比）",
+          "近三个月关键ESG/政策新闻摘要及情绪倾向判断",
+          "最新美国联邦基金利率数值",
+          "基于数据与宏观环境的绿色债券票息区间推演及投资建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_macro_data"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T230",
+      "query": "作为ESG投资研究员，请对宁德时代（300750）进行绿色转型财务分析。第一步，调用财务数据工具获取其2023年年度报告，提取总营业收入与研发费用。第二步，使用新闻搜索工具查询该公司在2023年发布的ESG报告或相关新闻，确认其‘零碳工厂’建设或绿色供应链投资的具体披露数据与金额。第三步，获取当前中国官方制造业PMI数据。第四步，基于提取的财务与宏观数据，计算研发费用占营业收入的百分比，并将其乘以（当前PMI数值/50），得出‘绿色转型弹性系数’。请列出所有提取的原始数据、中间计算步骤及最终指标结果。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "search_financial_news",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "宁德时代2023年总营业收入与研发费用准确数值",
+          "2023年零碳工厂或绿色供应链投资的关键披露摘要",
+          "最新中国官方制造业PMI指数数值",
+          "研发营收占比、中间乘数计算过程及最终的绿色转型弹性系数"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T231",
+      "query": "作为北美ESG对冲基金的量化研究员，我需要对丹麦可再生能源巨头Ørsted（股票代码：ORSTED.CO）进行深度估值。请执行以下步骤：\n1. 搜索该公司近半年关于ESG评级变动、海上风电供应链瓶颈或绿色氢能项目进展的最新财经新闻，评估其对未来资本开支（CapEx）的潜在影响。\n2. 提取该公司最新年度现金流量表与利润表，计算过去三年的平均自由现金流（FCF）。\n3. 查询当前欧洲央行（ECB）主要再融资利率以及欧盟碳配额（EUA）的最新现货价格。基于当前高利率与碳价走高的宏观背景，在标准WACC基础上增加1.5%的ESG转型风险溢价作为折现率基准。\n4. 获取实时欧元兑美元（EUR/USD）汇率，将所有欧元计价的财务与估值输入转换为美元。\n5. 利用转换后的FCF、调整后的折现率及2.0%的永续增长率，运行DCF模型计算其理论每股内在价值（假设流通股本约为4.2亿股）。\n6. 获取ORSTED.CO当前实时股价，计算内在价值与现价的偏差百分比，并结合ESG新闻情绪给出最终投资评级。\n请详细列出所有数据抓取来源、宏观参数设定、汇率换算过程、DCF核心假设及最终估值结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "financial_statement_analysis",
+        "esg_news_sentiment_analysis",
+        "macroeconomic_data_integration",
+        "forex_currency_conversion",
+        "dcf_modeling_with_risk_adjustments",
+        "real_time_pricing_comparison",
+        "multi_step_reasoning"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "近半年ESG相关财经新闻提炼与CapEx影响评估",
+          "基于财报计算的过去三年平均自由现金流(FCF)",
+          "当前欧洲央行利率与欧盟碳配额现货价格",
+          "实时EUR/USD汇率及美元计价转换过程",
+          "叠加ESG转型风险溢价后的调整后WACC/折现率",
+          "DCF模型得出的美元计价每股理论内在价值",
+          "理论价值与实时股价的偏差百分比计算",
+          "综合ESG基本面与估值偏差的最终投资评级"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data",
+            "tavily_search"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T232",
+      "query": "作为ESG主题基金的资深分析师，请对欧洲绿色能源企业Ørsted（ORSTED.CO）进行可持续投资估值。请执行以下多步骤分析：1. 提取该公司最近三个财年的自由现金流及资本开支数据；2. 检索欧洲央行最新政策利率及近期欧盟可再生能源补贴调整、碳边境调节机制（CBAM）相关的ESG政策新闻，综合量化其对未来5年营收复合增长率的影响系数；3. 获取实时EUR/USD汇率；4. 结合无风险利率、市场风险溢价及1.5%的ESG转型风险溢价计算WACC，使用DCF模型计算其内在企业价值；5. 将所有中间计算过程通过代码或计算器完成，将最终估值换算为美元。请输出详细的模型假设参数、美元计价的估值结果，并基于ESG基本面与财务可持续性给出明确的投资建议（增持/中性/减持）。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "get_exchange_rate",
+        "calculate_dcf",
+        "python_interpreter",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提取近三年自由现金流与资本开支数据",
+          "汇总宏观利率与欧盟ESG政策新闻并给出增长率调整系数",
+          "提供实时EUR/USD汇率",
+          "明确WACC计算过程及ESG风险溢价假设",
+          "展示DCF模型完整计算步骤与美元计价的企业价值",
+          "给出结合ESG与财务基本面的明确投资评级"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T233",
+      "query": "作为全球可持续投资基金的权益分析师，请对欧洲海上风电龙头企业Ørsted A/S（股票代码：ORSTED.CO）进行ESG风险调整后的绝对估值分析。请严格按以下流程执行：1. 获取该公司最近三个财年的自由现金流（FCF）数据。2. 搜索近期关于Ørsted ESG争议、碳足迹审查或欧盟可再生能源补贴退坡的财经新闻，基于提取的负面政策与舆情信息，将预测期第一年的基准FCF下调10%，并将永续增长率下调0.4%。3. 获取欧元区最新宏观无风险利率（如主权债收益率），叠加5%的股权风险溢价（ERP）计算WACC折现率。4. 获取Ørsted实时欧元股价与当前EUR/USD外汇中间价。5. 结合调整后的现金流、折现率及汇率参数，调用DCF估值模型计算其美元计价的每股内在价值。6. 计算该内在价值相对于当前欧元市场价格的隐含升贴水幅度，并输出完整的ESG调整依据、计算步骤及投资建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "ESG Risk Pricing",
+        "Discounted Cash Flow Valuation",
+        "Cross-Currency Financial Analysis",
+        "Multi-step Tool Orchestration",
+        "Quantitative Data Synthesis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提取的过去三年自由现金流具体数值",
+          "基于新闻提取的ESG调整逻辑及具体参数变动（FCF下调10%、永续增长率下调0.4%）",
+          "无风险利率来源与最终折现率计算结果",
+          "获取的实时EUR/USD汇率与当前股价",
+          "美元计价的ESG调整后每股内在价值",
+          "相对于当前市场价格的溢价/折价百分比及明确的投资结论"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_stock_price",
+            "get_exchange_rate"
+          ],
+          [
+            "calculate_dcf",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T234",
+      "query": "作为ESG主题基金经理，我需要评估特斯拉（TSLA）当前股价是否已充分反映其清洁能源转型带来的长期溢价。请按以下步骤执行：\n1. 搜索特斯拉近三个月内关于电池回收技术突破、供应链脱碳与碳积分合规的财经新闻，定性评估其近期ESG舆情是正向催化还是存在监管/诉讼风险。\n2. 获取特斯拉最新年度（2023财年）的利润表与现金流量表，准确提取研发投入（R&D）、绿色资本支出（Green CapEx）及企业自由现金流（FCF）。\n3. 查询美国当前联邦基金利率及10年期国债收益率，结合市场隐含的股权风险溢价，确定DCF模型的折现率基准。\n4. 基于上述数据，使用python_interpreter或calculate_dcf构建双情景贴现模型：设定基准情景永续增长率为3%，若新闻分析确认为强正面ESG催化，则将ESG优化情景的永续增长率上调至1.5%-2.5%，计算其经ESG调整后的理论内在价值（每股，美元）。\n5. 获取TSLA当前实时股价，并查询最新USD/CNY即期汇率，将理论内在价值折算为人民币计价，以便与亚太ESG基准组合对齐。\n6. 综合计算结果，输出优化情景下的目标价（美元与人民币）、较当前股价的预期超额收益（%），并给出明确的配置建议（买入/持有/减持）及核心ESG溢价驱动逻辑。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_financial_statements",
+        "get_macro_data",
+        "calculate_dcf",
+        "python_interpreter",
+        "get_stock_price",
+        "get_exchange_rate"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "近期ESG相关新闻的舆情定性结论",
+          "准确提取的R&D、Green CapEx及FCF财务数据",
+          "采用的无风险利率与最终折现率参数说明",
+          "基准情景与ESG优化情景的DCF估值计算过程与每股目标价（美元）",
+          "基于实时汇率折算的人民币目标价",
+          "优化情景目标价相对当前股价的溢价百分比",
+          "明确的投资评级及ESG溢价/折价的核心逻辑阐述"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ],
+          [
+            "get_stock_price",
+            "get_exchange_rate"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T235",
+      "query": "作为一家专注于可持续投资的美元对冲基金的分析师，请评估丹麦风电巨头Vestas Wind Systems (VWS.CO) 的当前投资潜力。具体要求如下：\n1. 获取该公司最新的年度现金流量表，提取自由现金流（FCF）数据，并结合近三年的复合增长率预测未来5年的现金流。\n2. 检索过去90天内关于该公司的ESG相关新闻或争议事件，评估是否存在可能影响长期估值的重大ESG风险（如供应链碳足迹、原材料劳工争议等），并据此在基础WACC中增加0.5%的ESG风险溢价。\n3. 获取欧元区最新主权债券收益率及通胀数据，结合宏观环境构建基础折现率。\n4. 获取VWS.CO的实时股价及最新总股本数，同时获取EUR/USD的实时汇率，以便将估值换算为美元。\n5. 使用上述数据运行ESG调整后的贴现现金流（DCF）模型，计算每股内在价值（美元计价），并对比当前股价得出潜在收益率。\n请提供详细的计算过程、关键假设、最终内在价值、目标价溢价/折价百分比，并给出基于ESG与财务基本面的综合投资建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "Financial Statement Analysis",
+        "ESG Risk Assessment",
+        "Macro Data Integration",
+        "Cross-Currency Conversion",
+        "Discounted Cash Flow Modeling",
+        "Quantitative Valuation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "近3年自由现金流复合增长率及未来5年预测现金流数据",
+          "识别出的关键ESG风险点及对应的0.5% WACC调整逻辑",
+          "使用的无风险利率、基础WACC及调整后WACC数值",
+          "EUR/USD实时汇率及企业价值（EV）的美元换算结果",
+          "ESG调整后DCF模型得出的每股内在价值（USD）",
+          "当前股价相对于内在价值的溢价/折价百分比",
+          "明确的投资建议（买入/持有/卖出）及结合财务与ESG的核心逻辑"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_exchange_rate",
+            "get_stock_price"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T236",
+      "query": "作为ESG与气候风险投资研究员，请对ArcelorMittal (股票代码: MT) 进行经碳定价与ESG舆情调整后的内在价值评估。请按以下逻辑执行：1. 获取最新的欧盟碳排放配额（EUA）现货价格及欧元区10年期主权债券收益率作为无风险利率基准。2. 调取该公司最近一个完整财年的现金流量表，提取经营性自由现金流（FCF）与资本支出（CapEx）。3. 搜索该公司过去90天内关于ESG评级变动、碳排放合规罚款或绿色转型投资的财经新闻，据此定性判断是否需调整风险溢价。4. 获取MT当前的实时股价。5. 假设未来5年合规碳成本每年按6%复利递增；若近期新闻显示存在重大ESG负面舆情或评级下调，则将折现率（WACC）在无风险利率基础上额外上调50个基点，否则保持基准利差。使用Python编写计算脚本，基于提取的财务数据动态扣减预期碳成本以生成未来5年调整后FCF，随后调用DCF模型计算每股内在价值。6. 将DCF估值结果与实时股价对比，输出估值折溢价百分比，并给出基于ESG整合视角的明确投资建议。请展示完整的数据提取、模型假设、计算过程与最终结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "ESG Risk Integration",
+        "Multi-source Financial Data Aggregation",
+        "Dynamic Cash Flow Projection",
+        "Quantitative WACC Adjustment",
+        "Discounted Cash Flow (DCF) Modeling"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确的欧盟碳价与无风险利率基准数据",
+          "最新财年公司自由现金流与资本支出提取值",
+          "基于ESG舆情研判后的WACC具体数值及调整逻辑",
+          "未来5年碳成本对自由现金流的逐年扣减明细",
+          "经ESG与碳价调整后的DCF每股内在价值",
+          "当前股价与内在价值的折溢价率及明确的投资建议"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_financial_statements",
+            "search_financial_news",
+            "get_stock_price",
+            "python_interpreter",
+            "calculate_dcf"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T237",
+      "query": "我是一家专注于ESG与可持续投资的美国机构基金经理。请帮我全面评估欧洲新能源企业Orsted A/S (ORSTED.CO) 的内在价值与投资潜力。具体要求如下：\n1. 获取ORSTED.CO的最新股价，并利用实时外汇汇率将其转换为美元。\n2. 提取该公司最近三个完整财年的自由现金流（FCF）及营业收入数据。\n3. 检索过去半年内关于该公司海上风电项目进展、供应链碳排放合规性或欧洲环保政策变化的最新财经新闻，定性分析其对ESG风险溢价的影响方向。\n4. 获取当前欧元区主要主权债券收益率及通胀数据，作为无风险利率和市场风险溢价的宏观基准。\n5. 结合提取的FCF增长率、2.0%的永续增长率假设、以及根据ESG舆情与宏观数据调整后的折现率（基准WACC设为7.5%），调用DCF模型计算其每股内在价值（美元计价）。\n6. 对比当前美元股价与DCF估值结果，计算预期收益率区间，明确列出核心ESG驱动因素、宏观假设敏感性，并给出明确的资产配置建议（超配/标配/低配）。请确保所有数据引用准确，计算逻辑可追溯。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_exchange_rate",
+        "get_financial_statements",
+        "search_financial_news",
+        "get_macro_data",
+        "calculate_dcf",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新股价及实时美元换算结果",
+          "近三年自由现金流（FCF）提取值与趋势分析",
+          "ESG相关新闻关键事件总结及风险溢价调整逻辑",
+          "欧元区无风险利率与通胀宏观数据",
+          "DCF模型完整参数输入（含调整后的WACC与永续增长率）",
+          "计算得出的每股内在价值（美元）及相对于现价的溢价/折价幅度",
+          "综合ESG与宏观因素的最终投资建议"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_exchange_rate"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T238",
+      "query": "作为可持续投资分析师，请对丹麦沃旭能源（Ørsted, ORSTED.CO）进行ESG风险调整后的内在价值评估。具体要求：1) 获取公司最新利润表与现金流量表，提取过去三年的自由现金流（FCF）；2) 查询当前欧盟碳排放交易体系（EU ETS）配额价格及欧元区10年期主权债券收益率，以此为基础估算加权平均资本成本（WACC）；3) 检索近6个月内与该公司ESG评级下调、海外风电项目延期或财务重述相关的重大财经新闻，并据此构建ESG风险惩罚系数；4) 调用DCF模型计算基础企业价值，利用Python结合新闻量化出的风险系数对估值进行折价调整；5) 获取当前欧元兑美元实时汇率，将折价后的每股估值转换为美元。请提供完整的计算链条、贴现率设定依据、ESG折价逻辑，并输出最终的美元计价目标价。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "财务报表数据提取",
+        "宏观利率与碳价数据获取",
+        "ESG舆情与风险量化",
+        "现金流折现（DCF）建模",
+        "跨币种汇率转换",
+        "Python编程与数据整合"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "基础DCF估值（欧元）",
+          "WACC设定值及宏观依据",
+          "ESG风险折价系数及新闻来源说明",
+          "调整后每股内在价值（欧元）",
+          "实时欧元兑美元汇率",
+          "最终美元计价目标价"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "calculate_dcf"
+          ],
+          [
+            "get_macro_data",
+            "calculate_dcf"
+          ],
+          [
+            "search_financial_news",
+            "python_interpreter"
+          ],
+          [
+            "get_exchange_rate",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T239",
+      "query": "作为ESG主题投资基金的量化研究员，请对维斯塔斯（Vestas Wind Systems A-S, VWS.CO）进行基于碳排放成本内部化的DCF估值。具体任务如下：1. 调用财务数据接口获取该公司最近四个季度的合并现金流量表，计算并提取年化自由现金流（FCF）。2. 获取最新的欧盟碳排放配额（EUA）价格及欧元区10年期主权债券收益率。假设公司当前年度碳排放量与营收比例保持稳定，将碳价作为新增运营成本从未来5年预测FCF中扣除，且碳价每年按8%复合增长。3. 搜索过去30天内关于维斯塔斯ESG争议（如供应链劳工合规、生物多样性影响）的权威财经新闻，若发现实质性负面报道，需将计算WACC的基础风险溢价上调75个基点；否则仅使用“10年期国债收益率+4%市场风险溢价”。4. 获取实时欧元兑美元汇率。5. 综合上述调整后的现金流、动态WACC（终端增长率设为2.5%）及汇率，使用DCF模型计算该公司当前每股内在价值（USD）。请逐步展示数据提取、成本调整、贴现率设定、折现计算及货币转换的全过程，并给出最终估值结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "financial_statement_extraction",
+        "esg_risk_pricing",
+        "macro_data_integration",
+        "news_sentiment_filtering",
+        "dcf_modeling",
+        "forex_conversion"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最近四季度自由现金流（FCF）提取结果",
+          "欧盟EUA碳价及每年8%复合增长的碳成本扣除计算过程",
+          "ESG新闻检索结果及WACC风险溢价调整依据",
+          "欧元区10年期国债收益率及最终采用的贴现率（WACC）",
+          "实时欧元兑美元汇率",
+          "经调整并转换货币后的每股内在价值（USD）"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter",
+            "calculate_dcf"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T240",
+      "query": "作为ESG与绿色能源主题基金经理，我需要对宁德时代（300750.SZ）进行融入可持续发展因子的绝对估值。请执行以下多步交叉分析：\n1. 获取该公司最新年度现金流量表，提取经营性现金流与资本支出，计算基准自由现金流（FCF）。\n2. 获取中美最新无风险利率、通胀数据及行业风险溢价，构建基础WACC。\n3. 搜索该公司过去6个月的ESG专项财经新闻（重点关注固态电池研发进展、海外供应链碳合规披露及劳工争议），通过语义分析量化舆情倾向，并据此在基础WACC上施加±0.5%~1.0%的ESG风险溢价调整。\n4. 使用Python构建未来5年FCF预测模型，需剔除欧盟CBAM（碳边境调节机制）预计带来的合规成本侵蚀（假设年均利润率影响0.25%），并输出调整后的现金流序列。\n5. 将修正后的FCF与ESG调整后WACC输入DCF估值模型，计算人民币计价的每股内在价值。\n6. 获取实时CNY/USD外汇汇率，将每股估值换算为美元计价。\n请提供完整的参数来源、ESG舆情量化逻辑、碳成本调整明细、DCF计算过程及最终美元计价的每股估值。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "python_interpreter",
+        "calculate_dcf",
+        "get_exchange_rate"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "基础WACC计算过程及宏观数据来源",
+          "ESG舆情情感量化结果及对应的折现率调整幅度",
+          "未来5年经CBAM碳成本调整的自由现金流预测明细",
+          "DCF模型输出的人民币计价每股内在价值",
+          "按实时汇率换算后的美元计价最终每股估值",
+          "清晰的ESG因子整合与估值调整逻辑说明"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "get_exchange_rate"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T241",
+      "query": "作为量化研究员，请获取英伟达（NVDA）当前的实时股价，并计算其相较于30日移动平均线（假设30日均线基准价格为$115.00）的价格偏离百分比。请使用计算器得出精确的百分比数值（保留两位小数），并在结果中简要说明该均值偏离/动量因子在量化选股模型中的典型信号含义。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "NVDA当前实时股价",
+          "相对于30日基准均线的价格偏离百分比（保留两位小数）",
+          "均值偏离/动量因子在量化策略中的典型信号含义简述"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T242",
+      "query": "请获取苹果公司（AAPL）过去20个交易日的每日收盘价数据，计算其20日简单移动平均线（SMA），并基于计算结果判断当前最新股价是处于该均线上方还是下方，以评估短期技术面趋势。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提取或展示过去20个交易日的收盘价数据",
+          "给出准确的20日简单移动平均线（SMA）计算结果",
+          "明确说明当前股价与20日SMA的位置关系（上方或下方）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T243",
+      "query": "请查询特斯拉（TSLA）的最新收盘价与上一交易日收盘价。基于这两个价格数据，计算其单日收益率（公式：（最新价 - 昨日价）/ 昨日价 * 100），结果保留两位小数。该指标是构建量化动量因子的基础。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "特斯拉最新收盘价",
+          "特斯拉上一交易日收盘价",
+          "计算得出的单日收益率（百分比形式，保留两位小数）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T244",
+      "query": "请获取特斯拉（TSLA）的当前实时报价及上一交易日收盘价，计算其日内价格动量（单日涨跌幅百分比）。基于计算结果，判断该资产是否触发了量化短线策略中设定的2.0%正动量信号阈值。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "特斯拉实时股价",
+          "上一交易日收盘价",
+          "计算得出的单日涨跌幅百分比",
+          "关于是否触发2.0%正动量阈值的明确判断结论"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T245",
+      "query": "作为量化策略研究员，请获取英伟达（NVDA）的当前实时股价以及30个交易日前的历史收盘价。请计算该股票近期的短期价格动量（即30日简单收益率），计算公式为：(当前价 - 30日前价格) / 30日前价格。请展示计算步骤并输出保留两位小数的百分比结果。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提取NVDA实时股价与30日前历史收盘价",
+          "正确执行价格动量百分比计算公式",
+          "提供符合精度要求的最终收益率结果"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T246",
+      "query": "作为量化研究员，请获取英伟达（NVDA）的最新收盘价以及5个交易日前的收盘价，并计算其5日价格动量百分比（计算公式：(最新价-5日前收盘价)/5日前收盘价*100）。请提供提取的原始价格数据及最终计算结果。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "NVDA最新收盘价数据",
+          "5个交易日前收盘价数据",
+          "5日价格动量百分比计算结果"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T247",
+      "query": "作为量化动量因子监控的一部分，请获取苹果公司（AAPL）的当前实时股价与上一交易日收盘价。调用计算器计算今日的单日涨跌幅（百分比形式，保留两位小数），并根据计算结果给出动量信号：若涨跌幅大于0%则判定为“多头信号”，否则判定为“空头信号”。请提供完整计算过程及最终结论。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "当前实时股价",
+          "上一交易日收盘价",
+          "单日涨跌幅百分比",
+          "动量信号判定结果"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T248",
+      "query": "作为量化技术分析的基础步骤，请获取英伟达（NVDA）过去20个交易日的每日收盘价。基于这些数据，计算20日简单移动平均线（SMA），并计算当前价格相对于该SMA的百分比偏离度。请输出SMA的具体数值及偏离度结果。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "过去20个交易日收盘价数据",
+          "20日简单移动平均线（SMA）数值",
+          "当前价格相对于SMA的百分比偏离度"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T249",
+      "query": "作为量化研究员，我需要快速测算特斯拉（TSLA）的短期技术偏离因子。请获取TSLA的当前实时股价以及过去20个交易日的每日收盘价序列，计算20日简单移动平均线（SMA），并据此得出当前价格相对于该均线的百分比偏离度。请提供具体数值结果。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator",
+        "quantitative_analysis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "TSLA当前实时股价",
+          "过去20个交易日收盘价序列及SMA计算过程",
+          "20日简单移动平均线（SMA）具体数值",
+          "当前股价相对于SMA的百分比偏离度"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T250",
+      "query": "请获取亚马逊（AMZN）过去20个交易日的收盘价序列，使用Python计算其20日简单移动平均线（SMA），并计算当前最新收盘价相对于该均线的百分比偏离度（即价格动量因子的一种简化形式）。请输出最新收盘价、20日均线值及偏离度百分比。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "AMZN最新收盘价",
+          "20日简单移动平均线（SMA）值",
+          "价格相对于20日SMA的百分比偏离度"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T251",
+      "query": "作为量化因子研究员，请评估英伟达（NVDA）的技术面动量与估值匹配度。首先获取NVDA过去60个交易日的每日收盘价，并计算其14日相对强弱指数（RSI）与50日简单移动平均线（SMA）。接着，获取其最新的季度利润表数据，提取过去十二个月（TTM）的每股收益（EPS），并结合当前股价计算滚动市盈率（P/E TTM）。最后，检索近一周关于NVDA的核心财经新闻。请综合上述技术指标与基本面估值，判断该股票当前是否出现技术超买/超卖信号，估值是否偏离历史中枢，并给出量化多因子分析结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "historical_price_retrieval",
+        "technical_indicator_calculation",
+        "financial_statement_extraction",
+        "valuation_ratio_computation",
+        "news_sentiment_synthesis",
+        "quantitative_factor_analysis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "14日RSI具体数值及超买/超卖状态判定",
+          "50日SMA数值及现价相对于均线的偏离度",
+          "基于TTM EPS计算的滚动市盈率结果",
+          "近一周核心财经新闻对量价及基本面的潜在影响摘要",
+          "结合动量与技术因子的综合量化评估结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T252",
+      "query": "作为量化研究员，我需要对英伟达（NVDA）进行技术面动量与基本面估值因子的交叉验证。请执行以下分析：1. 获取NVDA过去90个交易日的日收盘价历史数据，并使用Python计算其50日简单移动平均线（50-SMA）以及当前股价相对于该均线的百分比偏离度（用于量化短期技术超买/超卖状态）；2. 调用财务数据接口提取该公司最新年度报告（10-K）的利润表，根据归属于普通股股东的净利润与期末加权平均流通股数，精确计算滚动市盈率（Trailing P/E）；3. 结合技术偏离度与估值倍数，给出当前价格是否处于“高估值+技术高位”重叠区的量化结论。请最终输出50-SMA的具体数值、股价偏离均线的百分比，以及滚动市盈率。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "50日简单移动平均线（50-SMA）的具体数值",
+          "当前股价相对于50日均线的百分比偏离度",
+          "基于最新年报计算的滚动市盈率（Trailing P/E）"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T253",
+      "query": "请针对英伟达（NVDA）构建一个结合技术动量与估值因子的量化评分模型。具体任务如下：1. 获取NVDA过去100个交易日的日度收盘价及最新实时报价。2. 计算该股的30日简单移动平均线（SMA）及当前价格相对于SMA的百分比偏离度（动量因子）。3. 获取最新一期季度财务报表，提取归属于普通股股东的净利润及稀释后加权平均股数，进而计算每股收益（EPS）。4. 基于实时股价与EPS计算滚动市盈率（P/E Ratio）。5. 综合判断：若价格对SMA的偏离度介于2%至8%之间，且滚动P/E低于65倍，则判定为“技术动量健康且估值具备安全边际”，否则标记为“因子警示”。请输出完整的数据获取记录、中间计算步骤及最终因子评级。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "NVDA过去100日历史收盘价数据",
+          "当前实时股价",
+          "30日SMA计算值",
+          "价格对SMA的百分比偏离度",
+          "最新季度净利润与稀释加权股数",
+          "计算得出的EPS",
+          "滚动市盈率（Trailing P/E）",
+          "技术动量与估值因子综合评级结论"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T254",
+      "query": "作为量化策略研究员，我需要对英伟达 (NVDA) 进行技术面与基本面因子的交叉验证。请执行以下步骤：1. 获取 NVDA 过去 90 个交易日的历史收盘价，计算 20 日简单移动平均线 (SMA20) 与 60 日简单移动平均线 (SMA60) 的比率，以衡量短期动量强度。2. 提取其最新季度利润表中的净利润及资产负债表中的加权平均流通股数，计算每股收益 (EPS)，并结合当前股价计算滚动市盈率 (Trailing PE)。3. 获取美国最新公布的 10 年期国债收益率。4. 计算 NVDA 的盈利收益率 (E/P) 与 10 年期美债收益率的差值（宏观风险溢价）。请最终输出 SMA20/SMA60 比率、计算出的 PE 值以及风险溢价，并简要判断该股票当前是否处于技术面动量突破且相对宏观无风险利率具备估值吸引力的状态。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "SMA20/SMA60 动量比率数值",
+          "滚动市盈率 (PE) 计算结果",
+          "盈利收益率与10年期美债收益率的利差",
+          "动量与宏观估值交叉状态结论"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T255",
+      "query": "作为量化分析师，请对英伟达（NVDA）进行基本面因子与技术面指标的交叉验证。首先获取NVDA最新季度财报中的摊薄每股收益（EPS）及当前股票收盘价，计算滚动市盈率（Trailing P/E）。接着，获取当前美国10年期国债收益率作为无风险利率基准，计算盈利收益率（Earnings Yield = 1 / P/E）与国债收益率的利差。随后，利用该股票的历史价格数据计算过去90个交易日的年化波动率（假设年交易日为252天）。若盈利收益率低于10年期国债收益率（即利差为负）且年化波动率突破45%，请在结论中明确指出该标的已触发“估值倒挂与高波动共振”预警。请提供完整的计算过程、各因子具体数值及最终信号判断。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "滚动市盈率（Trailing P/E）具体数值",
+          "盈利收益率与10年期国债收益率利差（Spread）",
+          "过去90个交易日年化波动率",
+          "是否触发“估值倒挂与高波动共振”预警信号（是/否）",
+          "完整的数据提取与计算逻辑"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price",
+            "get_macro_data",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T256",
+      "query": "作为量化研究员，请评估英伟达（NVDA）当前的估值水平与技术面动能。请依次完成以下步骤：1. 获取NVDA最新收盘价及总股本，计算当前总市值；同时获取其最新季度财报的净利润，计算滚动市盈率（P/E）与盈利收益率（E/P）。2. 获取美国当前10年期国债收益率作为无风险利率基准。3. 计算E/P与10年期美债收益率的利差（股权风险溢价）。4. 获取NVDA过去60个交易日的历史价格序列，计算50日简单移动平均线（SMA-50），并得出当前股价相对于SMA-50的偏离百分比。请输出上述所有计算结果，并基于股权风险溢价与技术动量偏离度给出量化交易信号评估。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "当前市值与滚动市盈率（P/E）",
+          "盈利收益率（E/P）数值",
+          "E/P与10年期美债收益率的利差（百分比）",
+          "50日均线（SMA-50）数值及股价偏离百分比",
+          "结合风险溢价与技术动量的量化评估结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price",
+            "get_macro_data"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T257",
+      "query": "作为量化研究员，请评估英伟达（NVDA）近期的技术面趋势与基本面盈利质量的共振情况。获取其过去90个交易日的每日收盘价，并提取最新年度利润表中的营业收入与净利润数据。使用Python计算20日与50日简单移动平均线（SMA），判断是否存在20日SMA上穿50日SMA的动量信号。随后计算净利润率。最后，利用计算器得出“技术-盈利复合因子值”，公式为：(当前收盘价 / 50日SMA) × (1 + 净利润率)。请明确给出均线交叉状态、中间指标计算结果、最终因子值，并基于该量化模型给出短期配置建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "python_interpreter",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "20日与50日SMA的具体数值",
+          "均线交叉状态的明确判断（是/否）",
+          "最新年度净利润率数值",
+          "技术-盈利复合因子值的计算结果",
+          "基于量化因子得分的短期配置建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements"
+          ],
+          [
+            "python_interpreter"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T258",
+      "query": "作为量化策略分析师，请对英伟达（NVDA）进行因子与技术面分析。首先，获取NVDA过去120个交易日的历史收盘价数据。其次，获取其最新一期财报中的净利润（Net Income）及完全稀释后的流通股本数。接着，获取当前的美国10年期国债收益率作为无风险利率基准。最后，请使用Python编写代码完成以下计算：(1) 计算过去120日收盘价的年化波动率（以252个交易日为基准）；(2) 计算当前收盘价相对于60日简单移动平均线（SMA）的偏离百分比；(3) 基于最新净利润与股本数据估算滚动市盈率（TTM PE）；(4) 计算股票的盈利收益率（Earnings Yield）与10年期美债收益率的利差。请输出这四个量化指标的具体计算结果。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "120日年化波动率（%）",
+          "当前股价对60日均线的偏离百分比（%）",
+          "估算的滚动市盈率（TTM PE）",
+          "盈利收益率与10年期美债收益率的利差（%）"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T259",
+      "query": "作为量化分析师，请对特斯拉 (TSLA) 进行量价与估值因子的交叉验证。请执行以下步骤：1. 获取TSLA过去65个交易日的每日收盘价序列；2. 计算其50日简单移动平均线（SMA-50）及近60日历史波动率（年化，按252个交易日计算）；3. 获取TSLA最新的净利润（Net Income）与总股本（Shares Outstanding），计算滚动市盈率（Trailing P/E）；4. 获取最新的美国10年期国债收益率作为宏观利率参考；5. 计算“估值-波动率比率”（即 P/E 除以 历史波动率）。请最终输出：SMA-50具体数值、当前股价对SMA-50的升贴水百分比、滚动P/E值、10年期美债收益率，以及计算出的估值-波动率比率。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "TSLA 50日移动平均线（SMA-50）的具体数值",
+          "当前股价相对于SMA-50的升贴水百分比",
+          "计算得出的滚动市盈率（Trailing P/E）",
+          "美国10年期国债收益率数值",
+          "估值-波动率比率（P/E 除以 年化波动率）"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T260",
+      "query": "作为一名量化策略研究员，请对英伟达（NVDA）进行多因子技术面与基本面交叉评估。首先，获取NVDA过去120个交易日的收盘价数据，并计算其20日简单移动平均线（SMA）与60日SMA的比值，以衡量中期技术动量因子。其次，获取公司最新财报中的净利润与股东权益数据以计算净资产收益率（ROE）作为质量因子。接着，查询当前美国联邦基金利率作为宏观流动性调整基准。最后，使用Python编写代码完成以下量化计算：分别对动量因子与ROE进行Z-Score标准化处理，按动量60%、质量40%的权重合成综合得分；随后减去当前联邦基金利率除以50作为宏观惩罚项。输出最终的综合得分（保留三位小数）及对应的交易信号（得分大于1.5为强烈看多，0至1.5为中性，小于0为看空）。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "20日与60日移动平均线比值",
+          "最新ROE计算结果",
+          "当前美国联邦基金利率数值",
+          "Z-Score标准化后的综合量化得分（保留三位小数）",
+          "明确的多空交易信号"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T261",
+      "query": "作为量化研究员，请对英伟达（NVDA）执行一次结合基本面因子、技术面指标与宏观汇率的多维评估。具体步骤：1. 获取NVDA最新季度现金流量表，提取自由现金流（FCF）；2. 获取NVDA当前股价及过去90个交易日的历史收盘价，使用Python计算90日RSI（相对强弱指数），并明确判断当前是否处于超买（>70）或超卖（<30）区间；3. 查询最新美国10年期国债收益率作为无风险利率，并获取当前USD/EUR实时汇率；4. 基于FCF与总市值计算FCF Yield，将其按实时汇率换算为欧元计价后，扣除10年期美债收益率得出经汇率调整的超额收益因子；5. 搜索近一周关于“AI芯片出口管制”的权威财经新闻，提炼市场对半导体板块的情绪偏向（正面/中性/负面）；6. 综合超额收益因子、RSI技术状态及新闻情绪，给出明确的量化短线交易建议（买入/持有/卖出），并列出所有中间计算结果与依据。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "Financial Statement Data Extraction",
+        "Technical Indicator Calculation (RSI)",
+        "Cross-Currency Financial Conversion",
+        "Macroeconomic Factor Overlay",
+        "Financial News Sentiment Analysis",
+        "Quantitative Signal Synthesis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新季度自由现金流(FCF)数值",
+          "90日RSI指标计算值及超买/超卖状态判定",
+          "当前USD/EUR实时汇率与美国10年期国债收益率",
+          "欧元计价且扣除无风险利率后的FCF超额收益率",
+          "近一周AI芯片出口管制新闻情绪定性总结",
+          "最终量化短线交易信号及核心逻辑推导"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T262",
+      "query": "作为量化研究员，请对AMD进行技术面与多因子交叉分析。首先，获取AMD过去180个交易日的每日收盘价，利用代码计算14日RSI、50日与200日均线关系及年化波动率。其次，调取最新财报数据，计算TTM市盈率、FCF收益率和ROE。接着，获取当前美国10年期国债收益率和最新CPI同比数据，并检索近30日内AMD相关权威财经新闻进行情感倾向分析。最后，使用Python构建一个综合量化评分模型，设定技术指标权重35%、财务因子权重40%、宏观与新闻情绪权重25%，输出0-100分的最终评分，明确判断当前处于技术超买/超卖或估值合理区间，并给出具体的投资操作建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "AMD过去180日收盘价衍生的14日RSI数值、50/200日均线交叉状态及年化波动率",
+          "基于最新财报计算的TTM P/E、FCF Yield与ROE具体数值",
+          "当前美国10年期国债收益率与最新CPI同比数据",
+          "近30天AMD相关新闻的情感分析结果（正向/中性/负向比例或评分）",
+          "依据35%/40%/25%权重通过Python模型计算出的综合量化评分（0-100）",
+          "明确的技术面状态界定（超买/超卖/合理）与最终买入/持有/卖出操作建议"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "python_interpreter"
+          ],
+          [
+            "get_financial_statements",
+            "python_interpreter"
+          ],
+          [
+            "get_macro_data",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T263",
+      "query": "作为量化研究员，我需要对英伟达（NVDA）进行多因子与技术面综合评估。请执行以下操作：1. 获取NVDA过去12个月的日线收盘价，计算其动量因子（12个月收益率）和年化波动率。2. 获取最新财报数据，计算投入资本回报率（ROIC）和营业利润率。3. 获取当前美国10年期国债收益率作为无风险利率基准。4. 检索近一周关于NVDA的最新财经新闻，评估其市场情绪倾向（正面/负面/中性）并量化为风险溢价调整系数。5. 使用Python编写脚本，结合动量、ROIC、新闻情绪调整系数与宏观无风险利率，构建动态加权资本成本（WACC）。6. 基于历史自由现金流预测与动态WACC，调用贴现现金流模型计算其理论内在价值。7. 计算当前股价相对于200日移动平均线的偏离度，结合内在价值与动量信号，输出包含具体目标价、安全边际及因子权重的综合投资报告。请提供完整的计算逻辑与数据依据。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "多因子模型构建",
+        "宏观利率数据应用",
+        "财务指标提取与计算",
+        "NLP情绪量化映射",
+        "Python数据分析与自定义WACC建模",
+        "贴现现金流（DCF）估值"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "NVDA 12个月收益率与年化波动率数值",
+          "最新ROIC与营业利润率数值",
+          "当前美国10年期国债收益率数值",
+          "新闻情绪量化调整系数及依据",
+          "动态计算出的WACC结果",
+          "DCF模型得出的内在价值/目标价",
+          "当前股价与200日均线的偏离度百分比",
+          "基于多因子合成的最终投资建议与仓位/风险控制提示"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter",
+            "calculate_dcf"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T264",
+      "query": "我需要评估台积电（TSM）当前的量化因子与技术面共振信号。请按以下步骤执行分析：1. 获取最新的利润表与现金流量表，计算其自由现金流收益率（FCF Yield = 自由现金流 / 总市值）和市净率（P/B = 股价 / 每股账面价值）。2. 获取过去180个交易日的历史日线股价数据，在Python中计算20日与60日简单移动平均线（SMA20/SMA60），并计算短期均线对长期均线的百分比偏离度；同时计算14日相对强弱指数（RSI）以判断短期超买/超卖状态。3. 获取当前美国10年期国债收益率及CPI同比增速数据，评估当前宏观流动性环境对估值折现率的影响。4. 检索过去45天内关于台积电先进制程产能利用率及AI芯片订单的财经新闻，使用情感分析判断市场情绪倾向（正面/中性/负面）。5. 在Python环境中对FCF Yield、P/B、均线偏离度、RSI及新闻情绪进行Z-Score标准化，并赋予预设权重（估值因子40%、技术动量30%、宏观流动性20%、新闻情绪10%）合成综合评分。最终输出需包含各因子原始值与标准化得分、综合评分明细，并基于阈值给出明确的“强买入”、“中性”或“规避”操作建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_stock_price",
+        "get_macro_data",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "自由现金流收益率(FCF Yield)与市净率(P/B)的精确计算值",
+          "SMA20与SMA60的数值及百分比偏离度",
+          "14日RSI指标的具体数值",
+          "美国10年期国债收益率与CPI数据引用",
+          "近期新闻的情感倾向定性结论",
+          "各因子Z-Score标准化得分与权重分配明细",
+          "基于综合评分的最终操作建议(强买入/中性/规避)"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price",
+            "get_macro_data",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T265",
+      "query": "作为量化对冲基金的研究员，请对英伟达（NVDA）进行深度量价因子共振分析。具体步骤要求：1. 获取NVDA过去250个交易日的日频收盘价数据及最新季度财务报表；2. 计算核心基本面量化因子：TTM市盈率、净资产收益率（ROE）及自由现金流收益率；3. 基于价格序列计算技术面指标：50日与200日简单移动平均线（SMA）、14日相对强弱指数（RSI）及20日布林带宽度，识别是否存在均线多头排列及RSI动量健康区间；4. 提取当前美国10年期国债收益率作为无风险利率，计算经宏观风险溢价调整后的因子加权夏普比率；5. 检索近一周关于NVDA的最新财经新闻，利用文本分析逻辑输出情绪得分（-1至1区间）；6. 使用Python构建综合评分模型，将标准化后的量价因子与技术信号进行等权加权，再乘以新闻情绪衰减系数，输出最终的“Alpha共振评分”。请详细展示计算逻辑、各项指标具体数值、评分结果及明确的交易策略建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "历史股价数据获取与清洗",
+        "财务报表提取与比率计算",
+        "宏观无风险利率查询",
+        "财经新闻检索与NLP情绪量化",
+        "Python技术指标与量化建模"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "NVDA TTM市盈率、ROE及自由现金流收益率",
+          "50日/200日SMA交叉状态、14日RSI数值及布林带宽度",
+          "经10年期美债调整后的因子夏普比率",
+          "近一周NVDA新闻情绪得分（-1至1）",
+          "综合Alpha共振评分具体数值",
+          "明确的量化交易建议及仓位指引"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "python_interpreter"
+          ],
+          [
+            "get_financial_statements",
+            "python_interpreter"
+          ],
+          [
+            "get_macro_data",
+            "python_interpreter"
+          ],
+          [
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T266",
+      "query": "作为量化多因子基金研究员，请对英伟达（NVDA）执行技术动量与基本面估值的交叉验证分析。具体要求如下：1. 提取NVDA过去250日历史股价数据，利用Python计算120日与250日指数移动平均线（EMA）及30日历史波动率，验证是否呈现“多头排列”且波动率处于相对低位。2. 获取最新一期现金流量表与利润表，计算过去十二个月（TTM）自由现金流（FCF），并结合实时市值计算FCF收益率。3. 获取当前美国10年期国债收益率与最新核心CPI环比数据，作为无风险利率与通胀溢价的基准。4. 结合提取的TTM FCF、设定20%的5年复合增长率及基于宏观数据调整的风险折现率，调用DCF模型测算理论内在价值。5. 比较当前市价与DCF估值，若折价率超过5%且技术面满足多头条件，计算预期收益空间；反之标记高估值风险。6. 检索近一个月内关于英伟达数据中心芯片需求及竞争对手定价策略的财经新闻，定性评估其对现金流预测假设的扰动。请输出完整的技术指标计算过程、因子估值数据、DCF结果、目标价调整幅度及新闻因子合成结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_stock_price",
+        "python_interpreter",
+        "get_financial_statements",
+        "get_macro_data",
+        "calculate_dcf",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "120日与250日EMA数值及多头排列验证结果",
+          "30日历史波动率数值",
+          "TTM自由现金流（FCF）及FCF收益率",
+          "美国10年期国债收益率与核心CPI数据",
+          "DCF模型测算的内在价值",
+          "当前股价相对于DCF估值的折溢价百分比及预期收益空间/风险信号",
+          "近期数据中心芯片需求新闻对基本面假设的扰动评估"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "python_interpreter"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T267",
+      "query": "作为量化股票研究员，请对英伟达（NVDA）进行多因子与技术面综合分析。首先，获取其过去一年的历史股价数据，计算50日和200日简单移动平均线（SMA），判断当前技术面是处于“金叉”还是“死叉”状态。其次，提取其最新财年的自由现金流（FCF）及资本支出数据，结合美国最新的10年期国债收益率和核心CPI数据，计算经通胀调整后的实际折现率，并使用现金流折现（DCF）模型评估其内在价值。接着，搜索最近两周关于NVDA的权威财经新闻，进行定性情绪评估（积极/中性/消极）。最后，使用Python脚本将技术面因子（金叉赋分高、死叉赋分低）、价值因子（当前市价相对于DCF内在价值的折溢价率）和新闻情绪因子（设定30%权重）进行标准化处理与加权，合成一个量化综合得分（满分10分）。请依次输出均线交叉状态、估算实际折现率、DCF内在价值、新闻情绪倾向、量化综合得分及基于该模型的明确交易建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "calculate_dcf",
+        "python_interpreter",
+        "quantitative_factor_modeling",
+        "technical_analysis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "50日与200日简单移动平均线（SMA）的交叉状态（金叉或死叉）",
+          "结合10年期美债与CPI的经通胀调整实际折现率估算值",
+          "基于自由现金流测算的DCF内在价值",
+          "近两周权威财经新闻的定性情绪评估结果",
+          "融合技术、价值与情绪因子的量化综合得分（满分10分制）",
+          "基于多因子模型输出的明确交易建议"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data",
+            "search_financial_news",
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T268",
+      "query": "作为量化策略师，请对英伟达（NVDA）进行多因子与技术面交叉验证分析。具体要求如下：\n1. 获取NVDA过去250个交易日的历史收盘价，计算其50日与200日简单移动平均线（SMA）的相对位置（金叉/死叉状态），并计算14日相对强弱指数（RSI）。\n2. 提取其最新季度与年度财务报表数据，计算滚动市盈率（Trailing P/E）和净资产收益率（ROE）。\n3. 获取当前美国10年期国债收益率作为无风险利率基准，以评估宏观资金成本。\n4. 检索近30天内关于NVDA产业链及财务表现的核心财经新闻，利用文本分析评估市场情绪倾向（正面/负面/中性）。\n5. 使用Python编写脚本，构建一个量化综合评分模型：权重分配为技术面趋势（35%）、估值因子（25%）、盈利动量（20%）、情绪与宏观折价（20%）。根据标准化后的因子得分计算加权总分。\n6. 结合综合评分与当前宏观利率环境，推演未来6-12个月的合理估值区间（需说明溢价/折价逻辑）。\n请输出完整的计算逻辑、各项指标的具体数值、综合评分明细、最终投资评级（强烈买入/买入/持有/卖出/强烈卖出）以及目标价格区间。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "50日与200日SMA具体数值及交叉状态判定",
+          "14日RSI计算结果及技术面信号",
+          "滚动P/E与ROE数值及同业分位对比",
+          "美国10年期国债收益率最新数据",
+          "近30天新闻情绪量化评估结果",
+          "多因子综合评分模型权重明细与加权总分",
+          "基于评分与宏观调整的投资评级及6-12个月目标价区间"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T269",
+      "query": "作为量化对冲基金的研究员，请对“英伟达 (NVDA)”进行多因子与技术面结合的动态评估。请执行以下步骤：1. 获取NVDA过去180个交易日的每日收盘价数据；2. 提取最新季度财报中的净利润率（Net Profit Margin）和净资产收益率（ROE）；3. 获取当前美国10年期国债收益率作为宏观无风险利率基准；4. 调用Python计算50日与200日简单移动平均线（SMA），判断是否形成“黄金交叉”，并计算14日相对强弱指数（RSI），判断是否处于超买（>70）或超卖（<30）区间；5. 基于基本面与技术面构建加权评分模型（权重：ROE 30%、净利润率 20%、SMA趋势状态 25%、RSI动量 25%），输出原始得分；6. 搜索近30天内关于半导体供应链及AI芯片出口管制的宏观/行业新闻，若存在显著利空消息，在原始得分基础上扣减15%，否则保持不变。最终请提供完整的技术指标数值、因子权重计算过程、情绪调整后的最终评分，以及明确的“买入/持有/卖出”量化建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "NVDA过去180日股价历史数据提取",
+          "最新ROE与净利润率具体数值",
+          "当前美国10年期国债收益率",
+          "50日与200日SMA具体数值及黄金交叉状态判定",
+          "14日RSI具体数值及超买/超卖区间判定",
+          "多因子原始加权得分计算明细",
+          "近30天行业新闻情绪分析及动态扣分逻辑",
+          "情绪调整后的最终量化评分",
+          "基于评分阈值的明确交易建议"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T270",
+      "query": "作为量化研究员，请对特斯拉（TSLA）进行多维因子与技术面综合评估。首先，获取其过去一年的日频股价数据，计算其动量因子（过去12个月扣除最近1个月的累计收益率）及技术面指标（14日RSI与50日/200日简单移动平均线状态）。其次，提取最新财报周期的自由现金流（FCF）与营收数据，结合当前美国十年期国债收益率与CPI同比增速（宏观数据），计算加权平均资本成本（WACC）并使用DCF模型估算内在价值。同时，抓取过去两周关于TSLA的财经新闻，基于关键事件进行舆情情感打分，并将该情感系数映射至DCF终值增长率调整（正面+0.5%，中性0%，负面-0.5%）。最后，综合技术面突破信号、DCF估值调整结果及宏观波动率，计算该股票当前周期的风险调整后预期收益率（年化Sharpe Ratio近似值），并给出明确的投资评级与目标价区间。请详细列出所有中间计算数据、因子权重分配逻辑及最终结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "时序数据提取与清洗",
+        "技术指标计算（RSI/MA交叉）",
+        "量化动量因子构建",
+        "宏观利率与WACC估算",
+        "DCF估值建模与参数动态调整",
+        "新闻舆情情感量化分析",
+        "风险收益比综合测算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "过去12个月剔除近1月的动量因子具体数值（%）",
+          "14日RSI当前值及50/200日均线相对位置（多头排列/金叉/死叉/空头）",
+          "基于最新FCF与宏观利率计算的WACC参数值",
+          "DCF基础内在价值与舆情调整后的目标价",
+          "近期新闻舆情情感系数及调整逻辑说明",
+          "综合计算得出的风险调整后预期收益率（年化Sharpe Ratio近似值）",
+          "明确的投资评级（买入/持有/卖出）及对应目标价区间"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data",
+            "search_financial_news",
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T271",
+      "query": "作为全球银行业研究员，请获取摩根大通（JPM）的最新实时股价。已知其昨日收盘价为 188.50 美元，请计算今日股价相较于昨日的涨跌幅百分比（结果保留两位小数）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "JPM最新实时股价",
+          "今日涨跌幅百分比"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T272",
+      "query": "作为关注全球支付与金融科技领域的分析师，请查询PayPal Holdings（PYPL）的最新收盘价，并计算以该价格购入2,000股所需的总资金（美元）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "PayPal最新收盘价（美元）",
+          "2,000股总成本（美元）",
+          "清晰的计算步骤说明"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T273",
+      "query": "请获取金融科技公司PayPal（PYPL）的最新实时股价。若某机构计划调拨3,000万美元进行战略建仓，按当前市价计算，该笔资金理论上最多能买入多少股？请保留两位小数。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "PayPal最新实时股价",
+          "3000万美元可购买的股数（保留两位小数）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T274",
+      "query": "作为全球支付与传统银行业研究员，请帮我获取Visa (V) 和摩根大通 (JPM) 当前的实时股价。在此基础上，计算Visa股价相较于摩根大通股价的溢价比例，公式为：(Visa股价 - JPM股价) / JPM股价，结果保留两位小数并以百分比形式呈现。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Visa (V) 最新实时股价",
+          "摩根大通 (JPM) 最新实时股价",
+          "Visa相对摩根大通的股价溢价百分比"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T275",
+      "query": "请获取传统商业银行代表摩根大通（JPM）与金融科技公司代表PayPal（PYPL）的最新股价，并计算PayPal股价占摩根大通股价的百分比。最终计算结果请保留两位小数。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "摩根大通（JPM）最新股价",
+          "PayPal（PYPL）最新股价",
+          "PayPal股价占摩根大通股价的百分比（%）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T276",
+      "query": "在全球银行与金融科技板块的对比分析中，请获取贝宝（PayPal，股票代码PYPL）的实时股价。随后，计算一家小型投资机构若使用250,000美元现金按市价全仓买入该股票，理论上可购得多少股（结果请保留两位小数）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确获取PayPal(PYPL)的实时股价数据",
+          "正确执行250000除以实时股价的运算逻辑",
+          "最终计算结果保留两位小数"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T277",
+      "query": "作为全球金融科技领域的行业研究员，请获取当前Visa (V) 与 PayPal (PYPL) 的最新实时股价，并计算Visa股价相对于PayPal股价的倍数（即V价格除以PYPL价格）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Visa (V) 最新实时股价",
+          "PayPal (PYPL) 最新实时股价",
+          "Visa对PayPal的股价倍数"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T278",
+      "query": "请获取传统银行业巨头摩根大通（JPM）与金融科技公司PayPal（PYPL）的最新实时股价，并计算两者的每股价格差额（JPM减去PYPL），以便快速评估两者当前的相对价格水平。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "摩根大通（JPM）的最新实时股价",
+          "PayPal（PYPL）的最新实时股价",
+          "计算得出的股价差额数值"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T279",
+      "query": "作为全球银行业与金融科技板块研究员，请获取当前摩根士丹利（MS）的实时股价。假设某机构计划配置100,000美元头寸，请计算按该实时价格最多可买入多少股（忽略交易摩擦，结果保留两位小数）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "摩根士丹利（MS）当前实时股价",
+          "10万美元头寸可购买的股数（保留两位小数）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T280",
+      "query": "作为全球金融科技领域的初级研究员，请查询支付平台贝宝（PayPal, PYPL）的最新实时股价，并计算机构建仓买入500股所需的总名义本金（美元）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "PayPal（PYPL）的最新实时股价（美元）",
+          "买入500股的总名义本金（美元）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T281",
+      "query": "我需要评估在近期美联储货币政策转向背景下，美国传统大型银行富国银行（WFC）与金融科技公司Block（SQ）的估值吸引力。请执行以下步骤：1. 获取两家公司的最新实时股价；2. 调取最新一期利润表，提取稀释每股收益（EPS）；3. 查询当前美国联邦基金目标利率上限；4. 计算两者的静态市盈率（P/E），并结合利率环境分析高融资成本对双方盈利模式（净息差依赖型 vs 交易抽成型）的差异化影响，给出相对配置建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "WFC与SQ的最新实时股价",
+          "WFC与SQ最新一期的稀释每股收益（EPS）",
+          "计算得出的WFC与SQ静态市盈率（P/E）",
+          "当前美国联邦基金目标利率上限数值",
+          "高利率对银行净息差与金融科技交易抽成模式的差异化影响分析",
+          "明确的相对配置建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T282",
+      "query": "请分析摩根大通（JPM）与贝宝（PayPal, PYPL）在当前货币政策环境下的估值差异。具体要求：1. 获取两家公司最新财报的净利润（Net Income）与当前股价；2. 使用计算器分别计算其市盈率（P/E）；3. 查询最新的美联储联邦基金利率（Federal Funds Rate）；4. 结合宏观利率数据与计算出的估值倍数，分析传统商业银行与金融科技公司当前估值分化的核心驱动因素。请提供完整的计算过程、关键数据提取结果及最终的投资分析结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "财务报表解析",
+        "估值倍数计算",
+        "宏观经济数据整合",
+        "多工具链协同"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "JPM与PYPL的最新净利润",
+          "JPM与PYPL的当前股价",
+          "计算得出的JPM与PYPL市盈率（P/E）",
+          "美联储联邦基金利率",
+          "基于利率与估值的对比分析结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T283",
+      "query": "作为金融科技与银行业研究员，我需要对比传统大型银行摩根大通（JPM）与支付金融科技公司Block（SQ）的相对估值。请获取这两家公司最新的股票收盘价以及最新年度财报中的净利润与总流通股数（或直接提取基本每股收益），并计算各自的滚动市盈率（Trailing P/E）。同时，查询当前美联储最新的联邦基金目标利率中值，结合该宏观利率环境，分析高息背景下传统银行与轻资产金融科技公司的估值溢价或折价逻辑。请提供详细数据提取过程、计算公式、市盈率结果及最终的投资逻辑对比结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "JPM与SQ的当前股价",
+          "JPM与SQ最新财报净利润与总流通股数（或EPS）",
+          "通过计算得出的JPM与SQ市盈率（P/E）数值",
+          "当前美联储基准利率具体数值",
+          "结合高息宏观环境对传统银行与金融科技公司的相对估值及投资逻辑结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T284",
+      "query": "请对比分析国际传统银行摩根大通（JPM）与金融科技公司PayPal（PYPL）在当前宏观环境下的相对估值。首先，获取两家公司最新财年的归母净利润（Net Income）与当前股价，结合总股本估算或工具直接提供数据计算各自的静态市盈率（P/E）。接着，查询美联储当前的联邦基金基准利率（Federal Funds Rate）。若当前基准利率高于4.5%，请对传统银行板块（JPM）的市盈率应用3%的估值折价，对金融科技板块（PYPL）应用8%的估值折价，以模拟高利率对信贷利差扩张与数字支付增速放缓的差异化影响。最后，计算两家公司调整后的市盈率倍数差，结合估值折价逻辑与基本面数据，给出明确的相对性价比结论及完整计算步骤。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_stock_price",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "JPM与PYPL的原始静态市盈率计算结果",
+          "获取到的美联储当前基准利率数值",
+          "应用利率折价规则后的调整后市盈率",
+          "调整后估值倍数差及明确的投资性价比结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T285",
+      "query": "作为全球银行业与金融科技板块的分析师，请对比分析摩根大通（JPM）与贝宝（PayPal, PYPL）的估值状况。请获取这两家公司当前的股票价格以及最新披露的季度资产负债表数据，从中提取总股东权益与基本流通股数量，并计算各自的市净率（P/B Ratio）。随后，查询最新的美国联邦基金目标利率。最后，请结合当前的利率水平，简要评估在当前宏观货币环境下，这两家公司市净率所反映的估值相对吸引力与业务风险敞口差异。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "摩根大通（JPM）与贝宝（PYPL）的最新收盘价",
+          "最新季度的总股东权益与基本流通股数",
+          "计算得出的JPM与PYPL市净率（P/B Ratio）数值",
+          "当前美国联邦基金目标利率",
+          "结合利率环境对两家公司市净率估值差异及业务模式的简要专业分析"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T286",
+      "query": "作为关注全球银行业与金融科技赛道的分析师，请对比摩根大通（JPM）与Block（SQ）的最新估值与财务表现。请执行以下步骤：1. 获取两家公司最近一个季度财报中的总营业收入；2. 获取两家公司当前的实时股价；3. 使用营收与股价数据计算两者的市销率（P/S Ratio）；4. 查询当前的美国联邦基金目标利率。最后，请结合当前宏观利率环境，评估哪家机构在信贷紧缩周期中具备更强的盈利韧性与估值安全边际，并输出完整的数据提取、计算过程及最终结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "financial_statement_data_extraction",
+        "real_time_price_fetching",
+        "financial_ratio_calculation",
+        "macroeconomic_context_integration"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "JPM最新季度总营业收入",
+          "SQ最新季度总营业收入",
+          "JPM当前实时股价",
+          "SQ当前实时股价",
+          "JPM市销率（P/S）计算值",
+          "SQ市销率（P/S）计算值",
+          "当前美国联邦基金目标利率",
+          "基于宏观利率环境的对比分析结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "get_macro_data"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T287",
+      "query": "请提取摩根大通（JPM）和Visa（V）2023财年的净利润数据，使用最新的美元兑欧元汇率将其转换为欧元，并计算两者的差额。同时，请搜索近期关于欧盟跨境支付金融科技监管的最新新闻摘要，结合财务对比给出简要的投资洞察。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_exchange_rate",
+        "calculator",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "2023财年摩根大通与Visa的净利润（美元）",
+          "实时USD/EUR汇率",
+          "转换后的欧元净利润及差额数值",
+          "欧盟跨境支付监管相关新闻摘要",
+          "基于财务差异与监管环境的投资洞察"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_exchange_rate"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T288",
+      "query": "作为专注于全球银行与金融科技板块的量化研究员，请对跨境支付公司万事达卡（Mastercard, MA）进行财务效率评估与跨国估值换算。具体要求如下：1. 获取该公司最新完整财年的营业收入（Total Revenue）与净利润（Net Income），计算其净利润率（Net Profit Margin）；2. 获取万事达卡当前的实时股价，并结合财报中的流通股数（Shares Outstanding）计算总市值（Market Cap）；3. 获取当前美元兑欧元（USD/EUR）的实时外汇牌价；4. 将计算出的美元总市值按实时汇率折算为欧元计价。请逐步展示计算过程并输出最终的净利润率与欧元总市值。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "财务报表提取",
+        "实时行情获取",
+        "外汇汇率查询",
+        "财务比率与市值计算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新财年净利润率（百分比形式）",
+          "基于实时股价与股本计算的美元总市值",
+          "折算后的欧元总市值"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "get_exchange_rate",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T289",
+      "query": "作为宏观对冲基金经理，我需要评估传统大型银行在利率环境变化下的盈利韧性。请获取摩根大通（JPM）最近一个完整财年的净利息收入（Net Interest Income）数据，并计算其同比增速。同时，调用宏观数据工具查询美联储最新的联邦基金目标利率，并找出其较上一轮宽松周期起点的变动幅度（以百分比表示）。此外，搜索近期关于摩根大通数字银行或金融科技板块面临重大监管政策变化的新闻。最后，使用计算工具得出JPM净利息收入同比增速与美联储利率变动幅度（转换为小数形式）的比值，并结合宏观利率走势与金融科技监管动态，给出简要的投资逻辑评估。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "摩根大通最近完整财年的净利息收入数值及同比增速",
+          "美联储最新联邦基金目标利率及其变动幅度",
+          "摩根大通金融科技业务相关监管新闻的核心摘要",
+          "净利息收入同比增速与利率变动幅度（小数形式）的精确计算比值",
+          "结合利率周期与监管环境的综合投资逻辑分析"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T290",
+      "query": "作为跨境权益研究员，请对比摩根大通（JPM）与汇丰控股（HSBA）最新季度的盈利表现。请获取两家公司的最新利润表数据（营业收入与净利润），查询实时英镑兑美元汇率。随后，将汇丰控股的财务指标统一换算为美元计价，分别计算两家公司的美元口径净利润率，并给出摩根大通相较于汇丰的净利润率优势差值（以百分点计）。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_exchange_rate",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "JPM最新季度净利润率",
+          "HSBA最新季度美元口径净利润率",
+          "当前GBP/USD汇率",
+          "JPM相较于HSBA的净利润率差值（百分点）"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_exchange_rate"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T291",
+      "query": "作为全球银行业与金融科技板块的宏观策略分析师，请对摩根大通（JPM）与Block（SQ）进行跨市场估值与政策风险对比。请按以下步骤执行分析：1. 调用财务报表工具获取两家公司最新年度利润表，提取总营收与净利润数据。2. 获取两家公司最新实时股价，结合已发行股本计算当前美元总市值，并推导静态P/E比率。3. 调用宏观经济数据接口获取最新的美国联邦基金利率与CPI同比增速。4. 调用外汇接口获取当前USD/CNY实时汇率。5. 检索近三个月内关于“金融科技支付牌照监管”、“反洗钱合规成本”及“传统银行开放API转型”的财经新闻，提炼对两家公司的差异化政策冲击。6. 使用Python环境编写计算脚本，构建流动性调整系数：Macro_Adjustment = 1 / (1 + 联邦基金利率 - CPI增速)。利用该系数对美元总市值进行折价/溢价调整，并统一换算为人民币计价。最终请输出一份结构化报告，需包含：原始P/E对比、宏观调整后的人民币市值、监管新闻情绪与业务影响摘要、以及基于跨资产宏观环境的相对投资建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_stock_price",
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "JPM与SQ的最新年度营收及净利润准确数值",
+          "两家公司当前股价、美元总市值及静态P/E比率",
+          "基于美联储利率与CPI数据计算出的宏观流动性调整系数",
+          "近三个月金融科技与银行监管新闻的情绪提取及差异化影响分析",
+          "经宏观因子调整并换算为人民币的对比市值",
+          "结合宏观折价与监管风险的综合相对估值结论"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T292",
+      "query": "作为宏观对冲基金研究员，请对摩根大通（JPM）与Block（SQ）进行跨境跨业态比较估值。具体要求如下：1）提取两家公司最新四个季度的自由现金流（FCF）数据及当前流通股总数；2）获取当前美国联邦基金目标利率与欧洲央行主要再融资利率，查询美元兑欧元（USD/EUR）实时汇率，并将两国基准利率差值的50%作为跨境风险溢价加入基础贴现率；3）检索过去一个月内关于‘传统银行资本金要求’与‘金融科技公司支付牌照监管’的最新财经新闻，若存在实质性监管收紧报道，则对最终DCF估值整体施加3%的风险折扣；4）使用调整后的贴现率与提取的现金流，通过DCF模型分别计算两家公司的内在每股价值（以USD计）；5）计算摩根大通每股内在价值相对于Block的溢价率。请逐步展示数据提取、利差换算、新闻定性判断、模型参数调整及最终计算过程，并给出明确结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "calculate_dcf",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提取JPM与Block近四季度的FCF总额与总股本",
+          "正确计算美欧利差并结合USD/EUR汇率调整贴现率",
+          "基于财经新闻判断监管环境并合理应用3%估值折扣",
+          "输出JPM与Block经调整后的DCF内在每股价值（USD）",
+          "准确计算并说明JPM相对Block的估值溢价百分比"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T293",
+      "query": "作为跨资产配置研究员，请对汇丰控股（HSBA.L）进行深度估值分析。具体要求：1. 获取其最新年度财报中的自由现金流（FCF）数据；2. 获取英国央行最新政策利率及欧元区近三个月CPI同比增速，用于动态调整加权平均资本成本（WACC）假设；3. 检索近30天内关于亚太地区金融科技（Fintech）监管收紧或数字银行牌照发放的重大新闻，定性评估其对汇丰亚洲业务的风险溢价影响；4. 结合上述宏观与基本面数据，使用DCF模型估算其每股内在价值（GBP）；5. 获取HSBA.L实时股价及最新GBP/EUR汇率，计算内在价值相对于市场现价的折溢价率，并将最终估值结果换算为欧元（EUR）。请提供完整的推导逻辑、关键参数假设、最终欧元计价估值及投资安全边际结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "Financial Statement Analysis",
+        "Macroeconomic Indicator Extraction",
+        "News Sentiment & Regulatory Impact Assessment",
+        "Discounted Cash Flow Valuation",
+        "Cross-Currency FX Conversion",
+        "Financial Ratio & Margin Calculation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "明确列出提取的最新年度自由现金流（FCF）数值",
+          "说明基于宏观利率与CPI调整后的WACC或折现率假设",
+          "简述近期亚太Fintech新闻对风险溢价的具体定性影响",
+          "给出DCF计算得出的每股内在价值（GBP）",
+          "列出使用的GBP/EUR汇率及HSBA.L实时股价",
+          "输出最终换算后的欧元计价每股内在价值",
+          "计算并汇报当前股价相对于内在价值的折价或溢价百分比"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T294",
+      "query": "作为宏观对冲基金的量化研究员，我需要评估摩根大通（JPM）当前的内在价值，以欧元计价。请执行以下步骤：1) 获取公司最新的自由现金流（FCF）及核心资产负债表数据；2) 查询美国10年期国债收益率与近期CPI数据，用于估算无风险利率、通胀溢价及WACC；3) 检索近30天内关于美国银行业监管政策（如巴塞尔协议III最终版实施细节）及传统银行与金融科技公司竞争格局的财经新闻，并据此定性定量调整未来5年的FCF复合增长率假设；4) 结合上述参数运行贴现现金流（DCF）模型计算美元计价的内在价值；5) 获取实时USD/EUR汇率与JPM当前股价，将内在价值与市价均转换为欧元，并计算欧元计价下的隐含溢价/折价幅度。请提供详细的估值过程、关键假设依据及最终投资方向建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "financial_statement_analysis",
+        "macroeconomic_data_integration",
+        "news_sentiment_adjustment",
+        "dcf_valuation",
+        "cross_currency_conversion",
+        "quantitative_modeling"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "欧元计价的每股内在价值",
+          "当前欧元计价的股价",
+          "隐含溢价或折价百分比",
+          "采用的WACC与终端增长率假设值",
+          "新闻面与监管政策对FCF增速的具体调整逻辑"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T295",
+      "query": "作为宏观对冲策略师，请对比分析美国花旗集团（C）与英国跨境支付金融科技公司Wise（WISE.L）在未来三年的相对投资价值。要求：1. 获取两家公司最新的年度财报核心数据（总营收、自由现金流、净利率）。2. 查询当前美元兑英镑实时汇率，将Wise的财务指标统一换算为美元计价。3. 获取美联储与英国央行的最新基准利率及核心通胀（CPI）数据，评估息差环境对传统银行净利息收入及科技公司股权融资成本的影响。4. 检索过去30天内关于美国银行业巴塞尔III终局规则实施进展及全球跨境支付数据合规审查的新闻，提炼情绪面与合规成本风险。5. 结合当前无风险利率、汇率折算后的自由现金流预测及行业渗透率增速，构建双阶段DCF模型计算两家公司的理论内在价值，并计算EV/FCF倍数。最终输出需包含：经汇率调整后的估值指标对比表、宏观利率与监管新闻对WACC的调整系数、DCF理论股价、风险调整后预期年化收益率，以及明确的跨市场资产配置建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_exchange_rate",
+        "get_macro_data",
+        "search_financial_news",
+        "calculate_dcf",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美元与英镑计价的EV/FCF倍数对比数据",
+          "美联储与英国央行最新基准利率及CPI数据",
+          "基于近期新闻的银行业监管与跨境支付政策风险分析摘要",
+          "双阶段DCF模型计算出的理论股价与隐含年化回报率",
+          "结合宏观、汇率与新闻情绪的综合投资建议与仓位分配"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "get_exchange_rate",
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter",
+            "calculate_dcf"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T296",
+      "query": "作为宏观对冲基金的权益研究员，请对Visa Inc. (V) 进行经风险调整后的DCF估值。任务要求：首先获取Visa最新财年的现金流量表以计算自由现金流(FCF)，同时获取当前美联储基准利率与最新CPI同比数据作为无风险利率及通胀调整基准。其次，查询USD/EUR实时汇率，并检索Visa近期关于欧盟跨境支付费率上限或数字钱包监管的新闻摘要。最后，获取V的实时股价，结合提取的宏观数据、汇率波动敞口及监管新闻隐含的风险溢价，使用Python编写脚本或调用DCF工具计算目标价。请输出：1) 经汇率与监管风险调整后的WACC假设；2) 隐含DCF目标价；3) 当前股价的溢价/折价百分比；4) 核心投资逻辑简述。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "get_stock_price",
+        "python_interpreter",
+        "calculate_dcf"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "经宏观与监管风险调整后的WACC假设值",
+          "隐含DCF目标价(美元)",
+          "当前股价相对目标价的折价或溢价百分比",
+          "基于监管新闻与汇率敞口的核心投资逻辑"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data"
+          ],
+          [
+            "get_exchange_rate",
+            "search_financial_news"
+          ],
+          [
+            "get_stock_price"
+          ],
+          [
+            "python_interpreter",
+            "calculate_dcf"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T297",
+      "query": "作为全球宏观对冲基金的高级研究员，请评估汇丰控股（HSBA.L）若以当前市价溢价30%收购欧洲头部支付金融科技公司Adyen（ADYEN.AS）的潜在财务影响与估值调整。具体要求如下：1. 获取两家公司最新收盘价，并利用实时欧元兑英镑汇率计算以英镑计价的理论全现金收购成本。2. 提取汇丰控股最近一期完整财年的经营性自由现金流（FCF）。3. 查询欧洲央行（ECB）最新主要再融资利率与英国最新核心CPI数据，基于泰勒规则简化版推导无风险利率基准，叠加2.5%跨境并购风险溢价，计算本次交易的调整后WACC。4. 使用调整后的WACC对汇丰控股现有业务进行DCF重估，结合理论收购成本与协同效应折现，推算交易完成后的理论每股价值。5. 检索近两个月内关于“欧盟数字金融包（Digital Finance Package）”或“跨境支付反洗钱合规”的权威金融新闻，量化潜在监管罚款风险对DCF终值的折损比例（需给出明确假设），并在最终估值中予以扣除。请输出调整后的每股合理估值区间、关键财务与宏观计算假设、以及监管风险折损的具体数值。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_exchange_rate",
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "calculate_dcf",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "理论全现金收购成本（英镑计价）",
+          "提取的汇丰控股最新自由现金流（FCF）",
+          "基于宏观利率与风险溢价计算的调整后WACC",
+          "扣除收购成本与监管风险折损后的DCF每股理论价值",
+          "最终每股合理估值区间及监管风险折损比例假设"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_exchange_rate"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T298",
+      "query": "作为覆盖全球银行与金融科技板块的量化研究员，请对摩根大通（JPM）执行跨币种基本面估值与风险归因分析。请严格按以下步骤完成：1. 获取该公司最新年度现金流量表，提取基准自由现金流（FCF）及当前流通股本。2. 获取当前美国联邦基金利率与10年期国债收益率，结合银行业Beta系数与股权风险溢价，计算加权平均资本成本（WACC）作为折现率。3. 检索近30天内关于摩根大通“数字银行转型”、“开放银行API”或“Fintech监管沙盒”的最新财经新闻，基于新闻情感倾向对未来5年FCF复合增长率施加±3%的调整，并明确说明调整逻辑。4. 设定永续增长率为2.5%，调用DCF模型或编写Python脚本计算其股权总价值及每股内在价值（USD）。5. 获取实时USD/EUR与USD/GBP汇率，将美元每股内在价值分别换算为欧元与英镑计价。6. 获取JPM当前实时股价，对比欧元计价下的内在价值，计算估值溢价/折价率（Upside/Downside %）。请输出完整的参数推导链、跨币种每股公允价值、当前股价及最终的估值结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "calculate_dcf",
+        "python_interpreter",
+        "get_exchange_rate",
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提取的基准自由现金流（FCF）与流通股本",
+          "推导的WACC折现率具体数值",
+          "基于新闻情感调整后的5年FCF预期增长率及调整依据",
+          "5年期DCF模型计算的每股内在价值（USD）",
+          "美元兑欧元/英镑实时汇率及换算后的每股公允价值（EUR/GBP）",
+          "当前实时股价与欧元计价下的估值溢价/折价率（%）"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ],
+          [
+            "get_exchange_rate",
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T299",
+      "query": "作为全球宏观与行业研究员，我需要对比传统跨国银行与欧洲支付金融科技龙头的相对估值。请获取摩根大通（JPM）和阿迪恩（Adyen, ADYEN.AS）最近四个季度的自由现金流数据，并从资产负债表中提取其现金、现金等价物及总债务以计算净债务。查询最新美国10年期国债收益率作为无风险利率，并获取实时欧元兑美元（EUR/USD）即期汇率。检索过去60天内关于两家公司的重大监管审查、反垄断诉讼或管理层财报指引新闻，并提取市场情绪倾向（正面/中性/负面）。基于上述数据，构建一个定制化DCF估值模型（预测期5年，假设股权风险溢价为5.5%，永续增长率为2.5%），要求利用提取的新闻情绪对阿迪恩的终值进行±4%的溢价或折价调整，并将所有欧元计价的现金流及终值统一折算为美元。最后，调用Python编写脚本对基础DCF结果进行蒙特卡洛敏感性分析（模拟1000次，输入无风险利率波动±0.5%和汇率波动±2%的正态分布），输出两家公司目标价的中位数、95%置信区间及相对估值溢价率。请在回答中提供完整的数据提取结果、模型核心假设、敏感性分布数据及最终的投资逻辑结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "calculate_dcf",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "JPM与ADYEN的近期自由现金流、净债务数据（均已折算为美元）",
+          "采用的美债10年期收益率、EUR/USD实时汇率及新闻情绪调整方向与幅度",
+          "基础DCF模型下的内在价值与蒙特卡洛模拟后的目标价中位数",
+          "利率±0.5%与汇率±2%联合波动对估值结果的95%置信区间边界",
+          "两家公司的相对估值溢价率分析及明确的跨资产投资建议逻辑"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "get_exchange_rate",
+            "search_financial_news"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T300",
+      "query": "作为全球宏观与科技融合策略的投资组合经理，请深度评估传统银行业巨头摩根大通（JPM）与欧洲金融科技支付网关Adyen（ADYEN.AS）的相对估值。首先，获取美联储与欧洲央行的最新基准利率及近期CPI数据，结合获取两家公司的最新年度及季度财务报表，提取核心财务指标（如营业收入、自由现金流及总股本）。其次，查询实时股价及EUR/USD汇率，将Adyen的财务数据与股价折算为美元。接着，检索过去60天内关于跨境支付监管合规（如PSD3/反洗钱新规）及传统银行API开放平台的财经新闻，提取关键政策动向并评估其对风险溢价的影响。最后，使用动态DCF模型结合宏观利率调整后的WACC，分别计算两家公司的内在价值，输出以美元计价的当前市值与DCF内在价值的偏离度，并基于现金流质量、监管风险及跨币种估值给出综合投资评级。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_financial_statements",
+        "get_stock_price",
+        "get_exchange_rate",
+        "search_financial_news",
+        "calculate_dcf",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美联储与欧洲央行最新基准利率及CPI数据的具体数值",
+          "JPM与Adyen的实时股价及EUR/USD汇率折算过程",
+          "从财务报表中提取的自由现金流、总股本及营业收入数据",
+          "跨境支付监管与银行数字化新闻摘要及对WACC风险溢价的调整依据",
+          "经宏观数据调整后的贴现率参数与DCF模型计算步骤",
+          "以美元计价的当前市值与内在价值的偏离百分比",
+          "综合现金流质量、跨币种估值与监管环境给出的明确投资评级"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_financial_statements"
+          ],
+          [
+            "get_stock_price",
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    }
+  ]
+}

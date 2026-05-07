@@ -1,0 +1,86 @@
+[
+    {
+        "question_id": "test-2000",
+        "success": true,
+        "agent_answer": 1152.0,
+        "ground_truth": 1152,
+        "response": "To find what the 2012 shares outstanding would have been without the Smith International acquisition, I need to subtract the shares added by that acquisition from the final 2012 balance.\n\nThe acquisition of Smith International, Inc. added **176 million** shares outstanding in 2010.\n\nThe actual Balance at December 31, 2012 was **1,328 million** shares outstanding.\n\nWithout the acquisition:\n1,328 - 176 = 1,152\n\nFinal Answer: 1152"
+    },
+    {
+        "question_id": "test-2001",
+        "success": false,
+        "agent_answer": 30.0,
+        "ground_truth": 22,
+        "response": "To calculate the annualized return for CME Group from 2012 to 2017:\n\n- Initial investment (2012): $100\n- Final value (2017): $370.32\n- Time period: 5 years\n\nAnnualized Return = (370.32 / 100)^(1/5) - 1 = 29.93%\n\nRounded to the nearest integer: 30%\n\nFinal Answer: 30"
+    },
+    {
+        "question_id": "test-2002",
+        "success": true,
+        "agent_answer": 6.9,
+        "ground_truth": 6.9,
+        "response": "The WACC is calculated using the formula:\n\n**WACC = (E/V) \u00d7 Re + (D/V) \u00d7 Rd \u00d7 (1 - T)**\n\nWhere:\n- E (Equity) = 150 million\n- D (Debt) = 100 million\n- V (Total Value) = E + D = 250 million\n- Re (Cost of Equity) = 9%\n- Rd (Cost of Debt) = 5%\n- T (Tax Rate) = 25%\n\n**Calculation:**\n- Equity weight: 150/250 = 0.60\n- Debt weight: 100/250 = 0.40\n- After-tax cost of debt: 5% \u00d7 (1 - 0.25) = 3.75%\n\nWACC = (0.60 \u00d7 9%) + (0.40 \u00d7 3.75%)\nWACC = 5.40% + 1.50%\nWACC = 6.90%\n\nFinal Answer: 6.90"
+    },
+    {
+        "question_id": "test-2003",
+        "success": true,
+        "agent_answer": 630.0,
+        "ground_truth": 630,
+        "response": "The calculation is correct.\n\n**Summary:**\n- **Total payments:** 24 \u00d7 $700 = $16,800\n- **Total interest:** $16,800 \u2212 $15,000 = $1,800\n- **Sum of digits (24 months):** 24 \u00d7 25 / 2 = 300\n- **Sum of digits (14 remaining months):** 14 \u00d7 15 / 2 = 105\n- **Rebate fraction:** 105 / 300\n- **Unearned interest rebate:** (105 / 300) \u00d7 $1,800 = **$630**\n\nFinal Answer: 630"
+    },
+    {
+        "question_id": "test-2004",
+        "success": true,
+        "agent_answer": 3.8,
+        "ground_truth": 3.8,
+        "response": "Let me calculate this step by step:\n\n1. **After-tax nominal return**: 8% \u00d7 (1 - 0.20) = 8% \u00d7 0.80 = **6.4%**\n2. **After-tax real rate of return** (using the Fisher equation): (1 + 0.064) / (1 + 0.025) - 1 = **3.80%**\n\nFinal Answer: 3.80"
+    },
+    {
+        "question_id": "test-2005",
+        "success": true,
+        "agent_answer": 1.775,
+        "ground_truth": 1.775,
+        "response": "The anticipated percentage change in price is calculated using the duration-convexity formula:\n\n**\u0394P/P \u2248 -Duration \u00d7 \u0394y + 0.5 \u00d7 Convexity \u00d7 (\u0394y)\u00b2**\n\nWhere:\n- Duration = 7.020\n- Convexity = 65.180\n- \u0394y = -25 bps = -0.0025\n\n**Duration effect:** -7.020 \u00d7 (-0.0025) = 0.01755\n**Convexity effect:** 0.5 \u00d7 65.180 \u00d7 (-0.0025)\u00b2 = 0.0002036875\n**Total:** 0.01755 + 0.0002036875 = 0.0177536875\n\nExpressed as a percentage and rounded to three decimal places: **1.775%**\n\nFinal Answer: 1.775"
+    },
+    {
+        "question_id": "test-2006",
+        "success": true,
+        "agent_answer": 300000.0,
+        "ground_truth": 300000.0,
+        "response": "The Degree of Operating Leverage (DOL) formula is:\n\n**DOL = (Q \u00d7 CM) / (Q \u00d7 CM \u2212 FC)**\n\nWhere:\n- Q = quantity (units)\n- CM = unit contribution margin = $20\n- FC = fixed costs = $500,000\n\n**Key principle:** DOL decreases as production quantity (Q) increases beyond the break-even point. This is because fixed costs are spread over more units, reducing the sensitivity of operating income to changes in sales.\n\nThe break-even point is: Q = $500,000 / $20 = 25,000 units.\n\nSince fixed costs are defined as $500,000 \"up to 300,000 units,\" the relevant production range is 25,000 to 300,000 units. Within this range, **DOL is minimized at the highest production level**.\n\nAt Q = 300,000:\n- DOL = (300,000 \u00d7 20) / (300,000 \u00d7 20 \u2212 500,000)\n- DOL = 6,000,000 / 5,500,000 = 1.09 (approaching the minimum of 1.0)\n\nThe DOL is least at the maximum production level within the fixed-cost range.\n\nFinal Answer: 300000.0"
+    },
+    {
+        "question_id": "test-2007",
+        "success": true,
+        "agent_answer": 233.2,
+        "ground_truth": 233.2,
+        "response": "To calculate the 5-day moving average on the 10th trading day, I use the closing prices from the last 5 trading days (days 6 through 10):\n\n**Prices used:** 225, 230, 235, 236, 240\n\n**Calculation:** (225 + 230 + 235 + 236 + 240) / 5 = 1166 / 5 = 233.20\n\nFinal Answer: 233.20"
+    },
+    {
+        "question_id": "test-2008",
+        "success": true,
+        "agent_answer": -100.0,
+        "ground_truth": -100,
+        "response": "In standard bond yield options, the premium is quoted in the same units as the yield (percentage points) and is scaled by the multiplier. The convention is:\n\n- **Payoff** = (Yield at expiration \u2212 Strike yield) \u00d7 Multiplier = (3.5 \u2212 3.0) \u00d7 100 = 50\n- **Premium cost** = Premium \u00d7 Multiplier = 1.5 \u00d7 100 = 150\n- **Profit/Loss** = 50 \u2212 150 = **\u2212100**\n\nThe investor loses money because the yield only moved 0.5 percentage points above the strike, generating a payoff of 50, which is less than the 150 premium paid.\n\nFinal Answer: -100"
+    },
+    {
+        "question_id": "test-2009",
+        "success": true,
+        "agent_answer": 2250.0,
+        "ground_truth": 2250,
+        "response": "**Calculation:**\n\n1. **Borrow:** 1,000,000 JPY at 0.5%\n2. **Convert to BRL:** 1,000,000 \u00d7 0.05 = 50,000 BRL\n3. **Invest in Brazil at 5%:** 50,000 \u00d7 1.05 = 52,500 BRL (value after 1 year)\n4. **Repay JPY loan with interest:** 1,000,000 \u00d7 1.005 = 1,005,000 JPY\n5. **Convert repayment to BRL (stable rate):** 1,005,000 \u00d7 0.05 = 50,250 BRL\n6. **Profit:** 52,500 \u2212 50,250 = **2,250 BRL**\n\nFinal Answer: 2250"
+    },
+    {
+        "question_id": "test-2010",
+        "success": true,
+        "agent_answer": 1500000.0,
+        "ground_truth": 1500000,
+        "response": "The Close Location Value (CLV) is calculated as:\n\nCLV = ((Close - Low) - (High - Close)) / (High - Low)\nCLV = ((115 - 110) - (120 - 115)) / (120 - 110)\nCLV = (5 - 5) / 10 = 0\n\nSince the close ($115) is exactly at the midpoint of the high-low range ($110 to $120), the CLV is 0.\n\nMoney Flow Volume = CLV \u00d7 Volume = 0 \u00d7 100,000 = 0\n\nUpdated A/D Line = Previous A/D Line + Money Flow Volume = 1,500,000 + 0 = 1,500,000\n\nFinal Answer: 1500000"
+    },
+    {
+        "question_id": "test-2011",
+        "success": true,
+        "agent_answer": 6.1,
+        "ground_truth": 6.1,
+        "response": "To find the median annual return rate, I'll sort the 10 return rates in ascending order:\n\n2.8, 3.9, 4.6, 5.2, **5.7**, **6.5**, 7.1, 7.4, 8.3, 9.0\n\nWith an even number of observations (n=10), the median is the average of the 5th and 6th values:\n\nMedian = (5.7 + 6.5) / 2 = **6.10**\n\nFinal Answer: 6.10"
+    }
+]

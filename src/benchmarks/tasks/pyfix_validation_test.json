@@ -1,0 +1,89 @@
+{
+  "tasks": [
+    {
+      "task_id": "T183",
+      "query": "作为大宗商品与供应链组合的初步配置研究，请查询铜矿开采龙头企业自由港麦克莫兰（FCX）的最新美股实时价格。假设配置预算为120,000美元，忽略所有交易费用，按当前股价计算最多可买入多少股？（结果保留两位小数）",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "FCX最新实时股价",
+          "120,000美元预算可购入的最大股数（保留两位小数）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T032",
+      "query": "请获取当前美元兑日元（USD/JPY）的实时汇率，并查询美国最新的消费者物价指数（CPI）同比增速。结合这两个数据，简要分析当前日元汇率面临的宏观基本面压力。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_exchange_rate",
+        "get_macro_data"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "USD/JPY实时汇率数值",
+          "美国CPI同比增速数据",
+          "基于汇率与通胀的宏观压力分析结论"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T291",
+      "query": "作为全球银行业与金融科技板块的宏观策略分析师，请对摩根大通（JPM）与Block（SQ）进行跨市场估值与政策风险对比。请按以下步骤执行分析：1. 调用财务报表工具获取两家公司最新年度利润表，提取总营收与净利润数据。2. 获取两家公司最新实时股价，结合已发行股本计算当前美元总市值，并推导静态P/E比率。3. 调用宏观经济数据接口获取最新的美国联邦基金利率与CPI同比增速。4. 调用外汇接口获取当前USD/CNY实时汇率。5. 检索近三个月内关于“金融科技支付牌照监管”、“反洗钱合规成本”及“传统银行开放API转型”的财经新闻，提炼对两家公司的差异化政策冲击。6. 使用Python环境编写计算脚本，构建流动性调整系数：Macro_Adjustment = 1 / (1 + 联邦基金利率 - CPI增速)。利用该系数对美元总市值进行折价/溢价调整，并统一换算为人民币计价。最终请输出一份结构化报告，需包含：原始P/E对比、宏观调整后的人民币市值、监管新闻情绪与业务影响摘要、以及基于跨资产宏观环境的相对投资建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_stock_price",
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "JPM与SQ的最新年度营收及净利润准确数值",
+          "两家公司当前股价、美元总市值及静态P/E比率",
+          "基于美联储利率与CPI数据计算出的宏观流动性调整系数",
+          "近三个月金融科技与银行监管新闻的情绪提取及差异化影响分析",
+          "经宏观因子调整并换算为人民币的对比市值",
+          "结合宏观折价与监管风险的综合相对估值结论"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "tasks": [
+    {
+      "task_id": "T10",
+      "query": "构建外汇套息交易的收益测算模型。获取USD/JPY和AUD/USD即期汇率，以及美、日、澳三国央行最新基准利率。计算两组货币对的理论年化套息收益（扣除2%交易摩擦与滑点）。使用计算器对比风险调整后收益，确定当前最具优势的套息交易货币方向及持仓逻辑。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "外汇定价",
+        "基准利率套利建模",
+        "摩擦成本扣除",
+        "风险收益比评估"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "两组货币对即期汇率",
+          "三国基准利率",
+          "扣除摩擦后的理论年化套息收益",
+          "风险调整后收益对比",
+          "推荐交易方向"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    }
+  ]
+}

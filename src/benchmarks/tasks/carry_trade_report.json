@@ -1,0 +1,69 @@
+{
+  "model_version": "1.0",
+  "timestamp": "2025-04-17T00:00:00",
+  "market_data": {
+    "spot_rates": {
+      "USD/JPY": 158.5632,
+      "AUD/USD": 0.7168
+    },
+    "central_bank_rates": {
+      "USD": 4.375,
+      "JPY": 0.25,
+      "AUD": 4.1
+    },
+    "volatility": {
+      "USD/JPY": 11.0,
+      "AUD/USD": 9.5
+    }
+  },
+  "carry_trade_results": {
+    "USD/JPY": {
+      "direction": "Long USD / Short JPY",
+      "long_rate": 4.375,
+      "short_rate": 0.25,
+      "gross": 4.125,
+      "friction": 2.0,
+      "net": 2.125,
+      "vol": 11.0,
+      "ra": 0.19318181818181818,
+      "positive": true
+    },
+    "AUD/USD": {
+      "direction": "Long AUD / Short USD",
+      "long_rate": 4.1,
+      "short_rate": 4.375,
+      "gross": -0.27500000000000036,
+      "friction": 2.0,
+      "net": -2.2750000000000004,
+      "vol": 9.5,
+      "ra": -0.23947368421052637,
+      "positive": false
+    }
+  },
+  "recommendation": {
+    "pair": "USD/JPY",
+    "direction": "Long USD / Short JPY",
+    "long_rate": 4.375,
+    "short_rate": 0.25,
+    "gross": 4.125,
+    "friction": 2.0,
+    "net": 2.125,
+    "vol": 11.0,
+    "ra": 0.19318181818181818,
+    "positive": true
+  },
+  "excluded": [
+    {
+      "pair": "AUD/USD",
+      "direction": "Long AUD / Short USD",
+      "long_rate": 4.1,
+      "short_rate": 4.375,
+      "gross": -0.27500000000000036,
+      "friction": 2.0,
+      "net": -2.2750000000000004,
+      "vol": 9.5,
+      "ra": -0.23947368421052637,
+      "positive": false
+    }
+  ]
+}

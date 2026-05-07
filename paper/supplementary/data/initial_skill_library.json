@@ -1,0 +1,135 @@
+[
+  {
+    "skill_id": "fetch_market_data",
+    "category": "DATA",
+    "llm_config": {
+      "model_tier": "STANDARD",
+      "temperature": 0.1,
+      "max_tokens": 500
+    },
+    "prompt_chromosome": "You are a specialized financial data fetcher. Retrieve historical and real-time price data, volume, and volatility metrics for the requested asset.",
+    "tool_deps": [],
+    "input_schema": {
+      "asset": "string",
+      "timeframe": "string"
+    },
+    "output_schema": {
+      "data": "string"
+    },
+    "fitness_score": 0.5,
+    "execution_history": []
+  },
+  {
+    "skill_id": "analyze_sentiment",
+    "category": "ANALYSIS",
+    "llm_config": {
+      "model_tier": "HEAVY",
+      "temperature": 0.3,
+      "max_tokens": 1500
+    },
+    "prompt_chromosome": "You are an expert financial sentiment analyst. Evaluate news headlines, social media trends, and analyst reports.",
+    "tool_deps": [
+      "fetch_market_data"
+    ],
+    "input_schema": {
+      "query": "string"
+    },
+    "output_schema": {
+      "sentiment": "string",
+      "score": "number",
+      "drivers": "list"
+    },
+    "fitness_score": 0.5,
+    "execution_history": []
+  },
+  {
+    "skill_id": "technical_analysis",
+    "category": "ANALYSIS",
+    "llm_config": {
+      "model_tier": "STANDARD",
+      "temperature": 0.1,
+      "max_tokens": 1000
+    },
+    "prompt_chromosome": "You are a quantitative technical analyst. \n        Analyze the provided price and volume data.\n        1. Calculate SMA-5 (5-day Simple Moving Average) and compare it to the current price.\n        2. Calculate RSI-5 (5-day Relative Strength Index).\n        3. Identify trend strength: Strong Bullish, Bullish, Neutral, Bearish, Strong Bearish.\n        4. Provide clear Support and Resistance levels based on recent price action.\n        ",
+    "tool_deps": [
+      "fetch_market_data"
+    ],
+    "input_schema": {
+      "price_history": "list",
+      "volume_history": "list"
+    },
+    "output_schema": {
+      "sma_5": "number",
+      "rsi_5": "number",
+      "trend": "string",
+      "levels": "dict"
+    },
+    "fitness_score": 0.5,
+    "execution_history": []
+  },
+  {
+    "skill_id": "python_interpreter",
+    "category": "EXECUTION",
+    "llm_config": {
+      "model_tier": "STANDARD",
+      "temperature": 0.0,
+      "max_tokens": 1000
+    },
+    "prompt_chromosome": "You are a Python Interpreter. Execute the provided code and return the output. \n        Use this for complex calculations or data transformations that the LLM cannot do reliably.\n        Output ONLY the result of the code execution.\n        ",
+    "tool_deps": [],
+    "input_schema": {
+      "code": "string"
+    },
+    "output_schema": {
+      "output": "string"
+    },
+    "fitness_score": 0.5,
+    "execution_history": []
+  },
+  {
+    "skill_id": "strategic_decision_making",
+    "category": "ANALYSIS",
+    "llm_config": {
+      "model_tier": "HEAVY",
+      "temperature": 0.0,
+      "max_tokens": 2000
+    },
+    "prompt_chromosome": "You are an Expert Alpha-Seeking Quant Trader. Your goal is to MAXIMIZE Alpha while maintaining a high Sharpe Ratio.\n        \n        ### STRATEGY CORE:\n        1. **Trend is Friend**: If price is above SMA-5 and RSI-5 < 70, MAINTAIN 100% exposure. Only sell if trend breaks.\n        2. **Volatility Scaling**: In high volatility, scale exposure to 50-70% if unsure, but stay at 100% if the trend is strong.\n        3. **Sentiment as Lead**: If News Sentiment is strongly positive (>0.7), anticipate a breakout and increase exposure BEFORE it happens.\n        4. **Drawdown Protection**: If price drops >3% from recent peak AND RSI < 30, it might be a crash. Exit immediately (0% exposure).\n        \n        ### ANALYSIS PILLARS:\n        - **Momentum & Trend**: Analyze SMA distance and RSI slope.\n        - **Sentiment Divergence**: Is news positive while price is flat? (Bullish divergence).\n        - **Volume Confirmation**: (If available) Use volume to confirm trend strength.\n        \n        ### OUTPUT FORMAT (MANDATORY):\n        - Reasoning: <analysis_of_trend_and_sentiment>\n        - Target Exposure: <X>% (0-100)\n        - Final Recommendation: <BUY/SELL/HOLD>\n        ",
+    "tool_deps": [
+      "technical_analysis",
+      "analyze_sentiment"
+    ],
+    "input_schema": {
+      "context": "string",
+      "analysis_results": "string"
+    },
+    "output_schema": {
+      "reasoning": "string",
+      "target_exposure": "number",
+      "recommendation": "string"
+    },
+    "fitness_score": 0.5,
+    "execution_history": []
+  },
+  {
+    "skill_id": "qveris_remote_execution",
+    "category": "EXECUTION",
+    "llm_config": {
+      "model_tier": "STANDARD",
+      "temperature": 0.1,
+      "max_tokens": 1000
+    },
+    "prompt_chromosome": "You are a QVeris Bridge. You can discover, inspect, and call remote financial tools.\n        1. Use 'qveris_discover' to find new tools for a query.\n        2. Use 'qveris_inspect' to understand how to use a tool.\n        3. Use 'qveris_call' to execute the tool.\n        \n        Always provide the tool_id and search_id for execution.\n        ",
+    "tool_deps": [],
+    "input_schema": {
+      "query": "string",
+      "tool_id": "string",
+      "params": "dict"
+    },
+    "output_schema": {
+      "result": "string"
+    },
+    "fitness_score": 0.5,
+    "execution_history": []
+  }
+]

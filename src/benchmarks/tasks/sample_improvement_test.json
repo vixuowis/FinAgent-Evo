@@ -1,0 +1,290 @@
+{
+  "tasks": [
+    {
+      "task_id": "T183",
+      "query": "作为大宗商品与供应链组合的初步配置研究，请查询铜矿开采龙头企业自由港麦克莫兰（FCX）的最新美股实时价格。假设配置预算为120,000美元，忽略所有交易费用，按当前股价计算最多可买入多少股？（结果保留两位小数）",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "FCX最新实时股价",
+          "120,000美元预算可购入的最大股数（保留两位小数）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T184",
+      "query": "作为大宗商品供应链分析师，请查询Freeport-McMoRan (FCX) 当前的实时股价。若公司需建立价值75,000美元的铜矿板块多头敞口，请计算按当前市价需要买入多少股该股票（结果保留两位小数）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "FCX实时股价",
+          "计算得出的应买入股数（保留两位小数）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T157",
+      "query": "作为固定收益分析师，请获取美国最新的10年期国债收益率与2年期国债收益率数据，计算两者的期限利差（以基点表示），并判断当前收益率曲线处于正常还是倒挂状态。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_macro_data",
+        "calculator",
+        "fixed_income_analysis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国10年期国债收益率数值",
+          "美国2年期国债收益率数值",
+          "期限利差计算结果（基点）",
+          "收益率曲线形态判断结论"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T032",
+      "query": "请获取当前美元兑日元（USD/JPY）的实时汇率，并查询美国最新的消费者物价指数（CPI）同比增速。结合这两个数据，简要分析当前日元汇率面临的宏观基本面压力。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_exchange_rate",
+        "get_macro_data"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "USD/JPY实时汇率数值",
+          "美国CPI同比增速数据",
+          "基于汇率与通胀的宏观压力分析结论"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T064",
+      "query": "作为对冲基金宏观策略研究员，请评估当前利率环境下的跨板块轮动信号与组合对冲需求。具体要求：1. 获取最新美国10年期国债收益率数据；2. 调取宝洁（PG）的当前股价及最新财报中的年度总分红金额，计算其静态股息率；3. 检索近期主流财经媒体关于“美债收益率倒挂缓解与防御性板块资金流入”的报道；4. 结合股息率-美债利差测算及新闻舆情，定量评估在当前组合中增持必需消费品板块以对冲成长股波动风险的合理性，并给出明确的仓位调整建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "get_financial_statements",
+        "calculator",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "10年期美债收益率数值",
+          "PG最新股价与财报年度分红总额",
+          "计算得出的PG静态股息率",
+          "防御性板块资金流入与轮动趋势的新闻核心观点",
+          "基于利差测算与宏观对冲需求的定量仓位调整建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T122",
+      "query": "近期多国央行同步调整货币政策。请搜索欧洲央行（ECB）最新的利率决议新闻，提取其公布的边际存款利率。随后获取欧元兑美元（EUR/USD）的实时汇率，并计算1000万欧元按当前汇率可兑换的美元总额。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_exchange_rate",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "ECB最新利率决议新闻摘要或具体利率数值",
+          "EUR/USD实时汇率",
+          "1000万欧元兑换美元的准确计算结果"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_exchange_rate"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T153",
+      "query": "作为信用分析师，请查询当前美国10年期国债收益率（US 10Y Treasury Yield）的最新宏观数据。假设某投资级企业发行的一只5年期公司债券当前到期收益率为5.80%，请计算该债券相对于无风险基准的信用利差（Credit Spread），并将结果换算为基点（bps）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "宏观利率数据检索",
+        "信用利差计算",
+        "固定收益分析"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新美国10年期国债收益率数值",
+          "计算得出的信用利差（基点）",
+          "计算过程与单位换算说明"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T291",
+      "query": "作为全球银行业与金融科技板块的宏观策略分析师，请对摩根大通（JPM）与Block（SQ）进行跨市场估值与政策风险对比。请按以下步骤执行分析：1. 调用财务报表工具获取两家公司最新年度利润表，提取总营收与净利润数据。2. 获取两家公司最新实时股价，结合已发行股本计算当前美元总市值，并推导静态P/E比率。3. 调用宏观经济数据接口获取最新的美国联邦基金利率与CPI同比增速。4. 调用外汇接口获取当前USD/CNY实时汇率。5. 检索近三个月内关于“金融科技支付牌照监管”、“反洗钱合规成本”及“传统银行开放API转型”的财经新闻，提炼对两家公司的差异化政策冲击。6. 使用Python环境编写计算脚本，构建流动性调整系数：Macro_Adjustment = 1 / (1 + 联邦基金利率 - CPI增速)。利用该系数对美元总市值进行折价/溢价调整，并统一换算为人民币计价。最终请输出一份结构化报告，需包含：原始P/E对比、宏观调整后的人民币市值、监管新闻情绪与业务影响摘要、以及基于跨资产宏观环境的相对投资建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_stock_price",
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "JPM与SQ的最新年度营收及净利润准确数值",
+          "两家公司当前股价、美元总市值及静态P/E比率",
+          "基于美联储利率与CPI数据计算出的宏观流动性调整系数",
+          "近三个月金融科技与银行监管新闻的情绪提取及差异化影响分析",
+          "经宏观因子调整并换算为人民币的对比市值",
+          "结合宏观折价与监管风险的综合相对估值结论"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T021",
+      "query": "请对台积电（TSM）进行全面的股权研究与内在价值评估。具体要求如下：\n1. 获取其最新股价及过去三年的自由现金流（FCF）数据。\n2. 查询当前的10年期美国国债收益率（作为无风险利率）以及美元兑台币（USD/TWD）的最新汇率，以便进行跨市场估值参考。\n3. 搜索最近三个月内关于台积电先进封装产能扩张及AI芯片需求的核心财经新闻，据此合理设定未来5年的营收复合增长率（CAGR）假设，并在回答中详细阐述设定理由。\n4. 结合获取的财务数据、宏观利率、汇率调整系数及设定的增长率，使用DCF模型计算其每股内在价值（以美元计价，需明确加权平均资本成本WACC的计算逻辑）。\n5. 计算当前市场股价相对于内在价值的折价/溢价百分比，综合宏观周期与技术面因素，给出明确的投资评级（买入、持有或卖出）及核心决策逻辑。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "financial_data_retrieval",
+        "macroeconomic_analysis",
+        "forex_conversion",
+        "news_sentiment_synthesis",
+        "dcf_valuation_modeling",
+        "python_data_analysis",
+        "investment_recommendation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新股价与过去三年自由现金流（FCF）具体数值",
+          "10年期美债收益率及USD/TWD实时汇率",
+          "基于近期新闻推导的5年营收CAGR假设值及其详细逻辑依据",
+          "DCF模型计算出的每股内在价值（美元）及WACC设定参数",
+          "当前股价相对于内在价值的折价/溢价百分比",
+          "明确的投资评级（买入/持有/卖出）及完整的投资决策逻辑"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "get_exchange_rate",
+            "search_financial_news"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ],
+          [
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T165",
+      "query": "请分析通用汽车（GM）的最新信用状况。首先获取其最近一个完整财年的利润表，提取EBIT与利息支出数据并计算利息保障倍数（ICR）。同时，获取当前美国10年期国债收益率作为无风险利率基准，以评估宏观融资成本。最后，搜索近期关于通用汽车债务结构变化、流动性状况或电动汽车资本开支对信用评级影响的新闻。综合上述定量比率、宏观利率环境及定性新闻信息，撰写一份简短的固定收益信用分析摘要，评估其短期违约风险并说明当前收益率曲线环境对其再融资成本的潜在影响。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最近完整财年的EBIT与利息支出具体金额",
+          "计算得出的利息保障倍数（ICR）数值",
+          "当前美国10年期国债收益率数据",
+          "近期关于公司债务、流动性或评级展望的新闻核心摘要",
+          "结合宏观利率环境与ICR的信用风险评估结论及再融资成本分析"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,2279 @@
+{
+  "tasks": [
+    {
+      "task_id": "T151",
+      "query": "请获取当前美国10年期国债收益率与美联储联邦基金利率目标区间上限，计算两者的利差（Spread，以基点为单位），并基于该利差水平简要分析当前收益率曲线形态对短期固定收益投资策略的指示意义。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_macro_data",
+        "calculator",
+        "fixed_income_analysis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提供美国10年期国债收益率数值",
+          "准确提供美联储联邦基金利率目标区间上限数值",
+          "正确计算两者利差并转换为基点",
+          "提供关于收益率曲线形态与短期固收策略的合理分析"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T152",
+      "query": "作为固定收益与信用分析师，我需要快速评估当前的无风险利率定价基准。请获取最新的美国10年期国债收益率和美联储联邦基金目标利率，并计算两者的利差，最终结果请以基点（BP）为单位呈现。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确返回美国10年期国债收益率的最新数值",
+          "准确返回美联储联邦基金利率的最新数值",
+          "正确计算两者利差并将其换算为基点（BP）单位"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T153",
+      "query": "作为信用分析师，请查询当前美国10年期国债收益率（US 10Y Treasury Yield）的最新宏观数据。假设某投资级企业发行的一只5年期公司债券当前到期收益率为5.80%，请计算该债券相对于无风险基准的信用利差（Credit Spread），并将结果换算为基点（bps）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "宏观利率数据检索",
+        "信用利差计算",
+        "固定收益分析"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新美国10年期国债收益率数值",
+          "计算得出的信用利差（基点）",
+          "计算过程与单位换算说明"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T154",
+      "query": "作为固定收益研究员，请查询当前美国10年期国债收益率及美联储最新的联邦基金目标利率。计算两者的利差（转换为基点），并据此简要说明当前美债收益率曲线处于倒挂还是正常状态。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "macro_data_retrieval",
+        "interest_rate_spread_calculation",
+        "yield_curve_interpretation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提供美国10年期国债收益率具体数值",
+          "提供美联储联邦基金目标利率具体数值",
+          "准确计算利率利差并正确换算为基点",
+          "基于利差正负给出收益率曲线形态的明确结论"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T155",
+      "query": "作为固定收益信用研究员，在评估公司债信用利差前需明确无风险利率基准。请获取当前美国3个月期与10年期国债收益率，并计算两者的期限利差（结果请转换为基点）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_macro_data",
+        "calculator",
+        "利差换算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "3个月期美债收益率具体数值",
+          "10年期美债收益率具体数值",
+          "准确的期限利差（BP单位）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T156",
+      "query": "作为固定收益信用分析师，请获取最新的美国10年期国债收益率作为无风险利率基准。假设一只AA级企业债券的当前到期收益率为4.70%，请计算该债券的信用利差（Credit Spread），并将最终结果以基点（bps）为单位输出。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确获取美国10年期国债收益率",
+          "正确计算信用利差（企业债收益率减去国债收益率）",
+          "将结果准确转换为基点（bps）并清晰展示"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T157",
+      "query": "作为固定收益分析师，请获取美国最新的10年期国债收益率与2年期国债收益率数据，计算两者的期限利差（以基点表示），并判断当前收益率曲线处于正常还是倒挂状态。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_macro_data",
+        "calculator",
+        "fixed_income_analysis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国10年期国债收益率数值",
+          "美国2年期国债收益率数值",
+          "期限利差计算结果（基点）",
+          "收益率曲线形态判断结论"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T158",
+      "query": "作为固定收益与信用分析师，请获取特斯拉（TSLA）最新季度的资产负债表与利润表数据，准确提取其总债务（Total Debt）与息税折旧摊销前利润（EBITDA）。使用计算器计算其杠杆比率（Debt/EBITDA）。基于计算结果，结合当前美联储基准利率环境，简要评估该杠杆水平对特斯拉企业债信用利差及违约风险的潜在影响。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "calculator",
+        "credit_analysis",
+        "financial_ratio_calculation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提取的Total Debt数值",
+          "准确提取的EBITDA数值",
+          "正确计算出的Debt/EBITDA比率",
+          "结合宏观利率环境对信用利差与违约风险的简要定性评估"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T159",
+      "query": "作为信用分析师，请检索微软（MSFT）最新年度利润表数据，提取营业利润与利息支出。随后调用计算工具求出利息覆盖率（Interest Coverage Ratio = 营业利润 / 利息支出）。请列出原始数据、计算结果，并简要评估该指标对公司短期信用资质的影响。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "财务报表数据提取",
+        "信用指标计算",
+        "基础数值运算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确的营业利润数值",
+          "准确的利息支出数值",
+          "计算得出的利息覆盖率结果",
+          "基于比率的信用资质简要评估"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T160",
+      "query": "作为固定收益信用分析师，请查询最新的美联储联邦基金目标利率（Federal Funds Target Rate）与美国10年期国债收益率。获取数据后，使用计算器计算两者的利差，并将其转换为基点（BP）。请在最终回复中列明具体利率数值、计算过程、基点结果，并简要分析该期限利差对当前高收益信用债（HY Bonds）定价的潜在影响。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美联储联邦基金目标利率最新数值",
+          "美国10年期国债收益率最新数值",
+          "利差计算过程及转换为基点（BP）的最终结果",
+          "该期限利差对高收益信用债定价的简要分析"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T161",
+      "query": "作为固定收益信用分析师，我需要评估福特汽车（F）的信用质量与再融资风险。请获取该公司最新的年度财务报表，提取息税前利润（EBIT）与利息支出数据，并计算利息保障倍数（ICR）。接着，获取当前的美国10年期国债收益率作为宏观无风险利率基准。同时，搜索过去90天内关于福特信用评级调整或新增债券发行的最新财经新闻。最后，结合计算出的ICR、当前宏观利率水平及新闻舆情，给出其信用状况与短期偿债风险的综合评估。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "calculator",
+        "get_macro_data",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "利息保障倍数（ICR）的具体计算数值",
+          "当前美国10年期国债收益率数据",
+          "近期福特信用评级或债务发行新闻的关键摘要",
+          "结合财务指标、宏观利率与新闻的信用风险综合研判"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T162",
+      "query": "请评估特斯拉（TSLA）近期的企业信用风险状况。具体要求：1. 获取特斯拉最新的年度财务数据（资产负债表与利润表），提取总债务、EBITDA、息税前利润（EBIT）及利息支出，计算其总债务/EBITDA比率及利息保障倍数（EBIT/利息支出）。2. 查询当前美国10年期国债收益率作为无风险利率基准。3. 检索过去三个月内主要评级机构（如穆迪、标普）对特斯拉的信用评级调整或重大债务融资新闻。4. 结合财务杠杆水平、利息覆盖能力、宏观基准利率变动及评级舆情，综合评估该公司当前的信贷资质，并判断其更倾向于投资级（Investment Grade）还是投机级（High Yield）。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "计算得出的总债务/EBITDA比率",
+          "计算得出的利息保障倍数",
+          "当前美国10年期国债收益率数值",
+          "近期信用评级变动或重大发债新闻摘要",
+          "综合信用资质评估及投资级/投机级倾向结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T163",
+      "query": "作为固定收益与信用分析师，请对福特汽车（F）进行全面的短期信用风险评估。首先，获取其最新的年度财务数据，提取总债务（Total Debt）和息税折旧摊销前利润（EBITDA），并计算债务/EBITDA比率。其次，查询当前美国10年期国债收益率（作为无风险基准利率）。最后，搜索最近90天内关于福特信用评级、流动性状况或债务违约风险的财经新闻。请结合计算出的财务杠杆比率、当前宏观利率水平以及新闻面信息，给出一个综合的信用风险研判结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提取的Total Debt和EBITDA数值",
+          "计算得出的Debt/EBITDA比率",
+          "当前美国10年期国债收益率",
+          "结合宏观利率与信用新闻的综合信用风险评估结论"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "calculator",
+            "get_macro_data",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T164",
+      "query": "请分析福特汽车（股票代码：F）当前的信用状况与偿债能力。首先，获取其最新的财务数据，计算总债务与EBITDA的比率（杠杆率）；其次，查询当前的美国10年期国债收益率作为无风险利率基准；然后，搜索近期关于福特信用评级、债务发行或行业流动性压力的相关新闻；最后，结合宏观利率环境与公司杠杆水平，计算其理论信用利差压力，并综合评估其短期与中长期信用风险等级（高/中/低），给出明确的分析结论与核心数据支撑。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确的总债务与EBITDA比率（杠杆率）计算结果",
+          "当前美国10年期国债收益率数值",
+          "近期福特信用评级或债务相关新闻的关键要点总结",
+          "明确的信用风险等级结论（高/中/低）及结合宏观利率与杠杆率的具体分析依据"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T165",
+      "query": "请分析通用汽车（GM）的最新信用状况。首先获取其最近一个完整财年的利润表，提取EBIT与利息支出数据并计算利息保障倍数（ICR）。同时，获取当前美国10年期国债收益率作为无风险利率基准，以评估宏观融资成本。最后，搜索近期关于通用汽车债务结构变化、流动性状况或电动汽车资本开支对信用评级影响的新闻。综合上述定量比率、宏观利率环境及定性新闻信息，撰写一份简短的固定收益信用分析摘要，评估其短期违约风险并说明当前收益率曲线环境对其再融资成本的潜在影响。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最近完整财年的EBIT与利息支出具体金额",
+          "计算得出的利息保障倍数（ICR）数值",
+          "当前美国10年期国债收益率数据",
+          "近期关于公司债务、流动性或评级展望的新闻核心摘要",
+          "结合宏观利率环境与ICR的信用风险评估结论及再融资成本分析"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T166",
+      "query": "作为固定收益研究员，请评估福特汽车（Ford Motor, F）近期的信用基本面与债券投资吸引力。首先，获取其最新的年度利润表数据以计算利息保障倍数（EBIT除以利息支出）。其次，搜索最近三个月内关于福特债务重组、信用评级变动或重大资本开支的新闻。第三，获取当前美国10年期国债收益率作为基准利率。最后，假设福特某只未偿债券的到期收益率为7.2%，请使用计算器计算其相对于国债的信用利差（Credit Spread）。综合利息保障倍数、新闻信息及利差水平，给出关于该信用债当前风险溢价是否合理的简要分析。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "search_financial_news",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确的利息保障倍数计算结果",
+          "最新美国10年期国债收益率数据",
+          "计算得出的信用利差（基点或百分比）",
+          "结合财务指标、新闻舆情与宏观利差的综合信用风险评估"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T167",
+      "query": "作为固定收益与信用研究员，请对福特汽车（F）当前的企业信用状况进行快速评估。具体要求如下：1. 获取最新的10年期美国国债收益率，作为信用定价的无风险基准；2. 调取福特公司最近一个完整财年的财务报表，提取利息支出（Interest Expense）与息税前利润（EBIT）数据；3. 使用计算工具计算其利息覆盖率（Interest Coverage Ratio）；4. 检索过去三个月内关于福特债务评级调整、高收益债发行或流动性风险管理的权威财经新闻；5. 结合无风险利率水平、计算得出的覆盖率指标及新闻舆情，撰写一份简短的信用风险简报，评估其短期偿债能力与信用利差潜在变动方向。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "macro_data_retrieval",
+        "financial_statement_extraction",
+        "financial_ratio_calculation",
+        "credit_risk_assessment"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确的10年期美国国债收益率数值",
+          "福特公司最新的利息支出与EBIT数据",
+          "正确计算出的利息覆盖率（EBIT/利息支出）",
+          "近三个月信用评级或债券相关新闻核心摘要",
+          "结合定量指标与新闻定性的综合信用风险结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_financial_statements"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T168",
+      "query": "作为固定收益信用分析师，请对福特汽车（F）的短期偿债能力与信用风险进行快速评估。首先，获取其最新年度利润表，提取EBIT与利息费用，并计算利息保障倍数。其次，查询当前美国10年期国债收益率作为宏观利率基准。接着，搜索近三个月内穆迪或标普对该公司信用评级的最新新闻或展望调整。最后，结合计算出的利息保障倍数、当前基准利率水平及评级机构动态，综合分析其再融资风险，并给出明确的信用资质结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "calculator",
+        "get_macro_data",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提取EBIT与利息支出并计算利息保障倍数",
+          "正确引用当前美国10年期国债收益率数据",
+          "完整归纳近90天内主要评级机构的信用展望或调整动态",
+          "基于倍数、利率环境与评级新闻给出明确的再融资风险与信用质量结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "calculator",
+            "get_macro_data",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T169",
+      "query": "作为固定收益信用研究员，请对苹果公司（AAPL）的信用资质进行中期评估。具体步骤：1. 获取当前美国5年期国债收益率，作为无风险利率基准；2. 获取苹果公司最新财务报表，提取总负债、现金及等价物以及EBITDA数据，并计算净债务/EBITDA杠杆比率；3. 检索近期关于苹果公司信用评级展望、发债成本或行业信用环境变化的财经新闻；4. 结合上述宏观利率、财务杠杆指标与新闻情绪，估算其当前5年期公司债的合理信用利差范围（以基点计），并出具简明信用分析报告。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_financial_statements",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国5年期国债收益率数值",
+          "苹果公司净债务/EBITDA比率计算结果",
+          "近期信用相关核心新闻摘要",
+          "估算的5年期公司债信用利差范围（BP）",
+          "综合信用风险结论与投资建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_financial_statements"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T170",
+      "query": "作为固定收益信用分析师，请对英特尔公司（INTC）进行近期信用基本面评估。请完成以下步骤：1. 获取其最新财务报表，提取总负债、总资产、息税前利润（EBIT）及利息费用，并计算资产负债率与利息保障倍数；2. 查询当前10年期美国国债收益率作为无风险利率基准；3. 搜索近30天内关于英特尔信用评级调整或债券发行的财经新闻；4. 结合计算出的财务杠杆指标、宏观无风险利率水平及新闻舆情，评估其投资级债券的信用利差预期与违约风险，并给出明确的信用评级展望。请在最终回答中清晰列出各项指标的计算过程与数据依据。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "财务数据提取与解析",
+        "金融比率计算",
+        "宏观利率指标查询",
+        "企业信用新闻舆情检索",
+        "固定收益风险评估与定价逻辑"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确计算的资产负债率（总负债/总资产）",
+          "准确计算的利息保障倍数（EBIT/利息费用）",
+          "当前10年期美国国债收益率数值",
+          "近30天内英特尔信用评级或债券相关新闻的核心内容",
+          "综合财务、宏观与新闻数据的信用风险结论及利差/评级展望"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "calculator",
+            "get_macro_data",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T171",
+      "query": "作为固定收益信用研究员，请对宝马集团（BMW）拟发行的5年期欧元高级无抵押债券进行全面的信用风险评估与相对价值定价。请执行以下多步骤分析：1. 获取公司最新合并财务报表，提取有息负债、自由现金流与EBITDA数据，计算净债务/EBITDA及利息保障倍数；2. 获取当前宏观经济数据，重点提取欧洲央行政策利率及德国10年期国债收益率，确立无风险定价基准；3. 获取最新EUR/USD外汇中间价，评估其非欧元计价债务在汇率波动下的合并杠杆率与币种错配风险；4. 检索过去90天内三大评级机构（标普/穆迪/惠誉）的评级行动、电动化转型资本开支对现金流的挤压报告，以及任何供应链或监管处罚相关的重大信用事件新闻；5. 基于上述财务健康度、宏观利率曲线、外汇风险敞口及新闻情绪量化因子，使用Python编写一个简化的信用利差定价脚本（逻辑：理论OAS ≈ 财务风险溢价 + 期限结构溢价 + 情绪/事件调整值），输出以基点（bps）计价的估算利差；6. 综合生成信用备忘录。最终答案必须严格包含：核心财务覆盖率指标、宏观无风险利率基准、汇率折算结果、关键信用新闻摘要、Python输出的理论OAS估值，以及明确的配置建议（增持/标配/减持）。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "corporate_credit_analysis",
+        "financial_statement_extraction",
+        "macro_yield_curve_retrieval",
+        "forex_exposure_assessment",
+        "credit_news_sentiment_synthesis",
+        "quantitative_spread_modeling"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "净债务/EBITDA比率",
+          "利息保障倍数",
+          "欧洲央行政策利率与德国10年期国债收益率",
+          "EUR/USD即期汇率及外汇错配评估",
+          "近期评级调整与重大信用事件摘要",
+          "Python估算的理论OAS利差(bps)",
+          "明确的投资配置建议"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data"
+          ],
+          [
+            "get_exchange_rate",
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T172",
+      "query": "作为固定收益与信用研究员，请对大众汽车集团（Volkswagen AG, VOW3.DE）的企业债信用风险进行多维度压力测试。首先，获取公司最新年度合并财务报表，计算其净债务/EBITDA比率及利息覆盖倍数。其次，拉取当前美国10年期国债收益率及欧洲央行主要再融资利率，构建欧元区宏观利率基准。第三，检索近30天内关于大众汽车集团流动性状况、资本开支计划或评级机构行动的最新财经新闻。第四，获取当前欧元兑美元即期汇率，并使用Python编写脚本进行情景分析：模拟欧元相对美元贬值10%，量化该变动对其海外美元计价债务折算价值及财务费用的潜在影响。最后，整合财务杠杆指标、宏观利差环境、汇率风险敞口及新闻舆情，输出该公司短期偿债能力评估、信用利差预判及核心风险提示。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新财年净债务/EBITDA比率具体数值",
+          "利息覆盖倍数具体数值",
+          "当前宏观利率基准数据（美债10Y收益率与欧央行关键利率）",
+          "欧元贬值10%压力测试下的外币债务折算与财务影响测算结果",
+          "结合财务、宏观与新闻舆情对VW信用资质与短期偿债能力的综合研判"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news"
+          ],
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T173",
+      "query": "作为固定收益与信用分析师，请全面评估万科（Vanke）存量美元优先无抵押债券的信用风险溢价。具体要求如下：1. 获取当前美国10年期国债收益率及最新联邦基金利率，作为宏观无风险定价基准；2. 提取万科最新年度及中期财务报告的利润表与资产负债表数据（重点获取EBITDA、利息支出、短期债务、长期债务、流动资产与流动负债）；3. 检索近3个月内涉及万科信用评级调整、境外债务重组进展或流动性压力的财经新闻，并量化市场情绪倾向；4. 获取当前美元兑人民币即期汇率，评估跨境汇兑风险对境内主体偿债能力的影响；5. 调用Python计算利息保障倍数、净负债/EBITDA、速动比率，并基于修正版Altman Z-score模型估算隐含违约概率；6. 结合无风险利率曲线、财务脆弱性指标与新闻舆情，推导该美元债当前的合理理论信用利差区间（以bp为单位），并给出明确的增持/持有/减持建议。请列明所有数据节点、计算逻辑及最终定价结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "固定收益定价",
+        "信用利差分析",
+        "财务报表拆解",
+        "宏观与汇率风险评估",
+        "Python量化建模"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国10年期国债与联邦基金利率基准值",
+          "利息保障倍数与净负债/EBITDA比率",
+          "修正Altman Z-score值及对应违约概率",
+          "关键新闻舆情摘要与情绪定性",
+          "理论信用利差定价区间（bp）",
+          "明确的债券配置评级与风险提示"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_financial_statements",
+            "search_financial_news",
+            "get_exchange_rate",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T174",
+      "query": "作为固定收益信用分析师，请对比亚迪（BYD）近期发行的5年期美元计价优先无抵押债券进行综合信用评估与定价分析。具体要求如下：\n1. 获取公司最新财务报表，计算关键信用指标（净债务/EBITDA、利息覆盖倍数、自由现金流/总债务）。\n2. 获取当前美国5年期国债收益率、最新CPI及GDP增速，作为无风险基准与宏观周期参考。\n3. 查询实时美元/人民币汇率，评估发行主体的跨境汇率风险对偿债现金流的影响。\n4. 搜索近3个月内关于该公司的信用评级变动、重大诉讼、产业政策或再融资环境的金融新闻。\n5. 通过外部搜索获取当前同类评级（如BBB+/Baa2）中资美元债的平均信用利差（OAS）或二级市场交易价格数据。\n6. 使用Python编写分析脚本，结合宏观无风险利率、同业信用利差基准及公司基本面指标，进行利差分解与风险溢价调整，最终估算该债券的合理理论到期收益率（YTM）。\n请输出包含财务健康度定量评分、宏观与事件风险敞口分析、汇率压力测试结论，以及合理YTM区间的完整信用备忘录。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "tavily_search",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确计算并列出净债务/EBITDA、利息覆盖倍数、自由现金流/总债务三大核心信用指标",
+          "提供当前美国5年期国债收益率、CPI与GDP数据，并给出明确的宏观周期定位结论",
+          "量化或定性分析美元/人民币汇率波动对偿债现金流的潜在压力",
+          "汇总近3个月重大信用事件、评级展望变化及监管/政策风险",
+          "提供中资投资级美元债当前平均信用利差（OAS）或二级市场定价基准",
+          "基于Python模型输出合理的理论YTM区间与信用溢价分解逻辑",
+          "给出明确的配置建议及核心风险对冲提示"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "python_interpreter"
+          ],
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news",
+            "tavily_search"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T175",
+      "query": "作为固定收益信用分析师，我需要评估阿里巴巴（BABA）发行的5年期美元债券当前的信用利差与违约风险。请按以下步骤完成分析：\n1. 获取当前美国5年期国债收益率作为无风险利率基准。\n2. 获取阿里巴巴最新财年的利润表和资产负债表，提取总债务、息税折旧摊销前利润（EBITDA）及经营性现金流。\n3. 搜索阿里巴巴近30天内关于信用评级调整、债务到期或违约风险的财经新闻。\n4. 获取当前美元兑人民币（USD/CNY）的即期汇率，评估汇率波动对其中资背景美元债偿债成本的潜在影响。\n5. 使用Python编写脚本，基于Altman Z-score模型计算其财务健康得分，并结合无风险利率与新闻情绪因子，估算该债券当前的近似信用利差（Credit Spread，以基点表示）及1年期预期违约概率（PD）。请输出最终的关键指标与完整计算逻辑。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观数据获取",
+        "财务报表分析",
+        "财经新闻检索",
+        "外汇市场数据",
+        "Python编程与信用建模"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国5年期国债收益率数值",
+          "阿里巴巴最新财年总债务与EBITDA数据",
+          "近期信用评级或债务相关新闻的核心摘要",
+          "当前USD/CNY即期汇率",
+          "计算得出的Altman Z-score数值",
+          "估算的信用利差（基点）",
+          "1年期预期违约概率（PD）百分比"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_financial_statements",
+            "search_financial_news",
+            "get_exchange_rate",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T176",
+      "query": "作为固定收益信用分析师，请对一家大型跨国科技企业的美元债券进行全面的信用评估。请完成以下多步骤分析任务：\n1. 调用宏观数据接口获取当前美国10年期国债收益率及最新CPI同比增速。\n2. 获取该企业最近一个完整财年的合并利润表与资产负债表，提取总债务、利息支出、EBIT及净利润数据。\n3. 计算利息保障倍数（ICR）和净债务/EBITDA比率。若企业主要收入货币与美元存在汇率波动风险，请获取当前美元对该企业主要业务货币（如人民币或欧元）的即期汇率，并模拟在收入因汇率贬值下降8%的情景下，重新计算ICR。\n4. 检索近3个月内关于该企业债务重组、信用评级变动或监管政策的最新财经新闻。\n5. 利用Python编写脚本，结合无风险利率、计算出的财务杠杆指标及新闻隐含的风险溢价，估算其5年期优先无抵押债券的合理信用利差（bps），并给出最终的买入/持有/卖出建议及核心风险因素。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_financial_statements",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国10年期国债收益率与最新CPI同比增速",
+          "基准利息保障倍数（ICR）与净债务/EBITDA比率",
+          "收入因汇率贬值下降8%压力测试下的调整后ICR",
+          "近3个月内影响信用资质的关键新闻摘要",
+          "估算的5年期优先无抵押美元债信用利差（bps）",
+          "明确的债券投资建议（买入/持有/卖出）及核心信用风险提示"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_financial_statements"
+          ],
+          [
+            "get_exchange_rate",
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T177",
+      "query": "作为固定收益与信用研究分析师，请对福特汽车公司（Ticker: F）当前流通的公司债券进行深度信用风险评估与定价分析。请执行以下多步骤任务：\n1. 获取当前宏观经济基准数据，包括美国10年期国债收益率及最新公布的CPI同比增速；\n2. 调取福特公司最近完整财年的财务报表，提取有息负债总额、EBITDA、息税前利润（EBIT）及年度利息支出；\n3. 利用Python或计算器工具，精确计算其杠杆比率（Total Debt / EBITDA）与利息覆盖倍数（EBIT / Interest Expense），并基于标准财务模型计算其Altman Z-Score以量化违约概率；\n4. 检索近三个月内关于福特公司的权威财经新闻，识别任何可能触发评级机构行动（如降级观察或展望调整）的重大事件或管理层指引变化；\n5. 综合无风险利率环境、财务健康度指标与新闻情绪溢价，推导该债券当前的合理信用利差（Credit Spread）理论区间，并给出具体的投资组合操作建议（增持/中性/减持），同时阐明核心信用风险传导路径。请完整输出计算逻辑、数据引用与最终结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观数据分析",
+        "财务报表解析",
+        "信用指标建模",
+        "Python数值计算",
+        "舆情与事件驱动分析",
+        "固定收益利差定价"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确引用最新10年期美债收益率与CPI数据",
+          "正确提取并计算债务杠杆率与利息覆盖倍数",
+          "提供准确的Altman Z-Score数值及对应的违约风险等级",
+          "识别至少两项影响信用评级的关键新闻事件",
+          "给出基于宏观与微观基本面推导的合理信用利差区间",
+          "提供逻辑闭环的投资建议与风险提示"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "python_interpreter"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T178",
+      "query": "作为全球宏观与固定收益策略师，请对波音公司（Boeing Co.）的信用基本面及一笔假设发行的欧元计价债券进行深度定价与风险评估。请执行以下步骤：1. 获取最新美国10年期国债收益率及核心CPI同比数据，作为无风险利率与宏观通胀基准。2. 调取波音公司最近一期完整财年的利润表与资产负债表，准确提取有息负债总额、EBITDA及利息支出，计算总债务/EBITDA及利息保障倍数。3. 检索过去3个月内关于波音信用评级变动、监管审查或重大现金流出事件的财经新闻，提取定性风险因子。4. 假设波音发行了面值为10亿欧元、票息5.0%、剩余期限7年的优先无担保债券，获取当前EUR/USD即期汇率，利用计算工具将该债券未来年度付息与到期本金现金流折算为美元现值。5. 结合上述宏观无风险利率、企业财务杠杆、信用事件情绪溢价及汇率因素，在代码环境中构建定价模型，反算该债券的当前到期收益率（YTM）及相对于美债的隐含信用利差（Credit Spread，以基点bp计）。最终报告需结构化输出：关键财务比率、债券美元现值、计算过程简述、隐含信用利差（精确到个位基点），并给出明确的内部信用评级建议（投资级/投机级/观察名单）及核心下行风险提示。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_financial_statements",
+        "search_financial_news",
+        "get_exchange_rate",
+        "python_interpreter",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国10年期国债收益率与CPI同比数据",
+          "波音公司总债务/EBITDA比率",
+          "波音公司利息保障倍数",
+          "相关风险新闻核心摘要",
+          "欧元计价债券的美元折算现值",
+          "隐含信用利差（精确到基点）",
+          "明确的内部信用评级建议与下行风险提示"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_financial_statements"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T179",
+      "query": "作为固定收益研究员，请对大众集团（Volkswagen AG）近期发行的欧元计价公司债进行信用风险评估。请执行以下步骤：1. 获取公司最新财务数据，计算利息保障倍数（EBIT/利息支出）与净杠杆率（净债务/EBITDA）。2. 获取当前欧元区10年期主权债收益率及最新核心CPI数据，计算实际无风险利率。3. 检索近三个月内关于大众汽车信用评级、债务重组或欧盟汽车行业监管的重大新闻，并提取关键风险信号。4. 获取当前EUR/USD汇率，以便将财务指标与全球美元基准对齐。5. 使用Python编写代码，结合上述财务比率、实际利率、新闻风险溢价（假设评级下调预期额外增加20bps），构建简化信用利差估算模型，输出理论利差。最终请对比当前市场隐含利差（170 bps），给出明确的投资评级建议（买入/持有/卖出）及量化支撑理由。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "get_exchange_rate",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "利息保障倍数与净杠杆率的具体计算结果",
+          "实际无风险利率的百分比数值",
+          "重大新闻关键风险信号摘要",
+          "EUR/USD实时汇率",
+          "模型估算的理论信用利差（bps）",
+          "明确的投资评级建议及量化逻辑"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "search_financial_news",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T180",
+      "query": "作为固定收益与信用分析团队负责人，请对某跨国车企（以Ford Motor Company, F为例）发行的5年期优先无担保企业债进行深度信用风险评估与相对价值定价。具体执行步骤如下：\n1. 获取最新的美国10年期国债收益率及核心PCE/CPI数据，确立宏观无风险利率与通胀基准。\n2. 调取福特公司最近四个季度的完整财务报表，提取总债务、利息支出、营业利润及折旧摊销数据，计算滚动十二个月（TTM）的总债务/EBITDA杠杆比率与利息保障倍数（Interest Coverage Ratio）。\n3. 检索近90天内关于该主体的信用评级展望调整、债务契约（Covenant）修订、或重大诉讼/召回新闻，量化新闻舆情对信用资质的潜在冲击方向。\n4. 获取美元兑欧元的实时即期汇率，结合该公司欧洲区历史营收权重（假设约为30%），测算欧元对美元贬值10%情景下，对合并报表偿债指标的敏感性影响。\n5. 使用Python编写分析脚本，整合上述宏观利率、财务杠杆指标及新闻情绪权重，构建简化版信用风险定价模型，估算当前的理论信用利差（Credit Spread）。基于该利差，计算该债券（假设票面利率5.5%，面值1000美元，年付息，5年到期）的合理全价与到期收益率（YTM）。\n请输出结构化分析报告，必须包含核心信用指标测算结果、理论信用利差、YTM定价、汇率压力测试结果，以及基于基本面的最终信用展望评级。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_financial_statements",
+        "search_financial_news",
+        "get_exchange_rate",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "总债务/EBITDA杠杆比率",
+          "利息保障倍数（ICR）",
+          "美国10年期国债收益率基准值",
+          "欧元汇率敏感性及对偿债指标的影响幅度",
+          "理论信用利差（Credit Spread）估算值",
+          "债券合理理论价格与到期收益率（YTM）",
+          "新闻舆情与宏观环境对信用资质的综合展望结论"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_financial_statements",
+            "get_exchange_rate",
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T181",
+      "query": "作为大宗商品供应链策略的一部分，请获取必和必拓（BHP）在纽交所的最新收盘价。若某投资机构计划以该价格配置价值500万美元的BHP股票头寸，请计算理论上可购入的股数（结果保留至整数位）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确获取必和必拓（BHP）的最新收盘价",
+          "正确计算500万美元对应可购买的BHP股数并保留至整数位",
+          "清晰列出计算过程与最终结果"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T182",
+      "query": "作为大宗商品供应链研究员，请获取嘉能可（Glencore，股票代码 GLEN.L）的实时股价，并快速测算配置1000股该股票所需的总名义敞口（以计价货币为单位）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确返回嘉能可（GLEN.L）的最新实时股价",
+          "正确计算1000股的总购买成本",
+          "明确标注计算结果所使用的货币单位"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T183",
+      "query": "作为大宗商品与供应链组合的初步配置研究，请查询铜矿开采龙头企业自由港麦克莫兰（FCX）的最新美股实时价格。假设配置预算为120,000美元，忽略所有交易费用，按当前股价计算最多可买入多少股？（结果保留两位小数）",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "FCX最新实时股价",
+          "120,000美元预算可购入的最大股数（保留两位小数）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T184",
+      "query": "作为大宗商品供应链分析师，请查询Freeport-McMoRan (FCX) 当前的实时股价。若公司需建立价值75,000美元的铜矿板块多头敞口，请计算按当前市价需要买入多少股该股票（结果保留两位小数）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "FCX实时股价",
+          "计算得出的应买入股数（保留两位小数）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T185",
+      "query": "请获取力拓集团（Rio Tinto, RIO）的最新股票价格。若受全球大宗商品供应链瓶颈缓解影响，其股价预期将回调1.8%，请计算该回调对应的具体美元跌幅，并保留两位小数。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "RIO最新股票价格",
+          "1.8%回调对应的美元跌幅金额",
+          "完整计算步骤"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T186",
+      "query": "作为大宗商品供应链研究员，请获取当前WTI原油期货（CL=F）的最新实时价格，并计算采购500万桶原油的预估总货值（以美元计）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "WTI原油期货的实时价格（美元/桶）",
+          "500万桶原油的总货值计算结果（美元）",
+          "明确列出计算步骤"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T187",
+      "query": "作为大宗商品供应链采购的基准评估，请查询当前WTI原油期货（CL=F）的实时美元价格，并基于该报价计算采购50万桶原油所需的总美元成本。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "WTI原油期货实时价格（美元/桶）",
+          "50万桶原油的总采购成本（美元）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T188",
+      "query": "作为大宗商品与供应链研究员，请查询自由港麦克莫兰公司（Freeport-McMoRan, 代码FCX）的当前股票价格。若我准备投入35,000美元用于布局上游铜矿供应链资产，请计算按实时市价我最多可以买入多少股（结果需向下取整）？",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "FCX的当前实时股价",
+          "35,000美元按当前股价可买入的最大股数（向下取整后的整数）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T189",
+      "query": "作为大宗商品与供应链研究员，请获取Freeport-McMoRan (FCX) 的最新实时股票报价。基于该价格，计算若分配120,000美元进行头寸配置，最多可购买多少股整股，并给出剩余未动用的现金金额。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "FCX最新实时股票报价",
+          "12万美元可购买的最大整股数量",
+          "配置后剩余现金金额"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T190",
+      "query": "作为大宗商品供应链研究员，请查询必和必拓（BHP）的最新股价。若计划投入5万美元进行投资，在扣除0.1%的交易手续费后，计算最多可买入多少股（结果需向下取整）并输出最终结果。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "必和必拓最新股价",
+          "扣除0.1%手续费后的可用资金金额",
+          "可购买的最大股数（向下取整）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T191",
+      "query": "请评估近期铜价波动对紫金矿业（601899.SH）毛利率的潜在影响。首先，获取紫金矿业最新季度的利润表，提取营业收入与营业成本数据。其次，查询当前美元兑人民币（USD/CNY）的汇率，以评估进口设备的汇兑成本。接着，搜索过去一个月内关于全球铜矿供应链中断或智利铜矿罢工的财经新闻，简要总结其对供给端的潜在冲击。最后，使用Python或计算器进行敏感性分析：假设铜现货价格上涨导致营业成本中的大宗商品采购部分同比上升12%，且该部分占营业成本比重为45%，请重新测算公司在新情景下的预期毛利率，并给出环比变动幅度（以百分点计）。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "财务报表数据提取",
+        "外汇汇率查询",
+        "供应链新闻情报搜集",
+        "财务敏感性建模计算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新季度营业收入与营业成本提取值",
+          "当前USD/CNY实时汇率",
+          "近期铜供应链中断新闻核心摘要",
+          "基于假设条件重新测算的预期毛利率及环比变动百分点"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T192",
+      "query": "作为大宗商品与供应链研究员，请评估近期铜价波动及物流动态对自由港麦克莫兰（FCX）最新季度盈利能力的具体影响。请执行以下操作：1. 获取FCX最新的季度利润表，提取营业收入与营业成本；2. 查询当前主力铜期货合约的实时价格；3. 检索过去30天内关于FCX供应链中断、港口拥堵或原材料运输的最新财经新闻；4. 使用提取的财务数据计算该季度毛利率及同比变化率。最后，结合铜价走势与供应链新闻，输出结构化分析报告。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_stock_price",
+        "search_financial_news",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "FCX最新季度毛利率数值",
+          "毛利率同比变化百分比",
+          "当前铜期货合约价格",
+          "供应链相关新闻关键要点摘要",
+          "铜价与供应链因素对盈利影响的逻辑分析结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T193",
+      "query": "作为大宗商品与供应链研究员，请评估自由港麦克莫兰公司（FCX）在特定价格冲击情景下的盈利韧性。请执行以下分析：1. 获取FCX最新一季度的利润表，提取营业收入（Total Revenue）和营业成本（Cost of Sales）。2. 使用搜索工具查询当前国际市场的铜现货价格（美元/磅）。3. 检索过去30天内关于“全球铜矿供应链中断”或“海运物流成本飙升”的最新财经新闻摘要。4. 基于获取的财务基数，假设铜价上涨15%直接推动营业收入同比例增长，但供应链瓶颈导致营业成本仅上升6%，请计算调整后的预估毛利率（保留两位小数）。最终回答需包含原始财务数据提取值、铜现货报价、计算出的调整后毛利率，以及结合供应链新闻对成本传导能力的简要点评。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "tavily_search",
+        "search_financial_news",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "FCX最新季度营业收入与营业成本提取值",
+          "当前国际铜现货价格及数据来源",
+          "调整后预估毛利率百分比（保留两位小数）",
+          "结合供应链新闻的成本传导与风险点评"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "tavily_search",
+            "search_financial_news"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T194",
+      "query": "作为大宗商品与供应链策略分析师，请评估澳大利亚矿业巨头必和必拓（BHP Group）在近期汇率波动及全球宏观需求环境下的盈利韧性。请获取该公司最新季度的营业收入与营业成本，查询过去一个季度的美元兑澳元（USD/AUD）平均汇率以及中国制造业PMI数据。使用计算工具得出其最新季度的毛利率，并结合汇率变动与宏观需求指标，量化分析若本币升值2%对其以澳元计价利润的理论影响，最终输出毛利率、关键数据及供应链上游成本传导分析结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_exchange_rate",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BHP最新季度毛利率数值",
+          "过去一季度USD/AUD平均汇率数据",
+          "最新中国制造业PMI指标",
+          "汇率波动对澳元计价利润影响的逻辑分析结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_exchange_rate",
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T195",
+      "query": "作为大宗商品供应链研究员，请评估近期海运瓶颈对南方铜业（SCCO）盈利能力的潜在冲击。请执行以下分析：1. 获取SCCO最新财报中的季度营业收入与总股本数据；2. 检索最近30天关于铜供应链中断及运费飙升的财经新闻，提取关键定性结论；3. 获取SCCO当前的实时股价；4. 假设供应链瓶颈导致本季度额外物流成本占营业收入的0.8%，请计算该成本增加对季度净利润的拖累金额，并推算其对年化每股收益（EPS）的稀释影响（假设净利润与营收变动同比例，且股本保持不变）。请输出详细推导过程、新闻摘要及最终财务指标。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "search_financial_news",
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "SCCO最新季度营业收入",
+          "SCCO总股本数据",
+          "近期铜供应链中断新闻摘要",
+          "SCCO当前实时股价",
+          "0.8%营收对应的季度额外物流成本",
+          "年化净利润拖累金额",
+          "年化EPS稀释影响值",
+          "完整计算逻辑与假设说明"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "get_stock_price"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T196",
+      "query": "作为供应链与大宗商品策略研究员，我需要评估近期铜价波动对下游家电制造企业成本端的传导效应。请完成以下分析任务：1. 使用搜索工具获取当前LME三个月期铜的现货价格（美元/吨）；2. 调用汇率工具获取最新美元兑人民币（USD/CNY）中间价；3. 调取格力电器（000651）最近一个完整财年的利润表数据，提取营业收入与营业成本；4. 基于行业假设（铜原材料占该企业营业成本的5%，且企业仅对50%的铜采购量进行了套期保值对冲），结合当前铜价与8000美元/吨的假设基准价，计算未对冲敞口所产生的额外人民币成本。最后，测算该额外成本占营业收入的百分比变动，并判断其对当期毛利率的潜在冲击程度。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "tavily_search",
+        "get_exchange_rate",
+        "get_financial_statements",
+        "calculator",
+        "supply_chain_cost_analysis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "当前LME铜现货价格（美元/吨）",
+          "最新USD/CNY汇率",
+          "格力电器最新财年营业收入与营业成本金额",
+          "未套期保值铜需求对应的额外人民币成本",
+          "额外成本占营业收入的百分比及对毛利率的影响结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "tavily_search",
+            "get_exchange_rate",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T197",
+      "query": "作为大宗商品与供应链研究员，请评估自由港麦克莫兰公司（FCX）近期的盈利能力与供应链风险敞口。首先，获取该公司最新季度的总收入和营业成本（COGS）。其次，通过通用搜索查询当前的LME铜现货基准价格。接着，检索过去两周内关于智利或秘鲁铜矿供应链中断（如港口罢工、物流瓶颈或极端天气）的最新财经新闻。最后，利用获取的财务数据计算该公司当季的毛利率，并结合当前铜价水平与供应链新闻，简要评估其对下一季度毛利率的潜在影响。请在回答中列明具体数据、计算过程及分析结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "tavily_search",
+        "search_financial_news",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "FCX最新季度的总收入与COGS具体数值",
+          "当前LME铜现货价格",
+          "准确计算出的季度毛利率（以百分比表示）",
+          "过去两周主要铜矿产区供应链中断新闻的关键摘要",
+          "结合铜价走势与供应链扰动因素对下一季度利润率的定性影响评估"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "tavily_search",
+            "search_financial_news"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T198",
+      "query": "作为大宗商品与供应链研究分析师，请评估近期铜价上行趋势及供应链瓶颈对宁德时代（300750.SZ）盈利能力的潜在冲击。首先，获取该公司最新季度的利润表，提取营业收入与营业成本，计算历史毛利率。其次，检索近30天内关于‘铜现货价格’与‘新能源电池供应链’的财经新闻，提炼成本传导与产能受限的核心观点。接着，获取最新的美元兑人民币汇率（因铜价以美元计价）。最后，结合上述数据，假设公司直接原材料成本中铜相关占比为12%，且铜价上涨5%无法完全向下游传导，请使用计算工具或代码估算其下季度毛利率预计将下滑多少个基点（bps），并整合新闻分析给出最终评估报告。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "financial_statement_analysis",
+        "supply_chain_risk_assessment",
+        "forex_data_retrieval",
+        "scenario_modeling"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "历史毛利率数值",
+          "营业成本占营收比例",
+          "最新美元兑人民币汇率",
+          "铜价上涨5%导致的毛利率预估下滑基点（bps）",
+          "近期供应链新闻核心风险提示"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T199",
+      "query": "作为大宗商品与供应链研究员，我需要评估近期原油供应链瓶颈对联合包裹（UPS）盈利能力的潜在冲击。请首先提取UPS最新季度的营业收入（Revenue）和营业成本（Operating Expenses）数据。其次，通过搜索查询当前布伦特原油（Brent Crude）的现货价格及近一年同比涨幅。同时，检索过去90天内关于全球航空货运供应链中断的关键财经新闻。最后，假设燃油成本占UPS总营业成本的18%，请计算若原油价格维持当前同比涨幅水平，理论上新增的燃料成本将使其当季营业利润率下降多少个百分点（保留两位小数）？",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "financial_statement_retrieval",
+        "commodity_price_tracking",
+        "supply_chain_news_analysis",
+        "financial_margin_modeling"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "UPS最新季度营业收入具体数值",
+          "UPS最新季度营业成本具体数值",
+          "布伦特原油现货价格及同比涨幅",
+          "近三个月全球供应链中断新闻核心摘要",
+          "原油价格变动导致的营业利润率下降百分点"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "tavily_search",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T200",
+      "query": "请分析南方铜业（SCCO）最近一个季度的运营利润率变化。需结合当前铜价、美元兑智利比索汇率对其成本和收入的影响，并考虑近期供应链中断新闻对生产量的潜在影响。计算调整后的运营利润率，并与上一季度对比，给出具体数值及变动百分比。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_exchange_rate",
+        "search_financial_news",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "调整后的运营利润率（百分比）",
+          "上一季度运营利润率（百分比）",
+          "运营利润率变动百分比",
+          "当前铜价数据引用",
+          "美元兑智利比索汇率引用",
+          "供应链新闻对生产量影响的分析"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_exchange_rate",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T201",
+      "query": "作为大宗商品供应链分析师，我需要评估江西铜业（600362.SH）在当前宏观环境下的公允价值。请首先获取美国最新联邦基金利率和中国最新CPI数据，以评估全球工业需求放缓对铜产业链的影响。其次，搜索过去30天内关于南美主要铜矿产区（如智利、秘鲁）供应链中断或港口罢工的最新财经新闻，并据此对目标公司未来一年的预期营收进行合理下调假设（建议下调3%-5%）。获取江西铜业最近一期的完整现金流量表数据、当前A股股价以及USD/CNY实时汇率。假设基期自由现金流为经营活动现金流净额减去资本开支，结合获取的无风险利率设定折现率（无风险利率+4%风险溢价），考虑大宗商品价格波动与汇率换算影响后，使用计算或代码工具构建多阶段DCF模型计算其调整后的内在价值。最终需对比当前股价给出目标价偏离度百分比，并详细展示数据提取、参数调整、模型计算与估值结论的完整推理链条。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观经济指标提取",
+        "供应链新闻舆情量化分析",
+        "财务报表关键指标提取",
+        "跨境汇率换算处理",
+        "动态DCF估值建模",
+        "多步骤工具逻辑编排"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提供美国联邦基金利率与中国CPI最新数据",
+          "总结南美铜矿供应链中断/罢工新闻的核心要点并明确营收下调假设值",
+          "提取江西铜业最新经营活动现金流净额与资本开支具体数值",
+          "提供USD/CNY实时汇率并说明在模型中的换算逻辑",
+          "明确列出折现率计算过程、预测期自由现金流调整及DCF估值结果",
+          "输出DCF估值结果与当前股价的偏离度百分比",
+          "包含完整的工具调用顺序、数据交叉验证与计算步骤说明"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements",
+            "get_stock_price",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T202",
+      "query": "作为大宗商品与供应链领域的股票研究分析师，请对全球铜业巨头自由港麦克莫兰（FCX）进行多维度的内在价值重估。具体要求如下：1. 使用新闻搜索工具，检索过去90天内关于智利、秘鲁或印尼主要铜矿的供应链瓶颈、劳工罢工或出口限制政策，评估其对全球精炼铜供给的潜在冲击程度。2. 获取最新的宏观经济数据，包括美国10年期国债收益率（作为无风险利率基准）及实时USD/CNY汇率（以反映主要消费国货币波动对大宗商品的定价影响）。3. 调取FCX最新完整财年的财务报表，提取经营自由现金流（FCF）、净债务总额及期末完全稀释后股本。4. 结合宏观利率与第一步评估的供应链风险溢价，设定合理的加权平均资本成本（WACC）作为折现率。利用现金流预测逻辑（可假设3年显性期+永续期，增长率参考近期通胀或GDP数据），计算FCX的每股DCF内在价值。5. 获取FCX当前实时股价，对比DCF估值结果，计算股价相对内在价值的升贴水比例。6. 最终输出需包含：供应链新闻核心摘要与风险定性、关键财务与宏观数据取值、折现率设定依据、DCF每股估值、实时股价及折溢价百分比，并给出基于供应链韧性的简明投资建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_macro_data",
+        "get_exchange_rate",
+        "get_financial_statements",
+        "calculate_dcf",
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提取近三个月关键铜矿供应链中断新闻及其对产能影响的量化预期",
+          "准确获取美国10年期国债收益率与USD/CNY实时汇率数值",
+          "提取FCX最新财年财报中的自由现金流、净债务与完全稀释后股本数据",
+          "基于宏观利率与供应链风险溢价构建合理的WACC折现率并说明依据",
+          "输出DCF模型计算得出的FCX每股内在价值",
+          "获取实时股价并计算相对内在价值的折溢价百分比",
+          "综合说明供应链扰动、汇率变动与估值结论的逻辑关联"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_macro_data",
+            "get_exchange_rate",
+            "get_financial_statements",
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T203",
+      "query": "假设你是一名专注于大宗商品与供应链对冲的基金经理。请评估近期南美关键铜矿港口罢工预期对南方铜业（SCCO）内在价值的潜在影响。具体要求：\n1. 检索当前铜现货价格及近三个月价格波动率，分析其趋势。\n2. 搜索过去两周内关于南美港口物流中断、航运瓶颈及劳动力谈判的最新财经新闻，量化评估其对运输周期和保险成本的冲击。\n3. 获取南方铜业最新年度及季度财务报表，提取营业成本结构（重点关注燃料与物流占比）及外币计价债务明细。结合实时USD/CLP汇率，测算若比索贬值5%对公司净利润的汇兑损益影响。\n4. 构建压力测试模型：假设罢工导致未来12个月铜出货量下降5%，且海运费/物流成本上升8%，请调整自由现金流预测。使用Python编写代码进行情景模拟与敏感性分析，输出调整后的三年期DCF估值区间。\n5. 综合宏观供需、供应链中断风险与估值结果，给出明确的交易策略建议（做多/做空/对冲）及核心风控指标。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "大宗商品价格与波动率追踪",
+        "供应链新闻情感与影响量化",
+        "跨国财报解析与外币敞口识别",
+        "外汇汇率换算与汇兑损益测算",
+        "Python压力测试与敏感性建模",
+        "动态DCF估值与投资决策输出"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "铜现货基准价格及近三月年化波动率",
+          "港口罢工新闻核心事实及其对供应链成本的量化预估",
+          "SCCO财报中物流成本占比与外币债务规模提取",
+          "实时USD/CLP汇率数据及贬值5%的汇兑损益测算值",
+          "出货量下降5%与物流成本上升8%假设下的自由现金流调整逻辑",
+          "Python敏感性分析代码或模拟结果矩阵",
+          "调整后三年期DCF估值区间",
+          "明确的对冲交易策略及风控阈值"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "tavily_search",
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter",
+            "calculate_dcf"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T204",
+      "query": "作为大宗商品与供应链策略研究员，请对自由港麦克莫兰铜金公司（FCX）进行深度基本面与估值交叉验证分析。任务需包含以下步骤：首先，通过搜索工具获取过去90天内影响全球铜矿供应链（特别是南美港口物流与社区劳资纠纷）的关键财经新闻，并提取核心风险因子。其次，获取当前美元兑秘鲁索尔（USD/PEN）汇率，以及过去一年的历史汇率数据，以评估其非美货币运营成本的对冲敞口。第三，调用宏观数据接口获取当前美国10年期国债收益率及最新中国官方制造业PMI，作为需求端与贴现基准参考。第四，从FCX最新财报中提取自由现金流（FCF）、资本支出（CapEx）及加权平均股本数。第五，基于宏观数据与新闻风险溢价（假设在基准利率上加150个基点）构建贴现率，调用DCF模型计算每股内在价值。最后，获取FCX实时股价，并使用Python编写脚本进行敏感性分析，模拟汇率波动±5%及FCF变动±10%情景下的目标价区间与当前股价的相对偏离度。最终报告需结构化输出上述所有数据点、估值模型参数、敏感性分析结论及明确的投资评级。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_exchange_rate",
+        "get_macro_data",
+        "get_financial_statements",
+        "calculate_dcf",
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "过去90天全球铜供应链核心新闻与风险摘要",
+          "当前与历史一年期美元兑秘鲁索尔汇率",
+          "美国10年期国债收益率与中国制造业PMI数据",
+          "FCX最新财报中的FCF、CapEx与流通股数",
+          "DCF模型假设参数与每股内在价值结果",
+          "Python敏感性分析生成的目标价区间",
+          "当前股价相对于内在价值的折溢价百分比",
+          "明确的投资评级及核心逻辑"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_macro_data"
+          ],
+          [
+            "get_exchange_rate",
+            "get_financial_statements"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T205",
+      "query": "作为大宗商品对冲基金分析师，请综合评估自由港麦克莫兰（Freeport-McMoRan, FCX）在当前供应链扰动与宏观环境下的估值安全边际。具体要求：1. 检索近期影响全球铜供应链的关键事件（如巴拿马运河通行受限或南美矿业罢工）的最新财经新闻。2. 获取FCX最新季度的利润表与现金流量表，提取EBITDA、资本支出（CapEx）及折旧摊销数据。3. 查询当前美国10年期国债收益率、美元兑人民币（USD/CNY）即期汇率及中国CPI数据，以此作为宏观基准设定无风险利率与汇率折算基准。4. 假设未来5年自由现金流（FCF）以税后经调整EBITDA为基数，按4%的复合增长率增长，第5年终值采用8倍EV/EBITDA计算。5. 使用DCF模型计算每股内在价值，结合实时股价与汇率折算，输出美元与人民币报价的折溢价分析，并给出针对铜价波动的供应链风险对冲建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "supply_chain_risk_assessment",
+        "financial_statement_parsing",
+        "macro_data_integration",
+        "dcf_valuation",
+        "cross_currency_conversion"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "核心供应链中断事件的归纳及对铜供需的预期影响",
+          "FCX最新季度EBITDA与CapEx的具体财务数据",
+          "基于美债收益率与宏观指标构建的调整后折现率（WACC）",
+          "DCF模型计算的每股内在价值（美元）及换算为人民币的价格",
+          "内在价值与市价的对比结果（折价/溢价率）及具体的对冲策略"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "get_stock_price"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T206",
+      "query": "作为大宗商品与供应链研究员，请对自由港麦克莫兰（FCX）进行综合估值分析。首先，获取FCX当前的实时股价及过去三年的财务报表（重点关注资本支出、营业收入与自由现金流）。其次，查询美联储最新基准利率及中国最新季度GDP增速，评估宏观流动性与核心需求端对全球铜价的影响。接着，获取当前美元兑人民币汇率，并结合最近三个月内关于南美铜矿罢工、港口物流瓶颈或极端天气导致供应链中断的财经新闻，量化这些事件对FCX未来三年预期营收的潜在冲击（假设每识别出一次重大供应链中断事件，未来三年营收复合增长率预期需下调1.5%）。然后，利用Python整理上述多源数据，构建动态假设，计算调整后的加权平均资本成本（WACC）与终值。最后，使用贴现现金流（DCF）模型计算FCX的每股内在价值，并与当前市价对比得出折价或溢价百分比。请提供完整的参数提取过程、供应链与宏观风险调整后的DCF计算步骤、敏感性分析摘要，以及明确的投资评级建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "financial_statement_analysis",
+        "macroeconomic_data_integration",
+        "supply_chain_event_quantification",
+        "python_quantitative_modeling",
+        "discounted_cash_flow_valuation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "FCX实时股价及提取的最新三年资本支出与自由现金流数据",
+          "美联储最新基准利率与中国最新季度GDP增速",
+          "美元兑人民币实时汇率",
+          "基于新闻识别的供应链中断事件次数及对应的营收增长率下调测算",
+          "使用Python计算的调整后WACC参数与终值推导逻辑",
+          "DCF模型输出的每股内在价值",
+          "当前股价相对于内在价值的折溢价百分比",
+          "综合考虑供应链脆弱性与宏观周期的最终投资评级及核心逻辑"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ],
+          [
+            "calculate_dcf"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T207",
+      "query": "作为宏观对冲基金的大宗商品与供应链研究员，请对特斯拉（TSLA）进行跨资产压力测试。任务流程如下：\n1. 使用 tavily_search 获取当前LME铜和电池级碳酸锂的现货价格，并调用 get_macro_data 获取最新美国CPI同比增速及中国官方制造业PMI数据，以评估宏观通胀与全球供应链景气度。\n2. 调用 search_financial_news 检索近30天内关于TSLA电池原材料采购成本、核心供应商产能瓶颈及涨价协议的财经报道。\n3. 利用 get_financial_statements 提取TSLA最新季度的合并利润表，准确提取营业收入、营业成本（COGS）及历史毛利率。\n4. 通过 get_exchange_rate 获取当前USD/CNY中间价或实时汇率。\n5. 在 python_interpreter 中构建供应链成本传导模型：假设核心金属因供应链紧张导致采购成本整体上升15%，且基于USD/CNY汇率波动，进口零部件与代工成本额外增加3%。请量化计算该双重冲击对TSLA毛利率的预期负面影响（以百分点计），并输出调整后的预期毛利率。\n6. 综合新闻舆情倾向、宏观数据与量化测算结果，撰写一份简报，明确给出调整后的预期毛利率、供应链风险评级及短期交易建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "commodity_price_aggregation",
+        "macroeconomic_indicator_analysis",
+        "financial_statement_extraction",
+        "news_sentiment_synthesis",
+        "cross_border_supply_chain_modeling",
+        "python_quantitative_simulation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "LME铜与电池级碳酸锂当前现货报价",
+          "最新美国CPI同比增速与中国制造业PMI数值",
+          "TSLA最新季度营业收入、COGS及历史毛利率",
+          "USD/CNY实时汇率",
+          "基于15%金属成本上涨与3%汇率传导假设的毛利率下调幅度（百分点）",
+          "调整后的预期毛利率数值",
+          "综合供应链风险评级与短期投资/交易建议"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "tavily_search",
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T208",
+      "query": "作为大宗商品与供应链主题基金经理，我需要全面评估自由港麦克莫兰（FCX）在当前宏观经济扰动下的内在价值。请首先查询美联储最新联邦基金目标利率以及中国最新季度GDP增速与CPI数据，以研判全球铜需求基本面与无风险利率锚点。其次，检索过去三个月内关于全球铜矿供应链中断、主要产区（如智利或印尼）政策变动或物流瓶颈的重大财经新闻。接着，获取FCX最新年报或财报数据，提取过去五年的经营性自由现金流（FCFF）。基于宏观数据，自定义计算加权平均资本成本（WACC）：无风险利率采用当前10年期美债收益率（可近似替代为基准利率），叠加50bps流动性溢价，假设贝塔系数为1.4，股权风险溢价设为6%，税率为21%。同时，根据中国GDP与CPI趋势逻辑性地调整DCF模型中的永续增长率。使用调整后的WACC与FCFF计算FCX的每股内在价值（美元）。最后，获取实时USD/GBP汇率，将美元内在价值换算为英镑，并对比FCX当前实时美元股价，计算隐含的溢价/折价百分比。请逐步展示参数提取过程、公式推导逻辑及最终英镑计价结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news",
+        "get_financial_statements",
+        "python_interpreter",
+        "calculate_dcf",
+        "get_stock_price",
+        "get_exchange_rate"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美联储基准利率与中国GDP、CPI具体数值",
+          "铜供应链或矿区相关新闻的核心事件摘要",
+          "FCX过去五年自由现金流数据列表",
+          "自定义计算的WACC数值及永续增长率假设",
+          "DCF模型输出的每股美元内在价值",
+          "实时USD/GBP汇率",
+          "换算后的英镑目标价",
+          "相对于FCX当前股价的隐含涨跌幅百分比"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "python_interpreter"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T209",
+      "query": "作为大宗商品与供应链研究主管，请对铜矿巨头Freeport-McMoRan (FCX)进行深度估值与供应链压力测试。首先，检索过去30天内关于南美铜矿产能受阻、港口物流瓶颈以及中国铜加工需求变化的财经新闻。其次，获取FCX最新的损益表与现金流量表，提取自由现金流（FCF）、折旧摊销（D&A）及净债务数据，同时获取其最新实时股价。第三，调用宏观数据接口获取最新的美国10年期国债收益率与核心CPI，并查询当前美元兑智利比索（USD/CLP）与美元兑秘鲁索尔（USD/PEN）的实时汇率以评估外汇成本敞口。第四，利用Python解释器构建动态加权平均资本成本（WACC）计算逻辑，将无风险利率锚定至最新美债收益率，并因供应链中断与地缘风险在股权风险溢价（ERP）上强制加计200个基点。最后，基于上述处理后的参数调用DCF模型计算FCX的内在价值，结合实时股价输出估值差额，并量化供应链扰动对最终目标价的敏感性折价百分比。报告需包含数据源引用、计算中间变量及明确的投资评级建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_financial_statements",
+        "get_stock_price",
+        "get_macro_data",
+        "get_exchange_rate",
+        "python_interpreter",
+        "calculate_dcf"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "南美铜矿供应链中断及中国需求变化的新闻摘要",
+          "FCX最新财务数据（FCF、D&A、净债务）提取结果",
+          "美国10年期国债收益率、核心CPI及USD/CLP、USD/PEN汇率数据",
+          "动态WACC计算过程及最终数值",
+          "DCF模型输出的每股内在价值与目标价",
+          "当前股价与内在价值的溢价/折价百分比",
+          "供应链风险对估值的具体敏感性/折价结论"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ],
+          [
+            "calculate_dcf"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T210",
+      "query": "作为大宗商品与供应链对冲基金的高级研究员，请评估近期原材料与物流成本波动对鸿海精密（2317.TW）盈利能力的传导效应，并输出美元计价的目标估值。请执行以下步骤：1) 获取该公司最新年度财报，提取历史毛利率与营业成本明细；2) 利用网络搜索获取近90天LME铜价现货均价及上海出口集装箱运价指数（SCFI）的同比涨跌幅；3) 获取当前台湾央行基准利率与美国10年期国债收益率，据此估算适用WACC（公式：WACC = 美债收益率 + 500bps）；4) 假设铜材与海运物流成本分别占营收的15%与6%，且上述大宗商品与运价涨幅将100%传导至营业成本，请结合财报数据计算预期毛利率；5) 获取2317.TW最新股价及新台币兑美元实时汇率，基于修正后的毛利率变动假设（假设未来三年自由现金流增速等于毛利率同比变动值，永续增长率2%），利用DCF模型计算合理目标价，并换算为美元。最终需汇总关键财务指标、计算过程与估值结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "tavily_search",
+        "get_macro_data",
+        "get_stock_price",
+        "get_exchange_rate",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "历史毛利率与成本结构",
+          "铜价与SCFI指数同比变化率",
+          "估算的WACC值",
+          "调整后的预期毛利率",
+          "最新股价与TWD/USD汇率",
+          "DCF美元目标股价",
+          "成本传导假设说明"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "tavily_search"
+          ],
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T211",
+      "query": "作为可持续投资研究员，请查询隆基绿能（601012）的最新股票价格，并检索其近期关于碳足迹管理与绿色供应链的财经新闻摘要，以评估其ESG战略的市场反响。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "隆基绿能最新股票价格",
+          "碳足迹管理与绿色供应链相关财经新闻摘要"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T212",
+      "query": "请查询特斯拉（TSLA）当前的股票价格，并检索最近一个月内关于其ESG评级变动或可持续能源业务进展的财经新闻。结合获取的实时价格与新闻摘要，简要分析ESG相关事件对特斯拉短期市场情绪的影响。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提供TSLA当前股票价格",
+          "提取至少一条近一个月内与TSLA ESG评级或可持续能源相关的财经新闻要点",
+          "结合股价与新闻内容给出ESG因素对短期市场情绪影响的简要分析"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T213",
+      "query": "请查询清洁能源龙头NextEra Energy (NEE) 的实时股票报价，并检索其最新关于电网现代化与可再生能源项目投资的重大公告或新闻。提取其中提及的资本支出金额，并简要分析该ESG相关资本开支对提升公司长期估值溢价的潜在作用。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "实时行情数据获取",
+        "金融资讯检索与关键信息提取",
+        "ESG资本开支估值分析"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "NextEra Energy (NEE) 准确实时股价",
+          "新闻/公告中披露的具体可再生能源资本支出金额",
+          "对该ESG资本开支提升长期估值溢价的逻辑分析"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T214",
+      "query": "作为可持续投资组合经理，请查询Vanguard ESG International Stock ETF (VSGX) 的最新交易价格。若需调配120,000美元建立非美市场ESG敞口，请计算可认购的份额数量（保留两位小数），并简要说明该ESG标的在分散化配置中的财务作用。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "VSGX ETF的最新交易价格",
+          "120,000美元资金可认购份额的精确计算结果",
+          "该ESG标的在组合分散化中的财务作用简述"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T215",
+      "query": "作为ESG与可持续投资分析师，我计划将300万美元配置到全球知名的清洁能源ETF iShares Global Clean Energy ETF (ICLN) 中。请获取该ETF的最新实时股价，并计算这笔资金按当前市价可以购买多少份额？请保留两位小数，并结合可持续投资原则简要说明该资产在环境（Environmental）维度的核心配置逻辑。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator",
+        "esg_analysis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提供ICLN的实时股价",
+          "准确计算300万美元可购买的份额数量（保留两位小数）",
+          "简述该投资在ESG环境维度的核心逻辑"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T216",
+      "query": "作为可持续投资分析师，请查询特斯拉（TSLA）当前的股票价格，并检索最近三个月内关于其ESG评级调整、碳足迹削减或绿色供应链进展的金融新闻。结合获取的股价数据与新闻核心内容，简要评估资本市场对其最新ESG战略披露的短期定价反应。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "search_financial_news",
+        "ESG sentiment & market reaction analysis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "TSLA当前准确的股票价格及货币单位",
+          "近期关于特斯拉ESG或可持续发展举措的新闻摘要（至少2条关键事件）",
+          "结合股价与新闻内容的市场短期反馈与投资情绪评估"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T217",
+      "query": "作为可持续投资研究员，请查询特斯拉（TSLA）的最新股票价格，并检索过去30天内关于该公司ESG表现或可持续能源业务进展的财经新闻。请提供当前股价，总结新闻中的关键ESG信息，并简要说明该信息对短期股价的潜在影响。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "特斯拉（TSLA）的最新股价数据",
+          "过去30天内ESG或可持续业务相关新闻的核心要点",
+          "结合ESG新闻与当前股价的短期投资影响评估"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T218",
+      "query": "查询维斯塔斯风力系统公司（Vestas Wind Systems，股票代码：VWS.CO）的最新欧元股价。假设某投资者持有500股该公司股票，请计算其当前持仓的总市值是多少欧元？",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确获取Vestas Wind Systems (VWS.CO) 的最新股价",
+          "正确计算500股持仓的总市值（以欧元为单位）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T219",
+      "query": "查询NextEra Energy（NEE）的最新股票价格，并计算若某绿色能源ESG基金计划以当前市价配置50万美元头寸，预计可购入多少股？（结果保留两位小数）",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "NEE最新实时股价",
+          "50万美元头寸对应的持股数量（保留两位小数）",
+          "明确的计算逻辑或公式展示"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T220",
+      "query": "请查询宁德时代（300750.SZ）的最新股价，并检索该公司近期在ESG（环境、社会与治理）评级更新或新能源碳减排项目方面的重大新闻。请汇总股价数据与ESG舆情，提供一份简短的可持续投资关注点报告。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "宁德时代最新准确股价",
+          "ESG新闻核心要点摘要",
+          "结合股价与ESG信息的简短投资关注点"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T221",
+      "query": "作为可持续投资（ESG）分析师，请评估宁德时代（300750.SZ）在当前绿色转型周期中的研发资本效率。请执行以下分析：1. 搜索近期关于全球新能源电池供应链碳关税（如CBAM）或ESG合规成本的新闻；2. 获取公司最新年度报告的财务数据，提取研发费用与经营活动现金流净额；3. 获取当前中国1年期LPR利率作为宏观融资成本基准；4. 计算研发费用对经营现金流的消耗比率。最终报告需包含关键财务比率数值、宏观融资成本背景，并结合政策新闻定性评估其长期绿色研发的财务可持续性。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_financial_statements",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "近期ESG合规/碳关税新闻核心摘要",
+          "最新财年研发费用金额",
+          "经营活动现金流净额",
+          "中国1年期LPR利率数值",
+          "研发费用占经营现金流消耗比率",
+          "绿色研发财务可持续性评估结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T222",
+      "query": "作为ESG研究员，请对比亚迪（1211.HK）进行可持续资本配置评估。第一步，使用搜索工具获取比亚迪最新发布的ESG报告摘要或近半年内关于‘新能源产能扩张与碳减排投资’的权威财经新闻，确定其绿色项目的投资规模指引或披露数据；第二步，调取比亚迪最近两个完整财年的现金流量表，准确提取‘购建固定资产、无形资产和其他长期资产支付的现金’作为总资本支出（CapEx）；第三步，结合第一步获取的绿色投资指引数据或公司披露的绿色CapEx金额，使用计算工具分别计算近两年绿色投资占总资本支出的比例，并得出该比例的年度变化幅度（以百分比或基点表示）。请输出具体财务数据提取结果、比例计算过程、变化趋势，并基于新闻内容简要评估该ESG投资策略对短期现金流与长期估值的影响。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_financial_statements",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "明确列出最近两个财年的总资本支出（CapEx）金额",
+          "明确列出对应年度的绿色/可持续投资金额及占比（%）",
+          "提供绿色投资占比的年度同比变化数值",
+          "结合搜索到的ESG新闻或报告摘要，分析投资策略对现金流与长期基本面的潜在影响",
+          "包含清晰的数据提取来源、计算步骤与最终结论"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T223",
+      "query": "作为ESG与可持续投资领域的分析师，请对宁德时代（300750.SZ）进行基本面与ESG风险叠加的估值分析。请执行以下步骤：首先，提取公司最新年度报告或最近四个季度的营业收入与净利润数据，并获取其当前A股股价，计算滚动市盈率（P/E TTM）。其次，检索近三个月内与该公司相关的ESG专项新闻，重点识别环境排放合规性、电池回收进展或供应链社会责任方面的正面/负面事件。最后，若存在实质性负面ESG舆情，请在原市盈率基础上施加8%的估值折价；若以正面为主，则给予3%的溢价；若无明显偏向则维持原值。请结合上述数据与折溢价调整，计算调整后的合理估值倍数及对应目标价，并输出一份包含关键财务指标、ESG舆情总结、调整后估值测算及最终投资建议的简报。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "financial_statement_extraction",
+        "market_data_retrieval",
+        "esg_news_sentiment_filtering",
+        "valuation_adjustment_math"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新财年或近四季度营业收入与净利润数据",
+          "基于当前股价的滚动市盈率(PE TTM)计算值",
+          "近三个月ESG相关新闻定性摘要(正面/负面/中性判定)",
+          "经ESG风险溢价/折价调整后的目标市盈率与目标价",
+          "明确的买入/持有/卖出评级及逻辑依据"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_stock_price"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculator",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T224",
+      "query": "作为ESG与可持续投资基金的分析师，我需要评估NextEra Energy (NEE)的绿色资本配置效率与投资可行性。请执行以下多步分析：1. 获取NEE最近一个完整财年的现金流量表与利润表，准确提取资本支出（Capital Expenditures/CapEx）与营业收入（Total Revenue）。2. 获取NEE的当前实时股价。3. 检索近三个月内关于NEE的ESG评级变动、可再生能源项目投产进展或重大环境合规争议的财经新闻。4. 计算资本支出占营业收入的百分比（保留两位小数）。5. 综合量化投入强度、股价估值水平及ESG舆情定性分析，判断该标的是否符合绿色核心资产配置标准，并输出详细评估结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "Financial Statement Extraction",
+        "Real-time Equity Pricing",
+        "ESG News & Sentiment Analysis",
+        "Financial Ratio Calculation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提取的最近财年资本支出与营业收入具体数值",
+          "当前实时股价数据",
+          "近三个月ESG相关财经新闻的核心摘要与风险/机会定性判断",
+          "资本支出占营业收入比率的计算结果（百分比）",
+          "基于财务指标与ESG舆情的综合投资可行性结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_stock_price"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T225",
+      "query": "作为专注ESG与可持续投资的基金经理，我正在评估宁德时代（300750.SZ）在绿色转型方面的财务投入效率。请获取该公司最新披露季度的利润表和现金流量表，提取研发费用、营业收入及资本支出相关数据。计算其研发强度（研发费用/营业收入）以及资本支出倍数（资本支出/研发费用）。随后，搜索近60天内关于该公司“电池回收”、“碳中和进展”或“国际ESG评级上调”的财经新闻摘要。最后，获取宁德时代当前实时股价，结合计算出的财务比率与新闻情绪，撰写一份简短的ESG投资评估报告，明确给出其财务健康度评级与是否建议纳入核心ESG股票池的结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "search_financial_news",
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新季度的研发费用、营业收入与资本支出具体数值",
+          "准确计算出的研发强度与资本支出倍数",
+          "近60天相关ESG/绿色转型新闻的关键摘要与情绪倾向",
+          "宁德时代当前实时股价",
+          "基于财务指标、股价表现与新闻面的综合ESG投资评估",
+          "明确的财务健康度评级及是否纳入ESG核心股票池的建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    }
+  ]
+}

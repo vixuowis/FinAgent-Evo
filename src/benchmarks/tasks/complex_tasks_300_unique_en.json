@@ -1,0 +1,3053 @@
+{
+  "tasks": [
+    {
+      "task_id": "T001",
+      "query": "Please retrieve the latest closing price of Apple Inc. (AAPL) and, combined with the current $100,000 investment budget, quickly calculate the theoretical number of shares that can be purchased (rounded to two decimal places) for preliminary position planning.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest closing price of Apple Inc. (AAPL)",
+          "Theoretical shares purchasable with $100,000 budget (rounded to 2 decimal places)"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T002",
+      "query": "As a junior equity researcher, I need to quickly estimate the initial position cost. Please retrieve the latest real-time stock price of NVIDIA (NVDA) and calculate the total capital required to purchase 200 shares based on that price. Please output the exact result in USD.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest real-time stock price of NVIDIA (NVDA)",
+          "Total initial cost for 200 shares of NVDA"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T003",
+      "query": "As a junior stock analyst, please retrieve the latest real-time stock price of Tesla (TSLA). Assuming the company's basic earnings per share (EPS) for the last 12 months is known to be $3.15, please calculate Tesla's current trailing P/E ratio. Please provide the calculation process and final result (rounded to two decimal places).",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest real-time stock price of TSLA",
+          "Calculated trailing P/E ratio based on given EPS (rounded to 2 decimal places)"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T004",
+      "query": "Please retrieve the current real-time stock price of Tesla (TSLA) and calculate the maximum number of shares that can be purchased with a principal of $20,000 at that price (ignoring transaction fees, results rounded to two decimal places).",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Current real-time stock price of Tesla",
+          "Maximum number of shares purchasable",
+          "Detailed calculation steps"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T005",
+      "query": "Please retrieve the latest real-time stock price of Apple Inc. (AAPL) and query the basic earnings per share (EPS) from its latest quarterly financial report. Use these two data points to calculate the current trailing P/E ratio, rounded to two decimal places, and provide a brief judgment on valuation rationality based on this indicator.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurately returned latest AAPL stock price",
+          "Accurately extracted latest quarterly EPS value",
+          "Correctly calculated and displayed P/E ratio (rounded to 2 decimal places)",
+          "Provided a brief valuation rationality judgment based on the P/E ratio"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T006",
+      "query": "Please query the current real-time stock price of Apple Inc. (AAPL). Assuming its latest announced shares outstanding is 15.35 billion shares, please use the calculator tool to calculate the company's current total market capitalization and convert the final result into Billion USD.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Retrieved AAPL real-time stock price value",
+          "Calculated total market capitalization (USD)",
+          "Market cap converted to Billion USD",
+          "Complete calculation formula and steps"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T007",
+      "query": "As a stock researcher, please query the current stock price of Tesla (TSLA). Based on this real-time quote, calculate the exact number of shares that can be purchased if a $15,000 budget is allocated for building a position (rounded to two decimal places).",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurately returned latest closing price of Tesla (TSLA)",
+          "Accurately calculated and provided the number of shares purchasable with $15,000 (rounded to 2 decimal places)",
+          "Clearly displayed the stock price used and final position size"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T008",
+      "query": "As a junior stock analyst, please query the latest real-time stock price of Apple Inc. (AAPL) and obtain earnings per share (EPS) data from its latest financial report. Calculate the current P/E ratio and briefly describe its relative position among large-cap tech stocks.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest real-time stock price of AAPL",
+          "Latest financial report EPS data",
+          "Calculated P/E ratio value",
+          "Relative valuation positioning conclusion among tech stocks"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "get_financial_statements"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T009",
+      "query": "Please obtain the current stock price of Apple Inc. (AAPL), find its diluted earnings per share (Diluted EPS) for the most recent full fiscal year, and then calculate its current P/E ratio.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurately obtained latest AAPL stock price",
+          "Correctly extracted diluted EPS for the most recent fiscal year",
+          "Accurately calculated and output the P/E ratio value"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "get_financial_statements"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T010",
+      "query": "Please query the latest real-time stock price of NVIDIA (NVDA). Assuming its trailing twelve months (TTM) earnings per share (EPS) is $28.50, please calculate its current trailing P/E ratio. Combined with the current valuation background of the semiconductor industry, briefly evaluate whether this P/E ratio is within a reasonable range.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest real-time stock price of NVDA",
+          "Calculated trailing P/E ratio value",
+          "Brief analysis of current valuation rationality"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T011",
+      "query": "Please perform a basic valuation analysis for NVIDIA (NVDA). The steps are as follows: 1. Call the tool to obtain financial statement data for its latest full fiscal year, extract operating cash flow, and deduct capital expenditures to calculate free cash flow (FCF). 2. Obtain NVDA's latest stock price and total shares outstanding to calculate the current total market capitalization. 3. Call the macro data tool to obtain the current US 10-year Treasury yield as a risk-free rate benchmark. 4. Use calculation tools to calculate the FCF yield (FCF/Total Market Cap) and compare it with the 10-year Treasury yield. Please output the FCF calculation details, total market cap, specific FCF yield value, and provide a professional conclusion on whether the stock's current valuation is relatively attractive based on the yield spread.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_stock_price",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Free cash flow (FCF) calculation result for the latest fiscal year",
+          "Current total market capitalization calculation result",
+          "Specific FCF yield percentage",
+          "US 10-year Treasury yield value",
+          "Valuation attractiveness conclusion based on the yield spread"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_stock_price"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T012",
+      "query": "As a sell-side stock researcher, please perform a quick fundamental and intrinsic value assessment for Tesla (TSLA). First, obtain the cash flow statement from its latest annual report to extract operating cash flow and capital expenditures, and then calculate the latest free cash flow (FCF). Second, query the current US 10-year Treasury yield and set the equity risk premium at 5.5% to derive the weighted average cost of capital (WACC) as the discount rate. Assume FCF will maintain a 12% compound annual growth rate for the next 5 years, with a perpetual growth rate of 3%. Please use the DCF model to calculate the company's total equity value and intrinsic value per share. Finally, obtain the latest USD to CNY exchange rate to convert the intrinsic value per share into a Renminbi (CNY) quote, and provide a clear valuation conclusion (undervalued/fairly valued/overvalued) compared to the current secondary market stock price.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "calculate_dcf",
+        "get_exchange_rate"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Extracted latest annual free cash flow (FCF) value for Tesla",
+          "Calculated WACC discount rate",
+          "Intrinsic value per share (USD) output by the DCF model",
+          "Per-share valuation in Renminbi (CNY) converted at real-time exchange rate",
+          "Clear valuation rating (undervalued/fairly valued/overvalued) compared to current market price"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "get_exchange_rate"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T013",
+      "query": "Please assist in evaluating Tesla's (TSLA) current valuation level and macro interest rate sensitivity. Specific requirements: 1. Obtain TSLA's latest disclosed annual net income and weighted average shares outstanding to calculate earnings per share (EPS); 2. Obtain TSLA's latest real-time closing price; 3. Obtain the current US 10-year Treasury yield as a risk-free rate benchmark; 4. Call calculation or code tools to calculate its current static P/E and earnings yield, and find the spread between the earnings yield and the 10-year Treasury yield; 5. Briefly analyze whether this valuation has a margin of safety and potential downside risk based on the spread result and the current macro interest rate cycle. Please output the complete calculation chain and professional research conclusions.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_stock_price",
+        "get_macro_data",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Calculated TTM EPS value",
+          "Current P/E ratio and earnings yield value",
+          "Spread between earnings yield and 10-year US Treasury yield",
+          "Valuation margin of safety conclusion based on spread and macro rate environment"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price",
+            "get_macro_data"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T014",
+      "query": "As a stock researcher, please perform a fundamental and valuation analysis for NVIDIA (NVDA). First, obtain the net income attributable to shareholders from its latest annual income statement and total debt from its balance sheet, and calculate its P/E ratio and debt-to-equity (D/E) ratio combined with the current real-time stock price. Subsequently, query the latest announced US Consumer Price Index (CPI) year-on-year growth rate data. Finally, assuming the risk-free rate rises by 0.75% following inflation expectations, use the code execution tool to estimate its theoretical fair stock price under valuation pressure based on the earnings yield reciprocal model (Fair Price = EPS / (Current Risk-Free Rate + 5% Risk Premium)), and briefly explain the transmission mechanism of a high-inflation environment to semiconductor growth stock valuations.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_stock_price",
+        "get_macro_data",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurately extracted latest annual net income and total debt data for NVIDIA",
+          "Calculated current P/E ratio and D/E ratio based on real-time stock price",
+          "Latest US CPI year-on-year growth rate value",
+          "Theoretical fair stock price calculation result under the risk-free rate hike assumption",
+          "Qualitative analysis of the impact of macro inflation and interest rate changes on tech growth stock valuations"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T015",
+      "query": "As an equity researcher, please perform a quick relative valuation analysis for TSMC (TSM). Please complete the following tasks: 1. Obtain TSMC's current real-time stock price and shares outstanding to calculate the total market capitalization. 2. Call the financial data interface to extract total debt and cash and cash equivalents from its latest balance sheet, as well as EBITDA for the last four quarters. Based on this, calculate the enterprise value (EV) and the EV/EBITDA multiple. 3. Obtain the current US 10-year Treasury yield as the market risk-free rate benchmark. 4. Use calculation tools to calculate the ratio of (EV/EBITDA) to (1/10-year Treasury yield) (i.e., the risk premium adjustment factor), and output the final calculation result and a brief valuation interpretation.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Total market capitalization calculation process and result",
+          "Enterprise value (EV) and EV/EBITDA multiple",
+          "US 10-year Treasury yield value",
+          "Calculation result of the risk premium adjustment factor ((EV/EBITDA) / (1/Yield))",
+          "Brief valuation conclusion combined with macro interest rates"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T016",
+      "query": "As a stock researcher, please perform a quick valuation and sentiment cross-verification for Microsoft (MSFT). First, extract MSFT's latest annual free cash flow and total shares outstanding data. Second, obtain the current US 10-year Treasury yield to set the benchmark risk-free rate. Next, search for major financial news about Microsoft in the last two weeks to assess the impact of management guidance or AI product commercialization progress on short-term growth expectations, providing a clear sentiment judgment (optimistic/neutral/pessimistic) and adjusting the equity risk premium by \u00b11% accordingly. Finally, combined with MSFT's real-time stock price, use the DCF model to estimate its fair value per share and calculate the current trading price relative to the model's margin of safety or premium level. Output must include the complete data extraction path, key parameter assumptions, calculation logic, and final conclusion.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "get_stock_price",
+        "calculate_dcf"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest annual free cash flow and total shares data",
+          "US 10-year Treasury yield",
+          "Sentiment rating and risk premium adjustment value based on news",
+          "Fair value per share derived from the DCF model",
+          "Discount or premium percentage of current stock price relative to fair value"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T017",
+      "query": "Please perform a fundamental valuation assessment for NVIDIA (NVDA). First, obtain its latest closing price and the shares outstanding disclosed in the latest financial report to calculate the current total market capitalization. Then, retrieve its net income data for the most recent full fiscal year and calculate the trailing P/E ratio (P/E TTM). Also, obtain the current US 10-year Treasury yield as a risk-free rate benchmark. Finally, calculate NVIDIA's earnings yield (Earnings Yield = 1 / P/E) and the spread between it and the risk-free rate, and briefly judge whether the current valuation has a relative margin of safety based on this spread data.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Current total market capitalization",
+          "Trailing P/E ratio (P/E TTM)",
+          "Earnings yield (Earnings Yield)",
+          "Spread with 10Y US Treasury yield (percentage points)",
+          "Valuation margin of safety conclusion"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T018",
+      "query": "As a stock analyst, please perform a basic valuation assessment for NVIDIA (NVDA). First, obtain its latest real-time stock price, then extract trailing twelve months (TTM) earnings per share (EPS) from the latest financial data. Calculate the current P/E ratio based on these two data points. Next, obtain the latest US 10-year Treasury yield as a risk-free rate benchmark, calculate NVIDIA's earnings yield (Earnings Yield = 1/P/E), and derive the spread between the earnings yield and the risk-free rate. Finally, briefly evaluate whether the current valuation level has a margin of safety combined with the calculation results.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest NVDA stock price",
+          "NVDA TTM earnings per share (EPS)",
+          "Calculated current P/E ratio",
+          "US 10-year Treasury yield",
+          "Earnings yield (Earnings Yield)",
+          "Spread between earnings yield and risk-free rate",
+          "Brief margin of safety evaluation based on the spread"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T019",
+      "query": "As an equity researcher, please perform an absolute valuation analysis for NVIDIA (NVDA). Please execute the following operations in order: 1. Obtain NVDA's latest annual free cash flow (FCF) data; 2. Query the current US 10-year Treasury yield as a risk-free rate benchmark; 3. Assuming an equity risk premium of 5%, calculate the total discount rate and use the DCF model with a 3% perpetual growth rate to calculate the company's intrinsic value; 4. Obtain NVDA's current real-time stock price, calculate the percentage deviation between the stock price and intrinsic value, and provide a clear conclusion on whether there is an investment margin of safety based on the calculation results.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "calculate_dcf",
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest annual free cash flow amount extracted",
+          "US 10-year Treasury yield queried",
+          "Calculated discount rate value",
+          "Intrinsic value calculated by the DCF model",
+          "NVDA current real-time stock price",
+          "Percentage deviation between stock price and intrinsic value",
+          "Clear investment margin of safety conclusion (overvalued/undervalued/fairly valued)"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T020",
+      "query": "As a US stock researcher, please perform a cash flow relative valuation analysis for NVIDIA (NVDA). First, obtain its latest annual free cash flow (FCF) data and current total market capitalization, and calculate the free cash flow yield (FCF Yield). Next, query the latest US 10-year Treasury yield and use it as a risk-free rate benchmark to calculate the spread between the FCF Yield and this benchmark yield (in basis points). Please provide the detailed calculation process, the final spread value, and a brief investment view based on this spread.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_stock_price",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest annual free cash flow for NVIDIA",
+          "Current total market capitalization",
+          "Free cash flow yield (%)",
+          "US 10-year Treasury yield (%)",
+          "Spread between FCF yield and Treasury yield (basis points)",
+          "Brief investment view based on the spread"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T021",
+      "query": "Please conduct a comprehensive equity research and intrinsic value assessment for TSMC (TSM). Specific requirements are as follows:\n1. Obtain its latest stock price and free cash flow (FCF) data for the past three years.\n2. Query the current 10-year US Treasury yield (as the risk-free rate) and the latest USD to New Taiwan Dollar (USD/TWD) exchange rate for cross-market valuation reference.\n3. Search for core financial news in the last three months regarding TSMC's advanced packaging capacity expansion and AI chip demand, and based on this, reasonably set a compound annual growth rate (CAGR) assumption for revenue over the next 5 years, detailing the reasons for the setting in the answer.\n4. Combined with the obtained financial data, macro interest rates, exchange rate adjustment factors, and set growth rate, use the DCF model to calculate its intrinsic value per share (in USD, the weighted average cost of capital WACC calculation logic must be clarified).\n5. Calculate the discount/premium percentage of the current market stock price relative to the intrinsic value, and combined with macro cycle and technical factors, provide a clear investment rating (buy, hold, or sell) and core decision logic.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "calculate_dcf",
+        "python_interpreter",
+        "get_stock_price"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Specific values for latest stock price and past three years' free cash flow (FCF)",
+          "10-year US Treasury yield and USD/TWD real-time exchange rate",
+          "5-year revenue CAGR assumption value and its detailed logic based on recent news",
+          "Intrinsic value per share (USD) calculated by the DCF model and WACC setting parameters",
+          "Discount/premium percentage of current stock price relative to intrinsic value",
+          "Clear investment rating (buy/hold/sell) and complete investment decision logic"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "get_exchange_rate",
+            "search_financial_news"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ],
+          [
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T022",
+      "query": "As a buy-side equity researcher, please perform a cross-currency valuation and investment rating analysis for ASML Holding (ASML). Please execute according to the following logic: First, obtain the free cash flow, net debt, and cash equivalents data from its latest quarterly report; second, extract the current US macro benchmark interest rate (such as the 10-year Treasury yield) as the basis for building the discount rate, and retrieve news on recent semiconductor equipment export controls and capital expenditure trends, and reasonably lower/raise the 5-year free cash flow compound growth rate assumption based on this; subsequently, use the DCF model to estimate its intrinsic value per share (USD); then, obtain ASML's real-time trading price and the USD/EUR spot exchange rate, convert the intrinsic value into Euros and compare it with the current market price to calculate the implied discount/premium rate; finally, provide clear investment advice (buy/hold/sell) combined with the macro environment, news sentiment, and quantitative model output, and quantitatively explain the core driving logic and downside risks.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "search_financial_news",
+        "calculate_dcf",
+        "get_exchange_rate",
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest quarterly free cash flow and net debt basic data",
+          "Discount rate/WACC parameters set based on macro interest rates",
+          "5-year FCF growth rate assumption and basis adjusted based on news sentiment",
+          "Intrinsic value per share (USD) output by the DCF model",
+          "USD/EUR real-time exchange rate and converted Euro intrinsic value",
+          "Calculation of the discount/premium rate of the current market price and intrinsic value",
+          "Clear investment rating and quantitative/qualitative support logic"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ],
+          [
+            "get_stock_price",
+            "get_exchange_rate"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T023",
+      "query": "As an equity researcher for the global tech sector, please conduct a deep valuation and investment feasibility assessment for TSMC (TSM). Please strictly perform the following multi-step analysis: 1. Obtain free cash flow (FCF) from TSM's latest financial report and revenue and capital expenditure data for the past three years; 2. Query the current US 10-year Treasury yield to set the risk-free rate, and obtain the real-time USD to New Taiwan Dollar (USD/TWD) exchange rate to unify the valuation currency unit; 3. Retrieve financial news from the last three months regarding AI computing demand, semiconductor equipment supply chain bottlenecks, and geopolitical export control policies, and quantitatively adjust the revenue compound growth rate assumption for the next 5 years based on this; 4. Set a reasonable equity risk premium (ERP) and WACC combined with the current macro interest rate environment and industry sentiment, and use the DCF model to calculate its intrinsic value per share; 5. Obtain TSM's current real-time quote for US stocks, and calculate the premium/discount magnitude between the intrinsic value and market price. The final output must include: key financial and macro data extraction results, growth rate assumption parameters revised based on news sentiment, DCF valuation details and intrinsic value per share (clearly labeled with currency unit), current stock price discount/premium percentage, and provide a clear investment rating (buy/hold/sell) and core decision logic.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_stock_price",
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "calculate_dcf",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Extracted TSM latest free cash flow, capital expenditure, and historical revenue growth data",
+          "Provided US 10-year Treasury yield and USD/TWD real-time exchange rate",
+          "Clearly listed future 5-year revenue growth rate assumptions revised based on recent news sentiment",
+          "Provided WACC setting basis and per-share intrinsic value calculated by DCF (noting currency unit)",
+          "Calculated and displayed the premium or discount percentage of the current stock price relative to the intrinsic value",
+          "Provided a clear investment rating and comprehensive logic combined with macro interest rates, industry fundamentals, and valuation levels"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T024",
+      "query": "Assuming you are a senior stock analyst, please conduct a deep valuation study on Alibaba (BABA). Specific requirements are as follows: 1. Obtain the latest US 10-year Treasury yield and China GDP growth rate and other macro data, and reasonably estimate the weighted average cost of capital (WACC) combined with the current market risk premium. 2. Retrieve Alibaba's free cash flow (FCF) financial data for the past three years. 3. Search for recent financial news about its Cloud Intelligence Group strategic adjustment and AI business layout, and set the FCF compound growth rate for the next 5 years based on news sentiment and business prospects (a specific value and basis must be given within the 3% to 8% range). 4. Call the discounted cash flow model (DCF) to calculate its intrinsic value per share (in USD). 5. Query BABA's current real-time stock price, and obtain the latest USD to CNY exchange rate, unify the intrinsic value and current stock price into Renminbi for comparison, and calculate the margin of safety percentage. 6. Use programming tools to complete the final margin of safety calculation and sensitivity check. The final output should clearly state the investment rating (buy/hold/sell) and complete core valuation logic.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_financial_statements",
+        "search_financial_news",
+        "calculate_dcf",
+        "get_stock_price",
+        "get_exchange_rate",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "WACC assumption basis based on macro data and market environment",
+          "Specific values for free cash flow in the past three years extracted",
+          "Future 5-year FCF compound growth rate set based on news and logical explanation",
+          "Intrinsic value per share (USD) output by the DCF model",
+          "BABA real-time stock price, USD to CNY exchange rate, and converted intrinsic value (CNY)",
+          "Margin of safety percentage calculation result",
+          "Clear investment rating (buy/hold/sell) and comprehensive reasoning logic"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_financial_statements"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T025",
+      "query": "As an equity researcher for a European hedge fund, please conduct a deep valuation analysis of NVIDIA (NVDA) to support investment decisions. Please complete the following steps: 1. Obtain NVIDIA's latest free cash flow (FCF), capital expenditure, and revenue data, and extract the current 10-year US Treasury yield as the risk-free rate. 2. Assuming an equity risk premium of 5.5%, a Beta value of 1.2, set the 5-year FCF compound growth rate based on historical growth and a 2.5% perpetual growth rate, use internal tools to calculate its DCF intrinsic value (in USD). 3. Search for the latest financial news and assess the potential impact of recent US semiconductor export control policy changes to China on its data center business revenue. If authoritative reports indicate a significant revenue downward revision or supply chain disruption risk, please apply an additional 15% risk discount to the DCF result; otherwise, maintain the original valuation. 4. Obtain the latest EUR/USD spot exchange rate, and convert both the adjusted intrinsic value and NVIDIA's current real-time stock price into Euros. 5. Write Python code to calculate the implied upside/downside (%) of the adjusted Euro valuation relative to the current Euro stock price, and comprehensively derive a clear investment recommendation (buy/hold/sell). The final output must strictly include: adjusted DCF intrinsic value (EUR), current stock price (EUR), implied upside/downside (%), and final investment recommendation.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "calculate_dcf",
+        "search_financial_news",
+        "get_exchange_rate",
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Adjusted DCF intrinsic value (EUR)",
+          "Current NVIDIA stock price (EUR)",
+          "Implied upside/downside (%)",
+          "Clear investment recommendation (buy/hold/sell)"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_exchange_rate",
+            "get_stock_price"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T026",
+      "query": "As a macro FX strategist, please obtain the current real-time spot exchange rate for USD to Swiss Franc (USD/CHF). Based on this exchange rate, calculate the specific amount for converting $1 million into Swiss Francs, and briefly analyze the potential impact of this exchange rate level on safe-haven capital flows in combination with current global macro risk appetite.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_exchange_rate",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurately provided USD/CHF real-time exchange rate value",
+          "Correctly calculated converted Swiss Franc amount for $1 million",
+          "Provided a reasonable exchange rate impact analysis combined with macro risk appetite"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T027",
+      "query": "As a macro FX strategist, please obtain the current real-time exchange rate for USD to Swiss Franc (USD/CHF), and query the latest US Federal Funds target rate. Please calculate the theoretical interest income (simple interest) that can be obtained by depositing $1 million at that rate for one year, and judge whether the current USD/CHF exchange rate has fallen below the key psychological support level of 0.8800.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_exchange_rate",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurate USD/CHF real-time exchange rate value",
+          "Latest US Federal Funds target rate value",
+          "Theoretical interest calculation result for $1 million for one year",
+          "Clear conclusion on whether the 0.8800 support level has been broken"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T028",
+      "query": "As a macro strategy analyst, please obtain the current British Pound to US Dollar (GBP/USD) spot exchange rate and the latest UK core CPI year-on-year growth rate data. Combined with these two indicators, briefly evaluate the support of the current core inflation level for the Bank of England maintaining restrictive interest rate policies, and its potential short-term impact on the GBP exchange rate.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_exchange_rate",
+        "get_macro_data"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurate GBP/USD current spot exchange rate value",
+          "Latest UK core CPI year-on-year growth rate data",
+          "Reasonable logical deduction of short-term GBP trends based on inflation and interest rate expectations"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "get_macro_data"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T029",
+      "query": "As a macro strategy researcher, please obtain the current real-time spot exchange rate for Euro to US Dollar (EUR/USD), and query the median of the latest US Federal Funds target rate range. Please provide the latest data for these two core indicators for a quick assessment of the macro foundation of current cross-market carry trades.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_exchange_rate",
+        "get_macro_data"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurately provided EUR/USD real-time exchange rate value",
+          "Accurately provided median of the Fed's latest Federal Funds target rate range",
+          "Data listed directly without complex calculation or long analysis"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T030",
+      "query": "As a macro strategy analyst, please obtain the current real-time exchange rate for USD to Japanese Yen (USD/JPY), as well as the Fed's latest Federal Funds target rate. If $1 million is invested in a one-year money market at that rate, please calculate the expected annualized interest income (in USD), and convert it into Japanese Yen at the current exchange rate. Please list the data used and calculation steps.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_exchange_rate",
+        "get_macro_data"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "USD/JPY real-time exchange rate value",
+          "Fed's latest Federal Funds target rate value",
+          "Expected annualized interest (USD) for $1 million",
+          "Japanese Yen amount after interest conversion"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T031",
+      "query": "As a macro strategy researcher, please query the current real-time exchange rate for USD to Renminbi (USD/CNY), and obtain the latest US Federal Funds Rate data. Combined with these two indicators, briefly explain the short-term impact logic of the current China-US interest rate spread on the exchange rate.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_exchange_rate",
+        "get_macro_data"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "USD/CNY real-time exchange rate value",
+          "Latest US Federal Funds Rate value",
+          "Logical analysis of the short-term impact of interest rate spread on exchange rate"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T032",
+      "query": "Please obtain the current real-time exchange rate for USD to Japanese Yen (USD/JPY), and query the latest US Consumer Price Index (CPI) year-on-year growth rate. Combined with these two data points, briefly analyze the macro fundamental pressure currently faced by the Japanese Yen exchange rate.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_exchange_rate",
+        "get_macro_data"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "USD/JPY real-time exchange rate value",
+          "US CPI year-on-year growth rate data",
+          "Macro pressure analysis conclusion based on exchange rate and inflation"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T033",
+      "query": "Please query the latest US monthly CPI year-on-year inflation data, and obtain the current real-time spot exchange rate for USD to Japanese Yen (USD/JPY). Based on these two key macro and FX data points, please briefly analyze the relative performance of the US Dollar in terms of inflation expectations and exchange rate.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurately provided latest US CPI year-on-year data",
+          "Accurately provided current USD/JPY real-time exchange rate",
+          "Reasonable brief analysis of the US Dollar's macro environment and exchange rate position combined with data"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T034",
+      "query": "As a macro FX strategist, please execute the following analysis tasks: 1. Obtain the latest US Federal Funds target rate and the most recent CPI year-on-year growth rate, and simultaneously obtain the Bank of Japan's current benchmark interest rate; 2. Query the current USD/JPY spot exchange rate, and use the calculation tool to accurately derive the nominal interest rate spread between the US and Japan (converted to basis points); 3. Retrieve authoritative financial news summaries from the last three trading days regarding the divergence in monetary policy paths between the Federal Reserve and the Bank of Japan; 4. Combined with the basic framework of interest rate parity theory and the latest macro events, evaluate whether the current US-Japan interest rate spread has been fully reflected in exchange rate pricing, and provide clear short-term long/short direction suggestions for USD/JPY and core logic.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "calculator",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurately listed specific values for US Federal Funds rate, US CPI year-on-year growth, and BOJ policy rate",
+          "Provided USD/JPY current spot exchange rate data",
+          "Clearly output nominal interest rate spread value (in basis points)",
+          "Includes core news summaries of US-Japan monetary policy divergence in the last three days",
+          "Gave clear USD/JPY short-term long/short direction judgment based on spread analysis and macro events"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T035",
+      "query": "As a macro FX strategy researcher, please evaluate the short-term driving logic of current US-Japan monetary policy divergence on the USD/JPY exchange rate. First, obtain the latest upper limit of the US Federal Funds target range and the Bank of Japan's uncollateralized overnight call rate, and simultaneously extract the most recent one-month CPI year-on-year growth rate for both countries. Second, retrieve the latest financial reports from the past 7 days regarding BOJ FX market intervention trends or the Fed's interest rate path. Next, obtain the current USD/JPY spot spot exchange rate. Finally, calculate the real interest rate difference between the two countries (nominal interest rate - CPI), and taking $1 million principal as an example, use the calculator to estimate the theoretical annualized carry trade return (in Japanese Yen) without considering exchange rate fluctuations. Please provide the complete data chain and calculation process.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news",
+        "get_exchange_rate",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest nominal interest rate and CPI year-on-year data for the US and Japan",
+          "News summary related to BOJ intervention or Fed policy in the past week",
+          "Current USD/JPY spot spot exchange rate",
+          "Calculation result of US-Japan real interest rate difference",
+          "Estimated annualized carry trade Yen return for $1 million principal"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T036",
+      "query": "As a macro FX trader, I need to analyze the impact of current US-Japan monetary policy divergence on USD/JPY pricing. Please complete the following analysis: 1. Obtain the latest US 10-year Treasury yield and core PCE price index (YoY); 2. Obtain the Japanese 10-year Treasury yield and Tokyo core CPI year-on-year data; 3. Obtain the current USD/JPY real-time spot exchange rate; 4. Call Python or calculator to calculate the real interest rate (nominal yield - inflation rate) for the US and Japan respectively, and derive the real interest rate spread between them; 5. Retrieve macro financial news from the last three days regarding policy expectations of the Fed and the BOJ, and combined with the calculated real interest rate spread, judge whether the current USD/JPY exchange rate deviates from fundamental support. Please output the real interest rates, specific real spread values, and provide macro conclusions on the exchange rate direction.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "US real interest rate value",
+          "Japan real interest rate value",
+          "US-Japan real interest rate spread value",
+          "USD/JPY real-time spot exchange rate",
+          "Overvalued/undervalued judgment of exchange rate based on real spread and macro news"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T037",
+      "query": "As a macro hedge fund researcher, I need to evaluate the impact of recent US monetary policy expectations on cross-FX arbitrage strategies. Please obtain the latest US Federal Funds Rate and the most recent CPI year-on-year data, and simultaneously grab the current USD/JPY spot exchange rate. Assuming the BOJ policy rate remains unchanged at 0.1%, please use the approximate formula for interest rate parity (Forward Rate \u2248 Spot Rate \u00d7 (1 + USD Annualized Rate \u00d7 Tenor - JPY Annualized Rate \u00d7 Tenor)) to calculate the theoretical 6-month forward rate for USD/JPY. Finally, based on the current spot rate and the calculated theoretical forward rate, estimate the expected 6-month annualized return of this arbitrage strategy (ignoring transaction costs). Please provide all base data, calculation processes, and final results.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest US Federal Funds rate value",
+          "Most recent US CPI year-on-year growth value",
+          "USD/JPY current spot exchange rate",
+          "Calculation result of USD/JPY 6-month theoretical forward rate",
+          "6-month expected annualized return",
+          "Clear explanation of calculation logic and formula application"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T038",
+      "query": "As a macro FX strategist, I need to evaluate the hedging cost for the current USD/JPY interest rate spread. Please obtain the current USD/JPY spot exchange rate, and the current 10-year Treasury yields for the US and Japan. Calculate the spread between the two countries, and use the approximate interest rate parity formula to estimate the annualized forward premium/discount rate. Finally, briefly analyze whether the current exchange rate has fully priced in the change in interest rate spread combined with recent financial news regarding BOJ monetary policy adjustment. Please give specific values and a brief analysis.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_exchange_rate",
+        "get_macro_data",
+        "calculator",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "USD/JPY spot exchange rate value",
+          "US 10-year Treasury yield",
+          "Japan 10-year Treasury yield",
+          "US-Japan 10-year Treasury yield spread percentage",
+          "Annualized forward premium/discount rate calculated based on the interest rate parity formula",
+          "Valuation rationality analysis of the exchange rate combined with recent macro news"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data",
+            "calculator",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T039",
+      "query": "As a macro FX strategist, I need to evaluate the valuation level and trading opportunities for the current Euro to US Dollar (EUR/USD). Please execute the following analysis: First, obtain the latest CPI year-on-year data and central bank benchmark interest rates for the US and the Eurozone, and calculate the real interest rates (nominal rate minus CPI) for both regions. Second, obtain the current EUR/USD spot exchange rate. Simultaneously, retrieve the latest financial news from the past week regarding the Fed or the European Central Bank (ECB) monetary policy. Finally, combined with the real interest rate spread, spot exchange rate changes, and central bank policy tone, calculate the macro interest rate spread and provide clear directional trading suggestions (long/short) for EUR/USD and core logic.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurately extracted latest CPI and benchmark interest rate values for both the US and Europe",
+          "Correctly calculated real interest rates and spread for both countries (US real rate - Eurozone real rate)",
+          "Provided current EUR/USD real-time spot exchange rate",
+          "Summarized core viewpoints of recent Fed or ECB monetary policy news",
+          "Provided clear directional EUR/USD trading recommendation (long/short) and logical basis based on real spread and policy expectations"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "search_financial_news"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T040",
+      "query": "As a macro strategy analyst, please evaluate the relative attractiveness of the US Dollar and the Euro. First, obtain the US Federal Funds rate and latest US CPI year-on-year data, as well as the ECB's main refinancing rate and latest Eurozone HICP (Harmonized Index of Consumer Prices) year-on-year data. Use the obtained data to calculate real interest rates (Real Rate \u2248 Nominal Rate - Inflation Rate) for both the US and Europe, and derive the real interest rate spread. Then, query the current USD/EUR spot exchange rate. Finally, combined with the real interest rate spread direction, exchange rate level, and current macro fundamentals, analyze the exchange rate risk and potential return faced by US Dollar-based investors allocating Euro assets, and provide specific macro hedging or cross-border asset allocation suggestions.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest nominal interest rate and inflation data for the US and Eurozone",
+          "Clear calculation results for US-Europe real interest rates and real spread",
+          "Current USD/EUR spot exchange rate quote",
+          "Macro strategy analysis and asset allocation suggestions combined with real spread and exchange rate"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T041",
+      "query": "As a macro strategist, I need to evaluate the hedging cost for the current Euro to US Dollar (EUR/USD). Please obtain the current EUR/USD spot exchange rate, and the latest short-term benchmark interest rates for the Eurozone and the US. Based on the Covered Interest Parity (CIP) theory, calculate the 3-month theoretical forward rate. Subsequently, search for key financial news from the last week regarding interest rate decisions or forward guidance from the ECB and the Fed, and analyze whether the deviation between current market pricing and theoretical values is within recent monetary policy divergence expectations. Finally, please give the estimated value of the 3-month forward points and brief macro strategy suggestions.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_exchange_rate",
+        "get_macro_data",
+        "calculator",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Clear EUR/USD current spot exchange rate value",
+          "Latest short-term benchmark interest rate values for the Eurozone and the US",
+          "3-month theoretical forward rate calculated based on the interest rate parity formula",
+          "Calculated Forward Points",
+          "Macro attribution analysis of exchange rate deviation combined with recent central bank policy news",
+          "Exchange rate hedging or arbitrage strategy suggestions for the current environment"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T042",
+      "query": "As a macro FX strategist, please evaluate the potential impact of recent US-Europe monetary policy divergence on the EUR/USD exchange rate. Please execute the following analysis: 1. Obtain the latest US Federal Funds target rate, the ECB main refinancing rate, and the latest CPI year-on-year data for both regions; 2. Obtain the current EUR/USD spot spot exchange rate; 3. Retrieve core financial news from the last 30 days regarding interest rate decisions and forward guidance of the Fed and the ECB; 4. Using interest rate parity theory (IRP), calculate the 1-year theoretical forward rate premium/discount magnitude (expressed in Pips) based on the obtained spread data. Finally, provide clear short-term trading direction suggestions (long/short/range-bound) combined with macro fundamental differences, spread pricing, and market news sentiment, and list 3 core quantitative indicators supporting this judgment.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurately listed benchmark interest rates and latest CPI year-on-year values for the US and Eurozone",
+          "Provided current EUR/USD spot exchange rate quote",
+          "Extracted core divergence points and market sentiment from US-Europe central bank policy news in the last 30 days",
+          "Correctly calculated and displayed 1-year theoretical forward premium/discount points (Pips)",
+          "Gave clear short-term trading direction and 3 data support points"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T043",
+      "query": "As a macro FX strategist, please evaluate the pricing impact of current US real yields on the Euro to US Dollar (EUR/USD). Specific requirements are as follows: 1. Obtain the latest US 10-year Treasury yield and the latest US CPI year-on-year data; 2. Query the real-time spot exchange rate for EUR/USD; 3. Retrieve the latest official statements or authoritative media reports from the ECB in the last week regarding monetary policy or the rate cut path; 4. Use the calculator tool to calculate the US real yield (10-year yield - CPI), and taking 1.0850 as the theoretical equilibrium benchmark, calculate the current exchange rate's deviation magnitude (percentage). Finally, provide a short-term trading strategy suggestion for EUR/USD of no more than 100 words, integrating the real spread and ECB policy expectations.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "US 10-year Treasury yield",
+          "US CPI year-on-year data",
+          "Calculated US real yield",
+          "EUR/USD real-time exchange rate",
+          "Percentage deviation relative to the 1.0850 benchmark",
+          "Short-term trading strategy suggestions combined with ECB policy"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "search_financial_news"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T044",
+      "query": "As a macro strategist, please evaluate the potential impact of the Federal Reserve raising interest rates by 50 basis points next month while the Bank of Japan maintains its zero-interest rate policy on Toyota Motor's (7203.T) USD-denominated earnings per share (EPS) over the next year. Specific requirements: 1. Obtain the current USD/JPY spot exchange rate and the latest benchmark interest rates and CPI inflation data for the US and Japan. 2. Grab the latest financial news from the last two weeks regarding policy divergence between the Fed and the BOJ and FX market intervention, and extract market sentiment tendencies. 3. Extract the overseas revenue share and FX sensitivity parameters disclosed by management from Toyota's latest annual report. 4. Assuming a 5% depreciation of the Yen against the Dollar due to the widening US-Japan interest rate spread, adjust the revenue growth rate combined with news sentiment weights (optimistic +1.5%, pessimistic -2%), use Python to build an EPS forecasting model adjusted for FX hedging costs, and calculate the adjusted forward P/E. 5. Output a complete quantitative report including data sources, model assumptions, calculation results, and macro hedging suggestions.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_exchange_rate",
+        "get_macro_data",
+        "search_financial_news",
+        "get_financial_statements",
+        "python_interpreter",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurately provided latest USD/JPY spot exchange rate value",
+          "Listed current benchmark interest rates and CPI data for the US and Japan",
+          "Stated the overseas revenue share and FX sensitivity coefficient from Toyota's latest annual report",
+          "Summarized core sentiment tendencies of recent central bank policy news",
+          "Displayed the FX-adjusted EPS forecasting model built with Python and key parameters",
+          "Gave the final calculated adjusted forward P/E and specific macro hedging suggestions"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "python_interpreter",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T045",
+      "query": "As a macro FX strategist, please evaluate the cross-impact of the widening US-Japan interest rate spread and recent USD/JPY volatility on Toyota Motor's (TM) earnings expectations. Please follow these steps: 1. Call get_macro_data to obtain the latest US Federal Funds rate and BOJ benchmark rate; 2. Call get_exchange_rate to query the current USD/JPY real-time mid-price; 3. Call get_financial_statements to extract Toyota's consolidated revenue (in Yen) from its latest full fiscal year; 4. Call search_financial_news to retrieve deep research reports or financial news from the last three months regarding the \"US-Japan spread, Yen depreciation transmission mechanism to Japanese automakers' profits,\" and extract the market consensus FX profit elasticity coefficient (i.e., percentage increase in operating profit for every 1% appreciation of USD/JPY); 5. Use python_interpreter for stress testing modeling: based on the latest revenue, combined with the current exchange rate and extracted elasticity coefficient, calculate the expected incremental USD profit for Toyota assuming USD/JPY appreciates another 3.5% over the next 12 months, and output the complete derivation formula and final value.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "get_financial_statements",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Specific values for latest US and Japan benchmark rates",
+          "Queried USD/JPY real-time exchange rate of the day",
+          "Toyota's latest fiscal year revenue (in Yen)",
+          "FX profit elasticity coefficient summarized from news/research reports",
+          "Expected incremental USD profit under the scenario of 3.5% USD/JPY appreciation and complete calculation derivation process"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T046",
+      "query": "As a macro strategist, I need to evaluate the USD-denominated valuation of the Eurozone tech giant SAP SE (Ticker: SAP.DE or SAP US ADR) in the current monetary policy divergence environment. Please perform the following analysis: 1. Obtain the current EUR/USD spot exchange rate and extract the latest policy rates for the ECB and the Fed respectively. Use the Uncovered Interest Parity (UIP) approximate formula to estimate the 1-year theoretical forward rate. 2. Obtain the operating free cash flow (FCF) and total shares data from SAP's latest annual report, and retrieve financial news summaries from the last 30 days regarding \"slowing capital expenditures for European companies,\" \"Euro exchange rate volatility hedging,\" or \"semiconductor/cloud infrastructure supply chain risks.\" 3. If news sentiment leans negative or clearly mentions cost/supply chain pressure, please lower the future 3-year FCF compound expected growth rate by 1.5 percentage points based on the industry benchmark of 5%; if sentiment is neutral or positive, maintain 5%. 4. Assuming a discount rate (WACC) of 8.5% and a perpetual growth rate of 2%, calculate SAP's intrinsic value per share (in Euros) based on the adjusted FCF sequence. 5. Convert the intrinsic value per share into USD using the 1-year forward rate obtained in step 1, obtain the real-time stock price of current SAP US stocks (or corresponding ADR), calculate the discount/premium magnitude, and provide a clear investment recommendation (buy/hold/sell) and core logic combined with macro FX risks.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_exchange_rate",
+        "get_macro_data",
+        "get_financial_statements",
+        "search_financial_news",
+        "calculate_dcf",
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "1-year EUR/USD theoretical forward rate estimate and calculation process",
+          "Expected FCF growth rate based on news sentiment adjustment and basis",
+          "SAP intrinsic value per share in Euros (DCF result)",
+          "Expected USD-denominated stock price converted by forward rate",
+          "Current real-time USD stock price comparison, discount/premium percentage, and final investment rating"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data",
+            "python_interpreter"
+          ],
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price",
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T047",
+      "query": "As a macro strategist and FX trader, please evaluate the impact of current monetary policy divergence between the Fed and the ECB on the cross-Atlantic business valuation of German industrial giant Siemens AG. Specific requirements are as follows: 1. Obtain the latest US Federal Funds rate, Eurozone core CPI year-on-year growth, and Germany's latest quarterly GDP quarter-on-quarter data; 2. Obtain the current EUR/USD spot exchange rate, and estimate the 3-month forward rate based on the US-Europe risk-free spread using interest rate parity (IRP); 3. Retrieve Siemens' latest annual financial report and extract revenue shares for North America and Europe; 4. Retrieve authoritative financial news from the last 30 days regarding \"US-Europe trade tariff policies\" or \"German manufacturing PMI below expectations,\" extract sentiment factors and set revenue expectation adjustment coefficients; 5. Use Python to write a complete calculation script, overlaying exchange rate expectations and news sentiment on North American revenue forecasts, while simultaneously raising WACC by 50bps based on macro interest rate changes, and execute a simplified DCF model to calculate the percentage change in intrinsic value; 6. Output a macro strategy report including an FX hedging plan (such as forward contract hedging ratio suggestions) and adjusted target price ranges.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "python_interpreter",
+        "get_financial_statements",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurately extracted and listed latest key macro indicators for the US and Europe (Rates, CPI, GDP)",
+          "Provided EUR/USD spot exchange rate and 3-month forward rate calculation process based on IRP",
+          "Clearly gave Siemens' latest revenue share data for North American and European markets",
+          "Revenue adjustment assumption logic derived from quantitative financial news",
+          "Correct implementation of exchange rate conversion, sentiment coefficient adjustment, WACC hike, and DCF calculation in Python script",
+          "Gave clear macro hedging ratio suggestions and adjusted target price change conclusions"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "python_interpreter"
+          ],
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T048",
+      "query": "As a macro strategist, please evaluate the potential impact of the latest Fed rate decision and latest Eurozone CPI data on the EUR/USD exchange rate. Specific requirements: 1. Obtain the US Federal Funds rate and latest Eurozone CPI year-on-year growth; 2. Query the current spot exchange rates for EUR/USD and USD/JPY; 3. Retrieve authoritative financial news from the last week regarding monetary policy of the Fed and the ECB, and briefly analyze market sentiment tendencies; 4. Based on the Uncovered Interest Parity (UIP) theory, use Python to calculate the theoretical value of the 6-month EUR/USD forward rate (assuming the ECB deposit facility rate is 4.0%, and the US rate takes the actual obtained value, converted to annualized); 5. If a Japanese exporting company faces a 10 million Euro accounts receivable risk, provide a specific FX hedging strategy suggestion combined with the above macro data and exchange rate trends, and estimate the potential profit or loss of this position in Yen if EUR/USD depreciates by 1%. Please ensure rigorous logic and accurate data citation.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurately listed US Federal Funds rate and latest Eurozone CPI data",
+          "Provided current EUR/USD and USD/JPY spot exchange rates",
+          "Summarized recent Fed and ECB policy news and analyzed market sentiment tendencies",
+          "Displayed the 6-month forward rate theoretical value calculation process and result based on interest rate parity",
+          "Gave a specific FX hedging strategy (such as forward contracts or option combinations) for 10 million Euro accounts receivable",
+          "Quantitatively calculated the potential profit or loss amount in Yen corresponding to a 1% depreciation of EUR/USD"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T049",
+      "query": "As a macro strategy analyst, please evaluate the potential transmission impact of the ECB's latest benchmark rate decision and the most recent US CPI year-on-year data on the EUR/USD exchange rate. Based on the obtained macro and FX data, select a multinational industrial giant with high revenue exposure to the European market (such as Siemens AG) and obtain its operating cash flow data from its latest annual cash flow statement. Combined with recent financial news sentiment regarding Eurozone manufacturing sentiment and export tariff policies, quantitatively adjust the company's expected free cash flow (FCF) compound growth rate for the next three years. Use the adjusted parameters to run the DCF model to calculate its intrinsic value per share, and compare it with the current real-time stock price to calculate the premium/discount percentage. The final output must include key macro and FX data citations, FCF adjustment logic, DCF valuation results, valuation deviation analysis, and macro FX hedging strategy suggestions for exchange rate volatility risk.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "get_financial_statements",
+        "calculate_dcf",
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest ECB rate and latest US CPI data",
+          "EUR/USD real-time and comparison period exchange rates",
+          "Target company's latest operating cash flow and initial FCF benchmark",
+          "FCF growth rate adjustment logic based on news sentiment and macro data",
+          "Intrinsic value per share calculated by the DCF model",
+          "Premium/discount percentage of intrinsic value and current stock price",
+          "Macro FX hedging strategy suggestions for EUR/USD volatility"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T050",
+      "query": "As a macro and FX strategy researcher, please conduct a cross-asset stress test for Microsoft's (MSFT) European business exchange rate risk. Please execute the following steps in order: 1) Obtain the latest US Federal Funds target rate and Eurozone core HICP year-on-year data; 2) Grab the 3-month EUR/USD exchange rate mean and current volatility data; 3) Extract Microsoft's Euro-denominated operating revenue from its latest financial report for the European region; 4) Retrieve institutional research reports and financial news regarding the use of tech stock FX hedging tools in the context of widening US-Europe spreads; 5) Use Python to build a simplified macro FX transmission model, assuming for every 25 basis point widening of the US-Europe spread (corresponding to a roughly 0.4% relative depreciation of the Euro), combined with the hedging ratio disclosed in the financial report, calculate the potential erosion amount (in million USD) for Microsoft's converted USD revenue under a scenario of Eurozone inflation exceeding expectations. Please integrate news market sentiment and quantitative calculation results, output complete data citations, calculation processes, stress test results, and final macro strategy rating.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "get_financial_statements",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Cited Fed rate and Eurozone core HICP data",
+          "Extracted EUR/USD recent mean, volatility, and Microsoft European region Euro revenue",
+          "USD revenue erosion estimate based on Python macro scenario simulation",
+          "Core viewpoints on FX hedging tools and institutional sentiment from financial news",
+          "Clear macro strategy rating and hedging suggestion conclusion"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T051",
+      "query": "As a macro hedge fund strategist, please evaluate the transmission path of current US-Europe monetary policy divergence on the EUR/USD exchange rate, and measure the 1-year hedged expected total return of leading European tech and semiconductor companies (such as ASML or Infineon) for US-based institutional investors. Please strictly execute according to the following logic:\n1. Obtain the current EUR/USD spot exchange rate, and respectively grab the latest US Federal Funds target rate and the latest Eurozone main refinancing rate.\n2. Retrieve Fed and ECB official speeches, CPI data releases, and major investment bank macro research reports from the past 30 days, and extract exchange rate expectation biases and core arguments of policy divergence.\n3. Obtain the target company's latest financial data (revenue growth, gross margin, free cash flow), combined with the European manufacturing PMI and semiconductor cycle position, and estimate its expected 12-month stock return in Euros.\n4. Use the Interest Rate Parity (IRP) theory to calculate the 1-year theoretical forward rate, and revise the forward rate within a reasonable range of \u00b13% combined with news sentiment.\n5. Call code tools to conduct comprehensive modeling and calculation: \u2460 Expected total USD return under a full FX forward hedging strategy; \u2461 FX risk exposure and return volatility contribution under an unhedged scenario; \u2462 Actual hedging costs (annualized premium/discount).\nFinal output must include structured macro assessment, core model parameters, a comparison table of returns before and after hedging, and clear tactical allocation and position suggestions.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_exchange_rate",
+        "get_macro_data",
+        "get_financial_statements",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "EUR/USD spot exchange rate and latest US-Europe benchmark rate values",
+          "US-Europe central bank policy divergence qualitative conclusions and exchange rate expectation direction",
+          "Target company core financial indicators extraction and 1-year Euro-denominated expected return",
+          "1-year forward rate derived and revised based on IRP",
+          "Expected total USD return under a full FX forward hedging strategy",
+          "Marginal impact magnitude of exchange rate volatility on USD returns in an unhedged scenario",
+          "Tactical allocation suggestions and risk warnings combined with macro and micro data"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data"
+          ],
+          [
+            "get_financial_statements",
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T052",
+      "query": "As a macro hedge fund strategist, please evaluate the impact of the ECB's latest monetary policy shift on the Euro exchange rate and the valuation of German tech giant SAP (SAPGY). Cross-market and cross-asset analysis tasks need to be completed: 1. Retrieve latest Eurozone CPI year-on-year, real GDP growth, and the ECB main refinancing rate; 2. Retrieve major financial news regarding ECB interest rate decisions and EUR/USD trends from the past 7 days, extracting market sentiment tendencies and policy path expectations; 3. Obtain SAP's latest annual report free cash flow (FCF) data and current Euro-denominated stock price; 4. Query current EUR/USD spot exchange rate; 5. Build a dynamic exchange rate sensitivity valuation model in Python: based on the current spot rate and historical volatility, assuming for every 1% appreciation of the Euro against the Dollar, SAP's converted free cash flow from overseas non-Eurozone revenue moves 0.35% in the same direction, adjusting future 5-year cash flow forecasts; 6. Set discount rate (WACC) at 8.2% and perpetual growth rate at 2.0%, calculate adjusted USD-denominated DCF valuation, and convert it back to Euros at the current exchange rate; 7. Compare with current stock price to derive implied premium/discount rate, and provide clear asset allocation suggestions (overweight/underweight/neutral) combined with macro data and exchange rate outlook.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news",
+        "get_financial_statements",
+        "get_stock_price",
+        "get_exchange_rate",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest Eurozone core macro indicators (CPI, GDP, ECB rate)",
+          "ECB policy and EUR/USD news sentiment summary and exchange rate expectations",
+          "SAP latest free cash flow and current EUR stock price",
+          "USD-denominated DCF intrinsic value adjusted by exchange rate sensitivity",
+          "Per-share valuation converted to Euros and implied yield/premium rate relative to current stock price",
+          "Final investment strategy suggestions based on macro cycle and FX hedging logic"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements",
+            "get_stock_price",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T053",
+      "query": "As a macro strategy and FX trader, please evaluate the impact of current US-Europe interest rate spreads on the USD-denominated returns of Euro assets. Please complete the following analysis:\n1. Obtain latest US core CPI year-on-year data and latest ECB main refinancing rate.\n2. Obtain current EUR/USD spot exchange rate, and derive the 6-month forward theoretical exchange rate using Interest Rate Parity (IRP) theory combined with the obtained US-Europe risk-free rates.\n3. Search and summarize financial news regarding \"Fed and ECB policy divergence\" or \"Dollar Index trends\" in the last 10 days, judging the overall sentiment tendency of the current FX market.\n4. Obtain the monthly historical stock price data of German industrial giant Siemens (SIE.DE) for the past 12 months.\n5. Use Python to calculate the annualized return and volatility of Siemens stock in Euros, and convert it into USD-denominated returns (considering exchange rate changes and forward hedging costs). Combined with macro data and news sentiment, output the expected risk-adjusted return in USD, and provide macro hedging suggestions.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "US core CPI year-on-year and ECB latest policy rate values",
+          "EUR/USD spot exchange rate and 6-month forward theoretical exchange rate derived based on IRP",
+          "Sentiment tendency summary of recent US-Europe central bank policy news",
+          "Annualized return of Siemens (SIE.DE) in Euros for the past 12 months",
+          "Expected USD-denominated return, FX hedging cost estimate, and macro strategy suggestions"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_stock_price"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T054",
+      "query": "To evaluate current market risk appetite and formulate a rotation strategy between tech and defensive sectors, please retrieve the latest real-time stock prices for XLK (Tech Sector ETF) and VDC (Consumer Staples ETF), and calculate the price ratio between the two (XLK divided by VDC) to judge whether the growth sector appears overcrowded. Please provide specific stock price values and the final ratio (rounded to two decimal places).",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "XLK real-time stock price value",
+          "VDC real-time stock price value",
+          "Calculated XLK/VDC price ratio (rounded to 2 decimal places)"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T055",
+      "query": "As a portfolio manager, I am evaluating a risk-adjusted rotation strategy from growth-oriented tech sectors to low-volatility defensive utility sectors. Please obtain the latest stock prices for Microsoft (MSFT) and Duke Energy (DUK), and calculate the price ratio between the two. Based on this ratio, briefly evaluate the relative attractiveness of current funds rotating from tech stocks to utility stocks.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest MSFT closing price",
+          "Latest DUK closing price",
+          "Price ratio between MSFT and DUK",
+          "Brief analysis of sector rotation based on relative valuation and volatility characteristics"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T056",
+      "query": "To evaluate current market risk appetite and rotation trends between tech and utility sectors, please query the latest real-time prices for XLK and XLU, calculate their relative price ratio (XLK/XLU), and provide a brief judgment on sector strength.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest XLK stock price",
+          "Latest XLU stock price",
+          "Calculated XLK/XLU price ratio",
+          "Preliminary conclusion on sector rotation and risk appetite based on the ratio"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T057",
+      "query": "As a portfolio manager, I am evaluating portfolio volatility risk during a rotation from growth tech stocks to defensive sectors. Please obtain Apple's (AAPL) real-time stock price and, combined with yesterday's known closing price of $192.30, calculate its current intraday change (rounded to two decimal places) to assist in judging short-term sector rotation trends.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "AAPL real-time stock price",
+          "Intraday percentage change"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T058",
+      "query": "To formulate a sector rotation strategy, I need to evaluate the relative price momentum of the tech sector (represented by XLK) and the financial sector (represented by XLF). Please respectively obtain the latest real-time stock prices for XLK and XLF, and calculate their price ratio (XLK price divided by XLF price). Based on this ratio, briefly explain whether current market funds show a trend towards growth-oriented sectors.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest XLK stock price",
+          "Latest XLF stock price",
+          "XLK/XLF price ratio",
+          "Brief analysis of sector fund flows"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T059",
+      "query": "As an asset allocation manager, I am tracking recent fund rotation signals between growth and defensive sectors. Please obtain the latest stock closing prices for TSMC (TSM) and Duke Energy (DUK). After obtaining the data, please use the calculator to calculate their price ratio (TSM / DUK), which is often used to judge whether current market risk appetite favors growth assets.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest TSM closing price",
+          "Latest DUK closing price",
+          "TSM/DUK price ratio"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T060",
+      "query": "As a junior trader, I need to quickly evaluate the current market rotation risk between aggressive and defensive sectors. Please obtain the latest closing prices for the tech sector ETF (XLK) and the utility sector ETF (XLU), and calculate the price ratio of XLK divided by XLU (rounded to two decimal places) as a preliminary reference for relative sector strength.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest XLK closing price",
+          "Latest XLU closing price",
+          "Accurately calculated XLK/XLU price ratio",
+          "Brief explanation of whether the current market favors aggressive or defensive sectors based on the ratio"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T061",
+      "query": "I am monitoring the relative momentum of tech and energy sectors to adjust asset allocation. Please obtain the latest closing prices for Microsoft (MSFT) and Chevron (CVX), use the calculator to calculate their price ratio (MSFT divided by CVX), and briefly analyze potential fund rotation tendencies between sectors based on this relative valuation.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest MSFT and CVX closing prices",
+          "MSFT/CVX price ratio calculation result",
+          "Analysis of sector fund rotation tendencies based on the ratio"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T062",
+      "query": "To evaluate current portfolio sector rotation risk, please obtain the latest closing prices for the Nasdaq 100 Tech ETF (QQQ) and the S&P 500 Energy ETF (XLE), calculate their price ratio (QQQ divided by XLE), and briefly state whether current market funds show a trend towards rotating into the tech sector based on this.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest QQQ closing price",
+          "Latest XLE closing price",
+          "QQQ/XLE price ratio",
+          "Conclusion on sector fund flows based on the ratio"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T063",
+      "query": "As a portfolio risk manager, I am evaluating the relative strength of growth stocks and defensive stocks to assist in sector rotation decisions. Please obtain the latest real-time stock prices for NVIDIA (NVDA) and Procter & Gamble (PG), use calculation tools to find their price ratio (NVDA/PG), rounded to two decimal places. Please list the specific stock prices obtained, the calculated ratio, and briefly explain potential signals for current fund rotation between tech and consumer defensive sectors if this ratio continues to rise.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "NVDA real-time stock price",
+          "PG real-time stock price",
+          "NVDA/PG price ratio (rounded to 2 decimal places)",
+          "Brief analysis of fund rotation signals between growth and defensive sectors"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T064",
+      "query": "As a macro strategy researcher for a hedge fund, please evaluate cross-sector rotation signals and portfolio hedging needs in the current interest rate environment. Specific requirements: 1. Obtain latest US 10-year Treasury yield data; 2. Retrieve current stock price of Procter & Gamble (PG) and latest annual dividend amount from its financial report to calculate its static dividend yield; 3. Retrieve recent major financial media reports on \"easing of Treasury yield inversion and capital inflows into defensive sectors\"; 4. Combined with dividend yield-Treasury spread measurement and news sentiment, quantitatively evaluate the rationality of increasing holdings in the consumer staples sector in the current portfolio to hedge growth stock volatility risk, and provide clear position adjustment suggestions.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "get_financial_statements",
+        "calculator",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "10-year Treasury yield value",
+          "PG latest stock price and annual dividend total from report",
+          "Calculated PG static dividend yield",
+          "Core viewpoints from news on capital inflows and rotation trends in defensive sectors",
+          "Quantitative position adjustment suggestions based on spread measurement and macro hedging needs"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T065",
+      "query": "As a portfolio manager, I need to evaluate sector rotation opportunities between the tech sector and defensive sectors in the current macro interest rate environment. Please execute the following analysis steps: First, obtain the latest US 10-year Treasury yield data as a risk-free rate benchmark. Second, pull historical closing prices for the tech sector ETF (QQQ) and the utility sector ETF (XLU) for the past year. Next, use programming or calculation tools to calculate their annualized return and annualized volatility, and calculate their respective Sharpe Ratios based on the obtained risk-free rate. Finally, retrieve authoritative financial news from the last month regarding the \"impact of Fed interest rate policy on growth stock and defensive asset valuations.\" Integrating quantitative indicators and macro logic from the news, compare their risk-adjusted returns and provide clear sector rotation allocation suggestions (which sector to overweight or underweight, and explain why).",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "python_interpreter",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Specific value of US 10-year Treasury yield",
+          "Annualized return and annualized volatility data for QQQ and XLU",
+          "Sharpe Ratio values for both calculated based on the risk-free rate",
+          "Summary of core viewpoints from recent relevant macro news",
+          "Clear sector rotation allocation suggestions and comparison logic of risk-adjusted returns"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price"
+          ],
+          [
+            "python_interpreter"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T066",
+      "query": "As a quantitative researcher focusing on sector rotation, I need to evaluate the risk-adjusted performance of the tech sector (XLK) and the energy sector (XLE) in the current macro environment. Please obtain the latest US CPI data and the Fed benchmark interest rate as a risk-free rate reference, and pull the closing prices of these two ETFs for the past 120 trading days. Use Python to calculate their annualized volatility, return correlation coefficient, and their respective Sharpe Ratios. Finally, retrieve financial news from the last two weeks regarding US sector rotation or fund flows, and judge whether there are clear signals of funds moving from growth stocks to value stocks or defensive sectors. Please output specific calculation results and rotation judgment basis.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "python_interpreter",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest US CPI data and Fed benchmark interest rate",
+          "Annualized volatility for XLK and XLE for the past 120 days",
+          "Correlation coefficient between XLK and XLE returns",
+          "Sharpe Ratios for both XLK and XLE",
+          "Sector rotation signal conclusion based on macro data and news"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_stock_price"
+          ],
+          [
+            "python_interpreter"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T067",
+      "query": "As a portfolio manager, I am evaluating whether there are current signs of rotation from growth tech stocks to the defensive utility sector. Please obtain latest US 10-year Treasury yield and CPI year-on-year data, and query historical closing prices for the tech sector ETF (XLK) and the utility sector ETF (XLU) for the past 30 trading days. Use Python to calculate their monthly returns, volatility (standard deviation), and the month-on-month change in the relative strength ratio (XLK/XLU). If this ratio decreases by more than 3%, please judge whether this rotation has been established combined with recent macro and industry financial news, and provide specific allocation weight suggestions for both sectors (totaling 100%). Finally, please briefly explain how the 10-year yield and CPI data support or refute this rotation conclusion from a macro risk perspective.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "python_interpreter",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest US 10-year Treasury yield and CPI year-on-year data",
+          "Monthly return, volatility, and MoM change in relative strength ratio for XLK and XLU",
+          "Clear judgment on whether the relative strength ratio decreased by more than 3%",
+          "Specific sector allocation weight suggestions based on data and news analysis (percentages totaling 100%)",
+          "Explanation of macro interest rate and inflation data's support or refutation of the sector rotation logic"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "python_interpreter",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T068",
+      "query": "As a quantitative portfolio manager, I need to evaluate whether it is currently suitable to execute a defensive rotation strategy from the tech sector to the energy sector. Please first obtain latest US 3-month Treasury yield as a risk-free rate benchmark, then pull daily closing prices for the tech sector ETF (XLK) and the energy sector ETF (XLE) for the past 90 trading days. Use programming tools to calculate annualized volatility, annualized return, and Sharpe Ratio for both ETFs. Finally, provide clear sector overweight/underweight suggestions based on calculated risk-adjusted return indicators, and briefly describe its allocation logic in the current macro environment.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest US 3-month Treasury yield value",
+          "Annualized volatility and Sharpe Ratio for XLK over the past 90 days",
+          "Annualized volatility and Sharpe Ratio for XLE over the past 90 days",
+          "Clear sector rotation allocation suggestions and macro logic based on risk-adjusted returns"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_stock_price"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T069",
+      "query": "As a fund manager focusing on sector rotation and portfolio risk, I need to evaluate the relative valuation risk of growth and defensive sectors in the current macro interest rate environment. Please use Apple (AAPL) to represent the tech/growth sector and Procter & Gamble (PG) to represent the consumer staples/defensive sector to perform the following analysis: 1. Obtain the latest real-time stock prices for both companies; 2. Extract their latest trailing twelve months (TTM) net income data from their financial reports; 3. Respectively calculate the P/E ratios for AAPL and PG; 4. Obtain current US 10-year Treasury yield as a risk-free rate benchmark; 5. Calculate the absolute difference between their P/E ratios, and evaluate whether this valuation premium is too high combined with the current interest rate level, and whether the current macro environment supports a rotation from tech to consumer defensive sectors. Please output complete quantitative calculation results and clear position adjustment suggestions.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest real-time stock prices for AAPL and PG",
+          "TTM net income data for both companies",
+          "Calculated P/E ratios for AAPL and PG",
+          "Current US 10-year Treasury yield data",
+          "P/E valuation difference calculation results for both companies",
+          "Sector rotation logic analysis and specific allocation suggestions combined with risk-free rate"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T070",
+      "query": "I am evaluating an industry rotation strategy from tech stocks to defensive utility stocks. Please obtain latest stock prices for Apple Inc. (AAPL) and NextEra Energy (NEE), as well as their basic earnings per share (EPS) data from their latest annual reports. Also, query current US 10-year Treasury yield as a macro risk-free rate benchmark. Use a calculator to calculate current P/E ratios for both stocks, and combined with current macro interest rate and yield environment, analyze the potential impact of this \"growth to defensive\" rotation on the overall portfolio valuation multiple and interest-rate-sensitive downside risk.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest real-time stock prices for AAPL and NEE",
+          "Basic EPS data from latest annual reports",
+          "Current US 10-year Treasury yield",
+          "Calculated current P/E ratios for both stocks",
+          "Professional analysis conclusion on the impact of industry rotation on portfolio valuation multiples and downside risk combined with macro rate environment"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T071",
+      "query": "As an asset allocation analyst, I am verifying the strategy of \"rotating from tech to energy in a high-interest rate environment.\" Please obtain latest closing prices for Microsoft (MSFT) and ExxonMobil (XOM), as well as their net income and diluted shares outstanding data for the most recent full fiscal year. Also, obtain current US 10-year Treasury yield. Please use calculation tools to respectively calculate P/E ratios and Earnings Yields (Earnings Yield = EPS / Price) for both companies, and calculate the earnings yield spread between energy and tech sectors (XOM Yield - MSFT Yield). Finally, combined with this spread and the current 10-year Treasury yield level, evaluate the rationality of this rotation strategy from risk premium and asset cost-performance perspectives, and provide clear allocation suggestions.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest stock prices for MSFT and XOM",
+          "Net income and shares outstanding data for the most recent fiscal year",
+          "Current US 10-year Treasury yield",
+          "P/E and Earnings Yield calculation processes for both companies",
+          "Energy and tech earnings yield spread",
+          "Rotation strategy evaluation conclusion combined with macro interest rates"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T072",
+      "query": "As a hedge fund portfolio manager, I am formulating an industry rotation strategy based on macro interest rate cycles. Please compare relative valuation and risk premium of tech sector representative Microsoft (MSFT) and defensive consumption sector representative Walmart (WMT). Specific requirements: 1. Obtain latest US 10-year Treasury yield as risk-free rate benchmark; 2. Obtain latest closing prices for MSFT and WMT; 3. Extract latest annual EPS data for both companies; 4. Calculate their P/E ratios and the P/E Spread; 5. Use code to calculate their respective Earnings Yields (Earnings Yield = 1/P/E) and the spread with risk-free rate, i.e., Equity Risk Premium (ERP), and compare their relative attractiveness. Please output complete calculation chain, final ERP values, and provide clear investment suggestions on which sector to overweight or underweight based on risk-adjusted return logic.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "get_financial_statements",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "US 10-year Treasury yield value",
+          "Latest closing prices for MSFT and WMT",
+          "Latest annual EPS for MSFT and WMT",
+          "P/E ratios and P/E spread for both",
+          "Equity Risk Premium (ERP) calculation results for both",
+          "Sector rotation allocation suggestions based on macro interest rates and valuation comparison"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "get_financial_statements",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T073",
+      "query": "As an industry rotation strategy researcher, I need to evaluate the volatility impact of rotating 20% of semiconductor leader (NVDA) position to defensive utility stocks (NEE) in the Fed's current monetary policy cycle. Please perform the following: 1) Call macro data tool to obtain latest US 10-year Treasury yield; 2) Call news search tool to obtain financial news summaries from the last week regarding \"tech and utility sector rotation\"; 3) Call stock price tool to obtain daily closing prices for NVDA and NEE for the past year; 4) Use Python code to calculate their annualized volatility, and assuming a correlation coefficient of 0.35 between the two assets, calculate the percentage change in portfolio standard deviation before and after this 20% position switch according to the Markowitz portfolio model. Please output macro indicator values, volatility for both stocks, risk change ratio, and provide clear rotation suggestions combined with macro rate environment and news sentiment.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news",
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest US 10-year Treasury yield value",
+          "Annualized volatility calculation results for NVDA and NEE",
+          "Percentage change in portfolio standard deviation before and after 20% position switch",
+          "Rotation logic analysis combined with macro interest rates and news sentiment"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news",
+            "get_stock_price",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T074",
+      "query": "As a strategist for a quantitative macro hedge fund, I need to evaluate sector rotation risk between tech and utility sectors based on the latest macro environment. Please execute following steps: 1. Obtain latest US monthly CPI year-on-year growth and Fed target rate range; 2. Retrieve core financial news from the last 30 days regarding 'AI computing demand' and 'renewable energy grid upgrade', extracting sentiment tendency keywords; 3. Obtain latest four-quarter free cash flow (FCF) and current stock prices for TSMC (TSM) and NextEra Energy (NEE); 4. Query current USD/JPY exchange rate, and unify market caps and cash flows of the two companies into Yen; 5. Use Python to build a simple two-asset portfolio model, calculating annualized volatility, VaR (Value at Risk) at 95% confidence, and expected risk-adjusted return under equal weight configuration based on recent stock price volatility. Please output complete calculation process, exchange rate conversion results, portfolio risk indicators, and provide clear sector overweight/underweight suggestions.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news",
+        "get_financial_statements",
+        "get_stock_price",
+        "get_exchange_rate",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest US CPI and Federal Funds rate values",
+          "Sentiment tendency summary of relevant tech and utility news",
+          "Latest stock prices and recent four-quarter FCF data for TSM and NEE",
+          "USD/JPY exchange rate and converted Yen计价 indicators",
+          "Annualized volatility, 95% VaR value, and risk-adjusted return for equal-weight portfolio",
+          "Clear sector rotation allocation suggestions (overweight/underweight) and logical basis"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T075",
+      "query": "As a macro strategist, I need to evaluate a tactical rotation strategy from the growth tech sector to energy and utility defensive sectors. Please perform following multi-step analysis: 1. Obtain latest US core CPI year-on-year data and Federal Funds target rate, evaluating the driving effect of current inflation and liquidity environment on sector rotation; 2. Retrieve financial news from the last month regarding global energy companies' capital expenditure expansion and tech giants' valuation pullbacks, summarizing market sentiment tendencies; 3. Extract latest quarterly free cash flow (FCF) of ExxonMobil (XOM), and calculate its intrinsic value in British Pounds (GBP) using a DCF model combined with real-time USD/GBP exchange rate (setting WACC at 8.5%, perpetual growth rate at 2.5%); 4. Obtain daily closing prices for XOM, Energy Select Sector SPDR Fund (XLE), and Technology Select Sector SPDR Fund (XLK) for the past 120 trading days, use Python to calculate annualized volatility, Beta relative to S&P 500, and historical VaR at 95% confidence for this simulated rotation portfolio (weight: 70% XLE, 30% XLK); 5. Integrate macro indicators, news sentiment, and risk-return characteristics to provide a clear investment recommendation on whether to execute this rotation strategy, and quantitatively explain potential maximum drawdown risk of the portfolio in a rate hike cycle.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news",
+        "get_financial_statements",
+        "get_exchange_rate",
+        "calculate_dcf",
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest US core CPI year-on-year and Federal Funds rate data",
+          "Summary of news sentiment for energy and tech sectors over the last month",
+          "DCF intrinsic value of ExxonMobil (XOM) in GBP",
+          "Annualized volatility, relative Beta, and 95% historical VaR for the 70% XLE + 30% XLK simulated portfolio",
+          "Final rotation execution recommendation based on macro, sentiment, and risk quantitative indicators"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements",
+            "get_exchange_rate"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T076",
+      "query": "As a quantitative fund manager, I am evaluating the risk and return of rotating a portfolio from the US tech sector (represented by QQQ) to the European renewable energy sector (represented by INRG.L). Please execute following analysis:\n1. Obtain historical price data for both ETFs for the past year, and calculate their annualized volatility and correlation.\n2. Query current benchmark interest rates for the Fed and the ECB, and obtain recent EUR/USD real-time exchange rate.\n3. Search for key financial news from the last month regarding \"US tech giants antitrust regulation\" and \"European renewable energy subsidy policy\".\n4. Combined with macro interest rate spreads and exchange rate volatility, use Python to calculate portfolio volatility, Value at Risk (VaR) at 95% confidence, and potential loss of unhedged exchange rate risk after adjusting allocation weights from 60% US tech/40% European new energy to 40%/60%.\n5. Integrate news sentiment, spread changes, and VaR results to evaluate the risk-adjusted return potential of this sector rotation, and provide clear decision suggestions.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Comparison of annualized volatility before and after portfolio adjustment",
+          "Specific portfolio VaR values at 95% confidence level",
+          "Estimate of EUR/USD exchange rate volatility erosion on portfolio returns",
+          "Support analysis of macro interest rate spreads and news sentiment for rotation logic",
+          "Clear sector rotation decision suggestions and risk warnings"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T077",
+      "query": "As a quantitative hedge fund portfolio manager, I plan to conduct sector rotation in the current macro tightening cycle, switching 20% of the tech sector (MSFT) position to the industrial cyclical sector (CAT). Please execute following multi-step analysis: 1) Obtain latest US 10-year Treasury yield and core CPI year-on-year data to confirm current macro interest rate environment; 2) Retrieve authoritative financial news from the last month regarding \"US stock sector rotation\" and \"manufacturing recovery\", extracting key market sentiment signals; 3) Retrieve free cash flow (FCF) data from latest annual reports for MSFT and CAT, and obtain current real-time stock prices for both companies; 4) Based on current macro risk-free rate, re-estimate CAT's intrinsic value per share using a DCF model, assuming its perpetual growth rate is lowered by 1.5% from historical average; 5) Use Python to write code, calculating expected portfolio return, weighted volatility, and Sharpe Ratio changes based on 0.35 industry correlation coefficient after position adjustment; 6) Integrate macro data, news sentiment, and model output to provide a risk assessment report and final position adjustment suggestions for this rotation strategy.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news",
+        "get_financial_statements",
+        "get_stock_price",
+        "calculate_dcf",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "US 10-year Treasury yield and core CPI data",
+          "Summary of news sentiment related to sector rotation",
+          "Latest free cash flow and current stock prices for MSFT and CAT",
+          "CAT DCF intrinsic value based on new macro parameters",
+          "Changes in portfolio return, volatility, and Sharpe Ratio after rotation",
+          "Comprehensive risk assessment and position adjustment suggestions"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news",
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T078",
+      "query": "As an asset allocation manager responsible for macro hedging, I plan to rotate part of the portfolio from semiconductor leader NVIDIA (NVDA) to defensive utility leader Southern Company (SO) under persistent Fed rate hikes and high inflation expectations. Please perform following multi-step risk assessment and valuation analysis:\n1. Extract latest quarterly US CPI year-on-year growth and current Federal Funds rate, evaluating historical impact of macro tightening environment on growth stocks and value defensive stocks.\n2. Obtain daily closing prices for NVDA and SO for past 24 months, use Python to calculate rolling 60-day volatility, historical correlation, and portfolio downside risk (such as historical VaR estimate at 95% confidence) after rebalancing.\n3. Obtain latest annual free cash flow for SO, combined with current Federal Funds rate obtained in step 1 as risk-free rate benchmark, set equity risk premium at 6%, perpetual growth rate at 2.5%, use DCF tool to calculate reasonable intrinsic value for SO.\n4. Retrieve core financial news from the last 10 days regarding \"utility sector rotation\" and \"Fed interest rate decision\", extracting sell-side viewpoints and market sentiment.\n5. Integrate macro data, risk indicators, DCF valuation premium/discount magnitude, and news sentiment to provide clear position adjustment suggestions, and quantitatively state the expected improvement of portfolio Sharpe Ratio after rebalancing.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "get_financial_statements",
+        "calculate_dcf",
+        "python_interpreter",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest CPI and Federal Funds rate data and qualitative macro conclusions",
+          "60-day volatility, historical correlation, and portfolio VaR calculation results for NVDA and SO",
+          "SO DCF intrinsic value, premium/discount rate relative to market price",
+          "Core sentiment and institutional viewpoint summary from news over last 10 days",
+          "Clear sector rotation suggestions (overweight/underweight direction and ratio) and measured expected Sharpe Ratio improvement"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_stock_price",
+            "get_financial_statements"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "python_interpreter"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T079",
+      "query": "As a macro hedge fund strategist, please evaluate the risk-return characteristics of rotating a portfolio from tech growth sectors to financial value and utility defensive sectors in the current environment of high inflation and late-stage Fed rate hike cycle. Specific execution steps are as follows:\n1. Obtain latest US CPI year-on-year data, 10-year Treasury yield, and real GDP growth.\n2. Pull daily closing prices for tech sector ETF (QQQ), financial sector ETF (XLF), and utility sector ETF (XLU) for the past 252 trading days, and calculate respective annualized volatility and correlation matrix between them after cleaning data.\n3. Based on above macro and historical market data, use Python to calculate historical simulated VaR (monthly) at 95% confidence for a portfolio with weights (Tech 40%, Financial 35%, Utility 25%), and estimate the expected Sharpe Ratio of the portfolio using current 10-year Treasury yield as risk-free rate.\n4. Retrieve financial news from the last three months regarding \"changes in Treasury yield curve shape\" and \"institutional sector fund flows\", extracting core catalysts driving this defensive rotation, and quantitatively warning potential maximum drawdown risk of the rotation strategy in scenarios of macro policy surprises or liquidity tightening.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "python_interpreter",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest US CPI, 10-year Treasury yield, and GDP growth data",
+          "Annualized volatility and 3x3 correlation matrix for QQQ, XLF, and XLU",
+          "95% confidence monthly VaR and expected Sharpe Ratio for the 40/35/25 weighted portfolio",
+          "Core news catalysts driving sector rotation and maximum drawdown risk warnings under policy surprises"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price"
+          ],
+          [
+            "get_stock_price",
+            "python_interpreter"
+          ],
+          [
+            "python_interpreter",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T080",
+      "query": "As a quantitative investment analyst, I plan to execute a rotation strategy from the tech growth sector to the high-end manufacturing/defense industry sector in my current portfolio. Please execute following analysis: 1. Obtain latest US core CPI year-on-year growth and 10-year Treasury yield, evaluating macro interest rate environment's impact on valuation. 2. Retrieve key financial news from last 30 days regarding semiconductor supply chain bottlenecks and new Department of Defense budget bills, conducting sentiment analysis. 3. Obtain latest financial reports for NVDA, AMD (Tech) and LMT, NOC, GD (Industrial/Defense), calculating ROE and free cash flow margin. 4. Extract daily return data for the above 5 stocks for the past year. 5. Use Python to write a script, calculating 95% historical VaR and rolling 30-day correlation between sectors for the original portfolio (equal-weighted tech) and new rotation portfolio (60% industrial/defense, 40% tech), and use a DCF model to estimate intrinsic value for LMT to verify margin of safety. Finally, please provide optimal rebalancing weight suggestions, comparison of risk-adjusted returns before and after rotation (assuming risk-free rate is current 10Y Treasury yield), and explain how macro data drives this decision.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news",
+        "get_financial_statements",
+        "get_stock_price",
+        "calculate_dcf",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest core CPI and 10-year Treasury yield values and macro transmission logic for sector rotation",
+          "Rolling correlation between tech and defense sectors over the past 30 days",
+          "Comparison of 95% historical VaR values between original equal-weighted tech and rotated portfolios",
+          "LMT intrinsic value per share estimate and margin of safety percentage based on DCF model",
+          "Clearly suggested rebalancing weight allocation for each ticker",
+          "Comparison table of expected annualized return, volatility, and Sharpe Ratio before and after rotation"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T081",
+      "query": "As a portfolio manager for a macro hedge fund, I am evaluating the feasibility and risk exposure of a defensive rotation from \"tech growth sector\" to \"value financial sector\" in current high interest rate environment. Please complete following multi-step analysis tasks:\n1. Obtain latest Federal Funds Rate and US core CPI year-on-year growth, and judge current real interest rate level's transmission to duration risk.\n2. Obtain real-time USD/EUR exchange rate. Since our European LPs bear exchange rate risk, please calculate potential impact of a 2% unidirectional exchange rate fluctuation on total nominal return of the portfolio.\n3. Obtain daily closing prices for XLK (Tech Select) and XLF (Financial Select) for the past year, use Python to write a script calculating 20-day rolling annualized volatility and dynamic rolling correlation (60-day window) between the two.\n4. Retrieve financial news from last 30 days regarding \"impact of Fed capital rules on large banks\" and \"semiconductor industry capital expenditure guidance\", extracting key events and evaluating their risk sentiment premium (positive/negative) on the two sectors.\n5. Using core constituent stocks of XLK as an example, assuming future 3-year free cash flow compound growth rate is 7%, use current risk-free rate plus 5% equity risk premium as WACC, calculate reasonable valuation range through DCF model; compare with current market price to judge overvalued/undervalued percentage.\n6. Integrate above macro suppression factors, FX hedging costs, volatility differences, and adjusted expected returns based on news sentiment, apply Risk Parity logic to calculate optimal risk contribution weights for tech and financial sectors, and output final suggested allocation ratios (accurate to percentage) and expected Sharpe Ratio of the portfolio.\nPlease ensure all calculation processes are transparent, data citations accurate, and provide clear rotation execution suggestions.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "get_stock_price",
+        "search_financial_news",
+        "calculate_dcf",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Clearly list Federal Funds rate, core CPI, and real interest rate judgment conclusions",
+          "Provide USD/EUR exchange rate and estimated gain/loss under 2% fluctuation scenario",
+          "Display 20-day rolling annualized volatility and 60-day rolling correlation for XLK and XLF",
+          "Include quantitative assessment of sentiment premium from news on bank capital rules and semiconductor spending",
+          "Give DCF model's calculated valuation premium/discount percentage for the tech sector",
+          "Output final sector allocation ratios (Tech:Financial) and expected portfolio Sharpe Ratio based on Risk Parity"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "get_stock_price",
+            "search_financial_news",
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T082",
+      "query": "As an industry researcher for a macro hedge fund, I plan to implement a cross-market sector rotation strategy between the US and Europe next quarter, intending to underweight US semiconductor leader (NVDA) and overweight European consumer staples leader (Nestle, NESN.SW). Please assist in following comprehensive assessment: 1. Obtain latest stock prices and key income statement and balance sheet data (revenue, net profit, free cash flow, total debt) for the past four quarters for both companies. 2. Extract current central bank policy rates and latest CPI year-on-year data for US and Eurozone, and query USD/EUR real-time exchange rate. 3. Retrieve major financial news regarding NVDA and NESN from last 30 days, extracting potential risks at regulatory, geopolitical, or supply chain levels. 4. Dynamically adjust discount rates based on extracted macro interest rate data, respectively execute DCF valuation for both companies, calculating deviation between intrinsic value and current stock price. 5. Use Python to calculate annualized volatility for both stocks over the past 252 trading days, and compare NESN volatility adjusted for USD/EUR FX hedging with NVDA. Finally, please output a complete report containing DCF valuation results, FX-adjusted risk indicators, macro sensitivity analysis, and clear rotation operation suggestions.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "calculate_dcf",
+        "get_macro_data",
+        "get_exchange_rate",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "DCF valuation and premium/discount rates for NVDA and NESN",
+          "Relative annualized volatility adjusted for FX hedging",
+          "Analysis of benchmark interest rates and CPI impact on WACC",
+          "Summary of key financial and news sentiment risks",
+          "Clear cross-market sector rotation allocation suggestions"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "calculate_dcf"
+          ],
+          [
+            "get_macro_data",
+            "calculate_dcf"
+          ],
+          [
+            "get_exchange_rate",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T083",
+      "query": "As a quantitative researcher for a macro hedge fund, I need to evaluate risk-adjusted returns of rotating funds from defensive utility sector (using Southern Company SO as proxy) to semiconductor cyclical sector (using NVIDIA NVDA as proxy) in the current monetary policy environment. Please execute following analysis flow: 1) Obtain latest US 10-year Treasury yield and core CPI year-on-year data; 2) Extract latest fiscal year cash flow and income statements for SO and NVDA, calculating respective free cash flow (FCF); 3) Retrieve authoritative financial news from last 30 days regarding \"tech valuation bubble\" and \"utility dividend yield attractiveness\", extracting long and short sentiment percentages; 4) Set discount rate as (10Y Treasury yield + 4% equity risk premium), call DCF model to respectively calculate intrinsic value per share for both companies, deriving premium/discount rate compared with real-time stock price; 5) Use Python to pull daily closing prices for past 250 trading days, calculating rolling correlation coefficient of daily returns and annualized volatility of equal-weighted portfolio; 6) Integrate macro interest rate sensitivity, DCF valuation deviation, portfolio correlation risk, and news sentiment to output clear sector rotation execution instructions and dynamic stop-loss thresholds.",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "calculate_dcf",
+        "get_financial_statements",
+        "get_stock_price",
+        "python_interpreter",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Accurately report 10-year Treasury yield and core CPI values",
+          "Clearly list extracted FCF data and calculation process for SO and NVDA",
+          "Provide sentiment tendency analysis (long/short ratio or qualitative summary) for recent relevant news",
+          "Display DCF valuation results, current stock price, and premium/discount percentage",
+          "Output 250-day correlation coefficient and equal-weight portfolio annualized volatility calculated by Python",
+          "Give clear multi-factor integrated sector rotation advice and specific risk control thresholds"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "calculate_dcf"
+          ],
+          [
+            "get_financial_statements",
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price",
+            "python_interpreter"
+          ],
+          [
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T084",
+      "query": "As part of a cryptocurrency asset allocation, please query the current real-time USD price of Ethereum (ETH) and calculate the total USD cost to purchase 20 ETH.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Real-time USD price of Ethereum (ETH) queried",
+          "Accurate total USD cost to purchase 20 ETH"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T085",
+      "query": "Please obtain the current real-time market quote for Ethereum (ETH) against USD, and estimate the total USD principal required to build a position of 35 ETH at the current level.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Current ETH real-time USD quote",
+          "Total USD principal required to build a 35 ETH position"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T086",
+      "query": "As part of a crypto asset allocation assessment, please obtain current real-time USD quote for Ethereum (ETH) and calculate the number of ETH that can be purchased with a $15,000 investment (results rounded to four decimal places).",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Current ETH real-time USD quote",
+          "Number of ETH purchasable with $15,000"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T087",
+      "query": "As a crypto asset allocation specialist, please query current real-time USD prices for Bitcoin (BTC) and Ethereum (ETH), and calculate current ETH/BTC cross rate (i.e., how many ETH are equivalent to 1 BTC), please round result to three decimal places.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Real-time USD price of Bitcoin",
+          "Real-time USD price of Ethereum",
+          "Number of ETH equivalent to 1 BTC (rounded to three decimal places)"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T088",
+      "query": "Obtain current real-time USD price of Solana (SOL), and calculate how many SOL can be purchased with a $30,000 investment budget at current market price? (Results rounded to two decimal places)",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Current SOL real-time USD price",
+          "Number of SOL purchasable with $30,000 (rounded to two decimal places)"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T089",
+      "query": "As an alternative asset researcher, please obtain current real-time USD quotes for Bitcoin (BTC) and Ethereum (ETH), and calculate the percentage of Ethereum's price relative to Bitcoin's price (results rounded to two decimal places).",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Current USD price of Bitcoin (BTC)",
+          "Current USD price of Ethereum (ETH)",
+          "Percentage of Ethereum's price relative to Bitcoin's price (rounded to two decimal places)"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T090",
+      "query": "Please obtain the current real-time USD price of Bitcoin (BTC) and calculate the amount of BTC obtainable when buying $25,000 spot (accurate to four decimal places).",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Real-time USD price of BTC",
+          "Number of BTC obtainable with $25,000 (accurate to four decimal places)"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T091",
+      "query": "Please obtain the latest USD spot prices for Bitcoin (BTC) and Ethereum (ETH), and calculate how many Ethereum are currently equivalent to one Bitcoin (i.e., the BTC/ETH price ratio). Please round calculation results to two decimal places, and briefly explain reference significance of this cross ratio for relative value assessment of crypto assets.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Current USD spot price of BTC",
+          "Current USD spot price of ETH",
+          "BTC/ETH price ratio (rounded to two decimal places)",
+          "Brief analysis of reference significance of this cross ratio for crypto relative value assessment"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T092",
+      "query": "Query current real-time spot USD prices for Bitcoin (BTC) and Ethereum (ETH), and calculate relative Ethereum valuation of 1 Bitcoin (i.e., BTC/ETH rate) based on latest quotes.",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Real-time USD price of BTC",
+          "Real-time USD price of ETH",
+          "BTC/ETH rate (how many ETH per 1 BTC)"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T093",
+      "query": "A crypto hedge fund is evaluating its spot exposure. Please query latest USD market price of Bitcoin (BTC), and calculate current total nominal value of 25 BTC held by fund (in USD, rounded to two decimal places).",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest USD real-time quote of Bitcoin (BTC)",
+          "Current total USD value of 25 BTC"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T094",
+      "query": "As an alternative asset investment manager, I need to evaluate cross-currency actual purchasing power of a simulated crypto asset portfolio. Please execute following analysis: first obtain latest real-time USD quotes for Ethereum (ETH) and Solana (SOL); second query latest US CPI year-on-year growth data as benchmark for inflation adjustment; then obtain current USD/JPY exchange mid-rate. Finally, assuming portfolio holds 5 ETH and 2000 SOL, please use code tools to calculate total nominal USD market value of the portfolio, and estimate inflation-adjusted real value (USD denominated) based on CPI data, finally convert it into Yen risk exposure at current exchange rate. Please list all key intermediate parameters and final calculation results.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_macro_data",
+        "get_exchange_rate",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Real-time USD quotes for ETH and SOL",
+          "Latest US CPI year-on-year data",
+          "USD/JPY exchange rate",
+          "Total nominal USD market value of portfolio",
+          "Inflation-adjusted real value (USD)",
+          "Final Yen-denominated exposure of portfolio"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price"
+          ],
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T095",
+      "query": "As a digital asset strategy analyst, please evaluate recent cross-market investment value and risk catalysts for Ethereum (ETH). First, obtain current USD price of ETH and historical price from 30 days ago, calculating its period return. Second, obtain latest USD/CNY spot exchange rate, and convert current ETH price into Renminbi. Finally, retrieve core financial news from last two weeks regarding spot Ethereum ETF approval progress, on-chain data anomalies, or major regulatory policies, and briefly describe potential impact on short-term price volatility. Please provide complete calculation values and news summary analysis.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_exchange_rate",
+        "calculator",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Current ETH USD price and historical price 30 days ago",
+          "ETH 30-day period return (percentage)",
+          "ETH Renminbi price converted at latest USD/CNY exchange rate",
+          "Summary of core regulatory or ETF news from last two weeks and short-term volatility impact analysis"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_exchange_rate",
+            "calculator",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T096",
+      "query": "As an alternative asset researcher, I need to evaluate hedging effect of cryptocurrencies against fiat currency inflation. Please obtain current USD spot price of Bitcoin (BTC), and query latest US CPI year-on-year growth data. Then obtain current USD/CNY exchange rate, and convert a $10,000 equivalent BTC position into Renminbi denomination. Combined with CPI data, calculate whether nominal Renminbi value of this position is sufficient to cover inflation erosion of past year (i.e., compare nominal value benchmark with inflation coefficient). Please output: BTC latest USD spot price, latest USD/CNY exchange rate, Renminbi market value of $10,000 equivalent BTC, latest US CPI data, and clear conclusion of \"outperforming\" or \"underperforming\" inflation.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_exchange_rate",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC latest USD spot price",
+          "Latest USD/CNY exchange rate",
+          "Renminbi market value of $10,000 equivalent BTC",
+          "Latest US CPI year-on-year growth data",
+          "Clear conclusion of outperforming or underperforming inflation"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_exchange_rate",
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T097",
+      "query": "As a researcher for a macro hedge fund, I need to evaluate correlation between current crypto assets and traditional macro indicators. Please obtain current real-time USD prices for Bitcoin (BTC) and Ethereum (ETH), and latest USD/EUR exchange rate. Simultaneously, query latest US Federal Funds target rate and most recent CPI year-on-year data. Assuming a European hedge fund allocated 5 million Euros equivalent funds three months ago with 70% in BTC and 30% in ETH, and USD/EUR exchange rate at time of purchase was 1.05. Please calculate current Euro book value of the portfolio, and combined with latest US CPI and interest rate data, briefly analyze actual purchasing power change trend of portfolio in current high-interest environment.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_exchange_rate",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Current real-time USD prices for BTC and ETH",
+          "Latest USD/EUR exchange rate",
+          "Latest US Federal Funds rate and CPI year-on-year growth",
+          "Current total Euro value of portfolio converted based on initial 5 million Euros and 1.05 historical exchange rate",
+          "Analysis of actual purchasing power change trend combined with CPI and interest rate environment"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_exchange_rate",
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T098",
+      "query": "As an alternative asset allocation researcher, please assist in evaluating current relative valuation and cross-border pricing level of Bitcoin (BTC). Please execute in order: 1. Obtain current USD spot price of Bitcoin (BTC); 2. Obtain latest closing price of Gold ETF (GLD) as benchmark for traditional anti-inflation assets; 3. Query real-time USD/CNY exchange rate; 4. Obtain latest US core CPI year-on-year data. Based on above data, please calculate BTC/GLD price ratio, convert current BTC price into Renminbi quote, and briefly analyze current allocation cost-performance of cryptocurrency in an inflationary environment combined with core CPI data. Please output complete calculation results and macro brief review.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_stock_price",
+        "get_exchange_rate",
+        "get_macro_data",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC USD current price",
+          "GLD closing price",
+          "BTC/GLD ratio",
+          "USD/CNY real-time exchange rate",
+          "BTC Renminbi converted price",
+          "Core CPI data and allocation brief review"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_stock_price",
+            "get_exchange_rate",
+            "get_macro_data"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T099",
+      "query": "As an alternative asset researcher, please evaluate current cross-asset premium level of Ethereum (ETH) as \"digital gold\" relative to traditional Gold ETF (GLD). Please execute following analysis flow: 1) Obtain latest real-time quotes for ETH and GLD; 2) Query latest US CPI index data; 3) Calculate unadjusted ETH/GLD raw price ratio; 4) Use macro inflation data for purchasing power benchmark calibration of traditional gold (using simplified formula: inflation-adjusted ratio = raw ratio / (CPI index/100)), deriving calibrated relative valuation; 5) Combined with current macro liquidity and interest rate environment, output strategic reference significance of this cross ratio for institutional investors performing crypto asset allocation. Please provide clear data extraction sources, complete calculation steps, and final conclusions.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_stock_price",
+        "get_macro_data",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Latest real-time prices for ETH and GLD",
+          "Latest US CPI index value",
+          "ETH/GLD raw price ratio",
+          "Calculation result of inflation-calibrated cross ratio",
+          "Professional analysis conclusion on asset allocation combined with macro environment"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_stock_price",
+            "get_macro_data",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T100",
+      "query": "As a quantitative macro researcher, please evaluate correlation between recent performance of crypto assets and traditional alternative assets and macro environment. Specific tasks as follows:\n1. Call crypto asset interface to obtain real-time prices and historical prices from 30 days ago for Bitcoin (BTC) and Ethereum (ETH).\n2. Obtain current quote and quote from 30 days ago for London Spot Gold (XAU/USD) through financial search tools.\n3. Call macro data interface to obtain latest US Federal Funds Rate.\n4. Use calculation tools to respectively calculate price change percentages for BTC, ETH, and gold over past 30 days (rounded to two decimal places).\n5. Combined with latest interest rate data, briefly discuss potential impact of current monetary tightening/easing cycles on pricing of these three non-interest-bearing alternative assets, and give final ranking based on return rate.\nPlease ensure output contains clear numerical calculation process and macro logic analysis.",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "search_financial_news",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC 30-day price change percentage",
+          "ETH 30-day price change percentage",
+          "Spot gold 30-day price change percentage",
+          "Latest US Federal Funds rate",
+          "Logical analysis of macro interest rates on non-interest-bearing asset pricing",
+          "Return rate ranking of the three asset classes"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "search_financial_news",
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    }
+  ]
+}

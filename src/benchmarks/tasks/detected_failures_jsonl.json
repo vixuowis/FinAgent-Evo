@@ -1,0 +1,1434 @@
+{
+  "wo_evolution": [
+    {
+      "task_id": "T007",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T008",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T013",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T019",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T020",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T022",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T024",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T026",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T028",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T042",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T043",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T045",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T046",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T052",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T064",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T065",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T066",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T068",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T073",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T074",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T075",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T151",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T162",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T167",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T171",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T172",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T173",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T174",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T176",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T178",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T180",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T182",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T187",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T190",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T192",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T193",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T194",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T199",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T201",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T203",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T205",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T206",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T207",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T208",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T209",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T210",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T211",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T212",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T216",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T217",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T218",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T220",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T221",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T223",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T225",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T229",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T232",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T233",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T235",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T237",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T238",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T240",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T251",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T252",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T253",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T255",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T256",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T257",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T258",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T259",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T260",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T261",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T262",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T263",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T264",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T265",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T267",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T268",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T269",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T270",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T277",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T287",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T289",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T291",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T292",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T293",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T295",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T296",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T297",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T299",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T300",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T076",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T077",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T078",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T079",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T082",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T083",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T089",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T095",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T097",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T099",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T101",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T103",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T108",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T109",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T110",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T111",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T112",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T113",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T123",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T125",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T126",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T128",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T129",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T130",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T133",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T136",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T137",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T140",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T142",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T144",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T145",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T146",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T148",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T149",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T150",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_evolution/judge_logs.jsonl"
+    }
+  ],
+  "wo_memory": [
+    {
+      "task_id": "T001",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T002",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T003",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T004",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T005",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T006",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T007",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T008",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T009",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T010",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T011",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T012",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T013",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T019",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T021",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T023",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T025",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T026",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T028",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T038",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T044",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T046",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T047",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T048",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T049",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T050",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T051",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T052",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T060",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T063",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T065",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T066",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T067",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T068",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T069",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T070",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T074",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T075",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T151",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T158",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T161",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T162",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T164",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T168",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T170",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T171",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T172",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T173",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T174",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T179",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T180",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T182",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T186",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T192",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T197",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T198",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T199",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T200",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T202",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T203",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T204",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T206",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T208",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T209",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T210",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T211",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T213",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T214",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T216",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T217",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T220",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T221",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T222",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T223",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T225",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T076",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T077",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T078",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T079",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T080",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T081",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T083",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T086",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T090",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T100",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T101",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T108",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T110",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T111",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T112",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T113",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T120",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T121",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T123",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T124",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T132",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T136",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T138",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T140",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T141",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T142",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T144",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T147",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T149",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T227",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T229",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T231",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T232",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T233",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T234",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T235",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T236",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T237",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T238",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T239",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T240",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T245",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T253",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T254",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T255",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T257",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T258",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T259",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T260",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T262",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T263",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T264",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T265",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T266",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T268",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T269",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T270",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T277",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T286",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T287",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T289",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T290",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T291",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T293",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T295",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T297",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T298",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T299",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_memory/judge_logs.jsonl"
+    }
+  ],
+  "wo_orchestration": [
+    {
+      "task_id": "T229",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T230",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T232",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T234",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T236",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T238",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T239",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T246",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T250",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T251",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_4_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T012",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T016",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T023",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T024",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T025",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T029",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T031",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T033",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T041",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T042",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T045",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T046",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T050",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T052",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T053",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T059",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T063",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T067",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T068",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T070",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_1_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T076",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T078",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T080",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T081",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T082",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T085",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T087",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T088",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T097",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T100",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T103",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T109",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T112",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T113",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T114",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T119",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T124",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T130",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T131",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T135",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T136",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T141",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T145",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T148",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_2_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T158",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T163",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T164",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T166",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T168",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T169",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T177",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T179",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T180",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T181",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T185",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T186",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T194",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T197",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T203",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T206",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T211",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T218",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T221",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T222",
+      "log_file": "src/benchmarks/results/ablation_run_300/shard_3_wo_orchestration/judge_logs.jsonl"
+    }
+  ],
+  "full": [
+    {
+      "task_id": "T002",
+      "log_file": "src/benchmarks/results/full_run_300_sharded/shard_1_full/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T226",
+      "log_file": "src/benchmarks/results/full_run_300_sharded/shard_4_full/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T227",
+      "log_file": "src/benchmarks/results/full_run_300_sharded/shard_4_full/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T228",
+      "log_file": "src/benchmarks/results/full_run_300_sharded/shard_4_full/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T229",
+      "log_file": "src/benchmarks/results/full_run_300_sharded/shard_4_full/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T077",
+      "log_file": "src/benchmarks/results/full_run_300_sharded/shard_2_full/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T152",
+      "log_file": "src/benchmarks/results/full_run_300_sharded/shard_3_full/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T153",
+      "log_file": "src/benchmarks/results/full_run_300_sharded/shard_3_full/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T154",
+      "log_file": "src/benchmarks/results/full_run_300_sharded/shard_3_full/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T155",
+      "log_file": "src/benchmarks/results/full_run_300_sharded/shard_3_full/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T156",
+      "log_file": "src/benchmarks/results/full_run_300_sharded/shard_3_full/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T157",
+      "log_file": "src/benchmarks/results/full_run_300_sharded/shard_3_full/judge_logs.jsonl"
+    },
+    {
+      "task_id": "T158",
+      "log_file": "src/benchmarks/results/full_run_300_sharded/shard_3_full/judge_logs.jsonl"
+    }
+  ]
+}

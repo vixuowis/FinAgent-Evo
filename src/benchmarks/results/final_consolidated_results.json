@@ -1,0 +1,1802 @@
+{
+  "T001": {
+    "EvoFinAgent": 71.0,
+    "wo_evolution": 65.0,
+    "wo_memory": 70.0,
+    "wo_orchestration": 98.5
+  },
+  "T002": {
+    "EvoFinAgent": 73.0,
+    "wo_evolution": 71.0,
+    "wo_memory": 36.0,
+    "wo_orchestration": 98.5
+  },
+  "T003": {
+    "EvoFinAgent": 66.0,
+    "wo_evolution": 76.0,
+    "wo_memory": 74.0,
+    "wo_orchestration": 98.5
+  },
+  "T004": {
+    "EvoFinAgent": 65.0,
+    "wo_evolution": 80.0,
+    "wo_memory": 65.0,
+    "wo_orchestration": 100.0
+  },
+  "T005": {
+    "EvoFinAgent": 66.5,
+    "wo_evolution": 0.0,
+    "wo_memory": 65.0,
+    "wo_orchestration": 85.0
+  },
+  "T006": {
+    "EvoFinAgent": 70.0,
+    "wo_evolution": 77.0,
+    "wo_memory": 66.0,
+    "wo_orchestration": 98.5
+  },
+  "T007": {
+    "EvoFinAgent": 75.5,
+    "wo_evolution": 75.0,
+    "wo_memory": 62.0,
+    "wo_orchestration": 73.75
+  },
+  "T008": {
+    "EvoFinAgent": 74.0,
+    "wo_evolution": 66.0,
+    "wo_memory": 75.0,
+    "wo_orchestration": 80.5
+  },
+  "T009": {
+    "EvoFinAgent": 70.0,
+    "wo_evolution": 24.0,
+    "wo_memory": 32.5,
+    "wo_orchestration": 98.5
+  },
+  "T010": {
+    "EvoFinAgent": 64.0,
+    "wo_evolution": 26.0,
+    "wo_memory": 23.0,
+    "wo_orchestration": 70.0
+  },
+  "T011": {
+    "EvoFinAgent": 42.0,
+    "wo_evolution": 19.0,
+    "wo_memory": 43.0,
+    "wo_orchestration": 73.0
+  },
+  "T012": {
+    "EvoFinAgent": 46.5,
+    "wo_evolution": 12.0,
+    "wo_memory": 10.5,
+    "wo_orchestration": 31.0
+  },
+  "T013": {
+    "EvoFinAgent": 60.0,
+    "wo_evolution": 24.5,
+    "wo_memory": 59.0,
+    "wo_orchestration": 81.0
+  },
+  "T014": {
+    "EvoFinAgent": 17.0,
+    "wo_evolution": 50.5,
+    "wo_memory": 51.0,
+    "wo_orchestration": 46.5
+  },
+  "T015": {
+    "EvoFinAgent": 50.0,
+    "wo_evolution": 47.5,
+    "wo_memory": 35.5,
+    "wo_orchestration": 56.0
+  },
+  "T016": {
+    "EvoFinAgent": 55.0,
+    "wo_evolution": 48.0,
+    "wo_memory": 46.0,
+    "wo_orchestration": 70.0
+  },
+  "T017": {
+    "EvoFinAgent": 55.0,
+    "wo_evolution": 63.0,
+    "wo_memory": 29.0,
+    "wo_orchestration": 77.0
+  },
+  "T018": {
+    "EvoFinAgent": 62.0,
+    "wo_evolution": 50.5,
+    "wo_memory": 57.0,
+    "wo_orchestration": 81.5
+  },
+  "T019": {
+    "EvoFinAgent": 40.5,
+    "wo_evolution": 43.0,
+    "wo_memory": 36.0,
+    "wo_orchestration": 65.0
+  },
+  "T020": {
+    "EvoFinAgent": 42.5,
+    "wo_evolution": 47.5,
+    "wo_memory": 38.0,
+    "wo_orchestration": 65.0
+  },
+  "T021": {
+    "EvoFinAgent": 57.5,
+    "wo_evolution": 16.5,
+    "wo_memory": 2.0,
+    "wo_orchestration": 62.5
+  },
+  "T022": {
+    "EvoFinAgent": 39.0,
+    "wo_evolution": 15.0,
+    "wo_memory": 36.5,
+    "wo_orchestration": 62.0
+  },
+  "T023": {
+    "EvoFinAgent": 59.0,
+    "wo_evolution": 43.0,
+    "wo_memory": 58.0,
+    "wo_orchestration": 71.5
+  },
+  "T024": {
+    "EvoFinAgent": 36.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 41.0,
+    "wo_orchestration": 62.0
+  },
+  "T025": {
+    "EvoFinAgent": 44.0,
+    "wo_evolution": 17.5,
+    "wo_memory": 23.5,
+    "wo_orchestration": 77.0
+  },
+  "T026": {
+    "EvoFinAgent": 45.0,
+    "wo_evolution": 63.5,
+    "wo_memory": 75.0,
+    "wo_orchestration": 90.0
+  },
+  "T027": {
+    "EvoFinAgent": 50.0,
+    "wo_evolution": 43.5,
+    "wo_memory": 50.5,
+    "wo_orchestration": 70.0
+  },
+  "T028": {
+    "EvoFinAgent": 76.0,
+    "wo_evolution": 50.0,
+    "wo_memory": 72.5,
+    "wo_orchestration": 72.0
+  },
+  "T029": {
+    "EvoFinAgent": 53.5,
+    "wo_evolution": 50.0,
+    "wo_memory": 44.0,
+    "wo_orchestration": 63.5
+  },
+  "T030": {
+    "EvoFinAgent": 46.5,
+    "wo_evolution": 52.0,
+    "wo_memory": 26.0,
+    "wo_orchestration": 56.0
+  },
+  "T031": {
+    "EvoFinAgent": 57.5,
+    "wo_evolution": 51.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 60.0
+  },
+  "T032": {
+    "EvoFinAgent": 76.0,
+    "wo_evolution": 70.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 90.0
+  },
+  "T033": {
+    "EvoFinAgent": 55.0,
+    "wo_evolution": 29.0,
+    "wo_memory": 26.0,
+    "wo_orchestration": 44.0
+  },
+  "T034": {
+    "EvoFinAgent": 57.0,
+    "wo_evolution": 28.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 58.0
+  },
+  "T035": {
+    "EvoFinAgent": 36.0,
+    "wo_evolution": 49.5,
+    "wo_memory": 45.0,
+    "wo_orchestration": 56.0
+  },
+  "T036": {
+    "EvoFinAgent": 60.0,
+    "wo_evolution": 34.0,
+    "wo_memory": 30.0,
+    "wo_orchestration": 76.5
+  },
+  "T037": {
+    "EvoFinAgent": 48.0,
+    "wo_evolution": 50.5,
+    "wo_memory": 12.0,
+    "wo_orchestration": 71.5
+  },
+  "T038": {
+    "EvoFinAgent": 36.5,
+    "wo_evolution": 20.0,
+    "wo_memory": 56.5,
+    "wo_orchestration": 66.5
+  },
+  "T039": {
+    "EvoFinAgent": 23.0,
+    "wo_evolution": 42.0,
+    "wo_memory": 42.0,
+    "wo_orchestration": 63.5
+  },
+  "T040": {
+    "EvoFinAgent": 49.5,
+    "wo_evolution": 52.0,
+    "wo_memory": 29.0,
+    "wo_orchestration": 36.0
+  },
+  "T041": {
+    "EvoFinAgent": 21.0,
+    "wo_evolution": 28.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 70.0
+  },
+  "T042": {
+    "EvoFinAgent": 52.5,
+    "wo_evolution": 2.0,
+    "wo_memory": 2.0,
+    "wo_orchestration": 77.5
+  },
+  "T043": {
+    "EvoFinAgent": 49.0,
+    "wo_evolution": 34.5,
+    "wo_memory": 65.0,
+    "wo_orchestration": 87.0
+  },
+  "T044": {
+    "EvoFinAgent": 49.0,
+    "wo_evolution": 1.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 67.0
+  },
+  "T045": {
+    "EvoFinAgent": 57.5,
+    "wo_evolution": 41.5,
+    "wo_memory": 41.5,
+    "wo_orchestration": 22.0
+  },
+  "T046": {
+    "EvoFinAgent": 52.5,
+    "wo_evolution": 14.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 65.0
+  },
+  "T047": {
+    "EvoFinAgent": 23.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 18.0
+  },
+  "T048": {
+    "EvoFinAgent": 21.0,
+    "wo_evolution": 14.0,
+    "wo_memory": 25.0,
+    "wo_orchestration": 72.0
+  },
+  "T049": {
+    "EvoFinAgent": 44.0,
+    "wo_evolution": 44.5,
+    "wo_memory": 49.5,
+    "wo_orchestration": 29.0
+  },
+  "T050": {
+    "EvoFinAgent": 42.0,
+    "wo_evolution": 47.0,
+    "wo_memory": 47.5,
+    "wo_orchestration": 61.5
+  },
+  "T051": {
+    "EvoFinAgent": 2.0,
+    "wo_evolution": 34.5,
+    "wo_memory": 2.0,
+    "wo_orchestration": 59.0
+  },
+  "T052": {
+    "EvoFinAgent": 41.5,
+    "wo_evolution": 20.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 0.0
+  },
+  "T053": {
+    "EvoFinAgent": 35.0,
+    "wo_evolution": 33.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 55.0
+  },
+  "T054": {
+    "EvoFinAgent": 60.0,
+    "wo_evolution": 29.0,
+    "wo_memory": 70.0,
+    "wo_orchestration": 93.5
+  },
+  "T055": {
+    "EvoFinAgent": 71.0,
+    "wo_evolution": 70.0,
+    "wo_memory": 58.0,
+    "wo_orchestration": 89.5
+  },
+  "T056": {
+    "EvoFinAgent": 67.5,
+    "wo_evolution": 60.0,
+    "wo_memory": 68.0,
+    "wo_orchestration": 92.5
+  },
+  "T057": {
+    "EvoFinAgent": 52.0,
+    "wo_evolution": 58.0,
+    "wo_memory": 52.0,
+    "wo_orchestration": 79.0
+  },
+  "T058": {
+    "EvoFinAgent": 72.5,
+    "wo_evolution": 57.0,
+    "wo_memory": 66.5,
+    "wo_orchestration": 65.0
+  },
+  "T059": {
+    "EvoFinAgent": 65.0,
+    "wo_evolution": 63.0,
+    "wo_memory": 55.0,
+    "wo_orchestration": 98.5
+  },
+  "T060": {
+    "EvoFinAgent": 48.5,
+    "wo_evolution": 71.5,
+    "wo_memory": 63.5,
+    "wo_orchestration": 92.5
+  },
+  "T061": {
+    "EvoFinAgent": 55.0,
+    "wo_evolution": 75.0,
+    "wo_memory": 55.0,
+    "wo_orchestration": 94.0
+  },
+  "T062": {
+    "EvoFinAgent": 79.0,
+    "wo_evolution": 75.0,
+    "wo_memory": 65.0,
+    "wo_orchestration": 80.0
+  },
+  "T063": {
+    "EvoFinAgent": 78.0,
+    "wo_evolution": 68.0,
+    "wo_memory": 68.0,
+    "wo_orchestration": 98.5
+  },
+  "T064": {
+    "EvoFinAgent": 40.5,
+    "wo_evolution": 34.5,
+    "wo_memory": 50.0,
+    "wo_orchestration": 63.0
+  },
+  "T065": {
+    "EvoFinAgent": 57.0,
+    "wo_evolution": 43.0,
+    "wo_memory": 48.0,
+    "wo_orchestration": 43.0
+  },
+  "T066": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 30.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 59.0
+  },
+  "T067": {
+    "EvoFinAgent": 58.0,
+    "wo_evolution": 57.5,
+    "wo_memory": 51.5,
+    "wo_orchestration": 23.0
+  },
+  "T068": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 0.0
+  },
+  "T069": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 53.0,
+    "wo_memory": 63.0,
+    "wo_orchestration": 68.0
+  },
+  "T070": {
+    "EvoFinAgent": 45.0,
+    "wo_evolution": 30.0,
+    "wo_memory": 64.0,
+    "wo_orchestration": 83.5
+  },
+  "T071": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 56.0,
+    "wo_memory": 1.0,
+    "wo_orchestration": 37.0
+  },
+  "T072": {
+    "EvoFinAgent": 55.0,
+    "wo_evolution": 55.0,
+    "wo_memory": 18.0,
+    "wo_orchestration": 84.0
+  },
+  "T073": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 57.0
+  },
+  "T074": {
+    "EvoFinAgent": 43.0,
+    "wo_evolution": 23.0,
+    "wo_memory": 46.5,
+    "wo_orchestration": 46.5
+  },
+  "T075": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 39.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 0.0
+  },
+  "T076": {
+    "EvoFinAgent": 2.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 61.0
+  },
+  "T077": {
+    "EvoFinAgent": 41.5,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 51.5
+  },
+  "T078": {
+    "EvoFinAgent": 34.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 2.0,
+    "wo_orchestration": 63.5
+  },
+  "T079": {
+    "EvoFinAgent": 50.5,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 1.0
+  },
+  "T080": {
+    "EvoFinAgent": 30.5,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 78.0
+  },
+  "T081": {
+    "EvoFinAgent": 51.5,
+    "wo_evolution": 2.0,
+    "wo_memory": 2.0,
+    "wo_orchestration": 49.0
+  },
+  "T082": {
+    "EvoFinAgent": 47.5,
+    "wo_evolution": 0.0,
+    "wo_memory": 27.5,
+    "wo_orchestration": 33.0
+  },
+  "T083": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 1.0
+  },
+  "T084": {
+    "EvoFinAgent": 66.0,
+    "wo_evolution": 47.0,
+    "wo_memory": 65.0,
+    "wo_orchestration": 98.5
+  },
+  "T085": {
+    "EvoFinAgent": 71.0,
+    "wo_evolution": 29.0,
+    "wo_memory": 33.0,
+    "wo_orchestration": 50.0
+  },
+  "T086": {
+    "EvoFinAgent": 61.0,
+    "wo_evolution": 65.0,
+    "wo_memory": 63.0,
+    "wo_orchestration": 98.5
+  },
+  "T087": {
+    "EvoFinAgent": 68.5,
+    "wo_evolution": 66.5,
+    "wo_memory": 71.0,
+    "wo_orchestration": 98.5
+  },
+  "T088": {
+    "EvoFinAgent": 66.0,
+    "wo_evolution": 60.0,
+    "wo_memory": 66.0,
+    "wo_orchestration": 98.5
+  },
+  "T089": {
+    "EvoFinAgent": 65.5,
+    "wo_evolution": 64.0,
+    "wo_memory": 71.0,
+    "wo_orchestration": 97.5
+  },
+  "T090": {
+    "EvoFinAgent": 63.5,
+    "wo_evolution": 66.0,
+    "wo_memory": 67.0,
+    "wo_orchestration": 100.0
+  },
+  "T091": {
+    "EvoFinAgent": 62.0,
+    "wo_evolution": 65.0,
+    "wo_memory": 65.0,
+    "wo_orchestration": 92.5
+  },
+  "T092": {
+    "EvoFinAgent": 66.0,
+    "wo_evolution": 65.0,
+    "wo_memory": 32.0,
+    "wo_orchestration": 50.0
+  },
+  "T093": {
+    "EvoFinAgent": 53.5,
+    "wo_evolution": 56.0,
+    "wo_memory": 71.0,
+    "wo_orchestration": 98.5
+  },
+  "T094": {
+    "EvoFinAgent": 68.5,
+    "wo_evolution": 61.0,
+    "wo_memory": 65.0,
+    "wo_orchestration": 98.0
+  },
+  "T095": {
+    "EvoFinAgent": 56.5,
+    "wo_evolution": 67.0,
+    "wo_memory": 59.0,
+    "wo_orchestration": 59.0
+  },
+  "T096": {
+    "EvoFinAgent": 67.5,
+    "wo_evolution": 28.5,
+    "wo_memory": 61.5,
+    "wo_orchestration": 59.0
+  },
+  "T097": {
+    "EvoFinAgent": 2.0,
+    "wo_evolution": 47.0,
+    "wo_memory": 41.0,
+    "wo_orchestration": 66.0
+  },
+  "T098": {
+    "EvoFinAgent": 68.0,
+    "wo_evolution": 25.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 31.0
+  },
+  "T099": {
+    "EvoFinAgent": 70.0,
+    "wo_evolution": 22.5,
+    "wo_memory": 67.0,
+    "wo_orchestration": 80.0
+  },
+  "T100": {
+    "EvoFinAgent": 45.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 62.0
+  },
+  "T101": {
+    "EvoFinAgent": 59.0,
+    "wo_evolution": 65.0,
+    "wo_memory": 56.0,
+    "wo_orchestration": 72.5
+  },
+  "T102": {
+    "EvoFinAgent": 56.5,
+    "wo_evolution": 47.0,
+    "wo_memory": 34.0,
+    "wo_orchestration": 70.0
+  },
+  "T103": {
+    "EvoFinAgent": 59.0,
+    "wo_evolution": 2.0,
+    "wo_memory": 1.5,
+    "wo_orchestration": 9.0
+  },
+  "T104": {
+    "EvoFinAgent": 24.0,
+    "wo_evolution": 21.0,
+    "wo_memory": 63.5,
+    "wo_orchestration": 31.5
+  },
+  "T105": {
+    "EvoFinAgent": 39.0,
+    "wo_evolution": 37.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 73.5
+  },
+  "T106": {
+    "EvoFinAgent": 42.5,
+    "wo_evolution": 15.5,
+    "wo_memory": 53.5,
+    "wo_orchestration": 85.0
+  },
+  "T107": {
+    "EvoFinAgent": 38.0,
+    "wo_evolution": 33.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 23.0
+  },
+  "T108": {
+    "EvoFinAgent": 46.5,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 59.0
+  },
+  "T109": {
+    "EvoFinAgent": 1.0,
+    "wo_evolution": 24.0,
+    "wo_memory": 1.0,
+    "wo_orchestration": 74.0
+  },
+  "T110": {
+    "EvoFinAgent": 41.5,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 0.0
+  },
+  "T111": {
+    "EvoFinAgent": 31.5,
+    "wo_evolution": 0.0,
+    "wo_memory": 1.0,
+    "wo_orchestration": 0.0
+  },
+  "T112": {
+    "EvoFinAgent": 28.0,
+    "wo_evolution": 46.0,
+    "wo_memory": 50.5,
+    "wo_orchestration": 61.0
+  },
+  "T113": {
+    "EvoFinAgent": 1.0,
+    "wo_evolution": 33.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 0.0
+  },
+  "T114": {
+    "EvoFinAgent": 34.0,
+    "wo_evolution": 50.0,
+    "wo_memory": 52.0,
+    "wo_orchestration": 29.0
+  },
+  "T115": {
+    "EvoFinAgent": 32.5,
+    "wo_evolution": 78.0,
+    "wo_memory": 58.5,
+    "wo_orchestration": 100.0
+  },
+  "T116": {
+    "EvoFinAgent": 66.0,
+    "wo_evolution": 77.5,
+    "wo_memory": 66.0,
+    "wo_orchestration": 96.5
+  },
+  "T117": {
+    "EvoFinAgent": 69.0,
+    "wo_evolution": 67.0,
+    "wo_memory": 66.0,
+    "wo_orchestration": 97.5
+  },
+  "T118": {
+    "EvoFinAgent": 71.0,
+    "wo_evolution": 66.0,
+    "wo_memory": 58.5,
+    "wo_orchestration": 100.0
+  },
+  "T119": {
+    "EvoFinAgent": 63.5,
+    "wo_evolution": 76.5,
+    "wo_memory": 77.0,
+    "wo_orchestration": 98.5
+  },
+  "T120": {
+    "EvoFinAgent": 71.0,
+    "wo_evolution": 29.0,
+    "wo_memory": 63.5,
+    "wo_orchestration": 97.5
+  },
+  "T121": {
+    "EvoFinAgent": 27.5,
+    "wo_evolution": 57.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 85.0
+  },
+  "T122": {
+    "EvoFinAgent": 72.0,
+    "wo_evolution": 58.5,
+    "wo_memory": 21.0,
+    "wo_orchestration": 93.5
+  },
+  "T123": {
+    "EvoFinAgent": 39.0,
+    "wo_evolution": 57.0,
+    "wo_memory": 70.0,
+    "wo_orchestration": 84.0
+  },
+  "T124": {
+    "EvoFinAgent": 34.0,
+    "wo_evolution": 35.0,
+    "wo_memory": 26.0,
+    "wo_orchestration": 58.0
+  },
+  "T125": {
+    "EvoFinAgent": 37.0,
+    "wo_evolution": 21.0,
+    "wo_memory": 60.0,
+    "wo_orchestration": 60.0
+  },
+  "T126": {
+    "EvoFinAgent": 70.0,
+    "wo_evolution": 72.5,
+    "wo_memory": 67.5,
+    "wo_orchestration": 98.5
+  },
+  "T127": {
+    "EvoFinAgent": 55.0,
+    "wo_evolution": 28.0,
+    "wo_memory": 24.0,
+    "wo_orchestration": 66.0
+  },
+  "T128": {
+    "EvoFinAgent": 47.0,
+    "wo_evolution": 24.0,
+    "wo_memory": 1.0,
+    "wo_orchestration": 68.0
+  },
+  "T129": {
+    "EvoFinAgent": 46.0,
+    "wo_evolution": 40.0,
+    "wo_memory": 70.0,
+    "wo_orchestration": 75.0
+  },
+  "T130": {
+    "EvoFinAgent": 58.0,
+    "wo_evolution": 48.5,
+    "wo_memory": 1.5,
+    "wo_orchestration": 45.0
+  },
+  "T131": {
+    "EvoFinAgent": 57.0,
+    "wo_evolution": 38.5,
+    "wo_memory": 18.0,
+    "wo_orchestration": 47.5
+  },
+  "T132": {
+    "EvoFinAgent": 23.0,
+    "wo_evolution": 36.5,
+    "wo_memory": 16.5,
+    "wo_orchestration": 24.0
+  },
+  "T133": {
+    "EvoFinAgent": 49.0,
+    "wo_evolution": 38.5,
+    "wo_memory": 40.0,
+    "wo_orchestration": 44.0
+  },
+  "T134": {
+    "EvoFinAgent": 50.0,
+    "wo_evolution": 16.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 50.0
+  },
+  "T135": {
+    "EvoFinAgent": 35.0,
+    "wo_evolution": 29.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 53.0
+  },
+  "T136": {
+    "EvoFinAgent": 33.0,
+    "wo_evolution": 30.5,
+    "wo_memory": 2.0,
+    "wo_orchestration": 31.0
+  },
+  "T137": {
+    "EvoFinAgent": 31.0,
+    "wo_evolution": 36.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 50.0
+  },
+  "T138": {
+    "EvoFinAgent": 52.0,
+    "wo_evolution": 43.0,
+    "wo_memory": 48.0,
+    "wo_orchestration": 54.0
+  },
+  "T139": {
+    "EvoFinAgent": 43.0,
+    "wo_evolution": 37.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 68.0
+  },
+  "T140": {
+    "EvoFinAgent": 49.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 20.0,
+    "wo_orchestration": 11.0
+  },
+  "T141": {
+    "EvoFinAgent": 2.0,
+    "wo_evolution": 2.0,
+    "wo_memory": 2.0,
+    "wo_orchestration": 59.0
+  },
+  "T142": {
+    "EvoFinAgent": 35.0,
+    "wo_evolution": 37.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 52.5
+  },
+  "T143": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 23.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 57.0
+  },
+  "T144": {
+    "EvoFinAgent": 41.5,
+    "wo_evolution": 47.0,
+    "wo_memory": 50.5,
+    "wo_orchestration": 55.0
+  },
+  "T145": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 1.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 57.5
+  },
+  "T146": {
+    "EvoFinAgent": 33.0,
+    "wo_evolution": 43.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 55.5
+  },
+  "T147": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 51.0,
+    "wo_orchestration": 47.5
+  },
+  "T148": {
+    "EvoFinAgent": 49.5,
+    "wo_evolution": 28.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 67.5
+  },
+  "T149": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 35.0,
+    "wo_memory": 45.0,
+    "wo_orchestration": 55.5
+  },
+  "T150": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 44.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 17.0
+  },
+  "T151": {
+    "EvoFinAgent": 26.5,
+    "wo_evolution": 0.0,
+    "wo_memory": 45.0,
+    "wo_orchestration": 69.0
+  },
+  "T152": {
+    "EvoFinAgent": 35.0,
+    "wo_evolution": 48.5,
+    "wo_memory": 14.0,
+    "wo_orchestration": 52.5
+  },
+  "T153": {
+    "EvoFinAgent": 37.5,
+    "wo_evolution": 2.5,
+    "wo_memory": 55.0,
+    "wo_orchestration": 67.0
+  },
+  "T154": {
+    "EvoFinAgent": 57.5,
+    "wo_evolution": 43.0,
+    "wo_memory": 60.0,
+    "wo_orchestration": 66.25
+  },
+  "T155": {
+    "EvoFinAgent": 55.0,
+    "wo_evolution": 61.0,
+    "wo_memory": 60.0,
+    "wo_orchestration": 62.0
+  },
+  "T156": {
+    "EvoFinAgent": 41.0,
+    "wo_evolution": 44.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 72.25
+  },
+  "T157": {
+    "EvoFinAgent": 17.0,
+    "wo_evolution": 60.0,
+    "wo_memory": 45.5,
+    "wo_orchestration": 74.75
+  },
+  "T158": {
+    "EvoFinAgent": 39.0,
+    "wo_evolution": 22.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 70.0
+  },
+  "T159": {
+    "EvoFinAgent": 34.0,
+    "wo_evolution": 77.0,
+    "wo_memory": 75.0,
+    "wo_orchestration": 80.25
+  },
+  "T160": {
+    "EvoFinAgent": 33.0,
+    "wo_evolution": 55.0,
+    "wo_memory": 39.0,
+    "wo_orchestration": 65.0
+  },
+  "T161": {
+    "EvoFinAgent": 48.0,
+    "wo_evolution": 59.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 67.5
+  },
+  "T162": {
+    "EvoFinAgent": 48.0,
+    "wo_evolution": 55.0,
+    "wo_memory": 58.5,
+    "wo_orchestration": 23.0
+  },
+  "T163": {
+    "EvoFinAgent": 43.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 47.5,
+    "wo_orchestration": 59.0
+  },
+  "T164": {
+    "EvoFinAgent": 43.5,
+    "wo_evolution": 56.0,
+    "wo_memory": 52.0,
+    "wo_orchestration": 68.0
+  },
+  "T165": {
+    "EvoFinAgent": 60.0,
+    "wo_evolution": 67.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 9.0
+  },
+  "T166": {
+    "EvoFinAgent": 53.0,
+    "wo_evolution": 22.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 27.0
+  },
+  "T167": {
+    "EvoFinAgent": 52.5,
+    "wo_evolution": 22.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 45.0
+  },
+  "T168": {
+    "EvoFinAgent": 56.5,
+    "wo_evolution": 59.0,
+    "wo_memory": 49.0,
+    "wo_orchestration": 66.5
+  },
+  "T169": {
+    "EvoFinAgent": 43.0,
+    "wo_evolution": 56.0,
+    "wo_memory": 54.0,
+    "wo_orchestration": 74.5
+  },
+  "T170": {
+    "EvoFinAgent": 47.0,
+    "wo_evolution": 54.0,
+    "wo_memory": 16.0,
+    "wo_orchestration": 24.5
+  },
+  "T171": {
+    "EvoFinAgent": 19.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 59.0,
+    "wo_orchestration": 30.0
+  },
+  "T172": {
+    "EvoFinAgent": 24.5,
+    "wo_evolution": 0.0,
+    "wo_memory": 37.5,
+    "wo_orchestration": 58.0
+  },
+  "T173": {
+    "EvoFinAgent": 43.0,
+    "wo_evolution": 2.0,
+    "wo_memory": 45.5,
+    "wo_orchestration": 66.5
+  },
+  "T174": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 6.0,
+    "wo_orchestration": 57.0
+  },
+  "T175": {
+    "EvoFinAgent": 58.0,
+    "wo_evolution": 50.0,
+    "wo_memory": 44.5,
+    "wo_orchestration": 73.0
+  },
+  "T176": {
+    "EvoFinAgent": 36.0,
+    "wo_evolution": 40.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 63.5
+  },
+  "T177": {
+    "EvoFinAgent": 46.0,
+    "wo_evolution": 49.0,
+    "wo_memory": 52.0,
+    "wo_orchestration": 64.0
+  },
+  "T178": {
+    "EvoFinAgent": 42.5,
+    "wo_evolution": 52.0,
+    "wo_memory": 50.0,
+    "wo_orchestration": 58.0
+  },
+  "T179": {
+    "EvoFinAgent": 53.0,
+    "wo_evolution": 36.0,
+    "wo_memory": 40.0,
+    "wo_orchestration": 67.5
+  },
+  "T180": {
+    "EvoFinAgent": 60.5,
+    "wo_evolution": 45.0,
+    "wo_memory": 59.0,
+    "wo_orchestration": 53.0
+  },
+  "T181": {
+    "EvoFinAgent": 72.0,
+    "wo_evolution": 58.5,
+    "wo_memory": 70.0,
+    "wo_orchestration": 98.5
+  },
+  "T182": {
+    "EvoFinAgent": 46.0,
+    "wo_evolution": 29.0,
+    "wo_memory": 44.0,
+    "wo_orchestration": 58.5
+  },
+  "T183": {
+    "EvoFinAgent": 68.5,
+    "wo_evolution": 69.0,
+    "wo_memory": 65.0,
+    "wo_orchestration": 98.5
+  },
+  "T184": {
+    "EvoFinAgent": 78.5,
+    "wo_evolution": 68.5,
+    "wo_memory": 58.5,
+    "wo_orchestration": 98.5
+  },
+  "T185": {
+    "EvoFinAgent": 76.0,
+    "wo_evolution": 60.0,
+    "wo_memory": 62.5,
+    "wo_orchestration": 98.5
+  },
+  "T186": {
+    "EvoFinAgent": 73.5,
+    "wo_evolution": 50.0,
+    "wo_memory": 46.0,
+    "wo_orchestration": 76.0
+  },
+  "T187": {
+    "EvoFinAgent": 62.0,
+    "wo_evolution": 26.5,
+    "wo_memory": 46.0,
+    "wo_orchestration": 66.0
+  },
+  "T188": {
+    "EvoFinAgent": 70.0,
+    "wo_evolution": 64.0,
+    "wo_memory": 60.0,
+    "wo_orchestration": 97.5
+  },
+  "T189": {
+    "EvoFinAgent": 74.0,
+    "wo_evolution": 66.0,
+    "wo_memory": 68.5,
+    "wo_orchestration": 97.5
+  },
+  "T190": {
+    "EvoFinAgent": 76.0,
+    "wo_evolution": 58.5,
+    "wo_memory": 70.5,
+    "wo_orchestration": 98.5
+  },
+  "T191": {
+    "EvoFinAgent": 39.5,
+    "wo_evolution": 55.0,
+    "wo_memory": 33.0,
+    "wo_orchestration": 50.5
+  },
+  "T192": {
+    "EvoFinAgent": 57.0,
+    "wo_evolution": 58.5,
+    "wo_memory": 14.0,
+    "wo_orchestration": 42.0
+  },
+  "T193": {
+    "EvoFinAgent": 52.0,
+    "wo_evolution": 44.0,
+    "wo_memory": 24.0,
+    "wo_orchestration": 25.0
+  },
+  "T194": {
+    "EvoFinAgent": 47.0,
+    "wo_evolution": 51.5,
+    "wo_memory": 47.0,
+    "wo_orchestration": 21.5
+  },
+  "T195": {
+    "EvoFinAgent": 34.0,
+    "wo_evolution": 54.5,
+    "wo_memory": 24.5,
+    "wo_orchestration": 60.5
+  },
+  "T196": {
+    "EvoFinAgent": 15.5,
+    "wo_evolution": 0.0,
+    "wo_memory": 71.0,
+    "wo_orchestration": 60.0
+  },
+  "T197": {
+    "EvoFinAgent": 49.0,
+    "wo_evolution": 48.0,
+    "wo_memory": 58.5,
+    "wo_orchestration": 18.5
+  },
+  "T198": {
+    "EvoFinAgent": 34.5,
+    "wo_evolution": 46.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 67.5
+  },
+  "T199": {
+    "EvoFinAgent": 41.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 56.5
+  },
+  "T200": {
+    "EvoFinAgent": 45.0,
+    "wo_evolution": 42.0,
+    "wo_memory": 23.0,
+    "wo_orchestration": 58.0
+  },
+  "T201": {
+    "EvoFinAgent": 49.0,
+    "wo_evolution": 28.0,
+    "wo_memory": 32.5,
+    "wo_orchestration": 50.0
+  },
+  "T202": {
+    "EvoFinAgent": 45.0,
+    "wo_evolution": 12.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 18.5
+  },
+  "T203": {
+    "EvoFinAgent": 61.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 0.0
+  },
+  "T204": {
+    "EvoFinAgent": 37.5,
+    "wo_evolution": 0.0,
+    "wo_memory": 40.0,
+    "wo_orchestration": 45.0
+  },
+  "T205": {
+    "EvoFinAgent": 51.5,
+    "wo_evolution": 30.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 23.0
+  },
+  "T206": {
+    "EvoFinAgent": 59.0,
+    "wo_evolution": 32.0,
+    "wo_memory": 42.0,
+    "wo_orchestration": 0.0
+  },
+  "T207": {
+    "EvoFinAgent": 49.0,
+    "wo_evolution": 52.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 26.5
+  },
+  "T208": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 28.0,
+    "wo_memory": 17.0,
+    "wo_orchestration": 54.5
+  },
+  "T209": {
+    "EvoFinAgent": 35.5,
+    "wo_evolution": 2.0,
+    "wo_memory": 41.5,
+    "wo_orchestration": 66.5
+  },
+  "T210": {
+    "EvoFinAgent": 37.5,
+    "wo_evolution": 1.0,
+    "wo_memory": 27.0,
+    "wo_orchestration": 58.0
+  },
+  "T211": {
+    "EvoFinAgent": 56.0,
+    "wo_evolution": 55.0,
+    "wo_memory": 75.0,
+    "wo_orchestration": 17.5
+  },
+  "T212": {
+    "EvoFinAgent": 36.0,
+    "wo_evolution": 48.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 34.0
+  },
+  "T213": {
+    "EvoFinAgent": 74.5,
+    "wo_evolution": 45.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 73.5
+  },
+  "T214": {
+    "EvoFinAgent": 36.0,
+    "wo_evolution": 65.0,
+    "wo_memory": 71.0,
+    "wo_orchestration": 98.5
+  },
+  "T215": {
+    "EvoFinAgent": 72.0,
+    "wo_evolution": 68.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 45.5
+  },
+  "T216": {
+    "EvoFinAgent": 45.0,
+    "wo_evolution": 31.5,
+    "wo_memory": 67.5,
+    "wo_orchestration": 62.0
+  },
+  "T217": {
+    "EvoFinAgent": 72.5,
+    "wo_evolution": 44.0,
+    "wo_memory": 28.0,
+    "wo_orchestration": 70.0
+  },
+  "T218": {
+    "EvoFinAgent": 57.5,
+    "wo_evolution": 20.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 61.0
+  },
+  "T219": {
+    "EvoFinAgent": 66.0,
+    "wo_evolution": 75.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 97.5
+  },
+  "T220": {
+    "EvoFinAgent": 2.5,
+    "wo_evolution": 12.0,
+    "wo_memory": 2.5,
+    "wo_orchestration": 68.0
+  },
+  "T221": {
+    "EvoFinAgent": 35.0,
+    "wo_evolution": 23.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 22.0
+  },
+  "T222": {
+    "EvoFinAgent": 46.5,
+    "wo_evolution": 35.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 0.0
+  },
+  "T223": {
+    "EvoFinAgent": 33.0,
+    "wo_evolution": 42.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 62.0
+  },
+  "T224": {
+    "EvoFinAgent": 54.0,
+    "wo_evolution": 18.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 44.0
+  },
+  "T225": {
+    "EvoFinAgent": 42.5,
+    "wo_evolution": 20.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 40.0
+  },
+  "T226": {
+    "EvoFinAgent": 48.0,
+    "wo_evolution": 56.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 69.0
+  },
+  "T227": {
+    "EvoFinAgent": 43.5,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 36.0
+  },
+  "T228": {
+    "EvoFinAgent": 53.0,
+    "wo_evolution": 41.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 61.75
+  },
+  "T229": {
+    "EvoFinAgent": 55.0,
+    "wo_evolution": 52.5,
+    "wo_memory": 56.0,
+    "wo_orchestration": 18.0
+  },
+  "T230": {
+    "EvoFinAgent": 43.0,
+    "wo_evolution": 10.0,
+    "wo_memory": 48.0,
+    "wo_orchestration": 78.5
+  },
+  "T231": {
+    "EvoFinAgent": 36.0,
+    "wo_evolution": 2.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 63.5
+  },
+  "T232": {
+    "EvoFinAgent": 31.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 27.5
+  },
+  "T233": {
+    "EvoFinAgent": 1.0,
+    "wo_evolution": 45.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 58.0
+  },
+  "T234": {
+    "EvoFinAgent": 15.5,
+    "wo_evolution": 2.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 2.0
+  },
+  "T235": {
+    "EvoFinAgent": 27.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 11.0,
+    "wo_orchestration": 35.0
+  },
+  "T236": {
+    "EvoFinAgent": 42.0,
+    "wo_evolution": 50.0,
+    "wo_memory": 17.5,
+    "wo_orchestration": 0.0
+  },
+  "T237": {
+    "EvoFinAgent": 34.5,
+    "wo_evolution": 2.0,
+    "wo_memory": 19.5,
+    "wo_orchestration": 65.5
+  },
+  "T238": {
+    "EvoFinAgent": 52.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 19.0
+  },
+  "T239": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 39.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 60.0
+  },
+  "T240": {
+    "EvoFinAgent": 40.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 58.0,
+    "wo_orchestration": 64.0
+  },
+  "T241": {
+    "EvoFinAgent": 60.0,
+    "wo_evolution": 69.5,
+    "wo_memory": 64.0,
+    "wo_orchestration": 95.0
+  },
+  "T242": {
+    "EvoFinAgent": 47.0,
+    "wo_evolution": 61.0,
+    "wo_memory": 65.0,
+    "wo_orchestration": 78.0
+  },
+  "T243": {
+    "EvoFinAgent": 78.0,
+    "wo_evolution": 66.0,
+    "wo_memory": 68.5,
+    "wo_orchestration": 100.0
+  },
+  "T244": {
+    "EvoFinAgent": 70.0,
+    "wo_evolution": 43.5,
+    "wo_memory": 70.5,
+    "wo_orchestration": 94.0
+  },
+  "T245": {
+    "EvoFinAgent": 67.0,
+    "wo_evolution": 26.5,
+    "wo_memory": 83.5,
+    "wo_orchestration": 77.0
+  },
+  "T246": {
+    "EvoFinAgent": 65.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 76.0,
+    "wo_orchestration": 51.0
+  },
+  "T247": {
+    "EvoFinAgent": 67.0,
+    "wo_evolution": 62.0,
+    "wo_memory": 65.0,
+    "wo_orchestration": 89.0
+  },
+  "T248": {
+    "EvoFinAgent": 67.0,
+    "wo_evolution": 64.0,
+    "wo_memory": 75.0,
+    "wo_orchestration": 74.0
+  },
+  "T249": {
+    "EvoFinAgent": 62.0,
+    "wo_evolution": 65.0,
+    "wo_memory": 75.0,
+    "wo_orchestration": 0.0
+  },
+  "T250": {
+    "EvoFinAgent": 61.0,
+    "wo_evolution": 61.0,
+    "wo_memory": 63.0,
+    "wo_orchestration": 39.0
+  },
+  "T251": {
+    "EvoFinAgent": 66.5,
+    "wo_evolution": 59.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 0.0
+  },
+  "T252": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 53.5,
+    "wo_memory": 41.5,
+    "wo_orchestration": 53.0
+  },
+  "T253": {
+    "EvoFinAgent": 54.0,
+    "wo_evolution": 19.0,
+    "wo_memory": 17.0,
+    "wo_orchestration": 19.0
+  },
+  "T254": {
+    "EvoFinAgent": 45.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 55.5,
+    "wo_orchestration": 71.5
+  },
+  "T255": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 26.5
+  },
+  "T256": {
+    "EvoFinAgent": 65.0,
+    "wo_evolution": 50.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 57.5
+  },
+  "T257": {
+    "EvoFinAgent": 34.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 48.0
+  },
+  "T258": {
+    "EvoFinAgent": 62.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 19.0
+  },
+  "T259": {
+    "EvoFinAgent": 43.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 16.0,
+    "wo_orchestration": 0.0
+  },
+  "T260": {
+    "EvoFinAgent": 30.0,
+    "wo_evolution": 29.5,
+    "wo_memory": 24.5,
+    "wo_orchestration": 54.5
+  },
+  "T261": {
+    "EvoFinAgent": 49.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 14.0
+  },
+  "T262": {
+    "EvoFinAgent": 41.5,
+    "wo_evolution": 1.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 49.0
+  },
+  "T263": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 0.0
+  },
+  "T264": {
+    "EvoFinAgent": 44.0,
+    "wo_evolution": 1.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 0.0
+  },
+  "T265": {
+    "EvoFinAgent": 2.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 63.0
+  },
+  "T266": {
+    "EvoFinAgent": 1.0,
+    "wo_evolution": 1.0,
+    "wo_memory": 1.0,
+    "wo_orchestration": 1.0
+  },
+  "T267": {
+    "EvoFinAgent": 50.5,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 65.0
+  },
+  "T268": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 2.0,
+    "wo_memory": 19.5,
+    "wo_orchestration": 1.0
+  },
+  "T269": {
+    "EvoFinAgent": 19.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 19.5,
+    "wo_orchestration": 40.0
+  },
+  "T270": {
+    "EvoFinAgent": 38.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 44.5,
+    "wo_orchestration": 0.0
+  },
+  "T271": {
+    "EvoFinAgent": 81.0,
+    "wo_evolution": 52.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 78.5
+  },
+  "T272": {
+    "EvoFinAgent": 76.0,
+    "wo_evolution": 35.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 96.0
+  },
+  "T273": {
+    "EvoFinAgent": 66.0,
+    "wo_evolution": 65.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 97.5
+  },
+  "T274": {
+    "EvoFinAgent": 65.0,
+    "wo_evolution": 69.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 98.5
+  },
+  "T275": {
+    "EvoFinAgent": 80.0,
+    "wo_evolution": 83.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 97.5
+  },
+  "T276": {
+    "EvoFinAgent": 71.0,
+    "wo_evolution": 63.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 50.0
+  },
+  "T277": {
+    "EvoFinAgent": 70.0,
+    "wo_evolution": 74.0,
+    "wo_memory": 67.5,
+    "wo_orchestration": 97.5
+  },
+  "T278": {
+    "EvoFinAgent": 80.0,
+    "wo_evolution": 66.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 97.5
+  },
+  "T279": {
+    "EvoFinAgent": 63.5,
+    "wo_evolution": 27.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 98.5
+  },
+  "T280": {
+    "EvoFinAgent": 66.0,
+    "wo_evolution": 34.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 97.5
+  },
+  "T281": {
+    "EvoFinAgent": 60.0,
+    "wo_evolution": 57.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 23.0
+  },
+  "T282": {
+    "EvoFinAgent": 55.0,
+    "wo_evolution": 55.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 70.0
+  },
+  "T283": {
+    "EvoFinAgent": 51.5,
+    "wo_evolution": 41.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 79.0
+  },
+  "T284": {
+    "EvoFinAgent": 52.5,
+    "wo_evolution": 48.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 73.5
+  },
+  "T285": {
+    "EvoFinAgent": 0.0,
+    "wo_evolution": 43.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 61.5
+  },
+  "T286": {
+    "EvoFinAgent": 53.0,
+    "wo_evolution": 52.0,
+    "wo_memory": 51.0,
+    "wo_orchestration": 11.0
+  },
+  "T287": {
+    "EvoFinAgent": 47.0,
+    "wo_evolution": 60.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 72.5
+  },
+  "T288": {
+    "EvoFinAgent": 71.0,
+    "wo_evolution": 33.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 96.5
+  },
+  "T289": {
+    "EvoFinAgent": 50.0,
+    "wo_evolution": 45.0,
+    "wo_memory": 54.0,
+    "wo_orchestration": 65.0
+  },
+  "T290": {
+    "EvoFinAgent": 52.0,
+    "wo_evolution": 57.5,
+    "wo_memory": 51.0,
+    "wo_orchestration": 60.0
+  },
+  "T291": {
+    "EvoFinAgent": 44.5,
+    "wo_evolution": 51.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 17.0
+  },
+  "T292": {
+    "EvoFinAgent": 19.0,
+    "wo_evolution": 36.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 54.0
+  },
+  "T293": {
+    "EvoFinAgent": 58.5,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 58.0
+  },
+  "T294": {
+    "EvoFinAgent": 55.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 16.5
+  },
+  "T295": {
+    "EvoFinAgent": 1.0,
+    "wo_evolution": 36.0,
+    "wo_memory": 2.0,
+    "wo_orchestration": 57.5
+  },
+  "T296": {
+    "EvoFinAgent": 60.0,
+    "wo_evolution": 24.5,
+    "wo_memory": 0.0,
+    "wo_orchestration": 64.0
+  },
+  "T297": {
+    "EvoFinAgent": 38.0,
+    "wo_evolution": 42.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 57.0
+  },
+  "T298": {
+    "EvoFinAgent": 41.0,
+    "wo_evolution": 19.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 66.0
+  },
+  "T299": {
+    "EvoFinAgent": 1.0,
+    "wo_evolution": 0.0,
+    "wo_memory": 1.0,
+    "wo_orchestration": 0.0
+  },
+  "T300": {
+    "EvoFinAgent": 38.0,
+    "wo_evolution": 36.0,
+    "wo_memory": 0.0,
+    "wo_orchestration": 0.0
+  }
+}

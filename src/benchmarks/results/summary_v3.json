@@ -1,0 +1,1065 @@
+{
+  "root": "src/benchmarks/results",
+  "runs": [
+    {
+      "run_id": "1776506693_full",
+      "schema_version": "neurips_eval.v2",
+      "variant": "full",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 2,
+      "n_trials": 2,
+      "hard_success_rate": 1.0,
+      "hard_success_rate_ci95": {
+        "low": 1.0,
+        "high": 1.0
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "judge_score_mean": 61.0,
+      "judge_score_ci95": {
+        "low": 57.0,
+        "high": 65.0
+      },
+      "elapsed_s_mean": 383.131182551384,
+      "tool_calls_mean": 5.0,
+      "failure_modes": {}
+    },
+    {
+      "run_id": "1776541565_full",
+      "schema_version": "neurips_eval.v2",
+      "variant": "full",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 1,
+      "n_trials": 1,
+      "hard_success_rate": 1.0,
+      "hard_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 270.5299451351166,
+      "tool_calls_mean": 5.0,
+      "failure_modes": {}
+    },
+    {
+      "run_id": "1776541836_plan_only",
+      "schema_version": "neurips_eval.v2",
+      "variant": "plan_only",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 1,
+      "n_trials": 1,
+      "hard_success_rate": 1.0,
+      "hard_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 258.8809070587158,
+      "tool_calls_mean": 5.0,
+      "failure_modes": {}
+    },
+    {
+      "run_id": "1776542095_sop_baseline",
+      "schema_version": "neurips_eval.v2",
+      "variant": "sop_baseline",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 1,
+      "n_trials": 1,
+      "hard_success_rate": 0.0,
+      "hard_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 600.0156280994415,
+      "tool_calls_mean": 0.0,
+      "failure_modes": {
+        "timeout": 1
+      }
+    },
+    {
+      "run_id": "1776542695_review_revise_baseline",
+      "schema_version": "neurips_eval.v2",
+      "variant": "review_revise_baseline",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 1,
+      "n_trials": 1,
+      "hard_success_rate": 1.0,
+      "hard_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 520.319492816925,
+      "tool_calls_mean": 5.0,
+      "failure_modes": {}
+    },
+    {
+      "run_id": "1776579618_wo_evolution",
+      "schema_version": "neurips_eval.v2",
+      "variant": "wo_evolution",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 1,
+      "n_trials": 1,
+      "hard_success_rate": 1.0,
+      "hard_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 324.32194781303406,
+      "tool_calls_mean": 5.0,
+      "failure_modes": {}
+    },
+    {
+      "run_id": "1776579674_react_limit_10",
+      "schema_version": "neurips_eval.v2",
+      "variant": "react_limit_10",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 1,
+      "n_trials": 1,
+      "hard_success_rate": 0.0,
+      "hard_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 23.145169258117676,
+      "tool_calls_mean": 0.0,
+      "failure_modes": {
+        "execution": 1
+      }
+    },
+    {
+      "run_id": "1776579697_react_limit_25",
+      "schema_version": "neurips_eval.v2",
+      "variant": "react_limit_25",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 1,
+      "n_trials": 1,
+      "hard_success_rate": 0.0,
+      "hard_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 396.8708972930908,
+      "tool_calls_mean": 0.0,
+      "failure_modes": {
+        "execution": 1
+      }
+    },
+    {
+      "run_id": "1776579943_wo_memory",
+      "schema_version": "neurips_eval.v2",
+      "variant": "wo_memory",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 1,
+      "n_trials": 1,
+      "hard_success_rate": 1.0,
+      "hard_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 232.72136211395264,
+      "tool_calls_mean": 5.0,
+      "failure_modes": {}
+    },
+    {
+      "run_id": "1776580094_react_limit_50",
+      "schema_version": "neurips_eval.v2",
+      "variant": "react_limit_50",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 1,
+      "n_trials": 1,
+      "hard_success_rate": 0.0,
+      "hard_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 500.96295404434204,
+      "tool_calls_mean": 0.0,
+      "failure_modes": {
+        "execution": 1
+      }
+    },
+    {
+      "run_id": "1776580175_wo_orchestration",
+      "schema_version": "neurips_eval.v2",
+      "variant": "wo_orchestration",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 1,
+      "n_trials": 1,
+      "hard_success_rate": 1.0,
+      "hard_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 212.04205012321472,
+      "tool_calls_mean": 8.0,
+      "failure_modes": {}
+    },
+    {
+      "run_id": "1776580388_react_baseline",
+      "schema_version": "neurips_eval.v2",
+      "variant": "react_baseline",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 1,
+      "n_trials": 1,
+      "hard_success_rate": 0.0,
+      "hard_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": null,
+        "high": null
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 73.44358992576599,
+      "tool_calls_mean": 0.0,
+      "failure_modes": {
+        "execution": 1
+      }
+    },
+    {
+      "run_id": "1776589570_plan_only",
+      "schema_version": "neurips_eval.v2",
+      "variant": "plan_only",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 20,
+      "n_trials": 60,
+      "hard_success_rate": 1.0,
+      "hard_success_rate_ci95": {
+        "low": 1.0,
+        "high": 1.0
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 237.6192724188169,
+      "tool_calls_mean": 5.983333333333333,
+      "failure_modes": {}
+    },
+    {
+      "run_id": "1776589600_wo_evolution",
+      "schema_version": "neurips_eval.v2",
+      "variant": "wo_evolution",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 20,
+      "n_trials": 60,
+      "hard_success_rate": 0.8833333333333332,
+      "hard_success_rate_ci95": {
+        "low": 0.8,
+        "high": 0.9666666666666666
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 369.51268731355674,
+      "tool_calls_mean": 5.6,
+      "failure_modes": {
+        "timeout": 7
+      }
+    },
+    {
+      "run_id": "1776603828_sop_baseline",
+      "schema_version": "neurips_eval.v2",
+      "variant": "sop_baseline",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 20,
+      "n_trials": 60,
+      "hard_success_rate": 0.4666666666666666,
+      "hard_success_rate_ci95": {
+        "low": 0.31666666666666665,
+        "high": 0.6166666666666665
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 547.2970237533252,
+      "tool_calls_mean": 0.4666666666666666,
+      "failure_modes": {
+        "timeout": 32
+      }
+    },
+    {
+      "run_id": "1776611771_wo_memory",
+      "schema_version": "neurips_eval.v2",
+      "variant": "wo_memory",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 20,
+      "n_trials": 60,
+      "hard_success_rate": 0.9000000000000001,
+      "hard_success_rate_ci95": {
+        "low": 0.8166666666666667,
+        "high": 0.9833333333333332
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 348.0526413242022,
+      "tool_calls_mean": 5.833333333333334,
+      "failure_modes": {
+        "timeout": 5,
+        "execution": 1
+      }
+    },
+    {
+      "run_id": "1776632654_wo_orchestration",
+      "schema_version": "neurips_eval.v2",
+      "variant": "wo_orchestration",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 20,
+      "n_trials": 60,
+      "hard_success_rate": 0.7333333333333332,
+      "hard_success_rate_ci95": {
+        "low": 0.5833333333333334,
+        "high": 0.85
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 439.63459065755217,
+      "tool_calls_mean": 11.666666666666668,
+      "failure_modes": {
+        "timeout": 16
+      }
+    },
+    {
+      "run_id": "1776636666_react_baseline",
+      "schema_version": "neurips_eval.v2",
+      "variant": "react_baseline",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 20,
+      "n_trials": 60,
+      "hard_success_rate": 0.06666666666666667,
+      "hard_success_rate_ci95": {
+        "low": 0.016666666666666666,
+        "high": 0.13333333333333333
+      },
+      "judge_success_rate": 0.0,
+      "judge_success_rate_ci95": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "judge_score_mean": null,
+      "judge_score_ci95": {
+        "low": null,
+        "high": null
+      },
+      "elapsed_s_mean": 114.49381664196649,
+      "tool_calls_mean": 0.7,
+      "failure_modes": {
+        "execution": 54,
+        "timeout": 2
+      }
+    },
+    {
+      "run_id": "1776508393_full",
+      "schema_version": "neurips_eval.v2",
+      "variant": "full",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 20,
+      "n_trials": 60,
+      "hard_success_rate": 0.8833333333333334,
+      "hard_success_rate_ci95": {
+        "low": 0.8166666666666664,
+        "high": 0.95
+      },
+      "judge_success_rate": 0.09999999999999999,
+      "judge_success_rate_ci95": {
+        "low": 0.016666666666666666,
+        "high": 0.2
+      },
+      "judge_score_mean": 46.88333333333333,
+      "judge_score_ci95": {
+        "low": 39.03333333333333,
+        "high": 54.2
+      },
+      "elapsed_s_mean": 363.41679623524345,
+      "tool_calls_mean": 5.483333333333333,
+      "failure_modes": {
+        "timeout": 7
+      }
+    }
+  ],
+  "by_variant": {
+    "full": [
+      {
+        "run_id": "1776506693_full",
+        "schema_version": "neurips_eval.v2",
+        "variant": "full",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 2,
+        "n_trials": 2,
+        "hard_success_rate": 1.0,
+        "hard_success_rate_ci95": {
+          "low": 1.0,
+          "high": 1.0
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": 0.0,
+          "high": 0.0
+        },
+        "judge_score_mean": 61.0,
+        "judge_score_ci95": {
+          "low": 57.0,
+          "high": 65.0
+        },
+        "elapsed_s_mean": 383.131182551384,
+        "tool_calls_mean": 5.0,
+        "failure_modes": {}
+      },
+      {
+        "run_id": "1776541565_full",
+        "schema_version": "neurips_eval.v2",
+        "variant": "full",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 1,
+        "n_trials": 1,
+        "hard_success_rate": 1.0,
+        "hard_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 270.5299451351166,
+        "tool_calls_mean": 5.0,
+        "failure_modes": {}
+      },
+      {
+        "run_id": "1776508393_full",
+        "schema_version": "neurips_eval.v2",
+        "variant": "full",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 20,
+        "n_trials": 60,
+        "hard_success_rate": 0.8833333333333334,
+        "hard_success_rate_ci95": {
+          "low": 0.8166666666666664,
+          "high": 0.95
+        },
+        "judge_success_rate": 0.09999999999999999,
+        "judge_success_rate_ci95": {
+          "low": 0.016666666666666666,
+          "high": 0.2
+        },
+        "judge_score_mean": 46.88333333333333,
+        "judge_score_ci95": {
+          "low": 39.03333333333333,
+          "high": 54.2
+        },
+        "elapsed_s_mean": 363.41679623524345,
+        "tool_calls_mean": 5.483333333333333,
+        "failure_modes": {
+          "timeout": 7
+        }
+      }
+    ],
+    "plan_only": [
+      {
+        "run_id": "1776541836_plan_only",
+        "schema_version": "neurips_eval.v2",
+        "variant": "plan_only",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 1,
+        "n_trials": 1,
+        "hard_success_rate": 1.0,
+        "hard_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 258.8809070587158,
+        "tool_calls_mean": 5.0,
+        "failure_modes": {}
+      },
+      {
+        "run_id": "1776589570_plan_only",
+        "schema_version": "neurips_eval.v2",
+        "variant": "plan_only",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 20,
+        "n_trials": 60,
+        "hard_success_rate": 1.0,
+        "hard_success_rate_ci95": {
+          "low": 1.0,
+          "high": 1.0
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": 0.0,
+          "high": 0.0
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 237.6192724188169,
+        "tool_calls_mean": 5.983333333333333,
+        "failure_modes": {}
+      }
+    ],
+    "sop_baseline": [
+      {
+        "run_id": "1776542095_sop_baseline",
+        "schema_version": "neurips_eval.v2",
+        "variant": "sop_baseline",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 1,
+        "n_trials": 1,
+        "hard_success_rate": 0.0,
+        "hard_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 600.0156280994415,
+        "tool_calls_mean": 0.0,
+        "failure_modes": {
+          "timeout": 1
+        }
+      },
+      {
+        "run_id": "1776603828_sop_baseline",
+        "schema_version": "neurips_eval.v2",
+        "variant": "sop_baseline",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 20,
+        "n_trials": 60,
+        "hard_success_rate": 0.4666666666666666,
+        "hard_success_rate_ci95": {
+          "low": 0.31666666666666665,
+          "high": 0.6166666666666665
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": 0.0,
+          "high": 0.0
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 547.2970237533252,
+        "tool_calls_mean": 0.4666666666666666,
+        "failure_modes": {
+          "timeout": 32
+        }
+      }
+    ],
+    "review_revise_baseline": [
+      {
+        "run_id": "1776542695_review_revise_baseline",
+        "schema_version": "neurips_eval.v2",
+        "variant": "review_revise_baseline",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 1,
+        "n_trials": 1,
+        "hard_success_rate": 1.0,
+        "hard_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 520.319492816925,
+        "tool_calls_mean": 5.0,
+        "failure_modes": {}
+      }
+    ],
+    "wo_evolution": [
+      {
+        "run_id": "1776579618_wo_evolution",
+        "schema_version": "neurips_eval.v2",
+        "variant": "wo_evolution",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 1,
+        "n_trials": 1,
+        "hard_success_rate": 1.0,
+        "hard_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 324.32194781303406,
+        "tool_calls_mean": 5.0,
+        "failure_modes": {}
+      },
+      {
+        "run_id": "1776589600_wo_evolution",
+        "schema_version": "neurips_eval.v2",
+        "variant": "wo_evolution",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 20,
+        "n_trials": 60,
+        "hard_success_rate": 0.8833333333333332,
+        "hard_success_rate_ci95": {
+          "low": 0.8,
+          "high": 0.9666666666666666
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": 0.0,
+          "high": 0.0
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 369.51268731355674,
+        "tool_calls_mean": 5.6,
+        "failure_modes": {
+          "timeout": 7
+        }
+      }
+    ],
+    "react_limit_10": [
+      {
+        "run_id": "1776579674_react_limit_10",
+        "schema_version": "neurips_eval.v2",
+        "variant": "react_limit_10",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 1,
+        "n_trials": 1,
+        "hard_success_rate": 0.0,
+        "hard_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 23.145169258117676,
+        "tool_calls_mean": 0.0,
+        "failure_modes": {
+          "execution": 1
+        }
+      }
+    ],
+    "react_limit_25": [
+      {
+        "run_id": "1776579697_react_limit_25",
+        "schema_version": "neurips_eval.v2",
+        "variant": "react_limit_25",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 1,
+        "n_trials": 1,
+        "hard_success_rate": 0.0,
+        "hard_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 396.8708972930908,
+        "tool_calls_mean": 0.0,
+        "failure_modes": {
+          "execution": 1
+        }
+      }
+    ],
+    "wo_memory": [
+      {
+        "run_id": "1776579943_wo_memory",
+        "schema_version": "neurips_eval.v2",
+        "variant": "wo_memory",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 1,
+        "n_trials": 1,
+        "hard_success_rate": 1.0,
+        "hard_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 232.72136211395264,
+        "tool_calls_mean": 5.0,
+        "failure_modes": {}
+      },
+      {
+        "run_id": "1776611771_wo_memory",
+        "schema_version": "neurips_eval.v2",
+        "variant": "wo_memory",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 20,
+        "n_trials": 60,
+        "hard_success_rate": 0.9000000000000001,
+        "hard_success_rate_ci95": {
+          "low": 0.8166666666666667,
+          "high": 0.9833333333333332
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": 0.0,
+          "high": 0.0
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 348.0526413242022,
+        "tool_calls_mean": 5.833333333333334,
+        "failure_modes": {
+          "timeout": 5,
+          "execution": 1
+        }
+      }
+    ],
+    "react_limit_50": [
+      {
+        "run_id": "1776580094_react_limit_50",
+        "schema_version": "neurips_eval.v2",
+        "variant": "react_limit_50",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 1,
+        "n_trials": 1,
+        "hard_success_rate": 0.0,
+        "hard_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 500.96295404434204,
+        "tool_calls_mean": 0.0,
+        "failure_modes": {
+          "execution": 1
+        }
+      }
+    ],
+    "wo_orchestration": [
+      {
+        "run_id": "1776580175_wo_orchestration",
+        "schema_version": "neurips_eval.v2",
+        "variant": "wo_orchestration",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 1,
+        "n_trials": 1,
+        "hard_success_rate": 1.0,
+        "hard_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 212.04205012321472,
+        "tool_calls_mean": 8.0,
+        "failure_modes": {}
+      },
+      {
+        "run_id": "1776632654_wo_orchestration",
+        "schema_version": "neurips_eval.v2",
+        "variant": "wo_orchestration",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 20,
+        "n_trials": 60,
+        "hard_success_rate": 0.7333333333333332,
+        "hard_success_rate_ci95": {
+          "low": 0.5833333333333334,
+          "high": 0.85
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": 0.0,
+          "high": 0.0
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 439.63459065755217,
+        "tool_calls_mean": 11.666666666666668,
+        "failure_modes": {
+          "timeout": 16
+        }
+      }
+    ],
+    "react_baseline": [
+      {
+        "run_id": "1776580388_react_baseline",
+        "schema_version": "neurips_eval.v2",
+        "variant": "react_baseline",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 1,
+        "n_trials": 1,
+        "hard_success_rate": 0.0,
+        "hard_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": null,
+          "high": null
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 73.44358992576599,
+        "tool_calls_mean": 0.0,
+        "failure_modes": {
+          "execution": 1
+        }
+      },
+      {
+        "run_id": "1776636666_react_baseline",
+        "schema_version": "neurips_eval.v2",
+        "variant": "react_baseline",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 20,
+        "n_trials": 60,
+        "hard_success_rate": 0.06666666666666667,
+        "hard_success_rate_ci95": {
+          "low": 0.016666666666666666,
+          "high": 0.13333333333333333
+        },
+        "judge_success_rate": 0.0,
+        "judge_success_rate_ci95": {
+          "low": 0.0,
+          "high": 0.0
+        },
+        "judge_score_mean": null,
+        "judge_score_ci95": {
+          "low": null,
+          "high": null
+        },
+        "elapsed_s_mean": 114.49381664196649,
+        "tool_calls_mean": 0.7,
+        "failure_modes": {
+          "execution": 54,
+          "timeout": 2
+        }
+      }
+    ]
+  }
+}

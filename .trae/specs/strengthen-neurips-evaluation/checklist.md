@@ -1,0 +1,7 @@
+- [x] 具备 Full / W-O Evolution / W-O Memory / W-O Orchestration 四种配置的可运行入口，且输出 schema 一致
+- [x] complex orchestration 评测输出包含 judge 模型与 prompt 版本信息，且记录每条任务的 judge 输入/输出
+- [x] baseline（ReAct）配置与工具集明确，结果字段可与 FinAgent-Evo 直接对齐对比
+- [x] 基准统计（任务数、技能分布、链路长度 proxy）可一键生成并落盘
+- [x] 评测结果包含成本与稳定性指标（耗时、工具调用次数、失败模式）
+- [x] 支持导入人评文件并输出与 judge 分数的一致性/相关性分析
+- [x] 产出 Full vs ablations vs baseline 的对比汇总（含成功率与平均分），可直接用于论文表格

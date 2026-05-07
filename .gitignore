@@ -9,3 +9,15 @@ __pycache__
 .langgraph_api
 docs/research/PIXIU
 benchmarks/investorbench
+.cache
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+benchmarks/results_*
+benchmarks/*/results/*_results.json
+docs/summary_*.json
+neurips_paper/main.pdf

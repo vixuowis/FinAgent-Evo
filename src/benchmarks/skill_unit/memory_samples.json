@@ -1,0 +1,16 @@
+[
+  {
+    "id": "mem_01",
+    "tasks": [
+      {
+        "description": "Calculate the average growth rate of AAPL net income over 3 years.",
+        "trigger_failure": "The tool returned net income in 'millions' but the agent treated them as 'absolute' numbers without unit conversion.",
+        "expected_memory_rule": "Always check for 'units' in financial statements before performing arithmetic."
+      },
+      {
+        "description": "Calculate the average growth rate of MSFT revenue over 3 years.",
+        "check_failure_avoided": true
+      }
+    ]
+  }
+]

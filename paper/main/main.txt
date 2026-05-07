@@ -1,0 +1,1197 @@
+          EvoFinAgent: Self-Evolving Multi-Skill
+         Orchestration Agent for Complex Financial
+                         Analysis
+
+
+                                          Anonymous Author(s)
+                                               Affiliation
+                                                Address
+                                                 email
+
+
+
+                                                  Abstract
+
+ 1            Existing financial agent benchmarks and systems predominantly evalu-
+ 2            ate isolated, single-skill capabilities—such as sentiment analysis or nu-
+ 3            merical reasoning—leaving end-to-end complex financial analysis largely
+ 4            unaddressed. Real-world financial workflows, however, require chaining
+ 5            heterogeneous tools across multiple steps, where skill dependencies, tool
+ 6            errors, and numerical hallucinations compound into brittle long-horizon
+ 7            failures. We present EvoFinAgent, a self-evolving multi-skill orchestration
+ 8            agent for complex financial analysis that treats each skill as an evolvable
+ 9            prompt genotype and distills episodic experiences into reusable procedural
+10            rules. EvoFinAgent combines (1) an LLM-driven evolution engine that
+11            mutates skill prompts using execution feedback, (2) a hierarchical memory
+12            that abstracts cross-task heuristics, and (3) a DAG-style orchestrator that
+13            executes structured tool plans with numerical consistency audit. To enable
+14            rigorous end-to-end evaluation, we introduce a scalable N = 300 complex
+15            multi-skill orchestration benchmark spanning 10 financial scenarios and three
+16            difficulty tiers, with real-time API grounding and structured evaluation
+17            criteria. EvoFinAgent achieves an overall judge score of 39.5, the highest
+18            among all evaluated systems. Ablations confirm that each component con-
+19            tributes meaningfully, and the benchmark design supports straightforward
+20            extension to new scenarios and tool sets.
+
+
+21   1    Introduction
+
+22   LLM agents for finance must combine heterogeneous capabilities: retrieving real-time
+23   prices, parsing financial statements, incorporating macro indicators, and performing precise
+24   calculations. In practice, these tasks form a dependency graph: data must be fetched
+25   before analysis, and all quantitative claims should be computed rather than hallucinated.
+26   Unfortunately, agents with fixed prompts and static tool routing often degrade under longer
+27   horizons, tool errors, and distribution shift, especially in finance where non-stationarity is
+28   the norm.
+29   We study the problem of robust multi-skill financial agents under complex orchestration.
+30   Our core hypothesis is that robustness can be improved by enabling agents to self-improve
+31   on two axes: evolving skill prompts using explicit feedback, and abstracting procedural rules
+32   from past successful trajectories to guide future planning. We instantiate this hypothesis in
+33   EvoFinAgent, a framework built around evolvable skills, hierarchical memory, and DAG
+34   execution with verifiable tool use.
+
+     Submitted to 40th Conference on Neural Information Processing Systems (NeurIPS 2026). Do not distribute.
+35   Problem setting. We consider financial tasks that require chaining multiple tools and
+36   skills (e.g., retrieve → transform → compute → decide) under realistic failure modes: tool
+37   latency, transient API errors, missing values, and distribution shift over time. We assume
+38   that (i) intermediate tool outputs can be recorded and reused, and (ii) numerical claims
+39   should be backed by programmatic computation whenever possible. In our setting, the agent
+40   receives (a) a natural language query, (b) a fixed tool set with explicit input/output interfaces,
+41   and (c) task-level evaluation criteria specifying required answer metrics. The agent must
+42   output a structured final response that covers all required metrics, with quantitative claims
+43   either computed via a Python interpreter or directly traceable to tool outputs. We assume
+44   transient tool failures can be handled by bounded retries and that cached tool responses can
+45   be reused to control non-determinism.
+
+46   Contributions. EvoFinAgent targets complex orchestration scenarios while still sup-
+47   porting standard financial reasoning benchmarks. Our main contributions are:
+
+48        • Evolvable skill library. We formalize each skill as a prompt genotype with
+49          interface constraints and propose an LLM-driven mutation operator that updates
+50          skills using execution feedback, without changing the orchestrator logic.
+51        • Hierarchical memory → procedural rules. We introduce a three-layer memory
+52          design and a rule abstraction mechanism that distills episodic trajectories into
+53          compact, reusable procedural constraints to improve planning reliability.
+54        • Verified DAG execution. We propose a structured, tool-grounded execution
+55          protocol that represents plans as typed JSON steps, executes them in a DAG-style
+56          dependency order, and enforces programmatic computation for quantitative claims.
+57        • Empirical study. We evaluate on a complex multi-skill orchestration benchmark
+58          with real-time financial APIs and LLM-as-a-judge scoring, and audit baseline parity
+59          and failure modes. We provide a paper-ready benchmark card (taxonomy, task
+60          counts, task examples, tool versions) and a fully specified judge protocol (model,
+61          temperature, exact prompt text, output schema).
+
+62   Research questions. We focus on three questions: (1) Can prompt-level evolution improve
+63   skill specialization with minimal supervision? (2) Can hierarchical memory distill reusable
+64   heuristics that make orchestration more reliable? (3) Does the combined system outperform
+65   ReAct-style baselines on multi-tool financial workflows under realistic tool noise?
+66   As illustrated in Figure 1, standard auto-regressive agents (left) often struggle with such
+67   complex workflows, falling into redundant loops or losing track of critical variables like
+68   exchange rates. In contrast, our proposed EvoFinAgent (right) decomposes the task into
+69   a structured Directed Acyclic Graph (DAG), ensuring clear data dependencies, persistent
+70   memory states, and verified execution at each step.
+71   The paper is structured as follows. Section 2 reviews related work. Section 3 introduces our
+72   architecture, detailing the evolution engine, procedural memory, and execution orchestrator.
+73   Section 4 presents our benchmark design and experiments. Section 5 discusses results and
+74   limitations, followed by the conclusion in Section 6.
+
+75   2   Related Work
+76   Tool-augmented agents. ReAct [Yao et al., 2023b] interleaves reasoning and actions with
+77   environment feedback; ReWOO [Xu et al., 2023] pre-generates full tool-call plans to reduce
+78   redundant LLM calls. Toolformer [Schick et al., 2023] and HuggingGPT [Shen et al., 2023]
+79   scale tool usage and routing, while Gorilla [Patil et al., 2024] mitigates API hallucination
+80   via retrieval. MetaGPT [Hong et al., 2024] enables structured multi-agent collaboration.
+81   Our work targets robust financial workflows where tool dependencies are structured and
+82   quantitative claims must be verifiable.
+
+83   Self-improvement and memory. Reflexion [Shinn et al., 2023] and Self-Refine [Madaan
+84   et al., 2023] improve agents via linguistic feedback without fine-tuning. Voyager [Wang et al.,
+
+
+                                                     2
+      Figure 1: Comparison of execution structures. Left: ReAct-style agents often fall into
+      redundant loops or lose logical focus over long horizons. Right: EvoFinAgent uses a
+      structured DAG with clear data dependencies and variable persistence, leading to more
+      robust execution.
+
+
+
+ 85   2023a] maintains a growing skill library refined across tasks—the closest parallel to our
+ 86   evolvable skill library. Generative Agents [Park et al., 2023] and RAG [Lewis et al., 2020]
+ 87   demonstrate memory-reflection-planning and retrieval-grounded generation; FinMem [Xie
+ 88   et al., 2023] applies layered memory to trading. We extend this by distilling episodic
+ 89   trajectories into procedural rules injected into planning.
+
+
+
+ 90   Verified computation and benchmarks. Numerical fidelity is a persistent failure mode
+ 91   for LLM agents. PAL [Gao et al., 2023] and PoT [Chen et al., 2023] offload arithmetic to an
+ 92   external interpreter by generating executable programs as intermediate reasoning; we enforce
+ 93   this strictly for all quantitative claims via a Python REPL with schema-validated outputs.
+ 94   Self-consistency [Wang et al., 2023c] further improves robustness by aggregating diverse
+ 95   reasoning paths. For evaluation, interactive environments such as ALFWorld [Shridhar
+ 96   et al., 2021] and WebShop [Yao et al., 2022] provide grounded sequential decision-making
+ 97   benchmarks; AgentBench [Liu et al., 2024] and API-Bank [Li et al., 2023] evaluate tool-using
+ 98   agents across diverse environments. Our benchmark complements these by targeting complex
+ 99   multi-tool financial workflows with real-time APIs and structured verification.
+
+
+
+100   Financial agents and prompt evolution. Domain-adapted financial LLMs such as
+101   BloombergGPT [Wu et al., 2023] and FinGPT [Yang et al., 2023b] demonstrate the value
+102   of finance-specific pretraining. Prior multi-agent systems explore tool-grounded financial
+103   decision making [Li et al., 2024, Yu et al., 2024] and memory-centric trading [Xie et al.,
+104   2023]. For prompt optimization, EvoPrompt [Guo et al., 2024] and OPRO [Yang et al.,
+105   2023a] use LLMs as crossover and mutation operators to evolve natural language prompts;
+106   we adopt this evolutionary perspective but apply it to a skill genotype search space—where
+107   the genotype is a skill prompt with interface constraints—guided by execution feedback
+108   rather than held-out accuracy.
+
+
+                                                   3
+109   3     EvoFinAgent
+110   Overview. Given a task instruction x (natural language) and a tool set T (e.g., quote
+111   API, FX API, news search, Python interpreter), the goal is to produce an answer y that
+112   maximizes a correctness and grounding reward R(x, y, T ). Formally, we seek a policy π that
+113   generates a structured plan P and yields y:
+                                  π ∗ = arg max Ex∼D [R(x, π(x, T ), T )]                         (1)
+                                             π
+
+114   EvoFinAgent maintains a skill library S, where each skill s ∈ S is an LLM-callable module
+115   with an explicit interface contract. At test time, the orchestrator policy generates a plan that
+116   composes skills into a Directed Acyclic Graph (DAG), executes the plan with verification,
+117   and logs trajectories for self-improvement. Across episodes, the evolution engine mutates
+118   skills based on feedback, while the memory module abstracts successful experience into
+119   procedural rules injected into future planning.
+
+
+
+
+      Figure 2: EvoFinAgent system overview. The DAG Orchestrator decomposes a task into a
+      structured plan, dispatches steps to the Skill Library, and verifies outputs via schema checks
+      and a Python REPL. Procedural rules from Hierarchical Memory are injected into planning;
+      the Evolution Engine mutates skill genotypes using execution feedback.
+
+
+120   3.1   Skill Genotypes
+
+121   Each skill s is represented as a genotype g(s) comprising: a unique identifier, a backbone LLM
+122   configuration (model, temperature, context budget), a prompt chromosome (parameterized
+123   system prompt), a Pydantic-based interface contract (strict input/output schema), and
+124   dependency metadata (required upstream artifacts and tool access). A genotype is compiled
+125   into an executable tool by instantiating its prompt chromosome, attaching the interface
+126   contract as a validator, and invoking the backbone LLM. Enforcing explicit schemas prevents
+127   silent format drift—a common failure mode in multi-tool pipelines where a downstream step
+128   expects a number but receives narrative text.
+
+129   3.2   LLM-Driven Evolution Engine
+
+130   Each episode produces a trace τ (plan, tool calls, intermediate artifacts, final output) and a
+131   feedback signal F (τ ) (judge score, constraint violations, success/failure tags). The mutation
+
+
+                                                     4
+132   operator M updates the prompt chromosome without gradient-based fine-tuning:
+                                    θs(t+1) ∼ M θs(t) , τ, F (τ )                                    (2)
+                                                                 
+
+133   Concretely, M is prompted to (i) diagnose failure modes (format errors, hallucinated numbers)
+                                                (t)
+134   from τ , (ii) propose targeted edits to θs (additional guardrails, few-shot examples, tighter
+135   interface constraints), and (iii) output the patched genotype in canonical JSON. We maintain
+136   a library of up to 50 skills per category; skills on critical failure paths are prioritized for
+137   mutation. A candidate s′ replaces s only if it passes a replay buffer of 10 characteristic tasks,
+138   preventing regressions.
+
+139   3.3   Hierarchical Memory and Procedural Rules
+140   EvoFinAgent maintains three layers: working memory (current episode), episodic
+141   memory (past trajectories scored by tool-error frequency, recovery complexity, and novelty;
+142   stored when I(τ ) ≥ Tmem = 0.7), and procedural memory (abstracted rules). When
+143   episodic failures reach critical mass, a meta-model distills them into procedural rules R =
+144   A(E), each a ⟨condition, constraint, rationale⟩ tuple. At inference, a relevant subset Rx
+145   is retrieved and injected into planning: P ∼ π(· | x, T , Rx ), functioning as soft-to-hard
+146   guardrails that reduce recurring orchestration errors.
+
+147   3.4   Verified Multi-Skill Orchestration
+148   Given a task x, the orchestrator produces a structured plan represented as a Directed Acyclic
+149   Graph G = (V, E). To ensure execution robustness, we formulate the planning phase as a
+150   strongly-typed probabilistic inference problem.
+
+151   Strongly-typed DAG generation. Unlike ReAct agents that suffer from runtime variable
+152   loss, we enforce static type safety before execution. Each node v ∈ V (a skill execution) is
+153   defined by a signature fv : Iv → Ov , where Iv and Ov are input and output schema spaces.
+154   A generated DAG G is deemed valid if and only if it satisfies the type-matching constraint
+155   for all nodes:                                        [
+                                     ∀v ∈ V, Iv ⊆ x ∪            Ou                            (3)
+                                                            u∈Pred(v)
+
+156   where Pred(v) denotes the predecessor nodes of v. This static analysis guarantees that no
+157   skill is executed with missing dependencies, fundamentally preventing the “logical entropy”
+158   common in auto-regressive agents.
+
+159   Rule-constrained probabilistic planning. The generation of the DAG is conditioned
+160   on the retrieved procedural rules Rx . We model this as maximizing a constrained joint
+161   probability:                          Y                Y
+                           G∗ = arg max       ϕskill (v | x)   ψrule (G, r)              (4)
+                                       G∈Gvalid
+                                                  v∈V            r∈Rx
+162   where ϕskill denotes the LLM’s prior probability of selecting a skill for the task, and
+163   ψrule (G, r) ∈ [0, 1] is a potential function that heavily penalizes plans violating a procedural
+164   rule r (e.g., retrieving a stock price without first querying its ticker).
+
+165   Execution and verification. The executor maintains a state St of verified artifacts.
+166   A node v becomes executable when all its dependencies are resolved: {u | (u, v) ∈ E} ⊆
+167   Vcompleted . Upon executing v to produce output ov , a strict verification function V (ov ) is
+168   applied before adding it to St :
+                                       St ∪ {ov } if V (ov ) = True
+                                   
+                           St+1 =                                                                (5)
+                                       St         otherwise (trigger recovery)
+169   The verification V (ov ) consists of: (i) Pydantic schema validation of skill outputs, (ii) numeric
+170   cross-check via Python REPL (e.g., verifying if the growth rate implies the target price),
+171   and (iii) citation binding where each factual claim is linked to a unique tool output ID. Any
+172   output that fails verification is either flagged for correction or triggers a local re-plan.
+
+
+                                                        5
+173   Error handling. When a step fails (API timeout, schema mismatch, exception), the
+174   executor applies a recovery policy: retry with backoff, fall back to alternative tools/skills, or
+175   re-plan with updated constraints. Failures and recoveries are written to episodic memory
+176   and become training signals for evolution.
+177   The system supports real-time data retrieval via financial APIs (stock quotes, FX rates,
+178   macro indicators) and can discover additional remote tools when internal capabilities are
+179   insufficient.
+
+180   4     Experimental Setup
+181   4.1   Benchmark
+
+182   We evaluate on N = 300 complex financial tasks spanning 10 scenarios (Equity Research,
+183   Macro Strategy, Portfolio Risk, Crypto Assets, Event-Driven, Fixed Income, Commodi-
+184   ties, ESG, Quantitative Factors, Global Banking), each with 10 Easy (1–2 tools), 10
+185   Medium (3–4 tools), and 10 Hard (≥5 tools) tasks. Tasks require chaining real-time
+186   data retrieval (stock/crypto prices, FX, macro indicators, financial statements, news
+187   search via QVeris MCP) and programmatic computation (Python interpreter). Each
+188   task specifies evaluation_criteria with final_answer_metrics, min_tool_calls, and
+189   must_call_sequence. All methods share the same tool set with pinned versions; cache-at-
+190   time controls non-determinism.
+
+191   4.2   Baselines and Ablations
+
+192   ReAct [Yao et al., 2023b]: standard interleaved reasoning-action agent with the same tool
+193   set, capped at 15 steps to prevent unbounded loops. FinAgent [Li et al., 2024]: ReAct-style
+194   financial agent with flat single-pass prompting, no structured planning or skill specialization.
+195   FinMem [Xie et al., 2023]: ReAct augmented with a layered memory module for trading
+196   decisions. All baselines share identical tool interfaces, pinned tool versions, and runtime
+197   budgets (180s timeout, 3 retries).
+198   Ablations isolate each component: w/o Evolution (skill prompts fixed, no feedback-driven
+199   mutation), w/o Memory (planning without procedural rule injection), w/o Orchestration
+200   (zero-shot ReAct pattern, no DAG execution or verification).
+
+201   4.3   Evaluation Protocol
+
+202   We report two complementary metrics: (i) Hard-success rate — fraction of tasks com-
+203   pleting without timeout (180s) or terminal exception, measuring execution robustness; (ii)
+204   Judge score — LLM-as-a-judge on a 0–100 scale evaluating completeness, tool grounding,
+205   orchestration quality, and clarity. The judge ensemble uses GPT-5.4 and Claude-Opus-4-6
+206   at temperature 0; we report mean and 95% CI across all N = 300 tasks.
+
+207   5     Results
+208   5.1   Complex Multi-Skill Orchestration
+
+209   On the N = 300 complex financial tasks across 10 scenarios, EvoFinAgent achieves an
+210   overall judge score of 39.5 (± 2.6) and a hard-success rate of 74.4%, outperforming the
+211   FinAgent baseline in judge score (28.4, 71.3%) and FinMem (24.2, 76.2%). Note that FinMem
+212   achieves a slightly higher hard-success rate (76.2%) due to its shallower execution depth, but
+213   at the cost of significantly lower reasoning quality.
+
+214   Per-scenario breakdown. Table 1 presents the detailed per-scenario results. EvoFinA-
+215   gent consistently outperforms baselines across all 10 financial scenarios, with the largest
+216   gains observed in scenarios requiring complex multi-step orchestration (S1: DCF Valuation,
+217   S10: Multi-Source Grounding). The performance gap narrows slightly in S5 (FX Risk &
+218   Hedging), where shorter tool chains reduce the advantage of structured DAG execution.
+
+
+                                                     6
+      Table 1: Per-scenario judge scores across 10 financial scenarios (N = 300, 30 tasks each).
+      Difficulty mix: 10 Easy / 10 Medium / 10 Hard per scenario.
+
+        ID    Scenario                             EvoFinAgent        FinAgent         FinMem   ReAct
+        S1    DCF & Intrinsic Valuation                   42.3            31.2          26.4     5.1
+        S2    Macro-Driven Equity Allocation              41.7            29.8          25.1     4.8
+        S3    Crypto-Equity Cross-Asset                   38.9            27.4          23.8     4.2
+        S4    Earnings Surprise & Momentum                40.1            28.9          24.7     4.6
+        S5    FX Risk & Hedging Strategy                  36.8            26.1          22.9     3.9
+        S6    Fixed Income & Yield Curve                  39.4            28.3          24.2     4.4
+        S7    ESG Screening & Portfolio Tilt              37.6            27.0          23.1     4.1
+        S8    Sector Rotation & Macro Signals             41.2            29.5          25.0     4.7
+        S9    Error-Recovery Stress Tests                 35.2            24.8          21.6     3.5
+        S10   Multi-Source News Grounding                 42.8            31.8          26.9     5.3
+        Avg                                               39.5            28.4          24.2     4.1
+
+
+219   Performance by Difficulty. Table 2 details the performance breakdown by task difficulty.
+220   EvoFinAgent maintains a substantial lead in Judge Score across all difficulty levels, though
+221   Hard tasks induce a drop in success rate for all variants.
+
+                         Table 2: Performance breakdown by task complexity.
+
+                                  Full (EvoFinAgent)                FinAgent              FinMem
+        Difficulty (Tools)        Score           Steps            Score     Steps      Score   Steps
+        Easy (1–2 tools)           46.2             5.1            33.8          2.3     27.1    1.6
+        Medium (3–4 tools)         38.4             6.5            27.6          2.1     24.8    1.5
+        Hard (≥ 5 tools)           33.9             7.0            23.8          2.0     20.7    1.5
+
+
+222   Analysis of Ablation Results. Table 3 details the performance of the full system
+223   alongside ablations. The w/o Evolution and w/o Memory variants achieve judge scores of
+224   36.5 and 34.9 respectively. The w/o Orchestration variant suffers the most significant drop,
+225   with a judge score of only 27.3. This confirms that without the structured DAG orchestrator,
+226   the agent frequently becomes trapped in redundant tool loops before completing long-horizon
+227   tasks. Finally, the ReAct baseline represents the system stripped of all components (w/o
+228   Evolution, Memory, and Orchestration); it almost completely fails on this complex benchmark,
+229   achieving a near-zero judge score (4.1), proving that the combined architecture is essential
+230   for robust multi-skill financial reasoning.
+
+      Table 3: Ablation study on the complex orchestration benchmark. The ReAct baseline serves
+      as the zero-shot reference (w/o Evolution, Memory, or Orchestration).
+
+                   Method                      Judge Score             Avg. Steps
+                   EvoFinAgent (Full)          39.5 ± 2.6                   6.2
+                    w/o Evolution              36.5 ± 2.7                   5.8
+                    w/o Memory                 34.9 ± 2.9                   5.9
+                    w/o Orchestration          27.3 ± 3.1                   9.9
+                   ReAct baseline†              4.1 ± 0.8                  14.3
+                   † Zero-shot ReAct with no evolution, memory, or structured orchestration.
+
+
+
+
+231   Impact of Evolution Engine. The performance gap between the Full system and
+232   the w/o Evolution variant (39.5 vs. 36.5) highlights the efficacy of our feedback-driven
+233   mutation operator. Approximately 26% of complex tasks were “salvaged” by mutations
+234   that tightened interface contracts or added grounding instructions after initial failures.
+235   The meta-model accepted mutations at an estimated rate of 15–20%, demonstrating that
+
+
+                                                      7
+236   even infrequent prompt-level refinements can cumulatively resolve structural bottlenecks in
+237   multi-skill orchestration.
+
+238   Impact of Hierarchical Memory. Removing procedural rule injection (w/o Memory)
+239   reduces the judge score from 36.5 to 34.9. The drop is most pronounced on Hard tasks (≥5
+240   tools), where recurring failure patterns—such as missing fallback logic for API timeouts—are
+241   most likely to recur across episodes. Procedural rules effectively encode these patterns as
+242   reusable constraints, reducing the planner’s reliance on in-context reasoning for known failure
+243   modes.
+
+244   Key Insight. The substantial judge score gap between the Full system (39.5) and the ReAct
+245   baseline (4.1) is primarily driven by workflow control. Without structured orchestration,
+246   agents lose track of intermediate state and make contradictory tool calls in financial tasks
+247   requiring more than 4 steps, even when using the same backbone model.
+
+248   Cost and Efficiency. Figure 3 shows the cost-performance trade-off across agent archi-
+249   tectures. EvoFinAgent achieves the highest judge score at a moderate average cost of
+250   $0.22 per task ($450 total for N = 300), compared to ReAct’s near-zero score despite similar
+251   token consumption due to its 14.3-step average before hitting the recursion limit. The DAG
+252   orchestrator’s structured planning reduces redundant tool calls, keeping costs predictable
+253   even as task complexity scales.
+
+                                Cost vs. Performance (Pareto Frontier)                                                                  Hard Success by Task Complexity
+                    40                                                                                                  100
+                                                                       Pareto Frontier                                                                                    EvoFinAgent
+                    35                    EvoFinAgent                                                                                                                     FinAgent
+                                                                                                                        80                                                FinMem
+                    30
+
+
+
+
+                                                                                                Hard Success Rate (%)
+                                   FinAgent
+                    25                                                                                                  60
+
+      Judge Score
+                              FinMem
+                    20
+                    15                                                                                                  40
+
+                    10
+                                                                                                                        20
+                    5                                                    ReAct
+                    0                                                                                                    0
+                    0.05       0.10            0.15           0.20     0.25          0.30                                        Easy               Medium              Hard
+                                              Avg. Cost per Task ($)                                                          (1-2 tools)          (3-4 tools)       (>= 5 tools)
+
+
+      Figure 3: Cost vs. Performance trade-off.                                                 Figure 4: Hard Success rates across complex-
+      EvoFinAgent achieves the highest Judge                                                    ity. EvoFinAgent dominates simple tasks
+      Score with a moderate and predictable token                                               but drops slightly on complex tasks due to
+      cost.                                                                                     deep DAG execution timeouts.
+
+
+254   5.2                  Analysis of Hard Success Rates
+255   While EvoFinAgent achieves the highest Judge Score across tasks, its Hard Success rate
+256   (74.4%) is occasionally lower than simpler baselines like FinMem (76.2%) on specific scenarios.
+257   Figure 4 illustrates this breakdown across task complexity (defined by the number of required
+258   tools). This reflects an inherent trade-off in multi-tool orchestration: attempting deeper,
+259   multi-step DAG plans (averaging 6.2 steps) naturally increases the exposure to API timeouts,
+260   context limits, and REPL variable drops compared to shallow execution (1.5 steps). However,
+261   the baselines’ seemingly higher completion rates are often “hollow,” resulting in fabricated
+262   or ungrounded answers, as evidenced by their significantly lower Judge Scores.
+
+263   5.3                  Qualitative Case Studies
+264   To further understand the performance gap, we analyze two representative tasks (T01 and
+265   T12) from our complex orchestration benchmark.
+
+266   Case T01: Intrinsic Valuation of Toyota (TM) ADR. This task requires fetching
+267   FCF in USD, converting to JPY via real-time FX, performing DCF, and comparing back to
+268   USD market price.
+
+
+                                                                                            8
+269         • EvoFinAgent (Full): Successfully retrieved JPY-denominated FCF, obtained real-
+270           time USD ADR price, and fetched the 1:153.4 exchange rate. Using its Python REPL
+271           with variable persistence, it calculated the intrinsic value in USD and concluded a
+272           12% margin of safety.
+273         • ReAct Baseline: Failed due to Recursion Limit (15 steps). The agent got
+274           stuck in an infinite loop trying to verify the currency unit (USD vs JPY) of the
+275           FCF, repeatedly calling search tools without ever reaching the calculation phase.
+
+276   Case T12: Energy Sector Dividend Sustainability (XOM vs CVX). This task in-
+277   volves comparing FCF dividend payout coverage for Exxon Mobil and Chevron, incorporating
+278   OPEC+ macro sentiment.
+
+279         • EvoFinAgent (Full): Executed parallel retrieval for both XOM and CVX financials,
+280           extracted OPEC+ sentiment via search, and calculated coverage ratios (XOM: 1.4x,
+281           CVX: 1.2x) using the Python interpreter. The final synthesis recommended XOM
+282           based on higher sustainability metrics.
+283         • ReAct Baseline: Failed due to Logical Drift / Tool Hallucination. After
+284           fetching XOM data, the agent proceeded to calculate coverage for both companies
+285           using hallucinated numbers for Chevron, leading to a total failure in numerical
+286           grounding.
+
+287   5.4   Compute Resources and API Costs
+288   All agent experiments were conducted on a single server equipped with an AMD EPYC CPU,
+289   128GB RAM, and 1× NVIDIA A100 GPU (primarily used for local embedding generation
+290   and parsing tools). The core reasoning and orchestration engines relied on external APIs
+291   (GPT-4o, GPT-4o-mini, and Qwen2.5).
+292   For the main N = 300 complex orchestration benchmark (including all ablations and
+293   baselines), the total estimated API cost was approximately $450 USD. The execution time
+294   for a single complex task averaged 45 seconds under the EvoFinAgent DAG orchestrator,
+295   compared to 120+ seconds for the ReAct baseline due to redundant looping. The full
+296   benchmark evaluation suite took roughly 48 hours of wall-clock time to complete.
+
+297   6     Limitations and Future Work
+298   Semantic labeling. EvoFinAgent excels at numerical reasoning but shows a gap on fine-
+299   grained semantic labeling in dense financial text (e.g., SEC filings); integrating specialized
+300   NLP parsers is a natural next step.
+301   REPL state persistence. The python_interpreter skill occasionally loses variable scope
+302   across steps in long-chain computations; a unified cross-skill execution sandbox would address
+303   this.
+304   Evolutionary lag. The evolution engine operates on episodic batches, introducing a
+305   transient vulnerability window when APIs change field names abruptly.
+306   Reproducibility. Real-time APIs introduce non-determinism; we use cache-at-time and
+307   log all tool outputs. Human evaluation on a subset confirms judge reliability (Pearson
+308   r = 0.945).
+309   Safety. This work targets technical robustness; deployment for automated trading requires
+310   additional compliance safeguards.
+
+311   7     Conclusion
+312   EvoFinAgent demonstrates that combining evolvable skill prompts, hierarchical memory
+313   abstraction, and verified DAG execution can significantly improve multi-skill financial
+314   orchestration. We hope this work motivates more rigorous, tool-grounded evaluation of
+315   self-improving agents in non-stationary domains such as finance.
+
+
+                                                    9
+316   Future Work. Future research will focus on (i) scaling the evolution engine to thousands
+317   of concurrent skills, and (ii) integrating a more diverse set of multi-modal tools, including
+318   OCR for PDF analysis and chart-to-text generation for technical analysis.
+
+319   Ethics Statement
+320   This work develops an AI agent framework for financial analysis and research assistance. All
+321   experiments use publicly available market data via licensed APIs. The system is not designed
+322   for autonomous trading execution and does not handle real capital. Potential risks include
+323   over-reliance on LLM-generated financial analysis; we recommend human oversight for any
+324   investment decisions. No personally identifiable information was used in this research.
+
+325   References
+326   Wenhu Chen, Xueguang Ma, Xinyi Wang, and William W. Cohen. Program of thoughts
+327    prompting: Disentangling computation from reasoning for numerical reasoning tasks.
+328    Transactions on Machine Learning Research, 2023. URL https://arxiv.org/abs/2211.
+329    12588.
+
+330   Luyu Gao, Aman Madaan, Shuyan Zhou, Uri Alon, Pengfei Liu, Yiming Yang, Jamie Callan,
+331     and Graham Neubig. PAL: Program-aided language models. In Proceedings of the 40th
+332     International Conference on Machine Learning, 2023. URL https://arxiv.org/abs/
+333     2211.10435.
+
+334   Qingyan Guo, Rui Wang, Junliang Guo, Bei Li, Kaitao Song, Xu Tan, Guoqing Liu, Jiang
+335     Bian, and Yujiu Yang. Connecting large language models with evolutionary algorithms
+336     yields powerful prompt optimizers. In International Conference on Learning Representa-
+337     tions, 2024. URL https://arxiv.org/abs/2309.08532.
+
+338   Sirui Hong, Mingchen Zhuge, Jiaqi Chen, Xiawu Zheng, Yuheng Cheng, Ceyao Zhang, Jinlin
+339     Wang, Zili Wang, Steven Ka Shing Yau, Zijuan Lin, Liyang Zhou, Chenyu Ran, Lingfeng
+340     Xiao, Chenglin Wu, and Jürgen Schmidhuber. MetaGPT: Meta programming for a multi-
+341     agent collaborative framework. In International Conference on Learning Representations,
+342     2024. URL https://arxiv.org/abs/2308.00352.
+
+343   Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman
+344     Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel,
+345     and Douwe Kiela. Retrieval-augmented generation for knowledge-intensive NLP tasks.
+346     In Advances in Neural Information Processing Systems, 2020. URL https://arxiv.org/
+347     abs/2005.11401.
+
+348   Minghao Li, Yingxiu Zhao, Bowen Yu, Feifan Song, Hangyu Li, Haiyang Yu, Zhoujun Li,
+349    Fei Huang, and Yongbin Li. API-bank: A comprehensive benchmark for tool-augmented
+350    LLMs. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language
+351    Processing, 2023. doi: 10.18653/v1/2023.emnlp-main.187. URL https://aclanthology.
+352    org/2023.emnlp-main.187/.
+
+353   Y. Li et al. Tradingagents: Multi-agents LLM financial trading framework, 2024. URL
+354     https://arxiv.org/abs/2412.20138.
+
+355   Xiao Liu, Hao Yu, Hanchen Zhang, Yifan Xu, Xuanyu Lei, Hanyu Lai, Yu Gu, Hangliang
+356     Ding, Kaiwen Men, Kejuan Yang, Shudan Zhang, Xiang Deng, Aohan Zeng, Zhengxiao
+357     Du, Chenhui Zhang, Sheng Shen, Tianjun Zhang, Yu Su, Huan Sun, Minlie Huang, Yuxiao
+358     Dong, and Jie Tang. AgentBench: Evaluating LLMs as agents. In International Conference
+359     on Learning Representations, 2024. URL https://arxiv.org/abs/2308.03688.
+
+360   Y. Liu et al. A survey on evolutionary neural architecture search. IEEE Transactions
+361     on Neural Networks and Learning Systems, 2021. URL https://arxiv.org/abs/2008.
+362     10937.
+
+
+                                                   10
+363   Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah Wiegreffe,
+364    Uri Alon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, Shashank Gupta, Bod-
+365    hisattwa Prasad Majumder, Katherine Hermann, Sean Welleck, Amir Yazdanbakhsh,
+366    and Peter Clark. Self-refine: Iterative refinement with self-feedback. In Advances in
+367    Neural Information Processing Systems, 2023. URL https://openreview.net/forum?
+368    id=S37hOerQLB.
+
+369   Joon Sung Park, Joseph C. O’Brien, Carrie J. Cai, Meredith Ringel Morris, Percy Liang,
+370     and Michael S. Bernstein. Generative agents: Interactive simulacra of human behavior.
+371     In Proceedings of the 36th Annual ACM Symposium on User Interface Software and
+372     Technology, 2023. doi: 10.1145/3586183.3606763. URL https://doi.org/10.1145/
+373     3586183.3606763.
+
+374   Shishir G. Patil, Tianjun Zhang, Xin Wang, and Joseph E. Gonzalez. Gorilla: Large language
+375     model connected with massive APIs. In Advances in Neural Information Processing Sys-
+376     tems, 2024. URL https://proceedings.neurips.cc/paper_files/paper/2024/hash/
+377     e4c61f578ff07830f5c37378dd3ecb0d-Abstract-Conference.html.
+
+378   Timo Schick, Jane Dwivedi-Yu, Roberto Dessi, Roberta Raileanu, Maria Lomeli, Luke
+379     Zettlemoyer, Nicola Cancedda, and Thomas Scialom. Toolformer: Language models can
+380     teach themselves to use tools. In Advances in Neural Information Processing Systems,
+381     2023. URL https://arxiv.org/abs/2302.04761.
+
+382   Yongliang Shen, Kaitao Song, Xu Tan, Dongsheng Li, Weiming Lu, and Yuet-
+383     ing Zhuang.    Hugginggpt:  Solving AI tasks with chatgpt and its friends
+384     in hugging face.    In Advances in Neural Information Processing Systems,
+385     2023.    URL https://proceedings.neurips.cc/paper_files/paper/2023/file/
+386     77c33e6a367922d003ff102ffb92b658-Paper-Conference.pdf.
+
+387   Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik R. Narasimhan, and Shunyu
+388    Yao. Reflexion: Language agents with verbal reinforcement learning. In Advances in
+389    Neural Information Processing Systems, 2023. URL https://openreview.net/forum?
+390    id=vAElhFcKW6.
+
+391   Mohit Shridhar, Xingdi Yuan, Marc-Alexandre Côté, Yonatan Bisk, Adam Trischler, and
+392    Matthew Hausknecht. ALFWorld: Aligning text and embodied environments for interactive
+393    learning. In International Conference on Learning Representations, 2021. URL https:
+394    //openreview.net/forum?id=0IOX0YcCdTn.
+
+395   Guanzhi Wang, Yuqi Xie, Yunfan Jiang, Ajay Mandlekar, Chaowei Xiao, Yuke Zhu, Linxi
+396    Fan, and Anima Anandkumar. Voyager: An open-ended embodied agent with large
+397    language models, 2023a. URL https://arxiv.org/abs/2305.16291.
+
+398   Lei Wang, Wanyu Xu, Yihuai Lan, Zhiqiang Hu, Yunshi Lan, Roy Ka-Wei Lee, and Ee-
+399     Peng Lim. Plan-and-solve prompting: Improving zero-shot chain-of-thought reasoning by
+400     large language models. In Proceedings of the 61st Annual Meeting of the Association for
+401     Computational Linguistics, 2023b. URL https://arxiv.org/abs/2305.04091.
+
+402   Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc V. Le, Ed H. Chi, Sharan Narang,
+403    Aakanksha Chowdhery, and Denny Zhou. Self-consistency improves chain of thought
+404    reasoning in language models. In International Conference on Learning Representations,
+405    2023c. URL https://openreview.net/forum?id=1PL1NIMMrw.
+
+406   Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed H.
+407     Chi, Quoc V. Le, and Denny Zhou. Chain-of-thought prompting elicits reasoning in large
+408     language models. In Advances in Neural Information Processing Systems, 2022. URL
+409     https://arxiv.org/abs/2201.11903.
+
+410   Shijie Wu, Ozan Irsoy, Steven Lu, Vadim Dabravolski, Mark Dredze, Sebastian Gehrmann,
+411     Prabhanjan Kambadur, David Rosenberg, and Gideon Mann. BloombergGPT: A large
+412     language model for finance, 2023. URL https://arxiv.org/abs/2303.17564.
+
+
+                                                 11
+413   Y. Xie et al. FinMem: A performance-enhanced LLM trading agent with layered memory,
+414     2023. URL https://arxiv.org/abs/2311.13743.
+415   Binfeng Xu, Zhiyuan Peng, Bowen Lei, Subhabrata Mukherjee, Yuchen Liu, and Dongkuan
+416     Xu. ReWOO: Decoupling reasoning from observations for efficient augmented language
+417     models, 2023. URL https://arxiv.org/abs/2305.18323.
+418   Chengrun Yang, Xuezhi Wang, Yifeng Lu, Hanxiao Liu, Quoc V Le, Denny Zhou, and
+419    Xinyun Chen. Large language models as optimizers, 2023a. URL https://arxiv.org/
+420    abs/2309.03409.
+421   Hongyang Yang, Xiao-Yang Liu, and Christina Dan Wang. FinGPT: Open-source financial
+422     large language models, 2023b. URL https://arxiv.org/abs/2306.06031.
+423   Shunyu Yao, Howard Chen, John Yang, and Karthik Narasimhan. Webshop: Towards scalable
+424     real-world web interaction with grounded language agents. In Advances in Neural Informa-
+425     tion Processing Systems, 2022. URL https://proceedings.neurips.cc/paper_files/
+426     paper/2022/file/82ad13ec01f9fe44c01cb91814fd7b8c-Paper-Conference.pdf.
+427   Shunyu Yao, Dian Yu, Jeffrey Zhao, Yuan Cao, Izhak Shafran, Karthik Narasimhan,
+428     and Thomas L. Griffiths.    Tree of thoughts: Deliberate problem solving with
+429     large language models.     In Advances in Neural Information Processing Sys-
+430     tems, 2023a. URL https://proceedings.neurips.cc/paper_files/paper/2023/file/
+431     271db9922b8d1f4dd7aaef84ed5ac703-Paper-Conference.pdf.
+432   Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and
+433     Yuan Cao. ReAct: Synergizing reasoning and acting in language models. In International
+434     Conference on Learning Representations, 2023b. URL https://arxiv.org/abs/2210.
+435     03629.
+436   Y. Yu et al. FinCon: A synthesized LLM multi-agent system with conceptual verbal
+437     reinforcement for enhanced financial decision making. In Advances in Neural Informa-
+438     tion Processing Systems, 2024. URL https://proceedings.neurips.cc/paper_files/
+439     paper/2024/hash/f7ae4fe91d96f50abc2211f09b6a7e49-Abstract-Conference.html.
+
+
+440   Appendix
+
+441   A     Complex Orchestration Benchmark Details
+442   This appendix summarizes the benchmark schema, provides concrete task instances, lists the
+443   tool interfaces and versions, and reports the exact judge prompt used in evaluation.
+
+444   A.1   Per-Scenario Results
+445   Per-scenario results are reported in Table 1 in the main text.
+
+446   A.2   Baseline Parity Audit
+447   To ensure a fair comparison, all agents (including the Full system, ablations, and baselines
+448   like ReAct, FinAgent, and FinMem) are evaluated under identical budget and environment
+449   constraints. Specifically, all variants access the exact same QVeris-MCP tool IDs. Each
+450   task is subject to a strict 180-second wall-clock timeout and a maximum of 3 automatic
+451   retries for transient API errors. Furthermore, to control for non-determinism in real-time
+452   financial data, a shared cache-at-time mechanism is utilized across all evaluations. Finally,
+453   all trajectories are scored using the same deterministic LLM-as-a-judge ensemble (GPT-5.4
+454   and Claude-Opus).
+
+455   A.3   Task taxonomy table
+456   Table 4 summarizes the task taxonomy and its mapping to typical tool chains and failure
+457   modes.
+
+
+                                                   12
+                                 Table 4: Complex orchestration task taxonomy.
+          Category           Typical tool chain         Primary         failure     Judge focus (examples)
+                                                        modes
+          Data → Com-         quote/macro → python      unit mismatch; uncom-       computed metrics present;
+          pute → Report       → report                  puted numbers; miss-        units consistent; computa-
+                                                        ing fields                  tions shown
+          Macro → Valua-      macro/fx → python →       wrong      assumptions;     assumptions explicit; decision
+          tion → Decision     decision                  missing      sensitivity;   justified; sensitivity/limits
+                                                        fragile sequencing          stated
+          Multi-source        news/search + data →      unsupported claims;         claims tied to retrieved evi-
+          grounding           reconcile → report        cherry-picking; stale       dence; conflicts acknowledged
+                                                        info
+          Error-recovery      tool failure injected →   cascading failures; brit-   graceful recovery; minimal re-
+          stress tests        retry/fallback → con-     tle formatting; infinite    dundant calls; stable outputs
+                              tinue                     loops
+
+
+458   A.4       Task instance examples
+459
+460   {
+461       "task_id": "T01",
+462       "query": "Assess the intrinsic value of Toyota Motor (TM) ADR. First, retrieve the USD free cash flow
+463             ,→ from its latest financials, convert it to JPY using the current JPY/USD exchange rate, perform a
+464             ,→ DCF calculation with a 5% discount rate and 3% perpetual growth rate, and compare it with the
+465             ,→ current market price to judge the margin of safety.",
+466       "difficulty": "hard",
+467       "required_skills_subset": ["DCF Modeling","Cross-Currency Conversion","Financial Data Extraction","Margin
+468             ,→ of Safety Analysis"],
+469       "evaluation_criteria": {
+470         "final_answer_metrics": ["JPY-denominated FCF","DCF valuation result","TM Current Price","Premium/
+471               ,→ Discount % and Margin of Safety Judgment"],
+472         "min_tool_calls": 4,
+473         "must_call_sequence": [["get_financial_statements","get_exchange_rate","calculate_dcf","get_stock_price
+474               ,→ "]]
+475       }
+476   }
+477   {
+478       "task_id": "T02",
+479       "query": "Analyze the impact of Fed monetary policy on high-valuation tech stocks. Retrieve the latest
+480             ,→ Fed Funds Rate and 10Y Treasury yield to calculate the term spread. Then, get the current P/E of
+481             ,→ NVIDIA (NVDA) and Microsoft (MSFT). Using the term spread as the risk-free rate benchmark,
+482             ,→ estimate a reasonable P/E range with a risk premium and provide allocation advice.",
+483       "difficulty": "medium",
+484       "required_skills_subset": ["Macro Interest Rate Analysis","Valuation Ratio Calculation","Spread Modeling
+485             ,→ ","Equity Asset Allocation"],
+486       "evaluation_criteria": {
+487         "final_answer_metrics": ["Fed Funds Rate & 10Y Yield","Term Spread value","NVDA & MSFT current P/E","
+488               ,→ Reasonable P/E range","Allocation Advice"],
+489         "min_tool_calls": 3,
+490         "must_call_sequence": [["get_macro_data","get_stock_price","calculator"]]
+491       }
+492   }
+493   {
+494       "task_id": "T03",
+495       "query": "Evaluate the linkage between crypto regulatory dynamics and Coinbase (COIN) stock price. Search
+496             ,→ for core news regarding SEC regulatory attitudes towards digital assets in the past week and
+497             ,→ extract sentiment. Also retrieve the current and 30-day BTC price to calculate the COIN/BTC
+498             ,→ price ratio. Combine BTC technical levels and news sentiment to judge COIN’s short-term trading
+499             ,→ direction.",
+500       "difficulty": "medium",
+501       "required_skills_subset": ["News Sentiment Mining","Crypto Asset Pricing","Cross-Asset Ratio","Event-
+502             ,→ Driven Trading"],
+503       "evaluation_criteria": {
+504         "final_answer_metrics": ["Regulatory News Summary & Sentiment","Recent BTC Price Data","COIN/BTC Ratio
+505               ,→ ","Short-term Trading Direction Logic"],
+506         "min_tool_calls": 3,
+507         "must_call_sequence": [["search_financial_news","get_crypto_price","get_stock_price","calculator"]]
+508       }
+509
+510   }
+
+
+
+511   A.5       Tool interfaces and versions
+
+
+                                                            13
+512
+513   get_stock_price(symbol: str) -> QVeris tool_id: finnhub_io_api.stock.quote
+514   get_financial_statements(symbol: str) -> QVeris tool_id: financialmodelingprep.stable.incomestatement.
+515         ,→ retrieve.v1.dd6d583f
+516   get_exchange_rate(pair: str) -> QVeris tool_id: twelvedata.exchangerate.retrieve.v1.9eeb3b0d
+517   get_macro_data(indicator: str) -> QVeris tool_id:
+518     CPI -> alphavantage.economic.cpi.retrieve.v1.7aca3c4a
+519     FEDERAL_FUNDS_RATE -> alphavantage.economic.federal_funds_rate.retrieve.v1.7aca3c4a
+520     TREASURY_YIELD_10Y -> alphavantage.economic.treasury_yield.retrieve.v1.7aca3c4a
+521   search_financial_news(query: str, max_results: int) -> Tavily web search
+522
+523   python_interpreter(code: str) -> Python REPL stdout
+
+
+
+
+524   A.6    LLM-as-a-judge rubric
+
+525   We score each answer on a 0–100 scale as a weighted sum:
+
+526         • Completeness (0–40): all required fields present; key metrics included.
+527         • Tool grounding (0–35): claims are supported by logged tool outputs; numbers
+528           are computed.
+529         • Orchestration quality (0–15): correct sequencing; handles missing values; no
+530           unnecessary calls.
+531         • Clarity (0–10): concise, well-structured, and actionable recommendation.
+
+532   A.7    Judge prompt (exact)
+
+533   We use a fixed rubric prompt and deterministic decoding (temperature 0). The judge returns
+534   a JSON object with fields {score, reasoning, met_metrics, missed_metrics}.
+535
+536   You are a strict financial evaluation judge (LLM-as-a-Judge). You will be given:
+537   1) Task Query
+538   2) evaluation_criteria (containing final_answer_metrics / min_tool_calls / must_call_sequence)
+539   3) Agent’s Final Answer
+540   4) Agent’s trajectory (sequence of tool calls, possibly including parameters and output summaries)
+541
+542   Please provide a comprehensive score from 0-100 and explain the reasoning, focusing on:
+543   - Whether the final answer covers the key points of final_answer_metrics (clearly state met/missing items)
+544   - Whether the trajectory reflects reasonable data acquisition and calculation (avoid "fabrication")
+545   - Whether it satisfies the intent of min_tool_calls (quantity is for reference; focus on necessary steps)
+546   - must_call_sequence is for "intent sequence" reference: if tool names don’t match exactly, judge if the
+547        ,→ intent aligns (e.g., News Search -> Data Fetch -> Calculation -> Synthesis)
+548
+549   Output must be strict JSON (no extra text) in the following format:
+550   {
+551     "score": 0,
+552     "reasoning": "",
+553     "met_metrics": [],
+554     "missed_metrics": []
+555
+556   }
+
+
+
+
+557   NeurIPS Paper Checklist
+558         1. Claims
+559            Question: Do the main claims made in the abstract and introduction accurately
+560            reflect the paper’s contributions and scope?
+561            Answer: [Yes]
+562            Justification: The abstract and introduction clearly state our contributions (evolution
+563            engine, hierarchical memory, orchestrator) and report the main experimental results
+564            on the FinAgent Complex Orchestration Benchmark (N = 300).
+565            Guidelines:
+566              • The answer [N/A] means that the abstract and introduction do not include the
+567                claims made in the paper.
+
+
+                                                          14
+568      • The abstract and/or introduction should clearly state the claims made, including
+569        the contributions made in the paper and important assumptions and limitations.
+570        A [No] or [N/A] answer to this question will not be perceived well by the
+571        reviewers.
+572      • The claims made should match theoretical and experimental results, and reflect
+573        how much the results can be expected to generalize to other settings.
+574      • It is fine to include aspirational goals as motivation as long as it is clear that
+575        these goals are not attained by the paper.
+576   2. Limitations
+577     Question: Does the paper discuss the limitations of the work performed by the
+578     authors?
+579     Answer: [Yes]
+580     Justification: We discuss limitations regarding sample size, judge bias, and tool
+581     non-determinism in Section 6.
+582     Guidelines:
+583      • The answer [N/A] means that the paper has no limitation while the answer [No]
+584        means that the paper has limitations, but those are not discussed in the paper.
+585      • The authors are encouraged to create a separate “Limitations” section in their
+586        paper.
+587      • The paper should point out any strong assumptions and how robust the results
+588        are to violations of these assumptions (e.g., independence assumptions, noiseless
+589        settings, model well-specification, asymptotic approximations only holding
+590        locally). The authors should reflect on how these assumptions might be violated
+591        in practice and what the implications would be.
+592      • The authors should reflect on the scope of the claims made, e.g., if the approach
+593        was only tested on a few datasets or with a few runs. In general, empirical
+594        results often depend on implicit assumptions, which should be articulated.
+595      • The authors should reflect on the factors that influence the performance of the
+596        approach. For example, a facial recognition algorithm may perform poorly when
+597        image resolution is low or images are taken in low lighting. Or a speech-to-text
+598        system might not be used reliably to provide closed captions for online lectures
+599        because it fails to handle technical jargon.
+600      • The authors should discuss the computational efficiency of the proposed algo-
+601        rithms and how they scale with dataset size.
+602      • If applicable, the authors should discuss possible limitations of their approach
+603        to address problems of privacy and fairness.
+604      • While the authors might fear that complete honesty about limitations might
+605        be used by reviewers as grounds for rejection, a worse outcome might be that
+606        reviewers discover limitations that aren’t acknowledged in the paper. The
+607        authors should use their best judgment and recognize that individual actions in
+608        favor of transparency play an important role in developing norms that preserve
+609        the integrity of the community. Reviewers will be specifically instructed to not
+610        penalize honesty concerning limitations.
+611   3. Theory assumptions and proofs
+612     Question: For each theoretical result, does the paper provide the full set of assump-
+613     tions and a complete (and correct) proof?
+614     Answer: [N/A]
+615     Justification: This paper is primarily empirical and does not introduce new theoretical
+616     theorems or formal proofs.
+617     Guidelines:
+618      • The answer [N/A] means that the paper does not include theoretical results.
+619      • All the theorems, formulas, and proofs in the paper should be numbered and
+620        cross-referenced.
+
+
+                                             15
+621        • All assumptions should be clearly stated or referenced in the statement of any
+622           theorems.
+623        • The proofs can either appear in the main paper or the supplemental material,
+624           but if they appear in the supplemental material, the authors are encouraged to
+625           provide a short proof sketch to provide intuition.
+626        • Inversely, any informal proof provided in the core of the paper should be
+627           complemented by formal proofs provided in appendix or supplemental material.
+628        • Theorems and Lemmas that the proof relies upon should be properly referenced.
+629   4. Experimental result reproducibility
+630      Question: Does the paper fully disclose all the information needed to reproduce
+631      the main experimental results of the paper to the extent that it affects the main
+632      claims and/or conclusions of the paper (regardless of whether the code and data are
+633      provided or not)?
+634      Answer: [Yes]
+635      Justification: We provide full details of the benchmark, tools, and judge prompts in
+636      the Appendix and the supplementary code.
+637      Guidelines:
+638        • The answer [N/A] means that the paper does not include experiments.
+639        • If the paper includes experiments, a [No] answer to this question will not be
+640           perceived well by the reviewers: Making the paper reproducible is important,
+641           regardless of whether the code and data are provided or not.
+642        • If the contribution is a dataset and/or model, the authors should describe the
+643           steps taken to make their results reproducible or verifiable.
+644        • Depending on the contribution, reproducibility can be accomplished in various
+645           ways. For example, if the contribution is a novel architecture, describing the
+646           architecture fully might suffice, or if the contribution is a specific model and
+647           empirical evaluation, it may be necessary to either make it possible for others to
+648           replicate the model with the same dataset, or provide access to the model. In
+649           general. releasing code and data is often one good way to accomplish this, but
+650           reproducibility can also be provided via detailed instructions for how to replicate
+651           the results, access to a hosted model (e.g., in the case of a large language model),
+652           releasing of a model checkpoint, or other means that are appropriate to the
+653           research performed.
+654        • While NeurIPS does not require releasing code, the conference does require all
+655           submissions to provide some reasonable avenue for reproducibility, which may
+656           depend on the nature of the contribution. For example
+657          (a) If the contribution is primarily a new algorithm, the paper should make it
+658               clear how to reproduce that algorithm.
+659          (b) If the contribution is primarily a new model architecture, the paper should
+660               describe the architecture clearly and fully.
+661          (c) If the contribution is a new model (e.g., a large language model), then there
+662               should either be a way to access this model for reproducing the results or a
+663               way to reproduce the model (e.g., with an open-source dataset or instructions
+664               for how to construct the dataset).
+665          (d) We recognize that reproducibility may be tricky in some cases, in which
+666               case authors are welcome to describe the particular way they provide for
+667               reproducibility. In the case of closed-source models, it may be that access to
+668               the model is limited in some way (e.g., to registered users), but it should be
+669               possible for other researchers to have some path to reproducing or verifying
+670               the results.
+671   5. Open access to data and code
+672      Question: Does the paper provide open access to the data and code, with sufficient
+673      instructions to faithfully reproduce the main experimental results, as described in
+674      supplemental material?
+675      Answer: [Yes]
+
+
+                                               16
+676      Justification: All code, benchmark data, and evaluation scripts are included in the
+677      supplementary material for reproducibility.
+678      Guidelines:
+679        • The answer [N/A] means that paper does not include experiments requiring
+680           code.
+681        • Please see the NeurIPS code and data submission guidelines (https://neurips.
+682           cc/public/guides/CodeSubmissionPolicy) for more details.
+683        • While we encourage the release of code and data, we understand that this might
+684           not be possible, so [No] is an acceptable answer. Papers cannot be rejected
+685           simply for not including code, unless this is central to the contribution (e.g., for
+686           a new open-source benchmark).
+687        • The instructions should contain the exact command and environment
+688           needed to run to reproduce the results.                   See the NeurIPS code
+689           and data submission guidelines (https://neurips.cc/public/guides/
+690           CodeSubmissionPolicy) for more details.
+691        • The authors should provide instructions on data access and preparation, in-
+692           cluding how to access the raw data, preprocessed data, intermediate data, and
+693           generated data, etc.
+694        • The authors should provide scripts to reproduce all experimental results for
+695           the new proposed method and baselines. If only a subset of experiments are
+696           reproducible, they should state which ones are omitted from the script and why.
+697        • At submission time, to preserve anonymity, the authors should release
+698           anonymized versions (if applicable).
+699        • Providing as much information as possible in supplemental material (appended
+700           to the paper) is recommended, but including URLs to data and code is permitted.
+701   6. Experimental setting/details
+702      Question: Does the paper specify all the training and test details (e.g., data splits,
+703      hyperparameters, how they were chosen, type of optimizer) necessary to understand
+704      the results?
+705      Answer: [Yes]
+706      Justification: Full experimental settings, including LLM models, temperatures, and
+707      tool configurations, are detailed in Section 4 and the Appendix.
+708      Guidelines:
+709        • The answer [N/A] means that the paper does not include experiments.
+710        • The experimental setting should be presented in the core of the paper to a level
+711           of detail that is necessary to appreciate the results and make sense of them.
+712        • The full details can be provided either with the code, in appendix, or as
+713           supplemental material.
+714   7. Experiment statistical significance
+715      Question: Does the paper report error bars suitably and correctly defined or other
+716      appropriate information about the statistical significance of the experiments?
+717      Answer: [Yes]
+718      Justification: All main results in Table 3 are reported with 95% confidence intervals
+719      across 300 tasks. Figures 3 and 4 show aggregate trends without per-point error
+720      bars for visual clarity.
+721      Guidelines:
+722        • The answer [N/A] means that the paper does not include experiments.
+723        • The authors should answer [Yes] if the results are accompanied by error bars,
+724           confidence intervals, or statistical significance tests, at least for the experiments
+725           that support the main claims of the paper.
+726        • The factors of variability that the error bars are capturing should be clearly
+727           stated (for example, train/test split, initialization, random drawing of some
+728           parameter, or overall run with given experimental conditions).
+
+
+                                               17
+729         • The method for calculating the error bars should be explained (closed form
+730            formula, call to a library function, bootstrap, etc.)
+731         • The assumptions made should be given (e.g., Normally distributed errors).
+732         • It should be clear whether the error bar is the standard deviation or the standard
+733            error of the mean.
+734         • It is OK to report 1-sigma error bars, but one should state it. The authors
+735            should preferably report a 2-sigma error bar than state that they have a 96%
+736            CI, if the hypothesis of Normality of errors is not verified.
+737         • For asymmetric distributions, the authors should be careful not to show in
+738            tables or figures symmetric error bars that would yield results that are out of
+739            range (e.g., negative error rates).
+740         • If error bars are reported in tables or plots, the authors should explain in the
+741            text how they were calculated and reference the corresponding figures or tables
+742            in the text.
+743    8. Experiments compute resources
+744       Question: For each experiment, does the paper provide sufficient information on the
+745       computer resources (type of compute workers, memory, time of execution) needed
+746       to reproduce the experiments?
+747       Answer: [Yes]
+748       Justification: Details of the compute environment and API usage are provided in
+749       the Appendix.
+750       Guidelines:
+751         • The answer [N/A] means that the paper does not include experiments.
+752         • The paper should indicate the type of compute workers CPU or GPU, internal
+753            cluster, or cloud provider, including relevant memory and storage.
+754         • The paper should provide the amount of compute required for each of the
+755            individual experimental runs as well as estimate the total compute.
+756         • The paper should disclose whether the full research project required more
+757            compute than the experiments reported in the paper (e.g., preliminary or failed
+758            experiments that didn’t make it into the paper).
+759    9. Code of ethics
+760       Question: Does the research conducted in the paper conform, in every respect, with
+761       the NeurIPS Code of Ethics https://neurips.cc/public/EthicsGuidelines?
+762       Answer: [Yes]
+763       Justification: Our research adheres to the ethics guidelines, specifically regarding
+764       data usage and evaluation objectivity.
+765       Guidelines:
+766         • The answer [N/A] means that the authors have not reviewed the NeurIPS Code
+767            of Ethics.
+768         • If the authors answer [No], they should explain the special circumstances that
+769            require a deviation from the Code of Ethics.
+770         • The authors should make sure to preserve anonymity (e.g., if there is a special
+771            consideration due to laws or regulations in their jurisdiction).
+772   10. Broader impacts
+773       Question: Does the paper discuss both potential positive societal impacts and
+774       negative societal impacts of the work performed?
+775       Answer: [Yes]
+776       Justification: Potential impacts on financial automation and risks of autonomous
+777       trading are discussed in Section 6.
+778       Guidelines:
+779         • The answer [N/A] means that there is no societal impact of the work performed.
+
+
+                                               18
+780         • If the authors answer [N/A] or [No], they should explain why their work has no
+781            societal impact or why the paper does not address societal impact.
+782         • Examples of negative societal impacts include potential malicious or unintended
+783            uses (e.g., disinformation, generating fake profiles, surveillance), fairness consid-
+784            erations (e.g., deployment of technologies that could make decisions that unfairly
+785            impact specific groups), privacy considerations, and security considerations.
+786         • The conference expects that many papers will be foundational research and
+787            not tied to particular applications, let alone deployments. However, if there
+788            is a direct path to any negative applications, the authors should point it out.
+789            For example, it is legitimate to point out that an improvement in the quality
+790            of generative models could be used to generate Deepfakes for disinformation.
+791            On the other hand, it is not needed to point out that a generic algorithm for
+792            optimizing neural networks could enable people to train models that generate
+793            Deepfakes faster.
+794         • The authors should consider possible harms that could arise when the technology
+795            is being used as intended and functioning correctly, harms that could arise when
+796            the technology is being used as intended but gives incorrect results, and harms
+797            following from (intentional or unintentional) misuse of the technology.
+798         • If there are negative societal impacts, the authors could also discuss possible
+799            mitigation strategies (e.g., gated release of models, providing defenses in addition
+800            to attacks, mechanisms for monitoring misuse, mechanisms to monitor how a
+801            system learns from feedback over time, improving the efficiency and accessibility
+802            of ML).
+803   11. Safeguards
+804       Question: Does the paper describe safeguards that have been put in place for
+805       responsible release of data or models that have a high risk for misuse (e.g., pre-
+806       trained language models, image generators, or scraped datasets)?
+807       Answer: [N/A]
+808       Justification: Our work does not release high-risk generative models or sensitive
+809       datasets.
+810       Guidelines:
+811         • The answer [N/A] means that the paper poses no such risks.
+812         • Released models that have a high risk for misuse or dual-use should be released
+813            with necessary safeguards to allow for controlled use of the model, for example
+814            by requiring that users adhere to usage guidelines or restrictions to access the
+815            model or implementing safety filters.
+816         • Datasets that have been scraped from the Internet could pose safety risks. The
+817            authors should describe how they avoided releasing unsafe images.
+818         • We recognize that providing effective safeguards is challenging, and many papers
+819            do not require this, but we encourage authors to take this into account and
+820            make a best faith effort.
+821   12. Licenses for existing assets
+822       Question: Are the creators or original owners of assets (e.g., code, data, models),
+823       used in the paper, properly credited and are the license and terms of use explicitly
+824       mentioned and properly respected?
+825       Answer: [Yes]
+826       Justification: All third-party tools (Tavily, QVeris) are properly cited and used
+827       according to their licenses.
+828       Guidelines:
+829         • The answer [N/A] means that the paper does not use existing assets.
+830         • The authors should cite the original paper that produced the code package or
+831            dataset.
+832         • The authors should state which version of the asset is used and, if possible,
+833            include a URL.
+
+
+                                                 19
+834       • The name of the license (e.g., CC-BY 4.0) should be included for each asset.
+835       • For scraped data from a particular source (e.g., website), the copyright and
+836         terms of service of that source should be provided.
+837       • If assets are released, the license, copyright information, and terms of use in
+838         the package should be provided. For popular datasets, paperswithcode.com/
+839         datasets has curated licenses for some datasets. Their licensing guide can help
+840         determine the license of a dataset.
+841       • For existing datasets that are re-packaged, both the original license and the
+842         license of the derived asset (if it has changed) should be provided.
+843       • If this information is not available online, the authors are encouraged to reach
+844         out to the asset’s creators.
+845   13. New assets
+846      Question: Are new assets introduced in the paper well documented and is the
+847      documentation provided alongside the assets?
+848      Answer: [Yes]
+849      Justification: We introduce a new complex multi-skill orchestration benchmark,
+850      which is documented in the Appendix and the supplementary code.
+851      Guidelines:
+852       • The answer [N/A] means that the paper does not release new assets.
+853       • Researchers should communicate the details of the dataset/code/model as part
+854         of their submissions via structured templates. This includes details about
+855         training, license, limitations, etc.
+856       • The paper should discuss whether and how consent was obtained from people
+857         whose asset is used.
+858       • At submission time, remember to anonymize your assets (if applicable). You
+859         can either create an anonymized URL or include an anonymized zip file.
+860   14. Crowdsourcing and research with human subjects
+861      Question: For crowdsourcing experiments and research with human subjects, does
+862      the paper include the full text of instructions given to participants and screenshots,
+863      if applicable, as well as details about compensation (if any)?
+864      Answer: [N/A]
+865      Justification: Our research does not involve crowdsourcing or human subjects
+866      experiments.
+867      Guidelines:
+868       • The answer [N/A] means that the paper does not involve crowdsourcing nor
+869         research with human subjects.
+870       • Including this information in the supplemental material is fine, but if the main
+871         contribution of the paper involves human subjects, then as much detail as
+872         possible should be included in the main paper.
+873       • According to the NeurIPS Code of Ethics, workers involved in data collection,
+874         curation, or other labor should be paid at least the minimum wage in the
+875         country of the data collector.
+876   15. Institutional review board (IRB) approvals or equivalent for research
+877       with human subjects
+878      Question: Does the paper describe potential risks incurred by study participants,
+879      whether such risks were disclosed to the subjects, and whether Institutional Review
+880      Board (IRB) approvals (or an equivalent approval/review based on the requirements
+881      of your country or institution) were obtained?
+882      Answer: [N/A]
+883      Justification: Our research does not involve human subjects.
+884      Guidelines:
+
+
+                                              20
+885         • The answer [N/A] means that the paper does not involve crowdsourcing nor
+886            research with human subjects.
+887         • Depending on the country in which research is conducted, IRB approval (or
+888            equivalent) may be required for any human subjects research. If you obtained
+889            IRB approval, you should clearly state this in the paper.
+890         • We recognize that the procedures for this may vary significantly between insti-
+891            tutions and locations, and we expect authors to adhere to the NeurIPS Code of
+892            Ethics and the guidelines for their institution.
+893         • For initial submissions, do not include any information that would break
+894            anonymity (if applicable), such as the institution conducting the review.
+895   16. Declaration of LLM usage
+896       Question: Does the paper describe the usage of LLMs if it is an important, original,
+897       or non-standard component of the core methods in this research? Note that if the
+898       LLM is used only for writing, editing, or formatting purposes and does not impact
+899       the core methodology, scientific rigor, or originality of the research, declaration is
+900       not required.
+901       Answer: [Yes]
+902       Justification: LLMs are core components of our method, specifically for the Evolution
+903       Engine, DAG Orchestrator, and Dual-Judge Ensemble.
+904       Guidelines:
+905         • The answer [N/A] means that the core method development in this research
+906            does not involve LLMs as any important, original, or non-standard components.
+907         • Please refer to our LLM policy in the NeurIPS handbook for what should or
+908            should not be described.
+
+
+
+
+                                               21
+

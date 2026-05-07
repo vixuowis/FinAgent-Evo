@@ -1,0 +1,2333 @@
+{
+  "tasks": [
+    {
+      "task_id": "T076",
+      "query": "作为量化基金经理，我正在评估将投资组合从美国科技板块（以QQQ为代表）轮动至欧洲可再生能源板块（以INRG.L为代表）的风险与收益。请执行以下分析：\n1. 获取两只ETF近一年的历史价格数据，计算其年化波动率与相关性。\n2. 查询当前美联储与欧洲央行的基准利率，并获取近期的EUR/USD实时汇率。\n3. 搜索近一个月内关于“美国科技巨头反垄断监管”与“欧洲可再生能源补贴政策”的关键财经新闻。\n4. 结合宏观利率差与汇率波动，使用Python计算将资金配置从60%美国科技/40%欧洲新能源调整为40%/60%后的组合波动率、95%置信度下的风险价值（VaR），以及未对冲汇率风险的潜在损耗。\n5. 综合新闻情绪、利差变动与VaR结果，评估此次板块轮动的风险调整后收益潜力，并给出明确的决策建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter",
+        "portfolio_risk_analysis",
+        "cross_asset_correlation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "调整前后组合的年化波动率对比",
+          "95%置信水平下的组合VaR具体数值",
+          "EUR/USD汇率波动对组合收益的侵蚀估算",
+          "宏观利差与新闻情绪对轮动逻辑的支撑分析",
+          "明确的板块轮动决策建议及风险提示"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T077",
+      "query": "作为量化对冲基金的投资组合经理，我计划在当前宏观紧缩周期下进行行业轮动，拟将科技板块（MSFT）20%的仓位切换至工业周期板块（CAT）。请执行以下多步分析：1）获取最新的美国10年期国债收益率与核心CPI同比数据，以确认当前宏观利率环境；2）检索近一个月关于“美股行业轮动”与“制造业复苏”的权威财经新闻，提取关键市场情绪信号；3）调取MSFT与CAT最新年度财务报表中的自由现金流（FCF）数据，并获取两家公司当前的实时股价；4）基于当前宏观无风险利率，使用DCF模型重新估算CAT的每股内在价值，假设其永续增长率较历史平均水平下调1.5%；5）利用Python编写代码，计算仓位调整后的投资组合预期收益率、加权波动率及基于0.35行业相关系数的夏普比率变化；6）综合宏观数据、新闻情绪与模型输出，给出该轮动策略的风险评估报告与最终调仓建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news",
+        "get_financial_statements",
+        "get_stock_price",
+        "calculate_dcf",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国10年期国债收益率与核心CPI数据",
+          "行业轮动相关新闻情绪摘要",
+          "MSFT与CAT最新自由现金流及当前股价",
+          "基于新宏观参数的CAT DCF内在价值",
+          "轮动后组合的收益率、波动率及夏普比率变化",
+          "综合风险评估与调仓操作建议"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news",
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T078",
+      "query": "作为负责宏观对冲的资产配置经理，我计划在美联储持续加息与高通胀预期下，将投资组合从半导体龙头英伟达（NVDA）部分轮动至防御性的公用事业龙头南方电力（SO）。请执行以下多步骤风险评估与估值分析：\n1. 提取美国最新季度CPI同比增速与当前联邦基金利率，评估宏观紧缩环境对成长股与价值防御股的历史影响。\n2. 获取NVDA与SO过去24个月的日线收盘价，使用Python计算两者的滚动60日波动率、历史相关系数及调仓后的组合下行风险（如95%置信度下的历史VaR预估）。\n3. 获取SO最新的年度自由现金流，结合第1步获取的当前联邦基金利率作为无风险利率基准，设定股权风险溢价为6%，永续增长率为2.5%，利用DCF工具计算SO的合理内在价值。\n4. 检索近10天内关于“公用事业板块轮动”及“美联储利率决议”的核心财经新闻，提炼卖方机构观点与市场情绪。\n5. 综合宏观数据、风险指标、DCF估值溢价/折价幅度及新闻情绪，给出明确的仓位调整建议，并量化调仓预期对组合夏普比率（Sharpe Ratio）的改善程度。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观经济数据提取与解读",
+        "多资产时间序列与风险建模",
+        "现金流折现（DCF）估值",
+        "金融文本情绪分析",
+        "跨板块轮动与组合优化"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新CPI与联邦基金利率数据及宏观环境定性结论",
+          "NVDA与SO的60日波动率、历史相关系数及组合VaR计算结果",
+          "SO的DCF内在价值、相对市价的溢价/折价率",
+          "近10日相关新闻的核心情绪与机构观点摘要",
+          "明确的板块轮动操作建议（增/减持方向与比例）及预期夏普比率改善测算"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_stock_price",
+            "get_financial_statements"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "python_interpreter"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T079",
+      "query": "作为宏观对冲基金策略师，请评估在当前高通胀与美联储加息周期末端环境下，将投资组合从科技成长板块向金融价值及公用事业防御板块轮动的风险收益特征。具体执行步骤如下：\n1. 获取最新的美国CPI同比数据、10年期国债收益率及实际GDP增速。\n2. 拉取科技板块ETF（QQQ）、金融板块ETF（XLF）和公用事业板块ETF（XLU）过去252个交易日的收盘价，清洗数据后计算各自的年化波动率及三者之间的相关系数矩阵。\n3. 基于上述宏观与历史市场数据，使用Python编写代码计算配置权重为（科技40%、金融35%、公用事业25%）的投资组合在95%置信度下的历史模拟VaR（月度），并利用当前10年期国债收益率作为无风险利率估算组合的预期夏普比率。\n4. 检索近三个月关于“美债收益率曲线形态变化”与“机构板块资金流向”的财经新闻，提炼驱动此次防御性轮动的核心催化剂，并定量提示该轮动策略在宏观政策突变或流动性紧缩情景下的潜在最大回撤风险。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "python_interpreter",
+        "search_financial_news",
+        "portfolio_risk_modeling",
+        "macro_sector_analysis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新美国CPI、10年期美债收益率及GDP增速数据",
+          "QQQ、XLF、XLU的年化波动率及3x3相关系数矩阵",
+          "40/35/25权重组合的95%置信度月度VaR与预期夏普比率",
+          "驱动板块轮动的核心新闻催化剂与政策突变下的最大回撤风险提示"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price"
+          ],
+          [
+            "get_stock_price",
+            "python_interpreter"
+          ],
+          [
+            "python_interpreter",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T080",
+      "query": "作为量化投资分析师，我计划在当前投资组合中执行从科技成长板块向高端制造/国防工业板块的轮动策略。请执行以下分析：1. 获取最新的美国核心CPI同比增速与10年期国债收益率，评估宏观利率环境对估值的影响。2. 检索过去30天内关于半导体供应链瓶颈以及国防部新预算案的关键财经新闻，进行情绪面分析。3. 获取NVDA、AMD（科技）与LMT、NOC、GD（工业/国防）的最新财务报表，计算其ROE与自由现金流利润率。4. 提取上述5只股票过去一年的日收益率数据。5. 使用Python编写脚本，计算原组合（等权科技）与新轮动组合（60%工业/国防，40%科技）的95%历史VaR、板块间滚动30天相关系数，并基于DCF模型对LMT进行内在价值估算以验证安全边际。最终请给出最优调仓权重建议、轮动前后的风险调整后收益对比（假设无风险利率为当前10Y美债收益率），并说明宏观数据如何驱动该决策。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观经济指标分析",
+        "财经新闻情绪挖掘",
+        "财务比率与基本面提取",
+        "历史波动率与相关性计算",
+        "DCF估值建模",
+        "Python量化组合优化与VaR计算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新核心CPI与10年期美债收益率数值及其对板块轮动的宏观传导逻辑",
+          "科技与国防工业板块过去30天的滚动相关系数",
+          "原科技等权组合与轮动后组合的95%历史VaR具体数值对比",
+          "LMT基于DCF模型的每股内在价值估算结果及安全边际百分比",
+          "明确建议的各标的调仓权重分配",
+          "轮动前后的预期年化收益、波动率及夏普比率对比表"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T081",
+      "query": "作为宏观对冲基金的投资组合经理，我正在评估在当前高利率环境下，从“科技成长板块”向“价值金融板块”进行防御性轮动的可行性与风险敞口。请完成以下多步骤分析任务：\n1. 获取最新的美联储基准利率（Federal Funds Rate）及美国核心CPI同比增速，并判断当前实际利率水平对久期风险的传导。\n2. 获取美元对欧元（USD/EUR）的实时汇率，因本基金的欧洲LP需承担汇兑损益，请计算若汇率单向波动2%对组合整体名义收益的潜在影响。\n3. 获取XLK（科技精选）和XLF（金融精选）过去一年的日度收盘价数据，使用Python编写脚本计算两者的20日滚动年化波动率及动态滚动相关性（60日窗口）。\n4. 检索过去30天关于“美联储资本新规对大型银行的影响”及“半导体行业资本开支指引”的财经新闻，提取关键事件并评估其对两大板块的风险情绪溢价（正向/负向）。\n5. 以XLK核心成分股组合为例，假设其未来3年自由现金流复合增长率为7%，使用当前无风险利率加5%股权风险溢价作为WACC，通过DCF模型计算其合理估值区间；对比当前市价判断高估/低估百分比。\n6. 结合上述宏观压制因子、汇率对冲成本、波动率差异与新闻情绪调整后的预期收益，运用风险平价（Risk Parity）逻辑，计算科技与金融板块的最优风险贡献权重，并输出最终的建议配置比例（精确到百分比）及组合整体的预期夏普比率。\n请确保所有计算过程透明，数据引用准确，并给出明确的轮动执行建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "macroeconomic_data_retrieval",
+        "forex_risk_assessment",
+        "time_series_statistical_analysis",
+        "financial_news_sentiment_extraction",
+        "dcf_valuation",
+        "risk_parity_portfolio_optimization"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "明确列出美联储利率、核心CPI及实际利率判断结论",
+          "提供USD/EUR汇率及2%波动情景下的汇兑损益测算结果",
+          "展示XLK与XLF的20日滚动年化波动率与60日滚动相关性计算结果",
+          "包含对银行资本新规与半导体开支新闻的情绪溢价量化评估",
+          "给出DCF模型计算的科技板块估值溢价/折价百分比",
+          "输出基于风险平价的最终板块配置比例（科技:金融）及组合预期夏普比率"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "get_stock_price",
+            "search_financial_news",
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T082",
+      "query": "作为宏观对冲基金的行业研究员，我计划在下季度实施美欧跨市场行业轮动策略，拟减持美国半导体龙头（NVDA）并增配欧洲必选消费龙头（雀巢，NESN.SW）。请协助完成以下综合评估：1. 获取两家公司最新股价及最近四个季度的利润表与资产负债表关键数据（营收、净利润、自由现金流、总债务）。2. 提取美国与欧元区当前的央行政策利率及最新CPI同比数据，并查询USD/EUR实时汇率。3. 检索过去30天内关于NVDA和NESN的重大财经新闻，提炼监管、地缘或供应链层面的潜在风险。4. 基于提取的宏观利率数据动态调整贴现率，分别对两家公司执行DCF估值，计算内在价值与当前股价的偏离度。5. 使用Python计算两只股票过去252个交易日的年化波动率，并将NESN波动率经USD/EUR汇率对冲调整后与NVDA对比。最终请输出一份包含DCF估值结果、汇率调整后风险指标、宏观敏感性分析及明确轮动操作建议的完整报告。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "Multi-asset Data Retrieval",
+        "Macroeconomic Analysis",
+        "DCF Valuation",
+        "Cross-Currency Risk Adjustment",
+        "Python Quantitative Analysis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "NVDA与NESN的DCF估值及折溢价率",
+          "经汇率对冲调整后的相对年化波动率",
+          "欧美基准利率与CPI对WACC的影响分析",
+          "关键财务与新闻舆情风险摘要",
+          "明确的跨市场行业轮动配置建议"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "calculate_dcf"
+          ],
+          [
+            "get_macro_data",
+            "calculate_dcf"
+          ],
+          [
+            "get_exchange_rate",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T083",
+      "query": "作为宏观对冲基金的量化研究员，我需要评估在当前货币政策环境下，将资金从防御型公用事业板块（以南方电力 SO 为代理标的）轮动至半导体周期板块（以英伟达 NVDA 为代理标的）的风险调整后收益。请执行以下分析流程：1) 获取最新的美国10年期国债收益率与核心CPI同比数据；2) 提取SO与NVDA最新财年的现金流量表与利润表，计算各自的自由现金流（FCF）；3) 检索近30天内关于“科技股估值泡沫”与“公用事业股息收益率吸引力”的权威财经新闻，提炼多头与空头情绪占比；4) 设定贴现率为（10年期美债收益率 + 4%股权风险溢价），调用DCF模型分别计算两家公司的每股内在价值，并与实时股价对比得出折溢价率；5) 使用Python拉取两者过去250个交易日的收盘价，计算日收益率的滚动相关系数及等权重组合的年化波动率；6) 综合宏观利率敏感度、DCF估值偏离度、组合相关性风险及新闻情绪，输出明确的板块轮动执行指令及动态止损阈值。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "macroeconomic_data_retrieval",
+        "financial_statement_extraction",
+        "news_sentiment_analysis",
+        "dcf_valuation_modeling",
+        "python_quantitative_analysis",
+        "portfolio_risk_management"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确报告10年期美债收益率与核心CPI数值",
+          "清晰列出SO与NVDA的提取FCF数据及计算过程",
+          "提供近期相关新闻的情绪倾向分析（看多/看空比例或定性总结）",
+          "展示DCF估值结果、当前股价及折溢价百分比",
+          "输出Python计算的250日相关系数与等权重组合年化波动率",
+          "给出基于多因子综合的板块轮动明确建议及具体风控阈值"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "calculate_dcf"
+          ],
+          [
+            "get_financial_statements",
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price",
+            "python_interpreter"
+          ],
+          [
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T084",
+      "query": "作为加密货币资产配置的一部分，请查询当前以太坊（ETH）的实时美元价格，并计算购买 20 个 ETH 所需的总美元成本。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "加密货币实时价格查询",
+        "基础数学计算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "查询到的以太坊实时美元价格",
+          "购买20个ETH的准确美元总成本"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T085",
+      "query": "请获取当前以太坊（ETH）对美元的实时市场报价，并测算若在当前点位建仓 35 个 ETH 需要准备的美元本金总额。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "ETH当前美元实时报价",
+          "建仓35个ETH所需的美元本金总额"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T086",
+      "query": "作为加密资产配置评估的一部分，请获取当前以太坊（ETH）的实时美元报价，并计算投资15,000美元可购买的ETH数量（结果保留四位小数）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "加密货币数据检索",
+        "基础金融计算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "ETH当前美元实时报价",
+          "15,000美元可购买的ETH数量"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T087",
+      "query": "作为加密资产配置专员，请查询当前比特币（BTC）和以太坊（ETH）的实时美元价格，并计算当前的ETH对BTC交叉汇率（即1个BTC等值多少个ETH），结果请保留三位小数。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "比特币实时美元价格",
+          "以太坊实时美元价格",
+          "1 BTC等值的ETH数量（保留三位小数）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T088",
+      "query": "获取当前Solana（SOL）的美元实时价格，并计算如果我有30,000美元的投资额度，按当前市价能购买多少枚SOL？（结果保留两位小数）",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "SOL当前美元实时价格",
+          "30,000美元可购买的SOL数量（保留两位小数）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T089",
+      "query": "作为另类资产研究员，请获取当前比特币（BTC）和以太坊（ETH）的实时美元报价，并计算以太坊价格占比特币价格的百分比（结果保留两位小数）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "比特币（BTC）当前美元价格",
+          "以太坊（ETH）当前美元价格",
+          "以太坊占比特币价格的百分比（保留两位小数）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T090",
+      "query": "请获取当前比特币（BTC）的美元实时价格，并计算使用25,000美元现货买入时可获得的BTC数量（精确到小数点后四位）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC实时美元价格",
+          "25,000美元可购得的BTC数量（精确到小数点后四位）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T091",
+      "query": "请获取比特币（BTC）和以太坊（ETH）的最新美元现货价格，并计算一枚比特币当前相当于多少枚以太坊（即BTC/ETH价格比率）。请将计算结果保留两位小数，并简要说明该交叉比率对加密资产相对价值评估的参考意义。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC当前美元现货价格",
+          "ETH当前美元现货价格",
+          "BTC/ETH价格比率（保留两位小数）",
+          "该交叉比率对加密资产相对价值评估的简要分析"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T092",
+      "query": "查询当前比特币（BTC）与以太坊（ETH）的实时现货美元价格，并基于最新报价计算1枚比特币的相对以太坊估值（即BTC/ETH汇率）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC实时美元价格",
+          "ETH实时美元价格",
+          "BTC/ETH汇率（1 BTC兑换多少ETH）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T093",
+      "query": "某加密对冲基金正在评估其现货敞口。请查询比特币（BTC）的最新美元市场价格，并计算该基金持有 25 枚 BTC 的当前名义总价值（以美元计，保留两位小数）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "比特币（BTC）的最新美元实时报价",
+          "25枚BTC的当前总美元价值"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T094",
+      "query": "作为另类资产投资经理，我需要评估一个加密资产模拟组合的跨币种实际购买力。请执行以下分析：首先获取以太坊（ETH）和Solana（SOL）的最新实时美元报价；其次查询最近一期的美国CPI同比增速数据，作为通胀调整的基准；接着获取当前的USD/JPY外汇中间价。最后，假设组合持有5枚ETH与2000枚SOL，请使用代码工具计算该组合的美元名义总市值，并基于CPI数据推算经通胀调整后的实际价值（美元口径），最终按汇率换算为日元风险敞口。请列出所有关键中间参数及最终计算结果。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_macro_data",
+        "get_exchange_rate",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "ETH与SOL实时美元报价",
+          "最新美国CPI同比数据",
+          "USD/JPY汇率",
+          "组合美元名义总市值",
+          "经通胀调整后的实际价值（美元）",
+          "组合最终日元计价敞口"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price"
+          ],
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T095",
+      "query": "作为数字资产策略分析师，请评估以太坊（ETH）近期的跨市场投资价值与风险催化因素。首先，获取ETH的当前美元价格及30天前的历史价格，计算其期间收益率。其次，获取最新的USD/CNY即期汇率，将ETH当前价格折算为人民币计价。最后，检索近两周关于以太坊现货ETF审批进展、链上数据异动或重大监管政策的核心财经新闻，并简述其对短期价格波动的潜在影响。请提供完整的计算数值及新闻摘要分析。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_exchange_rate",
+        "calculator",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "ETH当前美元价格及30天前历史价格",
+          "ETH 30天期间收益率（百分比）",
+          "基于最新USD/CNY汇率折算的ETH人民币价格",
+          "近两周核心监管或ETF相关新闻摘要及短期波动影响分析"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_exchange_rate",
+            "calculator",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T096",
+      "query": "作为另类资产研究员，我需要评估加密货币对法定货币通胀的对冲效果。请获取当前比特币（BTC）的美元现货价格，并查询美国最新的CPI同比增速数据。接着获取当前的USD/CNY汇率，将等值10,000美元的BTC仓位换算为人民币计价。结合CPI数据，计算该仓位的名义人民币价值是否足以覆盖过去一年的通胀侵蚀（即对比名义价值基准与通胀系数）。请输出：BTC最新美元现货价格、最新USD/CNY汇率、1万美元等值BTC的人民币市值、美国最新CPI数据，以及明确的“跑赢”或“跑输”通胀结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "crypto_asset_pricing",
+        "forex_rate_retrieval",
+        "macroeconomic_data_analysis",
+        "financial_calculation",
+        "inflation_hedge_assessment"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC最新美元现货价格",
+          "最新USD/CNY汇率",
+          "10000美元等值BTC的人民币市值",
+          "美国最新CPI同比增速数据",
+          "明确的跑赢或跑输通胀结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_exchange_rate",
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T097",
+      "query": "作为宏观对冲基金的研究员，我需要评估当前加密资产与传统宏观指标的联动性。请获取当前比特币（BTC）和以太坊（ETH）的实时美元价格，以及最新的美元兑欧元（USD/EUR）汇率。同时，查询美国最新的联邦基金目标利率和最近一期的CPI同比数据。假设一个欧洲对冲基金在三个月前将500万欧元等值资金按70%配置BTC、30%配置ETH，且当时买入的美元兑欧元汇率为1.05。请计算该投资组合当前的欧元账面价值，并结合最新的美国CPI和利率数据，简要分析该组合在当前高息环境下的实际购买力变化趋势。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_exchange_rate",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC和ETH当前美元实时价格",
+          "最新美元兑欧元汇率",
+          "美国最新联邦基金利率与CPI同比增速",
+          "基于初始500万欧元与1.05历史汇率折算的投资组合当前欧元总价值",
+          "结合CPI与利率环境的实际购买力变化趋势分析"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_exchange_rate",
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T098",
+      "query": "作为另类资产配置研究员，请协助评估比特币（BTC）当前的相对估值与跨境定价水平。请依次执行：1. 获取当前比特币（BTC）的美元现货价格；2. 获取黄金ETF（GLD）的最新收盘价作为传统抗通胀资产基准；3. 查询实时美元兑人民币（USD/CNY）汇率；4. 获取最新的美国核心CPI同比数据。基于上述数据，请计算BTC与GLD的价格比率（BTC/GLD），将BTC现价折算为人民币报价，并结合核心CPI数据简要分析当前加密货币在通胀环境下的配置性价比。请输出完整的计算结果与宏观简评。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "crypto_pricing",
+        "etf_pricing",
+        "forex_rates",
+        "macro_indicators",
+        "quantitative_calculation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC美元现价",
+          "GLD收盘价",
+          "BTC/GLD比率",
+          "USD/CNY实时汇率",
+          "BTC人民币折算价",
+          "核心CPI数据及配置简评"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_stock_price",
+            "get_exchange_rate",
+            "get_macro_data"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T099",
+      "query": "作为另类资产研究员，请评估以太坊（ETH）作为“数字黄金”相对于传统黄金ETF（GLD）的当前交叉资产溢价水平。请执行以下分析流程：1) 获取ETH和GLD的最新实时报价；2) 查询美国最新的CPI同比指数数据；3) 计算未调整的ETH/GLD原始价格比率；4) 利用宏观通胀数据对传统黄金进行购买力基准校准（采用简化公式：通胀调整后比率 = 原始比率 / (CPI指数/100)），得出校准后的相对估值；5) 结合当前宏观流动性与利率环境，输出该交叉比率对机构投资者进行加密资产配置的战略参考意义。请提供清晰的数据提取来源、完整计算步骤及最终结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_stock_price",
+        "get_macro_data",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "ETH与GLD的最新实时价格",
+          "美国最新CPI指数数值",
+          "ETH/GLD原始价格比率",
+          "经通胀校准后的交叉比率计算结果",
+          "结合宏观环境的资产配置专业分析结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_stock_price",
+            "get_macro_data",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T100",
+      "query": "作为量化宏观研究员，请评估加密资产与传统替代资产近期表现与宏观环境的关联。具体任务如下：\n1. 调用加密资产接口获取比特币（BTC）和以太坊（ETH）的实时价格及30天前历史价格。\n2. 通过金融搜索工具获取伦敦现货黄金（XAU/USD）的当前报价及30天前报价。\n3. 调用宏观数据接口获取最新美国联邦基金利率（Federal Funds Rate）。\n4. 利用计算工具分别计算BTC、ETH和黄金过去30天的价格变动百分比（保留两位小数）。\n5. 结合最新利率数据，简要论述当前货币紧缩/宽松周期对这三类非生息另类资产定价的潜在影响，并按收益率高低给出最终排序。\n请确保输出包含明确的数值计算过程和宏观逻辑分析。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "tavily_search",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC 30天涨跌幅百分比",
+          "ETH 30天涨跌幅百分比",
+          "黄金现货 30天涨跌幅百分比",
+          "最新美国联邦基金利率",
+          "宏观利率对非生息资产定价的逻辑分析",
+          "三类资产收益率排序"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "tavily_search",
+            "get_macro_data"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T101",
+      "query": "作为宏观策略研究员，我需要评估以太坊（ETH）与加密概念股MicroStrategy（MSTR）的跨市场配置性价比。假设初始资金为100,000欧元，请执行以下分析：1. 获取ETH的实时美元报价及MSTR的当前美股价格；2. 查询EUR/USD实时汇率，将欧元本金折算为美元；3. 基于折算后的美元金额，精确计算可购买的ETH数量与MSTR股票数量；4. 对比两者在等值资金下的配置敞口，输出包含完整换算步骤、最终持仓明细及相对估值结论的分析报告。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_stock_price",
+        "get_exchange_rate",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "ETH与MSTR的实时美元报价",
+          "100,000欧元折算后的美元本金金额",
+          "等额美元下可购买的ETH数量与MSTR股数",
+          "跨资产配置敞口对比与相对估值结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_stock_price",
+            "get_exchange_rate"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T102",
+      "query": "作为加密资产配置分析师，我正在评估主流数字资产的相对定价效率。请获取比特币（BTC）和以太坊（ETH）的最新美元现货价格，并提取当前的美国10年期国债收益率。计算BTC对ETH的相对价格倍数，并将该倍数与美债收益率的数值（例如4.15取4.15）相乘，输出计算过程及最终的流动性调整相对估值结果。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC美元现货价格",
+          "ETH美元现货价格",
+          "美国10年期国债收益率数值",
+          "BTC/ETH相对价格倍数",
+          "流动性调整相对估值计算结果"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T103",
+      "query": "作为另类资产研究员，请协助我完成一项跨币种加密资产组合评估。首先，获取比特币（BTC）与以太坊（ETH）的当前美元价格及90天前的历史价格，并计算同等权重配置的期间收益率。其次，获取最新美元兑日元（USD/JPY）汇率，将当前组合总价值转换为日元。最后，检索过去一个月内关于美国现货以太坊ETF资金流向的金融新闻，并分析其对短期加密市场流动性的指示意义。请输出详细计算步骤、最终估值及新闻研判。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_exchange_rate",
+        "search_financial_news",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC与ETH的90天期间收益率",
+          "当前组合总美元价值",
+          "USD/JPY实时汇率",
+          "折算后的组合日元总价值",
+          "近一月现货以太坊ETF资金流向新闻摘要",
+          "资金流向对加密市场流动性的影响分析"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_exchange_rate",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T104",
+      "query": "作为加密货币宏观策略研究员，请构建一个结合宏观利率、通胀数据与市场情绪的数字资产相对估值模型。具体步骤如下：1. 获取比特币（BTC）与以太坊（ETH）的最新实时美元报价；2. 查询美国最新CPI同比增速与美联储联邦基金目标利率；3. 检索近两周内关于美国SEC对以太坊现货ETF监管动向或Layer 2网络升级的核心财经新闻，并综合判定整体市场情绪为“积极”、“中性”或“消极”；4. 获取最新美元兑日元（USD/JPY）即期汇率；5. 调用Python解释器执行交叉计算：首先计算ETH/BTC相对强弱比，然后利用宏观数据计算实际利率（名义利率 - CPI），最后得出“经汇率与宏观因子加权后的日元计价预期溢价”。计算公式为：预期溢价(JPY) = (BTC价格 - ETH价格) * USD/JPY汇率 * (1 + 实际利率/100) + 情绪调整值（积极+15000，中性0，消极-15000）。请输出完整数据提取过程、中间计算结果、最终预期溢价数值，并给出基于该模型的跨资产配置建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_macro_data",
+        "search_financial_news",
+        "get_exchange_rate",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC与ETH当前实时美元价格",
+          "美国最新CPI同比数据与美联储联邦基金利率",
+          "以太坊相关新闻情绪定性结论",
+          "当前美元兑日元即期汇率",
+          "基于公式计算的日元计价预期溢价数值",
+          "结合宏观与情绪面的跨资产配置投资建议"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_macro_data",
+            "search_financial_news",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T105",
+      "query": "作为全球宏观对冲基金的加密资产研究员，你需要对比特币（BTC）进行基于宏观因子与网络现金流的交叉估值。请严格执行以下步骤：\n1. 获取比特币（BTC）当前实时美元价格，并拉取美国最新公布的CPI同比数据与联邦基金目标利率。\n2. 检索过去30天内关于美国SEC对现货BTC ETF资金流向及加密货币监管政策的重磅财经新闻，提炼机构情绪倾向（看多/看空/中性）。\n3. 构建BTC的简化网络收益DCF模型。假设基础年化现金流为80亿美元，未来5年复合增长率为12%，永续增长率3%，折现率设定为“当前联邦基金利率 + 5.5% 风险溢价”。调用内置DCF计算工具得出内在公允价值（USD）。\n4. 获取实时USD/EUR外汇牌价，将上述内在价值折算为欧元计价。\n5. 计算当前BTC市场价格相较于模型内在价值的溢价率或折价率。\n6. 结合宏观通胀环境、监管新闻情绪与估值偏离度，撰写一份结构化投资建议，明确给出未来6个月的多空方向及建议资金配置权重（0%-15%）。\n请完整记录工具调用逻辑并输出最终量化分析报告。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_macro_data",
+        "search_financial_news",
+        "calculate_dcf",
+        "get_exchange_rate",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC当前实时价格(USD)",
+          "最新CPI数据与联邦基金利率",
+          "监管新闻情绪定性摘要",
+          "DCF模型核心假设参数（增长率、折现率）",
+          "BTC内在公允价值(USD)",
+          "折算后的公允价值(EUR)",
+          "市价相对内在价值的溢价/折价百分比",
+          "明确的多空方向与具体仓位建议(%)"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news",
+            "calculate_dcf"
+          ],
+          [
+            "get_exchange_rate",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T106",
+      "query": "作为宏观对冲基金的研究员，请协助完成一项关于加密资产与传统资产交叉定价的深度分析。当前市场处于利率敏感期，我需要评估MicroStrategy（MSTR）股票相对于其比特币（BTC）持仓的隐含杠杆溢价。具体任务如下：\n1. 获取最新的BTC现货美元价格、MSTR股票最新收盘价以及USD/JPY实时汇率。\n2. 拉取美国最新的联邦基金目标利率及10年期国债收益率，作为折现模型中的无风险利率基准。\n3. 检索过去7天内关于美国SEC对现货比特币ETF审批进展及机构资金流向的核心财经新闻，评估市场情绪倾向。\n4. 调取MSTR最新季报的资产负债表与附注，精确提取其披露的比特币持有总枚数。\n5. 假设MSTR的BTC平均持仓成本为$31,500/枚。请结合当前BTC市价、10年期美债收益率（转化为年化折现因子）以及日本投资者套利交易的潜在汇率波动成本（设定为额外扣除1.8%的汇率对冲溢价），利用编程工具构建一个简化的公允价值模型，计算MSTR当前市值相对于其底层BTC资产净现值（NPV）的溢价/折价百分比。\n6. 综合宏观利率环境、新闻情绪与量化溢价结果，给出明确的跨资产统计套利建议（做多MSTR/做空MSTR/中性）。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_exchange_rate",
+        "get_macro_data",
+        "search_financial_news",
+        "get_stock_price",
+        "get_financial_statements",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC当前美元现货价格与MSTR股票最新收盘价",
+          "USD/JPY实时汇率",
+          "美国联邦基金利率与10年期国债收益率数据",
+          "过去7日SEC监管及ETF资金流向的新闻情绪摘要",
+          "MSTR最新财报披露的BTC持有总量",
+          "基于美债收益率与日元对冲成本调整后的MSTR相对BTC持仓净现值溢价率",
+          "明确的跨资产统计套利交易建议及核心逻辑"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_exchange_rate",
+            "get_macro_data",
+            "search_financial_news",
+            "get_stock_price",
+            "get_financial_statements"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T107",
+      "query": "作为一家跨境宏观对冲基金的量化研究员，请对“核心加密货币+美股加密基础设施”跨资产策略进行估值分析与宏观压力测试。请严格按以下步骤执行：1. 获取当前BTC/USD实时价格与Coinbase Global (COIN) 的最新股价；2. 调取COIN最新年度现金流量表，使用Python提取并计算其自由现金流（FCF = 经营活动现金流净额 - 资本支出）；3. 假设WACC为8.5%，永续增长率为3.5%，调用DCF模型计算COIN的每股内在价值；4. 获取当前USD/JPY汇率，将BTC现价与COIN内在价值转换为日元计价以模拟亚太资金跨境配置视角；5. 获取美国最新10年期国债收益率及核心CPI同比增速，并搜索近30天关于“加密货币现货ETF资金流向”或“SEC监管政策”的核心财经新闻；6. 综合上述结果，使用Python计算COIN内在价值相对当前股价的溢价/折价率，并结合10年期美债收益率作为风险资产贴现基准，评估该跨资产组合在当前宏观与监管环境下的配置价值。最终输出需包含完整数据源、计算过程、宏观情绪定性判断及明确的仓位配置建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_stock_price",
+        "get_financial_statements",
+        "calculate_dcf",
+        "get_exchange_rate",
+        "get_macro_data",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC实时价格与COIN当前股价（USD）",
+          "COIN自由现金流(FCF)的具体计算数值与数据来源",
+          "基于8.5% WACC与3.5%永续增长率的COIN DCF内在价值",
+          "USD/JPY汇率及日元计价后的资产估值结果",
+          "最新10年期美债收益率、核心CPI数据及监管/ETF相关新闻摘要",
+          "COIN估值溢价/折价率计算过程",
+          "结合无风险利率与宏观监管环境的组合吸引力评级（高/中/低）及具体配置建议"
+        ],
+        "min_tool_calls": 8,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_stock_price"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "python_interpreter",
+            "calculate_dcf"
+          ],
+          [
+            "get_exchange_rate",
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T108",
+      "query": "作为宏观对冲基金的量化研究员，请完成以下加密与另类资产对比分析：1. 获取比特币（BTC）与黄金ETF（GLD）过去36个月的每日收盘价；2. 提取美国最新CPI同比数据及10年期国债收益率，并计算当前实际利率；3. 检索过去6个月内关于美国SEC现货加密ETF审批的核心监管新闻；4. 使用Python计算两者的年化波动率、夏普比率（无风险利率取最新10年期美债）及价格滚动相关性；5. 基于实际利率环境对黄金的压制程度与监管新闻的情绪倾向（定性评估利好/利空/中性并赋予对应调整权重）修正基础夏普比率，得出“宏观情绪调整后的风险溢价得分”；6. 综合评估后，明确给出是否建议将组合中传统避险资产的10%头寸切换至加密资产，并提供完整的量化测算链条与归因分析。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_stock_price",
+        "get_macro_data",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC与GLD过去36个月的年化波动率对比数据",
+          "BTC与GLD的年化夏普比率计算结果",
+          "两者价格滚动相关系数（含统计区间说明）",
+          "美国当前实际利率（10年期收益率减CPI）精确数值",
+          "近期监管新闻情绪定性判断及对应的权重调整逻辑",
+          "宏观情绪调整后风险溢价得分的具体数值",
+          "关于10%头寸切换建议的明确结论及量化归因依据"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_stock_price"
+          ],
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T109",
+      "query": "作为宏观对冲基金的量化分析师，我需要评估加密货币矿企Marathon Digital (MARA)相对于比特币（BTC）的风险溢价潜力与宏观敏感性。请执行以下分析：1) 获取当前BTC价格及MARA股价；2) 获取最新美国CPI通胀数据及联邦基金目标利率，以评估实际利率环境；3) 检索过去30天关于美国SEC加密货币监管框架及矿企能源政策的核心新闻；4) 基于MARA最新季度财报提取关键财务指标（营收增速、资本支出、自由现金流及债务水平）；5) 结合当前宏观利率水平与监管新闻的综合情绪倾向（正面/中性/负面），使用Python构建一个包含风险溢价调整的现金流折现模型，估算MARA的每股内在价值；6) 基于价格数据计算MARA股价相对于BTC的动态Beta系数。最终请综合输出调整后的WACC折现率、DCF内在价值、当前股价的偏离幅度、相对BTC的Beta值、监管情绪定性评估，并给出明确的投资评级（买入/持有/卖出）及头寸配置建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_stock_price",
+        "get_macro_data",
+        "search_financial_news",
+        "get_financial_statements",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "MARA相对BTC的动态Beta系数",
+          "结合宏观利率与监管情绪的风险调整后折现率(WACC)",
+          "基于调整型DCF的MARA每股内在价值",
+          "当前市价相对于内在价值的溢价/折价百分比",
+          "核心监管与能源政策新闻的情绪定性总结（正面/中性/负面）",
+          "明确的投资评级及具体的头寸操作逻辑"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_stock_price"
+          ],
+          [
+            "get_macro_data",
+            "get_financial_statements"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T110",
+      "query": "作为另类资产配置研究员，我需要评估当前宏观环境对加密资产与传统避险资产的传导效应。请执行以下多步骤量化分析：\n1. 获取最新的美国10年期国债收益率（作为无风险利率基准）以及近一个月的核心CPI同比增速。\n2. 获取比特币（BTC）和以太坊（ETH）过去90个交易日的历史每日收盘价，同时获取黄金ETF（GLD）同期收盘价。\n3. 使用搜索工具查找过去7天内关于美国SEC对比特币现货ETF监管审批进展、资金净流入/流出或相关合规新闻，并提炼其对加密资产市场的整体情绪倾向（利好/利空/中性）。\n4. 利用编程工具计算BTC、ETH与GLD的90日历史日收益率序列，构建协方差矩阵，并求解在权重之和为1、允许适度做空约束下的最小方差投资组合（MVP）理论权重。\n5. 基于上述无风险利率、组合预期收益率与波动率，计算该MVP的年化夏普比率。最后，根据第3步提取的新闻情绪倾向对BTC的理论权重进行微调（若明确偏利好则上调5个百分点，明确偏利空则下调5个百分点，中性则保持原值），并输出最终调整后的三资产配置比例、组合年化波动率、夏普比率及宏观/政策归因分析。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_crypto_price",
+        "get_stock_price",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新美国10年期国债收益率与核心CPI数据",
+          "BTC、ETH、GLD的协方差矩阵与初始最小方差组合权重",
+          "基于新闻情绪调整后的最终BTC配置权重",
+          "最终三资产配置比例（总和为100%）",
+          "组合年化波动率与年化夏普比率计算结果",
+          "结合宏观利率与SEC监管情绪的风险溢价定性分析结论"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_crypto_price",
+            "get_stock_price"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T111",
+      "query": "作为宏观对冲基金经理，我需要评估在当前高通胀与紧缩货币周期下，比特币（BTC）相较于传统黄金的‘数字避险’溢价是否合理。请完成以下多步骤分析：首先获取过去30天BTC的每日收盘价与当前总市值；其次拉取美国最新CPI同比数据及联邦基金目标利率；接着搜索近两周内关于‘美国现货比特币ETF资金净流入’的权威财经新闻，并定性其市场情绪（正面/负面/中性）；同时获取SPDR黄金ETF（GLD）同期价格以计算基准收益率。最后，使用Python编写脚本计算BTC的经CPI调整后的实际年化收益率，并构建一个包含价格波动率、宏观利率倒挂风险及新闻情绪权重的综合评分模型（0-10分），评估其当前配置价值。请输出所有原始数据、代码逻辑、评分明细及最终投资建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_macro_data",
+        "search_financial_news",
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC过去30日价格序列与当前总市值",
+          "美国最新CPI同比数据与联邦基金目标利率",
+          "BTC ETF资金流向新闻摘要及情绪定性",
+          "GLD同期价格序列及基准收益率",
+          "经通胀调整的BTC实际年化收益率",
+          "综合避险有效性评分(0-10分)及模型权重说明",
+          "完整Python计算代码与资产配置建议结论"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_macro_data",
+            "search_financial_news",
+            "get_stock_price"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T112",
+      "query": "作为量化对冲基金经理，我需要对比特币（BTC）进行跨资产宏观压力测试与内在价值评估。请执行以下多步骤分析：1. 获取BTC最新美元价格及过去365天的历史日价格序列，用于计算年化波动率；2. 查询美国最新的联邦基金目标利率及最近一期核心CPI同比增速；3. 检索过去30天内全球主流财经媒体关于“加密货币监管政策”或“现货ETF资金流向”的重磅新闻，提取并统计正面与负面情绪的报道比例；4. 基于宏观数据设定合理折现率（假设无风险利率等于联邦基金利率，风险溢价取8%），并使用现金流折现（DCF）思想对BTC未来5年网络经济价值进行建模（假设未来五年价值增长率分别为20%、15%、12%、8%、5%，终值增长率为3%），计算其理论内在价值；5. 获取当前美元兑欧元即期汇率，将BTC内在价值换算为欧元计价；6. 调用Python整合上述所有数据，计算当前BTC美元市价相对于欧元计价理论价值的隐含折溢价率，并结合宏观流动性、波动率特征与新闻舆情输出最终的多空评级。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_macro_data",
+        "search_financial_news",
+        "get_exchange_rate",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC最新美元价格及过去365天年化波动率数值",
+          "美国最新联邦基金目标利率与核心CPI同比数据",
+          "近30天监管与ETF新闻的正负面情绪统计结果",
+          "基于DCF模型计算的BTC内在价值（美元）",
+          "当前USD/EUR即期汇率及内在价值欧元换算值",
+          "当前市价相对欧元理论价值的折溢价百分比",
+          "完整的多数据源整合与计算Python代码或执行逻辑",
+          "结合宏观、波动率与情绪的综合投资评级及理由"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_macro_data",
+            "search_financial_news",
+            "get_exchange_rate",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T113",
+      "query": "作为宏观对冲基金研究员，请评估比特币（BTC）与黄金（以GLD ETF为代理）在过去一年的风险调整后表现，并基于人民币计价基准提供配置建议。具体要求如下：\n1. 获取过去365天BTC与GLD的每日历史价格数据。\n2. 获取同期美元兑人民币（USD/CNY）的每日汇率及美国最新CPI数据与10年期国债收益率。\n3. 检索过去30天内关于“BTC现货ETF审批进展”或“全球加密货币监管框架”的核心财经新闻，并总结市场情绪偏向。\n4. 使用Python编写脚本，计算两者经通胀与汇率调整后的实际收益率序列，进而得出年化波动率、夏普比率，并计算两者的滚动相关性。\n5. 综合量化风险收益指标、宏观利率环境及监管新闻情绪，为人民币背景的稳健型机构投资者给出BTC与黄金的具体配置权重（百分比），并详细阐述推导逻辑。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "get_stock_price",
+        "get_exchange_rate",
+        "get_macro_data",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC与GLD过去一年的名义收益率及经汇率、通胀调整后的实际收益率对比",
+          "两者的年化波动率、夏普比率（需明确引用的无风险利率数值）",
+          "过去30天BTC相关监管/ETF新闻的情绪定性总结",
+          "基于数据分析得出的BTC与黄金目标配置权重及完整推导逻辑"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_stock_price",
+            "get_exchange_rate",
+            "get_macro_data"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T114",
+      "query": "请查询美联储（Fed）最新一次货币政策决议公布后，英伟达（NVDA）的最新收盘价，并检索相关财经新闻以提炼该次决议中关于利率路径的核心指引及其对半导体板块的短期市场影响。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提供英伟达（NVDA）的最新股价或最近交易收盘价",
+          "清晰提炼美联储最新决议的核心政策指引（如利率变动幅度、点阵图预期或鲍威尔讲话要点）",
+          "简要说明该宏观政策事件对半导体/科技板块的短期情绪传导逻辑"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T115",
+      "query": "作为量化研究员，我需要快速评估当前加密货币的建仓成本。请获取比特币 (BTC) 的最新美元现货价格，并计算若以该价格买入 3.0 枚 BTC，在额外收取 0.25% 网络及交易手续费的情况下，实际所需支付的美元总额是多少？请保留两位小数。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "cryptocurrency_price_retrieval",
+        "transaction_cost_calculation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确获取比特币当前美元现货价格",
+          "正确应用0.25%手续费比例进行计算",
+          "输出最终美元支付总额且保留两位小数"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T116",
+      "query": "请获取当前以太坊（ETH）的美元实时价格。假设一位投资者账户中有15,000美元，全部用于按当前市价买入ETH，请计算该投资者最多能购入多少枚ETH（结果保留4位小数）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提供以太坊（ETH）的当前美元实时价格",
+          "展示15000美元除以ETH单价的计算逻辑",
+          "给出最终可购买的ETH数量并精确到4位小数"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T117",
+      "query": "作为量化研究员，请获取当前比特币（BTC）与以太坊（ETH）的实时美元报价，并计算持有1.5枚比特币及20枚以太坊的加密资产组合当前总市值（以美元计）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC实时美元价格",
+          "ETH实时美元价格",
+          "加密资产组合总市值（美元）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T118",
+      "query": "查询当前Solana (SOL) 的美元实时价格。假设某量化基金当前持有 2,000 枚 SOL，请计算该加密头寸的当前总美元市值。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "SOL当前美元实时价格",
+          "2000枚SOL的总美元市值"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T119",
+      "query": "作为量化配置的一部分，请获取以太坊（ETH）的最新美元现货价格，并计算 50,000 美元的名义本金在当前市价下可兑换的 ETH 数量（结果保留两位小数）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "以太坊(ETH)的实时美元现货价格",
+          "50,000美元本金可兑换的ETH数量",
+          "明确的数值计算结果"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T120",
+      "query": "作为量化加密策略分析师，请获取当前比特币（BTC）的美元实时报价。假设我们的投资组合中持有 75.5 枚 BTC 作为核心另类资产，请计算该头寸的当前美元总市值。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC实时美元报价",
+          "75.5枚BTC的美元总市值",
+          "明确的计算过程"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T121",
+      "query": "近期美国能源部宣布了对可再生能源项目的新一轮税收抵免政策。请查询NextEra Energy (NEE)的当前股票价格，并搜索一条关于该政策对清洁能源板块影响的最新财经新闻。假设该利好政策预计推动股价短期内上涨3.5%，请计算上涨后的预期目标价。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "search_financial_news",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "NextEra Energy (NEE) 当前收盘价",
+          "美国可再生能源税收抵免政策相关新闻摘要",
+          "基于3.5%涨幅计算的预期目标价"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T122",
+      "query": "近期多国央行同步调整货币政策。请搜索欧洲央行（ECB）最新的利率决议新闻，提取其公布的边际存款利率。随后获取欧元兑美元（EUR/USD）的实时汇率，并计算1000万欧元按当前汇率可兑换的美元总额。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_exchange_rate",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "ECB最新利率决议新闻摘要或具体利率数值",
+          "EUR/USD实时汇率",
+          "1000万欧元兑换美元的准确计算结果"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_exchange_rate"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T123",
+      "query": "受最新美联储利率决议公告影响，请查询苹果公司（AAPL）的最新股价，并检索关于该货币政策对大型科技股影响的最新财经新闻。请提供当前股价及该政策对市场影响的简要总结。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_stock_price",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "苹果公司（AAPL）最新股价",
+          "美联储利率决议对科技股影响的新闻摘要"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_stock_price"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T124",
+      "query": "查询美联储最新一次议息会议宣布的联邦基金目标利率上限，并检索该决议公布后48小时内关于科技板块（如半导体与AI）市场反应的核心财经新闻。请提供准确的利率数值，总结新闻中关于流动性预期对科技股估值传导的主要观点。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提供最新的美联储联邦基金目标利率上限数值（以百分比表示）",
+          "提取并总结至少两条近期关于利率决议影响科技板块的核心财经新闻内容",
+          "简要阐述当前利率政策环境对科技股估值及企业融资成本的政策传导逻辑"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T125",
+      "query": "针对美联储最新的议息会议决议，请获取当前的美国联邦基金目标利率，并查询苹果公司（AAPL）的实时股价。结合该宏观政策事件，简要分析利率变动对高估值科技股短期市场情绪及资金成本的直接影响。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "policy_impact_analysis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提供美国联邦基金目标利率的最新数值",
+          "准确提供苹果公司（AAPL）的实时股价",
+          "结合议息决议事件简要分析利率政策对科技股估值逻辑与短期情绪的直接影响"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T126",
+      "query": "中国人民银行刚刚宣布下调金融机构存款准备金率0.25个百分点。作为事件驱动型交易员，请查询当前的美元兑人民币（USD/CNY）即时汇率，并计算5000万美元按照该汇率可兑换的人民币总额。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "政策事件解读",
+        "实时汇率检索",
+        "基础货币换算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确获取当前USD/CNY汇率数值",
+          "正确计算并输出5000万美元兑换后的人民币总金额"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T127",
+      "query": "欧洲央行（ECB）最新货币政策会议宣布维持关键利率不变。请查询当前的欧元区主要再融资利率数据，并获取保时捷（P911.DE）的最新股票报价，结合宏观政策背景简要说明利率企稳对高端汽车制造商融资成本的影响。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "欧元区主要再融资利率数值",
+          "保时捷（P911.DE）最新股价",
+          "利率企稳对融资成本影响的简要分析"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T128",
+      "query": "作为事件驱动型宏观策略的初步调研，请查询美联储最近一次FOMC会议公布的联邦基金目标利率上限。随后，获取该利率决议发布当日摩根大通（JPM）的收盘价，以便快速测算政策落地对核心银行标的的短期市场反应。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美联储最近一次FOMC会议公布的联邦基金目标利率上限",
+          "摩根大通（JPM）在利率决议发布当日的股票收盘价"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T129",
+      "query": "跟踪美联储最新FOMC会议决议。请获取本次利率决议的具体政策导向（如利率调整幅度或官方声明关键措辞），并同步查询标准普尔500指数ETF（代码：SPY）的最新交易价格。请结合宏观政策变动与资产价格表现，简述市场对此次决议的初步定价反馈。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_stock_price"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美联储最新利率决议的核心结论（调整方向、幅度或维持不变）",
+          "SPY ETF的最新市场价格",
+          "基于新闻与股价的市场情绪或初步定价反馈分析"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T130",
+      "query": "请查询美联储最新一次议息会议公布的联邦基金目标利率，并获取苹果公司（AAPL）在利率决议公布当日的股票收盘价。结合该利率政策变动，简述其对大型科技股融资成本的潜在影响，并给出利率具体数值与AAPL当日收盘价。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美联储最新联邦基金目标利率具体数值",
+          "AAPL在利率决议公布当日的收盘价",
+          "利率变动对科技股融资成本的简要影响分析"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T131",
+      "query": "美国近期更新了针对高端AI芯片的出口管制政策。请检索近30天关于英伟达（NVDA）应对出口限制的金融新闻摘要。获取英伟达最新年报中的“研发费用”(R&D)和“营业利润”(Operating Income)。查询美联储最新的联邦基金利率上限。假设公司因合规要求将下季度15%的研发预算转为一次性合规成本，结合当前利率计算该部分资金若用于短期国债投资的潜在机会成本（年化）。最后，综合政策新闻与财务测算，评估该出口管制对其利润率的中短期影响。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_financial_statements",
+        "get_macro_data",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "近30天NVDA应对出口限制的新闻摘要",
+          "NVDA最新年报研发费用与营业利润数据",
+          "美联储最新联邦基金利率上限",
+          "15%研发预算转合规成本的机会成本计算过程与结果",
+          "政策对利润率中短期影响的综合评估"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "get_macro_data",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T132",
+      "query": "假设欧洲央行（ECB）近期宣布将主要再融资利率上调25个基点。请作为行业研究员，评估该货币政策变动对大众汽车（VOW3.DE）的财务影响。具体要求：1. 检索近期关于欧洲央行加息决议及其对欧洲汽车制造业影响的财经新闻；2. 获取大众汽车最新的财务报表，提取其短期与长期有息负债总额；3. 查询当前欧元兑美元的实时汇率；4. 结合财报数据，假设该公司有息负债中35%为浮动利率，计算此次加息对其年化利息支出的理论增加额（以欧元计价），并综合宏观政策动向与基本面给出简要的投资观点与风险提示。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_financial_statements",
+        "get_exchange_rate",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "ECB近期加息政策核心内容及市场解读",
+          "大众汽车最新短期与长期有息负债总额",
+          "当前欧元兑美元实时汇率",
+          "基于35%浮动利率假设的年化利息支出增加额计算结果",
+          "结合政策与基本面的投资建议或风险提示"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "get_exchange_rate",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T133",
+      "query": "中国人民银行近期宣布全面降准50个基点。请作为宏观策略研究员，量化评估该政策对招商银行（600036.SH）的资产负债表与盈利预期影响。请依次执行：1. 搜索最新央行降准政策新闻，提取具体降准幅度与生效日期。2. 调取招商银行最新年度财务报表，获取‘发放贷款及垫款总额’数据。3. 获取当前全国银行间同业拆借中心公布的一年期LPR利率。4. 使用计算器，按公式‘预估释放资金 = 贷款总额 × 降准幅度’及‘年化新增利息收入 = 预估释放资金 × 一年期LPR’，计算招商银行理论上每年新增的利息收入（单位：亿元人民币）。请输出计算逻辑、具体数值结果，并简要说明该政策对银行净息差（NIM）的潜在传导路径。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_financial_statements",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "降准具体幅度与生效日期",
+          "招商银行最新贷款及垫款总额",
+          "当前一年期LPR利率",
+          "预估释放资金规模（亿元）",
+          "年化新增利息收入计算结果（亿元）",
+          "降准政策对银行净息差的传导机制分析"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T134",
+      "query": "近期欧洲央行宣布维持基准利率不变但释放年内可能降息的政策信号。请检索该货币政策转向的权威财经新闻，获取梅赛德斯-奔驰集团（MBG.DE）在决议公布前一个交易日与后一个交易日的收盘价，并计算期间涨跌幅。接着获取该公司最新的合并资产负债表，提取总负债与总股东权益以计算产权比率（Debt-to-Equity Ratio）。最后，结合新闻中的宏观政策导向，使用计算器估算：若未来政策利率实际下行50个基点，基于公司财报披露的最新有息负债总额（假设其平均融资成本为4.5%且负债规模短期不变），测算其年度财务费用可节约的金额，并简要分析该降息预期对重资产车企资本开支与估值修复的潜在影响。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_stock_price",
+        "get_financial_statements",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "ECB政策新闻核心观点提取",
+          "MBG.DE公告前后股价及涨跌幅计算",
+          "基于资产负债表计算的产权比率（Debt-to-Equity）",
+          "利率下行50bp下的年度利息支出节约测算结果",
+          "降息政策对重资产制造业资本开支的综合评估结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T135",
+      "query": "作为宏观策略研究员，请评估中国央行近期降准政策对招商银行（600036.SH）的财务影响。请先检索最新金融新闻以确认降准具体幅度、生效日期及市场解读；随后获取招商银行最新季度的资产负债表与利润表，提取其计息资产总额与净利息收入数据；结合实时A股报价计算其市净率（P/B）；最后使用计算工具进行敏感性测试：假设该政策传导导致生息资产平均收益率下降，净息差整体收窄15个基点，测算其对年度净利息收入的绝对金额影响。请输出完整的推导链条与数据支撑。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "政策事件分析",
+        "财务报表数据提取",
+        "估值比率计算",
+        "敏感性测算",
+        "多工具协同编排"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "明确提及央行降准具体幅度、生效时间及市场预期解读",
+          "准确提取招商银行最新计息资产总额与当期净利息收入",
+          "基于实时股价与每股净资产正确计算市净率（P/B）",
+          "提供净息差收窄15bp对年度净利息收入的具体影响金额及计算过程",
+          "整体推理逻辑连贯，符合宏观政策向银行基本面传导的分析框架"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T136",
+      "query": "关注近期欧盟对中国新能源汽车加征反补贴关税的政策事件。请执行以下量化与定性分析：1. 获取比亚迪（01211.HK）最新年度财报中的总营业收入及整体毛利率数据。2. 查询当前人民币对欧元（CNY/EUR）的实时汇率。3. 假设欧盟关税政策导致比亚迪欧洲市场业务（约占其总营收的15%）毛利率直接下降400个基点，且该板块净利率约为其毛利率的60%。请计算该政策变动将导致比亚迪整体净利润潜在减少的人民币金额。4. 检索近期比亚迪管理层或官方渠道针对此关税政策的应对新闻，并简要总结其核心战略。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_exchange_rate",
+        "search_financial_news",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提取比亚迪最新财报的总营业收入与整体毛利率数据",
+          "提供查询当日的CNY/EUR汇率数值",
+          "完整展示净利润潜在损失的计算过程，并输出以人民币计价的最终金额",
+          "准确概括比亚迪应对欧盟关税政策的两项及以上核心策略",
+          "回答需明确区分财报静态数据与基于政策假设的动态测算结果"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "search_financial_news"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T137",
+      "query": "近期美联储公布最新议息决议并宣布利率调整。请通过宏观数据工具查询该次利率变动的具体基点，并搜索相关财经新闻以确认政策细节与市场解读。随后获取特斯拉（TSLA）最近一期的自由现金流数据。假设其未来5年自由现金流保持恒定，若将折现率在原有8%的基准上同步上调本次美联储宣布的加息幅度（转换为小数形式），请编写Python代码计算该政策变动导致的DCF估值下降百分比。最终请提供：加息基点数、TSLA最新自由现金流、调整后的折现率及DCF估值下降的精确百分比。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news",
+        "get_financial_statements",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美联储最新加息基点数",
+          "特斯拉最近一期自由现金流金额",
+          "政策调整后的新折现率",
+          "DCF估值下降的精确百分比"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_macro_data"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T138",
+      "query": "作为事件驱动型策略研究员，请评估近期欧盟对中国新能源汽车加征临时反补贴关税政策对比亚迪（002594.SZ）基本面的潜在财务冲击。具体要求：1）检索最新公布的关税税率细则及实施时间表；2）获取比亚迪最新一期财报的营收地域分布数据，计算其欧洲市场营收占总营收的比例；3）获取比亚迪当前最新股价及流通股本，计算最新总市值；4）在压力测试情境下（假设欧洲业务营收因关税壁垒下降20%，且该部分业务净利率被压缩至5%），利用计算工具量化该政策对比亚迪年度净利润的绝对拖累金额（以人民币计）。请输出完整的数据提取过程、计算逻辑与核心数值结果。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "政策事件检索",
+        "财务数据结构化提取",
+        "情景压力测试计算",
+        "市值与财务指标联动"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "欧盟最新适用关税税率及生效时间",
+          "比亚迪欧洲市场营收占比（%）",
+          "比亚迪最新股价与总市值",
+          "悲观情境下年度净利润拖累测算值（亿元）",
+          "完整的计算推导链条"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T139",
+      "query": "请评估美联储最新利率决议对摩根大通（JPM）的财务影响。具体要求：1. 获取当前美国联邦基金目标利率；2. 提取摩根大通最新季度财报中的净利息收入（Net Interest Income）和平均生息资产（Average Interest-Earning Assets）数据；3. 计算该行当前季度的净息差（NIM）；4. 检索近期关于美联储货币政策走向的财经新闻，结合假设利率下行25个基点的情景，计算生息资产收益率同步下降后的预估净利息收入及变动百分比，并给出基于政策面的财务影响分析结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_financial_statements",
+        "calculator",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "当前美国联邦基金目标利率数值",
+          "摩根大通最新季度净利息收入与平均生息资产具体数值",
+          "计算得出的当前净息差（NIM）百分比",
+          "利率下调25bps假设下的预估净利息收入及变动幅度",
+          "基于政策预期与新闻面的综合财务影响分析结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_financial_statements"
+          ],
+          [
+            "calculator"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T140",
+      "query": "近期美联储宣布维持基准利率不变，同时欧盟正式启动针对中国及外资新能源车企业的反补贴调查。请作为宏观策略与行业研究员，分析该政策组合对特斯拉（TSLA）的潜在财务影响。具体要求：1. 搜索近30天内关于欧盟反补贴调查细节、关税落地预期及特斯拉供应链应对策略的财经新闻，提炼核心业务风险点；2. 获取特斯拉最新季度财报的营业收入与净利润数据；3. 获取特斯拉当前实时股价；4. 基于新闻中提及的潜在关税冲击（假设直接导致毛利率下降2个百分点，所得税率保持21%不变），使用编程工具计算调整后的季度净利润，并据此推算调整后的静态市盈率（P/E）。请输出完整的政策传导逻辑、数据提取结果、计算过程及最终估值指标。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "macro_policy_impact_analysis",
+        "financial_data_extraction",
+        "quantitative_scenario_adjustment",
+        "equity_valuation_metrics"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "欧盟反补贴调查及宏观利率环境对特斯拉业务的核心影响总结",
+          "特斯拉最新季度营业收入与净利润准确数值",
+          "特斯拉当前实时股价数据",
+          "毛利率下调2%后的调整后季度净利润计算结果",
+          "基于调整后净利润的静态市盈率（P/E）计算结果"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_stock_price"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T141",
+      "query": "美联储近期公布最新议息会议纪要暗示年内降息路径存在不确定性，同时中国工信部联合财政部正式出台《关于延续新能源汽车购置税减免及技术补贴的指导意见》。请作为卖方研究员，综合评估该“中美政策组合”对宁德时代（300750.SZ）估值体系的短期与中期影响。具体执行步骤：1) 获取最新10年期美国国债收益率及中国最新CPI同比数据以刻画宏观流动性环境；2) 检索并总结近10个交易日内与该政策直接相关的行业新闻及头部券商研报观点；3) 提取宁德时代最近一期财报中的营业收入、研发费用率及经营性现金流净额；4) 结合政策补贴力度与利率环境，合理调整其未来三年自由现金流增长率及折现率（WACC）假设，调用DCF模型计算目标股价；5) 获取宁德时代实时股价，计算目标价相对现价的折溢价幅度，并利用Python输出包含基准、乐观、悲观三种情景的敏感性分析表格。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观经济指标追踪",
+        "政策事件驱动分析",
+        "财务数据提取与清洗",
+        "DCF估值建模",
+        "多情景敏感性分析"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新10年期美债收益率与中国CPI同比数据",
+          "政策事件对宁德时代未来三年营收增速与毛利率的定性及定量影响评估",
+          "基于调整假设的WACC参数设定与三年期自由现金流预测表",
+          "DCF模型输出的每股内在价值",
+          "内在价值相对于实时股价的折溢价率及三种情景敏感性分析结果"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news",
+            "get_financial_statements",
+            "get_stock_price",
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T142",
+      "query": "作为宏观与量化策略研究员，请系统性评估欧洲央行最新货币政策转向及欧盟碳边境调节机制（CBAM）第二阶段实施对大众集团（Volkswagen AG, 代码: VOW3.DE）内在价值的综合影响。请按以下逻辑链执行分析：1. 检索近15日内关于CBAM合规成本激增、欧洲汽车供应链重构及欧洲央行降息路径的深度金融新闻与机构研报，量化提炼政策对营业利润率的预期冲击；2. 获取欧元区最新基准利率、10年期国债收益率及核心CPI同比数据，用于动态校准WACC中的无风险利率与通胀预期；3. 调取大众集团最近四个季度的合并财务报表，提取NOPAT、折旧摊销、营运资本变动及资本支出，计算Trailing FCF；4. 结合新闻情绪推导的利润率下行风险（假设长期增长率下调1.5%）与新WACC，运行DCF模型计算合理内在价值（欧元）；5. 获取实时EUR/USD中间价，将估值折算为美元；6. 拉取大众股票最新实时价格并转换为美元计价，计算当前市值与DCF内在价值的偏离百分比。最终输出必须包含：调整后的DCF目标价（USD）、当前美元股价、预期上行/下行空间、以及政策变量对贴现率参数和自由现金流预测的具体调整依据。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "Event-Driven Policy Analysis",
+        "Dynamic WACC & DCF Modeling",
+        "Financial Statement Extraction",
+        "Cross-Currency Valuation",
+        "Quantitative News Sentiment Integration"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "Re-calibrated DCF Target Price in USD",
+          "Current Stock Price in USD",
+          "Valuation Upside/Downside Percentage",
+          "Explicit quantification of CBAM & ECB policy impact on WACC and FCF assumptions"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_stock_price"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "calculate_dcf",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T143",
+      "query": "作为宏观策略分析师，请评估最新美联储货币政策决议及人民币兑美元汇率近期波动，对苹果公司（AAPL）大中华区业务的财务传导效应。需执行以下分析：1. 获取最新宏观利率数据及USD/CNY汇率；2. 检索近两周内关于苹果供应链关税豁免或调整的政策新闻；3. 提取苹果最新财报中大中华区营收、营业利润率及历史自由现金流数据；4. 利用Python构建模型，根据汇率变动及关税政策隐含的成本冲击，调整2025财年自由现金流预测；5. 基于调整后的现金流假设运行DCF模型，输出最新每股内在价值。请综合给出定量估值结果与定性政策风险提示。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "get_financial_statements",
+        "python_interpreter",
+        "calculate_dcf"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新宏观利率与USD/CNY汇率数值",
+          "苹果大中华区最新营收规模及利润率指标",
+          "关税与供应链政策新闻核心观点提取",
+          "经宏观与政策因子调整后的2025财年FCF预测值",
+          "基于调整后假设的DCF每股内在价值计算结果",
+          "针对汇率波动与政策变动的综合风险提示"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "get_financial_statements",
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter",
+            "calculate_dcf"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T144",
+      "query": "作为宏观对冲基金分析师，请评估美联储最新货币政策对台积电（TSMC）估值的影响。你需要：1. 调用宏观数据工具获取美联储最新基准利率及利率决议时间；2. 搜索近30天关于台积电产能、芯片法案补贴及地缘政治的最新财经新闻；3. 提取台积电最新财报中的自由现金流（FCF）及关键财务数据；4. 获取当前美元兑新台币（USD/TWD）和美元兑日元（USD/JPY）的实时汇率，以评估汇率敞口；5. 结合最新无风险利率（宏观数据）调整折现率（WACC），运行DCF模型计算其理论内在价值；6. 获取台积电当前实时股价，对比DCF结果给出明确的投资建议（买入/持有/卖出），并详细列出关键假设、目标价及汇率/利率敏感性分析。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "macro_data_retrieval",
+        "financial_news_search",
+        "financial_statement_extraction",
+        "forex_rate_retrieval",
+        "dcf_valuation_modeling",
+        "stock_price_retrieval"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美联储最新基准利率数据",
+          "近30天台积电关键财务/政策新闻摘要",
+          "最新自由现金流(FCF)数据及汇率",
+          "基于宏观调整后的DCF内在价值",
+          "当前实时股价",
+          "明确的投资建议及关键假设"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements",
+            "get_exchange_rate"
+          ],
+          [
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T145",
+      "query": "鉴于近期欧洲央行最新利率决议及欧盟碳边境调节机制（CBAM）正式进入第二阶段，请对大众汽车集团（VOW3.DE）进行事件驱动型估值压力测试。请执行以下步骤：1. 获取欧元区最新政策利率与德国最新CPI同比增速；2. 检索近一周关于CBAM政策对欧洲传统车企供应链成本影响的权威财经新闻与研报摘要；3. 调取大众汽车最新一期现金流量表（重点提取经营性现金流与资本开支）及资产负债表（重点关注有息负债）；4. 获取实时EUR/USD中间价汇率与VOW3.DE当前收盘价；5. 将提取的欧元财务数据折算为美元，结合利率环境与CBAM预期的额外合规成本（需在代码中量化假设），使用自定义现金流折现脚本重新计算其调整后每股内在价值；6. 对比当前股价计算折溢价率。最终报告需包含：调整后的WACC/折现率、汇率折算后的关键财务指标、量化后的政策成本影响、计算得出的每股内在价值及明确的投资评级建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观与政策数据分析",
+        "财经新闻事件解读",
+        "财务报表提取与处理",
+        "外汇汇率换算",
+        "Python量化建模与估值"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提供欧元区最新政策利率与德国CPI数据",
+          "总结CBAM政策对车企成本影响的核心新闻观点及量化假设参数",
+          "输出经EUR/USD汇率折算后的最新自由现金流与净负债数据",
+          "明确列出结合宏观与政策风险调整后的折现率数值",
+          "给出调整后DCF每股内在价值（USD）及与现价的折溢价百分比",
+          "提供结合事件基本面的明确投资评级与风险提示"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements",
+            "get_stock_price"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T146",
+      "query": "欧洲央行（ECB）近期宣布超预期降息并修改前瞻指引，引发全球流动性预期重塑。作为新兴市场基金策略师，请深度评估该货币政策转向对欧洲半导体设备龙头ASML (ASML) 内在价值及短期股价的传导路径。具体任务：1) 使用新闻搜索工具抓取近48小时内关于ECB决议的核心条款及市场解读；2) 获取欧元区最新宏观数据（10年期国债收益率作为无风险利率，及当前CPI）；3) 查询实时EUR/USD汇率；4) 调取ASML最新一期财务报表，提取经营性现金流、资本开支及现金余额，计算过去12个月自由现金流(FCF)；5) 基于更新的无风险利率、假设股权风险溢价为5.5%及终端增长率2.5%，重新构建并计算ASML的DCF估值模型；6) 获取ASML当前美元股价，将DCF欧元估值按汇率换算为美元，对比计算安全边际；7) 结合政策对出口需求、研发补贴的潜在影响，输出包含估值结果、汇率敏感度分析、政策传导逻辑及明确投资评级的综合报告。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_macro_data",
+        "get_exchange_rate",
+        "get_financial_statements",
+        "calculate_dcf",
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "ECB政策核心条款与市场预期提取",
+          "无风险利率(欧元区10Y国债)及宏观参数获取",
+          "ASML自由现金流(FCF)计算过程与数据源",
+          "基于新政参数的DCF内在价值(欧元)计算结果",
+          "EUR/USD汇率换算后的美元估值及安全边际",
+          "政策传导对半导体资本开支的逻辑分析",
+          "明确的投资评级与目标价区间"
+        ],
+        "min_tool_calls": 7,
+        "must_call_sequence": [
+          [
+            "search_financial_news"
+          ],
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T147",
+      "query": "作为宏观事件驱动策略研究员，请评估美联储最新议息会议宣布降息对欧洲奢侈品集团LVMH (MC.PA) 的内在价值影响。任务要求：1) 获取最新的美国联邦基金利率目标区间，并检索近期中国“消费品以旧换新”等刺激内需政策的权威新闻；2) 提取LVMH最新财报中的营业收入、经营现金流、资本支出及有息负债，计算其基准自由现金流(FCF)；3) 获取欧元兑美元及欧元兑人民币的实时汇率，结合其财报披露的亚太区收入占比，量化汇率波动对海外营收折算的潜在影响；4) 基于降息后的无风险利率下行假设（需合理设定新WACC参数），使用DCF模型重算其理论目标价；5) 综合宏观政策转向、跨币种汇率传导及企业基本面，输出完整的估值调整分析，并给出明确的投资评级与风险提示。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观政策与利率追踪",
+        "全球财经新闻检索与解读",
+        "复杂财务报表提取与FCF计算",
+        "多货币汇率折算分析",
+        "动态参数DCF估值建模",
+        "事件驱动型多因子综合推理"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美联储最新利率决议数据及中国消费刺激政策核心要点",
+          "LVMH基准自由现金流(FCF)的提取过程与计算结果",
+          "欧元/美元与欧元/人民币汇率数据及亚太营收折算敏感性分析",
+          "调整无风险利率与WACC参数后的DCF估值模型输出及目标价",
+          "结合政策与汇率传导机制的综合投资建议与风险提示"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements"
+          ],
+          [
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter",
+            "calculate_dcf"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T148",
+      "query": "假设美联储近期调整基准利率，且美国政府刚出台针对高端半导体的最新出口管制法规。请评估这些宏观与政策事件对AMD（Advanced Micro Devices）的估值影响。具体要求如下：\n1. 获取最新的美国10年期国债收益率，并作为无风险利率基准计算调整后的WACC（假设Beta为1.3，市场风险溢价为5%，债务成本为4.5%，资本结构股权占比80%）。\n2. 获取AMD最新的年度财务报表，提取其自由现金流（FCF）及各地区营收占比。\n3. 搜索近期关于AMD应对新半导体出口管制政策的财经新闻，结合政策细节定性并定量估算其对中国区业务可能造成的短期收入冲击。\n4. 获取当前美元兑人民币（USD/CNY）的实时汇率，测算汇率波动对调整后海外现金流的潜在汇兑影响。\n5. 使用python_interpreter编写并运行一个简化的三阶段DCF估值模型，将上述调整后的WACC、政策冲击下的现金流修正值及汇兑影响纳入计算，得出AMD的内在价值。\n6. 获取AMD当前实时股价，计算当前市价与DCF内在价值的溢价/折价百分比，并结合宏观政策与事件驱动逻辑给出明确的投资结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_financial_statements",
+        "search_financial_news",
+        "get_exchange_rate",
+        "python_interpreter",
+        "get_stock_price"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "计算并列出调整后的WACC数值及无风险利率来源",
+          "说明新闻情绪/政策事件对AMD中国区营收的具体调整幅度与逻辑",
+          "列出USD/CNY汇率数据及汇兑对现金流的修正计算",
+          "提供Python DCF模型的输出结果（内在价值）",
+          "给出当前股价相对于DCF估值的溢价/折价百分比",
+          "基于事件与宏观因素给出明确的买入/持有/卖出建议"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ],
+          [
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T149",
+      "query": "作为宏观策略分析师，请评估美联储最新一次利率决议对苹果公司（AAPL）内在价值的事件驱动型影响。具体要求：1）获取美联储最新政策利率数据及近期宏观关键指标（如CPI、联邦基金利率）；2）搜索最近两周内影响苹果公司的重大政策或行业新闻，提取市场情绪关键词；3）获取苹果最新财报中的分地区营收占比（重点关注大中华区、欧洲区）及自由现金流数据；4）获取美元兑人民币、欧元的实时汇率，并测算汇率波动对海外营收折算成美元后的潜在财务影响；5）结合美联储利率变动调整无风险利率与股权风险溢价，使用CAPM模型重新计算WACC，并通过调整后的自由现金流运行DCF模型；6）获取苹果当前实时股价，对比DCF估值结果计算安全边际，最终给出明确的投资评级与政策应对逻辑。请输出完整推导链条与关键数据表格。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news",
+        "get_financial_statements",
+        "get_exchange_rate",
+        "python_interpreter",
+        "calculate_dcf",
+        "get_stock_price"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美联储最新政策利率与核心宏观数据摘要",
+          "苹果公司分地区营收结构及自由现金流提取",
+          "美元兑人民币汇率变动对海外收入折算的量化调整",
+          "基于新无风险利率与WACC的DCF估值结果",
+          "当前股价与内在价值的溢价/折价率计算",
+          "基于事件驱动逻辑的明确投资评级与风险提示"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "get_financial_statements",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter",
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T150",
+      "query": "作为股票策略师，请综合评估美国《通胀削减法案》(IRA) 新能源车补贴退坡及美联储最新货币政策对特斯拉 (TSLA) 估值的影响。任务要求：1. 检索IRA最新补贴细则变动及美联储最近一次FOMC会议的利率决议与市场指引；2. 获取美国最新CPI同比增速与联邦基金利率数据；3. 提取特斯拉最新季度财报中的营业收入、资本开支与经营性现金流；4. 假设补贴退坡导致未来三年汽车业务毛利率每年递减1.5%，使用python_interpreter构建财务预测模型，计算调整后的自由现金流；5. 结合最新无风险利率与市场风险溢价设定WACC，调用calculate_dcf计算每股内在价值；6. 获取TSLA当前实时股价，计算安全边际与预期年化收益率。最终报告需包含政策影响量化分析、DCF关键假设与结果、以及明确的投资评级。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_macro_data",
+        "get_financial_statements",
+        "python_interpreter",
+        "calculate_dcf",
+        "get_stock_price"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "IRA补贴细则变动与FOMC利率决议核心要点总结",
+          "最新CPI同比增速与联邦基金利率数据",
+          "特斯拉最新财报核心财务数据提取结果",
+          "基于毛利率递减假设的5年期调整自由现金流预测",
+          "设定WACC后的DCF估值模型计算结果（每股内在价值）",
+          "TSLA实时股价对比、安全边际测算及最终投资评级"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_macro_data"
+          ],
+          [
+            "get_financial_statements",
+            "python_interpreter"
+          ],
+          [
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "evo_01",
+    "skill_id": "extract_financial_ratios",
+    "input_snapshot": {
+      "income_statement": {
+        "net_income": 1000000,
+        "revenue": 5000000
+      },
+      "balance_sheet": {
+        "total_assets": 10000000,
+        "total_liabilities": 4000000
+      }
+    },
+    "expected_keys": ["net_profit_margin", "debt_to_equity", "return_on_assets"],
+    "description": "Extract core financial ratios from raw statement data."
+  },
+  {
+    "id": "evo_02",
+    "skill_id": "calculate_dcf",
+    "input_snapshot": {
+      "fcf": [100, 110, 121, 133, 146],
+      "wacc": 0.08,
+      "terminal_growth": 0.02
+    },
+    "expected_keys": ["present_value_of_fcf", "terminal_value", "enterprise_value"],
+    "description": "Calculate DCF value with explicit steps."
+  }
+]

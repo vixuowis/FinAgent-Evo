@@ -1,0 +1,305 @@
+{
+  "tasks": [
+    {
+      "task_id": "T170",
+      "query": "作为固定收益信用分析师，请对英特尔公司（INTC）进行近期信用基本面评估。请完成以下步骤：1. 获取其最新财务报表，提取总负债、总资产、息税前利润（EBIT）及利息费用，并计算资产负债率与利息保障倍数；2. 查询当前10年期美国国债收益率作为无风险利率基准；3. 搜索近30天内关于英特尔信用评级调整或债券发行的财经新闻；4. 结合计算出的财务杠杆指标、宏观无风险利率水平及新闻舆情，评估其投资级债券的信用利差预期与违约风险，并给出明确的信用评级展望。请在最终回答中清晰列出各项指标的计算过程与数据依据。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "财务数据提取与解析",
+        "金融比率计算",
+        "宏观利率指标查询",
+        "企业信用新闻舆情检索",
+        "固定收益风险评估与定价逻辑"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确计算的资产负债率（总负债/总资产）",
+          "准确计算的利息保障倍数（EBIT/利息费用）",
+          "当前10年期美国国债收益率数值",
+          "近30天内英特尔信用评级或债券相关新闻的核心内容",
+          "综合财务、宏观与新闻数据的信用风险结论及利差/评级展望"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "calculator",
+            "get_macro_data",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T138",
+      "query": "作为事件驱动型策略研究员，请评估近期欧盟对中国新能源汽车加征临时反补贴关税政策对比亚迪（002594.SZ）基本面的潜在财务冲击。具体要求：1）检索最新公布的关税税率细则及实施时间表；2）获取比亚迪最新一期财报的营收地域分布数据，计算其欧洲市场营收占总营收的比例；3）获取比亚迪当前最新股价及流通股本，计算最新总市值；4）在压力测试情境下（假设欧洲业务营收因关税壁垒下降20%，且该部分业务净利率被压缩至5%），利用计算工具量化该政策对比亚迪年度净利润的绝对拖累金额（以人民币计）。请输出完整的数据提取过程、计算逻辑与核心数值结果。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "政策事件检索",
+        "财务数据结构化提取",
+        "情景压力测试计算",
+        "市值与财务指标联动"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "欧盟最新适用关税税率及生效时间",
+          "比亚迪欧洲市场营收占比（%）",
+          "比亚迪最新股价与总市值",
+          "悲观情境下年度净利润拖累测算值（亿元）",
+          "完整的计算推导链条"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T090",
+      "query": "请获取当前比特币（BTC）的美元实时价格，并计算使用25,000美元现货买入时可获得的BTC数量（精确到小数点后四位）。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "get_crypto_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC实时美元价格",
+          "25,000美元可购得的BTC数量（精确到小数点后四位）"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T173",
+      "query": "作为固定收益与信用分析师，请全面评估万科（Vanke）存量美元优先无抵押债券的信用风险溢价。具体要求如下：1. 获取当前美国10年期国债收益率及最新联邦基金利率，作为宏观无风险定价基准；2. 提取万科最新年度及中期财务报告的利润表与资产负债表数据（重点获取EBITDA、利息支出、短期债务、长期债务、流动资产与流动负债）；3. 检索近3个月内涉及万科信用评级调整、境外债务重组进展或流动性压力的财经新闻，并量化市场情绪倾向；4. 获取当前美元兑人民币即期汇率，评估跨境汇兑风险对境内主体偿债能力的影响；5. 调用Python计算利息保障倍数、净负债/EBITDA、速动比率，并基于修正版Altman Z-score模型估算隐含违约概率；6. 结合无风险利率曲线、财务脆弱性指标与新闻舆情，推导该美元债当前的合理理论信用利差区间（以bp为单位），并给出明确的增持/持有/减持建议。请列明所有数据节点、计算逻辑及最终定价结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "固定收益定价",
+        "信用利差分析",
+        "财务报表拆解",
+        "宏观与汇率风险评估",
+        "Python量化建模"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国10年期国债与联邦基金利率基准值",
+          "利息保障倍数与净负债/EBITDA比率",
+          "修正Altman Z-score值及对应违约概率",
+          "关键新闻舆情摘要与情绪定性",
+          "理论信用利差定价区间（bp）",
+          "明确的债券配置评级与风险提示"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_financial_statements",
+            "search_financial_news",
+            "get_exchange_rate",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T078",
+      "query": "作为负责宏观对冲的资产配置经理，我计划在美联储持续加息与高通胀预期下，将投资组合从半导体龙头英伟达（NVDA）部分轮动至防御性的公用事业龙头南方电力（SO）。请执行以下多步骤风险评估与估值分析：\n1. 提取美国最新季度CPI同比增速与当前联邦基金利率，评估宏观紧缩环境对成长股与价值防御股的历史影响。\n2. 获取NVDA与SO过去24个月的日线收盘价，使用Python计算两者的滚动60日波动率、历史相关系数及调仓后的组合下行风险（如95%置信度下的历史VaR预估）。\n3. 获取SO最新的年度自由现金流，结合第1步获取的当前联邦基金利率作为无风险利率基准，设定股权风险溢价为6%，永续增长率为2.5%，利用DCF工具计算SO的合理内在价值。\n4. 检索近10天内关于“公用事业板块轮动”及“美联储利率决议”的核心财经新闻，提炼卖方机构观点与市场情绪。\n5. 综合宏观数据、风险指标、DCF估值溢价/折价幅度及新闻情绪，给出明确的仓位调整建议，并量化调仓预期对组合夏普比率（Sharpe Ratio）的改善程度。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观经济数据提取与解读",
+        "多资产时间序列与风险建模",
+        "现金流折现（DCF）估值",
+        "金融文本情绪分析",
+        "跨板块轮动与组合优化"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新CPI与联邦基金利率数据及宏观环境定性结论",
+          "NVDA与SO的60日波动率、历史相关系数及组合VaR计算结果",
+          "SO的DCF内在价值、相对市价的溢价/折价率",
+          "近10日相关新闻的核心情绪与机构观点摘要",
+          "明确的板块轮动操作建议（增/减持方向与比例）及预期夏普比率改善测算"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_stock_price",
+            "get_financial_statements"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "python_interpreter"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T064",
+      "query": "作为对冲基金宏观策略研究员，请评估当前利率环境下的跨板块轮动信号与组合对冲需求。具体要求：1. 获取最新美国10年期国债收益率数据；2. 调取宝洁（PG）的当前股价及最新财报中的年度总分红金额，计算其静态股息率；3. 检索近期主流财经媒体关于“美债收益率倒挂缓解与防御性板块资金流入”的报道；4. 结合股息率-美债利差测算及新闻舆情，定量评估在当前组合中增持必需消费品板块以对冲成长股波动风险的合理性，并给出明确的仓位调整建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "get_financial_statements",
+        "calculator",
+        "search_financial_news"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "10年期美债收益率数值",
+          "PG最新股价与财报年度分红总额",
+          "计算得出的PG静态股息率",
+          "防御性板块资金流入与轮动趋势的新闻核心观点",
+          "基于利差测算与宏观对冲需求的定量仓位调整建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T013",
+      "query": "请协助评估特斯拉（TSLA）当前的估值水平与宏观利率敏感性。具体要求：1. 获取TSLA最新披露的年度净利润与加权平均流通股数，计算每股收益（EPS）；2. 获取TSLA的最新实时收盘价；3. 获取当前美国10年期国债收益率作为无风险利率基准；4. 调用计算或代码工具，计算其当前静态市盈率（P/E）与盈利收益率（Earnings Yield），并求取盈利收益率与10年期美债收益率的利差（Spread）；5. 结合利差结果与当前宏观利率周期，简要分析该估值是否具备安全边际及潜在下行风险。请输出完整计算链路与专业研究结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_stock_price",
+        "get_macro_data",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "计算得出的TTM EPS数值",
+          "当前P/E比率与盈利收益率数值",
+          "盈利收益率与10年期美债收益率的利差",
+          "基于利差与宏观利率环境的估值安全边际结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_stock_price",
+            "get_macro_data"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T015",
+      "query": "作为权益研究员，请对台积电（TSM）进行快速相对估值分析。请完成以下任务：1. 获取台积电当前的实时股价及已发行股数，计算总市值。2. 调用财务数据接口，提取其最新资产负债表中的总债务与现金及现金等价物，以及最近四个季度的EBITDA。据此计算企业价值（EV）及EV/EBITDA倍数。3. 获取当前的美国10年期国债收益率作为市场无风险利率基准。4. 使用计算工具，计算（EV/EBITDA）与（1/10年期美债收益率）的比值（即风险溢价调整因子），并输出最终计算结果及简要的估值解读。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_stock_price",
+        "get_financial_statements",
+        "get_macro_data",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "总市值计算过程与结果",
+          "企业价值(EV)与EV/EBITDA倍数",
+          "美国10年期国债收益率数值",
+          "风险溢价调整因子((EV/EBITDA) / (1/收益率))的计算结果",
+          "结合宏观利率的简要估值结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T172",
+      "query": "作为固定收益与信用研究员，请对大众汽车集团（Volkswagen AG, VOW3.DE）的企业债信用风险进行多维度压力测试。首先，获取公司最新年度合并财务报表，计算其净债务/EBITDA比率及利息覆盖倍数。其次，拉取当前美国10年期国债收益率及欧洲央行主要再融资利率，构建欧元区宏观利率基准。第三，检索近30天内关于大众汽车集团流动性状况、资本开支计划或评级机构行动的最新财经新闻。第四，获取当前欧元兑美元即期汇率，并使用Python编写脚本进行情景分析：模拟欧元相对美元贬值10%，量化该变动对其海外美元计价债务折算价值及财务费用的潜在影响。最后，整合财务杠杆指标、宏观利差环境、汇率风险敞口及新闻舆情，输出该公司短期偿债能力评估、信用利差预判及核心风险提示。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新财年净债务/EBITDA比率具体数值",
+          "利息覆盖倍数具体数值",
+          "当前宏观利率基准数据（美债10Y收益率与欧央行关键利率）",
+          "欧元贬值10%压力测试下的外币债务折算与财务影响测算结果",
+          "结合财务、宏观与新闻舆情对VW信用资质与短期偿债能力的综合研判"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news"
+          ],
+          [
+            "get_macro_data",
+            "get_exchange_rate"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T115",
+      "query": "作为量化研究员，我需要快速评估当前加密货币的建仓成本。请获取比特币 (BTC) 的最新美元现货价格，并计算若以该价格买入 3.0 枚 BTC，在额外收取 0.25% 网络及交易手续费的情况下，实际所需支付的美元总额是多少？请保留两位小数。",
+      "difficulty": "easy",
+      "required_skills_subset": [
+        "cryptocurrency_price_retrieval",
+        "transaction_cost_calculation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确获取比特币当前美元现货价格",
+          "正确应用0.25%手续费比例进行计算",
+          "输出最终美元支付总额且保留两位小数"
+        ],
+        "min_tool_calls": 2,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "calculator"
+          ]
+        ]
+      }
+    }
+  ]
+}

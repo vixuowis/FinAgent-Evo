@@ -1,0 +1,5 @@
+- [x] `docs/neurips_2026_simulated_review.md` exists and contains the review text.
+- [x] `src/core/memory.py` implements a retrieval or limit mechanism for procedural rules.
+- [ ] `src/scripts/human_eval_correlation.py` exists to compute Pearson/Spearman correlation metrics. (Currently using mock data, pending real N=100 results)
+- [ ] `benchmarks/complex_tasks_real_api_expanded.json` exists with an N=100 target capacity. (Running Task 1/100)
+- [ ] `neurips_paper/main.tex` contains new text addressing rule conflicts, negative Alpha, and expanded N=100 human-eval correlation. (Pending final data)

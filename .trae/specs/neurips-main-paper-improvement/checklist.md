@@ -1,0 +1,11 @@
+- [ ] 论文中明确 problem setting：工具集合、输出 schema、数值验证原则、失败处理假设
+- [x] Complex benchmark：taxonomy + 任务数 N + 2–3 个完整示例 + tool schema/版本 + 非确定性控制协议（cache-at-time / log-and-replay 择一）
+- [ ] LLM-as-judge：judge 模型/版本 + rubric prompt + R 次重复 + mean±std/CI
+- [x] Judge 可靠性：多 seed / ensemble / 人审抽检至少一种，并报告结果
+- [ ] Baseline parity audit：ReAct（tool parity + budget parity + 重试/超时/错误处理对齐），对比可防守
+- [ ] 消融：w/o evolution + w/o procedural memory（必要）；可选 w/o verification
+- [ ] 强 baseline 至少 1 个（structured planning 或 controller-style）
+- [ ] 稳健性实验：工具失败注入 + 非确定性控制（缓存/重放/跨时间）对比
+- [ ] 错误类型分析：失败模式统计 + 3–5 个 case study
+- [x] 引用时间线自洽：无 2025/2026 等未来年份占位引用；Related Work 覆盖必引工作
+- [ ] 产物可复用：对比表（Full vs baseline vs ablations）、benchmark card、judge prompt、（可选）匿名 release plan

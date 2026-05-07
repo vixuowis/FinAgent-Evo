@@ -1,0 +1,24 @@
+{
+  "evolution_tasks": [
+    {
+      "id": "evo_01",
+      "input": "Get price for AAPL and return as JSON with keys 'symbol' and 'price'."
+    },
+    {
+      "id": "evo_02",
+      "input": "Get price for MSFT and return as JSON with keys 'symbol' and 'price'."
+    }
+  ],
+  "memory_tasks": [
+    {
+      "id": "mem_01",
+      "skill_id": "fetch_market_data",
+      "input": "Fetch market data for BTC. Use the QVeris tool get_crypto_price."
+    },
+    {
+      "id": "mem_02",
+      "skill_id": "fetch_market_data",
+      "input": "Fetch market data for ETH. Remember to use the QVeris tool as done for BTC."
+    }
+  ]
+}

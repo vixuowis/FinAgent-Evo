@@ -1,0 +1,32 @@
+{
+  "tasks": [
+    {
+      "task_id": "T01",
+      "query": "评估丰田汽车(TM)美股ADR的内在价值。首先获取其最新财报中的美元计价自由现金流，结合当前日元对美元的实时汇率进行本币折算还原，然后使用5%的折现率和3%的永续增长率进行DCF计算，最后对比其当前美股市场价格，判断是否存在显著的安全边际。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "DCF估值建模",
+        "跨币种财务换算",
+        "财报数据提取",
+        "安全边际分析"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "还原后的日元口径自由现金流",
+          "DCF理论估值结果",
+          "TM当前市价",
+          "折溢价百分比及安全边际判断"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_exchange_rate",
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      }
+    }
+  ]
+}

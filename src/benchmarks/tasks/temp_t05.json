@@ -1,0 +1,32 @@
+{
+  "tasks": [
+    {
+      "task_id": "T05",
+      "query": "基于最新宏观指标进行行业轮动判断。获取美国最新CPI同比与GDP环比增速，判定当前所处经济周期阶段。获取金融ETF(XLF)与能源ETF(XLE)的最新收盘价及年初至今涨跌幅，计算两者的相对强弱比率(XLE/XLF)，结合宏观周期结论给出超配/低配建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "宏观经济周期定位",
+        "行业ETF数据获取",
+        "相对强弱计算",
+        "资产配置策略"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新CPI与GDP增速",
+          "经济周期阶段判断",
+          "XLF与XLE价格及YTD涨跌幅",
+          "相对强弱比率",
+          "板块轮动建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    }
+  ]
+}

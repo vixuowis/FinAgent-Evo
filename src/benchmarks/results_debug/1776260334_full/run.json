@@ -1,0 +1,416 @@
+{
+  "schema_version": "neurips_eval.v1",
+  "run_id": "1776260334_full",
+  "started_at": "2026-04-15T13:38:54.227890+00:00",
+  "ended_at": "2026-04-15T13:42:20.262940+00:00",
+  "benchmark": {
+    "path": "src/benchmarks/complex_tasks_real_api.json",
+    "task_count": 1,
+    "limit": 1
+  },
+  "variant": {
+    "name": "full",
+    "disable_evolution": false,
+    "disable_memory": false,
+    "disable_orchestration": false,
+    "react_baseline": false
+  },
+  "judge": {
+    "enabled": true,
+    "model": "qwen3.6-plus",
+    "base_url": "https://coding.dashscope.aliyuncs.com/v1",
+    "temperature": 0.0,
+    "prompt_sha256": "b98067de233a70adeb65f24061cd1268fdfc321ddefda1231d01db2a1330f54e",
+    "judge_logs_path": "src/benchmarks/results_debug/1776260334_full/judge_logs.jsonl"
+  },
+  "qveris_cache": {
+    "enabled": false,
+    "ttl_seconds": 0
+  },
+  "summary": {
+    "task_count": 1,
+    "success_count": 1,
+    "success_rate": 1.0,
+    "elapsed_s_avg": 157.29720306396484,
+    "elapsed_s_p50": 157.29720306396484,
+    "elapsed_s_p90": 157.29720306396484,
+    "tool_calls_avg": 6.0,
+    "llm_cost_estimate_usd_total": null,
+    "failure_modes": {}
+  },
+  "results": [
+    {
+      "task_id": "T01",
+      "query": "评估丰田汽车(TM)美股ADR的内在价值。首先获取其最新财报中的美元计价自由现金流，结合当前日元对美元的实时汇率进行本币折算还原，然后使用5%的折现率和3%的永续增长率进行DCF计算，最后对比其当前美股市场价格，判断是否存在显著的安全边际。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "还原后的日元口径自由现金流",
+          "DCF理论估值结果",
+          "TM当前市价",
+          "折溢价百分比及安全边际判断"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_exchange_rate",
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      },
+      "run": {
+        "started_at": "2026-04-15T13:38:54.227901+00:00",
+        "ended_at": "2026-04-15T13:41:31.525116+00:00",
+        "elapsed_s": 157.29720306396484,
+        "success": true,
+        "failure_mode": null,
+        "error": null
+      },
+      "agent": {
+        "final_answer": "### FINAL INVESTMENT RECOMMENDATION: TOYOTA MOTOR CORP (TM) US ADR\n**Analyst Role:** Senior Financial Analyst, FinAgent-Evo  \n**Valuation Date:** Based on Verified Execution Logs  \n**Recommendation:** **HOLD | 0% Target Exposure**  \n**Confidence Level:** N/A (Pipeline Failure) | **Risk Protocol:** Maximum Uncertainty / Capital Preservation\n\n---\n\n### 🔍 1. EXECUTION LOG AUDIT & PROOF OF WORK\nPer institutional mandate, all valuation steps must be traceable to verified system outputs. The complete data pipeline failed at the ingestion layer, rendering quantitative modeling impossible. Below is the step-by-step verification against the provided logs:\n\n| Step | Tool/Skill | Status | Verified Output / Error Signature |\n|:---|:---|:---|:---|\n| 1 | `get_financial_statements` | ❌ FAIL | `QVeris API key missing.` |\n| 2 | `get_exchange_rate` | ❌ FAIL | `QVeris API key missing.` |\n| 3 | `python_interpreter` | ❌ FAIL | `SyntaxError('invalid syntax', ('<string>', 1, 13, ...))` |\n| 4 | `calculate_dcf` | ❌ FAIL | `Skill calculate_dcf not found in the library.` |\n| 5 | `get_stock_price` | ❌ FAIL | `QVeris API key missing.` |\n| 6 | `strategic_decision_making` | ✅ PASS | `Target Exposure: 0%` \\| `Final Recommendation: HOLD` |\n\n**Proof of Work Conclusion:** Zero fundamental inputs (FCF, JPY/USD spot, TM price) were successfully retrieved. The valuation engine lacks required dependencies (`calculate_dcf` missing) and authentication (`QVeris API key missing`). No synthetic or external data may be injected per FinAgent-Evo compliance standards.\n\n---\n\n### 🐍 2. PYTHON INTERPRETER EXECUTION (STEP 3)\nThe logs confirm the `python_interpreter` was invoked but failed due to malformed input. Below is the exact attempted execution and resulting output as recorded in the logs:\n\n**Attempted Python Input:**\n```python\nTask: Parse financials and forex data, convert JPY FCF to USD using real-time rate, and output adjusted FCF.\n```\n\n**Actual System Output:**\n```text\nSyntaxError('invalid syntax', ('<string>', 1, 13, 'Task: Parse financials and forex data, convert JPY FCF to USD using real-time rate, and output adjusted FCF.\\n', 1, 23))\n```\n\n**Analyst Note:** The interpreter received a natural-language prompt string instead of executable Python syntax. A valid conversion script would require structured variables (e.g., `fcf_jpy = ...`, `fx_rate = ...`, `fcf_usd = fcf_jpy / fx_rate`). Due to upstream API failures, these variables were null, and the syntax error halted execution. No currency reconciliation was performed.\n\n---\n\n### 📊 3. VALUATION & MARGIN OF SAFETY ASSESSMENT\n**DCF Parameters Requested:** \n- Discount Rate: 5%\n- Terminal Growth Rate: 3%\n- Formula: `Intrinsic Value = FCF_0 * (1+g) / (r - g)`\n\n**Execution Reality:**\n- `FCF_0` (USD) = `NULL` (Step 1 & 3 failed)\n- `Market Price (TM ADR)` = `NULL` (Step 5 failed)\n- `Intrinsic Value` = `UNDEFINED`\n- `Margin of Safety` = `UNDEFINED`\n\nWithout verified cash flow generation, accurate FX conversion, or a live market quote, the DCF model cannot be initialized. Any attempt to force a calculation would violate FinAgent-Evo's data integrity protocols and introduce unquantified model risk.\n\n---\n\n### ⚖️ 4. STRATEGIC SYNTHESIS & CONTRADICTION ANALYSIS\n**Contradiction Check:** None detected. The pipeline failed uniformly across data ingestion, processing, and valuation modules. There are no conflicting technical, sentiment, or fundamental signals to reconcile. The system correctly defaulted to its risk-control protocol when data integrity collapsed.\n\n**Quantitative Risk Overlay (Per Step 6 Log):**\n> *\"The fundamental data pipeline has completely failed across all steps... rendering intrinsic value, market price, and margin of safety calculations impossible. Per the quant strategy core, when trend confirmation (SMA-5/RSI), sentiment divergence, and reliable pricing are absent, uncertainty is treated as maximum volatility... capital preservation and Sharpe ratio maintenance take absolute precedence. Exposure is scaled to 0% until data integrity is restored...\"*\n\nThis aligns with institutional best practices: **No data = No position.** Alpha-seeking exposure requires verified pricing and confirmed trend/sentiment alignment. Neither exists.\n\n---\n\n### 🏁 5. FINAL RECOMMENDATION\n| Metric | Status |\n|:---|:---|\n| **Intrinsic Value (DCF)** | `UNDEFINED` (Pipeline Failure) |\n| **Current Market Price (TM)** | `UNDEFINED` (API Key Missing) |\n| **Margin of Safety** | `UNDEFINED` |\n| **Target Allocation** | **0%** |\n| **Action** | **HOLD / NO TRADE** |\n\n**Directive:** \n1. **Do not initiate or adjust positions in TM ADR** until the `QVeris API key` is provisioned and the `calculate_dcf` skill is registered in the library.\n2. **Patch Step 3:** Replace natural-language prompts with executable Python code for FX conversion once financial data is successfully retrieved.\n3. **Re-evaluation Trigger:** Successful execution of Steps 1, 2, and 5 with verified data points. Upon restoration, a full DCF (r=5%, g=3%) vs. spot price comparison will be run to quantify margin of safety.\n\n**Analyst Certification:** Recommendation is strictly bound to verified execution logs. Zero external assumptions or interpolated data were used. Capital preservation protocol remains active.\n\n---\n## Execution Skill Call Chain\n⛓️ get_financial_statements -> get_exchange_rate -> python_interpreter -> calculate_dcf -> get_stock_price -> strategic_decision_making\n\n### 🛠 Execution Logs\n- **Step 1 (get_financial_statements)**: Fetch latest annual financial statements for Toyota Motor Corp (TM)...\n- **Step 2 (get_exchange_rate)**: Fetch real-time Japanese Yen to US Dollar exchange rate...\n- **Step 3 (python_interpreter)**: Parse financials and forex data, convert JPY FCF to USD using real-time rate, and output adjusted FC...\n- **Step 4 (calculate_dcf)**: Calculate DCF intrinsic value with specified parameters...\n- **Step 5 (get_stock_price)**: Get real-time stock price for TM...\n- **Step 6 (strategic_decision_making)**: Compare intrinsic value vs market price, calculate margin of safety, and output strategic decision....\n",
+        "trajectory": [
+          {
+            "step": 1,
+            "skill_id": "get_financial_statements",
+            "reasoning": "Retrieve Toyota's latest annual financial statements to extract Free Cash Flow (FCF) and shares outstanding data.",
+            "input": "Fetch latest annual financial statements for Toyota Motor Corp (TM)",
+            "params": {
+              "symbol": "TM"
+            },
+            "output": "[QVeris Tool get_financial_statements Executed]\nQVeris API key missing."
+          },
+          {
+            "step": 2,
+            "skill_id": "get_exchange_rate",
+            "reasoning": "Obtain the real-time JPY/USD exchange rate to accurately convert and reconcile the reported FCF as instructed.",
+            "input": "Fetch real-time Japanese Yen to US Dollar exchange rate",
+            "params": {
+              "pair": "JPY/USD"
+            },
+            "output": "[QVeris Tool get_exchange_rate Executed]\nQVeris API key missing."
+          },
+          {
+            "step": 3,
+            "skill_id": "python_interpreter",
+            "reasoning": "Process the extracted FCF and exchange rate to perform currency conversion/reconciliation, ensuring the FCF is accurately denominated in USD for the DCF model.",
+            "input": "Parse financials and forex data, convert JPY FCF to USD using real-time rate, and output adjusted FCF.",
+            "params": {
+              "code": "fcf_jpy = financials.get('free_cash_flow', 0)\nrate = exchange_rate.get('rate', 0)\nshares = financials.get('shares_outstanding', 0)\nfcf_usd = fcf_jpy * rate\nfcf_per_share_usd = fcf_usd / shares if shares > 0 else 0\nprint(f'Adjusted USD FCF per share: {fcf_per_share_usd}')\nreturn fcf_per_share_usd"
+            },
+            "output": "SyntaxError('invalid syntax', ('<string>', 1, 13, 'Task: Parse financials and forex data, convert JPY FCF to USD using real-time rate, and output adjusted FCF.\\n', 1, 23))"
+          },
+          {
+            "step": 4,
+            "skill_id": "calculate_dcf",
+            "reasoning": "Execute the Discounted Cash Flow valuation using the adjusted USD FCF per share, a 5% discount rate, and a 3% terminal growth rate to find intrinsic value per share.",
+            "input": "Calculate DCF intrinsic value with specified parameters",
+            "params": {
+              "cash_flow": "output_from_step_3",
+              "discount_rate": 0.05,
+              "growth_rate": 0.03
+            },
+            "output": "Skill calculate_dcf not found in the library."
+          },
+          {
+            "step": 5,
+            "skill_id": "get_stock_price",
+            "reasoning": "Fetch the current real-time market price of Toyota's US ADR (TM) to serve as the comparison baseline.",
+            "input": "Get real-time stock price for TM",
+            "params": {
+              "symbol": "TM"
+            },
+            "output": "[QVeris Tool get_stock_price Executed]\nQVeris API key missing."
+          },
+          {
+            "step": 6,
+            "skill_id": "strategic_decision_making",
+            "reasoning": "Synthesize the DCF intrinsic value, current market price, and financial metrics to evaluate the margin of safety and formulate a final investment recommendation.",
+            "input": "Compare intrinsic value vs market price, calculate margin of safety, and output strategic decision.",
+            "params": {
+              "intrinsic_value": "output_from_step_4",
+              "market_price": "output_from_step_5"
+            },
+            "output": "[Skill strategic_decision_making Execution Result]\n- Reasoning: The fundamental data pipeline has completely failed across all steps (missing API keys, syntax errors, unavailable DCF module), rendering intrinsic value, market price, and margin of safety calculations impossible. Per the quant strategy core, when trend confirmation (SMA-5/RSI), sentiment divergence, and reliable pricing are absent, uncertainty is treated as maximum volatility. Without a verified uptrend, positive sentiment lead, or volume confirmation to justify alpha-seeking exposure, capital preservation and Sharpe ratio maintenance take absolute precedence. Exposure is scaled to 0% until data integrity is restored and technical/sentiment signals can be validated.\n- Target Exposure: 0%\n- Final Recommendation: HOLD"
+          }
+        ],
+        "orchestrator": {
+          "plan": [
+            {
+              "step": 1,
+              "skill_id": "get_financial_statements",
+              "reasoning": "Retrieve Toyota's latest annual financial statements to extract Free Cash Flow (FCF) and shares outstanding data.",
+              "input": "Fetch latest annual financial statements for Toyota Motor Corp (TM)",
+              "params": {
+                "symbol": "TM"
+              }
+            },
+            {
+              "step": 2,
+              "skill_id": "get_exchange_rate",
+              "reasoning": "Obtain the real-time JPY/USD exchange rate to accurately convert and reconcile the reported FCF as instructed.",
+              "input": "Fetch real-time Japanese Yen to US Dollar exchange rate",
+              "params": {
+                "pair": "JPY/USD"
+              }
+            },
+            {
+              "step": 3,
+              "skill_id": "python_interpreter",
+              "reasoning": "Process the extracted FCF and exchange rate to perform currency conversion/reconciliation, ensuring the FCF is accurately denominated in USD for the DCF model.",
+              "input": "Parse financials and forex data, convert JPY FCF to USD using real-time rate, and output adjusted FCF.",
+              "params": {
+                "code": "fcf_jpy = financials.get('free_cash_flow', 0)\nrate = exchange_rate.get('rate', 0)\nshares = financials.get('shares_outstanding', 0)\nfcf_usd = fcf_jpy * rate\nfcf_per_share_usd = fcf_usd / shares if shares > 0 else 0\nprint(f'Adjusted USD FCF per share: {fcf_per_share_usd}')\nreturn fcf_per_share_usd"
+              }
+            },
+            {
+              "step": 4,
+              "skill_id": "calculate_dcf",
+              "reasoning": "Execute the Discounted Cash Flow valuation using the adjusted USD FCF per share, a 5% discount rate, and a 3% terminal growth rate to find intrinsic value per share.",
+              "input": "Calculate DCF intrinsic value with specified parameters",
+              "params": {
+                "cash_flow": "output_from_step_3",
+                "discount_rate": 0.05,
+                "growth_rate": 0.03
+              }
+            },
+            {
+              "step": 5,
+              "skill_id": "get_stock_price",
+              "reasoning": "Fetch the current real-time market price of Toyota's US ADR (TM) to serve as the comparison baseline.",
+              "input": "Get real-time stock price for TM",
+              "params": {
+                "symbol": "TM"
+              }
+            },
+            {
+              "step": 6,
+              "skill_id": "strategic_decision_making",
+              "reasoning": "Synthesize the DCF intrinsic value, current market price, and financial metrics to evaluate the margin of safety and formulate a final investment recommendation.",
+              "input": "Compare intrinsic value vs market price, calculate margin of safety, and output strategic decision.",
+              "params": {
+                "intrinsic_value": "output_from_step_4",
+                "market_price": "output_from_step_5"
+              }
+            }
+          ],
+          "execution_logs": [
+            {
+              "step": 1,
+              "skill_id": "get_financial_statements",
+              "reasoning": "Retrieve Toyota's latest annual financial statements to extract Free Cash Flow (FCF) and shares outstanding data.",
+              "input": "Fetch latest annual financial statements for Toyota Motor Corp (TM)",
+              "params": {
+                "symbol": "TM"
+              },
+              "output": "[QVeris Tool get_financial_statements Executed]\nQVeris API key missing."
+            },
+            {
+              "step": 2,
+              "skill_id": "get_exchange_rate",
+              "reasoning": "Obtain the real-time JPY/USD exchange rate to accurately convert and reconcile the reported FCF as instructed.",
+              "input": "Fetch real-time Japanese Yen to US Dollar exchange rate",
+              "params": {
+                "pair": "JPY/USD"
+              },
+              "output": "[QVeris Tool get_exchange_rate Executed]\nQVeris API key missing."
+            },
+            {
+              "step": 3,
+              "skill_id": "python_interpreter",
+              "reasoning": "Process the extracted FCF and exchange rate to perform currency conversion/reconciliation, ensuring the FCF is accurately denominated in USD for the DCF model.",
+              "input": "Parse financials and forex data, convert JPY FCF to USD using real-time rate, and output adjusted FCF.",
+              "params": {
+                "code": "fcf_jpy = financials.get('free_cash_flow', 0)\nrate = exchange_rate.get('rate', 0)\nshares = financials.get('shares_outstanding', 0)\nfcf_usd = fcf_jpy * rate\nfcf_per_share_usd = fcf_usd / shares if shares > 0 else 0\nprint(f'Adjusted USD FCF per share: {fcf_per_share_usd}')\nreturn fcf_per_share_usd"
+              },
+              "output": "SyntaxError('invalid syntax', ('<string>', 1, 13, 'Task: Parse financials and forex data, convert JPY FCF to USD using real-time rate, and output adjusted FCF.\\n', 1, 23))"
+            },
+            {
+              "step": 4,
+              "skill_id": "calculate_dcf",
+              "reasoning": "Execute the Discounted Cash Flow valuation using the adjusted USD FCF per share, a 5% discount rate, and a 3% terminal growth rate to find intrinsic value per share.",
+              "input": "Calculate DCF intrinsic value with specified parameters",
+              "params": {
+                "cash_flow": "output_from_step_3",
+                "discount_rate": 0.05,
+                "growth_rate": 0.03
+              },
+              "output": "Skill calculate_dcf not found in the library."
+            },
+            {
+              "step": 5,
+              "skill_id": "get_stock_price",
+              "reasoning": "Fetch the current real-time market price of Toyota's US ADR (TM) to serve as the comparison baseline.",
+              "input": "Get real-time stock price for TM",
+              "params": {
+                "symbol": "TM"
+              },
+              "output": "[QVeris Tool get_stock_price Executed]\nQVeris API key missing."
+            },
+            {
+              "step": 6,
+              "skill_id": "strategic_decision_making",
+              "reasoning": "Synthesize the DCF intrinsic value, current market price, and financial metrics to evaluate the margin of safety and formulate a final investment recommendation.",
+              "input": "Compare intrinsic value vs market price, calculate margin of safety, and output strategic decision.",
+              "params": {
+                "intrinsic_value": "output_from_step_4",
+                "market_price": "output_from_step_5"
+              },
+              "output": "[Skill strategic_decision_making Execution Result]\n- Reasoning: The fundamental data pipeline has completely failed across all steps (missing API keys, syntax errors, unavailable DCF module), rendering intrinsic value, market price, and margin of safety calculations impossible. Per the quant strategy core, when trend confirmation (SMA-5/RSI), sentiment divergence, and reliable pricing are absent, uncertainty is treated as maximum volatility. Without a verified uptrend, positive sentiment lead, or volume confirmation to justify alpha-seeking exposure, capital preservation and Sharpe ratio maintenance take absolute precedence. Exposure is scaled to 0% until data integrity is restored and technical/sentiment signals can be validated.\n- Target Exposure: 0%\n- Final Recommendation: HOLD"
+            }
+          ],
+          "plan_raw": "[\n  {\"step\": 1, \"skill_id\": \"get_financial_statements\", \"reasoning\": \"Retrieve Toyota's latest annual financial statements to extract Free Cash Flow (FCF) and shares outstanding data.\", \"input\": \"Fetch latest annual financial statements for Toyota Motor Corp (TM)\", \"params\": {\"symbol\": \"TM\"}},\n  {\"step\": 2, \"skill_id\": \"get_exchange_rate\", \"reasoning\": \"Obtain the real-time JPY/USD exchange rate to accurately convert and reconcile the reported FCF as instructed.\", \"input\": \"Fetch real-time Japanese Yen to US Dollar exchange rate\", \"params\": {\"pair\": \"JPY/USD\"}},\n  {\"step\": 3, \"skill_id\": \"python_interpreter\", \"reasoning\": \"Process the extracted FCF and exchange rate to perform currency conversion/reconciliation, ensuring the FCF is accurately denominated in USD for the DCF model.\", \"input\": \"Parse financials and forex data, convert JPY FCF to USD using real-time rate, and output adjusted FCF.\", \"params\": {\"code\": \"fcf_jpy = financials.get('free_cash_flow', 0)\\nrate = exchange_rate.get('rate', 0)\\nshares = financials.get('shares_outstanding', 0)\\nfcf_usd = fcf_jpy * rate\\nfcf_per_share_usd = fcf_usd / shares if shares > 0 else 0\\nprint(f'Adjusted USD FCF per share: {fcf_per_share_usd}')\\nreturn fcf_per_share_usd\"}},\n  {\"step\": 4, \"skill_id\": \"calculate_dcf\", \"reasoning\": \"Execute the Discounted Cash Flow valuation using the adjusted USD FCF per share, a 5% discount rate, and a 3% terminal growth rate to find intrinsic value per share.\", \"input\": \"Calculate DCF intrinsic value with specified parameters\", \"params\": {\"cash_flow\": \"output_from_step_3\", \"discount_rate\": 0.05, \"growth_rate\": 0.03}},\n  {\"step\": 5, \"skill_id\": \"get_stock_price\", \"reasoning\": \"Fetch the current real-time market price of Toyota's US ADR (TM) to serve as the comparison baseline.\", \"input\": \"Get real-time stock price for TM\", \"params\": {\"symbol\": \"TM\"}},\n  {\"step\": 6, \"skill_id\": \"strategic_decision_making\", \"reasoning\": \"Synthesize the DCF intrinsic value, current market price, and financial metrics to evaluate the margin of safety and formulate a final investment recommendation.\", \"input\": \"Compare intrinsic value vs market price, calculate margin of safety, and output strategic decision.\", \"params\": {\"intrinsic_value\": \"output_from_step_4\", \"market_price\": \"output_from_step_5\"}}\n]",
+          "plan_prompt_sha256": "62df5420c5dd48e84120352291bbc9d1b983dd943ec97173f1da791ca1b620cf",
+          "llm_usage": {
+            "plan": {
+              "token_usage": {
+                "completion_tokens": 3631,
+                "prompt_tokens": 854,
+                "total_tokens": 4485,
+                "completion_tokens_details": {
+                  "accepted_prediction_tokens": null,
+                  "audio_tokens": null,
+                  "reasoning_tokens": 3011,
+                  "rejected_prediction_tokens": null,
+                  "text_tokens": 3631
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": null,
+                  "cached_tokens": null,
+                  "text_tokens": 854
+                }
+              },
+              "model_provider": "openai",
+              "model_name": "qwen3.6-plus",
+              "system_fingerprint": null,
+              "id": "chatcmpl-0520b321-cb7a-9a3b-8fe7-0634cd9fb439",
+              "finish_reason": "stop",
+              "logprobs": null
+            },
+            "synthesis": {
+              "token_usage": {
+                "completion_tokens": 3400,
+                "prompt_tokens": 777,
+                "total_tokens": 4177,
+                "completion_tokens_details": {
+                  "accepted_prediction_tokens": null,
+                  "audio_tokens": null,
+                  "reasoning_tokens": 2070,
+                  "rejected_prediction_tokens": null,
+                  "text_tokens": 3400
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": null,
+                  "cached_tokens": null,
+                  "text_tokens": 777
+                }
+              },
+              "model_provider": "openai",
+              "model_name": "qwen3.6-plus",
+              "system_fingerprint": null,
+              "id": "chatcmpl-8103e516-4db2-9cc5-a3dd-16ac8a3da4d4",
+              "finish_reason": "stop",
+              "logprobs": null
+            }
+          }
+        }
+      },
+      "metrics": {
+        "tool_calls": 6,
+        "qveris_calls_estimate": 3,
+        "llm_usage": {
+          "plan": {
+            "token_usage": {
+              "completion_tokens": 3631,
+              "prompt_tokens": 854,
+              "total_tokens": 4485,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": null,
+                "audio_tokens": null,
+                "reasoning_tokens": 3011,
+                "rejected_prediction_tokens": null,
+                "text_tokens": 3631
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": null,
+                "text_tokens": 854
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "qwen3.6-plus",
+            "system_fingerprint": null,
+            "id": "chatcmpl-0520b321-cb7a-9a3b-8fe7-0634cd9fb439",
+            "finish_reason": "stop",
+            "logprobs": null
+          },
+          "synthesis": {
+            "token_usage": {
+              "completion_tokens": 3400,
+              "prompt_tokens": 777,
+              "total_tokens": 4177,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": null,
+                "audio_tokens": null,
+                "reasoning_tokens": 2070,
+                "rejected_prediction_tokens": null,
+                "text_tokens": 3400
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": null,
+                "text_tokens": 777
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "qwen3.6-plus",
+            "system_fingerprint": null,
+            "id": "chatcmpl-8103e516-4db2-9cc5-a3dd-16ac8a3da4d4",
+            "finish_reason": "stop",
+            "logprobs": null
+          }
+        },
+        "llm_token_usage": {
+          "plan": {
+            "prompt_tokens": 854,
+            "completion_tokens": 3631,
+            "total_tokens": 4485
+          },
+          "synthesis": {
+            "prompt_tokens": 777,
+            "completion_tokens": 3400,
+            "total_tokens": 4177
+          }
+        },
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹显示完整的数据获取与计算链路因API密钥缺失、Python语法错误及calculate_dcf技能缺失而全面中断。最终回答中所有核心财务指标（还原后的日元口径自由现金流、DCF理论估值结果、TM当前市价、折溢价百分比及安全边际判断）均明确标记为UNDEFINED，未提供任何实质性定量分析或估值结论。尽管Agent严格遵循了预设的工具调用意图序列，且未进行数据幻觉（符合金融合规要求），但完全未能完成Query要求的DCF建模、汇率折算与市价对比任务。工具调用数量虽满足最低要求，但有效执行率为零，核心分析目标全部落空。综合判定为任务失败。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "还原后的日元口径自由现金流",
+            "DCF理论估值结果",
+            "TM当前市价",
+            "折溢价百分比及安全边际判断"
+          ]
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹显示完整的数据获取与计算链路因API密钥缺失、Python语法错误及calculate_dcf技能缺失而全面中断。最终回答中所有核心财务指标（还原后的日元口径自由现金流、DCF理论估值结果、TM当前市价、折溢价百分比及安全边际判断）均明确标记为UNDEFINED，未提供任何实质性定量分析或估值结论。尽管Agent严格遵循了预设的工具调用意图序列，且未进行数据幻觉（符合金融合规要求），但完全未能完成Query要求的DCF建模、汇率折算与市价对比任务。工具调用数量虽满足最低要求，但有效执行率为零，核心分析目标全部落空。综合判定为任务失败。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"还原后的日元口径自由现金流\",\n    \"DCF理论估值结果\",\n    \"TM当前市价\",\n    \"折溢价百分比及安全边际判断\"\n  ]\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_debug/1776260334_full/judge_logs.jsonl",
+          "line": 0
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1944 @@
+{
+  "tasks": [
+    {
+      "task_id": "T001",
+      "query": "作为顶级券商的权益研究员，请对英伟达（NVDA）进行深度估值与投资可行性分析。请严格执行以下多步骤工作流：1. 获取最新的美国10年期国债收益率作为无风险利率，并结合行业常规风险溢价（假设为4.5%）推导股权成本（Cost of Equity）作为折现率基准。2. 检索近一周关于AI算力基础设施及半导体供应链的财经新闻，提取核心景气度指标，据此合理设定未来5年自由现金流（FCF）的复合增长率及永续增长率。3. 调取英伟达最近五个完整财年的自由现金流历史数据。4. 将历史FCF、增长假设与折现率整合，运行DCF模型计算该股票的每股内在价值。5. 获取NVDA的当前实时股价，与计算出的内在价值进行对比，得出精确的溢价/折价百分比。最终报告必须包含所有关键假设参数、DCF估值结果、实时股价、折溢价率，并基于计算结果给出明确的‘买入’、‘持有’或‘卖出’评级。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news",
+        "get_financial_statements",
+        "calculate_dcf",
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国10年期国债收益率具体数值",
+          "最终采用的WACC/折现率",
+          "基于新闻分析设定的未来5年FCF复合增长率及永续增长率",
+          "DCF模型计算得出的每股内在价值",
+          "NVDA当前实时股价",
+          "股价相对于内在价值的精确折价/溢价百分比",
+          "明确的投资评级（买入/持有/卖出）及核心依据"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news",
+            "get_financial_statements"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T002",
+      "query": "我是一家欧洲资管机构的权益研究员，正在撰写关于美国科技巨头微软(MSFT)的深度估值报告。请执行以下多步骤分析：首先，获取MSFT当前股价、最新年报中的自由现金流(FCF)、总流通股数及过去三年的营收数据。其次，获取最新美国10年期国债收益率作为无风险利率，结合给定的5%股权风险溢价和1.1的Beta系数计算WACC。接着，基于过去三年营收的复合增长率(CAGR)推导未来三年FCF的预测增速，设定永续增长率为2%，调用DCF模型计算每股内在价值（USD）。然后，获取实时USD/EUR汇率，将美元内在价值换算为欧元。最后，计算当前股价相对于欧元内在价值的折溢价百分比，并基于安全边际理论给出明确的投资评级建议。请输出所有关键中间数据、核心假设、最终估值结果及结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "financial_statement_retrieval",
+        "macroeconomic_data_analysis",
+        "wacc_estimation",
+        "dcf_valuation",
+        "forex_conversion",
+        "quantitative_reasoning"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "MSFT当前股价与流通股数",
+          "最新年度自由现金流及过去三年营收数据",
+          "计算得出的WACC与无风险利率来源",
+          "基于历史CAGR的FCF增速假设",
+          "DCF模型输出的每股内在价值(USD)",
+          "USD/EUR实时汇率及换算后的欧元内在价值",
+          "股价相对欧元内在价值的折溢价百分比",
+          "基于安全边际的投资评级结论"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements"
+          ],
+          [
+            "get_financial_statements",
+            "get_macro_data"
+          ],
+          [
+            "get_macro_data",
+            "calculate_dcf"
+          ],
+          [
+            "calculate_dcf",
+            "get_exchange_rate"
+          ],
+          [
+            "get_exchange_rate",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T003",
+      "query": "作为买方股票研究员，你需要对ASML（阿斯麦）进行深度估值与基本面压力测试。请按以下步骤执行：1) 获取ASML最新的年度自由现金流（FCF）及总股本数据；2) 提取当前德国10年期国债收益率作为无风险利率基准，结合给定的股权风险溢价5.0%和Beta值1.15，计算加权平均资本成本（WACC）；3) 设定未来3年FCF复合增长率为9%，永续增长率为2.0%，调用DCF模型计算每股内在价值（欧元）；4) 获取今日欧元兑美元的实时汇率，将内在价值换算为美元；5) 抓取ASML在纳斯达克的当前实时股价，计算其相对DCF内在价值的折溢价百分比；6) 检索过去两周内关于光刻机出口管制、半导体周期拐点或供应链瓶颈的最新核心财经新闻，定性分析其对长期增长假设的潜在侵蚀，并综合输出最终的投资评级（买入/持有/卖出）及核心驱动逻辑。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "财务数据提取",
+        "WACC与DCF建模",
+        "外汇汇率换算",
+        "宏观利率整合",
+        "估值偏差量化计算",
+        "新闻事件驱动的基本面调整"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "ASML最新FCF金额与计算所用的WACC具体数值",
+          "DCF模型输出的每股内在价值（需同时提供欧元与美元换算结果）",
+          "当前市价与DCF估值的精确折溢价百分比",
+          "基于近期出口管制与周期新闻对永续/短期增长率的定性调整依据",
+          "明确的最终投资评级及完整的推演逻辑链条"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "calculate_dcf"
+          ],
+          [
+            "calculate_dcf",
+            "get_exchange_rate",
+            "calculator"
+          ],
+          [
+            "get_stock_price",
+            "calculator"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T004",
+      "query": "作为美股科技行业研究员，请对英伟达（NVDA）进行深度估值分析。首先，搜索过去30天内关于英伟达的最新财务新闻或主流投行研报，提取市场对其未来三年自由现金流复合增长率的普遍预期。接着，获取美国最新的10年期国债收益率和最新核心CPI数据，据此合理设定无风险利率与股权风险溢价，计算并确定适用于该公司的WACC作为折现率。然后，获取英伟达最新财年的实际自由现金流数据，结合上述增长率预测未来5年的现金流序列。使用DCF模型计算其每股内在价值。最后，获取NVDA的实时股价，计算当前股价相对于DCF内在价值的折溢价百分比，并基于安全边际给出明确的“买入/持有/卖出”评级建议。请详细列出关键假设参数、计算过程及最终结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "新闻与研报信息提取",
+        "宏观经济指标分析",
+        "财务数据解析",
+        "DCF估值建模",
+        "实时行情获取与投资决策"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "从新闻/研报中提取的未来自由现金流复合增长率预期",
+          "基于宏观数据推导出的WACC/折现率数值",
+          "计算得出的英伟达每股内在价值",
+          "获取的NVDA实时股价",
+          "当前股价相对于内在价值的折溢价百分比",
+          "明确的投资评级（买入/持有/卖出）及简要逻辑"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_macro_data",
+            "get_financial_statements",
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T005",
+      "query": "作为全球科技股研究员，我需要评估索尼集团（SONY.US）的当前估值是否合理。请执行以下步骤：1. 获取索尼集团最近一个完整财年的自由现金流（FCF）。2. 查询当前的USD/JPY实时汇率，以及最新的日本10年期国债收益率作为无风险利率。3. 假设市场风险溢价为6.5%，索尼Beta为0.95，结合无风险利率计算WACC，并利用DCF模型估算其每股内在价值（假设永续增长率为2.5%）。4. 获取索尼当前美股市场价格（USD）。5. 将DCF计算出的内在日元价值按实时汇率转换为美元，并与当前美股价格进行对比，计算潜在的投资回报率（Upside/Downside %）。请提供详细计算过程及最终的投资建议依据。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_exchange_rate",
+        "get_macro_data",
+        "get_stock_price",
+        "calculate_dcf",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新财年自由现金流(FCF)数值",
+          "USD/JPY实时汇率与日本10年期国债收益率",
+          "基于CAPM计算的WACC",
+          "DCF模型得出的每股内在价值(JPY及转换后的USD)",
+          "SONY当前USD股价",
+          "内在价值与市价的折溢价百分比及估值结论"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "get_exchange_rate",
+            "get_stock_price",
+            "calculate_dcf",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T006",
+      "query": "作为美股科技板块的资深分析师，请对苹果公司(AAPL)进行两阶段DCF估值。首先，获取当前10年期美国国债收益率作为无风险利率基准。其次，从最新财报中提取苹果过去四个季度的自由现金流(FCF)数据以计算加权平均值。接着，搜索近期关于苹果供应链或AI产品线的重大财经新闻，据此判断并量化调整你的第一阶段预期增长率。利用上述参数调用估值模型计算每股内在价值，最后获取AAPL的实时股价，计算当前股价相对于内在价值的折价或溢价百分比，并给出明确的估值结论与投资建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_financial_statements",
+        "search_financial_news",
+        "calculate_dcf",
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提取的10年期国债收益率及设定的无风险利率",
+          "基期自由现金流数值及计算逻辑",
+          "基于新闻分析调整后的短期增长率假设",
+          "通过模型计算得出的每股内在价值",
+          "实时股价与内在价值的折溢价百分比",
+          "明确的估值结论（低估/合理/高估）及投资评级"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_financial_statements",
+            "search_financial_news"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T007",
+      "query": "作为卖方科技行业研究员，我需要对ASML（阿斯麦）进行跨周期估值压力测试。请执行以下多步分析：首先，检索ASML过去90天内关于EUV光刻机交付指引、先进封装设备需求及毛利率预期的最新财经新闻，从中提炼未来两年的预期营收复合增长率（CAGR）；其次，获取ASML最新财年的自由现金流（FCF）及总股本数据，并查询当前美国10年期国债收益率作为无风险利率基准；第三，结合你提取的CAGR、获取的FCF、10年期美债收益率（假设股权风险溢价为5%，Beta为1.1，税率为20%，债务成本为4.5%），计算WACC并调用DCF模型估算每股内在价值（设定永续增长率为2.5%）；第四，获取ASML当前美股实时价格，计算内在价值相对于市价的折溢价率，并综合宏观利率环境与订单能见度给出明确的估值结论（低估/合理/高估）及核心逻辑。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "financial_news_synthesis",
+        "fundamental_statement_retrieval",
+        "macro_rate_extraction",
+        "wacc_derivation",
+        "dcf_model_execution",
+        "valuation_gap_analysis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "从新闻中提取的未来两年预期营收CAGR假设",
+          "获取的最新财年自由现金流（FCF）数值",
+          "查询的美国10年期国债收益率数值",
+          "推导计算出的WACC结果",
+          "DCF模型输出的每股内在价值（USD）",
+          "ASML当前实时股价（USD）",
+          "内在价值相对市价的折溢价率（百分比）",
+          "明确的估值评级结论及结合宏观/基本面的核心论证逻辑"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements"
+          ],
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "calculator"
+          ],
+          [
+            "calculator",
+            "calculate_dcf"
+          ],
+          [
+            "calculate_dcf",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T008",
+      "query": "作为资深美股科技板块研究员，请对台积电（TSM）进行全面的DCF估值分析。首先，提取台积电最近四个季度的自由现金流（FCF）数据，并查询当前的10年期美国国债收益率作为无风险利率基准。其次，获取最新美元兑新台币汇率，将新台币计价的财务指标转换为美元口径。接着，利用转换后的现金流与宏观利率数据进行DCF估值计算（假设永续增长率为3%，目标股权成本率设为无风险利率加5%风险溢价）。最后，获取台积电当前的实时股价与总股本，计算其当前总市值，并对比DCF内在价值给出精确的溢价或折价百分比。请确保所有汇率和利率数据均来自实时接口，输出完整的推导逻辑、计算参数及最终估值结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "get_exchange_rate",
+        "calculate_dcf",
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提取的最近季度自由现金流(FCF)数据",
+          "采用的无风险利率与美元/新台币汇率参数",
+          "计算得出的DCF内在价值(美元)",
+          "基于实时股价和总股本计算的总市值",
+          "DCF估值相对于当前市值的溢价或折价百分比"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "get_exchange_rate",
+            "calculate_dcf",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T009",
+      "query": "作为资深美股权益研究员，请对ASML Holding (ASML) 进行深度内在价值评估。请按以下逻辑执行多步分析：\n1. 数据提取：获取ASML当前的股票价格（USD），并调取最新年度现金流量表中的自由现金流（FCF）作为估值基准。\n2. 参数获取：查询最新的美国10年期国债收益率作为无风险利率，同时通过网络搜索获取ASML近期的Beta系数。\n3. 资本成本建模：假设股权风险溢价为5.5%，利用CAPM公式计算股权成本（Ke）。鉴于公司资本结构稳健，假设忽略债务成本，令WACC ≈ Ke。\n4. DCF估值计算：基于提取的FCF，假设未来5年FCF复合年增长率为11%，永续增长率为3%，构建两阶段DCF模型计算每股内在价值（USD）。\n5. 投资结论：将计算出的内在价值与实时股价对比，计算折溢价百分比，并结合基本面给出明确的投资评级（买入/持有/卖出）。\n请确保每一步数据准确对应，完整展示CAPM与DCF的计算逻辑，并输出最终估值报告。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "实时行情获取",
+        "财务报表深度解析",
+        "宏观经济数据检索",
+        "跨平台信息聚合",
+        "CAPM与DCF估值建模",
+        "金融工程计算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "ASML当前实时股价（USD）",
+          "最新年度自由现金流（FCF）数值",
+          "美国10年期国债收益率",
+          "获取的Beta系数",
+          "计算得出的WACC/股权成本",
+          "两阶段DCF模型得出的每股内在价值",
+          "内在价值相对于当前股价的折溢价百分比",
+          "基于估值结论的明确投资评级（买入/持有/卖出）"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_macro_data",
+            "tavily_search"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T010",
+      "query": "请以机构权益研究员的视角，对台积电（TSM）进行DCF绝对估值。具体要求：1. 获取其最新年度利润表与现金流量表，提取核心财务数据以计算历史自由现金流（FCF）；2. 获取美国最新10年期国债收益率作为无风险利率基准，结合当前市场风险溢价构建贴现率（WACC）；3. 检索近两周台积电的官方公告与半导体行业新闻，分析CoWoS先进封装产能扩张进度对2024-2026年资本开支及营收增速的潜在影响，据此合理调整短期FCF增长率与永续增长率假设；4. 获取新台币兑美元实时汇率，将财报核心数据统一折算为美元后，调用DCF计算模块得出每股内在价值；5. 获取TSM当前实时股价，计算隐含安全边际（溢价/折价比例），并综合基本面与宏观贴现率给出明确的投资评级（买入/持有/卖出）。请输出完整的关键假设清单、分步计算过程及最终结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "search_financial_news",
+        "get_macro_data",
+        "get_exchange_rate",
+        "calculate_dcf",
+        "get_stock_price"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "明确列出WACC构成参数（需包含实时获取的10年期美债收益率数据）",
+          "基于新闻舆情分析设定的2024-2026年FCF增长率及终值永续增长率",
+          "完成汇率折算后的DCF每股内在价值（美元）计算结果",
+          "实时股价对比及安全边际/折溢价百分比",
+          "明确的投资评级（买入/持有/卖出）及结合产能周期与宏观贴现率的逻辑论证"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "search_financial_news",
+            "get_exchange_rate",
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T011",
+      "query": "作为科技股首席研究员，请对英伟达（NVDA）进行全面的估值分析。具体要求如下：首先，搜索近期关于AI芯片需求及英伟达产能的金融新闻，合理推断其未来5年的营收增长率。其次，调取公司最新的利润表、资产负债表与现金流量表，获取近12个月自由现金流、净负债、总股本及实际所得税率。接着，获取美国当前10年期国债收益率作为无风险利率，结合假设的Beta值1.6与股权风险溢价5.5%计算权益成本，进而确定加权平均资本成本（WACC）作为折现率。利用上述参数通过DCF模型测算其每股内在价值。最后，获取NVDA的实时股价，计算其与内在价值的折溢价百分比，并结合宏观利率环境与基本面数据，给出明确的投资评级与逻辑依据。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "search_financial_news",
+        "get_financial_statements",
+        "get_macro_data",
+        "calculate_dcf",
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "基于新闻与行业趋势推演的未来5年营收CAGR假设值",
+          "从最新财报中提取的TTM自由现金流、净负债、总股本及有效税率",
+          "基于宏观数据与假设参数计算出的WACC折现率",
+          "DCF模型输出的每股内在价值",
+          "实时股价相对于内在价值的折溢价百分比",
+          "综合宏观、基本面与估值得出的明确投资评级及核心逻辑"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "get_macro_data",
+            "calculate_dcf",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T012",
+      "query": "作为股票研究员，我需要评估苹果公司（AAPL）的当前估值水平。请首先获取其最新年报中的自由现金流（FCF）数据及总股本，然后查询当前美国10年期国债收益率作为无风险利率基准。假设股权风险溢价为5%，结合获取的FCF数据与5%的短期增长率、3%的终端增长率，使用现金流折现模型（DCF）估算其理论每股价值。最后，获取AAPL的实时股价，计算理论股价与实际股价的偏差百分比，并给出明确的低估或高估结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "calculate_dcf",
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提取的苹果公司最新年报自由现金流(FCF)及总股本数据",
+          "查询到的美国10年期国债收益率数值",
+          "基于DCF模型计算得出的每股理论内在价值",
+          "AAPL实时股价数据",
+          "理论股价与实际股价的偏差百分比",
+          "明确的估值判断（低估/高估/合理）及简要分析"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data"
+          ],
+          [
+            "calculate_dcf"
+          ],
+          [
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T013",
+      "query": "作为美股科技板块的权益研究员，我需要对英伟达（NVDA）进行相对估值评估。请完成以下分析流程：首先获取NVDA的最新收盘价，并提取其最近四个季度的总营收与归母净利润；其次，利用这些数据计算其当前的滚动市盈率（Trailing P/E）和滚动市销率（Trailing P/S）；接着，获取美国最新的10年期国债收益率作为无风险利率基准，计算NVDA的盈利收益率（Earnings Yield）并与无风险利率进行利差对比；最后，搜索近一周内关于AI芯片供应链及算力需求的最新财经新闻，结合上述定量指标与市场情绪，给出当前估值是否具备安全边际的明确结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "financial_data_retrieval",
+        "valuation_ratio_calculation",
+        "macro_rate_comparison",
+        "financial_news_synthesis",
+        "investment_thesis_formulation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "NVDA最新收盘价、近四季总营收与归母净利润数据",
+          "准确计算的滚动市盈率（P/E）与市销率（P/S）",
+          "美国10年期国债收益率具体数值",
+          "盈利收益率（E/P）与无风险利率的利差计算结果",
+          "基于新闻的算力需求预期摘要及综合估值结论"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator"
+          ],
+          [
+            "get_macro_data",
+            "calculator"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T014",
+      "query": "作为科技股研究员，请对台积电（TSM）进行估值分析。请执行以下步骤：首先获取TSM最新财报中的年度自由现金流数据；其次查询当前的美国10年期国债收益率作为折现率（WACC）的核心参数；接着基于上述数据使用DCF模型计算其每股内在价值；然后获取TSM的实时美股价格；最后使用计算器计算当前股价相对于内在价值的溢价或折价百分比，并给出明确的投资评级建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "calculate_dcf",
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提取的自由现金流具体数值",
+          "使用的10年期国债收益率数值",
+          "DCF计算得出的内在价值",
+          "TSM实时股价",
+          "股价与内在价值的偏差百分比",
+          "基于偏差率的投资建议"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "calculate_dcf",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T015",
+      "query": "作为买方分析师，请对苹果公司（AAPL）进行快速基本面估值与定价偏差分析。第一步，获取苹果最新一期的利润表和现金流量表，提取并计算其最近12个月（TTM）的自由现金流（FCF）；第二步，查询当前的美国10年期国债收益率及最新核心CPI数据，以此确定宏观流动性环境并设定无风险利率；第三步，基于获取的FCF数据与宏观利率，使用DCF模型（假设WACC为9.5%，终端增长率为3%，流通股本按最新财报披露数）计算其每股内在价值；第四步，获取苹果当前的实时股价，并使用计算工具对比内在价值与实际股价，计算估值溢价或折价百分比。最终请输出完整的参数提取过程、DCF计算结果、升贴水率及明确的投资安全边际结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_macro_data",
+        "calculate_dcf",
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提取的苹果TTM自由现金流数值",
+          "美国10年期国债收益率及核心CPI数据",
+          "基于DCF模型计算的苹果每股内在价值",
+          "当前实时股价及计算得出的升贴水率（溢价/折价百分比）",
+          "明确的投资安全边际与估值结论（高估/合理/低估）"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "calculate_dcf",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T016",
+      "query": "请基于特斯拉（TSLA）最新的年度财务报表提取自由现金流（FCF）数据，并获取当前美国10年期国债收益率。假设股权风险溢价固定为6.0%，请利用DCF模型计算TSLA的每股内在价值。随后获取TSLA实时股价，计算当前股价相对于内在价值的折价或溢价百分比，并给出明确的估值结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "财务数据提取",
+        "宏观利率获取",
+        "DCF估值建模",
+        "实时行情获取",
+        "定量比较计算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提取的最新年度自由现金流（FCF）数值",
+          "当前美国10年期国债收益率",
+          "计算得出的WACC（无风险利率+风险溢价）",
+          "DCF模型估算的每股内在价值",
+          "TSLA当前实时股价",
+          "股价相对内在价值的偏离百分比",
+          "明确的估值结论（低估/高估/合理）"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "calculate_dcf",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T017",
+      "query": "请作为股票分析师对亚马逊（AMZN）进行DCF估值分析。首先，获取该公司最近财年的自由现金流（FCF）；其次，查询当前美国10年期国债收益率，并将其作为核心贴现率参数；接着，调用DCF计算工具得出其每股内在价值；随后，获取AMZN的实时股票价格；最后，使用计算器计算内在价值相较于当前股价的上涨/下跌空间（百分比），并给出明确的估值结论。请确保所有数据源实时或最新，并展示完整计算过程。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "financial_statement_analysis",
+        "macroeconomic_data_retrieval",
+        "valuation_modeling",
+        "market_data_fetching",
+        "quantitative_calculation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最近财年自由现金流（FCF）具体数值",
+          "采用的贴现率（美国10年期国债收益率）",
+          "DCF模型计算得出的每股内在价值",
+          "AMZN实时股价",
+          "内在价值相对于股价的折溢价百分比",
+          "明确的估值结论（高估/低估/合理）"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_macro_data",
+            "calculate_dcf",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T018",
+      "query": "作为股票分析师，请对特斯拉（TSLA）与比亚迪（1211.HK）进行相对估值分析。具体要求如下：\n1. 获取两家公司最新的收盘价及过去十二个月（TTM）的净利润数据；\n2. 获取港币兑美元的最新即期汇率，并将比亚迪的股价换算为美元计价；\n3. 基于获取的价格与财务数据，计算两家公司的市盈率（P/E Ratio）；\n4. 查询过去一周内关于“新能源汽车行业需求”或“美联储货币政策”的最新财经新闻，并结合当前宏观利率环境，分析两者估值差异的合理性。请输出详细的数据来源、换算与计算过程，以及最终的估值对比结论。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "多市场股票数据获取",
+        "财务指标提取",
+        "外汇汇率换算",
+        "估值乘数计算",
+        "宏观与新闻面综合分析"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提供TSLA与比亚迪的最新股价及TTM净利润数据",
+          "正确获取HKD/USD汇率并完成比亚迪股价的美元换算",
+          "精确计算并列出两家公司的P/E比率",
+          "结合近期行业新闻与宏观利率数据对估值差异进行逻辑自洽的分析",
+          "给出明确的相对估值结论（高估/低估/合理）"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_exchange_rate",
+            "calculator",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T019",
+      "query": "作为股票研究员，请对ASML控股（ASML）进行基本面估值。第一步：调用财务报表工具获取其最新一期的现金流量表和资产负债表，提取自由现金流（FCF）和净债务数据。第二步：查询当前EUR/USD汇率及美国10年期国债收益率，将FCF折算为美元，并以该收益率作为基础折现率。第三步：使用DCF计算器结合折现率、永续增长率假设（可取3%）及稀释后总股本计算每股内在价值。第四步：搜索近30天内影响ASML或半导体光刻机行业的重大财经新闻，评估供应链或地缘政治风险对估值的影响系数（如±10%）。最后，使用Python解释器综合上述数据，输出调整后的合理目标价区间及核心投资逻辑。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_financial_statements",
+        "get_exchange_rate",
+        "get_macro_data",
+        "calculate_dcf",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "提取ASML最新自由现金流与净债务数据",
+          "完成欧元至美元的实时汇率折算",
+          "引用美国10年期国债收益率并设定DCF折现率",
+          "输出基于DCF模型计算的每股内在价值",
+          "总结近期半导体行业新闻及风险溢价/折价调整逻辑",
+          "给出经风险调整后的目标价区间与投资建议"
+        ],
+        "min_tool_calls": 6,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_exchange_rate",
+            "get_macro_data",
+            "calculate_dcf",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T020",
+      "query": "作为股票研究员，请对比分析特斯拉（TSLA）与比亚迪（1211.HK）的相对估值水平。请执行以下步骤：1. 获取两家公司当前的实时股价；2. 提取各自最新年度财报中的每股收益（EPS）；3. 查询当前美元兑港元（USD/HKD）的实时汇率；4. 将比亚迪的股价和EPS统一换算为美元基准后，分别计算两家公司的市盈率（P/E = 股价/EPS）；5. 判断哪家公司的估值相对更低（更具性价比），并给出具体的市盈率差值。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "Market Data Retrieval",
+        "Financial Statement Extraction",
+        "Forex Rate Conversion",
+        "Financial Ratio Calculation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "特斯拉(TSLA)的当前股价",
+          "比亚迪(1211.HK)的当前股价及最新年度每股收益(EPS)",
+          "美元兑港元(USD/HKD)实时汇率",
+          "经汇率换算后比亚迪的美元计价股价、EPS及计算出的市盈率(P/E)",
+          "特斯拉的美元计价市盈率(P/E)",
+          "明确给出市盈率更低的公司名称，并列出两家公司的市盈率具体差值"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "get_exchange_rate",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T021",
+      "query": "作为宏观策略分析师，请评估近期美联储与欧洲央行的货币政策分化对EUR/USD汇率的影响。请执行以下步骤：1. 获取美国与欧元区最新的CPI同比数据及官方政策利率；2. 获取当前的EUR/USD即期汇率；3. 检索过去两周内关于美联储与欧央行官员讲话或宏观政策转向的权威财经新闻；4. 基于抛补利率平价理论（CIP），使用获取的两地名义利率计算EUR/USD的1年期理论远期汇率；5. 对比理论远期汇率与实际即期汇率，计算隐含的年化偏离度，并结合新闻中的政策预期情绪，给出一个明确的宏观外汇交易策略建议（包括交易方向、核心逻辑与关键风险点）。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观经济指标分析",
+        "外汇市场与利率平价应用",
+        "多源数据整合与量化计算",
+        "宏观新闻情绪提取",
+        "动态工具链编排"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提取并列出美国与欧元区最新的CPI数据及政策利率",
+          "提供查询时的EUR/USD即期汇率数值",
+          "清晰展示抛补利率平价公式并计算出1年期理论远期汇率",
+          "明确说明理论远期汇率与即期汇率的偏离方向（升水/贴水）及幅度",
+          "结合新闻内容给出具体的做多/做空EUR/USD策略，并附带逻辑依据与风险提示"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T022",
+      "query": "作为宏观对冲基金策略师，请评估当前美元兑日元（USD/JPY）套息交易的可行性。第一步：调用宏观数据接口获取美国与日本的2年期主权债收益率及最新CPI同比数据。第二步：调用外汇接口获取当前USD/JPY即期汇率。第三步：调用搜索工具查找过去两周内日本央行（BOJ）官员关于货币政策正常化或汇率干预的最新表态。第四步：基于获取的利差数据，利用Python编写代码计算符合抛补利率平价（CIP）的6个月理论远期汇率，并对比即期汇率计算远期升水/贴水率。最终，请结合CPI实际利率差、远期点数以及央行新闻反映的干预风险，测算该套息策略的预期年化净收益，并给出是否建仓的建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提供美日2年期收益率及最新CPI同比数据",
+          "输出当前USD/JPY即期汇率",
+          "提炼并总结BOJ近期货币政策与汇率干预新闻的核心观点",
+          "基于CIP公式在Python中完成6个月理论远期汇率的计算并展示代码与结果",
+          "计算即期汇率相对于理论远期汇率的升贴水百分比",
+          "综合实际利差、远期点数及政策干预风险溢价，给出套息策略预期年化净收益的具体数值或区间及明确的交易建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T023",
+      "query": "作为一家宏观策略基金的交易员，我计划评估当前欧美宏观利差对EUR/USD汇率的驱动作用，并为一家营收高度依赖美元的欧元区制造企业制定外汇对冲方案。请执行以下分析：1. 调用工具获取美国与欧元区的最新10年期主权债券收益率及近12个月CPI同比增速；2. 获取当前EUR/USD的即期外汇牌价；3. 基于抛补利率平价（CIRP）理论，利用代码计算6个月期的理论远期汇率，并输出理论值与当前市场隐含远期定价的偏离度（若无法直接获取远期报价，请计算即期定价偏差并年化）；4. 检索欧洲央行（ECB）与美联储（Fed）近期的货币政策前瞻指引或权威财经新闻，结合前述利差与通胀分化数据，评估当前汇率定价是否已充分反映央行预期差。最后，综合量化计算结果与宏观政策面，输出明确的外汇远期/期权对冲策略建议（需包含具体交易方向、建议对冲比例及触发策略调整的关键宏观阈值）。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观数据检索与分析",
+        "外汇市场定价机制",
+        "Python金融建模与计算",
+        "央行政策与新闻语义分析"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提取并列出美欧10年期国债收益率与CPI数据",
+          "提供最新EUR/USD即期汇率数值",
+          "完整展示CIRP理论远期汇率的计算逻辑、年化偏离度结果",
+          "结合央行政策新闻给出逻辑严密的外汇对冲策略（含明确方向、对冲比例与宏观触发阈值）"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "python_interpreter",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T024",
+      "query": "作为宏观策略师，请评估当前美日利差对USD/JPY远期汇率的定价影响，并测算其对一家持有丰田(7203.T)与索尼(6758.T)日元多头头寸的美元基金的套期保值成本。具体要求：1. 获取最新的美国10年期国债收益率与日本10年期国债收益率；2. 获取当前USD/JPY即期现货汇率；3. 利用抛补利率平价理论(Covered Interest Rate Parity)计算1年期USD/JPY隐含远期汇率；4. 获取丰田与索尼的实时日元股价，分别使用即期汇率与远期汇率将其换算为等值美元，并计算锁汇操作带来的汇兑损益差异(百分比)；5. 检索近一周内关于美联储议息决议或日本央行YCC政策调整的重磅财经新闻。请输出远期汇率的计算推导过程、两只股票在即期与远期换算下的美元价差百分比，并结合宏观新闻给出套保策略建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观利率数据提取",
+        "外汇现货与远期定价",
+        "抛补利率平价模型计算",
+        "跨境资产汇兑损益测算",
+        "央行政策新闻舆情研判"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "1年期USD/JPY隐含远期汇率数值及利率平价计算过程",
+          "丰田股票即期汇率换算与远期汇率换算的美元价差百分比",
+          "索尼股票即期汇率换算与远期汇率换算的美元价差百分比",
+          "美联储/日本央行近期宏观新闻摘要及对汇率远期曲线的策略启示"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "python_interpreter"
+          ],
+          [
+            "get_stock_price",
+            "python_interpreter"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T025",
+      "query": "作为宏观对冲基金经理，我需要评估当前美欧货币政策分化对EUR/USD汇率的定价影响及潜在套利空间。请执行以下分析：1. 获取最新的美国10年期国债收益率和德国10年期国债收益率作为无风险利率代理；2. 获取当前EUR/USD即期汇率实时报价；3. 检索并总结过去48小时内关于美联储利率路径预期及欧洲央行资产负债表政策的核心财经新闻；4. 基于抛补利率平价理论（CIP），使用Python计算当前利差环境下1年期理论远期汇率，量化理论值与实际市场定价的偏离程度，并结合新闻中的央行政策信号，给出针对该货币对的宏观对冲或交叉套利策略建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提取美、德10年期国债收益率数据",
+          "获取实时EUR/USD即期汇率",
+          "提炼宏观新闻中影响利差与汇率预期的核心分歧点",
+          "正确构建抛补利率平价（CIP）模型并完成Python代码计算",
+          "量化理论远期汇率与即期汇率的溢价/折价水平",
+          "结合政策分歧与定价偏差输出完整的宏观交易策略"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T026",
+      "query": "作为全球宏观对冲基金的量化策略师，请执行以下跨市场外汇与宏观策略任务：首先，获取当前的美国联邦基金有效利率与欧洲央行主要再融资利率，并计算两国名义利差。其次，获取当前的EUR/USD即期汇率。第三，搜索最近一周关于美欧央行货币政策分化、通胀路径分歧或利差交易的财经新闻摘要。第四，编写Python代码，结合前序步骤获取的利差数据、当前即期汇率，并对新闻中透露的美欧央行前瞻指引进行情绪量化打分（鹰派预期赋+1，鸽派预期赋-1），构建一个简化的外汇定价偏离度评分模型并输出结果。最后，假设某美国大型跨国公司40%的海外营收来自欧洲区（年度营收假设为800亿美元），若EUR/USD汇率根据模型信号发生1.5%的均值回归调整，请计算该公司年度营收以美元计价将受到的具体财务影响。请依次输出：美欧利差数值、当前即期汇率、新闻核心观点摘要、模型评分结果、营收影响金额，并给出基于利差与汇率预期的明确宏观交易策略建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter",
+        "macro_cross_asset_reasoning"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确的美欧央行当前政策利率及利差数值",
+          "实时EUR/USD即期汇率数据",
+          "近一周美欧货币政策与宏观分歧新闻的核心观点提炼",
+          "包含情绪量化、利差输入与汇率基准的Python偏离度评分计算过程及结果",
+          "基于1.5%汇率假设调整后的美国公司海外营收美元影响具体金额",
+          "逻辑严密、结合利差与汇率预期的可执行宏观套利或对冲策略建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T027",
+      "query": "作为宏观对冲基金策略师，请评估美欧货币政策分化对欧元远期定价的影响，并测算其对欧洲跨国出口巨头的财报折算冲击。第一步，获取最新的美国联邦基金利率和欧元区主要再融资利率。第二步，调用外汇接口获取当前EUR/USD即期汇率，并结合第一步的利差数据，利用无抛补利率平价（UIP）理论计算1年期理论远期汇率。第三步，根据第二步得出的远期汇率，调取西门子（Siemens AG）最新季度财报中的每股收益（EPS）数据及其非欧元区营收占比。第四步，使用代码执行工具将非欧元区营收按计算出的远期汇率进行折算，推导经汇率调整后的预期EPS变动幅度。请详细列出数据来源、利率平价模型推导过程、财务折算逻辑，并给出针对该外汇敞口的宏观对冲策略建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "Macroeconomic Policy Tracking",
+        "Forex Pricing & UIP Modeling",
+        "Cross-Border Financial Statement Analysis",
+        "Currency Translation & Quantitative Hedging"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提取美联储与欧洲央行最新政策利率数值",
+          "提供当前EUR/USD即期汇率数据",
+          "展示完整的无抛补利率平价（UIP）1年期远期汇率计算过程与结果",
+          "提取西门子最新EPS及明确的非欧元区营收占比参数",
+          "给出基于理论远期汇率折算后的调整后EPS数值及变动幅度",
+          "包含清晰的跨步骤数据传递逻辑与宏观外汇对冲策略框架"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "get_financial_statements",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T028",
+      "query": "作为宏观外汇策略师，请对当前欧元兑美元（EUR/USD）的套息交易（Carry Trade）可行性进行量化评估与定性分析。具体任务要求：1. 调取美国最新的联邦基金目标利率（Federal Funds Target Rate）与欧洲央行最新的主要再融资利率（Main Refinancing Operations Rate）；2. 获取EUR/USD的实时即期汇率报价；3. 检索过去5个交易日内关于美联储（Fed）与欧洲央行（ECB）货币政策路径分歧的核心财经新闻，提炼市场对未来利差走势的预期情绪；4. 利用获取的利率与汇率数据，通过Python编写代码计算基于无抛补利率平价（UIP）的理论远期汇率，并得出即期汇率相对于理论均衡汇率的偏离百分比（溢价/折价幅度）；5. 在假设汇率保持不变且仅依赖两国名义利差的前提下，测算该套息策略的预期年化收益率（以基点和百分比表示）。最终输出需整合定量计算结果、新闻情绪摘要及明确的交易信号建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美联储与欧央行的最新政策利率数值",
+          "EUR/USD实时即期汇率",
+          "近五日货币政策分歧新闻的情绪与预期总结",
+          "基于无抛补利率平价计算的理论远期汇率",
+          "即期汇率偏离理论值的百分比",
+          "假设汇率不变下的套息交易年化预期收益率",
+          "结合偏离度与新闻情绪的宏观策略交易信号"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "search_financial_news"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T029",
+      "query": "作为全球宏观策略师，我正在评估一个做空日元/做多澳元（AUD/JPY）的套息交易（Carry Trade）。请帮我完成以下量化与定性分析：1. 获取当前日本和澳大利亚的央行基准利率，以及两国最新公布的CPI同比增速；2. 查询当前的AUD/JPY即期汇率；3. 计算该套息交易的年化实际利差（名义利差 = 澳利率 - 日利率，通胀差 = 澳CPI - 日CPI，实际利差 = 名义利差 - 通胀差）；4. 搜索近一周内关于日本央行（BoJ）外汇干预或货币政策转向的最新财经新闻，提取关键信号并评估其对汇率的潜在冲击；5. 假设采用10倍杠杆，并扣除0.5%的年化综合交易成本，利用代码或计算器得出最终的预期年化净收益率。请提供完整的数据来源、详细计算步骤、新闻舆情摘要以及最终的风险调整后的交易建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "calculator",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确列出日本与澳大利亚的最新基准利率及CPI同比数据",
+          "提供当前的AUD/JPY即期汇率",
+          "展示年化实际利差的完整计算公式与计算结果",
+          "总结日本央行近期干预或政策转向的关键新闻信号及其对策略的潜在影响",
+          "计算并输出10倍杠杆扣除0.5%交易成本后的预期年化净收益率",
+          "基于宏观利差数据与新闻舆情给出明确的风险收益评估结论与操作建议"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "calculator",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T030",
+      "query": "作为宏观策略师，我需要评估当前欧元兑日元（EUR/JPY）套息交易的性价比与汇率错配程度。请完成以下分析：1. 获取欧元区与日本最新的10年期主权债券收益率及两国央行最新基准利率；2. 查询当前EUR/JPY的实盘即期汇率；3. 检索最近两周关于欧洲央行（ECB）货币政策路径调整及日本央行（BoJ）货币政策正常化进程的财经新闻，提取市场主流利率预期变动方向；4. 基于获取的利差与即期汇率数据，使用Python构建简化的抛补利率平价（CIRP）计算模型，推导理论3个月远期汇率；5. 将理论远期汇率与当前即期汇率进行对比，计算升贴水偏离百分比，并结合新闻中隐含的宏观政策不确定性，给出该货币对3个月的合理交易区间及具体的多空逻辑与对冲建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "欧元区与日本最新10年期国债收益率及央行基准利率数据",
+          "当前EUR/JPY实时即期汇率",
+          "近两周ECB与BoJ关键政策新闻摘要及市场预期方向",
+          "基于抛补利率平价推导出的3个月理论远期汇率",
+          "即期汇率相对理论汇率的升贴水偏离百分比",
+          "结合宏观利差与新闻情绪推导的3个月目标价格区间、交易逻辑及风险提示"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T031",
+      "query": "作为宏观对冲策略分析师，请评估近期中美货币政策路径分化对跨境资本流动及汇率定价的传导效应。首先，获取美国最新的CPI同比增速与联邦基金目标利率，同时获取中国最新的1年期DR007加权平均利率。接着，查询当前美元兑人民币（USD/CNY）现货汇率。利用Python编写脚本，基于利率平价理论（IRP）结合上述利差数据，计算3个月期的理论远期汇率。最后，检索近一周内关于美联储官员公开讲话或中国央行跨境融资宏观审慎调节参数调整的重磅财经新闻，结合宏观数据与理论计算结果，量化评估当前即期汇率相对于理论汇率的升贴水幅度，并输出该跨市场套利策略面临的宏观尾部风险及动态对冲建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "macroeconomic_data_retrieval",
+        "forex_market_analysis",
+        "quantitative_modeling",
+        "python_programming",
+        "financial_news_synthesis"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确报告美国CPI、联邦基金利率、中国DR007利率及USD/CNY即期汇率的具体数值",
+          "正确计算中美短期利差，并输出基于IRP模型的3个月理论远期汇率",
+          "精准提炼近一周中美央行政策信号与宏观调节工具的核心市场影响",
+          "综合定量偏离度与定性政策面，逻辑严密地论证汇率定价偏差，并给出具备可操作性的风险对冲框架"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "python_interpreter",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T032",
+      "query": "作为宏观策略分析师，我需要评估当前美欧利差对欧元兑美元（EUR/USD）汇率的潜在定价偏差。请依次执行以下步骤：1. 获取最新的美国联邦基金目标利率与欧洲央行主要再融资利率数据；2. 查询当前的EUR/USD即期汇率；3. 基于获取的基准利率与即期汇率，使用计算工具计算两国的名义年化利差，并推导在无抛补利率平价（UIP）假设下的3个月理论远期汇率。最后，将理论远期汇率与当前即期汇率进行对比，量化给出当前外汇市场的隐含升贴水幅度，并评估是否存在跨市场套利空间。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "calculator",
+        "宏观利率分析",
+        "外汇平价理论应用"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国与欧洲央行基准利率准确数值",
+          "EUR/USD当前即期汇率报价",
+          "美欧名义年化利差计算结果",
+          "基于利率平价的3个月理论远期汇率",
+          "隐含升贴水幅度及套利空间评估结论"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T033",
+      "query": "作为宏观对冲基金的策略分析师，请评估当前美日利差对USD/JPY汇率定价的影响及套息交易机会。请严格按照以下依赖流程执行：首先，调用 `get_macro_data` 获取最新的美国联邦基金利率和日本央行基准利率；其次，调用 `get_exchange_rate` 获取当前的USD/JPY即期汇率；接着，使用 `calculator` 结合前两步获取的利率数据与汇率，计算无抛补套息交易（Uncovered Carry Trade）的预期年化收益率（保留两位小数）；最后，基于该定量结果调用 `search_financial_news` 查询近期关于美联储与日本央行政策分歧或外汇市场风险偏好（Risk-on/Risk-off）的新闻。综合利差计算结果与市场情绪定性分析，判断当前汇率是否已过度定价或尚未充分反映基本面，并输出明确的宏观交易策略建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "宏观经济数据检索",
+        "外汇实时行情获取",
+        "金融数学计算",
+        "新闻舆情分析",
+        "宏观策略综合研判"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确列出获取到的美国与日本最新政策利率数值",
+          "准确提供查询到的USD/JPY最新即期汇率",
+          "正确展示套息交易年化收益率的计算逻辑与结果",
+          "提取并总结近期关键财经新闻中的市场风险情绪倾向",
+          "结合利差计算结果与新闻情绪，给出逻辑自洽的宏观交易建议（方向、仓位逻辑及主要风险）"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "calculator",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T034",
+      "query": "作为宏观对冲基金策略师，请评估当前美日货币政策分化对USD/JPY汇率的套息交易潜力。首先，获取最新的美国联邦基金目标利率与日本央行基准利率。其次，调用汇率工具获取当前USD/JPY即期汇率。接着，搜索最近一周内关于日本央行货币政策转向（如YCC调整、加息预期或外汇干预）的权威财经新闻。最后，基于获取的两国利率计算名义利差，并结合即期汇率估算做多USD/JPY的未对冲年化套息收益率。综合量化测算与新闻面基本面，给出明确的宏观交易头寸建议及风险提示。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_exchange_rate",
+        "search_financial_news",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国最新联邦基金目标利率数值",
+          "日本央行最新基准利率数值",
+          "USD/JPY当前即期汇率",
+          "美日名义利差计算结果",
+          "近一周日本央行政策相关新闻核心摘要",
+          "做多USD/JPY的未对冲年化套息收益率",
+          "明确的宏观交易建议及风险考量"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T035",
+      "query": "作为宏观对冲基金策略师，请评估美欧利差变动对欧元资产美元计价回报的潜在影响。请按以下逻辑链执行：1. 获取美国最新的联邦基金目标利率和欧洲央行主要再融资利率；2. 查询当前EUR/USD的即期汇率；3. 获取欧洲半导体龙头ASML（ASML.AS）以欧元计价的最新收盘价；4. 利用获取的利率数据和即期汇率，通过利率平价（IRP）原理计算1个月理论远期汇率，并将ASML股价换算为美元。最后，输出所有提取的基础数据，计算在当前宏观环境下若完全对冲汇率风险所需的年化理论对冲成本（以基点表示），并结合宏观流动性给出简要交易评估。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "宏观经济指标提取",
+        "外汇即期与远期定价",
+        "跨境资产报价获取",
+        "利率平价与对冲成本量化"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确报告美联储联邦基金目标利率",
+          "准确报告欧洲央行主要再融资利率",
+          "提供当前EUR/USD即期汇率数值",
+          "提供ASML最新欧元收盘价",
+          "正确计算并展示换算后的美元计价股价",
+          "基于美欧利差与即期汇率推导出的1个月理论远期汇率",
+          "明确计算年化汇率对冲成本（基点/百分比）并附宏观策略简评"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "get_stock_price",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T036",
+      "query": "作为宏观外汇策略分析师，请评估近期美联储与欧洲央行货币政策分化对EUR/USD汇率的潜在驱动。首先，获取美国与德国最新的10年期国债收益率数据，计算欧美利差。其次，获取当前的EUR/USD即期汇率，并将利差与汇率数据传入Python解释器，基于无抛补利率平价（UIP）理论计算隐含的预期汇率变动幅度，并与当前实际汇率对比得出估值偏离度。最后，检索过去72小时内关于美联储最新经济预测摘要（SEP）或点阵图的权威财经新闻，结合前述量化偏离度，综合判断EUR/USD在未来一个月的交易方向与核心逻辑。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "宏观经济数据提取",
+        "外汇市场报价获取",
+        "Python金融建模与计算",
+        "宏观政策新闻语义分析"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "明确列出美德国债收益率数值及计算出的欧美利差（bps）",
+          "准确提供查询时刻的EUR/USD即期汇率",
+          "展示Python代码运行结果：基于UIP计算的理论预期汇率变动幅度及当前估值偏离度",
+          "提炼新闻中关于美联储政策路径的核心观点",
+          "给出明确的EUR/USD短期（1个月）多空方向判断，并完整串联利差、模型偏离度与新闻基本面的推理逻辑"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "python_interpreter"
+          ],
+          [
+            "python_interpreter",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T037",
+      "query": "作为宏观策略交易员，请构建并评估当前的USD/JPY套息交易模型。第一步，使用宏观数据工具获取最新的美国联邦基金利率与日本央行基准利率；第二步，使用汇率工具抓取当前的USD/JPY即期汇率；第三步，使用财经新闻工具检索近两周关于日本央行外汇干预或货币政策正常化的核心报道；第四步，利用计算工具将前两步获取的利率与汇率数据进行处理，精确计算名义年化利差。最终报告需综合第四步的计算结果与第三步的新闻风险，评估该套息策略的风险收益比，并给出明确的交易头寸配置建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "宏观经济指标获取",
+        "外汇实时行情查询",
+        "政策干预资讯检索",
+        "利差与风险收益建模",
+        "跨工具数据联动分析"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确列出美日两国最新基准利率的具体数值及数据来源时间",
+          "提供实时USD/JPY即期汇率数据",
+          "精准计算两国名义年化利差数值",
+          "提炼近期央行干预/政策转向新闻对汇率波动的潜在冲击点",
+          "结合利差、即期成本与宏观新闻风险，输出明确的交易评级与仓位建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T038",
+      "query": "作为宏观策略师，请首先获取美国最新的联邦基金利率（Fed Funds Rate）和欧元区最新的存款便利利率（ECB Deposit Facility Rate）。计算两者的利差，并获取当前的美元兑欧元（USD/EUR）即期汇率。基于无抛补利率平价理论（Uncovered Interest Rate Parity），使用利差估算一年后USD/EUR的理论汇率水平。最后，搜索近期关于美元指数或欧美汇市的权威财经新闻，简要分析市场实际走势是否偏离理论估值，并给出你的宏观对冲策略建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "宏观经济数据检索",
+        "外汇即期与远期定价",
+        "利率平价模型计算",
+        "宏观新闻情绪分析"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提取并列出美欧最新基准利率",
+          "正确计算两国货币利率利差",
+          "准确获取USD/EUR实时即期汇率",
+          "基于UIP公式推导出合理的1年期理论远期汇率",
+          "提供近期汇市相关新闻的核心观点摘要",
+          "结合理论估值与市场情绪给出明确的多空/对冲策略"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "calculator"
+          ],
+          [
+            "get_exchange_rate",
+            "python_interpreter"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T039",
+      "query": "作为宏观策略分析师，我需要评估美日利差对USD/JPY汇率的定价影响并制定对冲策略。请执行以下任务：1. 获取最新的美国联邦基金利率与日本央行政策利率；2. 查询当前的USD/JPY即期汇率；3. 基于无抛补利率平价（IRP）公式，使用计算器将获取的利率数据与即期汇率代入，推导并计算1年期理论远期汇率；4. 搜索近两周内关于日本央行货币政策调整或外汇干预的最新财经新闻。最后，对比理论远期汇率与实际即期汇率，结合新闻面分析当前日元汇率是否偏离基本面，并为持有1000万美元敞口的跨国企业提供明确的宏观对冲方向建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "宏观利率数据提取",
+        "外汇即期汇率查询",
+        "金融数学建模与计算",
+        "财经新闻舆情分析"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确列出美日两国最新基准利率",
+          "提供当前USD/JPY即期汇率数值",
+          "展示1年期理论远期汇率的完整计算过程与最终结果",
+          "引用并概括近期影响日元的央行决策或市场新闻要点",
+          "基于理论与现实的偏差给出具体且合理的宏观对冲策略建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "calculator",
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T040",
+      "query": "作为宏观对冲基金策略师，我需要评估当前美元兑日元（USD/JPY）的汇率定价是否存在套利空间。请首先获取美国和日本最新的10年期主权债券收益率，以及实时的USD/JPY即期汇率。接着，利用无抛补利率平价理论（UIRP）计算理论均衡汇率，并测算当前的偏离幅度。随后，搜索近期美联储与日本央行关于货币政策路径的最新官方声明或财经新闻，分析实际汇率偏离宏观基本面的驱动因素。最终请给出汇率交易方向的策略建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "宏观数据获取",
+        "外汇行情查询",
+        "金融数学计算",
+        "新闻舆情分析",
+        "宏观策略综合研判"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提供美国与日本10年期国债收益率数据",
+          "准确提供USD/JPY实时即期汇率",
+          "基于利率平价理论正确计算理论均衡汇率及实际偏离幅度（%）",
+          "提炼近期美日央行货币政策新闻的核心观点",
+          "结合计算结果与新闻面，给出明确的USD/JPY交易方向建议及逻辑支撑"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_exchange_rate",
+            "python_interpreter"
+          ],
+          [
+            "search_financial_news"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T041",
+      "query": "作为宏观对冲基金经理，当前正处于美联储政策预期的关键窗口期。请评估‘成长型科技（以美光科技MU为代表）’向‘防御型公用事业（以杜克能源DUK为代表）’板块轮动的组合风险。具体要求：1. 获取最新的美国10年期国债收益率及CPI同比数据，判断当前宏观利率环境；2. 检索近一周关于半导体与公用事业板块资金流向及业绩预期的行业新闻；3. 拉取MU和DUK的实时股价，以及各自最新年度现金流量表中的自由现金流（FCF）数据；4. 结合宏观数据与新闻情绪，使用代码环境计算两只标的的相对估值溢价比率（股价/年化FCF），并基于波动率倒数风险平价（Risk Parity）逻辑，推导并输出当前双板块组合的建议权重分配比例。请给出完整的数据提取、计算过程及调仓建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观经济指标解读",
+        "跨板块资金轮动分析",
+        "财务数据提取与估值计算",
+        "风险平价组合建模",
+        "多源数据交叉验证"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新美国10年期国债收益率与CPI同比数据",
+          "近一周半导体与公用事业板块资金轮动的核心新闻摘要",
+          "MU与DUK的实时股价及最新年度自由现金流（FCF）数值",
+          "两者相对估值溢价比率（股价/FCF）的具体计算结果",
+          "基于波动率倒数的风险平价建议权重及数学推导",
+          "结合宏观与新闻的板块轮动风险定性结论"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news",
+            "get_stock_price",
+            "get_financial_statements",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T042",
+      "query": "作为对冲基金宏观策略分析师，请执行以下跨市场风险分析与板块轮动评估任务：首先获取美联储最新公布的目标联邦基金利率（`get_macro_data`）。结合该利率水平及近期关于“周期与防御板块资金流向”的财经新闻（`search_financial_news`），确认当前市场环境下半导体板块（以SMH ETF为例）与公用事业板块（以XLU ETF为例）的相对强弱逻辑。随后，获取这两只标的资产过去180个交易日的收盘价序列（`get_stock_price`）。最后，编写并运行Python脚本，利用无风险利率（来自第一步）计算两者的滚动相关系数、构建60/40动态轮动组合的年化波动率，并推导该组合在当前宏观条件下的预期夏普比率。请输出完整的计算过程、风险指标结果，并给出明确的板块轮动调仓建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观经济指标检索",
+        "财经新闻与情绪分析",
+        "多资产价格序列获取",
+        "投资组合风险建模",
+        "Python量化分析与数学计算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美联储最新目标联邦基金利率精确数值",
+          "半导体(SMH)与公用事业(XLU)的180日滚动相关系数",
+          "60/40动态轮动组合的年化波动率与夏普比率计算结果",
+          "基于宏观利率与风险指标推导的板块轮动具体操作建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news",
+            "get_stock_price",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T043",
+      "query": "请获取最新的美国核心CPI数据与联邦基金利率。若核心CPI同比增速低于3.5%且联邦基金利率维持在5.0%以上，则判定当前为“通胀受控但高利率压制成长股估值”的宏观拐点，适合执行向价值防御板块的轮动。在该宏观判断成立的前提下，请查询台积电（TSM）与可口可乐（KO）的最新实时股价。假设初始投资组合总规模为2000万美元，当前仓位为60% TSM与40% KO。请计算：在触发轮动信号的条件下，将组合总价值的15%从TSM调出，并按最新市价全仓买入KO后，新组合的精确资产配置权重与加权贝塔值（假设TSM Beta为1.7，KO Beta为0.5）。最后，使用Python构建两资产协方差矩阵，计算调仓前后投资组合的预期年化波动率变化幅度（已知TSM年化波动率38%，KO年化波动率16%，两者历史相关系数为0.18），并给出风险敞口调整的量化评估结论。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观经济指标解读",
+        "多资产实时定价",
+        "投资组合权重再平衡",
+        "Python金融矩阵计算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "CPI与利率阈值比对及轮动信号结论",
+          "TSM与KO最新股价数据",
+          "调仓后精确的资产权重分配比例",
+          "新组合加权贝塔值计算结果",
+          "调仓前后组合年化波动率的具体数值与变化幅度",
+          "基于Python代码的风险建模推导过程"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T044",
+      "query": "作为宏观对冲基金的研究员，请评估在当前美债利率环境下，将资金从科技龙头向防御型公用事业龙头轮动的风险溢价。具体任务：1. 调用宏观数据接口获取最新的美国10年期国债收益率（%）。2. 调用股价接口获取苹果公司（AAPL）与杜克能源（DUK）的最新实时股价。3. 调用财报接口获取两家公司最近十二个月（TTM）的自由现金流（FCF）数据。4. 将上述数据输入计算器，计算自定义的‘轮动风险调整指标’：指标 = (AAPL股价 / DUK股价) * (10年期美债收益率 / 100) * (DUK_TTM_FCF / AAPL_TTM_FCF)。请输出完整的计算过程、最终指标数值，并据此给出明确的板块轮动操作建议（如超配/低配/中性），同时简述利率期限结构对成长股久期风险的传导机制。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "get_financial_statements",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新的美国10年期国债收益率数值",
+          "AAPL与DUK的最新实时股价",
+          "两家公司TTM自由现金流数据",
+          "计算得出的轮动风险调整指标精确数值",
+          "基于指标阈值的明确板块轮动操作建议",
+          "关于利率期限结构对成长股久期风险传导的机制分析"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T045",
+      "query": "作为宏观对冲基金经理，我需要基于当前经济周期执行科技向金融的行业轮动与风险再平衡。请首先获取美国最新的10年期国债收益率与联邦基金利率数据。其次，检索近期关于美联储利率路径预期及科技/金融板块资金流向的财经新闻，提取关键市场情绪与催化剂。随后，获取科技行业ETF（XLK）与金融行业ETF（XLF）过去一年的日度收盘价序列。最后，利用Python进行量化分析：1) 计算两者过去60个交易日的滚动相关系数；2) 基于历史价格计算各自的年化波动率；3) 假设初始组合为等权配置（50% XLK, 50% XLF），在当前宏观利率环境下，计算将其调整为30% XLK与70% XLF后的新组合年化波动率及预期风险变化比例。请输出完整的宏观数据、新闻情绪摘要、滚动相关性、新旧组合波动率对比及基于风险收益比的最终轮动建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观数据提取与分析",
+        "财经新闻检索与情感研判",
+        "金融时间序列数据获取",
+        "Python协方差矩阵与组合波动率建模",
+        "行业轮动策略构建"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确的最新美国10年期国债收益率与联邦基金利率数值",
+          "近期科技/金融板块轮动相关新闻的核心情绪与催化剂总结",
+          "XLK与XLF过去60个交易日的滚动相关系数具体数值",
+          "XLK与XLF各自的年化波动率计算结果",
+          "初始50/50等权组合的年化波动率",
+          "调整后30/70权重组合的年化波动率及风险变化比例",
+          "结合宏观利率环境与波动率测算的最终行业配置建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news",
+            "get_stock_price",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T046",
+      "query": "作为量化基金经理，我正在执行基于宏观周期的行业轮动策略。请帮我评估在最新美国CPI同比增速和联邦基金利率环境下，科技板块（QQQ）与公用事业板块（XLU）的相对风险敞口。任务步骤如下：1. 获取最新美国CPI和宏观利率数据，判断当前处于通胀周期的哪个阶段；2. 获取QQQ和XLU过去120个交易日的收盘价；3. 检索近一周关于“利率周期与防御型/成长型板块资金流向”的财经新闻摘要；4. 使用获取的价格数据，在Python中计算两指数的日收益率序列、协方差矩阵，以及构建等权重投资组合的95%置信度历史VaR（Value at Risk）。最终输出需包含宏观定位、波动率对比、VaR数值及具体的板块调仓风控建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "search_financial_news",
+        "python_interpreter",
+        "macro_economic_analysis",
+        "portfolio_risk_calculation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新CPI与利率数据解读及通胀周期定位",
+          "QQQ与XLU过去120日收盘价提取与日收益率计算",
+          "两资产协方差矩阵与等权组合风险测算",
+          "95%置信水平下的历史VaR具体数值",
+          "结合宏观利率与资金流向新闻的板块轮动风控与调仓建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "search_financial_news",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T047",
+      "query": "我正在评估当前宏观利率环境下的板块轮动组合风险。请首先调用工具获取美国最新10年期国债收益率与CPI同比数据。基于该宏观背景，搜索近两周关于‘市场资金从成长型科技板块轮动至低波动防御板块’的权威财经新闻，并从中提取资金正在流入和流出的两只代表性行业ETF代码。随后，获取这两只ETF过去90个交易日的每日收盘价。最后，利用代码环境计算两只标的在该区间的年化波动率、收益率相关系数，并假设构建一个权重分别为60%（流出板块）和40%（流入板块）的配对组合，计算该组合的年化波动率及基于历史模拟法的95%置信度日度风险价值（VaR）。请输出完整的数据推导过程与组合风险报告。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "macroeconomic_data_analysis",
+        "financial_news_interpretation",
+        "multi_asset_data_retrieval",
+        "portfolio_risk_modeling",
+        "python_quantitative_programming"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提供最新10年期美债收益率与CPI同比数据",
+          "总结新闻中的板块轮动逻辑并明确提取的两只ETF代码",
+          "展示两只ETF过去90日价格数据或关键统计量",
+          "准确计算两只ETF的年化波动率与收益率相关系数",
+          "给出60/40权重组合的年化波动率与95%日度历史VaR具体数值",
+          "基于测算结果提供切实可行的组合风险对冲或调仓建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news",
+            "get_stock_price",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T048",
+      "query": "作为宏观对冲基金经理，我需要评估在美联储加息周期末段执行科技成长向公用事业防御板块轮动的组合风险。请首先获取美国最新的CPI同比增速与30年期国债收益率。接着，搜索近期主流投行关于该宏观背景下的板块轮动策略研报，从中识别并确认一家科技龙头股和一家公用事业防御股的具体代码。随后获取这两只股票过去12个月的日频收盘价。最后，使用Python编写代码计算两者的60日滚动协方差矩阵、相对强弱指标（RS比率=科技股价除以公用事业股价的30日移动平均值），并结合宏观利率水平输出明确的轮动风险评估报告与对冲建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观数据获取与解读",
+        "金融信息检索与实体识别",
+        "多资产历史行情获取",
+        "Python量化风险建模与指标计算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确获取美国最新CPI同比数据与30年期国债收益率数值",
+          "通过新闻搜索提取科技股与公用事业股的有效代码并附逻辑依据",
+          "正确拉取并清洗两只目标股票过去12个月的日频收盘价数据",
+          "成功调用Python计算60日滚动协方差及30日RS比率",
+          "基于宏观利率阈值与微观量化指标给出明确的轮动可行性结论及风险预警"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "search_financial_news",
+            "get_stock_price"
+          ],
+          [
+            "get_stock_price",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T049",
+      "query": "作为宏观对冲基金的投资组合经理，我正在评估在潜在降息周期下的板块轮动风险。请首先获取最新的美国10年期国债收益率和最近一期的CPI同比增速，以确认当前宏观流动性环境。接着，拉取科技成长股（以NVDA和MSFT为例）和传统防御股（以PG和KO为例）过去120个交易日的收盘价，同时获取同期大盘基准（SPY）的收盘价。最后，编写Python代码计算这两个等权重投资组合相对于SPY的滚动Beta系数（90日窗口）和年化波动率，并使用当前美债收益率近似无风险利率来估算各组合的夏普比率。最终输出必须包含：两个板块组合的加权Beta值、年化波动率、夏普比率对比，以及明确说明从成长板块轮动至防御板块后，组合整体风险（波动率）下降的具体百分比。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "python_interpreter",
+        "portfolio_risk_analysis",
+        "sector_rotation"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新10年期美债收益率与CPI同比数据",
+          "科技成长与防御型组合的90日滚动Beta值",
+          "两个组合的年化波动率与夏普比率",
+          "轮动前后波动率变化的精确百分比",
+          "完整可复现的Python计算逻辑与数据清洗步骤"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T050",
+      "query": "作为量化基金经理，我正考虑在当前宏观环境下进行防御性板块轮换：将组合中20%的纳斯达克科技权重（以XLK ETF为代理）转移至必需消费品板块（以PG和KO为代理）。请执行以下分析：1) 获取最新的美国CPI同比增速与联邦基金目标利率；2) 搜索近两周内关于‘科技股盈利预期下调’及‘必选消费抗通胀属性’的权威财经新闻；3) 拉取PG、KO与XLK过去一年的日线收盘价，利用Python计算它们各自相对于SPY的Beta系数与年化波动率；4) 结合宏观利率环境与计算出的风险指标，量化评估此次20%仓位轮换对投资组合整体波动率的边际影响，并给出是否调仓的最终建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news",
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新美国CPI同比增速与联邦基金目标利率",
+          "近两周科技股盈利预期与必选消费抗通胀属性的新闻核心摘要",
+          "PG、KO与XLK相对于SPY的Beta系数及年化波动率计算过程与结果",
+          "20%仓位轮换对组合整体波动率的边际影响量化估算",
+          "结合宏观利率敏感度的明确调仓决策与风控建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "get_stock_price"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T051",
+      "query": "作为宏观对冲基金经理，我正在评估从周期性工业板块（以卡特彼勒CAT为代表）向防御性医疗板块（以强生JNJ为代表）进行板块轮动的风险调整后收益。请执行以下多步分析：\n1. 获取最新的美国CPI同比数据、10年期与2年期美债收益率利差，以及当前的美国联邦基金利率（作为无风险利率代理）。\n2. 获取CAT和JNJ过去252个交易日的日度收盘价。\n3. 利用Python编写脚本，基于上述数据计算两只股票的年化收益率、年化波动率及夏普比率（以获取的联邦基金利率为无风险利率）。\n4. 假设当前宏观环境建议降低组合整体风险，请构建一个两资产风险平价（Risk Parity）模型，通过逆波动率倒数加权方法，计算使两只资产风险贡献相等的最优投资权重，并输出最终配置比例及轮动建议。",
+      "difficulty": "hard",
+      "required_skills_subset": [
+        "宏观经济数据提取",
+        "历史股价数据处理",
+        "Python金融工程计算",
+        "风险平价组合优化"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国最新CPI同比与10Y-2Y国债利差数值",
+          "CAT与JNJ的年化波动率与夏普比率计算结果",
+          "基于风险平价模型推导出的CAT与JNJ最优配置权重"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T052",
+      "query": "作为投资组合经理，我计划评估从科技板块向能源板块轮动的可行性。请首先获取最新的10年期美国国债收益率和近三个月CPI同比增速数据，以判断当前宏观利率与通胀环境。接着，搜索过去30天内关于科技股（以苹果和微软为代表）和能源股（以埃克森美孚和雪佛龙为代表）的金融新闻，分析市场情绪倾向。然后，获取这四家公司的最新股价及最近财年的净利润与总股本数据。最后，使用代码计算各家公司的盈利收益率（EPS/股价），对比能源与科技板块的平均盈利收益率差，并结合10年期美债收益率进行风险溢价评估，给出是否执行板块轮动的量化风控建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news",
+        "get_stock_price",
+        "get_financial_statements",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "明确列出获取的10年期美债收益率与CPI同比数据",
+          "总结科技与能源板块近期新闻舆情对比及主导情绪",
+          "计算并展示四只个股的盈利收益率及所属板块均值",
+          "输出能源与科技板块盈利收益率差值，并与美债收益率进行利差分析",
+          "结合宏观利率环境与估值利差，给出明确的板块轮动操作建议及风控依据"
+        ],
+        "min_tool_calls": 5,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news"
+          ],
+          [
+            "get_stock_price",
+            "get_financial_statements"
+          ],
+          [
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T053",
+      "query": "作为宏观对冲基金的投资组合经理，请评估在当前加息周期尾部从科技成长板块向能源价值板块轮动的潜在风险与收益特征。请依次执行以下分析步骤：1. 获取最新的美国联邦基金目标利率作为宏观定价基准；2. 获取代表科技板块的苹果公司（AAPL）与代表能源板块的埃克森美孚（XOM）的最新实时股价；3. 获取这两家公司最新季度财报中的自由现金流（FCF）数据；4. 使用计算器工具构建并计算‘轮动相对收益率指标’，公式为：(XOM季度FCF / XOM股价) ÷ (AAPL季度FCF / AAPL股价)。最终请输出该计算结果，并结合当前利率水平、现金流稳定性差异，给出明确的板块轮动风险评级与头寸调整建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "macroeconomic_indicator_retrieval",
+        "real_time_equity_pricing",
+        "cash_flow_statement_analysis",
+        "cross_asset_ratio_calculation",
+        "portfolio_risk_management"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国联邦基金目标利率的具体数值",
+          "AAPL与XOM的最新实时股价",
+          "两家公司最新季度的自由现金流金额",
+          "计算得出的轮动相对收益率指标精确值",
+          "结合利率环境与现金流特征给出的板块轮动风险评级及配置建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T054",
+      "query": "作为资产配置经理，我计划在当前宏观不确定性加剧的背景下，评估从高成长科技板块向防御型公用事业板块进行战术性轮动的风险收益比。请首先获取最新的美国10年期国债收益率数据。随后，查询英伟达（NVDA）与NextEra Energy（NEE）的最新收盘价，并提取这两家公司最近一期的每股收益（EPS）财务数据。基于获取的价格与EPS，计算两家公司的市盈率（P/E）。最后，计算科技股相对于公用事业股的估值溢价率（即NVDA市盈率除以NEE市盈率）。若当前10年期国债收益率高于4.2%，请结合溢价率水平量化分析此次板块轮动对降低投资组合整体波动率的潜在效果，并给出明确的操作建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "macroeconomic_data_analysis",
+        "equity_valuation",
+        "sector_rotation_strategy",
+        "portfolio_risk_management"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确提供美国10年期国债收益率最新数值",
+          "列出NVDA与NEE的最新收盘价及对应TTM EPS数据",
+          "分别计算并展示NVDA与NEE的市盈率",
+          "计算得出科技/公用事业板块相对估值溢价率",
+          "基于利率阈值与溢价率提供明确的板块轮动风险评估与调仓建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T055",
+      "query": "作为投资组合经理，我正在评估近期宏观环境变化下的科技与必选消费板块轮动信号。请首先获取最新的美国10年期国债收益率数据，作为当前市场无风险利率的基准。随后，分别查询微软（MSFT）和宝洁（PG）的最新股票收盘价。利用提取到的收益率和股价数据，计算两股的相对价格比率（MSFT股价除以PG股价）。接着，计算一个简化的“收益率调整轮动得分”，公式为：相对价格比率 × (1 - 10年期国债收益率/100)。请输出所有提取的原始数据、计算出的比率与得分，并基于该得分进行板块配置判断：若得分低于2.5，建议将仓位从科技股轮动至必选消费股；若高于3.0，则维持科技股超配；介于两者之间则保持中性。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新的美国10年期国债收益率数值",
+          "微软（MSFT）和宝洁（PG）的最新股价",
+          "计算得出的相对价格比率（MSFT/PG）",
+          "收益率调整轮动得分的具体数值",
+          "基于预设阈值给出的明确板块轮动建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T056",
+      "query": "作为宏观策略分析师，我需要评估当前利率环境下的防御型板块轮动机会。请首先获取最新的美国10年期国债收益率数据。根据该收益率水平（若高于4.3%视为紧缩环境），请检索‘公用事业’或‘高股息’板块的最新财经新闻以捕捉资金流向信号。从新闻中提取1-2个核心代表性ETF代码，获取其过去30个交易日的历史收盘价。接着，使用Python计算该ETF的区间收益率、年化波动率，并与同期大盘基准（如SPY）进行对比。最后，综合宏观利率趋势、新闻情绪面及技术面风险指标，给出具体的板块轮动操作建议及持仓风险控制要点。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "search_financial_news",
+        "get_stock_price",
+        "python_interpreter"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "准确报告最新美国10年期国债收益率数值",
+          "正确提取新闻中提及的防御型板块ETF代码",
+          "提供该ETF近30日收益率、年化波动率及相对SPY的波动率差异计算结果",
+          "给出逻辑连贯的板块轮动配置建议与风险对冲策略"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news",
+            "get_stock_price",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T057",
+      "query": "当前宏观环境正处于利率政策转折期，市场出现明显的防御性板块轮动迹象。作为投资组合风险经理，请评估从科技成长股向公用事业防御板块轮动的风险收益特征。首先，获取最新的美联邦基金目标利率和10年期国债收益率，以判断宏观流动性环境。其次，搜索近两周关于'美股板块轮动'与'防御型资产配置'的权威财经新闻，从中提取被明确推荐或重点分析的一家美国上市公用事业公司的股票代码。接着，获取该公用事业公司与苹果（AAPL）过去一年的每日收盘价数据。最后，使用Python编写代码计算两只股票近250个交易日的年化波动率，并求出科技股对公用事业股的波动率比率。请在最终报告中列出宏观利率数据、提取的股票代码、两只股票的年化波动率、波动率比率，并基于该比率与宏观环境给出具体的仓位对冲或调整建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "宏观数据获取",
+        "财经新闻搜索与信息提取",
+        "历史股价数据获取",
+        "Python波动率计算"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新美联储联邦基金目标利率",
+          "最新10年期美国国债收益率",
+          "从新闻中提取的公用事业公司股票代码",
+          "该公用事业股与AAPL的250日年化波动率",
+          "科技股与公用事业股的年化波动率比率",
+          "基于宏观利率与波动率比率的仓位调整建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news",
+            "get_stock_price",
+            "python_interpreter"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T058",
+      "query": "我正在管理一个跨行业投资组合，计划根据当前宏观周期进行板块轮动。请先获取最新的美国联邦基金目标利率和核心CPI同比数据，以判断当前所处的经济周期阶段。随后，搜索近期关于“利率敏感型板块表现”或“工业与科技板块资金流向”的最新财经新闻，提取出被机构重点推荐的代表性工业股代号。接着，获取该工业股与一只基准科技宽基指数（如QQQ）的最新收盘价。最后，使用计算器计算工业股相对于QQQ的价格比率（工业股价格 / QQQ价格），并结合宏观利率水平和新闻情绪，评估此时进行从科技向工业板块轮动的潜在风险与收益性价比，输出包含该比率和宏观判断的完整分析报告。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "macroeconomic_data_retrieval",
+        "financial_news_analysis",
+        "relative_valuation_calculation",
+        "portfolio_rotation_strategy"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新美国联邦基金目标利率数值",
+          "最新核心CPI同比数值",
+          "新闻中提取的代表性工业股代码",
+          "工业股与QQQ的最新收盘价",
+          "准确计算的相对价格比率",
+          "结合宏观数据与新闻情绪的板块轮动风险评估结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T059",
+      "query": "结合最新的美国CPI和联邦基金利率数据，评估投资组合从科技成长股（如微软 MSFT）向能源防御股（如埃克森美孚 XOM）轮动的合理性。请先调用工具获取最新宏观数据，据此搜索近一个月关于‘高利率环境下的科技与能源板块轮动’的财经新闻以捕捉机构资金动向。接着，获取MSFT和XOM的最新季度利润表（提取净利润）及实时股价，分别计算两者的滚动市盈率（P/E Ratio）。最后使用计算工具得出两者的P/E估值差值（Spread），并综合宏观环境、估值背离度及新闻情绪，输出一份包含关键数据支撑与明确轮动操作建议的专业简报。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "宏观数据分析",
+        "财务指标提取",
+        "估值建模计算",
+        "新闻舆情研判",
+        "行业轮动策略"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新美国CPI同比增速与联邦基金利率数值",
+          "近一个月相关板块轮动财经新闻的核心观点摘要",
+          "MSFT与XOM的季度净利润及当前股价数据",
+          "两公司计算得出的滚动市盈率（P/E）及两者估值差值",
+          "基于宏观、估值差与情绪综合得出的明确轮动操作建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "search_financial_news",
+            "get_financial_statements",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      }
+    },
+    {
+      "task_id": "T060",
+      "query": "作为一名宏观策略分析师，我需要评估在当前利率环境下，资金从防御性板块轮动至科技板块的风险收益比。请按顺序执行以下操作：1. 获取美国当前的联邦基金目标利率和最新CPI同比增速数据，以评估宏观流动性与通胀环境。2. 获取英伟达（NVDA）和宝洁（PG）的最新实时股价。3. 分别获取这两家公司最新财报中的每股收益（EPS）数据。4. 使用计算器计算两者的静态市盈率（P/E = 股价/EPS）及对应的盈利收益率（Earnings Yield = 1/P/E），并计算各自的盈利收益率与联邦基金利率的利差。请输出完整的计算过程、具体数值，并基于利差结果给出是否执行‘防御转科技’板块轮动的明确建议。",
+      "difficulty": "medium",
+      "required_skills_subset": [
+        "get_macro_data",
+        "get_stock_price",
+        "get_financial_statements",
+        "calculator"
+      ],
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美国联邦基金利率与最新CPI数据",
+          "NVDA和PG的实时股价与EPS数据",
+          "准确计算的P/E与盈利收益率（Earnings Yield）",
+          "盈利收益率与无风险利率的利差数值",
+          "基于宏观利差分析的明确板块轮动建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_macro_data"
+          ],
+          [
+            "get_stock_price",
+            "get_financial_statements"
+          ],
+          [
+            "calculator"
+          ]
+        ]
+      }
+    }
+  ]
+}

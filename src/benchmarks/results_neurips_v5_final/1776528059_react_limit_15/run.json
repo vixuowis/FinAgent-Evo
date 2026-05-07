@@ -1,0 +1,4852 @@
+{
+  "schema_version": "neurips_eval.v2",
+  "run_id": "1776528059_react_limit_15",
+  "started_at": "2026-04-18T16:00:59.756229+00:00",
+  "ended_at": "2026-04-18T17:39:56.826153+00:00",
+  "benchmark": {
+    "path": "src/benchmarks/complex_tasks_real_api.json",
+    "task_count": 20,
+    "limit": null
+  },
+  "variant": {
+    "name": "react_limit_15",
+    "disable_evolution": true,
+    "disable_memory": true,
+    "disable_orchestration": true,
+    "react_baseline": true
+  },
+  "judge": {
+    "enabled": true,
+    "model": "qwen3.6-plus",
+    "base_url": "https://coding.dashscope.aliyuncs.com/v1",
+    "temperature": 0.0,
+    "prompt_sha256": "8fe052ded54928930fcbcf1c948ad42b29fa7fdcbec56a2385a0636fbb429eb0",
+    "judge_logs_path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl"
+  },
+  "qveris_cache": {
+    "enabled": false,
+    "ttl_seconds": 0
+  },
+  "summary": {
+    "task_count": 60,
+    "hard_success_count": 0,
+    "judge_success_count": 0,
+    "hard_success_rate": 0.0,
+    "judge_success_rate": 0.0,
+    "avg_score": 0.0,
+    "elapsed_s_avg": 75.11661978562672,
+    "elapsed_s_p50": 60.71082901954651,
+    "elapsed_s_p90": 96.70846590995788,
+    "tool_calls_avg": 0.0,
+    "llm_cost_estimate_usd_total": null,
+    "failure_modes": {
+      "execution": 59,
+      "timeout": 1
+    }
+  },
+  "results": [
+    {
+      "task_id": "T01",
+      "query": "评估丰田汽车(TM)美股ADR的内在价值。首先获取其最新财报中的美元计价自由现金流，结合当前日元对美元的实时汇率进行本币折算还原，然后使用5%的折现率和3%的永续增长率进行DCF计算，最后对比其当前美股市场价格，判断是否存在显著的安全边际。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "还原后的日元口径自由现金流",
+          "DCF理论估值结果",
+          "TM当前市价",
+          "折溢价百分比及安全边际判断"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_exchange_rate",
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:00:59.756245+00:00",
+        "ended_at": "2026-04-18T16:02:37.174115+00:00",
+        "elapsed_s": 97.4178638458252,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent未提供任何最终回答与执行轨迹（Trajectory为空数组）。完全缺失工具调用、数据获取、DCF计算及估值对比步骤，未覆盖evaluation_criteria中要求的任何核心指标。逻辑链条完全断裂，无数据流转与计算过程，执行效率与长链推理均得0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "还原后的日元口径自由现金流",
+            "DCF理论估值结果",
+            "TM当前市价",
+            "折溢价百分比及安全边际判断"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent未提供任何最终回答与执行轨迹（Trajectory为空数组）。完全缺失工具调用、数据获取、DCF计算及估值对比步骤，未覆盖evaluation_criteria中要求的任何核心指标。逻辑链条完全断裂，无数据流转与计算过程，执行效率与长链推理均得0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"还原后的日元口径自由现金流\",\n    \"DCF理论估值结果\",\n    \"TM当前市价\",\n    \"折溢价百分比及安全边际判断\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 0
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T01",
+      "query": "评估丰田汽车(TM)美股ADR的内在价值。首先获取其最新财报中的美元计价自由现金流，结合当前日元对美元的实时汇率进行本币折算还原，然后使用5%的折现率和3%的永续增长率进行DCF计算，最后对比其当前美股市场价格，判断是否存在显著的安全边际。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "还原后的日元口径自由现金流",
+          "DCF理论估值结果",
+          "TM当前市价",
+          "折溢价百分比及安全边际判断"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_exchange_rate",
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:03:03.992354+00:00",
+        "ended_at": "2026-04-18T16:03:42.543436+00:00",
+        "elapsed_s": 38.55107498168945,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent未提供任何最终回答与执行轨迹（Trajectory为空）。完全缺失工具调用、数据获取、DCF计算及估值对比步骤，未覆盖evaluation_criteria中要求的任何核心指标。因无实际输出，逻辑严谨性、执行效率与长链推理维度均无法得分，判定为任务完全失败。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "还原后的日元口径自由现金流",
+            "DCF理论估值结果",
+            "TM当前市价",
+            "折溢价百分比及安全边际判断"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent未提供任何最终回答与执行轨迹（Trajectory为空）。完全缺失工具调用、数据获取、DCF计算及估值对比步骤，未覆盖evaluation_criteria中要求的任何核心指标。因无实际输出，逻辑严谨性、执行效率与长链推理维度均无法得分，判定为任务完全失败。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"还原后的日元口径自由现金流\",\n    \"DCF理论估值结果\",\n    \"TM当前市价\",\n    \"折溢价百分比及安全边际判断\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 1
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T01",
+      "query": "评估丰田汽车(TM)美股ADR的内在价值。首先获取其最新财报中的美元计价自由现金流，结合当前日元对美元的实时汇率进行本币折算还原，然后使用5%的折现率和3%的永续增长率进行DCF计算，最后对比其当前美股市场价格，判断是否存在显著的安全边际。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "还原后的日元口径自由现金流",
+          "DCF理论估值结果",
+          "TM当前市价",
+          "折溢价百分比及安全边际判断"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_exchange_rate",
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:04:02.650613+00:00",
+        "ended_at": "2026-04-18T16:04:58.211533+00:00",
+        "elapsed_s": 55.56088590621948,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent最终回答与执行轨迹均为空。未调用任何工具获取财报、汇率或股价数据，未进行DCF计算，完全缺失所有四项核心评估指标。逻辑链条未启动，工具调用序列未满足，长链推理与数值保真度均无法评估，故各项得分均为0。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "还原后的日元口径自由现金流",
+            "DCF理论估值结果",
+            "TM当前市价",
+            "折溢价百分比及安全边际判断"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent最终回答与执行轨迹均为空。未调用任何工具获取财报、汇率或股价数据，未进行DCF计算，完全缺失所有四项核心评估指标。逻辑链条未启动，工具调用序列未满足，长链推理与数值保真度均无法评估，故各项得分均为0。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"还原后的日元口径自由现金流\",\n    \"DCF理论估值结果\",\n    \"TM当前市价\",\n    \"折溢价百分比及安全边际判断\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 2
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T02",
+      "query": "分析当前美联储货币政策对高估值科技股的影响。获取最新的美国联邦基金利率与10年期国债收益率，计算期限利差。接着获取英伟达(NVDA)和微软(MSFT)的当前市盈率，将期限利差作为无风险利率基准，利用计算器估算在风险溢价补偿下的理论合理P/E区间，并给出调仓建议。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "联邦基金利率与10年期收益率",
+          "期限利差数值",
+          "NVDA与MSFT当前P/E",
+          "理论合理P/E区间",
+          "调仓建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:05:23.632513+00:00",
+        "ended_at": "2026-04-18T16:06:37.805798+00:00",
+        "elapsed_s": 74.17327308654785,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent未提供任何最终回答与执行轨迹。完全缺失evaluation_criteria中要求的全部5项核心指标（联邦基金利率与10年期收益率、期限利差数值、NVDA与MSFT当前P/E、理论合理P/E区间、调仓建议）。轨迹为空，未调用任何工具，严重违反min_tool_calls（≥3）与must_call_sequence要求。无数据获取、计算与推理过程，逻辑链条完全断裂，各项评分维度均得0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "联邦基金利率与10年期收益率",
+            "期限利差数值",
+            "NVDA与MSFT当前P/E",
+            "理论合理P/E区间",
+            "调仓建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent未提供任何最终回答与执行轨迹。完全缺失evaluation_criteria中要求的全部5项核心指标（联邦基金利率与10年期收益率、期限利差数值、NVDA与MSFT当前P/E、理论合理P/E区间、调仓建议）。轨迹为空，未调用任何工具，严重违反min_tool_calls（≥3）与must_call_sequence要求。无数据获取、计算与推理过程，逻辑链条完全断裂，各项评分维度均得0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"联邦基金利率与10年期收益率\",\n    \"期限利差数值\",\n    \"NVDA与MSFT当前P/E\",\n    \"理论合理P/E区间\",\n    \"调仓建议\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 3
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T02",
+      "query": "分析当前美联储货币政策对高估值科技股的影响。获取最新的美国联邦基金利率与10年期国债收益率，计算期限利差。接着获取英伟达(NVDA)和微软(MSFT)的当前市盈率，将期限利差作为无风险利率基准，利用计算器估算在风险溢价补偿下的理论合理P/E区间，并给出调仓建议。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "联邦基金利率与10年期收益率",
+          "期限利差数值",
+          "NVDA与MSFT当前P/E",
+          "理论合理P/E区间",
+          "调仓建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:07:06.375320+00:00",
+        "ended_at": "2026-04-18T16:08:07.418324+00:00",
+        "elapsed_s": 61.0429949760437,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent未提供任何最终回答与执行轨迹。完全缺失evaluation_criteria中要求的全部5项核心指标。轨迹为空，未调用任何工具，严重违反min_tool_calls（≥3）与must_call_sequence要求。无数据获取、计算与推理过程，逻辑链条完全断裂，无法进行任何有效评估。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "联邦基金利率与10年期收益率",
+            "期限利差数值",
+            "NVDA与MSFT当前P/E",
+            "理论合理P/E区间",
+            "调仓建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent未提供任何最终回答与执行轨迹。完全缺失evaluation_criteria中要求的全部5项核心指标。轨迹为空，未调用任何工具，严重违反min_tool_calls（≥3）与must_call_sequence要求。无数据获取、计算与推理过程，逻辑链条完全断裂，无法进行任何有效评估。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"联邦基金利率与10年期收益率\",\n    \"期限利差数值\",\n    \"NVDA与MSFT当前P/E\",\n    \"理论合理P/E区间\",\n    \"调仓建议\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 4
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T02",
+      "query": "分析当前美联储货币政策对高估值科技股的影响。获取最新的美国联邦基金利率与10年期国债收益率，计算期限利差。接着获取英伟达(NVDA)和微软(MSFT)的当前市盈率，将期限利差作为无风险利率基准，利用计算器估算在风险溢价补偿下的理论合理P/E区间，并给出调仓建议。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "联邦基金利率与10年期收益率",
+          "期限利差数值",
+          "NVDA与MSFT当前P/E",
+          "理论合理P/E区间",
+          "调仓建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:08:30.123410+00:00",
+        "ended_at": "2026-04-18T16:09:18.790577+00:00",
+        "elapsed_s": 48.66715407371521,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent未提供任何最终回答与执行轨迹。完全缺失evaluation_criteria中要求的全部5项核心指标。轨迹为空数组，未调用任何工具，严重违反min_tool_calls（≥3）与must_call_sequence要求。无数据获取、计算与推理过程，逻辑链条完全断裂，无法进行任何有效评估。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "联邦基金利率与10年期收益率",
+            "期限利差数值",
+            "NVDA与MSFT当前P/E",
+            "理论合理P/E区间",
+            "调仓建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent未提供任何最终回答与执行轨迹。完全缺失evaluation_criteria中要求的全部5项核心指标。轨迹为空数组，未调用任何工具，严重违反min_tool_calls（≥3）与must_call_sequence要求。无数据获取、计算与推理过程，逻辑链条完全断裂，无法进行任何有效评估。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"联邦基金利率与10年期收益率\",\n    \"期限利差数值\",\n    \"NVDA与MSFT当前P/E\",\n    \"理论合理P/E区间\",\n    \"调仓建议\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 5
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T03",
+      "query": "评估加密货币监管动态与Coinbase(COIN)股价的联动效应。搜索近一周关于SEC对数字资产监管态度的核心新闻并提取情绪倾向。同时获取比特币(BTC)当前价格及近30日价格数据，计算COIN当前股价与BTC价格的交叉比率。结合BTC技术位与新闻情绪，判断COIN短期交易方向。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "监管新闻核心摘要与情绪",
+          "BTC近期价格数据",
+          "COIN/BTC交叉比率",
+          "短期交易方向判断逻辑"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_crypto_price",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:09:41.070245+00:00",
+        "ended_at": "2026-04-18T16:10:50.156083+00:00",
+        "elapsed_s": 69.08582019805908,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用，未获取数据或进行计算，完全缺失所有四项核心指标。逻辑闭环、工具调用序列及长链推理均未启动，属于零分表现。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "监管新闻核心摘要与情绪",
+            "BTC近期价格数据",
+            "COIN/BTC交叉比率",
+            "短期交易方向判断逻辑"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用，未获取数据或进行计算，完全缺失所有四项核心指标。逻辑闭环、工具调用序列及长链推理均未启动，属于零分表现。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"监管新闻核心摘要与情绪\",\n    \"BTC近期价格数据\",\n    \"COIN/BTC交叉比率\",\n    \"短期交易方向判断逻辑\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 6
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T03",
+      "query": "评估加密货币监管动态与Coinbase(COIN)股价的联动效应。搜索近一周关于SEC对数字资产监管态度的核心新闻并提取情绪倾向。同时获取比特币(BTC)当前价格及近30日价格数据，计算COIN当前股价与BTC价格的交叉比率。结合BTC技术位与新闻情绪，判断COIN短期交易方向。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "监管新闻核心摘要与情绪",
+          "BTC近期价格数据",
+          "COIN/BTC交叉比率",
+          "短期交易方向判断逻辑"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_crypto_price",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:11:12.779799+00:00",
+        "ended_at": "2026-04-18T16:12:07.465859+00:00",
+        "elapsed_s": 54.68604493141174,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用，未获取任何数据，也未进行任何计算或推理。完全缺失所有核心指标，未满足must_call_sequence工具调用序列要求，逻辑闭环、数值保真度与执行效率均为零。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "监管新闻核心摘要与情绪",
+            "BTC近期价格数据",
+            "COIN/BTC交叉比率",
+            "短期交易方向判断逻辑"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用，未获取任何数据，也未进行任何计算或推理。完全缺失所有核心指标，未满足must_call_sequence工具调用序列要求，逻辑闭环、数值保真度与执行效率均为零。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"监管新闻核心摘要与情绪\",\n    \"BTC近期价格数据\",\n    \"COIN/BTC交叉比率\",\n    \"短期交易方向判断逻辑\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 7
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T03",
+      "query": "评估加密货币监管动态与Coinbase(COIN)股价的联动效应。搜索近一周关于SEC对数字资产监管态度的核心新闻并提取情绪倾向。同时获取比特币(BTC)当前价格及近30日价格数据，计算COIN当前股价与BTC价格的交叉比率。结合BTC技术位与新闻情绪，判断COIN短期交易方向。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "监管新闻核心摘要与情绪",
+          "BTC近期价格数据",
+          "COIN/BTC交叉比率",
+          "短期交易方向判断逻辑"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_crypto_price",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:12:25.847398+00:00",
+        "ended_at": "2026-04-18T16:13:03.020497+00:00",
+        "elapsed_s": 37.173075914382935,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用，未获取数据或进行计算，完全缺失所有四项核心指标。逻辑闭环、工具调用序列及长链推理均未启动，属于零分表现。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "监管新闻核心摘要与情绪",
+            "BTC近期价格数据",
+            "COIN/BTC交叉比率",
+            "短期交易方向判断逻辑"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用，未获取数据或进行计算，完全缺失所有四项核心指标。逻辑闭环、工具调用序列及长链推理均未启动，属于零分表现。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"监管新闻核心摘要与情绪\",\n    \"BTC近期价格数据\",\n    \"COIN/BTC交叉比率\",\n    \"短期交易方向判断逻辑\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 8
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T04",
+      "query": "量化汇率波动对苹果公司(AAPL)海外利润的汇兑冲击。获取当前EUR/USD和GBP/USD实时汇率。查阅AAPL最新季报国际分部收入及毛利率，假设欧元与英镑同步对美元贬值5%，使用计算器估算换算为美元后的潜在汇兑损失金额，并结合财报对冲披露定性评估其对EPS的拖累。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "EUR/USD与GBP/USD实时汇率",
+          "国际收入规模与毛利率",
+          "贬值5%假设下的汇兑损失额",
+          "对冲有效性及EPS影响评估"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:13:26.316264+00:00",
+        "ended_at": "2026-04-18T16:14:31.659157+00:00",
+        "elapsed_s": 65.34288191795349,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用，未获取汇率与财报数据，未进行计算，也未提供任何要求的评估指标。完全缺失“数据获取->计算->结论”的闭环，所有评分维度均得0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "EUR/USD与GBP/USD实时汇率",
+            "国际收入规模与毛利率",
+            "贬值5%假设下的汇兑损失额",
+            "对冲有效性及EPS影响评估"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用，未获取汇率与财报数据，未进行计算，也未提供任何要求的评估指标。完全缺失“数据获取->计算->结论”的闭环，所有评分维度均得0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"EUR/USD与GBP/USD实时汇率\",\n    \"国际收入规模与毛利率\",\n    \"贬值5%假设下的汇兑损失额\",\n    \"对冲有效性及EPS影响评估\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 9
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T04",
+      "query": "量化汇率波动对苹果公司(AAPL)海外利润的汇兑冲击。获取当前EUR/USD和GBP/USD实时汇率。查阅AAPL最新季报国际分部收入及毛利率，假设欧元与英镑同步对美元贬值5%，使用计算器估算换算为美元后的潜在汇兑损失金额，并结合财报对冲披露定性评估其对EPS的拖累。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "EUR/USD与GBP/USD实时汇率",
+          "国际收入规模与毛利率",
+          "贬值5%假设下的汇兑损失额",
+          "对冲有效性及EPS影响评估"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:14:52.977085+00:00",
+        "ended_at": "2026-04-18T16:15:26.330372+00:00",
+        "elapsed_s": 33.353275775909424,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用，未获取汇率与财报数据，未进行计算，也未提供任何要求的评估指标。完全缺失“数据获取->计算->结论”的闭环，未满足最小工具调用次数与意图序列要求，所有评分维度均得0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "EUR/USD与GBP/USD实时汇率",
+            "国际收入规模与毛利率",
+            "贬值5%假设下的汇兑损失额",
+            "对冲有效性及EPS影响评估"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用，未获取汇率与财报数据，未进行计算，也未提供任何要求的评估指标。完全缺失“数据获取->计算->结论”的闭环，未满足最小工具调用次数与意图序列要求，所有评分维度均得0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"EUR/USD与GBP/USD实时汇率\",\n    \"国际收入规模与毛利率\",\n    \"贬值5%假设下的汇兑损失额\",\n    \"对冲有效性及EPS影响评估\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 10
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T04",
+      "query": "量化汇率波动对苹果公司(AAPL)海外利润的汇兑冲击。获取当前EUR/USD和GBP/USD实时汇率。查阅AAPL最新季报国际分部收入及毛利率，假设欧元与英镑同步对美元贬值5%，使用计算器估算换算为美元后的潜在汇兑损失金额，并结合财报对冲披露定性评估其对EPS的拖累。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "EUR/USD与GBP/USD实时汇率",
+          "国际收入规模与毛利率",
+          "贬值5%假设下的汇兑损失额",
+          "对冲有效性及EPS影响评估"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:15:47.228744+00:00",
+        "ended_at": "2026-04-18T16:16:58.258362+00:00",
+        "elapsed_s": 71.0295958518982,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用，未获取汇率与财报数据，未进行计算，也未输出任何要求的评估指标。完全缺失“数据获取->计算->结论”闭环，未满足最小工具调用次数与调用序列要求，所有评分维度均得0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "EUR/USD与GBP/USD实时汇率",
+            "国际收入规模与毛利率",
+            "贬值5%假设下的汇兑损失额",
+            "对冲有效性及EPS影响评估"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用，未获取汇率与财报数据，未进行计算，也未输出任何要求的评估指标。完全缺失“数据获取->计算->结论”闭环，未满足最小工具调用次数与调用序列要求，所有评分维度均得0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"EUR/USD与GBP/USD实时汇率\",\n    \"国际收入规模与毛利率\",\n    \"贬值5%假设下的汇兑损失额\",\n    \"对冲有效性及EPS影响评估\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 11
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T05",
+      "query": "基于最新宏观指标进行行业轮动判断。获取美国最新CPI同比与GDP环比增速，判定当前所处经济周期阶段。获取金融ETF(XLF)与能源ETF(XLE)的最新收盘价及年初至今涨跌幅，计算两者的相对强弱比率(XLE/XLF)，结合宏观周期结论给出超配/低配建议。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新CPI与GDP增速",
+          "经济周期阶段判断",
+          "XLF与XLE价格及YTD涨跌幅",
+          "相对强弱比率",
+          "板块轮动建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:17:19.753606+00:00",
+        "ended_at": "2026-04-18T16:18:19.364824+00:00",
+        "elapsed_s": 59.611207008361816,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent的轨迹与最终回答均为空。未调用任何工具，未获取宏观数据与ETF行情，未进行任何计算，也未输出任何结论。完全缺失所有核心指标，逻辑链条断裂，工具调用序列未执行，长链推理未启动。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "最新CPI与GDP增速",
+            "经济周期阶段判断",
+            "XLF与XLE价格及YTD涨跌幅",
+            "相对强弱比率",
+            "板块轮动建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent的轨迹与最终回答均为空。未调用任何工具，未获取宏观数据与ETF行情，未进行任何计算，也未输出任何结论。完全缺失所有核心指标，逻辑链条断裂，工具调用序列未执行，长链推理未启动。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\"最新CPI与GDP增速\", \"经济周期阶段判断\", \"XLF与XLE价格及YTD涨跌幅\", \"相对强弱比率\", \"板块轮动建议\"],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 12
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T05",
+      "query": "基于最新宏观指标进行行业轮动判断。获取美国最新CPI同比与GDP环比增速，判定当前所处经济周期阶段。获取金融ETF(XLF)与能源ETF(XLE)的最新收盘价及年初至今涨跌幅，计算两者的相对强弱比率(XLE/XLF)，结合宏观周期结论给出超配/低配建议。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新CPI与GDP增速",
+          "经济周期阶段判断",
+          "XLF与XLE价格及YTD涨跌幅",
+          "相对强弱比率",
+          "板块轮动建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:18:41.565513+00:00",
+        "ended_at": "2026-04-18T16:20:09.107211+00:00",
+        "elapsed_s": 87.54168391227722,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空。未执行任何工具调用，未获取宏观数据与ETF行情，未进行计算，完全缺失全部5项核心评估指标。未满足最低工具调用次数（3次）及强制调用序列要求，逻辑闭环与数值保真度均为零，属于完全未执行任务。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "最新CPI与GDP增速",
+            "经济周期阶段判断",
+            "XLF与XLE价格及YTD涨跌幅",
+            "相对强弱比率",
+            "板块轮动建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空。未执行任何工具调用，未获取宏观数据与ETF行情，未进行计算，完全缺失全部5项核心评估指标。未满足最低工具调用次数（3次）及强制调用序列要求，逻辑闭环与数值保真度均为零，属于完全未执行任务。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"最新CPI与GDP增速\",\n    \"经济周期阶段判断\",\n    \"XLF与XLE价格及YTD涨跌幅\",\n    \"相对强弱比率\",\n    \"板块轮动建议\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 13
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T05",
+      "query": "基于最新宏观指标进行行业轮动判断。获取美国最新CPI同比与GDP环比增速，判定当前所处经济周期阶段。获取金融ETF(XLF)与能源ETF(XLE)的最新收盘价及年初至今涨跌幅，计算两者的相对强弱比率(XLE/XLF)，结合宏观周期结论给出超配/低配建议。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新CPI与GDP增速",
+          "经济周期阶段判断",
+          "XLF与XLE价格及YTD涨跌幅",
+          "相对强弱比率",
+          "板块轮动建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:20:30.954028+00:00",
+        "ended_at": "2026-04-18T16:21:44.414076+00:00",
+        "elapsed_s": 73.4600350856781,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空。1. 指标完备性(0/40)：完全缺失全部5项核心指标。2. 逻辑与数值(0/30)：无任何数据获取与计算过程，未形成“数据->计算->结论”闭环。3. 执行效率(0/20)：未调用任何工具，严重违反min_tool_calls(≥3)与must_call_sequence要求。4. 长链稳定性(0/10)：任务未启动，直接失败。综合判定为0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "最新CPI与GDP增速",
+            "经济周期阶段判断",
+            "XLF与XLE价格及YTD涨跌幅",
+            "相对强弱比率",
+            "板块轮动建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空。1. 指标完备性(0/40)：完全缺失全部5项核心指标。2. 逻辑与数值(0/30)：无任何数据获取与计算过程，未形成“数据->计算->结论”闭环。3. 执行效率(0/20)：未调用任何工具，严重违反min_tool_calls(≥3)与must_call_sequence要求。4. 长链稳定性(0/10)：任务未启动，直接失败。综合判定为0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"最新CPI与GDP增速\",\n    \"经济周期阶段判断\",\n    \"XLF与XLE价格及YTD涨跌幅\",\n    \"相对强弱比率\",\n    \"板块轮动建议\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 14
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T06",
+      "query": "模拟一项大型科技公司的现金收购案对资产负债表的影响。获取特斯拉(TSLA)与通用汽车(GM)的当前市值，假设TSLA以20%控制权溢价发起全现金收购。查阅TSLA最新财报的现金及短期投资余额，计算收购所需资金总额及自有现金缺口，评估融资压力与财务健康度。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "TSLA与GM当前市值",
+          "20%溢价收购总价",
+          "TSLA现金储备",
+          "资金缺口金额",
+          "财务健康度评级"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:22:14.538443+00:00",
+        "ended_at": "2026-04-18T16:23:04.414970+00:00",
+        "elapsed_s": 49.87651610374451,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent最终回答与执行轨迹均为空。未调用任何工具获取TSLA/GM市值或财报数据，未执行计算步骤，完全缺失全部5项核心指标。因无任何输出内容，未触发数据编造判定，但逻辑闭环、工具调用序列及长链推理均未启动，各项维度得分均为0。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "TSLA与GM当前市值",
+            "20%溢价收购总价",
+            "TSLA现金储备",
+            "资金缺口金额",
+            "财务健康度评级"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent最终回答与执行轨迹均为空。未调用任何工具获取TSLA/GM市值或财报数据，未执行计算步骤，完全缺失全部5项核心指标。因无任何输出内容，未触发数据编造判定，但逻辑闭环、工具调用序列及长链推理均未启动，各项维度得分均为0。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"TSLA与GM当前市值\",\n    \"20%溢价收购总价\",\n    \"TSLA现金储备\",\n    \"资金缺口金额\",\n    \"财务健康度评级\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 15
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T06",
+      "query": "模拟一项大型科技公司的现金收购案对资产负债表的影响。获取特斯拉(TSLA)与通用汽车(GM)的当前市值，假设TSLA以20%控制权溢价发起全现金收购。查阅TSLA最新财报的现金及短期投资余额，计算收购所需资金总额及自有现金缺口，评估融资压力与财务健康度。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "TSLA与GM当前市值",
+          "20%溢价收购总价",
+          "TSLA现金储备",
+          "资金缺口金额",
+          "财务健康度评级"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:23:25.341003+00:00",
+        "ended_at": "2026-04-18T16:23:53.057300+00:00",
+        "elapsed_s": 27.716275930404663,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空。未提供任何数据获取、计算过程或结论，导致全部5项核心指标缺失。未调用任何工具，严重违反must_call_sequence与min_tool_calls要求，逻辑闭环完全断裂，长链推理未启动。综合判定为完全失败。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "TSLA与GM当前市值",
+            "20%溢价收购总价",
+            "TSLA现金储备",
+            "资金缺口金额",
+            "财务健康度评级"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空。未提供任何数据获取、计算过程或结论，导致全部5项核心指标缺失。未调用任何工具，严重违反must_call_sequence与min_tool_calls要求，逻辑闭环完全断裂，长链推理未启动。综合判定为完全失败。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"TSLA与GM当前市值\",\n    \"20%溢价收购总价\",\n    \"TSLA现金储备\",\n    \"资金缺口金额\",\n    \"财务健康度评级\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 16
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T06",
+      "query": "模拟一项大型科技公司的现金收购案对资产负债表的影响。获取特斯拉(TSLA)与通用汽车(GM)的当前市值，假设TSLA以20%控制权溢价发起全现金收购。查阅TSLA最新财报的现金及短期投资余额，计算收购所需资金总额及自有现金缺口，评估融资压力与财务健康度。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "TSLA与GM当前市值",
+          "20%溢价收购总价",
+          "TSLA现金储备",
+          "资金缺口金额",
+          "财务健康度评级"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:24:14.800914+00:00",
+        "ended_at": "2026-04-18T16:25:39.618894+00:00",
+        "elapsed_s": 84.81796002388,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空。未执行任何工具调用，未获取市值、财报等基础数据，也未进行溢价计算与缺口评估。完全缺失全部5项核心指标，未满足最低3次工具调用及指定调用序列要求，逻辑推理链条完全断裂。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "TSLA与GM当前市值",
+            "20%溢价收购总价",
+            "TSLA现金储备",
+            "资金缺口金额",
+            "财务健康度评级"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空。未执行任何工具调用，未获取市值、财报等基础数据，也未进行溢价计算与缺口评估。完全缺失全部5项核心指标，未满足最低3次工具调用及指定调用序列要求，逻辑推理链条完全断裂。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"TSLA与GM当前市值\",\n    \"20%溢价收购总价\",\n    \"TSLA现金储备\",\n    \"资金缺口金额\",\n    \"财务健康度评级\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 17
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T07",
+      "query": "分析利率环境对房地产信托基金(REITs)的估值压制。获取当前10年期美债收益率及5年期固定抵押贷款利率。获取VNQ REIT ETF的最新股息收益率与股价。计算VNQ股息率与房贷利率的利差，评估在利率高位维持背景下该利差对REIT估值的压缩程度并给出评级调整意见。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "10年期美债与5年期房贷利率",
+          "VNQ股息率与当前股价",
+          "风险利差数值",
+          "利率环境对估值影响评估",
+          "投资评级调整"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:26:08.164464+00:00",
+        "ended_at": "2026-04-18T16:27:08.543142+00:00",
+        "elapsed_s": 60.378663063049316,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent的轨迹与最终回答均为空。未执行任何工具调用，未获取宏观利率与VNQ行情数据，未进行利差计算，也未输出估值影响分析与评级建议。完全缺失evaluation_criteria中要求的全部5项核心指标，且严重违反min_tool_calls与must_call_sequence的执行要求。属于任务零执行状态，各项维度均不得分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "10年期美债与5年期房贷利率",
+            "VNQ股息率与当前股价",
+            "风险利差数值",
+            "利率环境对估值影响评估",
+            "投资评级调整"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent的轨迹与最终回答均为空。未执行任何工具调用，未获取宏观利率与VNQ行情数据，未进行利差计算，也未输出估值影响分析与评级建议。完全缺失evaluation_criteria中要求的全部5项核心指标，且严重违反min_tool_calls与must_call_sequence的执行要求。属于任务零执行状态，各项维度均不得分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"10年期美债与5年期房贷利率\",\n    \"VNQ股息率与当前股价\",\n    \"风险利差数值\",\n    \"利率环境对估值影响评估\",\n    \"投资评级调整\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 18
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T07",
+      "query": "分析利率环境对房地产信托基金(REITs)的估值压制。获取当前10年期美债收益率及5年期固定抵押贷款利率。获取VNQ REIT ETF的最新股息收益率与股价。计算VNQ股息率与房贷利率的利差，评估在利率高位维持背景下该利差对REIT估值的压缩程度并给出评级调整意见。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "10年期美债与5年期房贷利率",
+          "VNQ股息率与当前股价",
+          "风险利差数值",
+          "利率环境对估值影响评估",
+          "投资评级调整"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:27:30.628375+00:00",
+        "ended_at": "2026-04-18T16:28:00.191155+00:00",
+        "elapsed_s": 29.56277322769165,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent未提供任何最终回答，且执行轨迹为空。完全缺失所有5项核心指标（10年期美债与5年期房贷利率、VNQ股息率与当前股价、风险利差数值、利率环境对估值影响评估、投资评级调整）。未调用任何工具，严重违反min_tool_calls（≥3）及must_call_sequence要求。缺乏数据获取、计算与推理的完整闭环，逻辑链条完全断裂，无法进行任何有效评估。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "10年期美债与5年期房贷利率",
+            "VNQ股息率与当前股价",
+            "风险利差数值",
+            "利率环境对估值影响评估",
+            "投资评级调整"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent未提供任何最终回答，且执行轨迹为空。完全缺失所有5项核心指标（10年期美债与5年期房贷利率、VNQ股息率与当前股价、风险利差数值、利率环境对估值影响评估、投资评级调整）。未调用任何工具，严重违反min_tool_calls（≥3）及must_call_sequence要求。缺乏数据获取、计算与推理的完整闭环，逻辑链条完全断裂，无法进行任何有效评估。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"10年期美债与5年期房贷利率\",\n    \"VNQ股息率与当前股价\",\n    \"风险利差数值\",\n    \"利率环境对估值影响评估\",\n    \"投资评级调整\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 19
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T07",
+      "query": "分析利率环境对房地产信托基金(REITs)的估值压制。获取当前10年期美债收益率及5年期固定抵押贷款利率。获取VNQ REIT ETF的最新股息收益率与股价。计算VNQ股息率与房贷利率的利差，评估在利率高位维持背景下该利差对REIT估值的压缩程度并给出评级调整意见。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "10年期美债与5年期房贷利率",
+          "VNQ股息率与当前股价",
+          "风险利差数值",
+          "利率环境对估值影响评估",
+          "投资评级调整"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:28:22.917906+00:00",
+        "ended_at": "2026-04-18T16:29:25.923562+00:00",
+        "elapsed_s": 63.00564217567444,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent未提供任何最终回答，且执行轨迹为空。完全缺失所有5项核心指标（10年期美债与5年期房贷利率、VNQ股息率与当前股价、风险利差数值、利率环境对估值影响评估、投资评级调整）。未调用任何工具，严重违反min_tool_calls（≥3）及must_call_sequence要求。缺乏数据获取、计算与推理的完整闭环，逻辑链条完全断裂，无法进行任何有效评估。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "10年期美债与5年期房贷利率",
+            "VNQ股息率与当前股价",
+            "风险利差数值",
+            "利率环境对估值影响评估",
+            "投资评级调整"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent未提供任何最终回答，且执行轨迹为空。完全缺失所有5项核心指标（10年期美债与5年期房贷利率、VNQ股息率与当前股价、风险利差数值、利率环境对估值影响评估、投资评级调整）。未调用任何工具，严重违反min_tool_calls（≥3）及must_call_sequence要求。缺乏数据获取、计算与推理的完整闭环，逻辑链条完全断裂，无法进行任何有效评估。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"10年期美债与5年期房贷利率\",\n    \"VNQ股息率与当前股价\",\n    \"风险利差数值\",\n    \"利率环境对估值影响评估\",\n    \"投资评级调整\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 20
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T08",
+      "query": "验证半导体产业链景气度信号的交叉匹配。搜索近两周关于台积电先进封装(CoWoS)产能瓶颈的权威新闻，提取关键扩产或订单指引。获取ASML最新财报的订单积压量(Bookings)。结合TSM当前股价，计算台积电产能利用率与光刻机交付周期的匹配度，推断短期上行催化强度。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "CoWoS产能相关新闻摘要",
+          "ASML最新订单积压量",
+          "TSM当前股价与估值分位",
+          "产能交付匹配度推算",
+          "短期催化强度结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:29:48.930817+00:00",
+        "ended_at": "2026-04-18T16:30:53.656549+00:00",
+        "elapsed_s": 64.7257170677185,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹为空（[]），且未提供任何最终回答。完全未执行任何工具调用，未获取CoWoS新闻、ASML财报数据或TSM股价，也未进行产能匹配度计算与催化强度推断。任务处于未执行状态，所有核心指标缺失，逻辑闭环与工具调用效率均为0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "CoWoS产能相关新闻摘要",
+            "ASML最新订单积压量",
+            "TSM当前股价与估值分位",
+            "产能交付匹配度推算",
+            "短期催化强度结论"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹为空（[]），且未提供任何最终回答。完全未执行任何工具调用，未获取CoWoS新闻、ASML财报数据或TSM股价，也未进行产能匹配度计算与催化强度推断。任务处于未执行状态，所有核心指标缺失，逻辑闭环与工具调用效率均为0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"CoWoS产能相关新闻摘要\",\n    \"ASML最新订单积压量\",\n    \"TSM当前股价与估值分位\",\n    \"产能交付匹配度推算\",\n    \"短期催化强度结论\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 21
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T08",
+      "query": "验证半导体产业链景气度信号的交叉匹配。搜索近两周关于台积电先进封装(CoWoS)产能瓶颈的权威新闻，提取关键扩产或订单指引。获取ASML最新财报的订单积压量(Bookings)。结合TSM当前股价，计算台积电产能利用率与光刻机交付周期的匹配度，推断短期上行催化强度。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "CoWoS产能相关新闻摘要",
+          "ASML最新订单积压量",
+          "TSM当前股价与估值分位",
+          "产能交付匹配度推算",
+          "短期催化强度结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:31:20.992337+00:00",
+        "ended_at": "2026-04-18T16:32:59.429620+00:00",
+        "elapsed_s": 98.43727087974548,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空。未执行任何工具调用，未获取任何数据，也未进行计算或推理。完全缺失所有5项核心指标（CoWoS新闻摘要、ASML订单积压量、TSM股价与估值、产能匹配度推算、催化强度结论），逻辑链条完全断裂。未满足must_call_sequence的4步工具调用要求，长链推理未启动。因无任何输出内容，未触发数据编造判定，但整体表现为任务完全失败。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "CoWoS产能相关新闻摘要",
+            "ASML最新订单积压量",
+            "TSM当前股价与估值分位",
+            "产能交付匹配度推算",
+            "短期催化强度结论"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空。未执行任何工具调用，未获取任何数据，也未进行计算或推理。完全缺失所有5项核心指标（CoWoS新闻摘要、ASML订单积压量、TSM股价与估值、产能匹配度推算、催化强度结论），逻辑链条完全断裂。未满足must_call_sequence的4步工具调用要求，长链推理未启动。因无任何输出内容，未触发数据编造判定，但整体表现为任务完全失败。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"CoWoS产能相关新闻摘要\",\n    \"ASML最新订单积压量\",\n    \"TSM当前股价与估值分位\",\n    \"产能交付匹配度推算\",\n    \"短期催化强度结论\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 22
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T08",
+      "query": "验证半导体产业链景气度信号的交叉匹配。搜索近两周关于台积电先进封装(CoWoS)产能瓶颈的权威新闻，提取关键扩产或订单指引。获取ASML最新财报的订单积压量(Bookings)。结合TSM当前股价，计算台积电产能利用率与光刻机交付周期的匹配度，推断短期上行催化强度。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "CoWoS产能相关新闻摘要",
+          "ASML最新订单积压量",
+          "TSM当前股价与估值分位",
+          "产能交付匹配度推算",
+          "短期催化强度结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:33:24.104157+00:00",
+        "ended_at": "2026-04-18T16:34:12.209235+00:00",
+        "elapsed_s": 48.105067014694214,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用或推理步骤。完全缺失evaluation_criteria中要求的全部5项核心指标，未满足min_tool_calls（≥4）与must_call_sequence（新闻搜索->财报获取->股价获取->计算器）的调用要求。因无任何数据获取、计算过程与结论输出，逻辑闭环与数值保真度均无法成立。虽未出现数据编造，但整体表现为任务完全未执行。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "CoWoS产能相关新闻摘要",
+            "ASML最新订单积压量",
+            "TSM当前股价与估值分位",
+            "产能交付匹配度推算",
+            "短期催化强度结论"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用或推理步骤。完全缺失evaluation_criteria中要求的全部5项核心指标，未满足min_tool_calls（≥4）与must_call_sequence（新闻搜索->财报获取->股价获取->计算器）的调用要求。因无任何数据获取、计算过程与结论输出，逻辑闭环与数值保真度均无法成立。虽未出现数据编造，但整体表现为任务完全未执行。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"CoWoS产能相关新闻摘要\",\n    \"ASML最新订单积压量\",\n    \"TSM当前股价与估值分位\",\n    \"产能交付匹配度推算\",\n    \"短期催化强度结论\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 23
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T09",
+      "query": "进行比特币减半周期下的矿企盈利压力测试。获取BTC实时价格。获取矿企MARA最新财报中的单币开采成本与持币储备。搜索近期全网算力难度变化趋势。使用计算器测算若BTC价格短期回调10%且算力难度不变，MARA的毛利润将受何种冲击，并给出风险敞口提示。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC实时价格",
+          "MARA开采成本与持币量",
+          "算力难度趋势摘要",
+          "价格下跌10%后的利润冲击额",
+          "风险敞口评估"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:34:34.042543+00:00",
+        "ended_at": "2026-04-18T16:35:45.312201+00:00",
+        "elapsed_s": 71.26965236663818,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空。未执行任何工具调用，未获取BTC实时价格、MARA单币成本与持币量、算力难度趋势等基础数据，未进行价格回调10%的利润冲击测算，也未输出风险敞口评估。完全缺失全部5项核心指标，未满足最小工具调用次数与强制调用序列要求，数据获取-计算-结论闭环完全断裂，长链推理未启动。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "BTC实时价格",
+            "MARA开采成本与持币量",
+            "算力难度趋势摘要",
+            "价格下跌10%后的利润冲击额",
+            "风险敞口评估"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空。未执行任何工具调用，未获取BTC实时价格、MARA单币成本与持币量、算力难度趋势等基础数据，未进行价格回调10%的利润冲击测算，也未输出风险敞口评估。完全缺失全部5项核心指标，未满足最小工具调用次数与强制调用序列要求，数据获取-计算-结论闭环完全断裂，长链推理未启动。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"BTC实时价格\",\n    \"MARA开采成本与持币量\",\n    \"算力难度趋势摘要\",\n    \"价格下跌10%后的利润冲击额\",\n    \"风险敞口评估\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 24
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T09",
+      "query": "进行比特币减半周期下的矿企盈利压力测试。获取BTC实时价格。获取矿企MARA最新财报中的单币开采成本与持币储备。搜索近期全网算力难度变化趋势。使用计算器测算若BTC价格短期回调10%且算力难度不变，MARA的毛利润将受何种冲击，并给出风险敞口提示。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC实时价格",
+          "MARA开采成本与持币量",
+          "算力难度趋势摘要",
+          "价格下跌10%后的利润冲击额",
+          "风险敞口评估"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:36:06.980213+00:00",
+        "ended_at": "2026-04-18T16:37:28.587746+00:00",
+        "elapsed_s": 81.60752296447754,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent的轨迹与最终回答均为空，未执行任何工具调用或推理步骤。完全缺失所有要求的评估指标，无法形成数据获取-计算-结论的闭环，工具调用序列与最低调用次数要求均未满足。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "BTC实时价格",
+            "MARA开采成本与持币量",
+            "算力难度趋势摘要",
+            "价格下跌10%后的利润冲击额",
+            "风险敞口评估"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent的轨迹与最终回答均为空，未执行任何工具调用或推理步骤。完全缺失所有要求的评估指标，无法形成数据获取-计算-结论的闭环，工具调用序列与最低调用次数要求均未满足。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"BTC实时价格\",\n    \"MARA开采成本与持币量\",\n    \"算力难度趋势摘要\",\n    \"价格下跌10%后的利润冲击额\",\n    \"风险敞口评估\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 25
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T09",
+      "query": "进行比特币减半周期下的矿企盈利压力测试。获取BTC实时价格。获取矿企MARA最新财报中的单币开采成本与持币储备。搜索近期全网算力难度变化趋势。使用计算器测算若BTC价格短期回调10%且算力难度不变，MARA的毛利润将受何种冲击，并给出风险敞口提示。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BTC实时价格",
+          "MARA开采成本与持币量",
+          "算力难度趋势摘要",
+          "价格下跌10%后的利润冲击额",
+          "风险敞口评估"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_crypto_price",
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:37:54.026367+00:00",
+        "ended_at": "2026-04-18T16:38:43.615922+00:00",
+        "elapsed_s": 49.58954119682312,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent的轨迹与最终回答均为空，未执行任何工具调用或推理步骤。完全缺失所有要求的评估指标，无法形成数据获取-计算-结论的闭环，工具调用序列与最低调用次数要求均未满足。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "BTC实时价格",
+            "MARA开采成本与持币量",
+            "算力难度趋势摘要",
+            "价格下跌10%后的利润冲击额",
+            "风险敞口评估"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent的轨迹与最终回答均为空，未执行任何工具调用或推理步骤。完全缺失所有要求的评估指标，无法形成数据获取-计算-结论的闭环，工具调用序列与最低调用次数要求均未满足。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"BTC实时价格\",\n    \"MARA开采成本与持币量\",\n    \"算力难度趋势摘要\",\n    \"价格下跌10%后的利润冲击额\",\n    \"风险敞口评估\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 26
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T10",
+      "query": "构建外汇套息交易的收益测算模型。获取USD/JPY和AUD/USD即期汇率，以及美、日、澳三国央行最新基准利率。计算两组货币对的理论年化套息收益（扣除2%交易摩擦与滑点）。使用计算器对比风险调整后收益，确定当前最具优势的套息交易货币方向及持仓逻辑。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "两组货币对即期汇率",
+          "三国基准利率",
+          "扣除摩擦后的理论年化套息收益",
+          "风险调整后收益对比",
+          "推荐交易方向"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:39:09.204958+00:00",
+        "ended_at": "2026-04-18T16:45:56.882878+00:00",
+        "elapsed_s": 407.6779000759125,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent的轨迹（Trajectory）与最终回答（Final Answer）均为空。未执行任何工具调用，未获取汇率与宏观利率数据，未进行套息收益测算与风险对比，完全缺失所有要求的核心指标。数据获取-计算-结论闭环断裂，工具调用序列未满足，长链推理未启动。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "两组货币对即期汇率",
+            "三国基准利率",
+            "扣除摩擦后的理论年化套息收益",
+            "风险调整后收益对比",
+            "推荐交易方向"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent的轨迹（Trajectory）与最终回答（Final Answer）均为空。未执行任何工具调用，未获取汇率与宏观利率数据，未进行套息收益测算与风险对比，完全缺失所有要求的核心指标。数据获取-计算-结论闭环断裂，工具调用序列未满足，长链推理未启动。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"两组货币对即期汇率\",\n    \"三国基准利率\",\n    \"扣除摩擦后的理论年化套息收益\",\n    \"风险调整后收益对比\",\n    \"推荐交易方向\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 27
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T10",
+      "query": "构建外汇套息交易的收益测算模型。获取USD/JPY和AUD/USD即期汇率，以及美、日、澳三国央行最新基准利率。计算两组货币对的理论年化套息收益（扣除2%交易摩擦与滑点）。使用计算器对比风险调整后收益，确定当前最具优势的套息交易货币方向及持仓逻辑。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "两组货币对即期汇率",
+          "三国基准利率",
+          "扣除摩擦后的理论年化套息收益",
+          "风险调整后收益对比",
+          "推荐交易方向"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:46:16.937771+00:00",
+        "ended_at": "2026-04-18T16:47:09.478585+00:00",
+        "elapsed_s": 52.540804862976074,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent的轨迹（Trajectory）与最终回答（Final Answer）均为空。未执行任何工具调用，未获取汇率与宏观利率数据，未进行套息收益测算与风险对比，完全缺失所有要求的核心指标。数据获取-计算-结论闭环断裂，工具调用序列未满足，长链推理未启动。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "两组货币对即期汇率",
+            "三国基准利率",
+            "扣除摩擦后的理论年化套息收益",
+            "风险调整后收益对比",
+            "推荐交易方向"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent的轨迹（Trajectory）与最终回答（Final Answer）均为空。未执行任何工具调用，未获取汇率与宏观利率数据，未进行套息收益测算与风险对比，完全缺失所有要求的核心指标。数据获取-计算-结论闭环断裂，工具调用序列未满足，长链推理未启动。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"两组货币对即期汇率\",\n    \"三国基准利率\",\n    \"扣除摩擦后的理论年化套息收益\",\n    \"风险调整后收益对比\",\n    \"推荐交易方向\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 28
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T10",
+      "query": "构建外汇套息交易的收益测算模型。获取USD/JPY和AUD/USD即期汇率，以及美、日、澳三国央行最新基准利率。计算两组货币对的理论年化套息收益（扣除2%交易摩擦与滑点）。使用计算器对比风险调整后收益，确定当前最具优势的套息交易货币方向及持仓逻辑。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "两组货币对即期汇率",
+          "三国基准利率",
+          "扣除摩擦后的理论年化套息收益",
+          "风险调整后收益对比",
+          "推荐交易方向"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:47:30.020762+00:00",
+        "ended_at": "2026-04-18T16:48:53.947221+00:00",
+        "elapsed_s": 83.92644596099854,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent的轨迹（Trajectory）与最终回答（Final Answer）均为空。未执行任何工具调用，未获取汇率与宏观利率数据，未进行套息收益测算与风险对比，完全缺失Evaluation Criteria中要求的全部5项核心指标。在指标完备性、数值保真度、工具调用效率及长链推理稳定性四个维度均无法得分，判定为任务完全失败。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "两组货币对即期汇率",
+            "三国基准利率",
+            "扣除摩擦后的理论年化套息收益",
+            "风险调整后收益对比",
+            "推荐交易方向"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent的轨迹（Trajectory）与最终回答（Final Answer）均为空。未执行任何工具调用，未获取汇率与宏观利率数据，未进行套息收益测算与风险对比，完全缺失Evaluation Criteria中要求的全部5项核心指标。在指标完备性、数值保真度、工具调用效率及长链推理稳定性四个维度均无法得分，判定为任务完全失败。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"两组货币对即期汇率\",\n    \"三国基准利率\",\n    \"扣除摩擦后的理论年化套息收益\",\n    \"风险调整后收益对比\",\n    \"推荐交易方向\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 29
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T11",
+      "query": "量化中国EV价格战对车企毛利率的挤压效应。获取比亚迪(BYDDY)与蔚来(NIO)最新季报毛利率。搜索近一个月国内新能源汽车降价潮的新闻报道，提取平均降价幅度。测算若终端售价统一下调8%且BOM成本刚性，两家公司毛利率将降至何水平，结合当前股价评估盈利预期下修风险。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BYDDY与NIO最新毛利率",
+          "新闻提取的平均降价幅度",
+          "售价下调8%后的预测毛利率",
+          "盈利下修幅度",
+          "当前股价风险评估"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator",
+            "get_stock_price"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:49:17.228898+00:00",
+        "ended_at": "2026-04-18T16:51:00.296648+00:00",
+        "elapsed_s": 103.06773400306702,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空。未执行任何工具调用，未获取财务数据、新闻信息或股价，也未进行毛利率测算与风险评估。完全缺失全部5项核心指标，未满足最低工具调用次数及指定调用序列要求，逻辑推理链条完全断裂，无法进行任何有效评估。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "BYDDY与NIO最新毛利率",
+            "新闻提取的平均降价幅度",
+            "售价下调8%后的预测毛利率",
+            "盈利下修幅度",
+            "当前股价风险评估"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空。未执行任何工具调用，未获取财务数据、新闻信息或股价，也未进行毛利率测算与风险评估。完全缺失全部5项核心指标，未满足最低工具调用次数及指定调用序列要求，逻辑推理链条完全断裂，无法进行任何有效评估。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"BYDDY与NIO最新毛利率\",\n    \"新闻提取的平均降价幅度\",\n    \"售价下调8%后的预测毛利率\",\n    \"盈利下修幅度\",\n    \"当前股价风险评估\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 30
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T11",
+      "query": "量化中国EV价格战对车企毛利率的挤压效应。获取比亚迪(BYDDY)与蔚来(NIO)最新季报毛利率。搜索近一个月国内新能源汽车降价潮的新闻报道，提取平均降价幅度。测算若终端售价统一下调8%且BOM成本刚性，两家公司毛利率将降至何水平，结合当前股价评估盈利预期下修风险。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BYDDY与NIO最新毛利率",
+          "新闻提取的平均降价幅度",
+          "售价下调8%后的预测毛利率",
+          "盈利下修幅度",
+          "当前股价风险评估"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator",
+            "get_stock_price"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:51:27.504959+00:00",
+        "ended_at": "2026-04-18T16:52:10.008074+00:00",
+        "elapsed_s": 42.50310206413269,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未发起任何工具调用，完全未满足min_tool_calls（≥4）及must_call_sequence要求。所有5项核心评估指标（BYDDY与NIO最新毛利率、新闻提取的平均降价幅度、售价下调8%后的预测毛利率、盈利下修幅度、当前股价风险评估）均缺失。由于无任何执行过程与输出，不存在数据编造，但任务执行彻底失败，各项维度均得0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "BYDDY与NIO最新毛利率",
+            "新闻提取的平均降价幅度",
+            "售价下调8%后的预测毛利率",
+            "盈利下修幅度",
+            "当前股价风险评估"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未发起任何工具调用，完全未满足min_tool_calls（≥4）及must_call_sequence要求。所有5项核心评估指标（BYDDY与NIO最新毛利率、新闻提取的平均降价幅度、售价下调8%后的预测毛利率、盈利下修幅度、当前股价风险评估）均缺失。由于无任何执行过程与输出，不存在数据编造，但任务执行彻底失败，各项维度均得0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"BYDDY与NIO最新毛利率\",\n    \"新闻提取的平均降价幅度\",\n    \"售价下调8%后的预测毛利率\",\n    \"盈利下修幅度\",\n    \"当前股价风险评估\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 31
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T11",
+      "query": "量化中国EV价格战对车企毛利率的挤压效应。获取比亚迪(BYDDY)与蔚来(NIO)最新季报毛利率。搜索近一个月国内新能源汽车降价潮的新闻报道，提取平均降价幅度。测算若终端售价统一下调8%且BOM成本刚性，两家公司毛利率将降至何水平，结合当前股价评估盈利预期下修风险。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "BYDDY与NIO最新毛利率",
+          "新闻提取的平均降价幅度",
+          "售价下调8%后的预测毛利率",
+          "盈利下修幅度",
+          "当前股价风险评估"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator",
+            "get_stock_price"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:52:36.169630+00:00",
+        "ended_at": "2026-04-18T16:53:22.043621+00:00",
+        "elapsed_s": 45.87398624420166,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent未提供任何最终回答，且轨迹为空数组。未执行任何工具调用，完全缺失evaluation_criteria中要求的全部5项核心指标。未满足min_tool_calls(≥4)及must_call_sequence的意图序列要求。缺乏“数据获取->计算->结论”的逻辑闭环，长链推理完全缺失。因无输出内容，未检测到数据编造，但整体表现为任务完全未执行。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "BYDDY与NIO最新毛利率",
+            "新闻提取的平均降价幅度",
+            "售价下调8%后的预测毛利率",
+            "盈利下修幅度",
+            "当前股价风险评估"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent未提供任何最终回答，且轨迹为空数组。未执行任何工具调用，完全缺失evaluation_criteria中要求的全部5项核心指标。未满足min_tool_calls(≥4)及must_call_sequence的意图序列要求。缺乏“数据获取->计算->结论”的逻辑闭环，长链推理完全缺失。因无输出内容，未检测到数据编造，但整体表现为任务完全未执行。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"BYDDY与NIO最新毛利率\",\n    \"新闻提取的平均降价幅度\",\n    \"售价下调8%后的预测毛利率\",\n    \"盈利下修幅度\",\n    \"当前股价风险评估\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 32
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T12",
+      "query": "验证传统能源巨头高股息政策的财务可持续性。获取XOM与CVX最新季度FCF及每股派息金额。查阅OPEC+最新减产协议新闻及对WTI油价预期的影响。计算两家公司的FCF派息覆盖率(FCF/总派息)，结合当前油价中枢判断分红政策是否具备长期现金流支撑。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "XOM与CVX季度FCF与派息",
+          "OPEC政策及油价预期新闻",
+          "FCF派息覆盖率数值",
+          "油价中枢与分红支撑度结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:53:44.638356+00:00",
+        "ended_at": "2026-04-18T16:54:46.410013+00:00",
+        "elapsed_s": 61.77164602279663,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用，未获取XOM/CVX财务数据与OPEC+新闻，未进行FCF派息覆盖率计算，亦未给出油价中枢与分红支撑度结论。完全缺失全部四项核心指标，未满足最低工具调用次数及指定调用序列，数据获取-计算-结论的逻辑闭环与长链推理均不存在。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "XOM与CVX季度FCF与派息",
+            "OPEC政策及油价预期新闻",
+            "FCF派息覆盖率数值",
+            "油价中枢与分红支撑度结论"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用，未获取XOM/CVX财务数据与OPEC+新闻，未进行FCF派息覆盖率计算，亦未给出油价中枢与分红支撑度结论。完全缺失全部四项核心指标，未满足最低工具调用次数及指定调用序列，数据获取-计算-结论的逻辑闭环与长链推理均不存在。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\"XOM与CVX季度FCF与派息\", \"OPEC政策及油价预期新闻\", \"FCF派息覆盖率数值\", \"油价中枢与分红支撑度结论\"],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 33
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T12",
+      "query": "验证传统能源巨头高股息政策的财务可持续性。获取XOM与CVX最新季度FCF及每股派息金额。查阅OPEC+最新减产协议新闻及对WTI油价预期的影响。计算两家公司的FCF派息覆盖率(FCF/总派息)，结合当前油价中枢判断分红政策是否具备长期现金流支撑。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "XOM与CVX季度FCF与派息",
+          "OPEC政策及油价预期新闻",
+          "FCF派息覆盖率数值",
+          "油价中枢与分红支撑度结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:55:13.934106+00:00",
+        "ended_at": "2026-04-18T16:56:43.626514+00:00",
+        "elapsed_s": 89.69240021705627,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用、数据获取、计算或结论输出。完全缺失全部四项核心评估指标，未满足最小工具调用次数（4次）及必须调用序列要求。逻辑闭环与长链推理均未建立，属于完全未响应任务。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "XOM与CVX季度FCF与派息",
+            "OPEC政策及油价预期新闻",
+            "FCF派息覆盖率数值",
+            "油价中枢与分红支撑度结论"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用、数据获取、计算或结论输出。完全缺失全部四项核心评估指标，未满足最小工具调用次数（4次）及必须调用序列要求。逻辑闭环与长链推理均未建立，属于完全未响应任务。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"XOM与CVX季度FCF与派息\",\n    \"OPEC政策及油价预期新闻\",\n    \"FCF派息覆盖率数值\",\n    \"油价中枢与分红支撑度结论\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 34
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T12",
+      "query": "验证传统能源巨头高股息政策的财务可持续性。获取XOM与CVX最新季度FCF及每股派息金额。查阅OPEC+最新减产协议新闻及对WTI油价预期的影响。计算两家公司的FCF派息覆盖率(FCF/总派息)，结合当前油价中枢判断分红政策是否具备长期现金流支撑。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "XOM与CVX季度FCF与派息",
+          "OPEC政策及油价预期新闻",
+          "FCF派息覆盖率数值",
+          "油价中枢与分红支撑度结论"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "get_macro_data",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:57:06.123427+00:00",
+        "ended_at": "2026-04-18T16:58:27.375100+00:00",
+        "elapsed_s": 81.25166296958923,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用，未获取XOM/CVX财务数据与OPEC+宏观新闻，未进行FCF派息覆盖率计算，也未给出油价中枢与分红支撑度的分析结论。完全缺失全部四项核心指标，未满足最低4次工具调用要求及指定调用序列，数据获取-计算-结论的逻辑闭环与长链推理均未建立。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "XOM与CVX季度FCF与派息",
+            "OPEC政策及油价预期新闻",
+            "FCF派息覆盖率数值",
+            "油价中枢与分红支撑度结论"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用，未获取XOM/CVX财务数据与OPEC+宏观新闻，未进行FCF派息覆盖率计算，也未给出油价中枢与分红支撑度的分析结论。完全缺失全部四项核心指标，未满足最低4次工具调用要求及指定调用序列，数据获取-计算-结论的逻辑闭环与长链推理均未建立。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"XOM与CVX季度FCF与派息\",\n    \"OPEC政策及油价预期新闻\",\n    \"FCF派息覆盖率数值\",\n    \"油价中枢与分红支撑度结论\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 35
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T13",
+      "query": "测算大型云厂商AI资本支出的投资回收期。获取MSFT与GOOG最新财报CapEx总额及AI业务收入指引。搜索近期大模型商业化落地进展研报摘要，提取预期年化增速。测算若CapEx维持25%复合增长，结合收入兑现速度推算投资回收期，对比两者P/E给出AI投资性价比排序。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "MSFT与GOOG最新CapEx及AI收入指引",
+          "商业化增速预期",
+          "投资回收期估算",
+          "当前P/E对比",
+          "AI投资性价比排名"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T16:58:49.504725+00:00",
+        "ended_at": "2026-04-18T17:00:31.928379+00:00",
+        "elapsed_s": 102.42363905906677,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用，未获取MSFT/GOOG财报数据、研报增速或P/E信息，完全缺失全部5项核心指标。未满足最小工具调用次数（3次）及指定调用序列要求，数据获取-计算-结论闭环未建立，长链推理未启动。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "MSFT与GOOG最新CapEx及AI收入指引",
+            "商业化增速预期",
+            "投资回收期估算",
+            "当前P/E对比",
+            "AI投资性价比排名"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用，未获取MSFT/GOOG财报数据、研报增速或P/E信息，完全缺失全部5项核心指标。未满足最小工具调用次数（3次）及指定调用序列要求，数据获取-计算-结论闭环未建立，长链推理未启动。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"MSFT与GOOG最新CapEx及AI收入指引\",\n    \"商业化增速预期\",\n    \"投资回收期估算\",\n    \"当前P/E对比\",\n    \"AI投资性价比排名\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 36
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T13",
+      "query": "测算大型云厂商AI资本支出的投资回收期。获取MSFT与GOOG最新财报CapEx总额及AI业务收入指引。搜索近期大模型商业化落地进展研报摘要，提取预期年化增速。测算若CapEx维持25%复合增长，结合收入兑现速度推算投资回收期，对比两者P/E给出AI投资性价比排序。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "MSFT与GOOG最新CapEx及AI收入指引",
+          "商业化增速预期",
+          "投资回收期估算",
+          "当前P/E对比",
+          "AI投资性价比排名"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:00:55.467417+00:00",
+        "ended_at": "2026-04-18T17:02:12.078876+00:00",
+        "elapsed_s": 76.61144685745239,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent未提供任何最终回答与执行轨迹。完全缺失全部5项核心指标（MSFT与GOOG最新CapEx及AI收入指引、商业化增速预期、投资回收期估算、当前P/E对比、AI投资性价比排名）。未调用任何工具，严重违反min_tool_calls与must_call_sequence要求。无数据获取、计算与推理过程，逻辑链条完全断裂，各项评分维度均得0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "MSFT与GOOG最新CapEx及AI收入指引",
+            "商业化增速预期",
+            "投资回收期估算",
+            "当前P/E对比",
+            "AI投资性价比排名"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent未提供任何最终回答与执行轨迹。完全缺失全部5项核心指标（MSFT与GOOG最新CapEx及AI收入指引、商业化增速预期、投资回收期估算、当前P/E对比、AI投资性价比排名）。未调用任何工具，严重违反min_tool_calls与must_call_sequence要求。无数据获取、计算与推理过程，逻辑链条完全断裂，各项评分维度均得0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"MSFT与GOOG最新CapEx及AI收入指引\",\n    \"商业化增速预期\",\n    \"投资回收期估算\",\n    \"当前P/E对比\",\n    \"AI投资性价比排名\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 37
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T13",
+      "query": "测算大型云厂商AI资本支出的投资回收期。获取MSFT与GOOG最新财报CapEx总额及AI业务收入指引。搜索近期大模型商业化落地进展研报摘要，提取预期年化增速。测算若CapEx维持25%复合增长，结合收入兑现速度推算投资回收期，对比两者P/E给出AI投资性价比排序。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "MSFT与GOOG最新CapEx及AI收入指引",
+          "商业化增速预期",
+          "投资回收期估算",
+          "当前P/E对比",
+          "AI投资性价比排名"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:02:41.075669+00:00",
+        "ended_at": "2026-04-18T17:03:15.224249+00:00",
+        "elapsed_s": 34.14856696128845,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用，未获取MSFT/GOOG财报数据、研报增速或P/E信息，完全缺失全部5项核心指标。未满足最小工具调用次数（3次）及指定调用序列要求，数据获取-计算-结论闭环未建立，长链推理未启动。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "MSFT与GOOG最新CapEx及AI收入指引",
+            "商业化增速预期",
+            "投资回收期估算",
+            "当前P/E对比",
+            "AI投资性价比排名"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用，未获取MSFT/GOOG财报数据、研报增速或P/E信息，完全缺失全部5项核心指标。未满足最小工具调用次数（3次）及指定调用序列要求，数据获取-计算-结论闭环未建立，长链推理未启动。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"MSFT与GOOG最新CapEx及AI收入指引\",\n    \"商业化增速预期\",\n    \"投资回收期估算\",\n    \"当前P/E对比\",\n    \"AI投资性价比排名\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 38
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T14",
+      "query": "评估高通胀环境下的黄金资产对冲效能。获取美、印最新CPI数据。获取现货黄金美元报价及SPDR黄金ETF(GLD)最新净值。测算若实际利率因通胀粘性持续下行，基于历史相关性对金价的理论提振幅度。结合新兴市场汇率波动，给出跨境资金配置黄金的避险比例。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美印最新CPI数据",
+          "黄金报价与GLD净值",
+          "通胀>3%假设下的金价提振测算",
+          "汇率波动考量",
+          "最佳避险配置比例"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:03:37.003844+00:00",
+        "ended_at": "2026-04-18T17:04:49.368348+00:00",
+        "elapsed_s": 72.36448788642883,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent的轨迹与最终回答均为空，未执行任何工具调用，未获取任何宏观或市场数据，也未进行任何计算或推理。完全缺失所有5项核心评估指标，未满足最低工具调用次数（3次）及指定调用序列要求。逻辑闭环、数值保真度与长链推理稳定性均不成立。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "美印最新CPI数据",
+            "黄金报价与GLD净值",
+            "通胀>3%假设下的金价提振测算",
+            "汇率波动考量",
+            "最佳避险配置比例"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent的轨迹与最终回答均为空，未执行任何工具调用，未获取任何宏观或市场数据，也未进行任何计算或推理。完全缺失所有5项核心评估指标，未满足最低工具调用次数（3次）及指定调用序列要求。逻辑闭环、数值保真度与长链推理稳定性均不成立。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"美印最新CPI数据\",\n    \"黄金报价与GLD净值\",\n    \"通胀>3%假设下的金价提振测算\",\n    \"汇率波动考量\",\n    \"最佳避险配置比例\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 39
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T14",
+      "query": "评估高通胀环境下的黄金资产对冲效能。获取美、印最新CPI数据。获取现货黄金美元报价及SPDR黄金ETF(GLD)最新净值。测算若实际利率因通胀粘性持续下行，基于历史相关性对金价的理论提振幅度。结合新兴市场汇率波动，给出跨境资金配置黄金的避险比例。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美印最新CPI数据",
+          "黄金报价与GLD净值",
+          "通胀>3%假设下的金价提振测算",
+          "汇率波动考量",
+          "最佳避险配置比例"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:05:11.808403+00:00",
+        "ended_at": "2026-04-18T17:05:50.432627+00:00",
+        "elapsed_s": 38.62421011924744,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent的轨迹与最终回答均为空，未执行任何工具调用，未获取任何宏观或市场数据，也未进行任何计算或推理。完全缺失所有5项核心评估指标，未满足最低工具调用次数（3次）及指定调用序列要求。逻辑闭环、数值保真度与长链推理稳定性均不成立，属于完全未响应任务。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "美印最新CPI数据",
+            "黄金报价与GLD净值",
+            "通胀>3%假设下的金价提振测算",
+            "汇率波动考量",
+            "最佳避险配置比例"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent的轨迹与最终回答均为空，未执行任何工具调用，未获取任何宏观或市场数据，也未进行任何计算或推理。完全缺失所有5项核心评估指标，未满足最低工具调用次数（3次）及指定调用序列要求。逻辑闭环、数值保真度与长链推理稳定性均不成立，属于完全未响应任务。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"美印最新CPI数据\",\n    \"黄金报价与GLD净值\",\n    \"通胀>3%假设下的金价提振测算\",\n    \"汇率波动考量\",\n    \"最佳避险配置比例\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 40
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T14",
+      "query": "评估高通胀环境下的黄金资产对冲效能。获取美、印最新CPI数据。获取现货黄金美元报价及SPDR黄金ETF(GLD)最新净值。测算若实际利率因通胀粘性持续下行，基于历史相关性对金价的理论提振幅度。结合新兴市场汇率波动，给出跨境资金配置黄金的避险比例。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "美印最新CPI数据",
+          "黄金报价与GLD净值",
+          "通胀>3%假设下的金价提振测算",
+          "汇率波动考量",
+          "最佳避险配置比例"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:06:13.148572+00:00",
+        "ended_at": "2026-04-18T17:06:51.605008+00:00",
+        "elapsed_s": 38.456421852111816,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent的轨迹与最终回答均为空，未执行任何工具调用，未获取任何宏观或市场数据，也未进行任何计算或推理。完全缺失所有5项核心评估指标，未满足最低工具调用次数（3次）及指定调用序列要求。逻辑闭环、数值保真度与长链推理稳定性均不成立，属于完全未响应任务。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "美印最新CPI数据",
+            "黄金报价与GLD净值",
+            "通胀>3%假设下的金价提振测算",
+            "汇率波动考量",
+            "最佳避险配置比例"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent的轨迹与最终回答均为空，未执行任何工具调用，未获取任何宏观或市场数据，也未进行任何计算或推理。完全缺失所有5项核心评估指标，未满足最低工具调用次数（3次）及指定调用序列要求。逻辑闭环、数值保真度与长链推理稳定性均不成立，属于完全未响应任务。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"美印最新CPI数据\",\n    \"黄金报价与GLD净值\",\n    \"通胀>3%假设下的金价提振测算\",\n    \"汇率波动考量\",\n    \"最佳避险配置比例\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 41
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T15",
+      "query": "捕捉FDA审批催化下的生物医药预期差。搜索近两周关于核心创新药获批或三期临床达标的行业新闻。获取礼来(LLY)与诺和诺德(NVO)最新营收增速与研发费用率。对比管线推进带来的收入弹性与当前股价隐含增长预期，使用计算器量化预期差幅度并判断套利窗口。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "核心审批新闻摘要",
+          "LLY与NVO营收增速与研发占比",
+          "股价隐含增长预期",
+          "预期差计算结果",
+          "套利窗口期判断"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:07:14.270597+00:00",
+        "ended_at": "2026-04-18T17:07:48.203949+00:00",
+        "elapsed_s": 33.933337926864624,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用或推理步骤。完全缺失evaluation_criteria中要求的全部5项核心指标（新闻摘要、财务数据、隐含预期、预期差计算、套利判断）。未满足最小工具调用次数（4次）及must_call_sequence序列要求，数据获取、计算与结论闭环完全缺失，逻辑严谨性与执行效率均为零。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "核心审批新闻摘要",
+            "LLY与NVO营收增速与研发占比",
+            "股价隐含增长预期",
+            "预期差计算结果",
+            "套利窗口期判断"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用或推理步骤。完全缺失evaluation_criteria中要求的全部5项核心指标（新闻摘要、财务数据、隐含预期、预期差计算、套利判断）。未满足最小工具调用次数（4次）及must_call_sequence序列要求，数据获取、计算与结论闭环完全缺失，逻辑严谨性与执行效率均为零。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"核心审批新闻摘要\",\n    \"LLY与NVO营收增速与研发占比\",\n    \"股价隐含增长预期\",\n    \"预期差计算结果\",\n    \"套利窗口期判断\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 42
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T15",
+      "query": "捕捉FDA审批催化下的生物医药预期差。搜索近两周关于核心创新药获批或三期临床达标的行业新闻。获取礼来(LLY)与诺和诺德(NVO)最新营收增速与研发费用率。对比管线推进带来的收入弹性与当前股价隐含增长预期，使用计算器量化预期差幅度并判断套利窗口。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "核心审批新闻摘要",
+          "LLY与NVO营收增速与研发占比",
+          "股价隐含增长预期",
+          "预期差计算结果",
+          "套利窗口期判断"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:08:10.950589+00:00",
+        "ended_at": "2026-04-18T17:08:48.658085+00:00",
+        "elapsed_s": 37.7074830532074,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用或推理步骤。完全缺失所有5项核心指标（核心审批新闻摘要、LLY与NVO营收增速与研发占比、股价隐含增长预期、预期差计算结果、套利窗口期判断），未满足最小工具调用次数（4次）及必须调用序列要求。无数据获取、无计算过程、无逻辑闭环，各项评分维度均得0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "核心审批新闻摘要",
+            "LLY与NVO营收增速与研发占比",
+            "股价隐含增长预期",
+            "预期差计算结果",
+            "套利窗口期判断"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用或推理步骤。完全缺失所有5项核心指标（核心审批新闻摘要、LLY与NVO营收增速与研发占比、股价隐含增长预期、预期差计算结果、套利窗口期判断），未满足最小工具调用次数（4次）及必须调用序列要求。无数据获取、无计算过程、无逻辑闭环，各项评分维度均得0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"核心审批新闻摘要\",\n    \"LLY与NVO营收增速与研发占比\",\n    \"股价隐含增长预期\",\n    \"预期差计算结果\",\n    \"套利窗口期判断\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 43
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T15",
+      "query": "捕捉FDA审批催化下的生物医药预期差。搜索近两周关于核心创新药获批或三期临床达标的行业新闻。获取礼来(LLY)与诺和诺德(NVO)最新营收增速与研发费用率。对比管线推进带来的收入弹性与当前股价隐含增长预期，使用计算器量化预期差幅度并判断套利窗口。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "核心审批新闻摘要",
+          "LLY与NVO营收增速与研发占比",
+          "股价隐含增长预期",
+          "预期差计算结果",
+          "套利窗口期判断"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_stock_price",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:09:12.278176+00:00",
+        "ended_at": "2026-04-18T17:10:05.499462+00:00",
+        "elapsed_s": 53.22125506401062,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent未提供任何最终回答，轨迹为空。未执行任何工具调用，完全缺失数据获取、计算与结论环节。所有5项核心指标均未覆盖，工具调用序列与最低调用次数要求均未满足，长链推理未启动。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "核心审批新闻摘要",
+            "LLY与NVO营收增速与研发占比",
+            "股价隐含增长预期",
+            "预期差计算结果",
+            "套利窗口期判断"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent未提供任何最终回答，轨迹为空。未执行任何工具调用，完全缺失数据获取、计算与结论环节。所有5项核心指标均未覆盖，工具调用序列与最低调用次数要求均未满足，长链推理未启动。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"核心审批新闻摘要\",\n    \"LLY与NVO营收增速与研发占比\",\n    \"股价隐含增长预期\",\n    \"预期差计算结果\",\n    \"套利窗口期判断\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 44
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T16",
+      "query": "剖析消费疲软周期下零售巨头的库存去化效率。获取WMT与TGT最新财报中的期末库存总额与季度营业成本，计算存货周转天数。搜索近期消费者支出放缓及假日销售指引的新闻。结合当前股价与估值水平，评估谁的去库存能力更强并给出防御性配置权重。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "WMT与TGT库存与营业成本",
+          "存货周转天数",
+          "消费放缓新闻摘要",
+          "股价与估值匹配度",
+          "防御性配置建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "calculator",
+            "search_financial_news",
+            "get_stock_price"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:10:29.174796+00:00",
+        "ended_at": "2026-04-18T17:11:08.176247+00:00",
+        "elapsed_s": 39.0014328956604,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent的轨迹与最终回答均为空。未执行任何工具调用，未获取财务数据或新闻，未进行存货周转天数计算，也未提供任何估值分析或配置建议。完全缺失evaluation_criteria中的全部5项核心指标，未满足min_tool_calls与must_call_sequence要求，逻辑闭环与长链推理均不存在，属于彻底的任务失败。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "WMT与TGT库存与营业成本",
+            "存货周转天数",
+            "消费放缓新闻摘要",
+            "股价与估值匹配度",
+            "防御性配置建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent的轨迹与最终回答均为空。未执行任何工具调用，未获取财务数据或新闻，未进行存货周转天数计算，也未提供任何估值分析或配置建议。完全缺失evaluation_criteria中的全部5项核心指标，未满足min_tool_calls与must_call_sequence要求，逻辑闭环与长链推理均不存在，属于彻底的任务失败。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"WMT与TGT库存与营业成本\",\n    \"存货周转天数\",\n    \"消费放缓新闻摘要\",\n    \"股价与估值匹配度\",\n    \"防御性配置建议\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 45
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T16",
+      "query": "剖析消费疲软周期下零售巨头的库存去化效率。获取WMT与TGT最新财报中的期末库存总额与季度营业成本，计算存货周转天数。搜索近期消费者支出放缓及假日销售指引的新闻。结合当前股价与估值水平，评估谁的去库存能力更强并给出防御性配置权重。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "WMT与TGT库存与营业成本",
+          "存货周转天数",
+          "消费放缓新闻摘要",
+          "股价与估值匹配度",
+          "防御性配置建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "calculator",
+            "search_financial_news",
+            "get_stock_price"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:11:32.840600+00:00",
+        "ended_at": "2026-04-18T17:12:15.838973+00:00",
+        "elapsed_s": 42.99835991859436,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent的轨迹与最终回答均为空。未调用任何工具，未获取财务数据或新闻，未进行任何计算，也未提供任何分析结论。完全缺失所有核心评估指标，逻辑链条断裂，工具调用序列未执行，属于彻底的任务失败。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "WMT与TGT库存与营业成本",
+            "存货周转天数",
+            "消费放缓新闻摘要",
+            "股价与估值匹配度",
+            "防御性配置建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent的轨迹与最终回答均为空。未调用任何工具，未获取财务数据或新闻，未进行任何计算，也未提供任何分析结论。完全缺失所有核心评估指标，逻辑链条断裂，工具调用序列未执行，属于彻底的任务失败。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\"WMT与TGT库存与营业成本\", \"存货周转天数\", \"消费放缓新闻摘要\", \"股价与估值匹配度\", \"防御性配置建议\"],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 46
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T16",
+      "query": "剖析消费疲软周期下零售巨头的库存去化效率。获取WMT与TGT最新财报中的期末库存总额与季度营业成本，计算存货周转天数。搜索近期消费者支出放缓及假日销售指引的新闻。结合当前股价与估值水平，评估谁的去库存能力更强并给出防御性配置权重。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "WMT与TGT库存与营业成本",
+          "存货周转天数",
+          "消费放缓新闻摘要",
+          "股价与估值匹配度",
+          "防御性配置建议"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "calculator",
+            "search_financial_news",
+            "get_stock_price"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:12:36.996482+00:00",
+        "ended_at": "2026-04-18T17:14:04.305687+00:00",
+        "elapsed_s": 87.30919766426086,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent的轨迹（Trajectory）与最终回答（Final Answer）均为空。未执行任何工具调用，未获取财务数据、新闻或股价，未进行任何计算或推理，完全缺失所有评估指标。属于零输出状态，各项得分均为0。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "WMT与TGT库存与营业成本",
+            "存货周转天数",
+            "消费放缓新闻摘要",
+            "股价与估值匹配度",
+            "防御性配置建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent的轨迹（Trajectory）与最终回答（Final Answer）均为空。未执行任何工具调用，未获取财务数据、新闻或股价，未进行任何计算或推理，完全缺失所有评估指标。属于零输出状态，各项得分均为0。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"WMT与TGT库存与营业成本\",\n    \"存货周转天数\",\n    \"消费放缓新闻摘要\",\n    \"股价与估值匹配度\",\n    \"防御性配置建议\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 47
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T17",
+      "query": "定位全球半导体周期拐点。获取费城半导体指数(SOX)近一年价格区间，及台积电(TSM)与三星最新财报的产能利用率。搜索行业库存去化与成熟制程价格战的报道。计算产能利用率与行业平均库存偏离度，结合SOX技术位置预测未来6个月景气度方向。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "SOX近一年波动区间",
+          "TSM与三星产能利用率",
+          "库存去化新闻要点",
+          "利用率与库存偏离度",
+          "6个月景气度预测方向"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:14:26.848403+00:00",
+        "ended_at": "2026-04-18T17:15:42.259407+00:00",
+        "elapsed_s": 75.4109902381897,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空。1. 指标完备性(0/40)：完全缺失全部5项核心指标。2. 逻辑严谨性(0/30)：无任何数据获取、计算或推理过程，逻辑链条完全断裂。3. 执行效率(0/20)：未调用任何工具，严重违反最低4次调用要求及指定的工具调用序列。4. 长链推理(0/10)：未执行任何步骤，任务完全未启动。综合判定为无效输出。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "SOX近一年波动区间",
+            "TSM与三星产能利用率",
+            "库存去化新闻要点",
+            "利用率与库存偏离度",
+            "6个月景气度预测方向"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空。1. 指标完备性(0/40)：完全缺失全部5项核心指标。2. 逻辑严谨性(0/30)：无任何数据获取、计算或推理过程，逻辑链条完全断裂。3. 执行效率(0/20)：未调用任何工具，严重违反最低4次调用要求及指定的工具调用序列。4. 长链推理(0/10)：未执行任何步骤，任务完全未启动。综合判定为无效输出。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"SOX近一年波动区间\",\n    \"TSM与三星产能利用率\",\n    \"库存去化新闻要点\",\n    \"利用率与库存偏离度\",\n    \"6个月景气度预测方向\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 48
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T17",
+      "query": "定位全球半导体周期拐点。获取费城半导体指数(SOX)近一年价格区间，及台积电(TSM)与三星最新财报的产能利用率。搜索行业库存去化与成熟制程价格战的报道。计算产能利用率与行业平均库存偏离度，结合SOX技术位置预测未来6个月景气度方向。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "SOX近一年波动区间",
+          "TSM与三星产能利用率",
+          "库存去化新闻要点",
+          "利用率与库存偏离度",
+          "6个月景气度预测方向"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:16:07.955593+00:00",
+        "ended_at": "2026-04-18T17:17:37.210443+00:00",
+        "elapsed_s": 89.25483703613281,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空。完全未覆盖evaluation_criteria中的5项核心指标（SOX区间、产能利用率、新闻要点、偏离度计算、景气度预测），指标完备性得0分。未发起任何工具调用，严重违反must_call_sequence意图序列与min_tool_calls>=4的要求，执行效率得0分。缺乏“数据获取->计算->结论”的完整闭环，逻辑严谨性得0分。因无任何输出内容，未触发数据编造判定，但整体任务执行完全失败。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "SOX近一年波动区间",
+            "TSM与三星产能利用率",
+            "库存去化新闻要点",
+            "利用率与库存偏离度",
+            "6个月景气度预测方向"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空。完全未覆盖evaluation_criteria中的5项核心指标（SOX区间、产能利用率、新闻要点、偏离度计算、景气度预测），指标完备性得0分。未发起任何工具调用，严重违反must_call_sequence意图序列与min_tool_calls>=4的要求，执行效率得0分。缺乏“数据获取->计算->结论”的完整闭环，逻辑严谨性得0分。因无任何输出内容，未触发数据编造判定，但整体任务执行完全失败。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"SOX近一年波动区间\",\n    \"TSM与三星产能利用率\",\n    \"库存去化新闻要点\",\n    \"利用率与库存偏离度\",\n    \"6个月景气度预测方向\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 49
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T17",
+      "query": "定位全球半导体周期拐点。获取费城半导体指数(SOX)近一年价格区间，及台积电(TSM)与三星最新财报的产能利用率。搜索行业库存去化与成熟制程价格战的报道。计算产能利用率与行业平均库存偏离度，结合SOX技术位置预测未来6个月景气度方向。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "SOX近一年波动区间",
+          "TSM与三星产能利用率",
+          "库存去化新闻要点",
+          "利用率与库存偏离度",
+          "6个月景气度预测方向"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_stock_price",
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:18:00.157174+00:00",
+        "ended_at": "2026-04-18T17:18:40.681769+00:00",
+        "elapsed_s": 40.52457594871521,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未发起任何工具调用，未获取SOX价格、财报产能利用率或行业新闻，也未进行偏离度计算与景气度预测。完全缺失全部5项核心指标，未满足最小工具调用次数（4次）及指定调用序列要求，数据获取-计算-结论闭环完全断裂，长链推理未启动。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "SOX近一年波动区间",
+            "TSM与三星产能利用率",
+            "库存去化新闻要点",
+            "利用率与库存偏离度",
+            "6个月景气度预测方向"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未发起任何工具调用，未获取SOX价格、财报产能利用率或行业新闻，也未进行偏离度计算与景气度预测。完全缺失全部5项核心指标，未满足最小工具调用次数（4次）及指定调用序列要求，数据获取-计算-结论闭环完全断裂，长链推理未启动。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"SOX近一年波动区间\",\n    \"TSM与三星产能利用率\",\n    \"库存去化新闻要点\",\n    \"利用率与库存偏离度\",\n    \"6个月景气度预测方向\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 50
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T18",
+      "query": "量化IRA税收抵免延期对新能源企业财务模型的增益。搜索近一周关于IRA补贴延期传闻的政策摘要。获取FSLR与VWS最新自由现金流及资本结构。测算若ITC/PTC补贴税率上调3%，对未来三年项目NPV的增量贡献。结合负债率对比，推荐财务稳健性最优标的。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "IRA延期政策新闻摘要",
+          "FSLR与VWS现金流及负债率",
+          "税率上调3%的NPV增量测算",
+          "财务稳健性评估结论",
+          "最优标的推荐"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:19:03.210177+00:00",
+        "ended_at": "2026-04-18T17:20:05.951717+00:00",
+        "elapsed_s": 62.74153208732605,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent未提供任何最终回答，轨迹为空数组。完全缺失全部5项核心评估指标，未执行任何工具调用，严重违反min_tool_calls（≥3）与must_call_sequence要求。无数据获取、计算与推理过程，逻辑链条完全断裂，无法进行任何有效评估。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "IRA延期政策新闻摘要",
+            "FSLR与VWS现金流及负债率",
+            "税率上调3%的NPV增量测算",
+            "财务稳健性评估结论",
+            "最优标的推荐"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent未提供任何最终回答，轨迹为空数组。完全缺失全部5项核心评估指标，未执行任何工具调用，严重违反min_tool_calls（≥3）与must_call_sequence要求。无数据获取、计算与推理过程，逻辑链条完全断裂，无法进行任何有效评估。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"IRA延期政策新闻摘要\",\n    \"FSLR与VWS现金流及负债率\",\n    \"税率上调3%的NPV增量测算\",\n    \"财务稳健性评估结论\",\n    \"最优标的推荐\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 51
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T18",
+      "query": "量化IRA税收抵免延期对新能源企业财务模型的增益。搜索近一周关于IRA补贴延期传闻的政策摘要。获取FSLR与VWS最新自由现金流及资本结构。测算若ITC/PTC补贴税率上调3%，对未来三年项目NPV的增量贡献。结合负债率对比，推荐财务稳健性最优标的。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "IRA延期政策新闻摘要",
+          "FSLR与VWS现金流及负债率",
+          "税率上调3%的NPV增量测算",
+          "财务稳健性评估结论",
+          "最优标的推荐"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:20:28.876618+00:00",
+        "ended_at": "2026-04-18T17:21:03.017665+00:00",
+        "elapsed_s": 34.14103412628174,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent未提供任何最终回答，轨迹为空数组。完全缺失evaluation_criteria中要求的全部5项核心指标。未执行任何工具调用，严重违反min_tool_calls（≥3）及must_call_sequence的意图序列要求。无数据获取、计算与推理过程，逻辑链条完全断裂，无法进行数值保真度与长链稳定性评估。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "IRA延期政策新闻摘要",
+            "FSLR与VWS现金流及负债率",
+            "税率上调3%的NPV增量测算",
+            "财务稳健性评估结论",
+            "最优标的推荐"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent未提供任何最终回答，轨迹为空数组。完全缺失evaluation_criteria中要求的全部5项核心指标。未执行任何工具调用，严重违反min_tool_calls（≥3）及must_call_sequence的意图序列要求。无数据获取、计算与推理过程，逻辑链条完全断裂，无法进行数值保真度与长链稳定性评估。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"IRA延期政策新闻摘要\",\n    \"FSLR与VWS现金流及负债率\",\n    \"税率上调3%的NPV增量测算\",\n    \"财务稳健性评估结论\",\n    \"最优标的推荐\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 52
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T18",
+      "query": "量化IRA税收抵免延期对新能源企业财务模型的增益。搜索近一周关于IRA补贴延期传闻的政策摘要。获取FSLR与VWS最新自由现金流及资本结构。测算若ITC/PTC补贴税率上调3%，对未来三年项目NPV的增量贡献。结合负债率对比，推荐财务稳健性最优标的。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "IRA延期政策新闻摘要",
+          "FSLR与VWS现金流及负债率",
+          "税率上调3%的NPV增量测算",
+          "财务稳健性评估结论",
+          "最优标的推荐"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:21:32.037635+00:00",
+        "ended_at": "2026-04-18T17:23:08.667292+00:00",
+        "elapsed_s": 96.62964391708374,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent未提供任何最终回答，轨迹为空数组。完全缺失evaluation_criteria中要求的全部5项核心指标。未执行任何工具调用，严重违反min_tool_calls（≥3）及must_call_sequence的意图序列要求。无数据获取、计算与推理过程，逻辑链条完全断裂，无法进行数值保真度与长链稳定性评估。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "IRA延期政策新闻摘要",
+            "FSLR与VWS现金流及负债率",
+            "税率上调3%的NPV增量测算",
+            "财务稳健性评估结论",
+            "最优标的推荐"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent未提供任何最终回答，轨迹为空数组。完全缺失evaluation_criteria中要求的全部5项核心指标。未执行任何工具调用，严重违反min_tool_calls（≥3）及must_call_sequence的意图序列要求。无数据获取、计算与推理过程，逻辑链条完全断裂，无法进行数值保真度与长链稳定性评估。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"IRA延期政策新闻摘要\",\n    \"FSLR与VWS现金流及负债率\",\n    \"税率上调3%的NPV增量测算\",\n    \"财务稳健性评估结论\",\n    \"最优标的推荐\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 53
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T19",
+      "query": "压力测试油价飙升对航空公司利润表的侵蚀。获取DAL与LHA最新财报的燃油成本占比及对冲覆盖比例。获取当前布伦特原油参考价。测算若油价单季上涨15%且无新增对冲，两家公司营业利润率将缩水多少百分点。结合当前股价表现给出航空股交易策略。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "DAL与LHA燃油成本占比与对冲比例",
+          "布伦特原油参考价",
+          "油价上涨15%后的利润率缩水估算",
+          "对冲有效性评价",
+          "交易策略建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:23:40.921279+00:00",
+        "ended_at": "2026-04-18T17:25:03.160385+00:00",
+        "elapsed_s": 82.23908805847168,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用，未获取DAL/LHA财报数据、对冲比例或布伦特原油价格，也未进行利润率压力测试计算。完全缺失全部5项核心指标，未满足最小工具调用次数（3次）及指定调用序列要求，数据获取-计算-结论的逻辑闭环与长链推理均未建立。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "DAL与LHA燃油成本占比与对冲比例",
+            "布伦特原油参考价",
+            "油价上涨15%后的利润率缩水估算",
+            "对冲有效性评价",
+            "交易策略建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用，未获取DAL/LHA财报数据、对冲比例或布伦特原油价格，也未进行利润率压力测试计算。完全缺失全部5项核心指标，未满足最小工具调用次数（3次）及指定调用序列要求，数据获取-计算-结论的逻辑闭环与长链推理均未建立。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"DAL与LHA燃油成本占比与对冲比例\",\n    \"布伦特原油参考价\",\n    \"油价上涨15%后的利润率缩水估算\",\n    \"对冲有效性评价\",\n    \"交易策略建议\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 54
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T19",
+      "query": "压力测试油价飙升对航空公司利润表的侵蚀。获取DAL与LHA最新财报的燃油成本占比及对冲覆盖比例。获取当前布伦特原油参考价。测算若油价单季上涨15%且无新增对冲，两家公司营业利润率将缩水多少百分点。结合当前股价表现给出航空股交易策略。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "DAL与LHA燃油成本占比与对冲比例",
+          "布伦特原油参考价",
+          "油价上涨15%后的利润率缩水估算",
+          "对冲有效性评价",
+          "交易策略建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:25:26.259908+00:00",
+        "ended_at": "2026-04-18T17:25:56.794712+00:00",
+        "elapsed_s": 30.53478980064392,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用，未获取DAL/LHA财报数据、对冲比例或布伦特原油价格，未进行15%油价上涨的压力测试计算，也未提供对冲评价与交易策略。完全缺失全部5项核心指标，未满足最小工具调用次数与意图序列要求，逻辑闭环与长链推理均未启动。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "DAL与LHA燃油成本占比与对冲比例",
+            "布伦特原油参考价",
+            "油价上涨15%后的利润率缩水估算",
+            "对冲有效性评价",
+            "交易策略建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用，未获取DAL/LHA财报数据、对冲比例或布伦特原油价格，未进行15%油价上涨的压力测试计算，也未提供对冲评价与交易策略。完全缺失全部5项核心指标，未满足最小工具调用次数与意图序列要求，逻辑闭环与长链推理均未启动。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"DAL与LHA燃油成本占比与对冲比例\",\n    \"布伦特原油参考价\",\n    \"油价上涨15%后的利润率缩水估算\",\n    \"对冲有效性评价\",\n    \"交易策略建议\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 55
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T19",
+      "query": "压力测试油价飙升对航空公司利润表的侵蚀。获取DAL与LHA最新财报的燃油成本占比及对冲覆盖比例。获取当前布伦特原油参考价。测算若油价单季上涨15%且无新增对冲，两家公司营业利润率将缩水多少百分点。结合当前股价表现给出航空股交易策略。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "DAL与LHA燃油成本占比与对冲比例",
+          "布伦特原油参考价",
+          "油价上涨15%后的利润率缩水估算",
+          "对冲有效性评价",
+          "交易策略建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "search_financial_news",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:26:19.211367+00:00",
+        "ended_at": "2026-04-18T17:36:19.305628+00:00",
+        "elapsed_s": 600.0942330360413,
+        "success": false,
+        "failure_mode": "timeout",
+        "error": "task_timeout_600s"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未调用任何工具，未获取任何财务数据或油价信息，也未进行压力测试计算或给出交易策略。完全缺失所有评估指标，任务执行彻底失败。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "DAL与LHA燃油成本占比与对冲比例",
+            "布伦特原油参考价",
+            "油价上涨15%后的利润率缩水估算",
+            "对冲有效性评价",
+            "交易策略建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未调用任何工具，未获取任何财务数据或油价信息，也未进行压力测试计算或给出交易策略。完全缺失所有评估指标，任务执行彻底失败。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"DAL与LHA燃油成本占比与对冲比例\",\n    \"布伦特原油参考价\",\n    \"油价上涨15%后的利润率缩水估算\",\n    \"对冲有效性评价\",\n    \"交易策略建议\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 56
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T20",
+      "query": "评估数字支付渗透对传统银行净息差(NIM)的长期冲击。搜索数字钱包与BNPL市场最新份额扩张数据。获取JPM与BAC最新净利息收入及生息资产规模，计算实际NIM。测算若数字支付分流导致生息资产增速下降1.5%，对年度NII的绝对影响，结合估值判断传统银行是否被错杀。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "数字支付/BNPL份额数据摘要",
+          "JPM与BAC净利息收入与生息资产",
+          "实际NIM数值",
+          "增速下降1.5%的NII影响额",
+          "错杀价值评估结论"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:36:44.268936+00:00",
+        "ended_at": "2026-04-18T17:37:19.389576+00:00",
+        "elapsed_s": 35.120633125305176,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用，完全未满足最小调用次数（3次）及必须调用序列（search_financial_news -> get_financial_statements -> calculator）。五项核心指标全部缺失，无数据获取、计算与推理过程，任务执行彻底失败。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "数字支付/BNPL份额数据摘要",
+            "JPM与BAC净利息收入与生息资产",
+            "实际NIM数值",
+            "增速下降1.5%的NII影响额",
+            "错杀价值评估结论"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用，完全未满足最小调用次数（3次）及必须调用序列（search_financial_news -> get_financial_statements -> calculator）。五项核心指标全部缺失，无数据获取、计算与推理过程，任务执行彻底失败。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"数字支付/BNPL份额数据摘要\",\n    \"JPM与BAC净利息收入与生息资产\",\n    \"实际NIM数值\",\n    \"增速下降1.5%的NII影响额\",\n    \"错杀价值评估结论\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 57
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T20",
+      "query": "评估数字支付渗透对传统银行净息差(NIM)的长期冲击。搜索数字钱包与BNPL市场最新份额扩张数据。获取JPM与BAC最新净利息收入及生息资产规模，计算实际NIM。测算若数字支付分流导致生息资产增速下降1.5%，对年度NII的绝对影响，结合估值判断传统银行是否被错杀。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "数字支付/BNPL份额数据摘要",
+          "JPM与BAC净利息收入与生息资产",
+          "实际NIM数值",
+          "增速下降1.5%的NII影响额",
+          "错杀价值评估结论"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:37:45.762536+00:00",
+        "ended_at": "2026-04-18T17:38:23.837717+00:00",
+        "elapsed_s": 38.07517385482788,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent的轨迹（Trajectory）与最终回答（Final Answer）均为空。未执行任何工具调用，未获取市场数据与财务报表，未进行NIM计算与NII影响测算，也未给出估值判断结论。完全缺失全部5项核心指标，未满足最小工具调用次数与必须调用序列要求，逻辑链条完全断裂，故各项维度均得0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "数字支付/BNPL份额数据摘要",
+            "JPM与BAC净利息收入与生息资产",
+            "实际NIM数值",
+            "增速下降1.5%的NII影响额",
+            "错杀价值评估结论"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent的轨迹（Trajectory）与最终回答（Final Answer）均为空。未执行任何工具调用，未获取市场数据与财务报表，未进行NIM计算与NII影响测算，也未给出估值判断结论。完全缺失全部5项核心指标，未满足最小工具调用次数与必须调用序列要求，逻辑链条完全断裂，故各项维度均得0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"数字支付/BNPL份额数据摘要\",\n    \"JPM与BAC净利息收入与生息资产\",\n    \"实际NIM数值\",\n    \"增速下降1.5%的NII影响额\",\n    \"错杀价值评估结论\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 58
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T20",
+      "query": "评估数字支付渗透对传统银行净息差(NIM)的长期冲击。搜索数字钱包与BNPL市场最新份额扩张数据。获取JPM与BAC最新净利息收入及生息资产规模，计算实际NIM。测算若数字支付分流导致生息资产增速下降1.5%，对年度NII的绝对影响，结合估值判断传统银行是否被错杀。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "数字支付/BNPL份额数据摘要",
+          "JPM与BAC净利息收入与生息资产",
+          "实际NIM数值",
+          "增速下降1.5%的NII影响额",
+          "错杀价值评估结论"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 15,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-18T17:38:47.478564+00:00",
+        "ended_at": "2026-04-18T17:39:28.814239+00:00",
+        "elapsed_s": 41.33566474914551,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 15 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何数据获取、计算或推理步骤。所有5项核心指标均缺失，未满足最小工具调用次数（3次）及指定调用序列（search->get->calculate）要求，逻辑链条完全断裂，无法进行任何有效评估。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "数字支付/BNPL份额数据摘要",
+            "JPM与BAC净利息收入与生息资产",
+            "实际NIM数值",
+            "增速下降1.5%的NII影响额",
+            "错杀价值评估结论"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何数据获取、计算或推理步骤。所有5项核心指标均缺失，未满足最小工具调用次数（3次）及指定调用序列（search->get->calculate）要求，逻辑链条完全断裂，无法进行任何有效评估。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\"数字支付/BNPL份额数据摘要\", \"JPM与BAC净利息收入与生息资产\", \"实际NIM数值\", \"增速下降1.5%的NII影响额\", \"错杀价值评估结论\"],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_final/1776528059_react_limit_15/judge_logs.jsonl",
+          "line": 59
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    }
+  ]
+}

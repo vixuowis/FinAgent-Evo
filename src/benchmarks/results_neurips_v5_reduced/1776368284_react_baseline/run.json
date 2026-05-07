@@ -1,0 +1,1555 @@
+{
+  "schema_version": "neurips_eval.v2",
+  "run_id": "1776368284_react_baseline",
+  "started_at": "2026-04-16T19:38:04.214176+00:00",
+  "ended_at": "2026-04-16T20:23:34.546136+00:00",
+  "benchmark": {
+    "path": "src/benchmarks/complex_tasks_real_api.json",
+    "task_count": 5,
+    "limit": 5
+  },
+  "variant": {
+    "name": "react_baseline",
+    "disable_evolution": true,
+    "disable_memory": true,
+    "disable_orchestration": true,
+    "react_baseline": true
+  },
+  "judge": {
+    "enabled": true,
+    "model": "qwen3.6-plus",
+    "base_url": "https://coding.dashscope.aliyuncs.com/v1",
+    "temperature": 0.0,
+    "prompt_sha256": "8fe052ded54928930fcbcf1c948ad42b29fa7fdcbec56a2385a0636fbb429eb0",
+    "judge_logs_path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl"
+  },
+  "qveris_cache": {
+    "enabled": false,
+    "ttl_seconds": 0
+  },
+  "summary": {
+    "task_count": 15,
+    "hard_success_count": 4,
+    "judge_success_count": 0,
+    "hard_success_rate": 0.26666666666666666,
+    "judge_success_rate": 0.0,
+    "avg_score": 0.6666666666666666,
+    "elapsed_s_avg": 154.52306276957194,
+    "elapsed_s_p50": 98.30125093460083,
+    "elapsed_s_p90": 376.61385941505426,
+    "tool_calls_avg": 2.466666666666667,
+    "llm_cost_estimate_usd_total": null,
+    "failure_modes": {
+      "execution": 11
+    }
+  },
+  "results": [
+    {
+      "task_id": "T01",
+      "query": "评估丰田汽车(TM)美股ADR的内在价值。首先获取其最新财报中的美元计价自由现金流，结合当前日元对美元的实时汇率进行本币折算还原，然后使用5%的折现率和3%的永续增长率进行DCF计算，最后对比其当前美股市场价格，判断是否存在显著的安全边际。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "还原后的日元口径自由现金流",
+          "DCF理论估值结果",
+          "TM当前市价",
+          "折溢价百分比及安全边际判断"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_exchange_rate",
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 25,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-16T19:38:04.214214+00:00",
+        "ended_at": "2026-04-16T19:42:56.277334+00:00",
+        "elapsed_s": 292.06310391426086,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未发起任何工具调用，未获取财报数据、汇率或股价，也未执行DCF计算。完全缺失所有4项核心指标，逻辑链条彻底断裂，未满足最低工具调用次数与指定调用序列要求。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "还原后的日元口径自由现金流",
+            "DCF理论估值结果",
+            "TM当前市价",
+            "折溢价百分比及安全边际判断"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未发起任何工具调用，未获取财报数据、汇率或股价，也未执行DCF计算。完全缺失所有4项核心指标，逻辑链条彻底断裂，未满足最低工具调用次数与指定调用序列要求。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"还原后的日元口径自由现金流\",\n    \"DCF理论估值结果\",\n    \"TM当前市价\",\n    \"折溢价百分比及安全边际判断\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl",
+          "line": 0
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T01",
+      "query": "评估丰田汽车(TM)美股ADR的内在价值。首先获取其最新财报中的美元计价自由现金流，结合当前日元对美元的实时汇率进行本币折算还原，然后使用5%的折现率和3%的永续增长率进行DCF计算，最后对比其当前美股市场价格，判断是否存在显著的安全边际。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "还原后的日元口径自由现金流",
+          "DCF理论估值结果",
+          "TM当前市价",
+          "折溢价百分比及安全边际判断"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_exchange_rate",
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 25,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-16T19:43:17.166891+00:00",
+        "ended_at": "2026-04-16T19:50:30.147939+00:00",
+        "elapsed_s": 432.9810297489166,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent最终回答与执行轨迹均为空。未调用任何工具获取财报、汇率或股价数据，未进行任何DCF计算，完全缺失全部4项核心评估指标。逻辑链条未启动，工具调用序列（min_tool_calls: 4）未满足，长链推理未执行。各项评分维度均得0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "还原后的日元口径自由现金流",
+            "DCF理论估值结果",
+            "TM当前市价",
+            "折溢价百分比及安全边际判断"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent最终回答与执行轨迹均为空。未调用任何工具获取财报、汇率或股价数据，未进行任何DCF计算，完全缺失全部4项核心评估指标。逻辑链条未启动，工具调用序列（min_tool_calls: 4）未满足，长链推理未执行。各项评分维度均得0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"还原后的日元口径自由现金流\",\n    \"DCF理论估值结果\",\n    \"TM当前市价\",\n    \"折溢价百分比及安全边际判断\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl",
+          "line": 1
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T01",
+      "query": "评估丰田汽车(TM)美股ADR的内在价值。首先获取其最新财报中的美元计价自由现金流，结合当前日元对美元的实时汇率进行本币折算还原，然后使用5%的折现率和3%的永续增长率进行DCF计算，最后对比其当前美股市场价格，判断是否存在显著的安全边际。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "还原后的日元口径自由现金流",
+          "DCF理论估值结果",
+          "TM当前市价",
+          "折溢价百分比及安全边际判断"
+        ],
+        "min_tool_calls": 4,
+        "must_call_sequence": [
+          [
+            "get_financial_statements",
+            "get_exchange_rate",
+            "calculate_dcf",
+            "get_stock_price"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 25,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-16T19:50:53.877997+00:00",
+        "ended_at": "2026-04-16T19:53:10.498994+00:00",
+        "elapsed_s": 136.62097215652466,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未发起任何工具调用，未获取财报数据、汇率或股价，也未执行DCF计算。完全缺失全部4项核心指标，逻辑链条彻底断裂，未满足最低工具调用次数与指定调用序列要求。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "还原后的日元口径自由现金流",
+            "DCF理论估值结果",
+            "TM当前市价",
+            "折溢价百分比及安全边际判断"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未发起任何工具调用，未获取财报数据、汇率或股价，也未执行DCF计算。完全缺失全部4项核心指标，逻辑链条彻底断裂，未满足最低工具调用次数与指定调用序列要求。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"还原后的日元口径自由现金流\",\n    \"DCF理论估值结果\",\n    \"TM当前市价\",\n    \"折溢价百分比及安全边际判断\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl",
+          "line": 2
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T02",
+      "query": "分析当前美联储货币政策对高估值科技股的影响。获取最新的美国联邦基金利率与10年期国债收益率，计算期限利差。接着获取英伟达(NVDA)和微软(MSFT)的当前市盈率，将期限利差作为无风险利率基准，利用计算器估算在风险溢价补偿下的理论合理P/E区间，并给出调仓建议。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "联邦基金利率与10年期收益率",
+          "期限利差数值",
+          "NVDA与MSFT当前P/E",
+          "理论合理P/E区间",
+          "调仓建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 25,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-16T19:53:31.300838+00:00",
+        "ended_at": "2026-04-16T19:56:18.060720+00:00",
+        "elapsed_s": 166.75987195968628,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent未提供任何最终回答与执行轨迹。完全缺失evaluation_criteria中要求的全部5项核心指标（联邦基金利率与10年期收益率、期限利差数值、NVDA与MSFT当前P/E、理论合理P/E区间、调仓建议）。轨迹为空数组，未调用任何工具，严重违反min_tool_calls（≥3）与must_call_sequence要求。无数据获取、计算与推理闭环，逻辑链条完全断裂，各项评分维度均得0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "联邦基金利率与10年期收益率",
+            "期限利差数值",
+            "NVDA与MSFT当前P/E",
+            "理论合理P/E区间",
+            "调仓建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent未提供任何最终回答与执行轨迹。完全缺失evaluation_criteria中要求的全部5项核心指标（联邦基金利率与10年期收益率、期限利差数值、NVDA与MSFT当前P/E、理论合理P/E区间、调仓建议）。轨迹为空数组，未调用任何工具，严重违反min_tool_calls（≥3）与must_call_sequence要求。无数据获取、计算与推理闭环，逻辑链条完全断裂，各项评分维度均得0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"联邦基金利率与10年期收益率\",\n    \"期限利差数值\",\n    \"NVDA与MSFT当前P/E\",\n    \"理论合理P/E区间\",\n    \"调仓建议\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl",
+          "line": 3
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T02",
+      "query": "分析当前美联储货币政策对高估值科技股的影响。获取最新的美国联邦基金利率与10年期国债收益率，计算期限利差。接着获取英伟达(NVDA)和微软(MSFT)的当前市盈率，将期限利差作为无风险利率基准，利用计算器估算在风险溢价补偿下的理论合理P/E区间，并给出调仓建议。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "联邦基金利率与10年期收益率",
+          "期限利差数值",
+          "NVDA与MSFT当前P/E",
+          "理论合理P/E区间",
+          "调仓建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 25,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-16T19:56:46.463319+00:00",
+        "ended_at": "2026-04-16T19:57:21.054937+00:00",
+        "elapsed_s": 34.59161114692688,
+        "success": true,
+        "failure_mode": null,
+        "error": null
+      },
+      "agent": {
+        "final_answer": "## 数据获取失败\n\n所有可用的数据工具均返回 **HTTP 402 - Insufficient credits** 错误，包括：\n\n| 工具 | 状态 |\n|------|------|\n| `get_macro_data` (联邦基金利率) | ❌ 额度不足 |\n| `get_macro_data` (10年期国债收益率) | ❌ 额度不足 |\n| `get_stock_price` (NVDA/MSFT) | ❌ 额度不足 |\n| `get_financial_statements` (NVDA/MSFT) | ❌ 额度不足 |\n| `tavily_search` (网络搜索) | ❌ 超出使用限制 |\n\n**无法通过工具获取实时数据，因此无法完成本次分析。**\n\n---\n\n### 如需完成此分析，需要以下数据：\n\n1. **联邦基金利率** → 用于确定短期政策利率基准\n2. **10年期国债收益率** → 用于计算期限利差（10Y - 联邦基金利率）\n3. **NVDA 当前股价与 EPS** → 计算实际 P/E\n4. **MSFT 当前股价与 EPS** → 计算实际 P/E\n\n### 分析框架（数据到位后即可执行）：\n\n```\n期限利差 = 10年期国债收益率 - 联邦基金利率\n（负利差 = 收益率曲线倒挂 → 经济衰退信号 → 高估值承压）\n\n理论合理 P/E = 1 / (无风险利率 + 风险溢价 - 增长率)\n\n其中：\n  - 无风险利率 = 10年期国债收益率\n  - 风险溢价 = 通常取 4%-6%（科技股取上限）\n  - 增长率 = 预期盈利增长率\n```\n\n**请充值 API 额度后重新执行此任务。**",
+        "trajectory": [
+          {
+            "tool": "get_macro_data",
+            "input": {
+              "indicator": "FEDERAL_FUNDS_RATE"
+            },
+            "output": "Request failed: [Errno 54] Connection reset by peer"
+          },
+          {
+            "tool": "get_macro_data",
+            "input": {
+              "indicator": "TREASURY_YIELD_10Y"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"4cede5db-4bee-4a42-ad91-52c1fc463166\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.0005049705505371094,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "get_stock_price",
+            "input": {
+              "symbol": "NVDA"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"1bc00ce8-0cb5-45fd-a774-7e6e19ea6ff4\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.0003304481506347656,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "get_stock_price",
+            "input": {
+              "symbol": "MSFT"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"f3b2bf92-f3cc-4715-9d82-54b35109ca96\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.00034117698669433594,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "get_financial_statements",
+            "input": {
+              "symbol": "NVDA"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"ad108680-e78a-4127-9e52-f9cb0e08e020\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.00041747093200683594,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "get_financial_statements",
+            "input": {
+              "symbol": "MSFT"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"151f09c3-782f-41cf-b404-728edfdee06c\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.0004394054412841797,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "tavily_search",
+            "input": {
+              "query": "Federal funds rate December 2024 January 2025",
+              "max_results": 5
+            },
+            "output": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\")}"
+          },
+          {
+            "tool": "tavily_search",
+            "input": {
+              "query": "10 year Treasury yield current January 2025",
+              "max_results": 5
+            },
+            "output": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\")}"
+          },
+          {
+            "tool": "tavily_search",
+            "input": {
+              "query": "NVDA Nvidia stock price PE ratio January 2025",
+              "max_results": 5
+            },
+            "output": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\")}"
+          },
+          {
+            "tool": "tavily_search",
+            "input": {
+              "query": "MSFT Microsoft stock price PE ratio January 2025",
+              "max_results": 5
+            },
+            "output": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\")}"
+          },
+          {
+            "tool": "get_macro_data",
+            "input": {
+              "indicator": "FEDERAL_FUNDS_RATE"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"b654d37d-6bd1-4c33-8ab6-f70f33cc50ca\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.000354766845703125,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "get_macro_data",
+            "input": {
+              "indicator": "TREASURY_YIELD_10Y"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"ce898ef2-250c-4566-956c-01a8ce4cee1c\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.0003437995910644531,\"remaining_credits\":0.0}"
+          }
+        ],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 12,
+        "qveris_calls_estimate": 8,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent未能交付任何核心指标。轨迹显示所有数据获取工具（get_macro_data, get_stock_price, tavily_search等）均因额度不足或调用限制返回错误，未获取到任何实际数值，也未调用calculator进行理论P/E估算，导致“数据获取->计算->结论”的推理闭环完全断裂。工具调用序列缺失必须的calculator环节，且存在大量无效重试与冗余调用（如重复请求同一失败接口）。尽管Agent未编造数据并如实报告了失败，但任务执行彻底失败，逻辑严谨性、执行效率与长链稳定性均不达标。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "联邦基金利率与10年期收益率",
+            "期限利差数值",
+            "NVDA与MSFT当前P/E",
+            "理论合理P/E区间",
+            "调仓建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent未能交付任何核心指标。轨迹显示所有数据获取工具（get_macro_data, get_stock_price, tavily_search等）均因额度不足或调用限制返回错误，未获取到任何实际数值，也未调用calculator进行理论P/E估算，导致“数据获取->计算->结论”的推理闭环完全断裂。工具调用序列缺失必须的calculator环节，且存在大量无效重试与冗余调用（如重复请求同一失败接口）。尽管Agent未编造数据并如实报告了失败，但任务执行彻底失败，逻辑严谨性、执行效率与长链稳定性均不达标。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"联邦基金利率与10年期收益率\",\n    \"期限利差数值\",\n    \"NVDA与MSFT当前P/E\",\n    \"理论合理P/E区间\",\n    \"调仓建议\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl",
+          "line": 4
+        }
+      },
+      "derived": {
+        "hard_success": true,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T02",
+      "query": "分析当前美联储货币政策对高估值科技股的影响。获取最新的美国联邦基金利率与10年期国债收益率，计算期限利差。接着获取英伟达(NVDA)和微软(MSFT)的当前市盈率，将期限利差作为无风险利率基准，利用计算器估算在风险溢价补偿下的理论合理P/E区间，并给出调仓建议。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "联邦基金利率与10年期收益率",
+          "期限利差数值",
+          "NVDA与MSFT当前P/E",
+          "理论合理P/E区间",
+          "调仓建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 25,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-16T19:57:54.004812+00:00",
+        "ended_at": "2026-04-16T19:58:28.351820+00:00",
+        "elapsed_s": 34.34700298309326,
+        "success": true,
+        "failure_mode": null,
+        "error": null
+      },
+      "agent": {
+        "final_answer": "所有数据接口均返回\"额度不足\"错误，无法获取实时数据。但我可以为你完整搭建分析框架，并说明一旦获得数据后的计算方法。\n\n---\n\n## 美联储货币政策对高估值科技股影响分析框架\n\n### 一、数据需求与计算步骤\n\n**需要获取的4个核心数据点：**\n1. 美国联邦基金利率（Federal Funds Rate）\n2. 10年期国债收益率（10Y Treasury Yield）\n3. 英伟达(NVDA) 当前市盈率（P/E）\n4. 微软(MSFT) 当前市盈率（P/E）\n\n### 二、期限利差计算\n\n```\n期限利差 = 联邦基金利率 − 10年期国债收益率\n```\n\n- **正利差**（短端利率 > 长端利率）= 收益率曲线倒挂 → 经济衰退预期升温\n- **负利差**（短端利率 < 长端利率）= 正常曲线 → 增长预期健康\n\n### 三、理论合理 P/E 估算模型\n\n以 **10年期国债收益率** 作为无风险利率 (Rf)：\n\n**步骤1：计算股权风险溢价（ERP）**\n```\nERP = 市场平均预期回报率 − Rf\n```\n历史ERP通常在 3%~6% 区间\n\n**步骤2：推导合理 P/E**\n```\n合理 P/E = 1 / (Rf + ERP − g)\n```\n其中 g = 盈利长期增长率\n\n**示例场景（假设数据，仅作演示）：**\n\n| 参数 | 保守场景 | 基准场景 | 乐观场景 |\n|------|---------|---------|---------|\n| 10Y收益率 (Rf) | 4.5% | 4.2% | 3.8% |\n| ERP | 5.0% | 4.5% | 4.0% |\n| 盈利增速 (g) | 8% | 12% | 15% |\n| **合理 P/E** | **13.3x** | **15.2x** | **18.2x** |\n\n### 四、对高估值科技股的影响机制\n\n**传导路径：**\n1. **利率↑ → 折现率↑ → 未来现金流现值↓** → 高估值成长股承压最大\n2. **期限利差收窄/倒挂 → 衰退风险↑** → 市场风险偏好下降，资金从成长股转向防御\n3. **利率维持高位** → 科技股融资成本上升，资本支出受压\n\n**NVDA vs MSFT 差异：**\n- **NVDA**：盈利增速极高但波动大，对利率敏感度更高，合理P/E区间更宽\n- **MSFT**：盈利稳定、现金流充沛，估值韧性更强，合理P/E区间更窄\n\n### 五、调仓建议框架\n\n| 当前P/E vs 合理P/E | 建议 |\n|-------------------|------|\n| 当前P/E >> 合理P/E上限 | **减仓**：估值透支未来增长 |\n| 当前P/E 在合理区间内 | **持有**：估值合理 |\n| 当前P/E << 合理P/E下限 | **加仓**：低估机会 |\n\n---\n\n**⚠️ 数据获取受阻：** 当前API额度已耗尽，无法获取实时联邦基金利率、国债收益率和个股P/E数据。请充值后我可以立即完成完整计算并给出具体数值结论。",
+        "trajectory": [
+          {
+            "tool": "get_macro_data",
+            "input": {
+              "indicator": "FEDERAL_FUNDS_RATE"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"fe2daa47-05c0-4171-a469-bb556ce6f8c5\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.00046634674072265625,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "get_macro_data",
+            "input": {
+              "indicator": "TREASURY_YIELD_10Y"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"9f3f6ec6-e19f-4088-9b1d-af5f1e2707d0\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.0007770061492919922,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "get_stock_price",
+            "input": {
+              "symbol": "NVDA"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"a875e1d5-037a-4fd0-b63a-1709ed706590\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.00035881996154785156,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "get_stock_price",
+            "input": {
+              "symbol": "MSFT"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"75a24371-84a2-41f3-944d-0eb192a88dc8\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.0003440380096435547,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "tavily_search",
+            "input": {
+              "query": "US federal funds rate 2025 latest",
+              "max_results": 5
+            },
+            "output": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\")}"
+          },
+          {
+            "tool": "tavily_search",
+            "input": {
+              "query": "US 10 year treasury yield today 2025",
+              "max_results": 5
+            },
+            "output": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\")}"
+          },
+          {
+            "tool": "tavily_search",
+            "input": {
+              "query": "NVDA Nvidia P/E ratio 2025",
+              "max_results": 5
+            },
+            "output": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\")}"
+          },
+          {
+            "tool": "tavily_search",
+            "input": {
+              "query": "MSFT Microsoft P/E ratio 2025",
+              "max_results": 5
+            },
+            "output": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\")}"
+          },
+          {
+            "tool": "get_macro_data",
+            "input": {
+              "indicator": "FEDERAL_FUNDS_RATE"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"3542e00a-37b7-435b-aa1a-7d48e565009b\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.0003952980041503906,\"remaining_credits\":0.0}"
+          }
+        ],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 9,
+        "qveris_calls_estimate": 5,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 10,
+          "reasoning": "1. 指标完备性(0/40): 回答未提供任务要求的任何实际数值，明确声明因API额度不足无法获取数据，导致5项核心指标全部缺失。2. 逻辑严谨性与数值保真度(0/30): 轨迹中所有数据获取与搜索工具均返回402/432错误，未形成“数据获取->计算->结论”的闭环。Agent虽未编造数据（明确标注示例为假设场景），但未能完成实际计算与估值推导，该项得分为0。3. 执行效率与工具调用(5/20): 严重缺失must_call_sequence中的calculator工具调用；且对失败接口进行了大量冗余重试（get_macro_data 3次、get_stock_price 2次、tavily_search 4次），未做有效降级或错误处理，执行效率极低。4. 长链推理稳定性(5/10): 在数据全面获取失败的情况下，Agent保持了分析框架的结构完整性与逻辑一致性，未发生目标漂移，但未能通过替代路径完成任务。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "联邦基金利率与10年期收益率",
+            "期限利差数值",
+            "NVDA与MSFT当前P/E",
+            "理论合理P/E区间",
+            "调仓建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 10,\n  \"reasoning\": \"1. 指标完备性(0/40): 回答未提供任务要求的任何实际数值，明确声明因API额度不足无法获取数据，导致5项核心指标全部缺失。2. 逻辑严谨性与数值保真度(0/30): 轨迹中所有数据获取与搜索工具均返回402/432错误，未形成“数据获取->计算->结论”的闭环。Agent虽未编造数据（明确标注示例为假设场景），但未能完成实际计算与估值推导，该项得分为0。3. 执行效率与工具调用(5/20): 严重缺失must_call_sequence中的calculator工具调用；且对失败接口进行了大量冗余重试（get_macro_data 3次、get_stock_price 2次、tavily_search 4次），未做有效降级或错误处理，执行效率极低。4. 长链推理稳定性(5/10): 在数据全面获取失败的情况下，Agent保持了分析框架的结构完整性与逻辑一致性，未发生目标漂移，但未能通过替代路径完成任务。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\"联邦基金利率与10年期收益率\", \"期限利差数值\", \"NVDA与MSFT当前P/E\", \"理论合理P/E区间\", \"调仓建议\"],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl",
+          "line": 5
+        }
+      },
+      "derived": {
+        "hard_success": true,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T03",
+      "query": "评估加密货币监管动态与Coinbase(COIN)股价的联动效应。搜索近一周关于SEC对数字资产监管态度的核心新闻并提取情绪倾向。同时获取比特币(BTC)当前价格及近30日价格数据，计算COIN当前股价与BTC价格的交叉比率。结合BTC技术位与新闻情绪，判断COIN短期交易方向。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "监管新闻核心摘要与情绪",
+          "BTC近期价格数据",
+          "COIN/BTC交叉比率",
+          "短期交易方向判断逻辑"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_crypto_price",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 25,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-16T19:59:18.918775+00:00",
+        "ended_at": "2026-04-16T19:59:48.378788+00:00",
+        "elapsed_s": 29.46000099182129,
+        "success": true,
+        "failure_mode": null,
+        "error": null
+      },
+      "agent": {
+        "final_answer": "所有数据工具均返回\"Insufficient credits\"错误——账户额度已耗尽，无法获取实时行情与新闻数据。\n\n我尝试了以下工具全部失败：\n- `tavily_search` / `search_financial_news` → 搜索额度超限\n- `get_crypto_price` / `get_stock_price` → 数据额度为0\n\n---\n\n**但我可以给你完整的分析框架，你拿到数据后直接套用：**\n\n## 分析框架\n\n### 1. SEC监管新闻情绪评分\n对近一周每条新闻按以下标准打分：\n| 情绪 | 分值 | 典型信号 |\n|------|------|----------|\n| 强利好 | +2 | SEC撤销诉讼、批准ETF、明确合规路径 |\n| 偏利好 | +1 | 官员温和表态、延期而非拒绝 |\n| 中性 | 0 | 常规声明、无方向性 |\n| 偏利空 | -1 | 新调查、警告声明 |\n| 强利空 | -2 | 新执法行动、明确禁止 |\n\n**综合情绪分** = 各条加权平均。>0.5为偏多，<-0.5为偏空。\n\n### 2. COIN/BTC交叉比率\n$$\\text{交叉比率} = \\frac{\\text{COIN股价}}{\\text{BTC价格}}$$\n\n- **比率上升** → COIN相对BTC走强（市场给予交易所溢价，通常因监管明朗或交易量预期上升）\n- **比率下降** → COIN相对BTC走弱（监管风险折价或竞争压力）\n- 建议同时追踪该比率的 **5日/20日均线交叉** 作为短期信号\n\n### 3. BTC关键技术位判断\n| 技术位 | 含义 | 对COIN传导 |\n|--------|------|-----------|\n| BTC站上关键阻力 | 看涨确认 | COIN通常以1.5-2x beta跟涨 |\n| BTC跌破关键支撑 | 看跌确认 | COIN跌幅通常放大 |\n| BTC横盘+监管利好 | COIN独立行情概率高 | 比率走阔 |\n\n### 4. 综合交易方向矩阵\n\n| 新闻情绪 | BTC技术面 | COIN/BTC比率趋势 | 短期方向 |\n|----------|-----------|------------------|----------|\n| 偏多 | 看涨/突破 | 走阔 | **做多COIN** |\n| 偏多 | 中性 | 走阔 | **做多COIN**（相对价值） |\n| 偏多 | 看跌 | 收窄 | 观望 |\n| 中性 | 看涨 | 稳定 | 轻仓做多 |\n| 偏空 | 看跌 | 收窄 | **做空/回避COIN** |\n| 偏空 | 看涨 | 稳定 | 观望（对冲BTC敞口） |\n\n---\n\n**建议：** 补充账户额度后，我可以立即执行完整分析并给出具体数值和交易建议。",
+        "trajectory": [
+          {
+            "tool": "write_todos",
+            "input": {
+              "todos": [
+                {
+                  "content": "搜索近一周SEC对数字资产监管态度的核心新闻",
+                  "status": "in_progress"
+                },
+                {
+                  "content": "获取BTC当前价格",
+                  "status": "in_progress"
+                },
+                {
+                  "content": "获取COIN当前股价",
+                  "status": "in_progress"
+                },
+                {
+                  "content": "计算COIN与BTC交叉比率",
+                  "status": "pending"
+                },
+                {
+                  "content": "结合BTC技术位与新闻情绪判断COIN短期交易方向",
+                  "status": "pending"
+                }
+              ]
+            },
+            "output": "Updated todo list to [{'content': '搜索近一周SEC对数字资产监管态度的核心新闻', 'status': 'in_progress'}, {'content': '获取BTC当前价格', 'status': 'in_progress'}, {'content': '获取COIN当前股价', 'status': 'in_progress'}, {'content': '计算COIN与BTC交叉比率', 'status': 'pending'}, {'content': '结合BTC技术位与新闻情绪判断COIN短期交易方向', 'status': 'pending'}]"
+          },
+          {
+            "tool": "tavily_search",
+            "input": {
+              "query": "SEC digital asset regulation news this week 2025",
+              "max_results": 8
+            },
+            "output": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\")}"
+          },
+          {
+            "tool": "search_financial_news",
+            "input": {
+              "query": "SEC cryptocurrency regulation Coinbase COIN",
+              "max_results": 8
+            },
+            "output": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\")}"
+          },
+          {
+            "tool": "get_crypto_price",
+            "input": {
+              "symbol": "BTC"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"9cbb5413-0484-4b3b-908a-0f9cf1850ee1\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.0003495216369628906,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "get_stock_price",
+            "input": {
+              "symbol": "COIN"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"bc6ad83d-4549-4223-beee-09592c8073b9\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.0003733634948730469,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "tavily_search",
+            "input": {
+              "query": "SEC digital asset regulation news this week 2025",
+              "max_results": 5
+            },
+            "output": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\")}"
+          },
+          {
+            "tool": "search_financial_news",
+            "input": {
+              "query": "SEC cryptocurrency regulation Coinbase COIN",
+              "max_results": 5
+            },
+            "output": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\")}"
+          },
+          {
+            "tool": "get_crypto_price",
+            "input": {
+              "symbol": "BTC"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"dcdde484-23e4-4157-8641-89a07d9187a4\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.00035452842712402344,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "get_stock_price",
+            "input": {
+              "symbol": "COIN"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"4ae89678-6b8f-4572-ad17-b33fb2b0290e\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.0004124641418457031,\"remaining_credits\":0.0}"
+          }
+        ],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 9,
+        "qveris_calls_estimate": 4,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "1. 指标完备性(0/40)：回答完全缺失全部4项核心指标（监管新闻摘要与情绪、BTC近期价格、COIN/BTC交叉比率、短期交易方向判断逻辑），仅提供了理论分析框架与模板，未交付任何实际数据或结论。2. 逻辑严谨性与数值保真度(0/30)：轨迹中所有数据获取工具均因账户额度不足(HTTP 402/432)报错，未获取到任何基础数据，也未进行任何计算，完全未形成“数据获取->计算->结论”的闭环。虽未编造数据，但任务执行彻底失败。3. 执行效率与工具调用(0/20)：未满足must_call_sequence的成功执行意图；对同一失败接口进行了多次冗余重试（如tavily_search、get_crypto_price各调用2次），且全程未调用calculator工具。4. 长链推理稳定性(0/10)：因外部额度限制导致任务链在第一步即中断，Agent未能通过降级策略或模拟数据完成推理链条，目标一致性虽在框架中保留，但实际执行链断裂。综合判定为0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "监管新闻核心摘要与情绪",
+            "BTC近期价格数据",
+            "COIN/BTC交叉比率",
+            "短期交易方向判断逻辑"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"1. 指标完备性(0/40)：回答完全缺失全部4项核心指标（监管新闻摘要与情绪、BTC近期价格、COIN/BTC交叉比率、短期交易方向判断逻辑），仅提供了理论分析框架与模板，未交付任何实际数据或结论。2. 逻辑严谨性与数值保真度(0/30)：轨迹中所有数据获取工具均因账户额度不足(HTTP 402/432)报错，未获取到任何基础数据，也未进行任何计算，完全未形成“数据获取->计算->结论”的闭环。虽未编造数据，但任务执行彻底失败。3. 执行效率与工具调用(0/20)：未满足must_call_sequence的成功执行意图；对同一失败接口进行了多次冗余重试（如tavily_search、get_crypto_price各调用2次），且全程未调用calculator工具。4. 长链推理稳定性(0/10)：因外部额度限制导致任务链在第一步即中断，Agent未能通过降级策略或模拟数据完成推理链条，目标一致性虽在框架中保留，但实际执行链断裂。综合判定为0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"监管新闻核心摘要与情绪\",\n    \"BTC近期价格数据\",\n    \"COIN/BTC交叉比率\",\n    \"短期交易方向判断逻辑\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl",
+          "line": 6
+        }
+      },
+      "derived": {
+        "hard_success": true,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T03",
+      "query": "评估加密货币监管动态与Coinbase(COIN)股价的联动效应。搜索近一周关于SEC对数字资产监管态度的核心新闻并提取情绪倾向。同时获取比特币(BTC)当前价格及近30日价格数据，计算COIN当前股价与BTC价格的交叉比率。结合BTC技术位与新闻情绪，判断COIN短期交易方向。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "监管新闻核心摘要与情绪",
+          "BTC近期价格数据",
+          "COIN/BTC交叉比率",
+          "短期交易方向判断逻辑"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_crypto_price",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 25,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-16T20:00:28.037269+00:00",
+        "ended_at": "2026-04-16T20:04:28.908624+00:00",
+        "elapsed_s": 240.8713240623474,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空。未执行任何工具调用，未获取监管新闻、BTC价格或COIN股价数据，完全缺失全部四项核心评估指标。数据获取、计算与结论闭环均未建立，工具调用序列与长链推理稳定性均不满足要求，判定为任务完全失败。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "监管新闻核心摘要与情绪",
+            "BTC近期价格数据",
+            "COIN/BTC交叉比率",
+            "短期交易方向判断逻辑"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空。未执行任何工具调用，未获取监管新闻、BTC价格或COIN股价数据，完全缺失全部四项核心评估指标。数据获取、计算与结论闭环均未建立，工具调用序列与长链推理稳定性均不满足要求，判定为任务完全失败。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"监管新闻核心摘要与情绪\",\n    \"BTC近期价格数据\",\n    \"COIN/BTC交叉比率\",\n    \"短期交易方向判断逻辑\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl",
+          "line": 7
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T03",
+      "query": "评估加密货币监管动态与Coinbase(COIN)股价的联动效应。搜索近一周关于SEC对数字资产监管态度的核心新闻并提取情绪倾向。同时获取比特币(BTC)当前价格及近30日价格数据，计算COIN当前股价与BTC价格的交叉比率。结合BTC技术位与新闻情绪，判断COIN短期交易方向。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "监管新闻核心摘要与情绪",
+          "BTC近期价格数据",
+          "COIN/BTC交叉比率",
+          "短期交易方向判断逻辑"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "search_financial_news",
+            "get_crypto_price",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 25,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-16T20:04:58.994338+00:00",
+        "ended_at": "2026-04-16T20:05:21.519426+00:00",
+        "elapsed_s": 22.525073051452637,
+        "success": true,
+        "failure_mode": null,
+        "error": null
+      },
+      "agent": {
+        "final_answer": "所有数据获取工具（Tavily搜索、股票价格、加密货币价格）均返回额度不足错误。让我尝试其他可用工具：\n\n",
+        "trajectory": [
+          {
+            "tool": "write_todos",
+            "input": {
+              "todos": [
+                {
+                  "content": "搜索近一周SEC对数字资产监管态度的核心新闻并提取情绪倾向",
+                  "status": "in_progress"
+                },
+                {
+                  "content": "获取COIN当前股价",
+                  "status": "pending"
+                },
+                {
+                  "content": "获取BTC当前价格",
+                  "status": "pending"
+                },
+                {
+                  "content": "计算COIN/BTC交叉比率",
+                  "status": "pending"
+                },
+                {
+                  "content": "综合分析并判断COIN短期交易方向",
+                  "status": "pending"
+                }
+              ]
+            },
+            "output": "Updated todo list to [{'content': '搜索近一周SEC对数字资产监管态度的核心新闻并提取情绪倾向', 'status': 'in_progress'}, {'content': '获取COIN当前股价', 'status': 'pending'}, {'content': '获取BTC当前价格', 'status': 'pending'}, {'content': '计算COIN/BTC交叉比率', 'status': 'pending'}, {'content': '综合分析并判断COIN短期交易方向', 'status': 'pending'}]"
+          },
+          {
+            "tool": "search_financial_news",
+            "input": {
+              "query": "SEC digital asset cryptocurrency regulation stance 2025",
+              "max_results": 10
+            },
+            "output": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\")}"
+          },
+          {
+            "tool": "get_stock_price",
+            "input": {
+              "symbol": "COIN"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"4d0e632c-2a7d-4442-83f7-4a6e1aa195c8\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.0003333091735839844,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "get_crypto_price",
+            "input": {
+              "symbol": "BTC"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"6aad08e9-b9e5-4b32-8a82-99423b86cb38\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.0003643035888671875,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "tavily_search",
+            "input": {
+              "query": "SEC digital asset cryptocurrency regulation stance 2025",
+              "max_results": 10
+            },
+            "output": "{'error': ValueError(\"Error 432: This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\")}"
+          },
+          {
+            "tool": "get_exchange_rate",
+            "input": {
+              "pair": "BTC/USD"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"702933c0-c558-483a-a19f-111194b2bc1a\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.000377655029296875,\"remaining_credits\":0.0}"
+          },
+          {
+            "tool": "get_macro_data",
+            "input": {
+              "indicator": "CPI"
+            },
+            "output": "HTTP 402: {\"execution_id\":\"349f0df2-52c6-4e62-9c6f-1ac37b6642c6\",\"result\":{\"data\":{}},\"success\":false,\"error_message\":\"Insufficient credits. Please recharge and try again. To recharge, call GET /api/v1/agent/recharge-token to get a recharge URL for your account owner.\",\"execution_time\":0.0003936290740966797,\"remaining_credits\":0.0}"
+          }
+        ],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 7,
+        "qveris_calls_estimate": 4,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent因API额度不足（HTTP 402/Error 432）导致所有核心数据获取工具调用失败，未能获取任何SEC监管新闻、COIN股价或BTC价格数据。最终回答仅陈述了工具报错，未提供任何要求的指标（新闻情绪、BTC价格、交叉比率、交易方向），逻辑闭环完全断裂。未成功执行must_call_sequence中的计算步骤，且缺乏有效的降级处理或替代推理方案，任务完全未完成。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "监管新闻核心摘要与情绪",
+            "BTC近期价格数据",
+            "COIN/BTC交叉比率",
+            "短期交易方向判断逻辑"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent因API额度不足（HTTP 402/Error 432）导致所有核心数据获取工具调用失败，未能获取任何SEC监管新闻、COIN股价或BTC价格数据。最终回答仅陈述了工具报错，未提供任何要求的指标（新闻情绪、BTC价格、交叉比率、交易方向），逻辑闭环完全断裂。未成功执行must_call_sequence中的计算步骤，且缺乏有效的降级处理或替代推理方案，任务完全未完成。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"监管新闻核心摘要与情绪\",\n    \"BTC近期价格数据\",\n    \"COIN/BTC交叉比率\",\n    \"短期交易方向判断逻辑\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl",
+          "line": 8
+        }
+      },
+      "derived": {
+        "hard_success": true,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T04",
+      "query": "量化汇率波动对苹果公司(AAPL)海外利润的汇兑冲击。获取当前EUR/USD和GBP/USD实时汇率。查阅AAPL最新季报国际分部收入及毛利率，假设欧元与英镑同步对美元贬值5%，使用计算器估算换算为美元后的潜在汇兑损失金额，并结合财报对冲披露定性评估其对EPS的拖累。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "EUR/USD与GBP/USD实时汇率",
+          "国际收入规模与毛利率",
+          "贬值5%假设下的汇兑损失额",
+          "对冲有效性及EPS影响评估"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 25,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-16T20:05:51.832848+00:00",
+        "ended_at": "2026-04-16T20:06:50.283829+00:00",
+        "elapsed_s": 58.45095443725586,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空。未执行任何工具调用，未获取汇率与财报数据，未进行计算，完全缺失全部四项核心指标。逻辑链未建立，工具调用序列未满足，长链推理未启动。各项维度均得0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "EUR/USD与GBP/USD实时汇率",
+            "国际收入规模与毛利率",
+            "贬值5%假设下的汇兑损失额",
+            "对冲有效性及EPS影响评估"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空。未执行任何工具调用，未获取汇率与财报数据，未进行计算，完全缺失全部四项核心指标。逻辑链未建立，工具调用序列未满足，长链推理未启动。各项维度均得0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"EUR/USD与GBP/USD实时汇率\",\n    \"国际收入规模与毛利率\",\n    \"贬值5%假设下的汇兑损失额\",\n    \"对冲有效性及EPS影响评估\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl",
+          "line": 9
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T04",
+      "query": "量化汇率波动对苹果公司(AAPL)海外利润的汇兑冲击。获取当前EUR/USD和GBP/USD实时汇率。查阅AAPL最新季报国际分部收入及毛利率，假设欧元与英镑同步对美元贬值5%，使用计算器估算换算为美元后的潜在汇兑损失金额，并结合财报对冲披露定性评估其对EPS的拖累。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "EUR/USD与GBP/USD实时汇率",
+          "国际收入规模与毛利率",
+          "贬值5%假设下的汇兑损失额",
+          "对冲有效性及EPS影响评估"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 25,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-16T20:07:19.146091+00:00",
+        "ended_at": "2026-04-16T20:09:12.766479+00:00",
+        "elapsed_s": 113.62037396430969,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用，未获取汇率与财报数据，未进行计算，也未提供任何要求的评估指标。完全缺失“数据获取->计算->结论”的闭环，未满足最小工具调用次数与调用序列要求，所有评分维度均得0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "EUR/USD与GBP/USD实时汇率",
+            "国际收入规模与毛利率",
+            "贬值5%假设下的汇兑损失额",
+            "对冲有效性及EPS影响评估"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用，未获取汇率与财报数据，未进行计算，也未提供任何要求的评估指标。完全缺失“数据获取->计算->结论”的闭环，未满足最小工具调用次数与调用序列要求，所有评分维度均得0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"EUR/USD与GBP/USD实时汇率\",\n    \"国际收入规模与毛利率\",\n    \"贬值5%假设下的汇兑损失额\",\n    \"对冲有效性及EPS影响评估\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl",
+          "line": 10
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T04",
+      "query": "量化汇率波动对苹果公司(AAPL)海外利润的汇兑冲击。获取当前EUR/USD和GBP/USD实时汇率。查阅AAPL最新季报国际分部收入及毛利率，假设欧元与英镑同步对美元贬值5%，使用计算器估算换算为美元后的潜在汇兑损失金额，并结合财报对冲披露定性评估其对EPS的拖累。",
+      "difficulty": "hard",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "EUR/USD与GBP/USD实时汇率",
+          "国际收入规模与毛利率",
+          "贬值5%假设下的汇兑损失额",
+          "对冲有效性及EPS影响评估"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_exchange_rate",
+            "get_financial_statements",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 25,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-16T20:09:33.730103+00:00",
+        "ended_at": "2026-04-16T20:10:50.250008+00:00",
+        "elapsed_s": 76.51989507675171,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空，未执行任何工具调用，未获取汇率与财报数据，未进行计算，也未提供任何要求的评估指标。完全缺失“数据获取->计算->结论”的闭环，所有评分维度均得0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "EUR/USD与GBP/USD实时汇率",
+            "国际收入规模与毛利率",
+            "贬值5%假设下的汇兑损失额",
+            "对冲有效性及EPS影响评估"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "```json\n{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空，未执行任何工具调用，未获取汇率与财报数据，未进行计算，也未提供任何要求的评估指标。完全缺失“数据获取->计算->结论”的闭环，所有评分维度均得0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"EUR/USD与GBP/USD实时汇率\",\n    \"国际收入规模与毛利率\",\n    \"贬值5%假设下的汇兑损失额\",\n    \"对冲有效性及EPS影响评估\"\n  ],\n  \"fabrication_detected\": false\n}\n```",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl",
+          "line": 11
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T05",
+      "query": "基于最新宏观指标进行行业轮动判断。获取美国最新CPI同比与GDP环比增速，判定当前所处经济周期阶段。获取金融ETF(XLF)与能源ETF(XLE)的最新收盘价及年初至今涨跌幅，计算两者的相对强弱比率(XLE/XLF)，结合宏观周期结论给出超配/低配建议。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新CPI与GDP增速",
+          "经济周期阶段判断",
+          "XLF与XLE价格及YTD涨跌幅",
+          "相对强弱比率",
+          "板块轮动建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 25,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-16T20:11:11.022100+00:00",
+        "ended_at": "2026-04-16T20:19:42.079874+00:00",
+        "elapsed_s": 511.0577549934387,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 0,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent的轨迹（Trajectory）与最终回答（Final Answer）均为空。未调用任何工具，未获取宏观数据与ETF行情，未进行任何计算，也未输出任何结论。完全缺失所有要求的评估指标，逻辑闭环、工具调用序列及推理稳定性均得0分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "最新CPI与GDP增速",
+            "经济周期阶段判断",
+            "XLF与XLE价格及YTD涨跌幅",
+            "相对强弱比率",
+            "板块轮动建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent的轨迹（Trajectory）与最终回答（Final Answer）均为空。未调用任何工具，未获取宏观数据与ETF行情，未进行任何计算，也未输出任何结论。完全缺失所有要求的评估指标，逻辑闭环、工具调用序列及推理稳定性均得0分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"最新CPI与GDP增速\",\n    \"经济周期阶段判断\",\n    \"XLF与XLE价格及YTD涨跌幅\",\n    \"相对强弱比率\",\n    \"板块轮动建议\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl",
+          "line": 12
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T05",
+      "query": "基于最新宏观指标进行行业轮动判断。获取美国最新CPI同比与GDP环比增速，判定当前所处经济周期阶段。获取金融ETF(XLF)与能源ETF(XLE)的最新收盘价及年初至今涨跌幅，计算两者的相对强弱比率(XLE/XLF)，结合宏观周期结论给出超配/低配建议。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新CPI与GDP增速",
+          "经济周期阶段判断",
+          "XLF与XLE价格及YTD涨跌幅",
+          "相对强弱比率",
+          "板块轮动建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 25,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-16T20:20:04.099360+00:00",
+        "ended_at": "2026-04-16T20:21:42.400635+00:00",
+        "elapsed_s": 98.30125093460083,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 1,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空。未调用任何工具获取宏观数据或ETF行情，未执行计算，也未输出任何评估指标。完全缺失数据获取、逻辑推理与结论输出环节，所有评分维度均不得分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "最新CPI与GDP增速",
+            "经济周期阶段判断",
+            "XLF与XLE价格及YTD涨跌幅",
+            "相对强弱比率",
+            "板块轮动建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空。未调用任何工具获取宏观数据或ETF行情，未执行计算，也未输出任何评估指标。完全缺失数据获取、逻辑推理与结论输出环节，所有评分维度均不得分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"最新CPI与GDP增速\",\n    \"经济周期阶段判断\",\n    \"XLF与XLE价格及YTD涨跌幅\",\n    \"相对强弱比率\",\n    \"板块轮动建议\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl",
+          "line": 13
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    },
+    {
+      "task_id": "T05",
+      "query": "基于最新宏观指标进行行业轮动判断。获取美国最新CPI同比与GDP环比增速，判定当前所处经济周期阶段。获取金融ETF(XLF)与能源ETF(XLE)的最新收盘价及年初至今涨跌幅，计算两者的相对强弱比率(XLE/XLF)，结合宏观周期结论给出超配/低配建议。",
+      "difficulty": "medium",
+      "evaluation_criteria": {
+        "final_answer_metrics": [
+          "最新CPI与GDP增速",
+          "经济周期阶段判断",
+          "XLF与XLE价格及YTD涨跌幅",
+          "相对强弱比率",
+          "板块轮动建议"
+        ],
+        "min_tool_calls": 3,
+        "must_call_sequence": [
+          [
+            "get_macro_data",
+            "get_stock_price",
+            "calculator"
+          ]
+        ]
+      },
+      "budget": {
+        "timeout_s": 600,
+        "recursion_limit": 25,
+        "max_retries": 3
+      },
+      "run": {
+        "started_at": "2026-04-16T20:22:03.741848+00:00",
+        "ended_at": "2026-04-16T20:23:13.417575+00:00",
+        "elapsed_s": 69.67572212219238,
+        "success": false,
+        "failure_mode": "execution",
+        "error": "Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+      },
+      "agent": {
+        "final_answer": "",
+        "trajectory": [],
+        "orchestrator": null
+      },
+      "metrics": {
+        "tool_calls": 0,
+        "qveris_calls_estimate": 0,
+        "llm_usage": null,
+        "llm_token_usage": null,
+        "llm_cost_estimate_usd": null,
+        "qveris_cache": {
+          "enabled": false,
+          "ttl_seconds": 0,
+          "hits": 0,
+          "misses": 0,
+          "writes": 0
+        }
+      },
+      "trial_idx": 2,
+      "judge": {
+        "parsed": {
+          "score": 0,
+          "reasoning": "Agent轨迹与最终回答均为空。未调用任何工具获取宏观数据或ETF行情，未执行计算，也未输出任何评估指标。完全缺失数据获取、逻辑推理与结论输出环节，所有评分维度均不得分。",
+          "met_metrics": [],
+          "missed_metrics": [
+            "最新CPI与GDP增速",
+            "经济周期阶段判断",
+            "XLF与XLE价格及YTD涨跌幅",
+            "相对强弱比率",
+            "板块轮动建议"
+          ],
+          "fabrication_detected": false
+        },
+        "raw_text": "{\n  \"score\": 0,\n  \"reasoning\": \"Agent轨迹与最终回答均为空。未调用任何工具获取宏观数据或ETF行情，未执行计算，也未输出任何评估指标。完全缺失数据获取、逻辑推理与结论输出环节，所有评分维度均不得分。\",\n  \"met_metrics\": [],\n  \"missed_metrics\": [\n    \"最新CPI与GDP增速\",\n    \"经济周期阶段判断\",\n    \"XLF与XLE价格及YTD涨跌幅\",\n    \"相对强弱比率\",\n    \"板块轮动建议\"\n  ],\n  \"fabrication_detected\": false\n}",
+        "parse_error": null,
+        "log_ref": {
+          "path": "src/benchmarks/results_neurips_v5_reduced/1776368284_react_baseline/judge_logs.jsonl",
+          "line": 14
+        }
+      },
+      "derived": {
+        "hard_success": false,
+        "judge_success": false
+      }
+    }
+  ]
+}

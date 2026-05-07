@@ -1,0 +1,217 @@
+{
+  "root": "src/benchmarks/results_quantitative_fullscale_n20",
+  "runs": [
+    {
+      "run_id": "1776324486_full",
+      "variant": "full",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 20,
+      "success_rate": 0.95,
+      "judge_score_mean": 81.4,
+      "judge_score_ci95": {
+        "low": 72.2,
+        "high": 88.0
+      },
+      "elapsed_s_mean": 367.2631909251213,
+      "tool_calls_mean": 6.1,
+      "failure_modes": {
+        "timeout": 1
+      }
+    },
+    {
+      "run_id": "1776324800_react_baseline",
+      "variant": "react_baseline",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 20,
+      "success_rate": 0.25,
+      "judge_score_mean": 24.4,
+      "judge_score_ci95": {
+        "low": 5.0,
+        "high": 43.9
+      },
+      "elapsed_s_mean": 94.5166470527649,
+      "tool_calls_mean": 3.9,
+      "failure_modes": {
+        "execution": 15
+      }
+    },
+    {
+      "run_id": "1776332567_wo_memory",
+      "variant": "wo_memory",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 20,
+      "success_rate": 1.0,
+      "judge_score_mean": 72.75,
+      "judge_score_ci95": {
+        "low": 61.4,
+        "high": 82.6
+      },
+      "elapsed_s_mean": 299.4712458372116,
+      "tool_calls_mean": 6.3,
+      "failure_modes": {}
+    },
+    {
+      "run_id": "1776333079_wo_orchestration",
+      "variant": "wo_orchestration",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 20,
+      "success_rate": 0.55,
+      "judge_score_mean": 48.65,
+      "judge_score_ci95": {
+        "low": 29.55,
+        "high": 67.9
+      },
+      "elapsed_s_mean": 457.9937975764275,
+      "tool_calls_mean": 8.65,
+      "failure_modes": {
+        "timeout": 9
+      }
+    },
+    {
+      "run_id": "1776333092_wo_memory",
+      "variant": "wo_memory",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 20,
+      "success_rate": 0.9,
+      "judge_score_mean": 70.65,
+      "judge_score_ci95": {
+        "low": 57.15,
+        "high": 81.15
+      },
+      "elapsed_s_mean": 354.5311763048172,
+      "tool_calls_mean": 6.05,
+      "failure_modes": {
+        "timeout": 2
+      }
+    },
+    {
+      "run_id": "1776334085_wo_evolution",
+      "variant": "wo_evolution",
+      "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+      "n_tasks": 20,
+      "success_rate": 0.8,
+      "judge_score_mean": 58.5,
+      "judge_score_ci95": {
+        "low": 43.45,
+        "high": 71.75
+      },
+      "elapsed_s_mean": 392.35821610689163,
+      "tool_calls_mean": 4.95,
+      "failure_modes": {
+        "timeout": 4
+      }
+    }
+  ],
+  "by_variant": {
+    "full": [
+      {
+        "run_id": "1776324486_full",
+        "variant": "full",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 20,
+        "success_rate": 0.95,
+        "judge_score_mean": 81.4,
+        "judge_score_ci95": {
+          "low": 72.2,
+          "high": 88.0
+        },
+        "elapsed_s_mean": 367.2631909251213,
+        "tool_calls_mean": 6.1,
+        "failure_modes": {
+          "timeout": 1
+        }
+      }
+    ],
+    "react_baseline": [
+      {
+        "run_id": "1776324800_react_baseline",
+        "variant": "react_baseline",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 20,
+        "success_rate": 0.25,
+        "judge_score_mean": 24.4,
+        "judge_score_ci95": {
+          "low": 5.0,
+          "high": 43.9
+        },
+        "elapsed_s_mean": 94.5166470527649,
+        "tool_calls_mean": 3.9,
+        "failure_modes": {
+          "execution": 15
+        }
+      }
+    ],
+    "wo_memory": [
+      {
+        "run_id": "1776332567_wo_memory",
+        "variant": "wo_memory",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 20,
+        "success_rate": 1.0,
+        "judge_score_mean": 72.75,
+        "judge_score_ci95": {
+          "low": 61.4,
+          "high": 82.6
+        },
+        "elapsed_s_mean": 299.4712458372116,
+        "tool_calls_mean": 6.3,
+        "failure_modes": {}
+      },
+      {
+        "run_id": "1776333092_wo_memory",
+        "variant": "wo_memory",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 20,
+        "success_rate": 0.9,
+        "judge_score_mean": 70.65,
+        "judge_score_ci95": {
+          "low": 57.15,
+          "high": 81.15
+        },
+        "elapsed_s_mean": 354.5311763048172,
+        "tool_calls_mean": 6.05,
+        "failure_modes": {
+          "timeout": 2
+        }
+      }
+    ],
+    "wo_orchestration": [
+      {
+        "run_id": "1776333079_wo_orchestration",
+        "variant": "wo_orchestration",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 20,
+        "success_rate": 0.55,
+        "judge_score_mean": 48.65,
+        "judge_score_ci95": {
+          "low": 29.55,
+          "high": 67.9
+        },
+        "elapsed_s_mean": 457.9937975764275,
+        "tool_calls_mean": 8.65,
+        "failure_modes": {
+          "timeout": 9
+        }
+      }
+    ],
+    "wo_evolution": [
+      {
+        "run_id": "1776334085_wo_evolution",
+        "variant": "wo_evolution",
+        "benchmark": "src/benchmarks/complex_tasks_real_api.json",
+        "n_tasks": 20,
+        "success_rate": 0.8,
+        "judge_score_mean": 58.5,
+        "judge_score_ci95": {
+          "low": 43.45,
+          "high": 71.75
+        },
+        "elapsed_s_mean": 392.35821610689163,
+        "tool_calls_mean": 4.95,
+        "failure_modes": {
+          "timeout": 4
+        }
+      }
+    ]
+  }
+}

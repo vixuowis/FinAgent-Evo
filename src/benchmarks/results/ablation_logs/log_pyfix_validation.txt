@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/vix/Code/FinAgent/src/scripts/run_finagent_baseline.py", line 7, in <module>
+    from src.agent import agent
+ModuleNotFoundError: No module named 'src'
